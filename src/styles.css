@@ -234,6 +234,9 @@ h3 {
   line-height: 1.65;
   color: #514b62;
 }
+.dossier-download {
+  margin-top: 1rem;
+}
 .status-definitions {
   margin-left: 0;
   margin-bottom: 2.5rem;

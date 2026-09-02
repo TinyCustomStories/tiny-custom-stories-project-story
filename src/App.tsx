@@ -563,6 +563,15 @@ function Library() {
             A readable pointer to the project decision or question that informed
             the summary, without publishing private materials.
           </Definition>
+          <a
+            className="button button-dark dossier-download"
+            href={`${import.meta.env.BASE_URL}documents/tiny-custom-stories-project-dossier.pdf`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Read the detailed public dossier (PDF){' '}
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </section>
     </>

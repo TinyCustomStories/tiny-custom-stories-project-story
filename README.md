@@ -6,6 +6,8 @@ It is not the Tiny Custom Stories parent/child application. The private product 
 
 The published site is expected at [tinycustomstories.github.io/tiny-custom-stories-project-story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/). Public pages use static-host-safe fragment routes, for example [Decisions](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/decisions).
 
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) is a detailed downloadable public document. It explains the product direction, decision record, architecture principles, roadmap, and open questions while preserving the public-safety boundary below.
+
 ## Run locally
 
 Requires Node 24.20.0 and npm 11.19.0.

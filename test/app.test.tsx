@@ -19,6 +19,12 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: 'Public library' }));
 
     expect(screen.getByText(/Founder approval:/i)).toBeTruthy();
+    expect(
+      screen.getByRole('link', { name: /detailed public dossier/i }),
+    ).toHaveProperty(
+      'href',
+      'http://localhost:3000/documents/tiny-custom-stories-project-dossier.pdf',
+    );
     fireEvent.click(screen.getByRole('link', { name: 'Decisions' }));
     expect(screen.getAllByText('Confirmed decision').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Open question').length).toBeGreaterThan(0);
