@@ -10,6 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "generate:pdf": "python3 scripts/generate_project_story_pdf.py",
     "typecheck": "tsc -b --pretty false",
     "build": "tsc -b && vite build",
     "lint": "oxlint --deny-warnings .",

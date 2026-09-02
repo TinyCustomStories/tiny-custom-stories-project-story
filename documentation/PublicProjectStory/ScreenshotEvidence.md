@@ -4,10 +4,12 @@ This document records intentional visual checks for the public project-story sit
 
 ## Reviewed states
 
-| View      | Viewport             | What it demonstrates                                                                                 | Asset                                           |
-| --------- | -------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| Home      | Desktop, 1440 × 1000 | Introductory hierarchy, route directory, persistent navigation, and the public-site boundary         | [home desktop](assets/home-desktop.png)         |
-| Decisions | Mobile, 390 × 844    | Wrapped navigation, readable page title, knowledge-status legend, and mobile one-column presentation | [decisions mobile](assets/decisions-mobile.png) |
+| View      | Viewport             | What it demonstrates                                                                                              | Asset                                             |
+| --------- | -------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| Home      | Desktop, 1440 × 1000 | Expanded navigation, introductory hierarchy, dossier action, and the Sprint 0/Sprint 1 public status boundary     | [home desktop](assets/home-desktop.png)           |
+| Sprint 1  | Desktop, 1440 × 1000 | Clear active-planning language, an explicit outcome gate, and a distinct public-safe family-mode explanation      | [Sprint 1 desktop](assets/sprint-one-desktop.png) |
+| Design    | Mobile, 390 × 844    | Wrapped persistent navigation, editorial hierarchy, legible display typography, and responsive design-language UI | [design mobile](assets/design-mobile.png)         |
+| Decisions | Mobile, 390 × 844    | Wrapped navigation, readable page title, knowledge-status legend, and mobile one-column presentation              | [decisions mobile](assets/decisions-mobile.png)   |
 
 ## Capture method
 
