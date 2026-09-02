@@ -1,12 +1,12 @@
 # Tiny Custom Stories — public project story
 
-This public repository contains the independently buildable project-story website for Tiny Custom Stories. It explains the project’s direction, decisions, roadmap, and open questions in plain language.
+This public repository contains the independently buildable project-story website for Tiny Custom Stories. It explains the project’s direction, demonstrated Sprint 0 foundation, active Sprint 1 boundary, decisions, roadmap, design language, and open questions in plain language.
 
 It is not the Tiny Custom Stories parent/child application. The private product repository, future application, backend, internal research, and operational documentation are intentionally outside this repository.
 
 The published site is expected at [tinycustomstories.github.io/tiny-custom-stories-project-story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/). Public pages use static-host-safe fragment routes, for example [Decisions](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/decisions).
 
-The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) is a detailed downloadable public document. It explains the product direction, decision record, architecture principles, roadmap, and open questions while preserving the public-safety boundary below.
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) is a visually reviewed 15-page companion to the responsive website. It explains the product direction, Sprint 0 evidence, Sprint 1 account and family-mode boundary, seven-sprint roadmap, architecture principles, design philosophy, visual recipe, and open questions while preserving the public-safety boundary below.
 
 ## Run locally
 
@@ -24,6 +24,17 @@ npm run verify
 ```
 
 This checks formatting, linting, TypeScript, the production build, and tests.
+
+## Regenerate the dossier PDF
+
+Install the PDF-specific dependency, then generate the stable public document:
+
+```shell
+python3 -m pip install -r requirements-pdf.txt
+npm run generate:pdf
+```
+
+The generator writes `public/documents/tiny-custom-stories-project-dossier.pdf`. Render and visually inspect all pages after changing the generator or its content; successful generation alone does not prove that the fixed layout is correct. The responsive website remains the primary version for semantic navigation and text reflow.
 
 ## GitHub Pages deployment
 

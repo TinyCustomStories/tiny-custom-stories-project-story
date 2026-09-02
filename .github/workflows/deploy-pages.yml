@@ -7,6 +7,10 @@ on:
       - src/**
       - test/**
       - documentation/PublicProjectStory/**
+      - documentation/PublicProjectDossier.md
+      - public/**
+      - scripts/generate_project_story_pdf.py
+      - requirements-pdf.txt
       - index.html
       - package.json
       - package-lock.json

@@ -1,5 +1,11 @@
 import React from 'react';
-import { milestones, publicEntries, type KnowledgeStatus } from './content';
+import {
+  designPrinciples,
+  milestones,
+  publicEntries,
+  surfaceThemes,
+  type KnowledgeStatus,
+} from './content';
 
 type Route =
   | '/'
@@ -7,6 +13,8 @@ type Route =
   | '/journey'
   | '/decisions'
   | '/roadmap'
+  | '/sprint-one'
+  | '/design'
   | '/questions'
   | '/library';
 
@@ -16,9 +24,12 @@ const routes: Record<Route, string> = {
   '/journey': 'How it works',
   '/decisions': 'Decisions',
   '/roadmap': 'Roadmap',
+  '/sprint-one': 'Sprint 1',
+  '/design': 'Design',
   '/questions': 'Open questions',
   '/library': 'Public library',
 };
+const pdfPath = `${import.meta.env.BASE_URL}documents/tiny-custom-stories-project-dossier.pdf`;
 const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/product':
     'The intended benefit, audience, boundaries, and plain-language terms.',
@@ -27,6 +38,10 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/decisions':
     'A labeled record of confirmed decisions, proposals, facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
+  '/sprint-one':
+    'The accepted account, child-mode, parent-mode, and evidence boundary now shaping the work.',
+  '/design':
+    'The philosophy and visual recipe that keep many agents working in one recognizable voice.',
   '/questions':
     'Important matters that still need research, testing, or specialist review.',
   '/library':
@@ -60,7 +75,7 @@ function Link({
     <a
       {...props}
       className={className}
-      href={`#${to}`}
+      href={to}
       onClick={(event) => {
         event.preventDefault();
         go(to);
@@ -122,6 +137,14 @@ function Home() {
             <Link className="button button-dark" to="/product">
               Start with the idea <span aria-hidden="true">→</span>
             </Link>
+            <a
+              className="button button-light"
+              href={pdfPath}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read the PDF <span aria-hidden="true">↓</span>
+            </a>
             <Link className="text-link" to="/decisions">
               See what we know so far
             </Link>
@@ -156,8 +179,8 @@ function Home() {
         aria-label="Current project status"
       >
         <p>
-          <span aria-hidden="true">●</span> The project is in its foundation
-          phase.
+          <span aria-hidden="true">●</span> Sprint 0 is complete. Sprint 1 is
+          the active planning boundary.
         </p>
         <p>
           What’s public here is <strong>curated on purpose</strong>—not a live
@@ -174,7 +197,7 @@ function Home() {
         <div className="section-kicker">
           A readable route through the project
         </div>
-        <h2 id="directory-title">One project story, seven places to pause.</h2>
+        <h2 id="directory-title">One project story, nine places to pause.</h2>
         <p className="section-intro">
           This is a small public library rather than a single, endlessly
           scrolling page. Every page says what it is describing, how certain it
@@ -258,6 +281,26 @@ function Product() {
             ten illustrated pages. Narration, video, a public marketplace, and a
             native app are not included.
           </Definition>
+        </div>
+        <div className="mode-preview" aria-label="Alpha experience boundaries">
+          <article>
+            <p className="eyebrow">Default after sign-in</p>
+            <h2>Child mode</h2>
+            <p>
+              A calm, read-only library containing only stories a parent has
+              made child-visible. No drafts, family context, account controls,
+              or hidden adult actions.
+            </p>
+          </article>
+          <article>
+            <p className="eyebrow">Deliberate adult entry</p>
+            <h2>Parent mode</h2>
+            <p>
+              A protected place for creation, review, Child Map work, story
+              visibility, and account actions. The server—not a hidden
+              button—enforces the boundary.
+            </p>
+          </article>
         </div>
       </section>
     </>
@@ -429,7 +472,14 @@ function Roadmap() {
                 <h3>{milestone.title}</h3>
                 <p>{milestone.note}</p>
               </div>
-              <em>{milestone.state}</em>
+              <div className="milestone-state">
+                <span
+                  className={`status-pill ${statusClass[milestone.status]}`}
+                >
+                  {milestone.status}
+                </span>
+                <em>{milestone.state}</em>
+              </div>
             </li>
           ))}
         </ol>
@@ -441,13 +491,215 @@ function Roadmap() {
           </Definition>
           <Definition term="Foundation">
             The documented direction, target stack, and clean technical building
-            blocks already in place.
+            blocks demonstrated at the Sprint 0 outcome gate.
+          </Definition>
+          <Definition term="Active planning boundary">
+            Sprint 1 is the current outcome being prepared and delivered. That
+            does not mean every Sprint 1 task is already ready or complete.
           </Definition>
           <Definition term="Private Alpha readiness">
             A later threshold that requires demonstrated safety, privacy,
             reliability, and real-world learning.
           </Definition>
         </div>
+      </section>
+    </>
+  );
+}
+function SprintOne() {
+  const boundaries = [
+    [
+      'One intentionally narrow Alpha family',
+      'One verified parent identity, one internal family account, and one child. Registration begins with only the parent email.',
+    ],
+    [
+      'Child mode comes first',
+      'A signed-in family arrives in the read-only story library. Only parent-approved, child-visible stories and reading navigation belong there.',
+    ],
+    [
+      'Parent work is protected',
+      'Child Map information, drafts, creation, approvals, settings, exports, deletion, and sign-out require a server-enforced parent boundary.',
+    ],
+    [
+      'Access expires safely',
+      'Parent access is scoped to the current tab, expires, conceals private work, and requires stronger email verification for recovery and destructive account actions.',
+    ],
+  ];
+  return (
+    <>
+      <PageIntro
+        eyebrow="05 · Sprint 1"
+        title="A shared device needs two honest modes."
+      >
+        <p>
+          Sprint 0 proved the foundations. Sprint 1 is now the active planning
+          boundary: make family access work while keeping a young child’s
+          reading surface separate from adult information and authority.
+        </p>
+      </PageIntro>
+      <section className="section sprint-section">
+        <div className="outcome-banner">
+          <div>
+            <p className="eyebrow">Sprint 1 outcome gate</p>
+            <h2>Register. Arrive safely. Enter deliberately. Return safely.</h2>
+          </div>
+          <p>
+            Sprint 1 is complete only when a parent can create or resume the
+            Alpha family, land in a child-safe library, enter protected parent
+            mode, and return to child mode after exit or expiry.
+          </p>
+        </div>
+        <ol className="boundary-grid">
+          {boundaries.map(([title, detail], index) => (
+            <li key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Evidence, not a screenshot alone</p>
+            <h2>What Sprint 1 must prove</h2>
+          </div>
+          <ul>
+            <li>
+              Repeat sign-in resumes the same family and cannot cross families.
+            </li>
+            <li>
+              Child mode cannot read parent information or call protected APIs.
+            </li>
+            <li>
+              Entry, failure, recovery, expiry, refresh, and tab isolation
+              behave safely.
+            </li>
+            <li>
+              Keyboard, focus, announcements, responsive layout, and error
+              recovery work.
+            </li>
+            <li>
+              Synthetic browser evidence covers the full return to child mode.
+            </li>
+          </ul>
+        </div>
+        <p className="public-boundary-note">
+          This public summary explains the accepted experience without exposing
+          private project links, live identity data, or operational security
+          parameters that do not help a general reader.
+        </p>
+      </section>
+    </>
+  );
+}
+function Design() {
+  const palette = [
+    ['Ink', '#27213B', 'ink'],
+    ['Paper', '#FBF8EF', 'paper'],
+    ['Plum', '#6F549F', 'plum'],
+    ['Coral', '#E76042', 'coral'],
+    ['Sun', '#F7B84B', 'sunny'],
+    ['Mint', '#9DD3C6', 'mint'],
+    ['Lavender', '#E7D8F5', 'lavender'],
+  ];
+  return (
+    <>
+      <PageIntro
+        eyebrow="06 · Design philosophy and language"
+        title="One philosophy. One recipe. Room to feel human."
+      >
+        <p>
+          The philosophy says why the experience should feel calm, clear, warm,
+          and trustworthy. The paper-and-ink visual language tells every agent
+          how to reproduce that character without inventing a new brand on every
+          screen.
+        </p>
+      </PageIntro>
+      <section className="section design-section">
+        <div className="design-formula">
+          <p>
+            <strong>70%</strong>
+            <span>calm editorial foundation</span>
+          </p>
+          <p>
+            <strong>20%</strong>
+            <span>handcrafted character</span>
+          </p>
+          <p>
+            <strong>10%</strong>
+            <span>emphasis and delight</span>
+          </p>
+        </div>
+        <div className="principle-grid">
+          {designPrinciples.map(([title, detail], index) => (
+            <article key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+        <div className="recipe-panel">
+          <div>
+            <p className="eyebrow">The reusable visual recipe</p>
+            <h2>Paper, ink, and a few purposeful sparks.</h2>
+            <p>
+              Fraunces carries expressive titles. Nunito Sans keeps bodies and
+              controls plain. DM Mono labels metadata and status. A four-pixel
+              spacing scale, crisp ink borders, small offset shadows, and flat
+              color create the shared rhythm.
+            </p>
+          </div>
+          <div
+            className="palette"
+            aria-label="Accepted interface color palette"
+          >
+            {palette.map(([name, value, className]) => (
+              <div key={name}>
+                <span
+                  className={`swatch swatch-${className}`}
+                  aria-hidden="true"
+                />
+                <b>{name}</b>
+                <code>{value}</code>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="theme-grid">
+          {surfaceThemes.map((theme) => (
+            <article key={theme.name}>
+              <p className="eyebrow">{theme.audience}</p>
+              <h3>{theme.name}</h3>
+              <p>{theme.detail}</p>
+            </article>
+          ))}
+        </div>
+        <div className="component-sample">
+          <div>
+            <p className="eyebrow">Controls stay dependable</p>
+            <h2>Character never replaces usability.</h2>
+            <p>
+              Buttons name their consequence. Inputs keep visible labels. Focus
+              is unmistakable. Loading, disabled, error, expiry, and recovery
+              states are designed alongside the happy path.
+            </p>
+          </div>
+          <div
+            className="sample-actions"
+            aria-label="Non-interactive button examples"
+          >
+            <span className="button button-dark">Create story plan</span>
+            <span className="button button-light">Review the draft</span>
+            <span className="sample-link">Return to child mode</span>
+          </div>
+        </div>
+        <p className="influence-note">
+          The founder’s creative references are translated into candid
+          communication, simple explanatory drawings, warmth, and visible human
+          imperfection. The project does not copy a creator’s recognizable
+          lettering, characters, compositions, or signature style.
+        </p>
       </section>
     </>
   );
@@ -466,11 +718,23 @@ function Questions() {
       'What makes a story genuinely helpful for different children?',
       'Age range is only a starting point; language, ability, context, and feedback matter.',
     ],
+    [
+      'Which Child Map details are necessary for a particular story?',
+      'Personalization should not become permission to share every available family detail.',
+    ],
+    [
+      'Which text and image providers meet the evidence bar?',
+      'No provider is selected merely because it is convenient; data handling, safety, quality, cost, reliability, and exit all matter.',
+    ],
+    [
+      'What visual system should guide the story illustrations themselves?',
+      'The interface language is accepted. Story art still needs a separate consistency, safety, representation, and accessibility specification.',
+    ],
   ];
   return (
     <>
       <PageIntro
-        eyebrow="05 · Open questions"
+        eyebrow="07 · Open questions"
         title="Useful unknowns are part of responsible work."
       >
         <p>
@@ -512,7 +776,7 @@ function Library() {
   return (
     <>
       <PageIntro
-        eyebrow="06 · Public library"
+        eyebrow="08 · Public library"
         title="This site is a translation, not an automatic export."
       >
         <p>
@@ -563,14 +827,26 @@ function Library() {
             A readable pointer to the project decision or question that informed
             the summary, without publishing private materials.
           </Definition>
+        </div>
+        <div className="pdf-callout">
+          <div>
+            <p className="eyebrow">A portable companion</p>
+            <h2>Take the public story with you.</h2>
+            <p>
+              The expanded PDF collects the project’s purpose, Alpha boundary,
+              Sprint 0 evidence, Sprint 1 direction, roadmap, design philosophy,
+              visual recipe, architecture boundaries, and open questions. This
+              responsive website remains the primary version for semantic
+              navigation and text reflow; the PDF is a fixed-layout companion.
+            </p>
+          </div>
           <a
-            className="button button-dark dossier-download"
-            href={`${import.meta.env.BASE_URL}documents/tiny-custom-stories-project-dossier.pdf`}
+            className="button button-dark"
+            href={pdfPath}
             target="_blank"
             rel="noreferrer"
           >
-            Read the detailed public dossier (PDF){' '}
-            <span aria-hidden="true">↗</span>
+            Open the project PDF <span aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
@@ -578,20 +854,18 @@ function Library() {
   );
 }
 function Layout({ route }: { route: Route }) {
-  const Page =
-    route === '/'
-      ? Home
-      : route === '/product'
-        ? Product
-        : route === '/journey'
-          ? Journey
-          : route === '/decisions'
-            ? Decisions
-            : route === '/roadmap'
-              ? Roadmap
-              : route === '/questions'
-                ? Questions
-                : Library;
+  const pages: Record<Route, React.ComponentType> = {
+    '/': Home,
+    '/product': Product,
+    '/journey': Journey,
+    '/decisions': Decisions,
+    '/roadmap': Roadmap,
+    '/sprint-one': SprintOne,
+    '/design': Design,
+    '/questions': Questions,
+    '/library': Library,
+  };
+  const Page = pages[route];
   return (
     <div className="page-shell">
       <a className="skip-link" href="#main-content">
@@ -628,7 +902,12 @@ function Layout({ route }: { route: Route }) {
           <strong>Tiny Custom Stories</strong> · a project being built in the
           open, with boundaries.
         </p>
-        <Link to="/">Back to the beginning ↑</Link>
+        <div className="footer-links">
+          <a href={pdfPath} target="_blank" rel="noreferrer">
+            Project PDF ↓
+          </a>
+          <Link to="/">Back to the beginning ↑</Link>
+        </div>
       </footer>
     </div>
   );

@@ -5,13 +5,15 @@ These text wireframes make the public site structure reviewable in Markdown, inc
 ## Site map
 
 ```text
-Home (/)
-├── The product (/product)
-├── How it works (/journey)
-├── Decisions (/decisions)
-├── Roadmap (/roadmap)
-├── Open questions (/questions)
-└── Public library (/library)
+Home (/#/)
+├── The product (/#/product)
+├── How it works (/#/journey)
+├── Decisions (/#/decisions)
+├── Roadmap (/#/roadmap)
+├── Sprint 1 (/#/sprint-one)
+├── Design (/#/design)
+├── Open questions (/#/questions)
+└── Public library (/#/library)
 ```
 
 Every route has the same visible header, page navigation, skip link, and footer. The active page is marked in navigation. This is important for orientation because the application changes content without a full browser reload.
@@ -28,13 +30,15 @@ Every route has the same visible header, page navigation, skip link, and footer.
 +--------------------------------------------------------------------------------+
 | Page-specific readable content                                                 |
 |                                                                                |
-| Home: illustrated welcome + six route cards                                   |
-| Product: three roles + terms panel                                             |
+| Home: illustrated welcome + PDF link + eight route cards                       |
+| Product: three roles + terms panel + child/parent mode preview                 |
 | Journey: four hand-offs + system overview + terms panel                       |
 | Decisions: status legend + definitions + labeled public entries               |
-| Roadmap: outcome-gate sequence + vocabulary panel                             |
+| Roadmap: seven outcome gates + honest status labels + vocabulary panel         |
+| Sprint 1: outcome gate + four account/mode boundaries + evidence requirements |
+| Design: 70/20/10 formula + principles + palette + themes + control examples   |
 | Questions: unresolved matters + how-to-read panel                             |
-| Library: curation flow + public-safety definitions                            |
+| Library: curation flow + public-safety definitions + dossier link             |
 +--------------------------------------------------------------------------------+
 | Tiny Custom Stories                                           Back to beginning |
 +--------------------------------------------------------------------------------+
@@ -55,11 +59,11 @@ Every route has the same visible header, page navigation, skip link, and footer.
 | Definitions in a bordered reading    |
 | panel after the main explanation     |
 +--------------------------------------+
-| Footer and home link                 |
+| Footer, dossier link, and home link   |
 +--------------------------------------+
 ```
 
-At narrow widths, navigation stays available and wraps rather than disappearing. Route cards, journey steps, public entries, and role cards reduce to a single column so their reading order remains unambiguous.
+At narrow widths, navigation stays available and wraps rather than disappearing. Route cards, journey steps, public entries, role cards, Sprint 1 boundaries, design principles, palette entries, themes, and control examples reduce to one or two deliberate columns so their reading order remains unambiguous. The 70/20/10 formula recomposes vertically instead of shrinking its labels past readability.
 
 ## Content hierarchy rules
 
