@@ -143,7 +143,9 @@ describe('project story site', () => {
     expect(screen.getByText('869')).toBeTruthy();
     expect(screen.getByText('284')).toBeTruthy();
     expect(screen.getByText('516')).toBeTruthy();
-    expect(screen.getByText(/422 of the 516 recorded workflow runs/i)).toBeTruthy();
+    expect(
+      screen.getByText(/422 of the 516 recorded workflow runs/i),
+    ).toBeTruthy();
     expect(screen.getByText('Frontend CI')).toBeTruthy();
     expect(screen.getByText('Backend CI')).toBeTruthy();
     expect(screen.getByText('Browser evidence')).toBeTruthy();

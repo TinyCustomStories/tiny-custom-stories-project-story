@@ -624,8 +624,8 @@ function HowWeBuild() {
           </div>
           <p>
             Scope: the main <code>tiny-custom-stories</code> product repository.
-            The separate public-story repository is excluded so these numbers
-            do not inflate themselves.
+            The separate public-story repository is excluded so these numbers do
+            not inflate themselves.
           </p>
         </div>
 
@@ -695,11 +695,25 @@ function HowWeBuild() {
           </div>
           <ul>
             <li>Formatting and linting keep implementation drift visible.</li>
-            <li>Type checks and warnings-as-errors catch contract mistakes early.</li>
-            <li>Frontend and API tests protect behavior as tasks land independently.</li>
-            <li>Dependency audits and generated-contract checks catch supply-chain and API drift.</li>
-            <li>Real MongoDB startup/migration checks exercise infrastructure assumptions.</li>
-            <li>Browser smoke tests and captured screenshots prove important flows beyond unit tests.</li>
+            <li>
+              Type checks and warnings-as-errors catch contract mistakes early.
+            </li>
+            <li>
+              Frontend and API tests protect behavior as tasks land
+              independently.
+            </li>
+            <li>
+              Dependency audits and generated-contract checks catch supply-chain
+              and API drift.
+            </li>
+            <li>
+              Real MongoDB startup/migration checks exercise infrastructure
+              assumptions.
+            </li>
+            <li>
+              Browser smoke tests and captured screenshots prove important flows
+              beyond unit tests.
+            </li>
             <li>
               This public-story repository also has a verify/build → GitHub
               Pages deployment path; product hosting and production CD remain
@@ -1100,9 +1114,9 @@ function SprintTwo() {
             <h2>Canonical scope accepted. Synthetic implementation allowed.</h2>
           </div>
           <p>
-            This is not a claim that the Sprint 2 outcome gate has passed.
-            Under the temporary sequencing exception, work may proceed with
-            synthetic inputs while Sprint 1 remains explicitly open.
+            This is not a claim that the Sprint 2 outcome gate has passed. Under
+            the temporary sequencing exception, work may proceed with synthetic
+            inputs while Sprint 1 remains explicitly open.
           </p>
         </div>
 
