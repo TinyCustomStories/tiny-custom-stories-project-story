@@ -16,50 +16,87 @@ describe('project story site', () => {
         name: /stories built with care, not just code/i,
       }),
     ).toBeTruthy();
-    fireEvent.click(screen.getByRole('link', { name: 'Public library' }));
 
-    expect(screen.getByText(/Founder approval:/i)).toBeTruthy();
-    fireEvent.click(screen.getByRole('link', { name: 'Decisions' }));
+    fireEvent.click(screen.getAllByRole('link', { name: 'Public library' })[0]);
+    expect(screen.getByText(/translation, not an automatic export/i)).toBeTruthy();
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'Decisions' })[0]);
     expect(screen.getAllByText('Confirmed decision').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Open question').length).toBeGreaterThan(0);
+    expect(
+      screen.getByText(/Story work has three ownership boundaries/i),
+    ).toBeTruthy();
   });
 
-  it('moves between readable public pages without a full-page navigation', () => {
+  it('keeps the established routes while adding development and architecture pages', () => {
     render(<App />);
 
     fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
-
     expect(
       screen.getByRole('heading', {
         name: /a small, human answer to a modern question/i,
       }),
     ).toBeTruthy();
-    expect(screen.getByText(/Personalized story:/i)).toBeTruthy();
-  });
 
-  it('publishes the verified Sprint 0 transition and accepted Sprint 1 boundary', () => {
-    render(<App />);
-
-    expect(screen.getByText(/Sprint 0 is complete/i)).toBeTruthy();
-    fireEvent.click(screen.getByRole('link', { name: 'Sprint 1' }));
-
+    fireEvent.click(screen.getAllByRole('link', { name: 'Development story' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /a shared device needs two honest modes/i,
+        name: /the architecture changed because the questions got better/i,
       }),
     ).toBeTruthy();
-    expect(screen.getByText(/Sprint 1 outcome gate/i)).toBeTruthy();
-    expect(screen.getByText(/Child mode comes first/i)).toBeTruthy();
-    expect(screen.getByText(/Parent work is protected/i)).toBeTruthy();
-  });
 
-  it('shows the accepted visual recipe and links the public PDF', () => {
-    render(<App />);
-
-    fireEvent.click(screen.getByRole('link', { name: 'Design' }));
+    fireEvent.click(screen.getAllByRole('link', { name: 'Architecture' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /one philosophy. one recipe. room to feel human/i,
+        name: /separate responsibility before separating machines/i,
+      }),
+    ).toBeTruthy();
+    expect(screen.getByText('Story Lifecycle')).toBeTruthy();
+    expect(screen.getByText('Story Context Selection')).toBeTruthy();
+    expect(screen.getByText('Story Generation')).toBeTruthy();
+  });
+
+  it('states the Sprint 1 gate accurately and preserves its legacy route', () => {
+    render(<App />);
+
+    expect(
+      screen.getByText(/Sprint 1 has substantial implementation evidence/i),
+    ).toBeTruthy();
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'Sprint 1' })[0]);
+
+    expect(
+      screen.getByRole('heading', {
+        name: /a strong implementation can still have an open outcome gate/i,
+      }),
+    ).toBeTruthy();
+    expect(screen.getByText(/Sprint 1 outcome status/i)).toBeTruthy();
+    expect(
+      screen.getByText(/temporary founder-approved sequencing exception/i),
+    ).toBeTruthy();
+  });
+
+  it('shows the updated roadmap without treating later planning as completed work', () => {
+    render(<App />);
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'Roadmap' })[0]);
+
+    expect(
+      screen.getByText(/Outcome gate open - explicitly not passed/i),
+    ).toBeTruthy();
+    expect(
+      screen.getByText(/Canonical scope \+ synthetic implementation allowed/i),
+    ).toBeTruthy();
+    expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
+  });
+
+  it('preserves the accepted visual recipe and stable public PDF path', () => {
+    render(<App />);
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'Design' })[0]);
+    expect(
+      screen.getByRole('heading', {
+        name: /the same design dna, expressed for different responsibilities/i,
       }),
     ).toBeTruthy();
     expect(screen.getByText('70%')).toBeTruthy();
