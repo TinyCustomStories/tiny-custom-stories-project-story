@@ -700,6 +700,11 @@ function HowWeBuild() {
             <li>Dependency audits and generated-contract checks catch supply-chain and API drift.</li>
             <li>Real MongoDB startup/migration checks exercise infrastructure assumptions.</li>
             <li>Browser smoke tests and captured screenshots prove important flows beyond unit tests.</li>
+            <li>
+              This public-story repository also has a verify/build → GitHub
+              Pages deployment path; product hosting and production CD remain
+              separate evidence-led decisions.
+            </li>
           </ul>
         </div>
 
