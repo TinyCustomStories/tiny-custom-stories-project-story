@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify:
@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
 
       - name: Set up Node
         uses: actions/setup-node@v7
@@ -35,6 +37,19 @@ jobs:
 
       - name: Generate current project dossier
         run: npm run generate:pdf
+
+      - name: Commit generated dossier to PR branch
+        if: github.event_name == 'pull_request'
+        run: |
+          if git diff --quiet -- public/documents/tiny-custom-stories-project-dossier.pdf; then
+            echo "Generated dossier already matches the branch."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/documents/tiny-custom-stories-project-dossier.pdf
+            git commit -m "docs: regenerate public project dossier"
+            git push
+          fi
 
       - name: Verify public site
         run: npm run verify
