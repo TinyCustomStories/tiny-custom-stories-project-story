@@ -826,7 +826,7 @@ function Decisions() {
   return (
     <>
       <PageIntro
-        eyebrow="05 · Decision record"
+        eyebrow="06 · Decision record"
         title="Certainty deserves a label."
       >
         <p>
@@ -901,7 +901,7 @@ function Roadmap() {
   return (
     <>
       <PageIntro
-        eyebrow="06 · Roadmap"
+        eyebrow="07 · Roadmap"
         title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
@@ -981,7 +981,7 @@ function SprintOne() {
   return (
     <>
       <PageIntro
-        eyebrow="07 · Sprint 1"
+        eyebrow="Sprint chapter · 01"
         title="A strong implementation can still have an open outcome gate."
       >
         <p>
@@ -1077,7 +1077,7 @@ function SprintTwo() {
   return (
     <>
       <PageIntro
-        eyebrow="08 · Sprint 2"
+        eyebrow="Sprint chapter · 02"
         title="A living Child Map needs a capability, not a questionnaire."
       >
         <p>
@@ -1155,7 +1155,7 @@ function SprintThree() {
   return (
     <>
       <PageIntro
-        eyebrow="09 · Sprint 3"
+        eyebrow="Sprint chapter · 03"
         title="Story creation is a reversible composition workflow."
       >
         <p>
