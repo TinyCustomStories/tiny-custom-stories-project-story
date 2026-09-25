@@ -4,23 +4,26 @@ These text wireframes make the public site structure reviewable in Markdown, inc
 
 ## Site map
 
-Existing routes are preserved and two additive routes extend the September story:
+The main header stays focused on project-level subjects. Sprint-specific pages are grouped as chapters beneath Development story so Sprint 1 is not privileged over Sprint 2 and Sprint 3. The existing Sprint 1 deep link remains valid.
 
 ```text
 Home (/#/)
 ├── The product (/#/product)
 ├── How it works (/#/journey)
-├── Development story (/#/development)      NEW
-├── Architecture (/#/architecture)          NEW
+├── Development story (/#/development)
+│   ├── Sprint 1 (/#/sprint-one)          PRESERVED
+│   ├── Sprint 2 (/#/sprint-two)          NEW
+│   └── Sprint 3 (/#/sprint-three)        NEW
+├── Architecture (/#/architecture)
+├── How we build (/#/delivery)            NEW
 ├── Decisions (/#/decisions)
 ├── Roadmap (/#/roadmap)
-├── Sprint 1 (/#/sprint-one)                PRESERVED
 ├── Design (/#/design)
 ├── Open questions (/#/questions)
 └── Public library (/#/library)
 ```
 
-Every route has the same visible header, navigation, skip link, and footer. The active page is marked in navigation. Existing deep links continue to resolve.
+Every route has the same visible header, skip link, and footer. The active project-level page is marked in header navigation. Sprint chapter links are grouped inside Development story. Existing deep links continue to resolve.
 
 ## Development-story hierarchy
 
@@ -100,11 +103,14 @@ Logical separation does not mean every box is already a separately deployed serv
 | Home: illustrated welcome + current gate status + route directory              |
 | Product: roles + terms + child/parent mode boundary                            |
 | Journey: discovery-to-approval hand-offs + capability sketch                  |
-| Development: Sprint 0 -> Sprint 3 evolution + delivery practice               |
+| Development: Sprint 0 -> Sprint 3 evolution + equal Sprint 1/2/3 chapter cards|
 | Architecture: Discovery + Story ownership boundaries + extraction vocabulary  |
+| How we build: dated GitHub stats + CI workflows + issue->PR->evidence loop     |
 | Decisions: status legend + definitions + labeled public entries               |
 | Roadmap: seven outcome gates + explicit Sprint 1 exception                    |
 | Sprint 1: implemented boundary + open gate + evidence summary                 |
+| Sprint 2: living Child Map + versioned Discovery scope                         |
+| Sprint 3: Story Studio + Lifecycle / Context / Generation split                |
 | Design: existing 70/20/10 language + palette + themes + continuity rule       |
 | Questions: narrowed unresolved matters + how-to-read panel                    |
 | Library: curation flow + public-safety definitions + stable PDF link          |
