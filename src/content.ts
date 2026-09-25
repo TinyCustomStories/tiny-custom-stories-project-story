@@ -220,13 +220,13 @@ export const milestones: Milestone[] = [
   {
     title: 'Sprint 2 - Child Map and discovery lifecycle',
     state: 'Canonical scope + synthetic implementation allowed',
-    status: 'Verified fact',
+    status: 'Confirmed decision',
     note: 'The Child Map is a temporal living record with a versioned Discovery capability for approved questions, typed answers, deterministic eligibility, pacing, and bounded follow-ups.',
   },
   {
     title: 'Sprint 3 - Story Studio composition',
     state: 'Canonical scope + architecture accepted',
-    status: 'Verified fact',
+    status: 'Confirmed decision',
     note: 'A guided text-first composition workflow is defined around parent-visible context selection, planning, generation, scoped revision, restoration, and approval. Story work is split into Lifecycle, Context Selection, and Generation capabilities.',
   },
   {
