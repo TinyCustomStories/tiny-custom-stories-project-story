@@ -30,7 +30,7 @@ describe('project story site', () => {
     ).toBeTruthy();
   });
 
-  it('keeps the established routes while adding development and architecture pages', () => {
+  it('keeps the established routes while adding development, architecture, and delivery pages', () => {
     render(<App />);
 
     fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
@@ -58,6 +58,44 @@ describe('project story site', () => {
     expect(screen.getByText('Story Lifecycle')).toBeTruthy();
     expect(screen.getByText('Story Context Selection')).toBeTruthy();
     expect(screen.getByText('Story Generation')).toBeTruthy();
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
+    expect(
+      screen.getByRole('heading', {
+        name: /the amount of work is visible because the process is visible/i,
+      }),
+    ).toBeTruthy();
+  });
+
+  it('groups Sprint 1, 2, and 3 together instead of privileging one in the header', () => {
+    render(<App />);
+
+    expect(screen.queryByRole('link', { name: 'Sprint 1' })).toBeNull();
+
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+
+    expect(screen.getByRole('link', { name: /Read Sprint 1/i })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Read Sprint 2/i })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Read Sprint 3/i })).toBeTruthy();
+
+    fireEvent.click(screen.getByRole('link', { name: /Read Sprint 2/i }));
+    expect(
+      screen.getByRole('heading', {
+        name: /a living child map needs a capability, not a questionnaire/i,
+      }),
+    ).toBeTruthy();
+
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
+    expect(
+      screen.getByRole('heading', {
+        name: /story creation is a reversible composition workflow/i,
+      }),
+    ).toBeTruthy();
   });
 
   it('states the Sprint 1 gate accurately and preserves its legacy route', () => {
@@ -67,7 +105,10 @@ describe('project story site', () => {
       screen.getByText(/Sprint 1 has substantial implementation evidence/i),
     ).toBeTruthy();
 
-    fireEvent.click(screen.getAllByRole('link', { name: 'Sprint 1' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    fireEvent.click(screen.getByRole('link', { name: /Read Sprint 1/i }));
 
     expect(
       screen.getByRole('heading', {
@@ -92,6 +133,23 @@ describe('project story site', () => {
       screen.getByText(/Canonical scope \+ synthetic implementation allowed/i),
     ).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
+  });
+
+  it('shows a dated delivery snapshot and concrete CI quality gates', () => {
+    render(<App />);
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
+
+    expect(screen.getByText('869')).toBeTruthy();
+    expect(screen.getByText('284')).toBeTruthy();
+    expect(screen.getByText('516')).toBeTruthy();
+    expect(
+      screen.getByText(/422 of the 516 recorded workflow runs/i),
+    ).toBeTruthy();
+    expect(screen.getByText('Frontend CI')).toBeTruthy();
+    expect(screen.getByText('Backend CI')).toBeTruthy();
+    expect(screen.getByText('Browser evidence')).toBeTruthy();
+    expect(screen.getByText('Project story CI')).toBeTruthy();
   });
 
   it('preserves the accepted visual recipe and stable public PDF path', () => {

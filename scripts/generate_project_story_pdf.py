@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from reportlab.lib.colors import Color, HexColor
@@ -16,6 +17,7 @@ from reportlab.platypus import Paragraph
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "documents" / "tiny-custom-stories-project-dossier.pdf"
+DELIVERY_SNAPSHOT = json.loads((ROOT / "src" / "delivery-snapshot.json").read_text())
 WIDTH, HEIGHT = letter
 MARGIN = 48
 
@@ -469,18 +471,91 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "How the work is delivered", MINT)
     y = page_title(
         canvas,
-        "Detailed input is part of the engineering system.",
-        "The project intentionally prefers precise, reviewable implementation slices over a small number of ambiguous tickets. This also makes AI-assisted implementation less dependent on rediscovering architecture and product intent.",
+        "The work is visible because the process is visible.",
+        "A dated GitHub snapshot shows the scale of the main product repository without pretending the numbers are live. The public-story repository is excluded so the page does not inflate itself.",
     )
-    data = [
-        ("Human direction", "Product and architecture choices are made explicitly and recorded.", SUN),
-        ("Explicit tasks", "Dependencies, non-goals, acceptance criteria, tests, and visual references are written down.", CORAL),
-        ("AI-assisted implementation", "Implementation agents work inside the documented contracts rather than inventing hidden product decisions.", LAVENDER),
-        ("Evidence + PR", "Automated checks, targeted boundary evidence, review, and the sprint outcome gate determine whether work is done.", MINT),
+    snapshot = DELIVERY_SNAPSHOT
+    stats = [
+        (f"{snapshot['commits']:,}", "commits", "development branch"),
+        (f"{snapshot['pullRequestsCreated']:,}", "pull requests", "created"),
+        (f"{snapshot['pullRequestsMerged']:,}", "PRs merged", "reviewed + landed"),
+        (f"{snapshot['issuesTracked']:,}", "issues", "tracked"),
+        (f"{snapshot['taskIssues']:,}", "task issues", "implementation / validation"),
+        (f"{snapshot['workflowRuns']:,}", "workflow runs", "GitHub Actions"),
     ]
-    for i, (title, body, accent) in enumerate(data):
-        card(canvas, MARGIN + (i % 2) * 264, y - 28 - (i // 2) * 174, 244, 150, title, body, fill=SURFACE, accent=accent, label=f"Step {i + 1}")
-    paragraph(canvas, "Task count is not a success metric. Clarity, reviewability, evidence, and safe dependency order are more important than keeping the backlog artificially small.", MARGIN, 154, WIDTH - MARGIN * 2, SMALL)
+    usable = WIDTH - MARGIN * 2
+    gap = 10
+    card_width = (usable - gap * 2) / 3
+    for i, (value, title, detail) in enumerate(stats):
+        col, row = i % 3, i // 3
+        x = MARGIN + col * (card_width + gap)
+        top = y - 28 - row * 112
+        card(
+            canvas,
+            x,
+            top,
+            card_width,
+            92,
+            f"{value} {title}",
+            detail,
+            fill=SURFACE if i % 2 == 0 else LAVENDER,
+            accent=[SUN, MINT, CORAL][col],
+            label=f"Snapshot {i + 1}",
+        )
+
+    paragraph(
+        canvas,
+        f"{snapshot['plannedSprints']} outcome-gated sprints are mapped. "
+        f"{snapshot['closedIssues']:,} issues are closed and {snapshot['openIssues']:,} remain open. "
+        f"The repository has {snapshot['workflowDefinitions']} CI workflows; "
+        f"{snapshot['successfulWorkflowRuns']:,} of {snapshot['workflowRuns']:,} recorded workflow runs completed successfully in this snapshot.",
+        MARGIN,
+        y - 268,
+        usable,
+        BODY_STYLE,
+    )
+
+    paragraph(
+        canvas,
+        "ISSUE / TASK  ->  FOCUSED BRANCH  ->  PULL REQUEST  ->  CI + BROWSER EVIDENCE  ->  REVIEW  ->  MERGE + OUTCOME EVIDENCE",
+        MARGIN,
+        y - 350,
+        usable,
+        style("delivery-loop", font=MONO, size=7.4, leading=11, color=PLUM),
+    )
+
+    card(
+        canvas,
+        MARGIN,
+        y - 390,
+        (usable - gap) / 2,
+        132,
+        "Automated quality gates",
+        "Frontend: dependency audit, format, lint, type-check, build, tests. Backend: restore/audit, format, warnings-as-errors build, OpenAPI drift, MongoDB startup, tests, and migration smoke checks.",
+        fill=SURFACE,
+        accent=SUN,
+        label="CI",
+    )
+    card(
+        canvas,
+        MARGIN + (usable - gap) / 2 + gap,
+        y - 390,
+        (usable - gap) / 2,
+        132,
+        "Browser evidence",
+        "Playwright Chromium smoke tests capture intentional screenshots and upload failure evidence, so important UI flows are checked beyond unit tests.",
+        fill=SURFACE,
+        accent=CORAL,
+        label="Evidence",
+    )
+    paragraph(
+        canvas,
+        f"Snapshot: {snapshot['snapshotDate']}. Counts describe repository activity, not productivity scores or a live pass-rate dashboard.",
+        MARGIN,
+        92,
+        usable,
+        SMALL,
+    )
 
 
 def philosophy(canvas: Canvas, n: int, total: int) -> None:

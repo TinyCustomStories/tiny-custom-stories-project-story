@@ -4,7 +4,7 @@ This public repository contains the independently buildable project-story websit
 
 It is not the Tiny Custom Stories parent/child application. The private product repository, backend, internal research, operational documentation, private issue links, and family data are intentionally outside this repository.
 
-The published site is expected at [tinycustomstories.github.io/tiny-custom-stories-project-story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/). Public pages use static-host-safe fragment routes. Existing routes remain stable, including [Decisions](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/decisions) and [Sprint 1](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/sprint-one), while newer material is added through [Development story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/development) and [Architecture](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/architecture).
+The published site is expected at [tinycustomstories.github.io/tiny-custom-stories-project-story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/). Public pages use static-host-safe fragment routes. Existing routes remain stable, including [Decisions](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/decisions) and the legacy [Sprint 1](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/sprint-one) deep link. The main header no longer privileges one sprint: [Development story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/development) groups Sprint 1, Sprint 2, and Sprint 3 as equal chapters, while [How we build](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/delivery) shows the repository activity and verification workflow behind them.
 
 The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The responsive website is the primary source for semantic navigation and text reflow.
 
@@ -18,6 +18,8 @@ The earlier September edition described Sprint 0 and the accepted Sprint 1 bound
 - Sprint 3 now uses a canonical guided Story Studio composition workflow and separates Story Lifecycle, Story Context Selection, and Story Generation.
 - Logical capability boundaries come before physical service extraction. Discovery and Story work can remain in the Alpha API process until operational evidence justifies worker/service boundaries.
 - The existing paper-and-ink public-editorial design is preserved and extended rather than replaced.
+- Sprint 1, Sprint 2, and Sprint 3 now appear as equal development-story chapters rather than giving Sprint 1 a unique top-navigation slot.
+- A dated main-repository delivery snapshot makes the scale of the work visible: commits, pull requests, issues/tasks, sprint structure, workflow runs, and the CI/browser-evidence system.
 
 ## Run locally
 

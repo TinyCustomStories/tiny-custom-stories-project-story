@@ -2,12 +2,13 @@
 
 This directory explains the public Tiny Custom Stories project-story site in a format that can be read without opening the application.
 
-The public site is a multi-route single-page application. A route is a stable browser address that presents one topic at a time while the application remains loaded. Existing September routes remain valid; newer development and architecture routes extend the story without replacing its earlier chapter.
+The public site is a multi-route single-page application. A route is a stable browser address that presents one topic at a time while the application remains loaded. Existing September routes remain valid; newer development, architecture, and delivery routes extend the story without replacing its earlier chapter. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 are presented together beneath Development story instead of giving one sprint a unique header position.
 
 ## What is documented here
 
 - [Wireframes](Wireframes.md) describe the information architecture, conceptual architecture, and intended responsive layouts in accessible text diagrams.
 - [Screenshot evidence](ScreenshotEvidence.md) records reviewed visual states and the conditions under which they were captured.
+- The **How we build** route contains a dated, public-safe activity snapshot from the main product repository. It is intentionally static rather than browser-connected to the private repository.
 - The [Public Project Dossier](../../public/documents/tiny-custom-stories-project-dossier.pdf) is a portable companion at a stable path. It supports the website rather than replacing the website's semantic, responsive version.
 
 These documents describe the public-information experience only. They do not expose the private implementation repository, adopt policy from exploratory material, or publish security-sensitive operating detail.
@@ -34,6 +35,7 @@ Before replacing an established route, component, pattern, or artifact, determin
 - **Capability boundary**: A named owner and application contract. It does not automatically imply a separate network service.
 - **Temporary sequencing exception**: A documented decision permitting bounded later-sprint work while an earlier gate remains explicitly open.
 - **Fragment route**: A page address such as `/#/decisions`. The browser keeps the static GitHub Pages document path while the application presents the requested page.
+- **Delivery snapshot**: A dated aggregate of main-repository activity such as commits, pull requests, issues/tasks, sprint count, and GitHub Actions runs. It is not live telemetry or a productivity score.
 - **Portable companion**: The generated fixed-layout PDF at the stable public path.
 
 ## Current public-safe architecture story
@@ -78,6 +80,7 @@ When a public-site route, hierarchy, responsive behavior, or knowledge-status cl
 3. review whether visual evidence needs recapture;
 4. verify the stable dossier path and public links;
 5. check that planned work has not been presented as completed work;
-6. review the change for private material and attack-relevant detail.
+6. review the change for private material and attack-relevant detail;
+7. refresh the dated delivery snapshot only from aggregate repository evidence, never by exposing a private token or private issue content in the public browser.
 
 Screenshots are explanatory documentation assets, not automated pixel-comparison baselines.

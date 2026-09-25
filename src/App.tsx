@@ -1,4 +1,5 @@
 import React from 'react';
+import deliverySnapshot from './delivery-snapshot.json';
 import {
   designPrinciples,
   milestones,
@@ -13,9 +14,12 @@ type Route =
   | '/journey'
   | '/development'
   | '/architecture'
+  | '/delivery'
   | '/decisions'
   | '/roadmap'
   | '/sprint-one'
+  | '/sprint-two'
+  | '/sprint-three'
   | '/design'
   | '/questions'
   | '/library';
@@ -26,13 +30,30 @@ const routes: Record<Route, string> = {
   '/journey': 'How it works',
   '/development': 'Development story',
   '/architecture': 'Architecture',
+  '/delivery': 'How we build',
   '/decisions': 'Decisions',
   '/roadmap': 'Roadmap',
   '/sprint-one': 'Sprint 1',
+  '/sprint-two': 'Sprint 2',
+  '/sprint-three': 'Sprint 3',
   '/design': 'Design',
   '/questions': 'Open questions',
   '/library': 'Public library',
 };
+
+const primaryNavigation: Array<{ path: Route; label: string }> = [
+  { path: '/', label: 'Home' },
+  { path: '/product', label: 'The product' },
+  { path: '/journey', label: 'How it works' },
+  { path: '/development', label: 'Development story' },
+  { path: '/architecture', label: 'Architecture' },
+  { path: '/delivery', label: 'How we build' },
+  { path: '/decisions', label: 'Decisions' },
+  { path: '/roadmap', label: 'Roadmap' },
+  { path: '/design', label: 'Design' },
+  { path: '/questions', label: 'Open questions' },
+  { path: '/library', label: 'Public library' },
+];
 
 const pdfPath = `${import.meta.env.BASE_URL}documents/tiny-custom-stories-project-dossier.pdf`;
 
@@ -45,11 +66,17 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
     'How the project moved from foundations to protected family access, Discovery, and Story Studio.',
   '/architecture':
     'Capability boundaries that can evolve independently without pretending every boundary is already a separate service.',
+  '/delivery':
+    'The GitHub activity, review loop, automated quality gates, browser evidence, and outcome-gated workflow behind the product.',
   '/decisions':
     'A labeled record of confirmed decisions, proposals, verified facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
   '/sprint-one':
     'What has been built around family access, why the outcome gate is still open, and what that means.',
+  '/sprint-two':
+    'How the Child Map became a temporal living record with a versioned Discovery capability.',
+  '/sprint-three':
+    'How Story Studio became a reversible composition workflow with explicit capability ownership.',
   '/design':
     'The shared philosophy and paper-and-ink language that keep different surfaces recognizably related.',
   '/questions':
@@ -220,7 +247,7 @@ function Home() {
         <div className="section-kicker">
           A readable route through the project
         </div>
-        <h2 id="directory-title">One project story, eleven places to pause.</h2>
+        <h2 id="directory-title">One project story, ten places to pause.</h2>
         <p className="section-intro">
           The September version is still here underneath this one. The site has
           grown around it: existing routes remain, while newer pages explain the
@@ -228,10 +255,10 @@ function Home() {
           into accomplishments.
         </p>
         <div className="route-grid">
-          {Object.entries(routes)
-            .filter(([path]) => path !== '/')
-            .map(([path, label], index) => (
-              <Link to={path as Route} className="route-card" key={path}>
+          {primaryNavigation
+            .filter(({ path }) => path !== '/')
+            .map(({ path, label }, index) => (
+              <Link to={path} className="route-card" key={path}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{label}</h3>
                 <p>{routeDescriptions[path as Exclude<Route, '/'>]}</p>
@@ -473,6 +500,50 @@ function Development() {
           ))}
         </ol>
 
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">Sprint chapters</p>
+          <h2>One development story, three equally visible chapters.</h2>
+          <p>
+            Sprint 1 keeps its original deep link, but it no longer gets special
+            treatment in the main header. Sprint 1, 2, and 3 now live together
+            here, each with its own public-safe chapter and explicit outcome
+            status.
+          </p>
+        </div>
+
+        <div className="sprint-chapter-grid" aria-label="Sprint chapters">
+          <Link to="/sprint-one" className="sprint-chapter-card">
+            <span>01</span>
+            <p className="eyebrow">Implemented deeply · gate open</p>
+            <h3>Sprint 1</h3>
+            <p>
+              Accounts, child-safe default mode, protected parent access,
+              expiry, recovery, accessibility, and boundary evidence.
+            </p>
+            <b>Read Sprint 1 →</b>
+          </Link>
+          <Link to="/sprint-two" className="sprint-chapter-card">
+            <span>02</span>
+            <p className="eyebrow">Canonical scope accepted</p>
+            <h3>Sprint 2</h3>
+            <p>
+              A temporal Child Map plus versioned Discovery questions, typed
+              answers, eligibility, pacing, and bounded follow-ups.
+            </p>
+            <b>Read Sprint 2 →</b>
+          </Link>
+          <Link to="/sprint-three" className="sprint-chapter-card">
+            <span>03</span>
+            <p className="eyebrow">Architecture accepted</p>
+            <h3>Sprint 3</h3>
+            <p>
+              Story Studio, context selection, reversible revisions, stable
+              approval, and an extractable generation boundary.
+            </p>
+            <b>Read Sprint 3 →</b>
+          </Link>
+        </div>
+
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">How work is delivered now</p>
@@ -496,6 +567,165 @@ function Development() {
           The project intentionally prefers more precise implementation tasks
           over fewer ambiguous ones. Task count is not treated as a measure of
           progress.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function HowWeBuild() {
+  const stats = [
+    [deliverySnapshot.commits, 'commits', 'on the development branch'],
+    [deliverySnapshot.pullRequestsCreated, 'pull requests', 'created'],
+    [deliverySnapshot.pullRequestsMerged, 'pull requests', 'merged'],
+    [deliverySnapshot.issuesTracked, 'issues', 'tracked'],
+    [deliverySnapshot.taskIssues, 'task issues', 'implementation / validation'],
+    [deliverySnapshot.workflowRuns, 'workflow runs', 'GitHub Actions'],
+  ] as const;
+
+  const workflowChecks = [
+    [
+      'Frontend CI',
+      'Bootstrap tests, high-severity dependency audit, formatting, linting, type checks, production build, and frontend tests.',
+    ],
+    [
+      'Backend CI',
+      'Restore/audit, formatting, warnings-as-errors build, generated OpenAPI drift check, MongoDB replica-set startup, API tests, and migration/startup smoke tests.',
+    ],
+    [
+      'Browser evidence',
+      'Playwright Chromium smoke tests, intentional screenshot evidence, and uploaded failure artifacts when a browser run breaks.',
+    ],
+    [
+      'Project story CI',
+      'Formatting, linting, type checks, production build, and tests for the project-story surface alongside the product work.',
+    ],
+  ] as const;
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="05 · How we build"
+        title="The amount of work is visible because the process is visible."
+      >
+        <p>
+          Tiny Custom Stories is intentionally developed through many small,
+          reviewable pieces rather than a few giant changes. The numbers below
+          are a dated snapshot of the main product repository, and the workflow
+          underneath them matters more than any single count.
+        </p>
+      </PageIntro>
+
+      <section className="section delivery-section">
+        <div className="snapshot-heading">
+          <div>
+            <p className="eyebrow">GitHub delivery snapshot</p>
+            <h2>{deliverySnapshot.snapshotDate}</h2>
+          </div>
+          <p>
+            Scope: the main <code>tiny-custom-stories</code> product repository.
+            The separate public-story repository is excluded so these numbers do
+            not inflate themselves.
+          </p>
+        </div>
+
+        <div className="stat-grid" aria-label="Repository activity snapshot">
+          {stats.map(([value, label, detail]) => (
+            <article className="stat-card" key={label + detail}>
+              <strong>{value.toLocaleString()}</strong>
+              <h3>{label}</h3>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="delivery-detail-grid">
+          <article>
+            <p className="eyebrow">Work decomposition</p>
+            <h2>{deliverySnapshot.plannedSprints} outcome-gated sprints</h2>
+            <p>
+              {deliverySnapshot.closedIssues.toLocaleString()} issues are closed
+              and {deliverySnapshot.openIssues.toLocaleString()} remain open.
+              The backlog is intentionally detailed: task count is used to make
+              dependencies, acceptance criteria, evidence, and ownership
+              explicit—not as a vanity metric.
+            </p>
+          </article>
+          <article>
+            <p className="eyebrow">Automation footprint</p>
+            <h2>{deliverySnapshot.workflowDefinitions} CI workflows</h2>
+            <p>
+              {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of the{' '}
+              {deliverySnapshot.workflowRuns.toLocaleString()} recorded workflow
+              runs completed successfully in this snapshot. Runs include PR,
+              push, scheduled, and manually triggered verification, so this is
+              an activity count rather than a pass-rate score.
+            </p>
+          </article>
+        </div>
+
+        <div className="workflow-grid">
+          {workflowChecks.map(([title, detail], index) => (
+            <article key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="delivery-loop" aria-label="Delivery workflow">
+          <span>Issue / task</span>
+          <i aria-hidden="true">→</i>
+          <span>Focused branch</span>
+          <i aria-hidden="true">→</i>
+          <span>Pull request</span>
+          <i aria-hidden="true">→</i>
+          <span>CI + browser evidence</span>
+          <i aria-hidden="true">→</i>
+          <span>Review</span>
+          <i aria-hidden="true">→</i>
+          <span>Merge + outcome evidence</span>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Why the checks matter</p>
+            <h2>CI is part of the product-development method.</h2>
+          </div>
+          <ul>
+            <li>Formatting and linting keep implementation drift visible.</li>
+            <li>
+              Type checks and warnings-as-errors catch contract mistakes early.
+            </li>
+            <li>
+              Frontend and API tests protect behavior as tasks land
+              independently.
+            </li>
+            <li>
+              Dependency audits and generated-contract checks catch supply-chain
+              and API drift.
+            </li>
+            <li>
+              Real MongoDB startup/migration checks exercise infrastructure
+              assumptions.
+            </li>
+            <li>
+              Browser smoke tests and captured screenshots prove important flows
+              beyond unit tests.
+            </li>
+            <li>
+              This public-story repository also has a verify/build → GitHub
+              Pages deployment path; product hosting and production CD remain
+              separate evidence-led decisions.
+            </li>
+          </ul>
+        </div>
+
+        <p className="public-boundary-note">
+          Snapshot counts are intentionally dated rather than presented as live
+          telemetry. The public site does not call the private repository or
+          require a GitHub token in the browser.
         </p>
       </section>
     </>
@@ -615,7 +845,7 @@ function Decisions() {
   return (
     <>
       <PageIntro
-        eyebrow="05 · Decision record"
+        eyebrow="06 · Decision record"
         title="Certainty deserves a label."
       >
         <p>
@@ -690,7 +920,7 @@ function Roadmap() {
   return (
     <>
       <PageIntro
-        eyebrow="06 · Roadmap"
+        eyebrow="07 · Roadmap"
         title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
@@ -770,7 +1000,7 @@ function SprintOne() {
   return (
     <>
       <PageIntro
-        eyebrow="07 · Sprint 1"
+        eyebrow="Sprint chapter · 01"
         title="A strong implementation can still have an open outcome gate."
       >
         <p>
@@ -838,6 +1068,163 @@ function SprintOne() {
           without publishing attack-relevant security parameters, provider
           credentials, private project links, or live identity data.
         </p>
+      </section>
+    </>
+  );
+}
+
+function SprintTwo() {
+  const boundaries = [
+    [
+      'The Child Map is temporal',
+      'Information can be corrected, changed over time, or deleted. The model is a living parent-guided record, not a profile-completion score.',
+    ],
+    [
+      'Discovery questions are versioned',
+      'Approved question definitions and typed answer shapes can evolve without hard-coding one questionnaire into the web application.',
+    ],
+    [
+      'Eligibility and pacing are deterministic',
+      'Sprint 2 uses explicit age/context eligibility, shown/dismissed history, cooldowns, and bounded follow-ups rather than runtime semantic interpretation of family free text.',
+    ],
+    [
+      'Discovery does not own story context',
+      'Answers can become canonical Child Map source information, but Story Context Selection in Sprint 3 decides what is permitted for a particular story or provider transfer.',
+    ],
+  ];
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="Sprint chapter · 02"
+        title="A living Child Map needs a capability, not a questionnaire."
+      >
+        <p>
+          Sprint 2 changed shape as the project learned more. The accepted
+          direction is now a temporal Child Map plus a versioned Discovery
+          capability that can grow without coupling the entire product to one
+          fixed set of questions.
+        </p>
+      </PageIntro>
+
+      <section className="section sprint-section">
+        <div className="outcome-banner">
+          <div>
+            <p className="eyebrow">Sprint 2 outcome status</p>
+            <h2>Canonical scope accepted. Synthetic implementation allowed.</h2>
+          </div>
+          <p>
+            This is not a claim that the Sprint 2 outcome gate has passed. Under
+            the temporary sequencing exception, work may proceed with synthetic
+            inputs while Sprint 1 remains explicitly open.
+          </p>
+        </div>
+
+        <ol className="boundary-grid">
+          {boundaries.map(([title, detail], index) => (
+            <li key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="reading-panel">
+          <h2>What this architecture buys us</h2>
+          <Definition term="Different question shapes">
+            Short text, longer text, choices, true/false, structured selections,
+            and bounded follow-ups can share one renderer contract.
+          </Definition>
+          <Definition term="Future intelligence">
+            Later question authoring, ranking, or phrasing can sit behind the
+            capability boundary without silently changing Sprint 2 privacy
+            rules.
+          </Definition>
+          <Definition term="Public status">
+            Accepted product and architecture direction; not a demonstrated
+            sprint outcome.
+          </Definition>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function SprintThree() {
+  const boundaries = [
+    [
+      'Story Studio is guided and reversible',
+      'A parent moves from purpose and selected context through planning, a cover plus ten text pages, direct/scoped revision, restoration, and approval.',
+    ],
+    [
+      'Story Lifecycle owns Story truth',
+      'Story identity, persistence, revisions, optimistic concurrency, approval, and stable approved versions stay with the lifecycle capability.',
+    ],
+    [
+      'Context Selection owns permission',
+      'Policy determines which Child Map candidates may be considered, then the parent can include or remove a small permitted set before generation.',
+    ],
+    [
+      'Generation returns candidates',
+      'Story Generation plans, drafts, evaluates, repairs, and rewrites minimized versioned artifacts. It does not own family authorization, persistence, or child visibility.',
+    ],
+  ];
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="Sprint chapter · 03"
+        title="Story creation is a reversible composition workflow."
+      >
+        <p>
+          Sprint 3 moved away from the idea of one giant Story service. The
+          accepted architecture separates Story Lifecycle, Story Context
+          Selection, and Story Generation while keeping the Alpha deployment
+          physically simple until operational evidence justifies extraction.
+        </p>
+      </PageIntro>
+
+      <section className="section sprint-section">
+        <div className="outcome-banner">
+          <div>
+            <p className="eyebrow">Sprint 3 outcome status</p>
+            <h2>Canonical workflow and capability architecture accepted.</h2>
+          </div>
+          <p>
+            The architecture is implementation-ready, but the outcome gate is
+            not being presented as passed. Text composition comes first;
+            reusable characters and generated illustrations remain Sprint 4.
+          </p>
+        </div>
+
+        <ol className="boundary-grid">
+          {boundaries.map(([title, detail], index) => (
+            <li key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="reading-panel">
+          <h2>Why the split matters</h2>
+          <Definition term="Logical boundary first">
+            Lifecycle, context permission, and generation can evolve
+            independently even while they run inside the same Alpha API process.
+          </Definition>
+          <Definition term="Extractable generation">
+            Generation can later move to a worker or service if durability,
+            backpressure, rate limits, credential isolation, or independent
+            scaling make that worthwhile.
+          </Definition>
+          <Definition term="Still open">
+            Provider selection, exact durable-workflow technology, provider-copy
+            deletion behavior, and the physical extraction point remain
+            evidence-led decisions.
+          </Definition>
+        </div>
       </section>
     </>
   );
@@ -1129,9 +1516,12 @@ function Layout({ route }: { route: Route }) {
     '/journey': Journey,
     '/development': Development,
     '/architecture': Architecture,
+    '/delivery': HowWeBuild,
     '/decisions': Decisions,
     '/roadmap': Roadmap,
     '/sprint-one': SprintOne,
+    '/sprint-two': SprintTwo,
+    '/sprint-three': SprintThree,
     '/design': Design,
     '/questions': Questions,
     '/library': Library,
@@ -1156,10 +1546,10 @@ function Layout({ route }: { route: Route }) {
           Tiny Custom Stories
         </Link>
         <nav aria-label="Project story pages">
-          {Object.entries(routes).map(([path, label]) => (
+          {primaryNavigation.map(({ path, label }) => (
             <Link
               key={path}
-              to={path as Route}
+              to={path}
               className={route === path ? 'active' : undefined}
             >
               {label}
