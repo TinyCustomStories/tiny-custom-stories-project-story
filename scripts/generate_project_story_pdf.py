@@ -660,7 +660,7 @@ PAGES = [
 
 def build() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    canvas = Canvas(str(OUTPUT), pagesize=letter, pageCompression=1)
+    canvas = Canvas(str(OUTPUT), pagesize=letter, pageCompression=1, invariant=1)
     canvas.setTitle("Tiny Custom Stories - Public Project Story")
     canvas.setAuthor("Tiny Custom Stories")
     canvas.setSubject(
