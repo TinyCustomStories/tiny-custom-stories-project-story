@@ -18,7 +18,9 @@ describe('project story site', () => {
     ).toBeTruthy();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'Public library' })[0]);
-    expect(screen.getByText(/translation, not an automatic export/i)).toBeTruthy();
+    expect(
+      screen.getByText(/translation, not an automatic export/i),
+    ).toBeTruthy();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'Decisions' })[0]);
     expect(screen.getAllByText('Confirmed decision').length).toBeGreaterThan(0);
@@ -38,7 +40,9 @@ describe('project story site', () => {
       }),
     ).toBeTruthy();
 
-    fireEvent.click(screen.getAllByRole('link', { name: 'Development story' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
     expect(
       screen.getByRole('heading', {
         name: /the architecture changed because the questions got better/i,

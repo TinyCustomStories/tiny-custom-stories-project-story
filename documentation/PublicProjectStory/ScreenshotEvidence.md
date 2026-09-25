@@ -6,12 +6,12 @@ This document records intentional visual checks for the public project-story sit
 
 The September 2 screenshots remain useful evidence of the design foundation that this update deliberately preserves.
 
-| View      | Viewport             | What it demonstrates                                                                                              | Asset                                             |
-| --------- | -------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| View      | Viewport             | What it demonstrates                                                                                               | Asset                                             |
+| --------- | -------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
 | Home      | Desktop, 1440 × 1000 | Established public-editorial navigation, introductory hierarchy, dossier action, and paper-and-ink visual language | [home desktop](assets/home-desktop.png)           |
-| Sprint 1  | Desktop, 1440 × 1000 | Established Sprint-page composition and public-safe family-mode explanation                                       | [Sprint 1 desktop](assets/sprint-one-desktop.png) |
-| Design    | Mobile, 390 × 844    | Wrapped persistent navigation, editorial hierarchy, typography, and responsive design-language UI                 | [design mobile](assets/design-mobile.png)         |
-| Decisions | Mobile, 390 × 844    | Wrapped navigation, readable page title, knowledge-status legend, and one-column presentation                     | [decisions mobile](assets/decisions-mobile.png)   |
+| Sprint 1  | Desktop, 1440 × 1000 | Established Sprint-page composition and public-safe family-mode explanation                                        | [Sprint 1 desktop](assets/sprint-one-desktop.png) |
+| Design    | Mobile, 390 × 844    | Wrapped persistent navigation, editorial hierarchy, typography, and responsive design-language UI                  | [design mobile](assets/design-mobile.png)         |
+| Decisions | Mobile, 390 × 844    | Wrapped navigation, readable page title, knowledge-status legend, and one-column presentation                      | [decisions mobile](assets/decisions-mobile.png)   |
 
 ## September 24 visual-review requirements
 

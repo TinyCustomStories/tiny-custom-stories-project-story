@@ -203,7 +203,10 @@ function Home() {
         </p>
         <p>
           Sprint 2 and Sprint 3 work may proceed with{' '}
-          <strong>synthetic inputs under a temporary sequencing exception</strong>.
+          <strong>
+            synthetic inputs under a temporary sequencing exception
+          </strong>
+          .
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -214,7 +217,9 @@ function Home() {
         className="section home-directory"
         aria-labelledby="directory-title"
       >
-        <div className="section-kicker">A readable route through the project</div>
+        <div className="section-kicker">
+          A readable route through the project
+        </div>
         <h2 id="directory-title">One project story, eleven places to pause.</h2>
         <p className="section-intro">
           The September version is still here underneath this one. The site has
@@ -248,10 +253,10 @@ function Product() {
       >
         <p>
           How can technology help families make more room for imagination,
-          conversation, and learning without turning childhood into an
-          attention feed or turning AI into an unexplained authority? Tiny
-          Custom Stories keeps the parent responsible for intention, context,
-          review, and approval.
+          conversation, and learning without turning childhood into an attention
+          feed or turning AI into an unexplained authority? Tiny Custom Stories
+          keeps the parent responsible for intention, context, review, and
+          approval.
         </p>
       </PageIntro>
 
@@ -478,8 +483,12 @@ function Development() {
             <li>Explicit issues with dependencies and acceptance criteria.</li>
             <li>Architecture references and visual cues where they help.</li>
             <li>AI-assisted implementation inside documented boundaries.</li>
-            <li>Automated checks plus targeted boundary and visual evidence.</li>
-            <li>PR review and an outcome gate before a sprint is called passed.</li>
+            <li>
+              Automated checks plus targeted boundary and visual evidence.
+            </li>
+            <li>
+              PR review and an outcome gate before a sprint is called passed.
+            </li>
           </ul>
         </div>
 
@@ -721,12 +730,12 @@ function Roadmap() {
             itself.
           </Definition>
           <Definition term="Temporary sequencing exception">
-            A documented decision allowing later synthetic work to proceed
-            while an earlier gate remains explicitly open.
+            A documented decision allowing later synthetic work to proceed while
+            an earlier gate remains explicitly open.
           </Definition>
           <Definition term="Canonical scope">
-            The accepted product specification and architecture for a sprint.
-            It does not mean the sprint outcome has already been demonstrated.
+            The accepted product specification and architecture for a sprint. It
+            does not mean the sprint outcome has already been demonstrated.
           </Definition>
           <Definition term="Private Alpha readiness">
             A later threshold requiring demonstrated privacy, safety, security,
@@ -766,9 +775,9 @@ function SprintOne() {
       >
         <p>
           Sprint 1 has moved far beyond planning. The family-access boundary has
-          substantial implementation, regression, accessibility, and
-          end-to-end evidence. The project still records the outcome gate as
-          not passed because one required provider proof remains unresolved.
+          substantial implementation, regression, accessibility, and end-to-end
+          evidence. The project still records the outcome gate as not passed
+          because one required provider proof remains unresolved.
         </p>
       </PageIntro>
 
@@ -776,7 +785,9 @@ function SprintOne() {
         <div className="outcome-banner">
           <div>
             <p className="eyebrow">Sprint 1 outcome status</p>
-            <h2>Implemented deeply. Gate open. Later work temporarily bounded.</h2>
+            <h2>
+              Implemented deeply. Gate open. Later work temporarily bounded.
+            </h2>
           </div>
           <p>
             A temporary founder-approved sequencing exception permits Sprint 2
@@ -804,10 +815,21 @@ function SprintOne() {
           <ul>
             <li>First and repeat sign-in preserve one family boundary.</li>
             <li>Child mode rejects parent-only data and actions.</li>
-            <li>Entry, expiry, refresh, lock contention, and recovery are tested.</li>
-            <li>Protected placeholder work restores only inside the authorized boundary.</li>
-            <li>Keyboard, focus, announcements, reflow, and error recovery have dedicated evidence.</li>
-            <li>A full synthetic browser journey exercises the family-mode return path.</li>
+            <li>
+              Entry, expiry, refresh, lock contention, and recovery are tested.
+            </li>
+            <li>
+              Protected placeholder work restores only inside the authorized
+              boundary.
+            </li>
+            <li>
+              Keyboard, focus, announcements, reflow, and error recovery have
+              dedicated evidence.
+            </li>
+            <li>
+              A full synthetic browser journey exercises the family-mode return
+              path.
+            </li>
           </ul>
         </div>
 
@@ -1035,13 +1057,19 @@ function Library() {
           <div>
             <span>01</span>
             <b>Internal evidence</b>
-            <p>Detailed specifications, ADRs, issues, tests, and working notes stay inside the project.</p>
+            <p>
+              Detailed specifications, ADRs, issues, tests, and working notes
+              stay inside the project.
+            </p>
           </div>
           <i aria-hidden="true">→</i>
           <div>
             <span>02</span>
             <b>Public-safe summary</b>
-            <p>A curated record preserves status without exporting private implementation detail.</p>
+            <p>
+              A curated record preserves status without exporting private
+              implementation detail.
+            </p>
           </div>
           <i aria-hidden="true">→</i>
           <div>
@@ -1076,8 +1104,8 @@ function Library() {
               The PDF follows the same public-safe narrative: product purpose,
               development history, Sprint 1’s open gate, Child Map Discovery,
               Story Studio and its capability boundaries, roadmap, design
-              language, architecture, and open questions. The responsive
-              website remains the primary version.
+              language, architecture, and open questions. The responsive website
+              remains the primary version.
             </p>
           </div>
           <a
