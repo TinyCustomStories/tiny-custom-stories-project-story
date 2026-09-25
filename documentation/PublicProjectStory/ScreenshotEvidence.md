@@ -20,13 +20,16 @@ The content update intentionally reuses the established components, palette, typ
 Before merge or publication, inspect at representative desktop and narrow-mobile widths:
 
 - Home: updated Sprint 1 status and the expanded route directory.
-- Development story: four-stage evolution and delivery-practice evidence panel.
+- Development story: four-stage evolution, equal Sprint 1/2/3 chapter cards, and delivery-practice evidence panel.
+- Sprint 2: canonical-scope status, living Child Map boundaries, and explanatory definitions.
+- Sprint 3: canonical-workflow status, Story capability split, and open extraction wording.
 - Architecture: Discovery/Story capability ownership and the public-safe system sketch.
+- How we build: large-number activity cards, CI workflow explanations, and the issue → PR → evidence delivery loop.
 - Roadmap: long status copy, especially Sprint 1 through Sprint 3.
 - Sprint 1: open-gate wording, evidence list, and public-boundary note.
 - Design: continuity wording while preserving the existing visual recipe.
 - Decisions: larger public-entry set and long source/related text.
-- Navigation: eleven routes wrapping without horizontal overflow.
+- Navigation: project-level routes wrapping without horizontal overflow, with Sprint 1/2/3 grouped under Development rather than appearing asymmetrically in the header.
 
 If new screenshots are committed, use synthetic/public-only content and add them to the table below after inspection.
 
