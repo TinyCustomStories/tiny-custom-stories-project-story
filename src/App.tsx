@@ -11,6 +11,8 @@ type Route =
   | '/'
   | '/product'
   | '/journey'
+  | '/development'
+  | '/architecture'
   | '/decisions'
   | '/roadmap'
   | '/sprint-one'
@@ -22,6 +24,8 @@ const routes: Record<Route, string> = {
   '/': 'Home',
   '/product': 'The product',
   '/journey': 'How it works',
+  '/development': 'Development story',
+  '/architecture': 'Architecture',
   '/decisions': 'Decisions',
   '/roadmap': 'Roadmap',
   '/sprint-one': 'Sprint 1',
@@ -29,24 +33,31 @@ const routes: Record<Route, string> = {
   '/questions': 'Open questions',
   '/library': 'Public library',
 };
+
 const pdfPath = `${import.meta.env.BASE_URL}documents/tiny-custom-stories-project-dossier.pdf`;
+
 const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/product':
-    'The intended benefit, audience, boundaries, and plain-language terms.',
+    'The intended benefit, audience, parent/child boundaries, and Alpha shape.',
   '/journey':
-    'A proposed parent-led path from a story idea to an approved read.',
+    'How discovery, context selection, Story Studio, approval, and later reading fit together.',
+  '/development':
+    'How the project moved from foundations to protected family access, Discovery, and Story Studio.',
+  '/architecture':
+    'Capability boundaries that can evolve independently without pretending every boundary is already a separate service.',
   '/decisions':
-    'A labeled record of confirmed decisions, proposals, facts, and unknowns.',
+    'A labeled record of confirmed decisions, proposals, verified facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
   '/sprint-one':
-    'The accepted account, child-mode, parent-mode, and evidence boundary now shaping the work.',
+    'What has been built around family access, why the outcome gate is still open, and what that means.',
   '/design':
-    'The philosophy and visual recipe that keep many agents working in one recognizable voice.',
+    'The shared philosophy and paper-and-ink language that keep different surfaces recognizably related.',
   '/questions':
-    'Important matters that still need research, testing, or specialist review.',
+    'Important matters that still need research, testing, specialist review, or an explicit decision.',
   '/library':
     'How public summaries are selected, reviewed, defined, and maintained.',
 };
+
 const statusClass: Record<KnowledgeStatus, string> = {
   'Confirmed decision': 'status-confirmed',
   Proposal: 'status-proposal',
@@ -54,13 +65,16 @@ const statusClass: Record<KnowledgeStatus, string> = {
   'Open question': 'status-open',
   'Verified fact': 'status-fact',
 };
+
 function internalPath(path: string): Route {
   return path in routes ? (path as Route) : '/';
 }
+
 function go(path: Route) {
   window.history.pushState({}, '', `#${path}`);
   window.dispatchEvent(new HashChangeEvent('hashchange'));
 }
+
 function Link({
   children,
   to,
@@ -85,6 +99,7 @@ function Link({
     </a>
   );
 }
+
 function PageIntro({
   eyebrow,
   title,
@@ -102,6 +117,7 @@ function PageIntro({
     </section>
   );
 }
+
 function Definition({
   term,
   children,
@@ -122,20 +138,21 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated September 2026
+            A public project story · updated September 24, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
             code.
           </h1>
           <p className="hero-lede">
-            Tiny Custom Stories is an evolving idea: give parents thoughtful
-            tools to create personalized stories for young children—without
-            making the process feel mysterious.
+            Tiny Custom Stories has grown from a personalized-story idea into a
+            parent-controlled learning product with protected family boundaries,
+            a flexible Child Map Discovery capability, and a deliberately
+            separated Story Studio architecture.
           </p>
           <div className="hero-actions">
-            <Link className="button button-dark" to="/product">
-              Start with the idea <span aria-hidden="true">→</span>
+            <Link className="button button-dark" to="/development">
+              See how it evolved <span aria-hidden="true">→</span>
             </Link>
             <a
               className="button button-light"
@@ -169,27 +186,33 @@ function Home() {
             <span>reader</span>
           </div>
           <p className="doodle-note">
-            A parent’s spark.
+            A parent’s intent.
             <br />A child’s next favourite story.
           </p>
         </div>
       </section>
+
       <section
         className="status-strip section"
         aria-label="Current project status"
       >
         <p>
-          <span aria-hidden="true">●</span> Sprint 0 is complete. Sprint 1 is
-          the active planning boundary.
+          <span aria-hidden="true">●</span> Sprint 0 is demonstrated. Sprint 1
+          has substantial implementation evidence, but its outcome gate remains
+          explicitly open.
         </p>
         <p>
-          What’s public here is <strong>curated on purpose</strong>—not a live
-          feed of internal work.
+          Sprint 2 and Sprint 3 work may proceed with{' '}
+          <strong>
+            synthetic inputs under a temporary sequencing exception
+          </strong>
+          .
         </p>
-        <Link to="/library">
-          How we share the work <span aria-hidden="true">→</span>
+        <Link to="/development">
+          Read the current development story <span aria-hidden="true">→</span>
         </Link>
       </section>
+
       <section
         className="section home-directory"
         aria-labelledby="directory-title"
@@ -197,18 +220,19 @@ function Home() {
         <div className="section-kicker">
           A readable route through the project
         </div>
-        <h2 id="directory-title">One project story, nine places to pause.</h2>
+        <h2 id="directory-title">One project story, eleven places to pause.</h2>
         <p className="section-intro">
-          This is a small public library rather than a single, endlessly
-          scrolling page. Every page says what it is describing, how certain it
-          is, and where to go next.
+          The September version is still here underneath this one. The site has
+          grown around it: existing routes remain, while newer pages explain the
+          development history and capability architecture without turning plans
+          into accomplishments.
         </p>
         <div className="route-grid">
           {Object.entries(routes)
             .filter(([path]) => path !== '/')
             .map(([path, label], index) => (
               <Link to={path as Route} className="route-card" key={path}>
-                <span>0{index + 1}</span>
+                <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{label}</h3>
                 <p>{routeDescriptions[path as Exclude<Route, '/'>]}</p>
                 <b>Read this page →</b>
@@ -219,6 +243,7 @@ function Home() {
     </>
   );
 }
+
 function Product() {
   return (
     <>
@@ -228,11 +253,13 @@ function Product() {
       >
         <p>
           How can technology help families make more room for imagination,
-          conversation, and stories children return to? The intended answer is a
-          parent-led creative tool—not a content firehose and not a replacement
-          for a grown-up.
+          conversation, and learning without turning childhood into an attention
+          feed or turning AI into an unexplained authority? Tiny Custom Stories
+          keeps the parent responsible for intention, context, review, and
+          approval.
         </p>
       </PageIntro>
+
       <section className="section story-section">
         <div className="role-grid">
           <article>
@@ -241,8 +268,8 @@ function Product() {
             </span>
             <h3>Parents set the intention</h3>
             <p>
-              They choose why a story is being made, guide its shape, and
-              approve what a child can read.
+              They choose why a story is being made, decide which information
+              may help, review the draft, and approve the result.
             </p>
           </article>
           <article>
@@ -251,54 +278,59 @@ function Product() {
             </span>
             <h3>Children get the wonder</h3>
             <p>
-              The first direction is for ages two through six, with a simple,
-              parent-approved story library.
+              The first audience is ages two through six, with a calm
+              parent-approved story library as the child-facing destination.
             </p>
           </article>
           <article>
             <span className="role-icon" aria-hidden="true">
               ⌁
             </span>
-            <h3>AI stays a helper</h3>
+            <h3>AI stays bounded</h3>
             <p>
-              It can help assemble a story, while people remain responsible for
-              meaningful choices and review.
+              Generation can help plan and write, but it does not decide what
+              private family information it may access or silently publish a
+              result to a child.
             </p>
           </article>
         </div>
+
         <div className="reading-panel">
           <h2>Terms on this page</h2>
-          <Definition term="Personalized story">
-            A story shaped around a parent’s chosen purpose and inputs. It does
-            not mean a system should collect every detail about a family.
+          <Definition term="Child Map">
+            A parent-guided living record of information that may support
+            personalization. It is not a request to collect everything about a
+            child.
           </Definition>
-          <Definition term="Parent-led">
-            A parent initiates, guides, reviews, and approves child-visible
-            material.
+          <Definition term="Story Studio">
+            The guided parent experience that moves from story intention and
+            selected context through planning, text creation, revision, and
+            approval.
           </Definition>
-          <Definition term="First version">
-            The deliberately limited initial experience: a website, a cover, and
-            ten illustrated pages. Narration, video, a public marketplace, and a
-            native app are not included.
+          <Definition term="Alpha target">
+            The eventual private Alpha remains a website-first experience for
+            one family and one child. Sprint 3 deliberately proves text
+            composition before Sprint 4 adds character and illustration work.
           </Definition>
         </div>
+
         <div className="mode-preview" aria-label="Alpha experience boundaries">
           <article>
             <p className="eyebrow">Default after sign-in</p>
             <h2>Child mode</h2>
             <p>
               A calm, read-only library containing only stories a parent has
-              made child-visible. No drafts, family context, account controls,
-              or hidden adult actions.
+              made child-visible. Drafts, Child Map information, account
+              controls, and parent-only work stay out.
             </p>
           </article>
           <article>
             <p className="eyebrow">Deliberate adult entry</p>
             <h2>Parent mode</h2>
             <p>
-              A protected place for creation, review, Child Map work, story
-              visibility, and account actions. The server—not a hidden
-              button—enforces the boundary.
+              A protected place for Discovery, Story Studio work, approvals,
+              settings, and sensitive account actions. The server—not a hidden
+              button—enforces the authority boundary.
             </p>
           </article>
         </div>
@@ -306,32 +338,45 @@ function Product() {
     </>
   );
 }
+
 function Journey() {
   const steps = [
     [
-      '1. A parent starts',
-      'A purpose, a few choices, and—where suitable—a fictional route.',
+      '1. A parent starts with purpose',
+      'Choose what the story is for and whether it should use Child Map context or be completely fictional.',
     ],
-    ['2. The story takes shape', 'Focused tools help plan words and pictures.'],
     [
-      '3. A parent reviews',
-      'Nothing becomes child-visible merely because it was generated.',
+      '2. Discovery can grow the Child Map',
+      'Approved questions appear through versioned definitions, typed answer shapes, deterministic eligibility, pacing, and bounded follow-ups.',
     ],
-    ['4. A child reads', 'An approved story reaches a simple family library.'],
+    [
+      '3. Context is selected for this story',
+      'Story Context Selection applies policy before optional intelligence, then shows a small permitted set the parent can include or remove.',
+    ],
+    [
+      '4. Story Studio composes and revises',
+      'A plan becomes a cover plus ten text pages, with direct editing, scoped assisted revisions, restoration, and explicit continuity choices.',
+    ],
+    [
+      '5. Approval creates a stable version',
+      'Story Lifecycle owns the approved Story version. Child-visible publication and the illustrated reading experience remain later outcome gates.',
+    ],
   ];
+
   return (
     <>
       <PageIntro
-        eyebrow="02 · Proposed journey"
-        title="A story has a few important hand-offs."
+        eyebrow="02 · How it works"
+        title="Personalization is a chain of explicit hand-offs."
       >
         <p>
-          This page is a friendly map of an intended journey, not a claim that
-          every part is already built. The hand-offs make responsibility
-          visible: a parent starts and approves; a child sees only material the
-          family has approved.
+          The important change since the first public story is architectural:
+          Discovery does not own Story truth, Story Generation does not decide
+          what family context it is allowed to see, and an AI response does not
+          become child-visible merely because it exists.
         </p>
       </PageIntro>
+
       <section className="section how-section">
         <ol className="journey-list">
           {steps.map(([title, detail]) => (
@@ -341,50 +386,236 @@ function Journey() {
             </li>
           ))}
         </ol>
+
         <div className="architecture-sketch">
           <div>
-            <b>Website</b>
-            <small>A clear place for parents and readers</small>
+            <b>Parent experience</b>
+            <small>Purpose, review, choices, approval</small>
           </div>
           <i aria-hidden="true">↔</i>
           <div>
-            <b>Story workflow</b>
-            <small>Planning, generation, checks, approvals</small>
+            <b>Discovery + Story capabilities</b>
+            <small>Separate ownership, versioned contracts</small>
           </div>
           <i aria-hidden="true">↔</i>
           <div>
-            <b>Private storage</b>
-            <small>Designed for careful, scoped handling</small>
+            <b>Private family data</b>
+            <small>Application-authorized documents and media</small>
           </div>
           <p>
-            Big picture only: specific infrastructure choices have their own
-            decisions and unresolved questions.
+            The capability boundaries are accepted. They do not imply that each
+            box is already a separately deployed network service.
           </p>
         </div>
+
         <div className="reading-panel">
           <h2>What these words mean</h2>
-          <Definition term="Workflow">
-            The ordered path work follows, including pauses for checks or
-            approval.
+          <Definition term="Capability boundary">
+            A clear owner and contract inside the application. A capability may
+            later become a separate worker or service if operational evidence
+            justifies that cost.
           </Definition>
-          <Definition term="Review">
-            A parent’s opportunity to inspect, change, or decline a draft before
-            it is available to a child.
+          <Definition term="Candidate">
+            Generated or selected material that still needs application checks
+            and/or parent choice before it becomes Story truth.
           </Definition>
-          <Definition term="Approved library">
-            The child-facing collection of stories a parent has permitted. It is
-            not a public marketplace.
+          <Definition term="Completely fictional">
+            A story path that uses no Child Map source context.
           </Definition>
         </div>
       </section>
     </>
   );
 }
+
+function Development() {
+  const moments = [
+    [
+      'Sprint 0 · demonstrated',
+      'The project replaced assumptions with a documented product direction, accepted architecture, a clean React/Vite web foundation, a clean ASP.NET Core API foundation, CI, contracts, and browser evidence.',
+    ],
+    [
+      'Sprint 1 · implemented deeply, gate still open',
+      'Accounts, child-safe default mode, protected parent entry, expiry, recovery, tab isolation, temporary protected work, accessibility, and end-to-end evidence were built. A required same-browser provider proof did not pass, so the outcome gate remains open.',
+    ],
+    [
+      'Sprint 2 · Child Map became Discovery',
+      'The Child Map evolved from a profile-like form into a temporal living record. Discovery now has approved versioned questions, typed answers, deterministic eligibility and pacing, bounded follow-ups, and a generic renderer.',
+    ],
+    [
+      'Sprint 3 · Story creation became Story Studio',
+      'The story slice now has a canonical composition workflow and three explicit ownership boundaries: Story Lifecycle, Story Context Selection, and Story Generation.',
+    ],
+  ];
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="03 · Development story"
+        title="The architecture changed because the questions got better."
+      >
+        <p>
+          The project did not move in a straight line from “idea” to “features.”
+          Each sprint exposed a boundary that needed to become clearer: first
+          family authority, then evolving child context, then the difference
+          between Story truth, context permission, and generation.
+        </p>
+      </PageIntro>
+
+      <section className="section sprint-section">
+        <ol className="boundary-grid">
+          {moments.map(([title, detail], index) => (
+            <li key={title}>
+              <span>{String(index).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">How work is delivered now</p>
+            <h2>Detailed input makes implementation more reviewable.</h2>
+          </div>
+          <ul>
+            <li>Human-directed product and architecture decisions.</li>
+            <li>Explicit issues with dependencies and acceptance criteria.</li>
+            <li>Architecture references and visual cues where they help.</li>
+            <li>AI-assisted implementation inside documented boundaries.</li>
+            <li>
+              Automated checks plus targeted boundary and visual evidence.
+            </li>
+            <li>
+              PR review and an outcome gate before a sprint is called passed.
+            </li>
+          </ul>
+        </div>
+
+        <p className="public-boundary-note">
+          The project intentionally prefers more precise implementation tasks
+          over fewer ambiguous ones. Task count is not treated as a measure of
+          progress.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function Architecture() {
+  const storyCapabilities = [
+    [
+      'Story Lifecycle',
+      'Owns Story domain truth, persistence, revisions, approval, and participation in deletion rules.',
+    ],
+    [
+      'Story Context Selection',
+      'Owns story-use and provider-transfer policy, permitted candidates, parent selection, and the minimized context bundle.',
+    ],
+    [
+      'Story Generation',
+      'Consumes minimized versioned artifacts and returns candidate plans, pages, rewrites, and findings. It does not own Story persistence or family authorization.',
+    ],
+  ];
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="04 · Architecture"
+        title="Separate responsibility before separating machines."
+      >
+        <p>
+          Tiny Custom Stories now uses explicit capability boundaries so parts
+          of the product can evolve independently without pretending that every
+          logical boundary needs its own service on day one.
+        </p>
+      </PageIntro>
+
+      <section className="section story-section">
+        <div className="mode-preview">
+          <article>
+            <p className="eyebrow">Sprint 2 pattern</p>
+            <h2>Child Map Discovery</h2>
+            <p>
+              Owns question definitions and discovery operating state:
+              eligibility, pacing, question history, cooldowns, and bounded
+              follow-ups. Parent answers become Child Map information only
+              through the owning Child Map write model.
+            </p>
+          </article>
+          <article>
+            <p className="eyebrow">Sprint 3 pattern</p>
+            <h2>Story capabilities</h2>
+            <p>
+              Story truth, context permission, and provider-facing generation
+              are separate responsibilities even when they run inside the same
+              Alpha API process.
+            </p>
+          </article>
+        </div>
+
+        <div className="role-grid">
+          {storyCapabilities.map(([title, detail]) => (
+            <article key={title}>
+              <span className="role-icon" aria-hidden="true">
+                ✦
+              </span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="architecture-sketch">
+          <div>
+            <b>Web experience</b>
+            <small>Child mode + protected parent mode</small>
+          </div>
+          <i aria-hidden="true">↔</i>
+          <div>
+            <b>Application API</b>
+            <small>Family authority + capability contracts</small>
+          </div>
+          <i aria-hidden="true">↔</i>
+          <div>
+            <b>Documents + private media</b>
+            <small>MongoDB + S3-compatible storage</small>
+          </div>
+          <p>
+            Discovery and Story Generation are extractable boundaries. Worker
+            extraction, durable workflow technology, message broker, deployment
+            platform, and production MCP adapters remain evidence-led decisions,
+            not assumed infrastructure.
+          </p>
+        </div>
+
+        <div className="reading-panel">
+          <h2>Architecture rules that matter</h2>
+          <Definition term="Policy before intelligence">
+            Optional ranking or model assistance may operate only after
+            deterministic privacy and story-use policy has decided which
+            candidates are permitted.
+          </Definition>
+          <Definition term="MCP">
+            An optional adapter over application-owned contracts. It is not the
+            capability definition, authorization boundary, or business logic.
+          </Definition>
+          <Definition term="Extractable">
+            Designed so provider-facing Story Generation can later move to a
+            worker or service for durability, scaling, credential isolation,
+            rate-limit isolation, or backpressure if real operations justify it.
+          </Definition>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function Decisions() {
   return (
     <>
       <PageIntro
-        eyebrow="03 · Decision record"
+        eyebrow="05 · Decision record"
         title="Certainty deserves a label."
       >
         <p>
@@ -393,6 +624,7 @@ function Decisions() {
           the statement, not its importance.
         </p>
       </PageIntro>
+
       <section className="section decisions-section">
         <div className="legend" aria-label="Knowledge-status legend">
           {Object.keys(statusClass).map((status) => (
@@ -404,12 +636,14 @@ function Decisions() {
             </span>
           ))}
         </div>
+
         <div className="status-definitions">
           <Definition term="Confirmed decision">
             A choice the project has deliberately adopted.
           </Definition>
           <Definition term="Verified fact">
-            A statement supported by source material and safe to share publicly.
+            A statement supported by repository evidence and safe to share
+            publicly.
           </Definition>
           <Definition term="Proposal">
             A possible direction; it is not a promise or settled design.
@@ -422,6 +656,7 @@ function Decisions() {
             An important unresolved matter that should remain visible.
           </Definition>
         </div>
+
         <div className="entry-grid">
           {publicEntries.map((entry) => (
             <article className="entry-card" key={entry.title}>
@@ -450,24 +685,27 @@ function Decisions() {
     </>
   );
 }
+
 function Roadmap() {
   return (
     <>
       <PageIntro
-        eyebrow="04 · Roadmap"
-        title="Progress is measured by outcomes, not busywork."
+        eyebrow="06 · Roadmap"
+        title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
-          The project works through connected outcome gates: demonstrate one
-          meaningful capability, learn from it, then move on. This is a
-          directional roadmap, not a dated delivery promise.
+          The roadmap remains outcome-gated, but the current sequence includes
+          one explicit exception: Sprint 2 and Sprint 3 work may proceed with
+          synthetic inputs while Sprint 1’s gate remains open. That exception
+          does not make Sprint 1 complete.
         </p>
       </PageIntro>
+
       <section className="section roadmap-section">
         <ol className="roadmap-list">
           {milestones.map((milestone, index) => (
             <li key={milestone.title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
+              <span>{String(index).padStart(2, '0')}</span>
               <div>
                 <h3>{milestone.title}</h3>
                 <p>{milestone.note}</p>
@@ -483,72 +721,82 @@ function Roadmap() {
             </li>
           ))}
         </ol>
+
         <div className="reading-panel">
           <h2>Roadmap vocabulary</h2>
           <Definition term="Outcome gate">
-            Evidence that a meaningful capability is ready to learn from before
-            expanding scope.
+            Evidence that a meaningful capability meets its accepted transition
+            criteria. Closing issues is supporting evidence, not proof by
+            itself.
           </Definition>
-          <Definition term="Foundation">
-            The documented direction, target stack, and clean technical building
-            blocks demonstrated at the Sprint 0 outcome gate.
+          <Definition term="Temporary sequencing exception">
+            A documented decision allowing later synthetic work to proceed while
+            an earlier gate remains explicitly open.
           </Definition>
-          <Definition term="Active planning boundary">
-            Sprint 1 is the current outcome being prepared and delivered. That
-            does not mean every Sprint 1 task is already ready or complete.
+          <Definition term="Canonical scope">
+            The accepted product specification and architecture for a sprint. It
+            does not mean the sprint outcome has already been demonstrated.
           </Definition>
           <Definition term="Private Alpha readiness">
-            A later threshold that requires demonstrated safety, privacy,
-            reliability, and real-world learning.
+            A later threshold requiring demonstrated privacy, safety, security,
+            reliability, deployment, and real-world learning.
           </Definition>
         </div>
       </section>
     </>
   );
 }
+
 function SprintOne() {
   const boundaries = [
     [
       'One intentionally narrow Alpha family',
-      'One verified parent identity, one internal family account, and one child. Registration begins with only the parent email.',
+      'One verified parent identity maps to one internal family and one child. Registration begins with only the parent email.',
     ],
     [
       'Child mode comes first',
-      'A signed-in family arrives in the read-only story library. Only parent-approved, child-visible stories and reading navigation belong there.',
+      'A signed-in family arrives in the read-only story library. Parent information and protected actions remain unavailable there.',
     ],
     [
-      'Parent work is protected',
-      'Child Map information, drafts, creation, approvals, settings, exports, deletion, and sign-out require a server-enforced parent boundary.',
+      'Parent work is server-protected',
+      'Child Map information, drafts, creation, approvals, sensitive settings, export, deletion, and sign-out require parent authority enforced at the API boundary.',
     ],
     [
-      'Access expires safely',
-      'Parent access is scoped to the current tab, expires, conceals private work, and requires stronger email verification for recovery and destructive account actions.',
+      'Access expires and private work stays concealed',
+      'Parent access is bounded, tab-aware, recoverable, and designed so refresh, expiry, or another tab does not silently leak protected work into child mode.',
     ],
   ];
+
   return (
     <>
       <PageIntro
-        eyebrow="05 · Sprint 1"
-        title="A shared device needs two honest modes."
+        eyebrow="07 · Sprint 1"
+        title="A strong implementation can still have an open outcome gate."
       >
         <p>
-          Sprint 0 proved the foundations. Sprint 1 is now the active planning
-          boundary: make family access work while keeping a young child’s
-          reading surface separate from adult information and authority.
+          Sprint 1 has moved far beyond planning. The family-access boundary has
+          substantial implementation, regression, accessibility, and end-to-end
+          evidence. The project still records the outcome gate as not passed
+          because one required provider proof remains unresolved.
         </p>
       </PageIntro>
+
       <section className="section sprint-section">
         <div className="outcome-banner">
           <div>
-            <p className="eyebrow">Sprint 1 outcome gate</p>
-            <h2>Register. Arrive safely. Enter deliberately. Return safely.</h2>
+            <p className="eyebrow">Sprint 1 outcome status</p>
+            <h2>
+              Implemented deeply. Gate open. Later work temporarily bounded.
+            </h2>
           </div>
           <p>
-            Sprint 1 is complete only when a parent can create or resume the
-            Alpha family, land in a child-safe library, enter protected parent
-            mode, and return to child mode after exit or expiry.
+            A temporary founder-approved sequencing exception permits Sprint 2
+            and Sprint 3 planning and implementation with synthetic inputs. The
+            unresolved Sprint 1 provider evidence must be revisited before
+            Sprint 4 begins.
           </p>
         </div>
+
         <ol className="boundary-grid">
           {boundaries.map(([title, detail], index) => (
             <li key={title}>
@@ -558,40 +806,43 @@ function SprintOne() {
             </li>
           ))}
         </ol>
+
         <div className="evidence-panel">
           <div>
-            <p className="eyebrow">Evidence, not a screenshot alone</p>
-            <h2>What Sprint 1 must prove</h2>
+            <p className="eyebrow">Evidence accumulated</p>
+            <h2>The awkward states were treated as product behavior.</h2>
           </div>
           <ul>
+            <li>First and repeat sign-in preserve one family boundary.</li>
+            <li>Child mode rejects parent-only data and actions.</li>
             <li>
-              Repeat sign-in resumes the same family and cannot cross families.
+              Entry, expiry, refresh, lock contention, and recovery are tested.
             </li>
             <li>
-              Child mode cannot read parent information or call protected APIs.
+              Protected placeholder work restores only inside the authorized
+              boundary.
             </li>
             <li>
-              Entry, failure, recovery, expiry, refresh, and tab isolation
-              behave safely.
+              Keyboard, focus, announcements, reflow, and error recovery have
+              dedicated evidence.
             </li>
             <li>
-              Keyboard, focus, announcements, responsive layout, and error
-              recovery work.
-            </li>
-            <li>
-              Synthetic browser evidence covers the full return to child mode.
+              A full synthetic browser journey exercises the family-mode return
+              path.
             </li>
           </ul>
         </div>
+
         <p className="public-boundary-note">
-          This public summary explains the accepted experience without exposing
-          private project links, live identity data, or operational security
-          parameters that do not help a general reader.
+          This page intentionally explains the user and architecture boundary
+          without publishing attack-relevant security parameters, provider
+          credentials, private project links, or live identity data.
         </p>
       </section>
     </>
   );
 }
+
 function Design() {
   const palette = [
     ['Ink', '#27213B', 'ink'],
@@ -602,19 +853,21 @@ function Design() {
     ['Mint', '#9DD3C6', 'mint'],
     ['Lavender', '#E7D8F5', 'lavender'],
   ];
+
   return (
     <>
       <PageIntro
-        eyebrow="06 · Design philosophy and language"
-        title="One philosophy. One recipe. Room to feel human."
+        eyebrow="08 · Design philosophy and language"
+        title="The same design DNA, expressed for different responsibilities."
       >
         <p>
-          The philosophy says why the experience should feel calm, clear, warm,
-          and trustworthy. The paper-and-ink visual language tells every agent
-          how to reproduce that character without inventing a new brand on every
-          screen.
+          The project has not replaced its visual identity. The accepted
+          paper-and-ink language still provides the shared foundations, while
+          child, parent, serious, and public-editorial surfaces remain
+          intentionally different in density, authority, and tone.
         </p>
       </PageIntro>
+
       <section className="section design-section">
         <div className="design-formula">
           <p>
@@ -630,6 +883,7 @@ function Design() {
             <span>emphasis and delight</span>
           </p>
         </div>
+
         <div className="principle-grid">
           {designPrinciples.map(([title, detail], index) => (
             <article key={title}>
@@ -639,15 +893,16 @@ function Design() {
             </article>
           ))}
         </div>
+
         <div className="recipe-panel">
           <div>
             <p className="eyebrow">The reusable visual recipe</p>
             <h2>Paper, ink, and a few purposeful sparks.</h2>
             <p>
               Fraunces carries expressive titles. Nunito Sans keeps bodies and
-              controls plain. DM Mono labels metadata and status. A four-pixel
-              spacing scale, crisp ink borders, small offset shadows, and flat
-              color create the shared rhythm.
+              controls plain. DM Mono labels metadata and status. Crisp borders,
+              small offset shadows, flat color, and generous spacing keep the
+              family resemblance without forcing every surface into one layout.
             </p>
           </div>
           <div
@@ -666,6 +921,7 @@ function Design() {
             ))}
           </div>
         </div>
+
         <div className="theme-grid">
           {surfaceThemes.map((theme) => (
             <article key={theme.name}>
@@ -675,14 +931,15 @@ function Design() {
             </article>
           ))}
         </div>
+
         <div className="component-sample">
           <div>
-            <p className="eyebrow">Controls stay dependable</p>
-            <h2>Character never replaces usability.</h2>
+            <p className="eyebrow">Continuity over redesign</p>
+            <h2>The public story grew without changing who it is.</h2>
             <p>
-              Buttons name their consequence. Inputs keep visible labels. Focus
-              is unmistakable. Loading, disabled, error, expiry, and recovery
-              states are designed alongside the happy path.
+              Existing typography, palette, cards, status treatments,
+              navigation, fragment routes, responsive behavior, and public
+              editorial character remain the foundation for these new pages.
             </p>
           </div>
           <div
@@ -694,56 +951,59 @@ function Design() {
             <span className="sample-link">Return to child mode</span>
           </div>
         </div>
+
         <p className="influence-note">
-          The founder’s creative references are translated into candid
-          communication, simple explanatory drawings, warmth, and visible human
-          imperfection. The project does not copy a creator’s recognizable
-          lettering, characters, compositions, or signature style.
+          Coherence comes from shared values and foundations, not identical page
+          composition. The public story should not look like the private family
+          application, and the parent experience should not look like a toy.
         </p>
       </section>
     </>
   );
 }
+
 function Questions() {
   const questions = [
     [
-      'What information should families ever be asked to share?',
-      'Minimize collection, then validate privacy and safety boundaries before asking for more.',
+      'What family information is necessary, optional, or prohibited?',
+      'The Child Map is now a living record, but the exact minimum, optional, and prohibited fields still require product, privacy, and safety evidence.',
     ],
     [
-      'How should a parent review or change an AI-generated draft?',
-      'That experience needs testing—not an assumption tucked into an interface.',
+      'Which Child Map information may be used for a specific story or transferred to a provider?',
+      'Sprint 3 has a context-selection boundary, but the detailed sensitivity and purpose policy remains unresolved.',
     ],
     [
-      'What makes a story genuinely helpful for different children?',
-      'Age range is only a starting point; language, ability, context, and feedback matter.',
+      'What happens to stories derived from Child Map information that is later deleted?',
+      'The lifecycle of drafts, revisions, approved versions, generation artifacts, and provider-held copies must be decided before the Sprint 3 gate passes.',
     ],
     [
-      'Which Child Map details are necessary for a particular story?',
-      'Personalization should not become permission to share every available family detail.',
+      'When should Story Generation become a separate worker or service?',
+      'The extraction path is designed, but the trigger should come from real durability, queueing, scaling, credential, rate-limit, or backpressure needs.',
     ],
     [
-      'Which text and image providers meet the evidence bar?',
-      'No provider is selected merely because it is convenient; data handling, safety, quality, cost, reliability, and exit all matter.',
+      'Which provider and deployment choices meet the evidence bar?',
+      'Provider integrations remain replaceable and synthetic-first; deployment and durable-workflow products are not selected merely for convenience.',
     ],
     [
-      'What visual system should guide the story illustrations themselves?',
-      'The interface language is accepted. Story art still needs a separate consistency, safety, representation, and accessibility specification.',
+      'What proves the private Alpha is valuable and safe enough to continue?',
+      'The project still needs real-world learning criteria in addition to technical and safety evidence.',
     ],
   ];
+
   return (
     <>
       <PageIntro
-        eyebrow="07 · Open questions"
-        title="Useful unknowns are part of responsible work."
+        eyebrow="09 · Open questions"
+        title="Useful unknowns stay visible even as the architecture gets clearer."
       >
         <p>
-          The project has not settled every important detail. Keeping unresolved
-          matters visible helps protect families from accidental promises and
-          gives research, testing, and qualified review a clear place to shape
-          the work.
+          Better boundaries have narrowed some questions instead of eliminating
+          uncertainty. The remaining unknowns are kept explicit so later
+          implementation does not quietly make policy, privacy, or
+          infrastructure decisions by accident.
         </p>
       </PageIntro>
+
       <section className="section questions-section">
         <ul className="question-list">
           {questions.map(([question, answer]) => (
@@ -753,30 +1013,31 @@ function Questions() {
             </li>
           ))}
         </ul>
+
         <div className="reading-panel">
           <h2>How to read an open question</h2>
           <Definition term="Open question">
             A matter that has not been decided. It is not a hidden commitment.
           </Definition>
-          <Definition term="Qualified review">
-            Review by people with appropriate specialist knowledge when a
-            question involves privacy, safety, accessibility, or similar
-            expertise.
+          <Definition term="Narrowed question">
+            A broad uncertainty whose ownership or policy boundary is now
+            clearer even though the final operational choice is not settled.
           </Definition>
           <Definition term="Next step">
-            Research, prototype testing, evidence gathering, or a documented
-            decision—not a quiet guess.
+            Research, prototype evidence, specialist review, operational
+            evidence, or a documented decision—not a quiet guess.
           </Definition>
         </div>
       </section>
     </>
   );
 }
+
 function Library() {
   return (
     <>
       <PageIntro
-        eyebrow="08 · Public library"
+        eyebrow="10 · Public library"
         title="This site is a translation, not an automatic export."
       >
         <p>
@@ -786,30 +1047,38 @@ function Library() {
           approved before publication.
         </p>
       </PageIntro>
+
       <section className="section library-section">
         <div
           className="curation-flow"
           role="img"
-          aria-label="A three-step content-review flow: internal notes are summarized, checked for public safety, and founder-approved before publication."
+          aria-label="A three-step content-review flow: internal evidence is summarized, checked for public safety, and founder-approved before publication."
         >
           <div>
             <span>01</span>
-            <b>Internal memory</b>
-            <p>Detailed working documents stay inside the project.</p>
+            <b>Internal evidence</b>
+            <p>
+              Detailed specifications, ADRs, issues, tests, and working notes
+              stay inside the project.
+            </p>
           </div>
           <i aria-hidden="true">→</i>
           <div>
             <span>02</span>
             <b>Public-safe summary</b>
-            <p>A curated record names its source and knowledge status.</p>
+            <p>
+              A curated record preserves status without exporting private
+              implementation detail.
+            </p>
           </div>
           <i aria-hidden="true">→</i>
           <div>
             <span>03</span>
             <b>Founder approval</b>
-            <p>Nothing is published merely because it exists internally.</p>
+            <p>Material public changes are reviewed before publication.</p>
           </div>
         </div>
+
         <div className="reading-panel">
           <h2>Public-library definitions</h2>
           <Definition term="Curated">
@@ -818,26 +1087,25 @@ function Library() {
           </Definition>
           <Definition term="Public-safe">
             Checked to exclude credentials, family information, private links,
-            private research, and sensitive implementation detail.
-          </Definition>
-          <Definition term="Founder approval">
-            An explicit review that authorizes a summary for public sharing.
+            private research, and attack-relevant implementation detail.
           </Definition>
           <Definition term="Source reference">
-            A readable pointer to the project decision or question that informed
-            the summary, without publishing private materials.
+            A public-readable description of the decision, ADR, specification,
+            or evidence category that informed the summary without exposing
+            private working material.
           </Definition>
         </div>
+
         <div className="pdf-callout">
           <div>
             <p className="eyebrow">A portable companion</p>
-            <h2>Take the public story with you.</h2>
+            <h2>Take the evolving project story with you.</h2>
             <p>
-              The expanded PDF collects the project’s purpose, Alpha boundary,
-              Sprint 0 evidence, Sprint 1 direction, roadmap, design philosophy,
-              visual recipe, architecture boundaries, and open questions. This
-              responsive website remains the primary version for semantic
-              navigation and text reflow; the PDF is a fixed-layout companion.
+              The PDF follows the same public-safe narrative: product purpose,
+              development history, Sprint 1’s open gate, Child Map Discovery,
+              Story Studio and its capability boundaries, roadmap, design
+              language, architecture, and open questions. The responsive website
+              remains the primary version.
             </p>
           </div>
           <a
@@ -853,11 +1121,14 @@ function Library() {
     </>
   );
 }
+
 function Layout({ route }: { route: Route }) {
   const pages: Record<Route, React.ComponentType> = {
     '/': Home,
     '/product': Product,
     '/journey': Journey,
+    '/development': Development,
+    '/architecture': Architecture,
     '/decisions': Decisions,
     '/roadmap': Roadmap,
     '/sprint-one': SprintOne,
@@ -865,7 +1136,9 @@ function Layout({ route }: { route: Route }) {
     '/questions': Questions,
     '/library': Library,
   };
+
   const Page = pages[route];
+
   return (
     <div className="page-shell">
       <a className="skip-link" href="#main-content">
@@ -912,14 +1185,17 @@ function Layout({ route }: { route: Route }) {
     </div>
   );
 }
+
 export default function App() {
   const [route, setRoute] = React.useState<Route>(() =>
     internalPath(window.location.hash.slice(1)),
   );
+
   React.useEffect(() => {
     const update = () => setRoute(internalPath(window.location.hash.slice(1)));
     window.addEventListener('hashchange', update);
     return () => window.removeEventListener('hashchange', update);
   }, []);
+
   return <Layout route={route} />;
 }
