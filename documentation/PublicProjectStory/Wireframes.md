@@ -39,13 +39,15 @@ Sprint 1
        | temporary sequencing exception
        v
 Sprint 2
-  Child Map -> temporal living record
-  Discovery -> versioned capability
+  substantial implementation
+  temporal Child Map + data-driven Discovery
+  outcome gate still open
        |
        v
 Sprint 3
-  guided Story Studio
-  Lifecycle / Context Selection / Generation
+  architecture accepted
+  persistence / contracts / validation / rendering foundations landing
+  end-to-end Story Studio still ahead
        |
        v
 Sprint 4+
@@ -105,12 +107,12 @@ Logical separation does not mean every box is already a separately deployed serv
 | Journey: discovery-to-approval hand-offs + capability sketch                  |
 | Development: Sprint 0 -> Sprint 3 evolution + equal Sprint 1/2/3 chapter cards|
 | Architecture: Discovery + Story ownership boundaries + extraction vocabulary  |
-| How we build: dated GitHub stats + CI workflows + issue->PR->evidence loop     |
-| Decisions: status legend + definitions + labeled public entries               |
-| Roadmap: seven outcome gates + explicit Sprint 1 exception                    |
-| Sprint 1: implemented boundary + open gate + evidence summary                 |
-| Sprint 2: living Child Map + versioned Discovery scope                         |
-| Sprint 3: Story Studio + Lifecycle / Context / Generation split                |
+| How we build: refreshed GitHub stats + CI + decision->issue->review loop       |
+| Decisions: status legend + October decisions + labeled public entries           |
+| Roadmap: seven outcome gates + visible Sprint 1 sequencing exception            |
+| Sprint 1: implemented boundary + open gate + evidence summary                  |
+| Sprint 2: temporal Child Map + data-driven Discovery + open outcome gate       |
+| Sprint 3: landed foundations + underway generation + later Studio/approval     |
 | Design: existing 70/20/10 language + palette + themes + continuity rule       |
 | Questions: narrowed unresolved matters + how-to-read panel                    |
 | Library: curation flow + public-safety definitions + stable PDF link          |
