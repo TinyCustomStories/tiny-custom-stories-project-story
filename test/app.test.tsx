@@ -170,8 +170,8 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(screen.getByText(/Versioned content packs/i)).toBeTruthy();
     expect(
-      screen.getByText(/Qualified privacy, legal, security/i),
-    ).toBeTruthy();
+      screen.getAllByText(/Qualified privacy, legal, security/i).length,
+    ).toBeGreaterThan(0);
   });
 
   it('shows landed Sprint 3 foundations without claiming the Studio outcome', () => {
