@@ -155,6 +155,81 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
+    title: 'Sprint 2 now has substantial implementation without a passed gate',
+    summary:
+      'Core temporal Child Map flows, current/history derivation, Right Now and Then & Now, data-driven Discovery, protected lifecycle infrastructure, private-media work, and deletion foundations now exist. Remaining product slices, cross-cutting evidence, qualified review, and the final outcome demonstration keep the Sprint 2 gate open.',
+    category: 'Delivery progress',
+    date: '2026-10-01',
+    status: 'Verified fact',
+    source: 'October 1 repository state and Sprint 2 outcome-gate record',
+    related: [
+      'Implementation progress is not a sprint pass',
+      'Real-family Alpha remains gated',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Discovery moved from compiled seed questions to a data-driven runtime',
+    summary:
+      'Approved question content now lives in versioned structured packs loaded through immutable catalog snapshots with indexed retrieval, deterministic metadata/context/history scoring, diversity, safe contextual templates, and bounded provenance.',
+    category: 'Sprint 2',
+    date: '2026-10-01',
+    status: 'Verified fact',
+    source: 'Sprint 2 Discovery implementation evidence',
+    related: [
+      'Runtime remains deterministic',
+      'No external model required for question selection',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'A conservative Sprint 2 private-Alpha privacy boundary is decided',
+    summary:
+      'Parent-controlled Child Map data remains protected, raw Child Map content stays out of child mode, Sprint 2 sends no family Child Map content to an external AI provider, private reference media is not child-visible, and raw family source data or photos are excluded from model-training or offline-improvement corpora during private Alpha. Qualified review is still required before real-family use.',
+    category: 'Privacy and safety',
+    date: '2026-10-01',
+    status: 'Confirmed decision',
+    source: 'DEC-2026-051',
+    related: [
+      'Qualified specialist review still required',
+      'Deletion and retention remain explicit product behavior',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Authenticated families can intentionally return Home',
+    summary:
+      'Home remains a real destination before and after authentication. Sign-in may still land in the child-safe Story Library, while authenticated Home remains child-safe and does not expose Parent Mode-only information or actions.',
+    category: 'Product direction',
+    date: '2026-10-01',
+    status: 'Confirmed decision',
+    source: 'DEC-2026-050',
+    related: [
+      'Home ↔ My Story Library navigation',
+      'Implementation and regression coverage still underway',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Sprint 3 foundations are now landing in code',
+    summary:
+      'Pre-generation StoryRequest persistence, protected Story summary reads, a provider-neutral StoryBlueprint contract, pure StoryComposition structural validation, generation-operation persistence, architecture tests, deterministic page rendering, and original decoration assets now exist while the end-to-end Story Studio outcome remains ahead.',
+    category: 'Sprint 3',
+    date: '2026-10-01',
+    status: 'Verified fact',
+    source: 'October 1 Story capability implementation evidence',
+    related: [
+      'Synthetic-only sequencing exception',
+      'Generation, editing, approval, and outcome proof remain',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
     title: 'Paper-and-ink design language remains the shared visual foundation',
     summary:
       'The accepted philosophy and visual recipe continue to guide child, parent, public, and serious surfaces while allowing each surface to serve a different audience and responsibility.',
@@ -191,14 +266,14 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
-    title: 'Privacy and derived-artifact deletion still need more evidence',
+    title: 'Qualified validation and derived-artifact deletion still need evidence',
     summary:
-      'The project still needs qualified validation of privacy and child-safety boundaries, provider handling, and the effect of deleting Child Map sources on generated drafts, approved stories, and provider-held copies.',
+      'The Sprint 2 private-Alpha product boundary is now explicit, but qualified privacy/legal/security/child-safety review is still required before real-family collection. Sprint 3 must also settle what source deletion means for generated drafts, approved stories, generation artifacts, and provider-held copies.',
     category: 'Open question',
-    date: '2026-09-24',
+    date: '2026-10-01',
     status: 'Open question',
-    source: 'OQ-004 and OQ-019',
-    related: ['Data minimization', 'Derived artifact lifecycle'],
+    source: 'OQ-004, OQ-019, and DEC-2026-051',
+    related: ['Qualified review', 'Derived artifact lifecycle'],
     reviewStatus: 'Founder approved for public sharing',
     safeToPublish: true,
   },
@@ -219,15 +294,15 @@ export const milestones: Milestone[] = [
   },
   {
     title: 'Sprint 2 - Child Map and discovery lifecycle',
-    state: 'Canonical scope + synthetic implementation allowed',
-    status: 'Confirmed decision',
-    note: 'The Child Map is a temporal living record with a versioned Discovery capability for approved questions, typed answers, deterministic eligibility, pacing, and bounded follow-ups.',
+    state: 'Substantially implemented - outcome gate open',
+    status: 'Verified fact',
+    note: 'Core temporal Child Map flows, current/history views, data-driven deterministic Discovery, lifecycle/deletion infrastructure, and substantial evidence now exist. Remaining product slices, final cross-cutting proof, qualified review, and the integrated outcome gate are still open.',
   },
   {
     title: 'Sprint 3 - Story Studio composition',
-    state: 'Canonical scope + architecture accepted',
-    status: 'Confirmed decision',
-    note: 'A guided text-first composition workflow is defined around parent-visible context selection, planning, generation, scoped revision, restoration, and approval. Story work is split into Lifecycle, Context Selection, and Generation capabilities.',
+    state: 'Architecture accepted + foundations underway',
+    status: 'Verified fact',
+    note: 'StoryRequest persistence, protected summary reads, blueprint/validation contracts, generation-operation state, architecture tests, and deterministic rendering foundations are landing under the synthetic-only exception. Full generation, editing, approval, and final outcome proof remain ahead.',
   },
   {
     title: 'Sprint 4 - Characters and illustrations',
