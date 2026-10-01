@@ -528,7 +528,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
     card(
         canvas,
         MARGIN,
-        y - 390,
+        y - 370,
         (usable - gap) / 2,
         132,
         "Small, explicit work",
@@ -540,7 +540,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
     card(
         canvas,
         MARGIN + (usable - gap) / 2 + gap,
-        y - 390,
+        y - 370,
         (usable - gap) / 2,
         132,
         "Verification before completion",
@@ -553,7 +553,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
         canvas,
         f"Snapshot: {snapshot['snapshotDate']}. Counts describe repository activity, not productivity scores or a live pass-rate dashboard.",
         MARGIN,
-        92,
+        72,
         usable,
         SMALL,
     )
@@ -654,7 +654,7 @@ def questions(canvas: Canvas, n: int, total: int) -> None:
         x = MARGIN + (i % 2) * 264
         top = y - 28 - (i // 2) * 137
         canvas.setFillColor(SURFACE)
-        canvas.roundRect(x, top - 112, 244, 100, 8, fill=1, stroke=0)
+        canvas.roundRect(x, top - 132, 244, 120, 8, fill=1, stroke=0)
         canvas.setFillColor(CORAL)
         canvas.setFont(MONO, 8)
         canvas.drawString(x + 14, top - 34, f"Q{i + 1:02d}")
