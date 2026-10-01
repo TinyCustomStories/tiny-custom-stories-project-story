@@ -714,6 +714,26 @@ def next_page(canvas: Canvas, n: int, total: int) -> None:
     paragraph(canvas, "Source trail: current Sprint 0/1 gate records; October 1 Sprint 2 outcome and privacy records; Child Map Discovery architecture; Sprint 3 canonical specification and Story capability architecture; current repository implementation evidence; design language; and public-story curation guidance.", MARGIN, 166, WIDTH - MARGIN * 2, SMALL_DARK)
 
 
+PAGES = [
+    ("cover", cover),
+    ("status", status),
+    ("purpose", purpose),
+    ("sprint-0", sprint0),
+    ("sprint-1", sprint1),
+    ("sprint-1-evidence", sprint1_evidence),
+    ("sprint-2-discovery", sprint2),
+    ("sprint-3-story-studio", sprint3),
+    ("architecture", architecture),
+    ("roadmap", roadmap),
+    ("delivery", delivery),
+    ("philosophy", philosophy),
+    ("visual-recipe", visual_recipe),
+    ("open-questions", questions),
+    ("public-library", library),
+    ("next", next_page),
+]
+
+
 def build() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     canvas = Canvas(str(OUTPUT), pagesize=letter, pageCompression=1, invariant=1)
