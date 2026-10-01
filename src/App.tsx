@@ -74,9 +74,9 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/sprint-one':
     'What has been built around family access, why the outcome gate is still open, and what that means.',
   '/sprint-two':
-    'How the Child Map became a temporal living record with a versioned Discovery capability.',
+    'How a substantially implemented temporal Child Map now uses data-driven deterministic Discovery while its outcome gate remains open.',
   '/sprint-three':
-    'How Story Studio became a reversible composition workflow with explicit capability ownership.',
+    'How accepted Story capability boundaries are gaining real persistence, validation, operation-state, and rendering foundations.',
   '/design':
     'The shared philosophy and paper-and-ink language that keep different surfaces recognizably related.',
   '/questions':
@@ -165,7 +165,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated September 24, 2026
+            A public project story · updated October 1, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -173,9 +173,10 @@ function Home() {
           </h1>
           <p className="hero-lede">
             Tiny Custom Stories has grown from a personalized-story idea into a
-            parent-controlled learning product with protected family boundaries,
-            a flexible Child Map Discovery capability, and a deliberately
-            separated Story Studio architecture.
+            parent-controlled learning product with a substantially implemented
+            temporal Child Map, a data-driven Discovery capability, and Story
+            foundations that keep generation separate from family authority and
+            Story truth.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/development">
@@ -225,15 +226,14 @@ function Home() {
       >
         <p>
           <span aria-hidden="true">●</span> Sprint 0 is demonstrated. Sprint 1
-          has substantial implementation evidence, but its outcome gate remains
-          explicitly open.
+          remains evidence-gated. Sprint 2 is substantially implemented, with
+          its final outcome gate still open.
         </p>
         <p>
-          Sprint 2 and Sprint 3 work may proceed with{' '}
-          <strong>
-            synthetic inputs under a temporary sequencing exception
-          </strong>
-          .
+          Sprint 3 foundation work is landing under the{' '}
+          <strong>synthetic-only sequencing exception</strong>. Real-family
+          Sprint 2 Alpha use still requires the remaining outcome evidence and
+          qualified privacy, legal, security, and child-safety review.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -249,10 +249,11 @@ function Home() {
         </div>
         <h2 id="directory-title">One project story, ten places to pause.</h2>
         <p className="section-intro">
-          The September version is still here underneath this one. The site has
-          grown around it: existing routes remain, while newer pages explain the
-          development history and capability architecture without turning plans
-          into accomplishments.
+          This October checkpoint keeps the September site underneath it and
+          updates the evidence around it: the same routes and visual language
+          now show how far Child Map and Discovery implementation has moved,
+          what still blocks the Sprint 2 gate, and which Sprint 3 foundations
+          exist in code.
         </p>
         <div className="route-grid">
           {primaryNavigation
@@ -459,19 +460,19 @@ function Development() {
   const moments = [
     [
       'Sprint 0 · demonstrated',
-      'The project replaced assumptions with a documented product direction, accepted architecture, a clean React/Vite web foundation, a clean ASP.NET Core API foundation, CI, contracts, and browser evidence.',
+      'The project replaced assumptions with a documented product direction, accepted architecture, clean React/Vite and ASP.NET Core foundations, CI, contracts, and browser evidence.',
     ],
     [
       'Sprint 1 · implemented deeply, gate still open',
-      'Accounts, child-safe default mode, protected parent entry, expiry, recovery, tab isolation, temporary protected work, accessibility, and end-to-end evidence were built. A required same-browser provider proof did not pass, so the outcome gate remains open.',
+      'Accounts, child-safe default mode, protected parent entry, expiry, recovery, isolation, accessibility, and end-to-end evidence were built. A required provider proof remains unresolved, so the outcome gate stays open.',
     ],
     [
-      'Sprint 2 · Child Map became Discovery',
-      'The Child Map evolved from a profile-like form into a temporal living record. Discovery now has approved versioned questions, typed answers, deterministic eligibility and pacing, bounded follow-ups, and a generic renderer.',
+      'Sprint 2 · substantially implemented, gate still open',
+      'The temporal Child Map now has category/detail flows, lifecycle semantics, current/history views, Right Now and Then & Now, data-driven deterministic Discovery, private-media and deletion foundations. Remaining product slices, cross-cutting evidence, and qualified review still block the outcome gate.',
     ],
     [
-      'Sprint 3 · Story creation became Story Studio',
-      'The story slice now has a canonical composition workflow and three explicit ownership boundaries: Story Lifecycle, Story Context Selection, and Story Generation.',
+      'Sprint 3 · architecture accepted, foundations landing',
+      'Pre-generation StoryRequest persistence, protected summary reads, a provider-neutral StoryBlueprint contract, structural validation, generation-operation persistence, architecture tests, and deterministic page/decoration foundations now exist while the visible Story Studio journey remains ahead.',
     ],
   ];
 
@@ -485,7 +486,8 @@ function Development() {
           The project did not move in a straight line from “idea” to “features.”
           Each sprint exposed a boundary that needed to become clearer: first
           family authority, then evolving child context, then the difference
-          between Story truth, context permission, and generation.
+          between Story truth, context permission, and generation. The October
+          checkpoint also shows where those boundaries have become real code.
         </p>
       </PageIntro>
 
@@ -505,9 +507,9 @@ function Development() {
           <h2>One development story, three equally visible chapters.</h2>
           <p>
             Sprint 1 keeps its original deep link, but it no longer gets special
-            treatment in the main header. Sprint 1, 2, and 3 now live together
-            here, each with its own public-safe chapter and explicit outcome
-            status.
+            treatment in the main header. Sprint 1, 2, and 3 live together here,
+            each with its own public-safe chapter and an explicit distinction
+            between implementation progress and outcome-gate status.
           </p>
         </div>
 
@@ -524,21 +526,24 @@ function Development() {
           </Link>
           <Link to="/sprint-two" className="sprint-chapter-card">
             <span>02</span>
-            <p className="eyebrow">Canonical scope accepted</p>
+            <p className="eyebrow">Substantially implemented · gate open</p>
             <h3>Sprint 2</h3>
             <p>
-              A temporal Child Map plus versioned Discovery questions, typed
-              answers, eligibility, pacing, and bounded follow-ups.
+              Temporal Child Map, data-driven Discovery, lifecycle/deletion
+              infrastructure, and the remaining evidence and review boundary.
             </p>
             <b>Read Sprint 2 →</b>
           </Link>
           <Link to="/sprint-three" className="sprint-chapter-card">
             <span>03</span>
-            <p className="eyebrow">Architecture accepted</p>
+            <p className="eyebrow">
+              Architecture accepted · foundations landing
+            </p>
             <h3>Sprint 3</h3>
             <p>
-              Story Studio, context selection, reversible revisions, stable
-              approval, and an extractable generation boundary.
+              Story request persistence, generation contracts, validation,
+              operation state, deterministic rendering, and a still-future
+              end-to-end Story Studio experience.
             </p>
             <b>Read Sprint 3 →</b>
           </Link>
@@ -551,22 +556,27 @@ function Development() {
           </div>
           <ul>
             <li>Human-directed product and architecture decisions.</li>
-            <li>Explicit issues with dependencies and acceptance criteria.</li>
+            <li>
+              Small issues with explicit dependencies and stop conditions.
+            </li>
             <li>Architecture references and visual cues where they help.</li>
-            <li>AI-assisted implementation inside documented boundaries.</li>
+            <li>
+              Independent tasks can run concurrently in isolated sessions.
+            </li>
+            <li>Implementation is followed by review, fixes, and re-review.</li>
             <li>
               Automated checks plus targeted boundary and visual evidence.
             </li>
             <li>
-              PR review and an outcome gate before a sprint is called passed.
+              An outcome gate—not issue count—decides whether a sprint passed.
             </li>
           </ul>
         </div>
 
         <p className="public-boundary-note">
           The project intentionally prefers more precise implementation tasks
-          over fewer ambiguous ones. Task count is not treated as a measure of
-          progress.
+          over fewer ambiguous ones. Task count and merged code are supporting
+          evidence, not substitutes for a demonstrated sprint outcome.
         </p>
       </section>
     </>
@@ -590,15 +600,15 @@ function HowWeBuild() {
     ],
     [
       'Backend CI',
-      'Restore/audit, formatting, warnings-as-errors build, generated OpenAPI drift check, MongoDB replica-set startup, API tests, and migration/startup smoke tests.',
+      'Restore/audit, formatting, warnings-as-errors build, generated OpenAPI drift checks, MongoDB startup, API tests, and migration/startup smoke tests.',
     ],
     [
       'Browser evidence',
       'Playwright Chromium smoke tests, intentional screenshot evidence, and uploaded failure artifacts when a browser run breaks.',
     ],
     [
-      'Project story CI',
-      'Formatting, linting, type checks, production build, and tests for the project-story surface alongside the product work.',
+      'Public-story CI',
+      'The separate public-story repository generates its dossier, then checks formatting, linting, TypeScript, production build, and tests before publication.',
     ],
   ] as const;
 
@@ -646,14 +656,16 @@ function HowWeBuild() {
             <p>
               {deliverySnapshot.closedIssues.toLocaleString()} issues are closed
               and {deliverySnapshot.openIssues.toLocaleString()} remain open.
-              The backlog is intentionally detailed: task count is used to make
+              The backlog is intentionally detailed: task count makes
               dependencies, acceptance criteria, evidence, and ownership
-              explicit—not as a vanity metric.
+              explicit rather than acting as a productivity score.
             </p>
           </article>
           <article>
             <p className="eyebrow">Automation footprint</p>
-            <h2>{deliverySnapshot.workflowDefinitions} CI workflows</h2>
+            <h2>
+              {deliverySnapshot.workflowDefinitions} main product CI workflows
+            </h2>
             <p>
               {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of the{' '}
               {deliverySnapshot.workflowRuns.toLocaleString()} recorded workflow
@@ -675,17 +687,57 @@ function HowWeBuild() {
         </div>
 
         <div className="delivery-loop" aria-label="Delivery workflow">
+          <span>Idea / finding</span>
+          <i aria-hidden="true">→</i>
+          <span>Product decision</span>
+          <i aria-hidden="true">→</i>
+          <span>Documentation</span>
+          <i aria-hidden="true">→</i>
           <span>Issue / task</span>
           <i aria-hidden="true">→</i>
-          <span>Focused branch</span>
+          <span>Implementation</span>
           <i aria-hidden="true">→</i>
-          <span>Pull request</span>
+          <span>PR + CI evidence</span>
           <i aria-hidden="true">→</i>
-          <span>CI + browser evidence</span>
-          <i aria-hidden="true">→</i>
-          <span>Review</span>
+          <span>Review / fixes / re-review</span>
           <i aria-hidden="true">→</i>
           <span>Merge + outcome evidence</span>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Agent-assisted, repository-owned</p>
+            <h2>
+              Structured execution without handing product ownership away.
+            </h2>
+          </div>
+          <ul>
+            <li>
+              Backlog stewardship turns accepted decisions into small,
+              implementation-ready issues with explicit dependency chains.
+            </li>
+            <li>
+              Independent tasks can be executed concurrently in isolated
+              branches or sessions; neighboring tasks do not silently share a
+              working branch.
+            </li>
+            <li>
+              Behavior-changing work defaults toward test-first reasoning where
+              a meaningful failing test can be written.
+            </li>
+            <li>
+              Non-trivial failures are debugged systematically rather than
+              patched speculatively.
+            </li>
+            <li>
+              Review is a loop: inspect, comment, fix, verify again, then merge
+              only when the evidence supports it.
+            </li>
+            <li>
+              Generic agent methodologies and reusable skills sit underneath
+              project-specific product, privacy, architecture, and GitHub rules.
+            </li>
+          </ul>
         </div>
 
         <div className="evidence-panel">
@@ -713,11 +765,6 @@ function HowWeBuild() {
             <li>
               Browser smoke tests and captured screenshots prove important flows
               beyond unit tests.
-            </li>
-            <li>
-              This public-story repository also has a verify/build → GitHub
-              Pages deployment path; product hosting and production CD remain
-              separate evidence-led decisions.
             </li>
           </ul>
         </div>
@@ -755,31 +802,37 @@ function Architecture() {
         title="Separate responsibility before separating machines."
       >
         <p>
-          Tiny Custom Stories now uses explicit capability boundaries so parts
-          of the product can evolve independently without pretending that every
-          logical boundary needs its own service on day one.
+          Tiny Custom Stories uses explicit capability boundaries so parts of
+          the product can evolve independently without pretending that every
+          logical boundary needs its own service on day one. Several of those
+          boundaries now have concrete persistence, contracts, validation, and
+          rendering artifacts behind them.
         </p>
       </PageIntro>
 
       <section className="section story-section">
         <div className="mode-preview">
           <article>
-            <p className="eyebrow">Sprint 2 pattern</p>
+            <p className="eyebrow">Sprint 2 pattern · implemented deeply</p>
             <h2>Child Map Discovery</h2>
             <p>
-              Owns question definitions and discovery operating state:
-              eligibility, pacing, question history, cooldowns, and bounded
-              follow-ups. Parent answers become Child Map information only
-              through the owning Child Map write model.
+              Discovery now reads versioned structured content packs through an
+              immutable catalog snapshot, retrieves indexed candidates, applies
+              deterministic metadata/context/history scoring and diversity, and
+              records bounded provenance. Parent answers become Child Map source
+              information only through the owning Child Map write model.
             </p>
           </article>
           <article>
-            <p className="eyebrow">Sprint 3 pattern</p>
+            <p className="eyebrow">Sprint 3 pattern · foundations landing</p>
             <h2>Story capabilities</h2>
             <p>
               Story truth, context permission, and provider-facing generation
-              are separate responsibilities even when they run inside the same
-              Alpha API process.
+              remain separate responsibilities. StoryRequest persistence,
+              summary reads, blueprint/validation contracts, operation state,
+              architecture tests, and deterministic rendering foundations now
+              make parts of that split executable rather than purely
+              documentary.
             </p>
           </article>
         </div>
@@ -799,7 +852,9 @@ function Architecture() {
         <div className="architecture-sketch">
           <div>
             <b>Web experience</b>
-            <small>Child mode + protected parent mode</small>
+            <small>
+              Public Home + child-safe library + protected parent mode
+            </small>
           </div>
           <i aria-hidden="true">↔</i>
           <div>
@@ -809,13 +864,13 @@ function Architecture() {
           <i aria-hidden="true">↔</i>
           <div>
             <b>Documents + private media</b>
-            <small>MongoDB + S3-compatible storage</small>
+            <small>Application-owned persistence boundaries</small>
           </div>
           <p>
-            Discovery and Story Generation are extractable boundaries. Worker
-            extraction, durable workflow technology, message broker, deployment
-            platform, and production MCP adapters remain evidence-led decisions,
-            not assumed infrastructure.
+            Discovery and Story Generation are extractable logical boundaries.
+            Worker extraction, durable workflow technology, message broker,
+            deployment platform, and production adapters remain evidence-led
+            decisions rather than assumed infrastructure.
           </p>
         </div>
 
@@ -826,14 +881,15 @@ function Architecture() {
             deterministic privacy and story-use policy has decided which
             candidates are permitted.
           </Definition>
-          <Definition term="MCP">
-            An optional adapter over application-owned contracts. It is not the
-            capability definition, authorization boundary, or business logic.
+          <Definition term="Logical boundary first">
+            A capability gets a clear owner and contract before the project pays
+            the operational cost of another network service.
           </Definition>
-          <Definition term="Extractable">
-            Designed so provider-facing Story Generation can later move to a
-            worker or service for durability, scaling, credential isolation,
-            rate-limit isolation, or backpressure if real operations justify it.
+          <Definition term="Converging codebase">
+            Transitional architecture is being removed as the boundaries become
+            clearer: the obsolete legacy backend, dead web scaffolding, and a
+            duplicate private project-story copy have been retired rather than
+            kept indefinitely.
           </Definition>
         </div>
       </section>
@@ -924,10 +980,11 @@ function Roadmap() {
         title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
-          The roadmap remains outcome-gated, but the current sequence includes
-          one explicit exception: Sprint 2 and Sprint 3 work may proceed with
-          synthetic inputs while Sprint 1’s gate remains open. That exception
-          does not make Sprint 1 complete.
+          The roadmap remains outcome-gated. Sprint 2 is now substantially
+          implemented but still closing its remaining product slices, evidence,
+          qualified review, and final demonstration. Sprint 3 foundation work
+          may proceed with synthetic inputs while Sprint 1’s gate remains open;
+          that exception does not make any open gate complete.
         </p>
       </PageIntro>
 
@@ -1076,21 +1133,31 @@ function SprintOne() {
 function SprintTwo() {
   const boundaries = [
     [
-      'The Child Map is temporal',
-      'Information can be corrected, changed over time, or deleted. The model is a living parent-guided record, not a profile-completion score.',
+      'The temporal Child Map is real product infrastructure',
+      'Category exploration, observation detail and lifecycle actions, current/history derivation, Right Now, Then & Now, protected reads/writes, stale-write handling, and core responsive/accessibility/privacy evidence have moved beyond specification.',
     ],
     [
-      'Discovery questions are versioned',
-      'Approved question definitions and typed answer shapes can evolve without hard-coding one questionnaire into the web application.',
+      'Discovery is data-driven, not a compiled questionnaire',
+      'Approved definitions live in versioned structured content packs. Runtime loads an immutable catalog snapshot, retrieves indexed candidates, scores deterministically for metadata/context/history fit and diversity, and renders controlled contextual templates.',
     ],
     [
-      'Eligibility and pacing are deterministic',
-      'Sprint 2 uses explicit age/context eligibility, shown/dismissed history, cooldowns, and bounded follow-ups rather than runtime semantic interpretation of family free text.',
+      'Deletion is a lifecycle boundary',
+      'Individual source deletion, entity deletion, private-media replacement/removal, child-source cleanup, retryable deletion behavior, and family-account deletion coordination now have real implementation behind them while final failure/evidence work remains.',
     ],
     [
-      'Discovery does not own story context',
-      'Answers can become canonical Child Map source information, but Story Context Selection in Sprint 3 decides what is permitted for a particular story or provider transfer.',
+      'Privacy decision and privacy readiness are different',
+      'The conservative private-Alpha collection, retention, provider-transfer, training, and reference-media boundary is decided. Real-family Alpha use still requires qualified privacy, legal, security, and child-safety review.',
     ],
+  ];
+
+  const discoverySteps = [
+    'Compiled seed',
+    'Versioned content packs',
+    'Immutable snapshot',
+    'Indexed candidates',
+    'Deterministic scoring',
+    'Safe context',
+    'Provenance',
   ];
 
   return (
@@ -1100,10 +1167,10 @@ function SprintTwo() {
         title="A living Child Map needs a capability, not a questionnaire."
       >
         <p>
-          Sprint 2 changed shape as the project learned more. The accepted
-          direction is now a temporal Child Map plus a versioned Discovery
-          capability that can grow without coupling the entire product to one
-          fixed set of questions.
+          “Not a profile to complete. Just small, true things worth
+          remembering.” Sprint 2 now has substantial implementation behind that
+          idea: a temporal source-of-truth model, a data-driven Discovery
+          runtime, protected lifecycle operations, and deletion infrastructure.
         </p>
       </PageIntro>
 
@@ -1111,12 +1178,14 @@ function SprintTwo() {
         <div className="outcome-banner">
           <div>
             <p className="eyebrow">Sprint 2 outcome status</p>
-            <h2>Canonical scope accepted. Synthetic implementation allowed.</h2>
+            <h2>Substantially implemented. Final outcome gate still open.</h2>
           </div>
           <p>
-            This is not a claim that the Sprint 2 outcome gate has passed. Under
-            the temporary sequencing exception, work may proceed with synthetic
-            inputs while Sprint 1 remains explicitly open.
+            Implementation progress is not the same as a passed sprint. People &
+            Pets and Places & Routines still need their remaining contract/UI
+            work, final Discovery and deletion evidence remains, and qualified
+            privacy/legal/security/child-safety review is still required before
+            real-family Alpha use.
           </p>
         </div>
 
@@ -1130,20 +1199,68 @@ function SprintTwo() {
           ))}
         </ol>
 
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">Discovery evolution</p>
+          <h2>From “a list of questions” to a real capability.</h2>
+          <p>
+            Runtime Sprint 2 Discovery remains deterministic. No external model
+            is required to choose a question, and family Child Map content is
+            not sent to an external AI provider for runtime question selection
+            or interpretation.
+          </p>
+        </div>
+
+        <div
+          className="delivery-loop"
+          aria-label="Discovery evolved from compiled seed questions to versioned data and bounded provenance"
+        >
+          {discoverySteps.map((step, index) => (
+            <React.Fragment key={step}>
+              <span>{step}</span>
+              {index < discoverySteps.length - 1 && <i aria-hidden="true">→</i>}
+            </React.Fragment>
+          ))}
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">What remains before the gate can pass</p>
+            <h2>Closing work is now narrower—and still important.</h2>
+          </div>
+          <ul>
+            <li>
+              Final Discovery authorization/concurrency/deletion evidence.
+            </li>
+            <li>
+              People & Pets and Places & Routines after the remaining
+              server-authoritative revision and relationship-link contracts.
+            </li>
+            <li>Remaining private reference-media UI and evidence.</li>
+            <li>
+              Deletion failure-injection, confirmation, and evidence work.
+            </li>
+            <li>Family-account deletion confirmation UX and evidence.</li>
+            <li>
+              Qualified privacy, legal, security, and child-safety review.
+            </li>
+            <li>The final integrated Sprint 2 outcome demonstration.</li>
+          </ul>
+        </div>
+
         <div className="reading-panel">
-          <h2>What this architecture buys us</h2>
-          <Definition term="Different question shapes">
-            Short text, longer text, choices, true/false, structured selections,
-            and bounded follow-ups can share one renderer contract.
+          <h2>Temporal truth is deliberately boring</h2>
+          <Definition term="Genuine change">
+            “Loved dinosaurs” followed later by “not anymore” preserves the
+            earlier retained truth as history.
           </Definition>
-          <Definition term="Future intelligence">
-            Later question authoring, ranking, or phrasing can sit behind the
-            capability boundary without silently changing Sprint 2 privacy
-            rules.
+          <Definition term="Correction">
+            “That was entered incorrectly” fixes the source instead of inventing
+            a fake life stage.
           </Definition>
-          <Definition term="Public status">
-            Accepted product and architecture direction; not a demonstrated
-            sprint outcome.
+          <Definition term="Current public status">
+            Substantial synthetic implementation exists. The sprint is not
+            presented as passed, and real-family Alpha collection is not
+            presented as approved.
           </Definition>
         </div>
       </section>
@@ -1154,8 +1271,8 @@ function SprintTwo() {
 function SprintThree() {
   const boundaries = [
     [
-      'Story Studio is guided and reversible',
-      'A parent moves from purpose and selected context through planning, a cover plus ten text pages, direct/scoped revision, restoration, and approval.',
+      'Story Studio remains guided and reversible',
+      'The intended parent journey still moves from purpose and selected context through planning, a cover plus ten text pages, direct/scoped revision, restoration, and approval.',
     ],
     [
       'Story Lifecycle owns Story truth',
@@ -1163,7 +1280,7 @@ function SprintThree() {
     ],
     [
       'Context Selection owns permission',
-      'Policy determines which Child Map candidates may be considered, then the parent can include or remove a small permitted set before generation.',
+      'Policy determines which Child Map candidates may be considered, then the parent can include or remove a small permitted set before provider-facing generation.',
     ],
     [
       'Generation returns candidates',
@@ -1175,13 +1292,14 @@ function SprintThree() {
     <>
       <PageIntro
         eyebrow="Sprint chapter · 03"
-        title="Story creation is a reversible composition workflow."
+        title="Story creation is becoming a reversible composition workflow."
       >
         <p>
-          Sprint 3 moved away from the idea of one giant Story service. The
-          accepted architecture separates Story Lifecycle, Story Context
-          Selection, and Story Generation while keeping the Alpha deployment
-          physically simple until operational evidence justifies extraction.
+          Sprint 3 is no longer architecture alone. Foundational persistence,
+          read contracts, provider-neutral generation artifacts, structural
+          validation, operation state, architecture tests, and deterministic
+          page/decoration work are landing while the visible end-to-end Story
+          Studio experience remains ahead.
         </p>
       </PageIntro>
 
@@ -1189,12 +1307,13 @@ function SprintThree() {
         <div className="outcome-banner">
           <div>
             <p className="eyebrow">Sprint 3 outcome status</p>
-            <h2>Canonical workflow and capability architecture accepted.</h2>
+            <h2>Architecture accepted. Foundation implementation underway.</h2>
           </div>
           <p>
-            The architecture is implementation-ready, but the outcome gate is
-            not being presented as passed. Text composition comes first;
-            reusable characters and generated illustrations remain Sprint 4.
+            This work continues under the synthetic-only sequencing exception.
+            The full generation pipeline, parent-visible generation progress,
+            editing/revision journey, approval, and final Sprint 3 outcome are
+            not being presented as complete.
           </p>
         </div>
 
@@ -1208,21 +1327,68 @@ function SprintThree() {
           ))}
         </ol>
 
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">Foundation → product experience</p>
+          <h2>The lower-level pieces are landing before the visible studio.</h2>
+          <p>
+            Status words are deliberately part of the diagram so a contract or
+            persistence primitive is not mistaken for a completed parent
+            workflow.
+          </p>
+        </div>
+
+        <div
+          className="delivery-loop"
+          aria-label="Story foundation flow from parent intent to Story Studio approval"
+        >
+          <span>Landed · StoryRequest persistence</span>
+          <i aria-hidden="true">→</i>
+          <span>Underway · setup / Story Plan</span>
+          <i aria-hidden="true">→</i>
+          <span>Landed · StoryBlueprint contract</span>
+          <i aria-hidden="true">→</i>
+          <span>Landed · structural validation</span>
+          <i aria-hidden="true">→</i>
+          <span>Underway · generation workflow</span>
+          <i aria-hidden="true">→</i>
+          <span>Later · Story Studio review</span>
+          <i aria-hidden="true">→</i>
+          <span>Later · approval</span>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Concrete foundation now in code</p>
+            <h2>Enough exists to make the next work less speculative.</h2>
+          </div>
+          <ul>
+            <li>Pre-generation StoryRequest persistence.</li>
+            <li>Protected Story summary reads.</li>
+            <li>Provider-neutral ten-page StoryBlueprint contract.</li>
+            <li>Pure StoryComposition structural validation.</li>
+            <li>Durable generation-operation state persistence.</li>
+            <li>Story capability dependency/architecture tests.</li>
+            <li>Reusable deterministic story-page renderer.</li>
+            <li>Original deterministic cover/page decoration assets.</li>
+          </ul>
+        </div>
+
         <div className="reading-panel">
-          <h2>Why the split matters</h2>
-          <Definition term="Logical boundary first">
-            Lifecycle, context permission, and generation can evolve
-            independently even while they run inside the same Alpha API process.
+          <h2>What is still ahead</h2>
+          <Definition term="Generation">
+            Full blueprint-to-ten-page generation, quality/safety/continuity
+            checking, bounded repair/retry, progress reporting, and the approved
+            live text-provider adapter remain unfinished.
           </Definition>
-          <Definition term="Extractable generation">
-            Generation can later move to a worker or service if durability,
-            backpressure, rate limits, credential isolation, or independent
-            scaling make that worthwhile.
+          <Definition term="Story Studio">
+            Direct editing, paragraph/page rewrites, continuity decisions,
+            earlier-version restore, deterministic cover editing, whole-story
+            change, approval, and post-approval editing remain later Sprint 3
+            work.
           </Definition>
-          <Definition term="Still open">
-            Provider selection, exact durable-workflow technology, provider-copy
-            deletion behavior, and the physical extraction point remain
-            evidence-led decisions.
+          <Definition term="Public status">
+            Foundation implementation is real; an end-to-end generated,
+            editable, approved Story Studio outcome is not yet demonstrated.
           </Definition>
         </div>
       </section>
@@ -1352,12 +1518,12 @@ function Design() {
 function Questions() {
   const questions = [
     [
-      'What family information is necessary, optional, or prohibited?',
-      'The Child Map is now a living record, but the exact minimum, optional, and prohibited fields still require product, privacy, and safety evidence.',
+      'What must qualified Sprint 2 review still validate?',
+      'The conservative private-Alpha collection, retention, provider-transfer, training, and reference-media product boundary is decided. Qualified privacy, legal, security, and child-safety review must still validate or tighten the implemented boundary before real-family Alpha use.',
     ],
     [
-      'Which Child Map information may be used for a specific story or transferred to a provider?',
-      'Sprint 3 has a context-selection boundary, but the detailed sensitivity and purpose policy remains unresolved.',
+      'Which permitted Child Map information may be used for a specific story or transferred to a provider?',
+      'Sprint 3 has a context-selection boundary, but the detailed sensitivity, purpose, and provider-transfer policy still needs evidence before live family data is permitted.',
     ],
     [
       'What happens to stories derived from Child Map information that is later deleted?',
@@ -1373,7 +1539,7 @@ function Questions() {
     ],
     [
       'What proves the private Alpha is valuable and safe enough to continue?',
-      'The project still needs real-world learning criteria in addition to technical and safety evidence.',
+      'The project still needs real-world learning criteria in addition to technical, privacy, safety, and reliability evidence.',
     ],
   ];
 
@@ -1406,9 +1572,10 @@ function Questions() {
           <Definition term="Open question">
             A matter that has not been decided. It is not a hidden commitment.
           </Definition>
-          <Definition term="Narrowed question">
-            A broad uncertainty whose ownership or policy boundary is now
-            clearer even though the final operational choice is not settled.
+          <Definition term="Qualified review">
+            Specialist validation can confirm or tighten a product boundary. It
+            is not replaced by agent reasoning or an internal architecture
+            review.
           </Definition>
           <Definition term="Next step">
             Research, prototype evidence, specialist review, operational

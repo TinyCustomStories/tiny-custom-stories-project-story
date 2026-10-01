@@ -2,7 +2,7 @@
 
 This directory explains the public Tiny Custom Stories project-story site in a format that can be read without opening the application.
 
-The public site is a multi-route single-page application. A route is a stable browser address that presents one topic at a time while the application remains loaded. Existing September routes remain valid; newer development, architecture, and delivery routes extend the story without replacing its earlier chapter. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 are presented together beneath Development story instead of giving one sprint a unique header position.
+The public site is a multi-route single-page application. A route is a stable browser address that presents one topic at a time while the application remains loaded. The September routes remain valid; the October 1 refresh updates their evidence and status without replacing the established information architecture. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 are presented together beneath Development story instead of giving one sprint a unique header position.
 
 ## What is documented here
 
@@ -15,7 +15,7 @@ These documents describe the public-information experience only. They do not exp
 
 ## Design continuity
 
-The September 24 update is an additive evolution of the existing site.
+The October 1 refresh is an additive evolution of the September 24/25 site.
 
 The public story remains the **Public editorial** surface from the accepted Tiny Custom Stories design language: warm paper-like surfaces, deep ink, restrained playful accents, large editorial type, visible knowledge status, strong hierarchy, accessibility, and responsive recomposition.
 
@@ -59,9 +59,10 @@ Application API
         |                    |
         v                    v
 Child Map Discovery      Story capabilities
-- question definitions   - Story Lifecycle
-- eligibility/pacing     - Context Selection
-- bounded follow-ups     - Story Generation
+- versioned data packs   - Story Lifecycle
+- indexed candidates     - Context Selection
+- deterministic scoring  - Story Generation
+- safe context/provenance
         |                    |
         +---------+----------+
                   |
@@ -69,7 +70,7 @@ Child Map Discovery      Story capabilities
       Family-scoped documents + private media
 ```
 
-Story Generation is deliberately extractable later, but the Alpha default remains the existing web/API deployables until operational evidence justifies worker/service extraction. MCP remains an optional adapter rather than the business or authorization boundary.
+Discovery now has concrete data-driven runtime implementation behind the logical boundary. Story capabilities also have early persistence, read, blueprint, structural-validation, operation-state, architecture-test, and deterministic-rendering artifacts. Story Generation remains deliberately extractable later, but the Alpha default stays physically simple until operational evidence justifies worker/service extraction.
 
 ## Maintenance rule
 

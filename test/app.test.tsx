@@ -93,7 +93,7 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
     expect(
       screen.getByRole('heading', {
-        name: /story creation is a reversible composition workflow/i,
+        name: /story creation is becoming a reversible composition workflow/i,
       }),
     ).toBeTruthy();
   });
@@ -101,9 +101,7 @@ describe('project story site', () => {
   it('states the Sprint 1 gate accurately and preserves its legacy route', () => {
     render(<App />);
 
-    expect(
-      screen.getByText(/Sprint 1 has substantial implementation evidence/i),
-    ).toBeTruthy();
+    expect(screen.getByText(/Sprint 1 remains evidence-gated/i)).toBeTruthy();
 
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
@@ -130,7 +128,7 @@ describe('project story site', () => {
       screen.getByText(/Outcome gate open - explicitly not passed/i),
     ).toBeTruthy();
     expect(
-      screen.getByText(/Canonical scope \+ synthetic implementation allowed/i),
+      screen.getByText(/Substantially implemented - outcome gate open/i),
     ).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
@@ -140,16 +138,57 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(screen.getByText('869')).toBeTruthy();
-    expect(screen.getByText('284')).toBeTruthy();
-    expect(screen.getByText('516')).toBeTruthy();
+    expect(screen.getByText('981')).toBeTruthy();
+    expect(screen.getByText('354')).toBeTruthy();
+    expect(screen.getByText('754')).toBeTruthy();
     expect(
-      screen.getByText(/422 of the 516 recorded workflow runs/i),
+      screen.getByText(/602 of the 754 recorded workflow runs/i),
     ).toBeTruthy();
     expect(screen.getByText('Frontend CI')).toBeTruthy();
     expect(screen.getByText('Backend CI')).toBeTruthy();
     expect(screen.getByText('Browser evidence')).toBeTruthy();
-    expect(screen.getByText('Project story CI')).toBeTruthy();
+    expect(screen.getByText('Public-story CI')).toBeTruthy();
+  });
+
+  it('distinguishes implemented Sprint 2 work from its open outcome gate', () => {
+    render(<App />);
+
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    fireEvent.click(screen.getByRole('link', { name: /Read Sprint 2/i }));
+
+    expect(
+      screen.getByText(
+        /Substantially implemented\. Final outcome gate still open/i,
+      ),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {
+        name: /from “a list of questions” to a real capability/i,
+      }),
+    ).toBeTruthy();
+    expect(screen.getByText(/Versioned content packs/i)).toBeTruthy();
+    expect(
+      screen.getAllByText(/Qualified privacy, legal, security/i).length,
+    ).toBeGreaterThan(0);
+  });
+
+  it('shows landed Sprint 3 foundations without claiming the Studio outcome', () => {
+    render(<App />);
+
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
+
+    expect(
+      screen.getByText(
+        /Architecture accepted\. Foundation implementation underway/i,
+      ),
+    ).toBeTruthy();
+    expect(screen.getByText(/Landed · StoryRequest persistence/i)).toBeTruthy();
+    expect(screen.getByText(/Later · approval/i)).toBeTruthy();
   });
 
   it('preserves the accepted visual recipe and stable public PDF path', () => {

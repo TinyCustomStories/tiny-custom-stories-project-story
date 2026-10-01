@@ -1,6 +1,6 @@
 # Tiny Custom Stories — public project story
 
-This public repository contains the independently buildable project-story website for Tiny Custom Stories. It explains the project’s direction, demonstrated Sprint 0 foundation, substantial-but-open Sprint 1 family-access boundary, evolving Sprint 2 Child Map Discovery capability, accepted Sprint 3 Story Studio architecture, roadmap, design language, and open questions in plain language.
+This public repository contains the independently buildable project-story website for Tiny Custom Stories. It explains the project’s direction, demonstrated Sprint 0 foundation, substantial-but-open Sprint 1 family-access boundary, substantially implemented-but-open Sprint 2 Child Map and Discovery work, early Sprint 3 Story foundations, roadmap, design language, delivery process, and open questions in plain language.
 
 It is not the Tiny Custom Stories parent/child application. The private product repository, backend, internal research, operational documentation, private issue links, and family data are intentionally outside this repository.
 
@@ -8,18 +8,19 @@ The published site is expected at [tinycustomstories.github.io/tiny-custom-stori
 
 The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The responsive website is the primary source for semantic navigation and text reflow.
 
-## What changed in the September 24 update
+## What changed in the October 1 refresh
 
-The earlier September edition described Sprint 0 and the accepted Sprint 1 boundary. The current edition preserves that chapter and adds later evidence and accepted architecture:
+The September 24/25 edition already introduced Sprint chapters, Architecture, How we build, and the dated delivery snapshot. This refresh preserves that structure and updates what the repository now proves:
 
-- Sprint 1 now has substantial implementation, accessibility, regression, and end-to-end evidence, while its outcome gate remains explicitly open because a required provider proof is unresolved.
-- A temporary sequencing exception allows Sprint 2 and Sprint 3 planning and implementation with synthetic inputs without treating Sprint 1 as passed.
-- Sprint 2 now treats the Child Map as a temporal living record and makes Discovery a versioned capability with approved question definitions, typed answers, deterministic eligibility/pacing, bounded follow-ups, and a generic renderer.
-- Sprint 3 now uses a canonical guided Story Studio composition workflow and separates Story Lifecycle, Story Context Selection, and Story Generation.
-- Logical capability boundaries come before physical service extraction. Discovery and Story work can remain in the Alpha API process until operational evidence justifies worker/service boundaries.
-- The existing paper-and-ink public-editorial design is preserved and extended rather than replaced.
-- Sprint 1, Sprint 2, and Sprint 3 now appear as equal development-story chapters rather than giving Sprint 1 a unique top-navigation slot.
-- A dated main-repository delivery snapshot makes the scale of the work visible: commits, pull requests, issues/tasks, sprint structure, workflow runs, and the CI/browser-evidence system.
+- Sprint 1 still has substantial implementation and evidence while its outcome gate remains explicitly open.
+- Sprint 2 is now substantially implemented rather than merely accepted scope: core temporal Child Map flows, current/history views, Right Now and Then & Now, protected lifecycle work, data-driven deterministic Discovery, private-media work, and deletion infrastructure have landed.
+- Discovery moved from compiled seed questions to versioned structured content packs, immutable catalog snapshots, indexed candidate retrieval, deterministic metadata/context/history scoring and diversity, safe contextual templates, and bounded catalog provenance.
+- Sprint 2 still has an open outcome gate. Remaining product slices, final cross-cutting evidence, qualified privacy/legal/security/child-safety review, and the final integrated demonstration are not presented as complete.
+- The conservative Sprint 2 private-Alpha privacy/consent/retention boundary is now a confirmed product decision, while qualified review remains a separate readiness requirement before real-family use.
+- Authenticated Home remains an intentional child-safe destination. Sign-in may still land in the Story Library, while Home ↔ Library navigation is an accepted direction with implementation/regression work still underway.
+- Sprint 3 now has concrete foundation implementation: pre-generation StoryRequest persistence, protected summary reads, provider-neutral blueprint/validation contracts, generation-operation state, architecture tests, deterministic page rendering, and original decoration assets. Full generation, Story Studio editing, approval, and the outcome gate remain ahead.
+- The main repository delivery snapshot was recomputed from current evidence: 981 commits, 354 pull requests created, 329 merged, 289 issues tracked, 263 task issues, 188 closed / 101 open issues, 3 main product CI workflows, 754 workflow runs, and 602 successful runs as of October 1, 2026.
+- The engineering-process story now also reflects explicit dependency chains, parallel isolated task execution, backlog stewardship, systematic debugging, verification-before-completion, and review/fix/re-review loops without turning the site into an AI-tool advertisement.
 
 ## Run locally
 

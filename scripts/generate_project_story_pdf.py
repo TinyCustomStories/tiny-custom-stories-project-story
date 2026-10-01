@@ -206,7 +206,7 @@ def rows_page(canvas: Canvas, total: int, n: int, section: str, title: str,
 
 
 def cover(canvas: Canvas, n: int, total: int) -> None:
-    page_base(canvas, n, total, "September 24, 2026 edition", INK, dark=True)
+    page_base(canvas, n, total, "October 1, 2026 edition", INK, dark=True)
     canvas.setFillColor(CORAL)
     canvas.circle(WIDTH - 112, HEIGHT - 138, 58, fill=1, stroke=0)
     canvas.setFillColor(SUN)
@@ -224,7 +224,7 @@ def cover(canvas: Canvas, n: int, total: int) -> None:
     )
     paragraph(
         canvas,
-        "An updated public guide to the product, demonstrated foundation, open Sprint 1 gate, Child Map Discovery, Story Studio architecture, roadmap, design language, and useful unknowns.",
+        "An October checkpoint on the demonstrated foundation, open Sprint 1 gate, substantially implemented Child Map and Discovery work, early Story foundations, delivery process, roadmap, design language, and useful unknowns.",
         MARGIN,
         414,
         410,
@@ -234,7 +234,7 @@ def cover(canvas: Canvas, n: int, total: int) -> None:
     pill(canvas, f"{total} pages", MARGIN + 145, 307, SUN, INK)
     paragraph(
         canvas,
-        "Same design DNA. More mature architecture. No false finish line.",
+        "Same design DNA. More implementation evidence. No false finish line.",
         MARGIN,
         265,
         390,
@@ -246,8 +246,8 @@ def status(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Where the project is now")
     y = page_title(
         canvas,
-        "The project moved forward without rewriting the past.",
-        "Sprint 0 is demonstrated. Sprint 1 has substantial implementation and evidence, but its outcome gate remains explicitly open. Sprint 2 and Sprint 3 may proceed only inside a documented synthetic-input exception.",
+        "Implementation moved forward without moving the finish line.",
+        "Sprint 0 is demonstrated. Sprint 1 remains evidence-gated. Sprint 2 is substantially implemented with its final outcome gate still open. Sprint 3 foundation work is landing under the synthetic-only sequencing exception.",
     )
     card(
         canvas,
@@ -255,11 +255,11 @@ def status(canvas: Canvas, n: int, total: int) -> None:
         y - 34,
         242,
         210,
-        "Sprint 0",
-        "Clean React and .NET foundations, architecture, CI, contracts, dependency checks, and browser evidence passed the recorded outcome gate.",
+        "Sprint 2",
+        "Temporal Child Map flows, data-driven deterministic Discovery, lifecycle/deletion infrastructure, private-media work, and substantial evidence now exist. Remaining slices, proof, and qualified review keep the gate open.",
         fill=MINT,
         accent=PLUM,
-        label="Outcome demonstrated",
+        label="Substantial / gate open",
     )
     card(
         canvas,
@@ -267,19 +267,19 @@ def status(canvas: Canvas, n: int, total: int) -> None:
         y - 34,
         242,
         210,
-        "Sprint 1",
-        "Family access and protected-parent-mode work is implemented deeply. A required provider proof remains unresolved, so the gate is not passed.",
+        "Sprint 3",
+        "StoryRequest persistence, summary reads, blueprint and structural-validation contracts, operation state, architecture tests, and deterministic rendering foundations are landing. The full Studio outcome is still ahead.",
         fill=SURFACE,
         accent=CORAL,
-        label="Gate open",
+        label="Foundations underway",
     )
     paragraph(
         canvas,
-        "A temporary sequencing exception allows synthetic Sprint 2/3 work. It does not rename Sprint 1 as complete, and the unresolved evidence must be revisited before Sprint 4.",
+        "Real-family Sprint 2 Alpha use remains blocked on the remaining outcome evidence and qualified privacy, legal, security, and child-safety review. Synthetic implementation evidence is not the same as production readiness.",
         MARGIN,
         220,
         WIDTH - MARGIN * 2,
-        style("status-quote", font=DISPLAY_BOLD, size=16, leading=21, color=PLUM),
+        style("status-quote", font=DISPLAY_BOLD, size=15.5, leading=20.5, color=PLUM),
     )
 
 
@@ -358,25 +358,25 @@ def sprint1_evidence(canvas: Canvas, n: int, total: int) -> None:
 
 
 def sprint2(canvas: Canvas, n: int, total: int) -> None:
-    page_base(canvas, n, total, "Sprint 2 - Child Map Discovery", LAVENDER)
+    page_base(canvas, n, total, "Sprint 2 - Child Map + Discovery", LAVENDER)
     y = page_title(
         canvas,
-        "The Child Map became a living record, not a completion form.",
-        "Sprint 2 separates durable Child Map information from Discovery operating state. Discovery can evolve without hard-coding one questionnaire into the main application.",
+        "The Child Map is now substantial implementation, not only accepted scope.",
+        "The temporal source-of-truth model and data-driven Discovery runtime have moved beyond specification while the integrated Sprint 2 outcome gate remains open.",
     )
     data = [
-        ("Versioned questions", "Approved question definitions are content with stable identifiers and answer schemas.", SUN),
-        ("Typed answers", "The renderer understands the question shape rather than baking each prompt into a bespoke screen.", MINT),
-        ("Deterministic eligibility", "Age, context, history, pacing, and cooldown rules decide what may be asked before optional future intelligence.", CORAL),
-        ("Bounded follow-ups", "Follow-up depth is explicit and limited instead of allowing an open-ended hidden conversation.", PLUM),
+        ("Temporal truth", "Category/detail flows, lifecycle actions, current/history derivation, Right Now, Then & Now, protected reads/writes, and stale-write handling now have implementation behind them.", SUN),
+        ("Data-driven Discovery", "Versioned content packs load through immutable catalog snapshots with indexed candidates, deterministic metadata/context/history scoring, diversity, and controlled contextual templates.", MINT),
+        ("Deletion lifecycle", "Source, entity, private-media, child-source, retryable deletion, and family-account cleanup now have real implementation while final evidence remains.", CORAL),
+        ("Privacy boundary", "The conservative private-Alpha collection, retention, provider-transfer, training, and media boundary is decided; qualified review is still required before real-family use.", PLUM),
     ]
     for i, (title, body, accent) in enumerate(data):
-        card(canvas, MARGIN + (i % 2) * 264, y - 28 - (i // 2) * 174, 244, 150, title, body, fill=SURFACE, accent=accent, label=f"Discovery {i + 1}")
+        card(canvas, MARGIN + (i % 2) * 264, y - 28 - (i // 2) * 182, 244, 158, title, body, fill=SURFACE, accent=accent, label=f"Sprint 2 {i + 1}")
     paragraph(
         canvas,
-        "Sprint 2 does not send Child Map text or photos to an external AI provider for runtime interpretation. Future AI authoring, ranking, or phrasing can sit behind replaceable capability boundaries.",
+        "Discovery evolution: compiled seed -> versioned packs -> immutable snapshot -> indexed candidates -> deterministic scoring/diversity -> safe contextual templates -> bounded catalog provenance. Runtime Sprint 2 still does not need an external model to select or interpret family questions.",
         MARGIN,
-        154,
+        142,
         WIDTH - MARGIN * 2,
         SMALL,
     )
@@ -384,15 +384,16 @@ def sprint2(canvas: Canvas, n: int, total: int) -> None:
 
 def sprint3(canvas: Canvas, n: int, total: int) -> None:
     rows_page(
-        canvas, total, n, "Sprint 3 - Story Studio",
-        "Story creation became a reversible composition workflow.",
-        "The canonical Sprint 3 experience is one guided Story Studio from intent through approval. The story is a composition, not a one-shot prompt response.",
+        canvas, total, n, "Sprint 3 - Story foundations",
+        "The lower-level story pieces are landing before the visible Studio.",
+        "Sprint 3 keeps the accepted Lifecycle / Context Selection / Generation split. Concrete foundation artifacts now exist, but generation, editing, approval, and the final outcome remain ahead.",
         [
-            ("01", "Review context", "The parent sees a small permitted personalization set, may remove items, add story-only details, or choose a completely fictional mode."),
-            ("02", "Plan before writing", "Story purpose and reading choices become a visible Story Plan before generation."),
-            ("03", "Compose ten text pages", "Sprint 3 proves a cover plus exactly ten text pages. AI-generated illustrations remain Sprint 4."),
-            ("04", "Revise locally", "Direct editing, paragraph-scoped assistance, page rewrite, visible continuity choices, and lightweight restore reduce destructive regeneration."),
-            ("05", "Approve a stable version", "Approval creates Story truth that later draft edits do not silently mutate."),
+            ("01", "StoryRequest persistence", "Pre-generation request identity and setup can persist without fabricating a generated StoryComposition."),
+            ("02", "Blueprint + validation contracts", "A provider-neutral ten-page StoryBlueprint shape and pure StoryComposition structural findings now define important candidate boundaries."),
+            ("03", "Operation state + architecture evidence", "Durable generation-operation state and capability dependency tests make the generation boundary more executable and reviewable."),
+            ("04", "Deterministic rendering foundations", "Reusable story-page rendering and original deterministic cover/page decoration assets exist without generated illustrations."),
+            ("05", "Generation remains underway", "Full blueprint-to-ten-page generation, quality/safety/continuity checking, bounded repair, progress, and the live provider adapter remain unfinished."),
+            ("06", "Story Studio remains later", "Direct editing, assisted rewrites, continuity decisions, restore, cover editing, approval, post-approval editing, and final demonstration remain ahead."),
         ],
     )
 
@@ -442,14 +443,14 @@ def roadmap(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Outcome-gated roadmap")
     y = page_title(
         canvas,
-        "Seven outcomes, with the current exception visible.",
-        "The roadmap remains outcome-based. The temporary Sprint 1 sequencing exception permits bounded synthetic Sprint 2/3 work; it does not convert the open Sprint 1 gate into a pass.",
+        "Seven outcomes, with implementation progress kept separate from gate status.",
+        "Sprint 2 is substantially implemented but still closing remaining product slices, evidence, qualified review, and its final demonstration. Sprint 3 foundations may proceed synthetically while Sprint 1 remains open.",
     )
     items = [
         ("00", "Foundation", "Demonstrated", MINT),
         ("01", "Accounts + parent mode", "Gate open", CORAL),
-        ("02", "Child Map + Discovery", "Canonical", SUN),
-        ("03", "Story Studio", "Canonical", SUN),
+        ("02", "Child Map + Discovery", "Build / gate open", SUN),
+        ("03", "Story Studio", "Foundations", SUN),
         ("04", "Characters + art", "Later", LAVENDER),
         ("05", "Library + reader", "Later", LAVENDER),
         ("06", "Alpha readiness", "Later", LAVENDER),
@@ -464,7 +465,7 @@ def roadmap(canvas: Canvas, n: int, total: int) -> None:
         paragraph(canvas, title, MARGIN + 50, cursor - 12, 290, CARD_TITLE)
         pill(canvas, state, WIDTH - MARGIN - 100, cursor - 30, fill, INK)
         cursor -= 62
-    paragraph(canvas, "Before Sprint 4 starts, the unresolved Sprint 1 provider evidence must be revisited. Later sprint definitions remain proposals until their scope and evidence mature.", MARGIN, 118, WIDTH - MARGIN * 2, SMALL)
+    paragraph(canvas, "Before Sprint 4 starts, the unresolved Sprint 1 provider evidence must be revisited. A merged task or implemented foundation is supporting evidence; it does not pass an outcome gate by itself.", MARGIN, 118, WIDTH - MARGIN * 2, SMALL)
 
 
 def delivery(canvas: Canvas, n: int, total: int) -> None:
@@ -472,7 +473,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "The work is visible because the process is visible.",
-        "A dated GitHub snapshot shows the scale of the main product repository without pretending the numbers are live. The public-story repository is excluded so the page does not inflate itself.",
+        "A dated GitHub snapshot shows the scale of the main product repository without pretending the numbers are live. The separate public-story repository is excluded from the activity totals.",
     )
     snapshot = DELIVERY_SNAPSHOT
     stats = [
@@ -507,7 +508,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
         canvas,
         f"{snapshot['plannedSprints']} outcome-gated sprints are mapped. "
         f"{snapshot['closedIssues']:,} issues are closed and {snapshot['openIssues']:,} remain open. "
-        f"The repository has {snapshot['workflowDefinitions']} CI workflows; "
+        f"The main product repository currently has {snapshot['workflowDefinitions']} CI workflow definitions; "
         f"{snapshot['successfulWorkflowRuns']:,} of {snapshot['workflowRuns']:,} recorded workflow runs completed successfully in this snapshot.",
         MARGIN,
         y - 268,
@@ -517,42 +518,42 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
 
     paragraph(
         canvas,
-        "ISSUE / TASK  ->  FOCUSED BRANCH  ->  PULL REQUEST  ->  CI + BROWSER EVIDENCE  ->  REVIEW  ->  MERGE + OUTCOME EVIDENCE",
+        "IDEA / FINDING  ->  DECISION  ->  DOCUMENTATION  ->  ISSUE  ->  IMPLEMENTATION  ->  PR + CI  ->  REVIEW / FIX / RE-REVIEW  ->  MERGE + OUTCOME EVIDENCE",
         MARGIN,
         y - 350,
         usable,
-        style("delivery-loop", font=MONO, size=7.4, leading=11, color=PLUM),
+        style("delivery-loop", font=MONO, size=6.8, leading=10.5, color=PLUM),
     )
 
     card(
         canvas,
         MARGIN,
-        y - 390,
+        y - 370,
         (usable - gap) / 2,
         132,
-        "Automated quality gates",
-        "Frontend: dependency audit, format, lint, type-check, build, tests. Backend: restore/audit, format, warnings-as-errors build, OpenAPI drift, MongoDB startup, tests, and migration smoke checks.",
+        "Small, explicit work",
+        "Backlog stewardship turns accepted decisions into bounded issues with dependencies, acceptance criteria, tests, evidence, and stop conditions. Independent work may run concurrently only in isolated branches or sessions.",
         fill=SURFACE,
         accent=SUN,
-        label="CI",
+        label="Execution",
     )
     card(
         canvas,
         MARGIN + (usable - gap) / 2 + gap,
-        y - 390,
+        y - 370,
         (usable - gap) / 2,
         132,
-        "Browser evidence",
-        "Playwright Chromium smoke tests capture intentional screenshots and upload failure evidence, so important UI flows are checked beyond unit tests.",
+        "Verification before completion",
+        "Non-trivial failures are debugged systematically. Review is iterative: inspect, comment, fix, verify again, then merge only when the evidence supports it.",
         fill=SURFACE,
         accent=CORAL,
-        label="Evidence",
+        label="Review",
     )
     paragraph(
         canvas,
         f"Snapshot: {snapshot['snapshotDate']}. Counts describe repository activity, not productivity scores or a live pass-rate dashboard.",
         MARGIN,
-        92,
+        72,
         usable,
         SMALL,
     )
@@ -638,12 +639,12 @@ def questions(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "Useful unknowns stay visible.",
-        "The capability boundaries are clearer, but privacy, derived-artifact lifecycle, provider transfer, physical extraction, and Alpha evidence still require deliberate decisions.",
+        "Some product boundaries are clearer now. Qualified review, story-context/provider policy, derived-artifact deletion, physical extraction, provider/deployment choices, and Alpha evidence still require deliberate work.",
         dark=True,
     )
     items = [
-        "Which Child Map information is necessary, optional, or prohibited?",
-        "Which permitted Child Map observations may be used for a specific story or external provider?",
+        "What must qualified Sprint 2 privacy, legal, security, and child-safety review validate or tighten before real-family Alpha use?",
+        "Which policy-permitted Child Map observations may be used for a specific story or external provider?",
         "What happens to drafts and approved stories when their Child Map sources are later deleted?",
         "When should Story Generation move from the API process to a worker or service?",
         "Which providers, workflow products, and deployment choices meet the evidence bar?",
@@ -653,7 +654,7 @@ def questions(canvas: Canvas, n: int, total: int) -> None:
         x = MARGIN + (i % 2) * 264
         top = y - 28 - (i // 2) * 137
         canvas.setFillColor(SURFACE)
-        canvas.roundRect(x, top - 112, 244, 100, 8, fill=1, stroke=0)
+        canvas.roundRect(x, top - 132, 244, 120, 8, fill=1, stroke=0)
         canvas.setFillColor(CORAL)
         canvas.setFont(MONO, 8)
         canvas.drawString(x + 14, top - 34, f"Q{i + 1:02d}")
@@ -698,19 +699,19 @@ def next_page(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "What comes next", INK, dark=True)
     y = page_title(
         canvas,
-        "Keep the boundaries clear enough to change safely.",
-        "The near-term project is not one giant autonomous build. It is a chain of explicit product decisions, small implementation slices, public-safe architecture, synthetic evidence, review, and outcome gates.",
+        "Finish the evidence, then keep composing deliberately.",
+        "The near-term project is still a chain of explicit decisions, small implementation slices, synthetic evidence, review, and outcome gates—not one giant autonomous build.",
         dark=True,
     )
     data = [
-        ("Finish the evidence", "Revisit the unresolved Sprint 1 provider proof before Sprint 4.", SUN),
-        ("Build Discovery safely", "Implement accepted versioned question and Child Map lifecycle contracts with synthetic data first.", MINT),
-        ("Compose stories reversibly", "Build Story Studio around policy-limited context, scoped revisions, and stable approval.", MINT),
-        ("Extract only when earned", "Move generation into a worker/service only when operational evidence justifies the added boundary.", SUN),
+        ("Close Sprint 2 honestly", "Finish the remaining People/Places/media/deletion slices, cross-cutting evidence, qualified review, and integrated outcome demonstration.", SUN),
+        ("Keep Discovery deterministic", "Use the versioned data-driven catalog and controlled context boundary without introducing runtime family-data AI interpretation.", MINT),
+        ("Complete generation foundations", "Finish the bounded ten-page generation, checking, recovery, progress, and approved provider path before calling Story generation complete.", MINT),
+        ("Build the visible Studio", "Layer editing, revision history, continuity choices, cover changes, and approval on top of the landed Story foundations.", SUN),
     ]
     for i, (title, body, accent) in enumerate(data):
         card(canvas, MARGIN + (i % 2) * 264, y - 30 - (i // 2) * 174, 244, 150, title, body, fill=INK, accent=accent, dark=True, label="Focused next work")
-    paragraph(canvas, "Source trail: Sprint 0 outcome evidence; Sprint 1 specification and evidence; DEC-2026-039 through DEC-2026-043; Sprint 2 and Sprint 3 canonical specifications; ADR-0016 and ADR-0017; current architecture; design philosophy; visual design language; and public-story curation guidance.", MARGIN, 166, WIDTH - MARGIN * 2, SMALL_DARK)
+    paragraph(canvas, "Source trail: current Sprint 0/1 gate records; October 1 Sprint 2 outcome and privacy records; Child Map Discovery architecture; Sprint 3 canonical specification and Story capability architecture; current repository implementation evidence; design language; and public-story curation guidance.", MARGIN, 166, WIDTH - MARGIN * 2, SMALL_DARK)
 
 
 PAGES = [
@@ -739,8 +740,8 @@ def build() -> None:
     canvas.setTitle("Tiny Custom Stories - Public Project Story")
     canvas.setAuthor("Tiny Custom Stories")
     canvas.setSubject(
-        "Public guide to the product, delivery evidence, Child Map Discovery, "
-        "Story Studio capability architecture, design language, roadmap, and open questions."
+        "Public guide to the product, delivery evidence, Child Map and data-driven Discovery, "
+        "Story foundation implementation, capability architecture, design language, roadmap, and open questions."
     )
     canvas.setCreator("Tiny Custom Stories public project story generator")
     total = len(PAGES)
