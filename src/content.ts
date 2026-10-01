@@ -170,7 +170,8 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
-    title: 'Discovery moved from compiled seed questions to a data-driven runtime',
+    title:
+      'Discovery moved from compiled seed questions to a data-driven runtime',
     summary:
       'Approved question content now lives in versioned structured packs loaded through immutable catalog snapshots with indexed retrieval, deterministic metadata/context/history scoring, diversity, safe contextual templates, and bounded provenance.',
     category: 'Sprint 2',
@@ -266,7 +267,8 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
-    title: 'Qualified validation and derived-artifact deletion still need evidence',
+    title:
+      'Qualified validation and derived-artifact deletion still need evidence',
     summary:
       'The Sprint 2 private-Alpha product boundary is now explicit, but qualified privacy/legal/security/child-safety review is still required before real-family collection. Sprint 3 must also settle what source deletion means for generated drafts, approved stories, generation artifacts, and provider-held copies.',
     category: 'Open question',

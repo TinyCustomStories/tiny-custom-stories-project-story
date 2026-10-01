@@ -101,9 +101,7 @@ describe('project story site', () => {
   it('states the Sprint 1 gate accurately and preserves its legacy route', () => {
     render(<App />);
 
-    expect(
-      screen.getByText(/Sprint 1 remains evidence-gated/i),
-    ).toBeTruthy();
+    expect(screen.getByText(/Sprint 1 remains evidence-gated/i)).toBeTruthy();
 
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
@@ -161,7 +159,9 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 2/i }));
 
     expect(
-      screen.getByText(/Substantially implemented\. Final outcome gate still open/i),
+      screen.getByText(
+        /Substantially implemented\. Final outcome gate still open/i,
+      ),
     ).toBeTruthy();
     expect(
       screen.getByRole('heading', {
@@ -169,7 +169,9 @@ describe('project story site', () => {
       }),
     ).toBeTruthy();
     expect(screen.getByText(/Versioned content packs/i)).toBeTruthy();
-    expect(screen.getByText(/Qualified privacy, legal, security/i)).toBeTruthy();
+    expect(
+      screen.getByText(/Qualified privacy, legal, security/i),
+    ).toBeTruthy();
   });
 
   it('shows landed Sprint 3 foundations without claiming the Studio outcome', () => {
@@ -181,7 +183,9 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
 
     expect(
-      screen.getByText(/Architecture accepted\. Foundation implementation underway/i),
+      screen.getByText(
+        /Architecture accepted\. Foundation implementation underway/i,
+      ),
     ).toBeTruthy();
     expect(screen.getByText(/Landed · StoryRequest persistence/i)).toBeTruthy();
     expect(screen.getByText(/Later · approval/i)).toBeTruthy();

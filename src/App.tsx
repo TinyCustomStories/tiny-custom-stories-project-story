@@ -536,7 +536,9 @@ function Development() {
           </Link>
           <Link to="/sprint-three" className="sprint-chapter-card">
             <span>03</span>
-            <p className="eyebrow">Architecture accepted · foundations landing</p>
+            <p className="eyebrow">
+              Architecture accepted · foundations landing
+            </p>
             <h3>Sprint 3</h3>
             <p>
               Story request persistence, generation contracts, validation,
@@ -554,9 +556,13 @@ function Development() {
           </div>
           <ul>
             <li>Human-directed product and architecture decisions.</li>
-            <li>Small issues with explicit dependencies and stop conditions.</li>
+            <li>
+              Small issues with explicit dependencies and stop conditions.
+            </li>
             <li>Architecture references and visual cues where they help.</li>
-            <li>Independent tasks can run concurrently in isolated sessions.</li>
+            <li>
+              Independent tasks can run concurrently in isolated sessions.
+            </li>
             <li>Implementation is followed by review, fixes, and re-review.</li>
             <li>
               Automated checks plus targeted boundary and visual evidence.
@@ -657,7 +663,9 @@ function HowWeBuild() {
           </article>
           <article>
             <p className="eyebrow">Automation footprint</p>
-            <h2>{deliverySnapshot.workflowDefinitions} main product CI workflows</h2>
+            <h2>
+              {deliverySnapshot.workflowDefinitions} main product CI workflows
+            </h2>
             <p>
               {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of the{' '}
               {deliverySnapshot.workflowRuns.toLocaleString()} recorded workflow
@@ -699,7 +707,9 @@ function HowWeBuild() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">Agent-assisted, repository-owned</p>
-            <h2>Structured execution without handing product ownership away.</h2>
+            <h2>
+              Structured execution without handing product ownership away.
+            </h2>
           </div>
           <ul>
             <li>
@@ -842,7 +852,9 @@ function Architecture() {
         <div className="architecture-sketch">
           <div>
             <b>Web experience</b>
-            <small>Public Home + child-safe library + protected parent mode</small>
+            <small>
+              Public Home + child-safe library + protected parent mode
+            </small>
           </div>
           <i aria-hidden="true">↔</i>
           <div>
@@ -1192,9 +1204,9 @@ function SprintTwo() {
           <h2>From “a list of questions” to a real capability.</h2>
           <p>
             Runtime Sprint 2 Discovery remains deterministic. No external model
-            is required to choose a question, and family Child Map content is not
-            sent to an external AI provider for runtime question selection or
-            interpretation.
+            is required to choose a question, and family Child Map content is
+            not sent to an external AI provider for runtime question selection
+            or interpretation.
           </p>
         </div>
 
@@ -1205,9 +1217,7 @@ function SprintTwo() {
           {discoverySteps.map((step, index) => (
             <React.Fragment key={step}>
               <span>{step}</span>
-              {index < discoverySteps.length - 1 && (
-                <i aria-hidden="true">→</i>
-              )}
+              {index < discoverySteps.length - 1 && <i aria-hidden="true">→</i>}
             </React.Fragment>
           ))}
         </div>
@@ -1218,13 +1228,17 @@ function SprintTwo() {
             <h2>Closing work is now narrower—and still important.</h2>
           </div>
           <ul>
-            <li>Final Discovery authorization/concurrency/deletion evidence.</li>
+            <li>
+              Final Discovery authorization/concurrency/deletion evidence.
+            </li>
             <li>
               People & Pets and Places & Routines after the remaining
               server-authoritative revision and relationship-link contracts.
             </li>
             <li>Remaining private reference-media UI and evidence.</li>
-            <li>Deletion failure-injection, confirmation, and evidence work.</li>
+            <li>
+              Deletion failure-injection, confirmation, and evidence work.
+            </li>
             <li>Family-account deletion confirmation UX and evidence.</li>
             <li>
               Qualified privacy, legal, security, and child-safety review.
@@ -1240,8 +1254,8 @@ function SprintTwo() {
             earlier retained truth as history.
           </Definition>
           <Definition term="Correction">
-            “That was entered incorrectly” fixes the source instead of
-            inventing a fake life stage.
+            “That was entered incorrectly” fixes the source instead of inventing
+            a fake life stage.
           </Definition>
           <Definition term="Current public status">
             Substantial synthetic implementation exists. The sprint is not
