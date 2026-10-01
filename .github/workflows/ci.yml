@@ -36,5 +36,11 @@ jobs:
       - name: Generate current project dossier
         run: npm run generate:pdf
 
+      - name: Upload generated dossier for visual review
+        uses: actions/upload-artifact@v6
+        with:
+          name: october-project-dossier-final
+          path: public/documents/tiny-custom-stories-project-dossier.pdf
+
       - name: Verify public site
         run: npm run verify
