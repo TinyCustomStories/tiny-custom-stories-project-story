@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   verify:
@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v7
-        with:
-          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
 
       - name: Set up Node
         uses: actions/setup-node@v7
@@ -37,26 +35,6 @@ jobs:
 
       - name: Generate current project dossier
         run: npm run generate:pdf
-
-      - name: Format updated source
-        run: npm run format
-
-      - name: Commit repository formatting
-        if: github.event_name == 'pull_request'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/App.tsx src/content.ts test/app.test.tsx
-          if ! git diff --cached --quiet; then
-            git commit -m "style: apply repository formatting"
-            git push origin HEAD:${{ github.head_ref }}
-          fi
-
-      - name: Upload generated dossier
-        uses: actions/upload-artifact@v6
-        with:
-          name: october-project-dossier
-          path: public/documents/tiny-custom-stories-project-dossier.pdf
 
       - name: Verify public site
         run: npm run verify
