@@ -968,10 +968,11 @@ function Roadmap() {
         title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
-          The roadmap remains outcome-gated, but the current sequence includes
-          one explicit exception: Sprint 2 and Sprint 3 work may proceed with
-          synthetic inputs while Sprint 1’s gate remains open. That exception
-          does not make Sprint 1 complete.
+          The roadmap remains outcome-gated. Sprint 2 is now substantially
+          implemented but still closing its remaining product slices, evidence,
+          qualified review, and final demonstration. Sprint 3 foundation work
+          may proceed with synthetic inputs while Sprint 1’s gate remains open;
+          that exception does not make any open gate complete.
         </p>
       </PageIntro>
 
