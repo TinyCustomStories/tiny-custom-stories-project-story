@@ -38,9 +38,3 @@ jobs:
 
       - name: Verify public site
         run: npm run verify
-
-      - name: Upload built site for visual review
-        uses: actions/upload-artifact@v6
-        with:
-          name: october-project-story-dist
-          path: dist
