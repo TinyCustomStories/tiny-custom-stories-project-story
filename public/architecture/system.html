@@ -5022,11 +5022,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
         <g data-graph-role="automatic-crossover" style="--step:1">
           <path data-graph-role="automatic-crossover-underlay" d="M 355 186 L 355 300" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="clerk" data-edge-to="react-web" data-edge-label="signed session" data-edge-key="1" data-edge-id="clerk-session" data-composition-points="355,186;355,300" data-composition-crossover="halo" data-composition-independent="true" d="M 355 186 L 355 300" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-edge-from="identity-provider" data-edge-to="react-web" data-edge-label="signed session" data-edge-key="1" data-edge-id="identity-session" data-composition-points="355,186;355,300" data-composition-crossover="halo" data-composition-independent="true" d="M 355 186 L 355 300" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:2">
           <path data-graph-role="automatic-crossover-underlay" d="M 455 341 L 600 341" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="react-web" data-edge-to="api-host" data-edge-label="authorized request" data-edge-key="2" data-edge-id="web-api-bearer" data-composition-points="455,341;600,341" data-composition-crossover="halo" data-composition-independent="true" d="M 455 341 L 600 341" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-edge-from="react-web" data-edge-to="api-host" data-edge-label="authorized request" data-edge-key="2" data-edge-id="web-api-request" data-composition-points="455,341;600,341" data-composition-crossover="halo" data-composition-independent="true" d="M 455 341 L 600 341" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:3">
           <path data-graph-role="automatic-crossover-underlay" d="M 850 345 L 960 345" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -5048,7 +5048,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <path data-edge-from="story-generation" data-edge-to="story-lifecycle" data-edge-label="candidate artifact" data-edge-key="8" data-edge-id="generation-candidate-return" data-composition-points="1475,595;1520,595;1520,650;550,650;550,595;600,595" d="M 1475 595 L 1512 595 Q 1520 595 1520 603 L 1520 642 Q 1520 650 1512 650 L 558 650 Q 550 650 550 642 L 550 603 Q 550 595 558 595 L 600 595" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         <g data-graph-role="automatic-crossover" style="--step:9">
           <path data-graph-role="automatic-crossover-underlay" d="M 1072.5 300 L 1072.5 122" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="child-map-discovery" data-edge-to="mongodb" data-edge-key="9" data-edge-id="child-map-to-mongo" data-composition-points="1072.5,300;1072.5,122" data-composition-crossover="halo" data-composition-independent="true" d="M 1072.5 300 L 1072.5 122" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-edge-from="child-map-discovery" data-edge-to="family-data-store" data-edge-key="9" data-edge-id="child-map-to-data-store" data-composition-points="1072.5,300;1072.5,122" data-composition-crossover="halo" data-composition-independent="true" d="M 1072.5 300 L 1072.5 122" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:10">
           <path data-graph-role="automatic-crossover-underlay" d="M 725 300 L 725 120" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -5087,7 +5087,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="fine" x="355" y="374" class="t-frontend" font-size="7" text-anchor="middle">Implemented shell</text>
         </g>
 
-        <g id="node-clerk" data-node-id="clerk" data-node-label="Identity provider" tabindex="0" role="button" aria-label="Focus Identity provider, Session identity, Architecture component" aria-pressed="false" data-node-kind="security" data-node-sublabel="Session identity" data-node-tag="External boundary" data-node-context="Architecture component">
+        <g id="node-identity-provider" data-node-id="identity-provider" data-node-label="Identity provider" tabindex="0" role="button" aria-label="Focus Identity provider, Session identity, Architecture component" aria-pressed="false" data-node-kind="security" data-node-sublabel="Session identity" data-node-tag="External boundary" data-node-context="Architecture component">
           <title>Identity provider · Session identity · Architecture component · External boundary</title>
           <rect x="255" y="110" width="200" height="76" rx="6" class="c-mask"/>
           <rect x="255" y="110" width="200" height="76" rx="6" class="c-security" stroke-width="1.5"/>
@@ -5160,7 +5160,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="fine" x="1362.5" y="632" class="t-backend" font-size="7" text-anchor="middle">Accepted boundary</text>
         </g>
 
-        <g id="node-mongodb" data-node-id="mongodb" data-node-label="Family data store" tabindex="0" role="button" aria-label="Focus Family data store, Family, Child Map, Discovery, and Story records, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="Family, Child Map, Discovery, and Story records" data-node-tag="Implemented persistence" data-node-context="Architecture component">
+        <g id="node-family-data-store" data-node-id="family-data-store" data-node-label="Family data store" tabindex="0" role="button" aria-label="Focus Family data store, Family, Child Map, Discovery, and Story records, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="Family, Child Map, Discovery, and Story records" data-node-tag="Implemented persistence" data-node-context="Architecture component">
           <title>Family data store · Family, Child Map, Discovery, and Story records · Architecture component · Implemented persistence</title>
           <rect x="960" y="40" width="225" height="82" rx="6" class="c-mask"/>
           <rect x="960" y="40" width="225" height="82" rx="6" class="c-database" stroke-width="1.5"/>
@@ -5203,11 +5203,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <rect x="210" y="317" width="30" height="14" rx="3" class="c-mask"/>
           <text x="225" y="327" class="t-edge-emphasis" font-size="8" text-anchor="middle">uses</text>
         </g>
-        <g data-detail="context" data-edge-from="clerk" data-edge-to="react-web" data-edge-label="signed session" data-edge-key="1" data-edge-id="clerk-session">
+        <g data-detail="context" data-edge-from="identity-provider" data-edge-to="react-web" data-edge-label="signed session" data-edge-key="1" data-edge-id="identity-session">
           <rect x="276.6" y="236" width="72.4" height="14" rx="3" class="c-mask"/>
           <text x="312.8" y="246" class="t-edge-default" font-size="8" text-anchor="middle">signed session</text>
         </g>
-        <g data-detail="context" data-edge-from="react-web" data-edge-to="api-host" data-edge-label="authorized request" data-edge-key="2" data-edge-id="web-api-bearer">
+        <g data-detail="context" data-edge-from="react-web" data-edge-to="api-host" data-edge-label="authorized request" data-edge-key="2" data-edge-id="web-api-request">
           <rect x="508.1" y="321" width="38.8" height="14" rx="3" class="c-mask"/>
           <text x="527.5" y="331" class="t-edge-emphasis" font-size="8" text-anchor="middle">authorized request</text>
         </g>
