@@ -5013,7 +5013,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Boundaries (behind everything) -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="One Application API deployable • separate logical capabilities" x="480" y="180" width="1115" height="480" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="Application boundary • separate logical capabilities" x="480" y="180" width="1115" height="480" rx="12" class="c-region" stroke-width="1"/>
 
         <!-- Connection paths (before components for correct z-order) -->
         <g data-graph-role="automatic-crossover" style="--step:0">
@@ -5022,11 +5022,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
         <g data-graph-role="automatic-crossover" style="--step:1">
           <path data-graph-role="automatic-crossover-underlay" d="M 355 186 L 355 300" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="clerk" data-edge-to="react-web" data-edge-label="session token" data-edge-key="1" data-edge-id="clerk-session" data-composition-points="355,186;355,300" data-composition-crossover="halo" data-composition-independent="true" d="M 355 186 L 355 300" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-edge-from="clerk" data-edge-to="react-web" data-edge-label="signed session" data-edge-key="1" data-edge-id="clerk-session" data-composition-points="355,186;355,300" data-composition-crossover="halo" data-composition-independent="true" d="M 355 186 L 355 300" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:2">
           <path data-graph-role="automatic-crossover-underlay" d="M 455 341 L 600 341" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="react-web" data-edge-to="api-host" data-edge-label="Bearer" data-edge-key="2" data-edge-id="web-api-bearer" data-composition-points="455,341;600,341" data-composition-crossover="halo" data-composition-independent="true" d="M 455 341 L 600 341" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-edge-from="react-web" data-edge-to="api-host" data-edge-label="authorized request" data-edge-key="2" data-edge-id="web-api-bearer" data-composition-points="455,341;600,341" data-composition-crossover="halo" data-composition-independent="true" d="M 455 341 L 600 341" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:3">
           <path data-graph-role="automatic-crossover-underlay" d="M 850 345 L 960 345" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -5034,7 +5034,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
         <g data-graph-role="automatic-crossover" style="--step:4">
           <path data-graph-role="automatic-crossover-underlay" d="M 725 390 L 725 550" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="api-host" data-edge-to="story-lifecycle" data-edge-label="protected summary" data-edge-key="4" data-edge-id="api-to-story-read" data-composition-points="725,390;725,550" data-composition-crossover="halo" data-composition-independent="true" d="M 725 390 L 725 550" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+          <path data-edge-from="api-host" data-edge-to="story-lifecycle" data-edge-label="story read" data-edge-key="4" data-edge-id="api-to-story-read" data-composition-points="725,390;725,550" data-composition-crossover="halo" data-composition-independent="true" d="M 725 390 L 725 550" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:5">
           <path data-graph-role="automatic-crossover-underlay" d="M 1072.5 390 L 1072.5 550" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -5042,7 +5042,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
         <g data-graph-role="automatic-crossover" style="--step:6">
           <path data-graph-role="automatic-crossover-underlay" d="M 960 595 L 850 595" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="story-context-selection" data-edge-to="story-lifecycle" data-edge-label="ContextBundle" data-edge-key="6" data-edge-id="context-to-lifecycle" data-composition-points="960,595;850,595" data-composition-crossover="halo" data-composition-independent="true" d="M 960 595 L 850 595" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-edge-from="story-context-selection" data-edge-to="story-lifecycle" data-edge-label="approved context" data-edge-key="6" data-edge-id="context-to-lifecycle" data-composition-points="960,595;850,595" data-composition-crossover="halo" data-composition-independent="true" d="M 960 595 L 850 595" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         </g>
         <path data-edge-from="story-lifecycle" data-edge-to="story-generation" data-edge-label="generation request" data-edge-key="7" data-edge-id="lifecycle-to-generation" data-composition-points="725,640;725,675;1362.5,675;1362.5,640" d="M 725 640 L 725 667 Q 725 675 733 675 L 1354.5 675 Q 1362.5 675 1362.5 667 L 1362.5 640" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         <path data-edge-from="story-generation" data-edge-to="story-lifecycle" data-edge-label="candidate artifact" data-edge-key="8" data-edge-id="generation-candidate-return" data-composition-points="1475,595;1520,595;1520,650;550,650;550,595;600,595" d="M 1475 595 L 1512 595 Q 1520 595 1520 603 L 1520 642 Q 1520 650 1512 650 L 558 650 Q 550 650 550 642 L 550 603 Q 550 595 558 595 L 600 595" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
@@ -5060,8 +5060,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </g>
 
         <!-- Components -->
-        <g id="node-family-browser" data-node-id="family-browser" data-node-label="Family browser" tabindex="0" role="button" aria-label="Focus Family browser, Parent uses the web app, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="Parent uses the web app" data-node-context="Architecture component">
-          <title>Family browser · Parent uses the web app · Architecture component</title>
+        <g id="node-family-browser" data-node-id="family-browser" data-node-label="Family browser" tabindex="0" role="button" aria-label="Focus Family browser, Parent and child experiences, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="Parent and child experiences" data-node-context="Architecture component">
+          <title>Family browser · Parent and child experiences · Architecture component</title>
           <rect x="40" y="300" width="155" height="74" rx="6" class="c-mask"/>
           <rect x="40" y="300" width="155" height="74" rx="6" class="c-external" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 306) scale(0.6875)">
@@ -5069,7 +5069,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="117.5" y="335" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Family browser</text>
-        <text data-detail="context" x="117.5" y="351" class="t-muted" font-size="9" text-anchor="middle">Parent uses the web app</text>
+        <text data-detail="context" x="117.5" y="351" class="t-muted" font-size="9" text-anchor="middle">Parent and child experiences</text>
         </g>
 
         <g id="node-react-web" data-node-id="react-web" data-node-label="React web app" tabindex="0" role="button" aria-label="Focus React web app, Public, child-safe, and protected parent surfaces, Architecture component" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="Public, child-safe, and protected parent surfaces" data-node-tag="Implemented shell" data-node-context="Architecture component">
@@ -5087,8 +5087,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="fine" x="355" y="374" class="t-frontend" font-size="7" text-anchor="middle">Implemented shell</text>
         </g>
 
-        <g id="node-clerk" data-node-id="clerk" data-node-label="Identity provider" tabindex="0" role="button" aria-label="Focus Identity provider, Session identity, Architecture component" aria-pressed="false" data-node-kind="security" data-node-sublabel="Session identity" data-node-tag="External provider" data-node-context="Architecture component">
-          <title>Identity provider · Session identity · Architecture component · External provider</title>
+        <g id="node-clerk" data-node-id="clerk" data-node-label="Identity provider" tabindex="0" role="button" aria-label="Focus Identity provider, Session identity, Architecture component" aria-pressed="false" data-node-kind="security" data-node-sublabel="Session identity" data-node-tag="External boundary" data-node-context="Architecture component">
+          <title>Identity provider · Session identity · Architecture component · External boundary</title>
           <rect x="255" y="110" width="200" height="76" rx="6" class="c-mask"/>
           <rect x="255" y="110" width="200" height="76" rx="6" class="c-security" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(261 116) scale(0.6875)">
@@ -5097,35 +5097,35 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           </g>
           <text data-node-label="" data-detail-anchor="" x="355" y="146" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Identity provider</text>
         <text data-detail="context" x="355" y="162" class="t-muted" font-size="9" text-anchor="middle">Session identity</text>
-        <text data-detail="fine" x="355" y="178" class="t-security" font-size="7" text-anchor="middle">External provider</text>
+        <text data-detail="fine" x="355" y="178" class="t-security" font-size="7" text-anchor="middle">External boundary</text>
         </g>
 
-        <g id="node-api-host" data-node-id="api-host" data-node-label="Application API" tabindex="0" role="button" aria-label="Focus Application API, Family authority • protected parent access, One Application API deployable • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Family authority • protected parent access" data-node-tag="Implemented • .NET 10" data-node-context="One Application API deployable • separate logical capabilities">
-          <title>Application API · Family authority • protected parent access · One Application API deployable • separate logical capabilities · Implemented • .NET 10</title>
+        <g id="node-api-host" data-node-id="api-host" data-node-label="Application API" tabindex="0" role="button" aria-label="Focus Application API, Family authority + protected parent access, Application boundary • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Family authority + protected parent access" data-node-tag="Implemented" data-node-context="Application boundary • separate logical capabilities">
+          <title>Application API · Family authority + protected parent access · Application boundary • separate logical capabilities · Implemented</title>
           <rect x="600" y="300" width="250" height="90" rx="6" class="c-mask"/>
           <rect x="600" y="300" width="250" height="90" rx="6" class="c-backend" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(606 306) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="725" y="343" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Application API</text>
-        <text data-detail="context" x="725" y="359" class="t-muted" font-size="9" text-anchor="middle">Family authority • protected parent access</text>
-        <text data-detail="fine" x="725" y="382" class="t-backend" font-size="7" text-anchor="middle">Implemented • .NET 10</text>
+        <text data-detail="context" x="725" y="359" class="t-muted" font-size="9" text-anchor="middle">Family authority + protected parent access</text>
+        <text data-detail="fine" x="725" y="382" class="t-backend" font-size="7" text-anchor="middle">Implemented</text>
         </g>
 
-        <g id="node-child-map-discovery" data-node-id="child-map-discovery" data-node-label="Child Map + Discovery" tabindex="0" role="button" aria-label="Focus Child Map + Discovery, Family-owned facts • deterministic Discovery, One Application API deployable • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Family-owned facts • deterministic Discovery" data-node-tag="Implemented module" data-node-context="One Application API deployable • separate logical capabilities">
-          <title>Child Map + Discovery · Family-owned facts • deterministic Discovery · One Application API deployable • separate logical capabilities · Implemented module</title>
+        <g id="node-child-map-discovery" data-node-id="child-map-discovery" data-node-label="Child Map + Discovery" tabindex="0" role="button" aria-label="Focus Child Map + Discovery, Family-owned context • deterministic discovery, Application boundary • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Family-owned context • deterministic discovery" data-node-tag="Implemented module" data-node-context="Application boundary • separate logical capabilities">
+          <title>Child Map + Discovery · Family-owned context • deterministic discovery · Application boundary • separate logical capabilities · Implemented module</title>
           <rect x="960" y="300" width="225" height="90" rx="6" class="c-mask"/>
           <rect x="960" y="300" width="225" height="90" rx="6" class="c-backend" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(966 306) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="1072.5" y="343" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Child Map + Discovery</text>
-        <text data-detail="context" x="1072.5" y="359" class="t-muted" font-size="8.2" text-anchor="middle">Family-owned facts • deterministic Discovery</text>
+        <text data-detail="context" x="1072.5" y="359" class="t-muted" font-size="8.2" text-anchor="middle">Family-owned context • deterministic discovery</text>
         <text data-detail="fine" x="1072.5" y="382" class="t-backend" font-size="7" text-anchor="middle">Implemented module</text>
         </g>
 
-        <g id="node-story-context-selection" data-node-id="story-context-selection" data-node-label="Story Context Selection" tabindex="0" role="button" aria-label="Focus Story Context Selection, Parent-selected, minimized story context, One Application API deployable • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Parent-selected, minimized story context" data-node-tag="Accepted • unwired" data-node-context="One Application API deployable • separate logical capabilities">
-          <title>Story Context Selection · Parent-selected, minimized story context · One Application API deployable • separate logical capabilities · Accepted • unwired</title>
+        <g id="node-story-context-selection" data-node-id="story-context-selection" data-node-label="Story Context Selection" tabindex="0" role="button" aria-label="Focus Story Context Selection, Parent-selected, minimized story context, Application boundary • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Parent-selected, minimized story context" data-node-tag="Accepted • not fully wired" data-node-context="Application boundary • separate logical capabilities">
+          <title>Story Context Selection · Parent-selected, minimized story context · Application boundary • separate logical capabilities · Accepted • not fully wired</title>
           <rect x="960" y="550" width="225" height="90" rx="6" class="c-mask"/>
           <rect x="960" y="550" width="225" height="90" rx="6" class="c-backend" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(966 556) scale(0.6875)">
@@ -5133,11 +5133,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           </g>
           <text data-node-label="" data-detail-anchor="" x="1072.5" y="593" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Story Context Selection</text>
         <text data-detail="context" x="1072.5" y="609" class="t-muted" font-size="9" text-anchor="middle">Parent-selected, minimized story context</text>
-        <text data-detail="fine" x="1072.5" y="632" class="t-backend" font-size="7" text-anchor="middle">Accepted • unwired</text>
+        <text data-detail="fine" x="1072.5" y="632" class="t-backend" font-size="7" text-anchor="middle">Accepted • not fully wired</text>
         </g>
 
-        <g id="node-story-lifecycle" data-node-id="story-lifecycle" data-node-label="Story Lifecycle" tabindex="0" role="button" aria-label="Focus Story Lifecycle, Story records • revisions • approval, One Application API deployable • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Story records • revisions • approval" data-node-tag="Partial implementation" data-node-context="One Application API deployable • separate logical capabilities">
-          <title>Story Lifecycle · Story records • revisions • approval · One Application API deployable • separate logical capabilities · Partial implementation</title>
+        <g id="node-story-lifecycle" data-node-id="story-lifecycle" data-node-label="Story Lifecycle" tabindex="0" role="button" aria-label="Focus Story Lifecycle, Story records • revisions • approval, Application boundary • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Story records • revisions • approval" data-node-tag="Partial implementation" data-node-context="Application boundary • separate logical capabilities">
+          <title>Story Lifecycle · Story records • revisions • approval · Application boundary • separate logical capabilities · Partial implementation</title>
           <rect x="600" y="550" width="250" height="90" rx="6" class="c-mask"/>
           <rect x="600" y="550" width="250" height="90" rx="6" class="c-backend" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(606 556) scale(0.6875)">
@@ -5148,8 +5148,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="fine" x="725" y="632" class="t-backend" font-size="7" text-anchor="middle">Partial implementation</text>
         </g>
 
-        <g id="node-story-generation" data-node-id="story-generation" data-node-label="Story Generation" tabindex="0" role="button" aria-label="Focus Story Generation, Candidate story artifacts • provider boundary, One Application API deployable • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Candidate story artifacts • provider boundary" data-node-tag="Accepted boundary" data-node-context="One Application API deployable • separate logical capabilities">
-          <title>Story Generation · Candidate story artifacts • provider boundary · One Application API deployable • separate logical capabilities · Accepted boundary</title>
+        <g id="node-story-generation" data-node-id="story-generation" data-node-label="Story Generation" tabindex="0" role="button" aria-label="Focus Story Generation, Candidate story artifacts • provider boundary, Application boundary • separate logical capabilities" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Candidate story artifacts • provider boundary" data-node-tag="Accepted boundary" data-node-context="Application boundary • separate logical capabilities">
+          <title>Story Generation · Candidate story artifacts • provider boundary · Application boundary • separate logical capabilities · Accepted boundary</title>
           <rect x="1250" y="550" width="225" height="90" rx="6" class="c-mask"/>
           <rect x="1250" y="550" width="225" height="90" rx="6" class="c-backend" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(1256 556) scale(0.6875)">
@@ -5160,8 +5160,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <text data-detail="fine" x="1362.5" y="632" class="t-backend" font-size="7" text-anchor="middle">Accepted boundary</text>
         </g>
 
-        <g id="node-mongodb" data-node-id="mongodb" data-node-label="Family data store" tabindex="0" role="button" aria-label="Focus Family data store, Family, Child Map, Discovery, and Story records, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="Family, Child Map, Discovery, and Story records" data-node-tag="Implemented adapters" data-node-context="Architecture component">
-          <title>Family data store · Family, Child Map, Discovery, and Story records · Architecture component · Implemented adapters</title>
+        <g id="node-mongodb" data-node-id="mongodb" data-node-label="Family data store" tabindex="0" role="button" aria-label="Focus Family data store, Family, Child Map, Discovery, and Story records, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="Family, Child Map, Discovery, and Story records" data-node-tag="Implemented persistence" data-node-context="Architecture component">
+          <title>Family data store · Family, Child Map, Discovery, and Story records · Architecture component · Implemented persistence</title>
           <rect x="960" y="40" width="225" height="82" rx="6" class="c-mask"/>
           <rect x="960" y="40" width="225" height="82" rx="6" class="c-database" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(966 46) scale(0.6875)">
@@ -5170,18 +5170,18 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           </g>
           <text data-node-label="" data-detail-anchor="" x="1072.5" y="79" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Family data store</text>
         <text data-detail="context" x="1072.5" y="95" class="t-muted" font-size="7.5" text-anchor="middle">Family, Child Map, Discovery, and Story records</text>
-        <text data-detail="fine" x="1072.5" y="114" class="t-database" font-size="7" text-anchor="middle">Implemented adapters</text>
+        <text data-detail="fine" x="1072.5" y="114" class="t-database" font-size="7" text-anchor="middle">Implemented persistence</text>
         </g>
 
-        <g id="node-private-media-store" data-node-id="private-media-store" data-node-label="Private media storage" tabindex="0" role="button" aria-label="Focus Private media storage, Private object storage, Architecture component" aria-pressed="false" data-node-kind="cloud" data-node-sublabel="Private object storage" data-node-tag="Optional configuration" data-node-context="Architecture component">
-          <title>Private media storage · Private object storage · Architecture component · Optional configuration</title>
+        <g id="node-private-media-store" data-node-id="private-media-store" data-node-label="Private media storage" tabindex="0" role="button" aria-label="Focus Private media storage, Private uploaded media, Architecture component" aria-pressed="false" data-node-kind="cloud" data-node-sublabel="Private uploaded media" data-node-tag="Optional configuration" data-node-context="Architecture component">
+          <title>Private media storage · Private uploaded media · Architecture component · Optional configuration</title>
           <rect x="600" y="40" width="250" height="80" rx="6" class="c-mask"/>
           <rect x="600" y="40" width="250" height="80" rx="6" class="c-cloud" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="cloud" class="semantic-sigil s-cloud" transform="translate(606 46) scale(0.6875)">
             <path d="M4.3 12.5h7.3a2.4 2.4 0 0 0 .2-4.8 4 4 0 0 0-7.5-1.3A3.1 3.1 0 0 0 4.3 12.5Z"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="725" y="78" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Private media storage</text>
-        <text data-detail="context" x="725" y="94" class="t-muted" font-size="9" text-anchor="middle">Private object storage</text>
+        <text data-detail="context" x="725" y="94" class="t-muted" font-size="9" text-anchor="middle">Private uploaded media</text>
         <text data-detail="fine" x="725" y="112" class="t-cloud" font-size="7" text-anchor="middle">Optional configuration</text>
         </g>
 
@@ -5203,29 +5203,29 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <rect x="210" y="317" width="30" height="14" rx="3" class="c-mask"/>
           <text x="225" y="327" class="t-edge-emphasis" font-size="8" text-anchor="middle">uses</text>
         </g>
-        <g data-detail="context" data-edge-from="clerk" data-edge-to="react-web" data-edge-label="session token" data-edge-key="1" data-edge-id="clerk-session">
+        <g data-detail="context" data-edge-from="clerk" data-edge-to="react-web" data-edge-label="signed session" data-edge-key="1" data-edge-id="clerk-session">
           <rect x="276.6" y="236" width="72.4" height="14" rx="3" class="c-mask"/>
-          <text x="312.8" y="246" class="t-edge-default" font-size="8" text-anchor="middle">session token</text>
+          <text x="312.8" y="246" class="t-edge-default" font-size="8" text-anchor="middle">signed session</text>
         </g>
-        <g data-detail="context" data-edge-from="react-web" data-edge-to="api-host" data-edge-label="Bearer" data-edge-key="2" data-edge-id="web-api-bearer">
+        <g data-detail="context" data-edge-from="react-web" data-edge-to="api-host" data-edge-label="authorized request" data-edge-key="2" data-edge-id="web-api-bearer">
           <rect x="508.1" y="321" width="38.8" height="14" rx="3" class="c-mask"/>
-          <text x="527.5" y="331" class="t-edge-emphasis" font-size="8" text-anchor="middle">Bearer</text>
+          <text x="527.5" y="331" class="t-edge-emphasis" font-size="8" text-anchor="middle">authorized request</text>
         </g>
         <g data-detail="context" data-edge-from="api-host" data-edge-to="child-map-discovery" data-edge-label="family reads" data-edge-key="3" data-edge-id="api-to-child-map">
           <rect x="871.2" y="325" width="67.6" height="14" rx="3" class="c-mask"/>
           <text x="905" y="335" class="t-edge-default" font-size="8" text-anchor="middle">family reads</text>
         </g>
-        <g data-detail="context" data-edge-from="api-host" data-edge-to="story-lifecycle" data-edge-label="protected summary" data-edge-key="4" data-edge-id="api-to-story-read">
+        <g data-detail="context" data-edge-from="api-host" data-edge-to="story-lifecycle" data-edge-label="story read" data-edge-key="4" data-edge-id="api-to-story-read">
           <rect x="627.4000000000001" y="463" width="91.6" height="14" rx="3" class="c-mask"/>
-          <text x="673.2" y="473" class="t-edge-security" font-size="8" text-anchor="middle">protected summary</text>
+          <text x="673.2" y="473" class="t-edge-security" font-size="8" text-anchor="middle">story read</text>
         </g>
         <g data-detail="context" data-edge-from="child-map-discovery" data-edge-to="story-context-selection" data-edge-label="candidates" data-edge-key="5" data-edge-id="child-map-to-context">
           <rect x="1008.5" y="463" width="58" height="14" rx="3" class="c-mask"/>
           <text x="1037.5" y="473" class="t-edge-dashed" font-size="8" text-anchor="middle">candidates</text>
         </g>
-        <g data-detail="context" data-edge-from="story-context-selection" data-edge-to="story-lifecycle" data-edge-label="ContextBundle" data-edge-key="6" data-edge-id="context-to-lifecycle">
+        <g data-detail="context" data-edge-from="story-context-selection" data-edge-to="story-lifecycle" data-edge-label="approved context" data-edge-key="6" data-edge-id="context-to-lifecycle">
           <rect x="868.8" y="575" width="72.4" height="14" rx="3" class="c-mask"/>
-          <text x="905" y="585" class="t-edge-dashed" font-size="8" text-anchor="middle">ContextBundle</text>
+          <text x="905" y="585" class="t-edge-dashed" font-size="8" text-anchor="middle">approved context</text>
         </g>
         <g data-detail="context" data-edge-from="story-lifecycle" data-edge-to="story-generation" data-edge-label="generation request" data-edge-key="7" data-edge-id="lifecycle-to-generation">
           <rect x="995.55" y="655" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
@@ -5243,9 +5243,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 
         <!-- Boundary labels (foreground masks keep routes out of titles) -->
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="One Application API deployable • separate logical capabilities">
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="Application boundary • separate logical capabilities">
           <rect data-graph-role="structural-frame-label-mask" x="484" y="278" width="408.72907005806445" height="18" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="488" y="292.5483880967742" class="t-cloud" font-size="10.548388096774191" font-weight="600">One Application API deployable • separate logical capabilities</text>
+          <text data-boundary-label="" x="488" y="292.5483880967742" class="t-cloud" font-size="10.548388096774191" font-weight="600">Application boundary • separate logical capabilities</text>
         </g>
 
         <!-- Legend -->
@@ -5458,9 +5458,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Implemented paths</h3>
         </div>
         <ul>
-          <li>React/Vite shell; Story planning and draft entries still show Coming soon.</li>
-          <li>ASP.NET Core resolves Clerk sessions, family scope, and Parent Mode authorization.</li>
-          <li>Child Map and deterministic Discovery use family-owned Family data store records.</li>
+          <li>The React web experience and application API are active foundations.</li>
+          <li>Family authority and protected parent access are enforced at the application boundary.</li>
+          <li>Child Map and deterministic Discovery persist family-owned context.</li>
         </ul>
       </div>
 
@@ -5470,9 +5470,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Accepted story boundaries</h3>
         </div>
         <ul>
-          <li>Story Lifecycle owns story records, revisions, and parent approval.</li>
-          <li>Context Selection builds a minimized, parent-selected ContextBundle.</li>
-          <li>Generation returns candidate artifacts for Lifecycle to accept.</li>
+          <li>Story Lifecycle owns Story truth, revisions, and approval.</li>
+          <li>Context Selection creates a minimized, parent-selected context bundle.</li>
+          <li>Generation returns candidate artifacts; it does not own family authority.</li>
         </ul>
       </div>
 
@@ -5482,9 +5482,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Open provider boundary</h3>
         </div>
         <ul>
-          <li>Text and image provider vendors remain unselected.</li>
-          <li>Story-use data categories and provider-transfer eligibility remain open.</li>
-          <li>Dashed story paths show accepted future flow; the S3 adapter is optional configuration.</li>
+          <li>The production text provider remains unselected.</li>
+          <li>Provider-transfer policy stays separate from generation.</li>
+          <li>Future story-flow connections are shown as accepted boundaries, not shipped product claims.</li>
         </ul>
       </div>
     </div>
