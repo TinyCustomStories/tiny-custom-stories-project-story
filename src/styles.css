@@ -1437,6 +1437,159 @@ footer a {
   gap: 1.25rem;
   align-items: center;
 }
+
+.architecture-teaser {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(28rem, 1.22fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: center;
+  background: color-mix(
+    in srgb,
+    var(--color-expressive-lavender) 52%,
+    var(--color-canvas)
+  );
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.architecture-teaser > * {
+  max-width: 1340px;
+}
+.architecture-teaser-copy {
+  max-width: 36rem;
+  justify-self: end;
+}
+.architecture-teaser-copy h2 {
+  font-size: clamp(2.2rem, 5vw, 4.7rem);
+  margin-bottom: 1rem;
+}
+.architecture-teaser-copy > p:not(.eyebrow) {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
+}
+.architecture-preview-link {
+  display: block;
+  padding: 0.7rem;
+  border: 2px solid var(--color-text);
+  border-radius: 1rem 1.6rem 1rem 1.3rem;
+  background: var(--color-surface);
+  box-shadow: 8px 9px 0 var(--color-expressive-sun);
+  text-decoration: none;
+  transform: rotate(0.6deg);
+}
+.architecture-preview-link:hover,
+.architecture-preview-link:focus-visible {
+  transform: rotate(0deg) translateY(-2px);
+}
+.architecture-preview-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+}
+.architecture-preview-link > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0.45rem 0.2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.architecture-explorer-section {
+  max-width: none;
+  background: var(--color-text);
+  color: var(--color-surface);
+}
+.architecture-explorer-section > * {
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.architecture-explorer-section .eyebrow {
+  color: var(--color-expressive-sun);
+}
+.architecture-explorer-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+}
+.architecture-explorer-heading > div:first-child {
+  max-width: 55rem;
+}
+.architecture-explorer-heading h2 {
+  font-size: clamp(2.3rem, 5vw, 5rem);
+  margin-bottom: 1rem;
+}
+.architecture-explorer-heading p:not(.eyebrow) {
+  max-width: 48rem;
+  color: color-mix(in srgb, var(--color-surface) 78%, transparent);
+  line-height: 1.65;
+}
+.architecture-status-key {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  max-width: 24rem;
+}
+.architecture-status-key span {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface) 48%, transparent);
+  border-radius: 999px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+}
+.architecture-status-key span:nth-child(1) {
+  background: color-mix(in srgb, var(--color-expressive-mint) 30%, transparent);
+}
+.architecture-status-key span:nth-child(2) {
+  background: color-mix(in srgb, var(--color-expressive-sun) 24%, transparent);
+}
+.architecture-status-key span:nth-child(3) {
+  background: color-mix(in srgb, var(--color-expressive-lavender) 24%, transparent);
+}
+.architecture-status-key span:nth-child(4) {
+  background: color-mix(in srgb, var(--color-expressive-coral) 25%, transparent);
+}
+.architecture-explorer-frame {
+  height: clamp(36rem, 67vw, 55rem);
+  margin-top: 2.5rem;
+  overflow: hidden;
+  border: 2px solid var(--color-surface);
+  border-radius: 1rem 1.8rem 1rem 1.4rem;
+  background: var(--color-surface);
+  box-shadow: 9px 10px 0 var(--color-expressive-coral);
+}
+.architecture-explorer-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--color-surface);
+}
+.architecture-explorer-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1.5rem !important;
+}
+.architecture-explorer-note p {
+  max-width: 48rem;
+  margin: 0;
+  color: color-mix(in srgb, var(--color-surface) 76%, transparent);
+  line-height: 1.55;
+}
+.architecture-explorer-note .button-light {
+  flex: 0 0 auto;
+  color: var(--color-text);
+  background: var(--color-expressive-sun);
+}
+
 @media (max-width: 950px) {
   nav {
     display: flex;
@@ -1629,5 +1782,38 @@ footer a {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+@media (max-width: 950px) {
+  .architecture-teaser,
+  .architecture-explorer-heading {
+    grid-template-columns: 1fr;
+  }
+  .architecture-teaser-copy {
+    max-width: 48rem;
+    justify-self: start;
+  }
+  .architecture-status-key {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 620px) {
+  .architecture-teaser {
+    gap: 2rem;
+  }
+  .architecture-preview-link {
+    box-shadow: 5px 6px 0 var(--color-expressive-sun);
+  }
+  .architecture-explorer-frame {
+    height: 34rem;
+    margin-top: 2rem;
+    box-shadow: 5px 6px 0 var(--color-expressive-coral);
+  }
+  .architecture-explorer-note {
+    display: block;
+  }
+  .architecture-explorer-note .button {
+    margin-top: 1rem;
   }
 }
