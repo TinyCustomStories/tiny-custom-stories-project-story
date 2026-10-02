@@ -237,8 +237,6 @@ describe('project story site', () => {
       name: /open the full explorer/i,
     });
     expect(fullView.getAttribute('href')).toBe('/architecture/system.html');
-    expect(
-      screen.getByText(/internal repository provenance/i),
-    ).toBeTruthy();
+    expect(screen.getByText(/internal repository provenance/i)).toBeTruthy();
   });
 });
