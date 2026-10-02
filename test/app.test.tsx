@@ -210,4 +210,36 @@ describe('project story site', () => {
       '/documents/tiny-custom-stories-project-dossier.pdf',
     );
   });
+
+  it('offers the public-safe Archify explorer from Home and Architecture', () => {
+    render(<App />);
+
+    expect(
+      screen.getByRole('img', {
+        name: /simplified preview of the Tiny Custom Stories public architecture/i,
+      }),
+    ).toBeTruthy();
+
+    fireEvent.click(
+      screen.getByRole('link', {
+        name: /explore the interactive Tiny Custom Stories architecture/i,
+      }),
+    );
+
+    const explorer = screen.getByTitle(
+      'Interactive Tiny Custom Stories architecture',
+    );
+    expect(explorer.getAttribute('src')).toBe(
+      '/architecture/system.html?embed=1&theme=light',
+    );
+
+    const fullView = screen.getByRole('link', {
+      name: /open the full explorer/i,
+    });
+    expect(fullView.getAttribute('href')).toBe('/architecture/system.html');
+    expect(
+      screen.getByText(/internal repository provenance/i),
+    ).toBeTruthy();
+  });
+
 });
