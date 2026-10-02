@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "clerk",
+      "id": "identity-provider",
       "type": "security",
       "label": "Identity provider",
       "sublabel": "Session identity",
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "id": "mongodb",
+      "id": "family-data-store",
       "type": "database",
       "label": "Family data store",
       "sublabel": "Family, Child Map, Discovery, and Story records",
@@ -196,15 +196,15 @@
       "variant": "emphasis"
     },
     {
-      "id": "clerk-session",
-      "from": "clerk",
+      "id": "identity-session",
+      "from": "identity-provider",
       "to": "react-web",
       "label": "signed session",
       "fromSide": "bottom",
       "toSide": "top"
     },
     {
-      "id": "web-api-bearer",
+      "id": "web-api-request",
       "from": "react-web",
       "to": "api-host",
       "label": "authorized request",
@@ -293,9 +293,9 @@
       "labelDy": 14
     },
     {
-      "id": "child-map-to-mongo",
+      "id": "child-map-to-data-store",
       "from": "child-map-discovery",
-      "to": "mongodb",
+      "to": "family-data-store",
       "fromSide": "top",
       "toSide": "bottom"
     },
