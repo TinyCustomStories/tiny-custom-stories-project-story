@@ -39,6 +39,18 @@ describe('public architecture artifact', () => {
         value,
       );
     }
+
+    for (const { id } of source.components) {
+      expect(html, `missing public component id: ${id}`).toContain(
+        `data-node-id="${id}"`,
+      );
+    }
+
+    for (const { id } of source.connections ?? []) {
+      expect(html, `missing public connection id: ${id}`).toContain(
+        `data-edge-id="${id}"`,
+      );
+    }
   });
 
   it('does not publish private repository provenance in the explorer artifacts', () => {
@@ -56,6 +68,12 @@ describe('public architecture artifact', () => {
       'CurrentFamilyResolutionMiddleware',
       'ParentModeAuthorization',
       'Program.cs',
+      'clerk',
+      'mongodb',
+      'web-api-bearer',
+      'S3 adapter',
+      'ASP.NET Core',
+      '.NET 10',
       '#L',
     ];
 
