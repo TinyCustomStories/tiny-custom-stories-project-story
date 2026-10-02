@@ -36,5 +36,10 @@ jobs:
       - name: Generate current project dossier
         run: npm run generate:pdf
 
-      - name: Verify public site
-        run: npm run verify
+      - name: Format changed source for diagnostics
+        run: npx prettier src/App.tsx src/styles.css test/app.test.tsx --write
+
+      - name: Show formatter diff
+        run: |
+          git diff -- src/App.tsx src/styles.css test/app.test.tsx
+          exit 1
