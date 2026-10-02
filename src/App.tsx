@@ -863,7 +863,10 @@ function Architecture() {
               implementation detail are intentionally excluded.
             </p>
           </div>
-          <div className="architecture-status-key" aria-label="Architecture status key">
+          <div
+            className="architecture-status-key"
+            aria-label="Architecture status key"
+          >
             <span>Implemented</span>
             <span>Partial</span>
             <span>Accepted</span>
