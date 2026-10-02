@@ -56,6 +56,8 @@ const primaryNavigation: Array<{ path: Route; label: string }> = [
 ];
 
 const pdfPath = `${import.meta.env.BASE_URL}documents/tiny-custom-stories-project-dossier.pdf`;
+const architectureExplorerPath = `${import.meta.env.BASE_URL}architecture/system.html`;
+const architecturePreviewPath = `${import.meta.env.BASE_URL}architecture/preview.svg`;
 
 const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/product':
@@ -65,7 +67,7 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/development':
     'How the project moved from foundations to protected family access, Discovery, and Story Studio.',
   '/architecture':
-    'Capability boundaries that can evolve independently without pretending every boundary is already a separate service.',
+    'A public-safe interactive map of the implemented, partial, accepted, and still-open capability boundaries.',
   '/delivery':
     'The GitHub activity, review loop, automated quality gates, browser evidence, and outcome-gated workflow behind the product.',
   '/decisions':
@@ -237,6 +239,40 @@ function Home() {
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
+        </Link>
+      </section>
+
+      <section
+        className="section architecture-teaser"
+        aria-labelledby="architecture-teaser-title"
+      >
+        <div className="architecture-teaser-copy">
+          <p className="eyebrow">A map you can wander</p>
+          <h2 id="architecture-teaser-title">
+            See how the pieces fit together.
+          </h2>
+          <p>
+            The public architecture view keeps implementation status visible:
+            what exists today, what is only partial, which Story boundaries are
+            accepted, and which provider choices remain deliberately open.
+          </p>
+          <Link className="button button-dark" to="/architecture">
+            Explore the architecture <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <Link
+          className="architecture-preview-link"
+          to="/architecture"
+          aria-label="Explore the interactive Tiny Custom Stories architecture"
+        >
+          <img
+            src={architecturePreviewPath}
+            alt="Simplified preview of the Tiny Custom Stories public architecture"
+            loading="lazy"
+          />
+          <span>
+            Open the interactive map <span aria-hidden="true">↗</span>
+          </span>
         </Link>
       </section>
 
@@ -809,6 +845,55 @@ function Architecture() {
           rendering artifacts behind them.
         </p>
       </PageIntro>
+
+      <section
+        className="section architecture-explorer-section"
+        aria-labelledby="architecture-explorer-title"
+      >
+        <div className="architecture-explorer-heading">
+          <div>
+            <p className="eyebrow">Interactive public architecture</p>
+            <h2 id="architecture-explorer-title">
+              One diagram, with uncertainty left visible.
+            </h2>
+            <p>
+              This is a curated public-safe view derived from the project’s
+              canonical architecture map. Internal repository provenance,
+              environment details, credentials, and attack-relevant
+              implementation detail are intentionally excluded.
+            </p>
+          </div>
+          <div className="architecture-status-key" aria-label="Architecture status key">
+            <span>Implemented</span>
+            <span>Partial</span>
+            <span>Accepted</span>
+            <span>Open</span>
+          </div>
+        </div>
+
+        <div className="architecture-explorer-frame">
+          <iframe
+            src={`${architectureExplorerPath}?embed=1&theme=light`}
+            title="Interactive Tiny Custom Stories architecture"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="architecture-explorer-note">
+          <p>
+            The embedded view is best on a larger screen. On a small screen,
+            use the full-view link for more room to pan and inspect.
+          </p>
+          <a
+            className="button button-light"
+            href={architectureExplorerPath}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open the full explorer <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
 
       <section className="section story-section">
         <div className="mode-preview">
