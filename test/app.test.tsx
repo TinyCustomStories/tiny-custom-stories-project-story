@@ -241,5 +241,4 @@ describe('project story site', () => {
       screen.getByText(/internal repository provenance/i),
     ).toBeTruthy();
   });
-
 });
