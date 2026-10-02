@@ -26,7 +26,7 @@ The September 24/25 edition already introduced Sprint chapters, Architecture, Ho
 
 The existing Architecture route now includes a curated interactive Archify view at the stable static path `public/architecture/system.html`. Its maintained public-safe source is `public/architecture/system.architecture.json`, and the Home route uses `public/architecture/preview.svg` as a lightweight teaser instead of loading the full explorer immediately.
 
-The public artifact is derived from the canonical architecture knowledge in the private product repository, but it is **not** a copy of private Archify output. Source paths, commit provenance, environment details, credentials, and attack-relevant implementation detail are removed before publication. Implementation status remains explicit so accepted or open boundaries are not presented as shipped product.
+The public artifact is derived from the canonical architecture knowledge in the private product repository, but private Archify output is **not published verbatim**. Source paths, commit provenance, environment details, credentials, and attack-relevant implementation detail are removed before publication. Implementation status remains explicit so accepted or open boundaries are not presented as shipped product.
 
 Maintenance and Project Story Sync rules are documented in [ArchitectureExplorer.md](documentation/PublicProjectStory/ArchitectureExplorer.md).
 
