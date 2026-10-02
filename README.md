@@ -22,6 +22,14 @@ The September 24/25 edition already introduced Sprint chapters, Architecture, Ho
 - The main repository delivery snapshot was recomputed from current evidence: 981 commits, 354 pull requests created, 329 merged, 289 issues tracked, 263 task issues, 188 closed / 101 open issues, 3 main product CI workflows, 754 workflow runs, and 602 successful runs as of October 1, 2026.
 - The engineering-process story now also reflects explicit dependency chains, parallel isolated task execution, backlog stewardship, systematic debugging, verification-before-completion, and review/fix/re-review loops without turning the site into an AI-tool advertisement.
 
+## Public architecture explorer
+
+The existing Architecture route now includes a curated interactive Archify view at the stable static path `public/architecture/system.html`. Its maintained public-safe source is `public/architecture/system.architecture.json`, and the Home route uses `public/architecture/preview.svg` as a lightweight teaser instead of loading the full explorer immediately.
+
+The public artifact is derived from the canonical architecture knowledge in the private product repository, but private Archify output is **not published verbatim**. Source paths, commit provenance, environment details, credentials, and attack-relevant implementation detail are removed before publication. Implementation status remains explicit so accepted or open boundaries are not presented as shipped product.
+
+Maintenance and Project Story Sync rules are documented in [ArchitectureExplorer.md](documentation/PublicProjectStory/ArchitectureExplorer.md).
+
 ## Run locally
 
 Requires Node 24.20.0 and npm 11.19.0.

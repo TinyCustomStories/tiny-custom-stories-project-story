@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Tiny Custom Stories — Public Architecture",
+    "locale": "en",
+    "output": "public/architecture/system.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "family-browser",
+      "type": "external",
+      "label": "Family browser",
+      "sublabel": "Parent and child experiences",
+      "pos": [
+        40,
+        300
+      ],
+      "size": [
+        155,
+        74
+      ]
+    },
+    {
+      "id": "react-web",
+      "type": "frontend",
+      "label": "React web app",
+      "sublabel": "Public, child-safe, and protected parent surfaces",
+      "tag": "Implemented shell",
+      "pos": [
+        255,
+        300
+      ],
+      "size": [
+        200,
+        82
+      ]
+    },
+    {
+      "id": "identity-provider",
+      "type": "security",
+      "label": "Identity provider",
+      "sublabel": "Session identity",
+      "tag": "External boundary",
+      "pos": [
+        255,
+        110
+      ],
+      "size": [
+        200,
+        76
+      ]
+    },
+    {
+      "id": "api-host",
+      "type": "backend",
+      "label": "Application API",
+      "sublabel": "Family authority + protected parent access",
+      "tag": "Implemented",
+      "pos": [
+        600,
+        300
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "child-map-discovery",
+      "type": "backend",
+      "label": "Child Map + Discovery",
+      "sublabel": "Family-owned context • deterministic discovery",
+      "tag": "Implemented module",
+      "pos": [
+        960,
+        300
+      ],
+      "size": [
+        225,
+        90
+      ]
+    },
+    {
+      "id": "story-context-selection",
+      "type": "backend",
+      "label": "Story Context Selection",
+      "sublabel": "Parent-selected, minimized story context",
+      "tag": "Accepted • not fully wired",
+      "pos": [
+        960,
+        550
+      ],
+      "size": [
+        225,
+        90
+      ]
+    },
+    {
+      "id": "story-lifecycle",
+      "type": "backend",
+      "label": "Story Lifecycle",
+      "sublabel": "Story records • revisions • approval",
+      "tag": "Partial implementation",
+      "pos": [
+        600,
+        550
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "story-generation",
+      "type": "backend",
+      "label": "Story Generation",
+      "sublabel": "Candidate story artifacts • provider boundary",
+      "tag": "Accepted boundary",
+      "pos": [
+        1250,
+        550
+      ],
+      "size": [
+        225,
+        90
+      ]
+    },
+    {
+      "id": "family-data-store",
+      "type": "database",
+      "label": "Family data store",
+      "sublabel": "Family, Child Map, Discovery, and Story records",
+      "tag": "Implemented persistence",
+      "pos": [
+        960,
+        40
+      ],
+      "size": [
+        225,
+        82
+      ]
+    },
+    {
+      "id": "private-media-store",
+      "type": "cloud",
+      "label": "Private media storage",
+      "sublabel": "Private uploaded media",
+      "tag": "Optional configuration",
+      "pos": [
+        600,
+        40
+      ],
+      "size": [
+        250,
+        80
+      ]
+    },
+    {
+      "id": "text-provider",
+      "type": "external",
+      "label": "Text AI provider",
+      "sublabel": "Vendor and transfer policy unresolved",
+      "tag": "Open • unselected",
+      "pos": [
+        1250,
+        40
+      ],
+      "size": [
+        225,
+        84
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Application boundary • separate logical capabilities",
+      "wraps": [
+        "api-host",
+        "child-map-discovery",
+        "story-context-selection",
+        "story-lifecycle",
+        "story-generation"
+      ],
+      "pad": 120
+    }
+  ],
+  "connections": [
+    {
+      "id": "family-to-web",
+      "from": "family-browser",
+      "to": "react-web",
+      "label": "uses",
+      "variant": "emphasis"
+    },
+    {
+      "id": "identity-session",
+      "from": "identity-provider",
+      "to": "react-web",
+      "label": "signed session",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "web-api-request",
+      "from": "react-web",
+      "to": "api-host",
+      "label": "authorized request",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api-to-child-map",
+      "from": "api-host",
+      "to": "child-map-discovery",
+      "label": "family reads"
+    },
+    {
+      "id": "api-to-story-read",
+      "from": "api-host",
+      "to": "story-lifecycle",
+      "label": "story read",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "child-map-to-context",
+      "from": "child-map-discovery",
+      "to": "story-context-selection",
+      "label": "candidates",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "context-to-lifecycle",
+      "from": "story-context-selection",
+      "to": "story-lifecycle",
+      "label": "approved context",
+      "variant": "dashed",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "lifecycle-to-generation",
+      "from": "story-lifecycle",
+      "to": "story-generation",
+      "label": "generation request",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          725,
+          675
+        ],
+        [
+          1362.5,
+          675
+        ]
+      ],
+      "labelSegment": 1
+    },
+    {
+      "id": "generation-candidate-return",
+      "from": "story-generation",
+      "to": "story-lifecycle",
+      "label": "candidate artifact",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          1520,
+          595
+        ],
+        [
+          1520,
+          650
+        ],
+        [
+          550,
+          650
+        ],
+        [
+          550,
+          595
+        ]
+      ],
+      "labelSegment": 2,
+      "labelDy": 14
+    },
+    {
+      "id": "child-map-to-data-store",
+      "from": "child-map-discovery",
+      "to": "family-data-store",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "api-to-media",
+      "from": "api-host",
+      "to": "private-media-store",
+      "label": "optional",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "generation-to-provider",
+      "from": "story-generation",
+      "to": "text-provider",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Implemented paths",
+      "items": [
+        "The React web experience and application API are active foundations.",
+        "Family authority and protected parent access are enforced at the application boundary.",
+        "Child Map and deterministic Discovery persist family-owned context."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Accepted story boundaries",
+      "items": [
+        "Story Lifecycle owns Story truth, revisions, and approval.",
+        "Context Selection creates a minimized, parent-selected context bundle.",
+        "Generation returns candidate artifacts; it does not own family authority."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Open provider boundary",
+      "items": [
+        "The production text provider remains unselected.",
+        "Provider-transfer policy stays separate from generation.",
+        "Future story-flow connections are shown as accepted boundaries, not shipped product claims."
+      ]
+    }
+  ]
+}

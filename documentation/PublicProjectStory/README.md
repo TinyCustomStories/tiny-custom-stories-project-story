@@ -8,6 +8,7 @@ The public site is a multi-route single-page application. A route is a stable br
 
 - [Wireframes](Wireframes.md) describe the information architecture, conceptual architecture, and intended responsive layouts in accessible text diagrams.
 - [Screenshot evidence](ScreenshotEvidence.md) records reviewed visual states and the conditions under which they were captured.
+- [Architecture explorer](ArchitectureExplorer.md) defines the public-safe Archify derivative, stable asset paths, curation boundary, and refresh contract.
 - The **How we build** route contains a dated, public-safe activity snapshot from the main product repository. It is intentionally static rather than browser-connected to the private repository.
 - The [Public Project Dossier](../../public/documents/tiny-custom-stories-project-dossier.pdf) is a portable companion at a stable path. It supports the website rather than replacing the website's semantic, responsive version.
 
@@ -82,6 +83,7 @@ When a public-site route, hierarchy, responsive behavior, or knowledge-status cl
 4. verify the stable dossier path and public links;
 5. check that planned work has not been presented as completed work;
 6. review the change for private material and attack-relevant detail;
-7. refresh the dated delivery snapshot only from aggregate repository evidence, never by exposing a private token or private issue content in the public browser.
+7. refresh the dated delivery snapshot only from aggregate repository evidence, never by exposing a private token or private issue content in the public browser;
+8. when the canonical architecture materially changes, refresh the public Archify source and generated HTML under the curation rules in [ArchitectureExplorer.md](ArchitectureExplorer.md).
 
 Screenshots are explanatory documentation assets, not automated pixel-comparison baselines.
