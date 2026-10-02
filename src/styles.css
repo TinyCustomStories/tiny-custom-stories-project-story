@@ -1550,10 +1550,18 @@ footer a {
   background: color-mix(in srgb, var(--color-expressive-sun) 24%, transparent);
 }
 .architecture-status-key span:nth-child(3) {
-  background: color-mix(in srgb, var(--color-expressive-lavender) 24%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--color-expressive-lavender) 24%,
+    transparent
+  );
 }
 .architecture-status-key span:nth-child(4) {
-  background: color-mix(in srgb, var(--color-expressive-coral) 25%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--color-expressive-coral) 25%,
+    transparent
+  );
 }
 .architecture-explorer-frame {
   height: clamp(36rem, 67vw, 55rem);
