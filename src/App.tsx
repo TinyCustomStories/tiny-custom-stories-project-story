@@ -884,8 +884,8 @@ function Architecture() {
 
         <div className="architecture-explorer-note">
           <p>
-            The embedded view is best on a larger screen. On a small screen,
-            use the full-view link for more room to pan and inspect.
+            The embedded view is best on a larger screen. On a small screen, use
+            the full-view link for more room to pan and inspect.
           </p>
           <a
             className="button button-light"
