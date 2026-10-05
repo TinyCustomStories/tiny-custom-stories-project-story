@@ -344,8 +344,9 @@ function Product() {
             </span>
             <h3>Children get the wonder</h3>
             <p>
-              The first audience is ages two through six, with a calm
-              parent-approved story library as the child-facing destination.
+              The private-Alpha audience is ages two through twelve, with a
+              calm parent-approved story library as the later child-facing
+              destination.
             </p>
           </article>
           <article>
