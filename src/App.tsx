@@ -76,9 +76,9 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/sprint-one':
     'What has been built around family access, why the outcome gate is still open, and what that means.',
   '/sprint-two':
-    'How a substantially implemented temporal Child Map now uses data-driven deterministic Discovery while its outcome gate remains open.',
+    'How the accepted synthetic/local temporal Child Map and deterministic Discovery outcome was demonstrated while real-family release remains separately gated.',
   '/sprint-three':
-    'How accepted Story capability boundaries are gaining real persistence, validation, operation-state, and rendering foundations.',
+    'How accepted Story capability boundaries are becoming a protected authoring workspace while generation and approval remain unfinished.',
   '/design':
     'The shared philosophy and paper-and-ink language that keep different surfaces recognizably related.',
   '/questions':
@@ -900,7 +900,7 @@ function Architecture() {
       <section className="section story-section">
         <div className="mode-preview">
           <article>
-            <p className="eyebrow">Sprint 2 pattern · implemented deeply</p>
+            <p className="eyebrow">Sprint 2 pattern · local outcome demonstrated</p>
             <h2>Child Map Discovery</h2>
             <p>
               Discovery now reads versioned structured content packs through an
@@ -911,15 +911,15 @@ function Architecture() {
             </p>
           </article>
           <article>
-            <p className="eyebrow">Sprint 3 pattern · foundations landing</p>
+            <p className="eyebrow">Sprint 3 pattern · authoring workspace underway</p>
             <h2>Story capabilities</h2>
             <p>
               Story truth, context permission, and provider-facing generation
-              remain separate responsibilities. StoryRequest persistence,
-              summary reads, blueprint/validation contracts, operation state,
-              architecture tests, and deterministic rendering foundations now
-              make parts of that split executable rather than purely
-              documentary.
+              remain separate responsibilities. Protected Story Studio
+              navigation, direct page-text editing, cover editing, revision
+              history, and lower-level generation foundations now make more of
+              that split executable, while Context Selection and Generation
+              remain incomplete.
             </p>
           </article>
         </div>
@@ -1067,11 +1067,11 @@ function Roadmap() {
         title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
-          The roadmap remains outcome-gated. Sprint 2 is now substantially
-          implemented but still closing its remaining product slices, evidence,
-          qualified review, and final demonstration. Sprint 3 foundation work
-          may proceed with synthetic inputs while Sprint 1’s gate remains open;
-          that exception does not make any open gate complete.
+          The roadmap remains outcome-gated. Sprint 2 has demonstrated its
+          accepted synthetic/local outcome, while qualified real-family release
+          review remains a later gate. Sprint 3 authoring work may proceed with
+          synthetic inputs while Sprint 1’s gate remains open; that exception
+          does not make Sprint 1, Sprint 3, or any release gate complete.
         </p>
       </PageIntro>
 
