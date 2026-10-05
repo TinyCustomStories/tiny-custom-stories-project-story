@@ -1,14 +1,27 @@
 # Tiny Custom Stories — public project story
 
-This public repository contains the independently buildable project-story website for Tiny Custom Stories. It explains the project’s direction, demonstrated Sprint 0 foundation, substantial-but-open Sprint 1 family-access boundary, substantially implemented-but-open Sprint 2 Child Map and Discovery work, early Sprint 3 Story foundations, roadmap, design language, delivery process, and open questions in plain language.
+This public repository contains the independently buildable project-story website for Tiny Custom Stories. It explains the project’s direction, demonstrated Sprint 0 foundation, substantial-but-open Sprint 1 family-access boundary, demonstrated synthetic/local Sprint 2 Child Map and Discovery outcome, active Sprint 3 Story Studio authoring work, roadmap, design language, delivery process, and open questions in plain language.
 
 It is not the Tiny Custom Stories parent/child application. The private product repository, backend, internal research, operational documentation, private issue links, and family data are intentionally outside this repository.
 
 The published site is expected at [tinycustomstories.github.io/tiny-custom-stories-project-story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/). Public pages use static-host-safe fragment routes. Existing routes remain stable, including [Decisions](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/decisions) and the legacy [Sprint 1](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/sprint-one) deep link. The main header no longer privileges one sprint: [Development story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/development) groups Sprint 1, Sprint 2, and Sprint 3 as equal chapters, while [How we build](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/delivery) shows the repository activity and verification workflow behind them.
 
-The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The responsive website is the primary source for semantic navigation and text reflow.
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries the newer October 5 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
 
-## What changed in the October 1 refresh
+## What changed in the October 5 refresh
+
+This refresh follows the repository’s Project Story Sync workflow and preserves the existing routes, paper-and-ink editorial design, public-safety boundary, and dated delivery snapshot.
+
+- Sprint 2’s accepted **synthetic/local outcome is demonstrated** as of October 4. The closeout combines the 23-point evidence record, assembled web/API/data-store proof, real private-media-store evidence, final automated verification, founder local review, and a founder-completed VoiceOver walkthrough.
+- Sprint 2 closure is deliberately narrower than real-family Alpha readiness. Qualified privacy/legal/security/child-safety review remains a later release-readiness gate before any real-family Alpha collection or use.
+- Sprint 3 now has visible integrated authoring work rather than only lower-level foundations: protected Story Studio home and exact-story navigation, direct Draft page-text editing, deterministic cover editing, and Earlier Versions preview/restore are in the product.
+- Controlled personalization selection/summary, paragraph-change input, continuity-decision, and final-review components also exist with synthetic responsive/accessibility evidence. Their remaining APIs, policy gates, workspace integration, generation behavior, and approval mutations are still described as unfinished.
+- The accepted child-profile direction now requires one protected saved name and completed-years age from 2–12 before Child Map or Story Studio. Additional Child Map enrichment remains optional, with no birth-information requirement or per-story name/age override.
+- Current shipped Story routes have an authorization evidence matrix, but the public story does not use that evidence to claim unfinished Sprint 3 endpoint families are complete.
+- The aggregate GitHub delivery numbers remain the explicitly dated **October 1, 2026** snapshot. They were not extrapolated or silently refreshed.
+- The generated dossier remains the October 1 fixed-layout checkpoint in this refresh; its stable URL is preserved rather than publishing an uninspected PDF revision.
+
+## Historical: what changed in the October 1 refresh
 
 The September 24/25 edition already introduced Sprint chapters, Architecture, How we build, and the dated delivery snapshot. This refresh preserves that structure and updates what the repository now proves:
 

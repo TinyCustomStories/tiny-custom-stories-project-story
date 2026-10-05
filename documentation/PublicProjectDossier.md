@@ -2,7 +2,9 @@
 
 The downloadable [Public Project Dossier PDF](../public/documents/tiny-custom-stories-project-dossier.pdf) is a generated 16-page public explanation of Tiny Custom Stories and a fixed-layout companion to the responsive website.
 
-The October 1 edition preserves the September 24/25 design language and stable public URL while refreshing the evidence. It covers the open Sprint 1 outcome gate, substantially implemented-but-open Sprint 2 temporal Child Map and data-driven Discovery work, the decided Sprint 2 private-Alpha privacy boundary and still-required qualified review, early Sprint 3 Story foundation implementation, capability ownership, the refreshed aggregate GitHub delivery snapshot, CI/browser-evidence practice, and the current narrowed open questions.
+The October 1 edition preserves the September 24/25 design language and stable public URL while refreshing the evidence available at that checkpoint. It covers the open Sprint 1 outcome gate, substantially implemented-but-open Sprint 2 temporal Child Map and data-driven Discovery work as of October 1, the decided privacy boundary, early Sprint 3 Story foundation implementation, capability ownership, the dated aggregate GitHub delivery snapshot, CI/browser-evidence practice, and the then-current narrowed open questions.
+
+As of the October 5 website refresh, this PDF is intentionally retained as a **dated October 1 checkpoint**. The responsive website is newer: it records the October 4 synthetic/local Sprint 2 closeout and subsequent Story Studio authoring progress. The PDF is not silently relabeled as current without regenerating and visually inspecting every page.
 
 ## Public scope
 
@@ -32,4 +34,4 @@ The founder reviews material public changes. A future revision must:
 6. keep the stable public PDF path unless there is a compelling reason to change it; and
 7. arrive through the public repository's pull-request workflow.
 
-CI and Pages deployment regenerate the dossier from the checked-in generator so the published PDF stays aligned with the public website. The responsive website remains the primary version for semantic navigation and text reflow.
+CI and Pages deployment regenerate the dossier from the checked-in generator. When the generator intentionally remains on a dated checkpoint, documentation must say so rather than imply content parity with the newer website. The responsive website remains the primary current version for semantic navigation and text reflow.

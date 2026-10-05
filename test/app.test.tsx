@@ -128,7 +128,10 @@ describe('project story site', () => {
       screen.getByText(/Outcome gate open - explicitly not passed/i),
     ).toBeTruthy();
     expect(
-      screen.getByText(/Substantially implemented - outcome gate open/i),
+      screen.getByText(/Synthetic\/local outcome demonstrated/i),
+    ).toBeTruthy();
+    expect(
+      screen.getByText(/Authoring workspace underway - outcome gate open/i),
     ).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
@@ -150,7 +153,7 @@ describe('project story site', () => {
     expect(screen.getByText('Public-story CI')).toBeTruthy();
   });
 
-  it('distinguishes implemented Sprint 2 work from its open outcome gate', () => {
+  it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {
     render(<App />);
 
     fireEvent.click(
@@ -159,9 +162,9 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 2/i }));
 
     expect(
-      screen.getByText(
-        /Substantially implemented\. Final outcome gate still open/i,
-      ),
+      screen.getByRole('heading', {
+        name: /Synthetic\/local outcome demonstrated\. Real-family release gated/i,
+      }),
     ).toBeTruthy();
     expect(
       screen.getByRole('heading', {
@@ -170,11 +173,16 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(screen.getByText(/Versioned content packs/i)).toBeTruthy();
     expect(
-      screen.getAllByText(/Qualified privacy, legal, security/i).length,
+      screen.getAllByText(/qualified privacy, legal, security/i).length,
     ).toBeGreaterThan(0);
+    expect(
+      screen.getByText(
+        /does not authorize real-family Alpha collection or use/i,
+      ),
+    ).toBeTruthy();
   });
 
-  it('shows landed Sprint 3 foundations without claiming the Studio outcome', () => {
+  it('shows integrated Sprint 3 authoring without claiming the complete Studio outcome', () => {
     render(<App />);
 
     fireEvent.click(
@@ -183,12 +191,14 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
 
     expect(
-      screen.getByText(
-        /Architecture accepted\. Foundation implementation underway/i,
-      ),
+      screen.getByRole('heading', {
+        name: /Protected authoring workspace underway\. Outcome gate still open/i,
+      }),
     ).toBeTruthy();
-    expect(screen.getByText(/Landed · StoryRequest persistence/i)).toBeTruthy();
-    expect(screen.getByText(/Later · approval/i)).toBeTruthy();
+    expect(screen.getByText(/Landed · Story Studio home/i)).toBeTruthy();
+    expect(screen.getByText(/Landed · direct page editing/i)).toBeTruthy();
+    expect(screen.getByText(/Landed · earlier versions/i)).toBeTruthy();
+    expect(screen.getByText(/Later · integrated approval/i)).toBeTruthy();
   });
 
   it('preserves the accepted visual recipe and stable public PDF path', () => {

@@ -76,9 +76,9 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/sprint-one':
     'What has been built around family access, why the outcome gate is still open, and what that means.',
   '/sprint-two':
-    'How a substantially implemented temporal Child Map now uses data-driven deterministic Discovery while its outcome gate remains open.',
+    'How the accepted synthetic/local temporal Child Map and deterministic Discovery outcome was demonstrated while real-family release remains separately gated.',
   '/sprint-three':
-    'How accepted Story capability boundaries are gaining real persistence, validation, operation-state, and rendering foundations.',
+    'How accepted Story capability boundaries are becoming a protected authoring workspace while generation and approval remain unfinished.',
   '/design':
     'The shared philosophy and paper-and-ink language that keep different surfaces recognizably related.',
   '/questions':
@@ -167,7 +167,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 1, 2026
+            A public project story · updated October 5, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -175,10 +175,10 @@ function Home() {
           </h1>
           <p className="hero-lede">
             Tiny Custom Stories has grown from a personalized-story idea into a
-            parent-controlled learning product with a substantially implemented
-            temporal Child Map, a data-driven Discovery capability, and Story
-            foundations that keep generation separate from family authority and
-            Story truth.
+            parent-controlled learning product with a demonstrated synthetic and
+            local Child Map outcome, data-driven Discovery, and a protected
+            Story Studio whose authoring workspace now includes real editing and
+            revision flows.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/development">
@@ -228,14 +228,16 @@ function Home() {
       >
         <p>
           <span aria-hidden="true">●</span> Sprint 0 is demonstrated. Sprint 1
-          remains evidence-gated. Sprint 2 is substantially implemented, with
-          its final outcome gate still open.
+          remains evidence-gated. Sprint 2's accepted synthetic/local outcome
+          was demonstrated on October 4.
         </p>
         <p>
-          Sprint 3 foundation work is landing under the{' '}
-          <strong>synthetic-only sequencing exception</strong>. Real-family
-          Sprint 2 Alpha use still requires the remaining outcome evidence and
-          qualified privacy, legal, security, and child-safety review.
+          Sprint 3 continues under the{' '}
+          <strong>synthetic-only sequencing exception</strong>. Story Studio
+          home, direct page editing, cover editing, and revision history have
+          landed, while full generation and approval remain open. Real-family
+          Alpha use still requires qualified release review and later safety,
+          security, and deployment gates.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -285,11 +287,11 @@ function Home() {
         </div>
         <h2 id="directory-title">One project story, ten places to pause.</h2>
         <p className="section-intro">
-          This October checkpoint keeps the September site underneath it and
+          This October 5 checkpoint keeps the September site underneath it and
           updates the evidence around it: the same routes and visual language
-          now show how far Child Map and Discovery implementation has moved,
-          what still blocks the Sprint 2 gate, and which Sprint 3 foundations
-          exist in code.
+          now show Sprint 2's accepted synthetic/local outcome, the separate
+          real-family release boundary, and how far the protected Story Studio
+          has moved from contracts into an authoring workspace.
         </p>
         <div className="route-grid">
           {primaryNavigation
@@ -342,8 +344,9 @@ function Product() {
             </span>
             <h3>Children get the wonder</h3>
             <p>
-              The first audience is ages two through six, with a calm
-              parent-approved story library as the child-facing destination.
+              The private-Alpha audience is ages two through twelve, with a calm
+              parent-approved story library as the later child-facing
+              destination.
             </p>
           </article>
           <article>
@@ -503,12 +506,12 @@ function Development() {
       'Accounts, child-safe default mode, protected parent entry, expiry, recovery, isolation, accessibility, and end-to-end evidence were built. A required provider proof remains unresolved, so the outcome gate stays open.',
     ],
     [
-      'Sprint 2 · substantially implemented, gate still open',
-      'The temporal Child Map now has category/detail flows, lifecycle semantics, current/history views, Right Now and Then & Now, data-driven deterministic Discovery, private-media and deletion foundations. Remaining product slices, cross-cutting evidence, and qualified review still block the outcome gate.',
+      'Sprint 2 · synthetic/local outcome demonstrated',
+      'The temporal Child Map, deterministic Discovery, private-media and deletion lifecycle, accessibility evidence, and assembled local journey now satisfy the accepted synthetic/local outcome. Qualified real-family release review remains a later gate.',
     ],
     [
-      'Sprint 3 · architecture accepted, foundations landing',
-      'Pre-generation StoryRequest persistence, protected summary reads, a provider-neutral StoryBlueprint contract, structural validation, generation-operation persistence, architecture tests, and deterministic page/decoration foundations now exist while the visible Story Studio journey remains ahead.',
+      'Sprint 3 · protected authoring workspace underway',
+      'Story Studio home and exact-story navigation now lead into real direct page editing, deterministic cover editing, and earlier-version preview/restore. Generation, assisted changes, approval, and the final end-to-end outcome remain unfinished.',
     ],
   ];
 
@@ -522,7 +525,7 @@ function Development() {
           The project did not move in a straight line from “idea” to “features.”
           Each sprint exposed a boundary that needed to become clearer: first
           family authority, then evolving child context, then the difference
-          between Story truth, context permission, and generation. The October
+          between Story truth, context permission, and generation. The October 5
           checkpoint also shows where those boundaries have become real code.
         </p>
       </PageIntro>
@@ -562,24 +565,21 @@ function Development() {
           </Link>
           <Link to="/sprint-two" className="sprint-chapter-card">
             <span>02</span>
-            <p className="eyebrow">Substantially implemented · gate open</p>
+            <p className="eyebrow">Synthetic/local outcome demonstrated</p>
             <h3>Sprint 2</h3>
             <p>
               Temporal Child Map, data-driven Discovery, lifecycle/deletion
-              infrastructure, and the remaining evidence and review boundary.
+              evidence, and a separate qualified real-family release boundary.
             </p>
             <b>Read Sprint 2 →</b>
           </Link>
           <Link to="/sprint-three" className="sprint-chapter-card">
             <span>03</span>
-            <p className="eyebrow">
-              Architecture accepted · foundations landing
-            </p>
+            <p className="eyebrow">Authoring workspace underway · gate open</p>
             <h3>Sprint 3</h3>
             <p>
-              Story request persistence, generation contracts, validation,
-              operation state, deterministic rendering, and a still-future
-              end-to-end Story Studio experience.
+              Protected Story Studio navigation, direct text and cover editing,
+              revision history, plus unfinished generation and approval flows.
             </p>
             <b>Read Sprint 3 →</b>
           </Link>
@@ -901,7 +901,9 @@ function Architecture() {
       <section className="section story-section">
         <div className="mode-preview">
           <article>
-            <p className="eyebrow">Sprint 2 pattern · implemented deeply</p>
+            <p className="eyebrow">
+              Sprint 2 pattern · local outcome demonstrated
+            </p>
             <h2>Child Map Discovery</h2>
             <p>
               Discovery now reads versioned structured content packs through an
@@ -912,15 +914,17 @@ function Architecture() {
             </p>
           </article>
           <article>
-            <p className="eyebrow">Sprint 3 pattern · foundations landing</p>
+            <p className="eyebrow">
+              Sprint 3 pattern · authoring workspace underway
+            </p>
             <h2>Story capabilities</h2>
             <p>
               Story truth, context permission, and provider-facing generation
-              remain separate responsibilities. StoryRequest persistence,
-              summary reads, blueprint/validation contracts, operation state,
-              architecture tests, and deterministic rendering foundations now
-              make parts of that split executable rather than purely
-              documentary.
+              remain separate responsibilities. Protected Story Studio
+              navigation, direct page-text editing, cover editing, revision
+              history, and lower-level generation foundations now make more of
+              that split executable, while Context Selection and Generation
+              remain incomplete.
             </p>
           </article>
         </div>
@@ -1068,11 +1072,11 @@ function Roadmap() {
         title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
-          The roadmap remains outcome-gated. Sprint 2 is now substantially
-          implemented but still closing its remaining product slices, evidence,
-          qualified review, and final demonstration. Sprint 3 foundation work
-          may proceed with synthetic inputs while Sprint 1’s gate remains open;
-          that exception does not make any open gate complete.
+          The roadmap remains outcome-gated. Sprint 2 has demonstrated its
+          accepted synthetic/local outcome, while qualified real-family release
+          review remains a later gate. Sprint 3 authoring work may proceed with
+          synthetic inputs while Sprint 1’s gate remains open; that exception
+          does not make Sprint 1, Sprint 3, or any release gate complete.
         </p>
       </PageIntro>
 
@@ -1230,11 +1234,11 @@ function SprintTwo() {
     ],
     [
       'Deletion is a lifecycle boundary',
-      'Individual source deletion, entity deletion, private-media replacement/removal, child-source cleanup, retryable deletion behavior, and family-account deletion coordination now have real implementation behind them while final failure/evidence work remains.',
+      'Individual source deletion, entity deletion, private-media replacement/removal, child-source cleanup, retryable deletion behavior, and family-account deletion coordination are implemented and included in the accepted synthetic/local evidence.',
     ],
     [
-      'Privacy decision and privacy readiness are different',
-      'The conservative private-Alpha collection, retention, provider-transfer, training, and reference-media boundary is decided. Real-family Alpha use still requires qualified privacy, legal, security, and child-safety review.',
+      'Synthetic closure and release readiness are different',
+      'The conservative private-Alpha data boundary and founder local review support the accepted synthetic/local outcome. Real-family Alpha collection or use still requires attributed qualified privacy, legal, security, and child-safety review.',
     ],
   ];
 
@@ -1256,9 +1260,10 @@ function SprintTwo() {
       >
         <p>
           “Not a profile to complete. Just small, true things worth
-          remembering.” Sprint 2 now has substantial implementation behind that
-          idea: a temporal source-of-truth model, a data-driven Discovery
-          runtime, protected lifecycle operations, and deletion infrastructure.
+          remembering.” Sprint 2 now has an accepted synthetic/local outcome
+          behind that idea: a temporal source-of-truth model, data-driven
+          Discovery, protected lifecycle operations, private-media evidence, and
+          deletion behavior exercised together.
         </p>
       </PageIntro>
 
@@ -1266,14 +1271,16 @@ function SprintTwo() {
         <div className="outcome-banner">
           <div>
             <p className="eyebrow">Sprint 2 outcome status</p>
-            <h2>Substantially implemented. Final outcome gate still open.</h2>
+            <h2>
+              Synthetic/local outcome demonstrated. Real-family release gated.
+            </h2>
           </div>
           <p>
-            Implementation progress is not the same as a passed sprint. People &
-            Pets and Places & Routines still need their remaining contract/UI
-            work, final Discovery and deletion evidence remains, and qualified
-            privacy/legal/security/child-safety review is still required before
-            real-family Alpha use.
+            All accepted synthetic/local outcomes are evidenced, including the
+            assembled web/API/data-store journey, private-media behavior, final
+            automated verification, and a founder-completed VoiceOver
+            walkthrough. This does not authorize real-family Alpha collection or
+            use; qualified review and later release-readiness gates remain.
           </p>
         </div>
 
@@ -1312,26 +1319,26 @@ function SprintTwo() {
 
         <div className="evidence-panel">
           <div>
-            <p className="eyebrow">What remains before the gate can pass</p>
-            <h2>Closing work is now narrower—and still important.</h2>
+            <p className="eyebrow">What remains before real-family Alpha use</p>
+            <h2>The sprint outcome closed locally; the release bar did not.</h2>
           </div>
           <ul>
             <li>
-              Final Discovery authorization/concurrency/deletion evidence.
+              Attributed qualified privacy, legal, security, and child-safety
+              review against the actual release scope.
             </li>
             <li>
-              People & Pets and Places & Routines after the remaining
-              server-authoritative revision and relationship-link contracts.
+              Deployment, region, access, backup, recovery, and telemetry facts
+              required by the release-readiness review.
             </li>
-            <li>Remaining private reference-media UI and evidence.</li>
             <li>
-              Deletion failure-injection, confirmation, and evidence work.
+              Any material blocking findings from that review must be resolved
+              and re-reviewed.
             </li>
-            <li>Family-account deletion confirmation UX and evidence.</li>
             <li>
-              Qualified privacy, legal, security, and child-safety review.
+              Later provider, Story, safety, security, reliability, and release
+              gates remain independently binding.
             </li>
-            <li>The final integrated Sprint 2 outcome demonstration.</li>
           </ul>
         </div>
 
@@ -1346,9 +1353,8 @@ function SprintTwo() {
             a fake life stage.
           </Definition>
           <Definition term="Current public status">
-            Substantial synthetic implementation exists. The sprint is not
-            presented as passed, and real-family Alpha collection is not
-            presented as approved.
+            Sprint 2's accepted synthetic/local outcome is demonstrated.
+            Real-family Alpha collection or use is not presented as approved.
           </Definition>
         </div>
       </section>
@@ -1383,11 +1389,11 @@ function SprintThree() {
         title="Story creation is becoming a reversible composition workflow."
       >
         <p>
-          Sprint 3 is no longer architecture alone. Foundational persistence,
-          read contracts, provider-neutral generation artifacts, structural
-          validation, operation state, architecture tests, and deterministic
-          page/decoration work are landing while the visible end-to-end Story
-          Studio experience remains ahead.
+          Sprint 3 is no longer architecture alone. The protected Story Studio
+          home and exact-story workspace now include direct page-text editing,
+          deterministic cover editing, and earlier-version preview/restore.
+          Generation, assisted changes, approval, and the end-to-end outcome
+          remain unfinished.
         </p>
       </PageIntro>
 
@@ -1395,13 +1401,16 @@ function SprintThree() {
         <div className="outcome-banner">
           <div>
             <p className="eyebrow">Sprint 3 outcome status</p>
-            <h2>Architecture accepted. Foundation implementation underway.</h2>
+            <h2>
+              Protected authoring workspace underway. Outcome gate still open.
+            </h2>
           </div>
           <p>
             This work continues under the synthetic-only sequencing exception.
-            The full generation pipeline, parent-visible generation progress,
-            editing/revision journey, approval, and final Sprint 3 outcome are
-            not being presented as complete.
+            Real authoring and revision slices have landed, but the full
+            generation pipeline, integrated assisted-change and continuity
+            flows, approval persistence/integration, and final Sprint 3
+            demonstration are not complete.
           </p>
         </div>
 
@@ -1417,47 +1426,66 @@ function SprintThree() {
 
         <div className="sprint-chapter-intro">
           <p className="eyebrow">Foundation → product experience</p>
-          <h2>The lower-level pieces are landing before the visible studio.</h2>
+          <h2>The visible studio now has real authoring slices.</h2>
           <p>
-            Status words are deliberately part of the diagram so a contract or
-            persistence primitive is not mistaken for a completed parent
-            workflow.
+            Status words remain part of the diagram so an integrated editor or
+            standalone presentation component is not mistaken for the complete
+            generation-to-approval outcome.
           </p>
         </div>
 
         <div
           className="delivery-loop"
-          aria-label="Story foundation flow from parent intent to Story Studio approval"
+          aria-label="Story Studio progress from protected entry to approval"
         >
-          <span>Landed · StoryRequest persistence</span>
+          <span>Landed · Story Studio home</span>
           <i aria-hidden="true">→</i>
           <span>Underway · setup / Story Plan</span>
           <i aria-hidden="true">→</i>
-          <span>Landed · StoryBlueprint contract</span>
+          <span>Landed · exact-story workspace</span>
           <i aria-hidden="true">→</i>
-          <span>Landed · structural validation</span>
+          <span>Landed · direct page editing</span>
           <i aria-hidden="true">→</i>
-          <span>Underway · generation workflow</span>
+          <span>Landed · cover editing</span>
           <i aria-hidden="true">→</i>
-          <span>Later · Story Studio review</span>
+          <span>Landed · earlier versions</span>
           <i aria-hidden="true">→</i>
-          <span>Later · approval</span>
+          <span>Underway · generation + assisted change</span>
+          <i aria-hidden="true">→</i>
+          <span>Later · integrated approval</span>
         </div>
 
         <div className="evidence-panel">
           <div>
-            <p className="eyebrow">Concrete foundation now in code</p>
-            <h2>Enough exists to make the next work less speculative.</h2>
+            <p className="eyebrow">Concrete Story Studio work now in code</p>
+            <h2>
+              The parent authoring surface is becoming an integrated product.
+            </h2>
           </div>
           <ul>
-            <li>Pre-generation StoryRequest persistence.</li>
-            <li>Protected Story summary reads.</li>
-            <li>Provider-neutral ten-page StoryBlueprint contract.</li>
-            <li>Pure StoryComposition structural validation.</li>
-            <li>Durable generation-operation state persistence.</li>
-            <li>Story capability dependency/architecture tests.</li>
-            <li>Reusable deterministic story-page renderer.</li>
-            <li>Original deterministic cover/page decoration assets.</li>
+            <li>Protected Story Studio home and exact-story navigation.</li>
+            <li>Direct text editing for a selected Draft page.</li>
+            <li>Protected deterministic cover editing inside the workspace.</li>
+            <li>
+              Earlier Versions preview and explicit restore in the workspace.
+            </li>
+            <li>
+              Protected Story reads, mutations, revision history, and
+              concurrency.
+            </li>
+            <li>
+              Provider-neutral blueprint, validation, and operation-state
+              foundations.
+            </li>
+            <li>
+              Controlled personalization, assisted-change, continuity, and final
+              review components with synthetic responsive/accessibility
+              evidence.
+            </li>
+            <li>
+              Current shipped Story routes have a recorded authorization
+              evidence matrix.
+            </li>
           </ul>
         </div>
 
@@ -1465,18 +1493,19 @@ function SprintThree() {
           <h2>What is still ahead</h2>
           <Definition term="Generation">
             Full blueprint-to-ten-page generation, quality/safety/continuity
-            checking, bounded repair/retry, progress reporting, and the approved
-            live text-provider adapter remain unfinished.
+            checking, bounded repair/retry, progress integration, and an
+            approved live text-provider path remain unfinished.
           </Definition>
-          <Definition term="Story Studio">
-            Direct editing, paragraph/page rewrites, continuity decisions,
-            earlier-version restore, deterministic cover editing, whole-story
-            change, approval, and post-approval editing remain later Sprint 3
-            work.
+          <Definition term="Integrated assisted work">
+            Personalization, paragraph-change, continuity, and final-review
+            presentation pieces exist, but their remaining APIs, policy gates,
+            workspace integration, and acceptance/approval mutations are not
+            being presented as complete.
           </Definition>
           <Definition term="Public status">
-            Foundation implementation is real; an end-to-end generated,
-            editable, approved Story Studio outcome is not yet demonstrated.
+            Real Story Studio editing and revision behavior exists; an
+            end-to-end generated, assisted, approved Story Studio outcome is not
+            yet demonstrated.
           </Definition>
         </div>
       </section>
@@ -1606,8 +1635,8 @@ function Design() {
 function Questions() {
   const questions = [
     [
-      'What must qualified Sprint 2 review still validate?',
-      'The conservative private-Alpha collection, retention, provider-transfer, training, and reference-media product boundary is decided. Qualified privacy, legal, security, and child-safety review must still validate or tighten the implemented boundary before real-family Alpha use.',
+      'What must qualified real-family release review still validate?',
+      'Sprint 2 is closed at the accepted synthetic/local boundary. Qualified privacy, legal, security, and child-safety review must still validate or tighten the implemented data boundary against the actual release scope before any real-family Alpha collection or use.',
     ],
     [
       'Which permitted Child Map information may be used for a specific story or transferred to a provider?',
@@ -1743,11 +1772,10 @@ function Library() {
             <p className="eyebrow">A portable companion</p>
             <h2>Take the evolving project story with you.</h2>
             <p>
-              The PDF follows the same public-safe narrative: product purpose,
-              development history, Sprint 1’s open gate, Child Map Discovery,
-              Story Studio and its capability boundaries, roadmap, design
-              language, architecture, and open questions. The responsive website
-              remains the primary version.
+              The PDF remains the October 1 fixed-layout checkpoint at its
+              stable public path. This responsive site carries the newer October
+              5 Sprint 2 closeout and Story Studio evidence and remains the
+              primary current narrative.
             </p>
           </div>
           <a
