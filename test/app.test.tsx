@@ -173,7 +173,9 @@ describe('project story site', () => {
       screen.getAllByText(/qualified privacy, legal, security/i).length,
     ).toBeGreaterThan(0);
     expect(
-      screen.getByText(/does not authorize real-family Alpha collection or use/i),
+      screen.getByText(
+        /does not authorize real-family Alpha collection or use/i,
+      ),
     ).toBeTruthy();
   });
 
