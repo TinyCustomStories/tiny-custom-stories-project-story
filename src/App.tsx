@@ -901,7 +901,9 @@ function Architecture() {
       <section className="section story-section">
         <div className="mode-preview">
           <article>
-            <p className="eyebrow">Sprint 2 pattern · local outcome demonstrated</p>
+            <p className="eyebrow">
+              Sprint 2 pattern · local outcome demonstrated
+            </p>
             <h2>Child Map Discovery</h2>
             <p>
               Discovery now reads versioned structured content packs through an
@@ -912,7 +914,9 @@ function Architecture() {
             </p>
           </article>
           <article>
-            <p className="eyebrow">Sprint 3 pattern · authoring workspace underway</p>
+            <p className="eyebrow">
+              Sprint 3 pattern · authoring workspace underway
+            </p>
             <h2>Story capabilities</h2>
             <p>
               Story truth, context permission, and provider-facing generation
@@ -1267,7 +1271,9 @@ function SprintTwo() {
         <div className="outcome-banner">
           <div>
             <p className="eyebrow">Sprint 2 outcome status</p>
-            <h2>Synthetic/local outcome demonstrated. Real-family release gated.</h2>
+            <h2>
+              Synthetic/local outcome demonstrated. Real-family release gated.
+            </h2>
           </div>
           <p>
             All accepted synthetic/local outcomes are evidenced, including the
@@ -1395,7 +1401,9 @@ function SprintThree() {
         <div className="outcome-banner">
           <div>
             <p className="eyebrow">Sprint 3 outcome status</p>
-            <h2>Protected authoring workspace underway. Outcome gate still open.</h2>
+            <h2>
+              Protected authoring workspace underway. Outcome gate still open.
+            </h2>
           </div>
           <p>
             This work continues under the synthetic-only sequencing exception.
@@ -1450,20 +1458,33 @@ function SprintThree() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">Concrete Story Studio work now in code</p>
-            <h2>The parent authoring surface is becoming an integrated product.</h2>
+            <h2>
+              The parent authoring surface is becoming an integrated product.
+            </h2>
           </div>
           <ul>
             <li>Protected Story Studio home and exact-story navigation.</li>
             <li>Direct text editing for a selected Draft page.</li>
             <li>Protected deterministic cover editing inside the workspace.</li>
-            <li>Earlier Versions preview and explicit restore in the workspace.</li>
-            <li>Protected Story reads, mutations, revision history, and concurrency.</li>
-            <li>Provider-neutral blueprint, validation, and operation-state foundations.</li>
+            <li>
+              Earlier Versions preview and explicit restore in the workspace.
+            </li>
+            <li>
+              Protected Story reads, mutations, revision history, and
+              concurrency.
+            </li>
+            <li>
+              Provider-neutral blueprint, validation, and operation-state
+              foundations.
+            </li>
             <li>
               Controlled personalization, assisted-change, continuity, and final
               review components with synthetic responsive/accessibility evidence.
             </li>
-            <li>Current shipped Story routes have a recorded authorization evidence matrix.</li>
+            <li>
+              Current shipped Story routes have a recorded authorization
+              evidence matrix.
+            </li>
           </ul>
         </div>
 
@@ -1471,8 +1492,8 @@ function SprintThree() {
           <h2>What is still ahead</h2>
           <Definition term="Generation">
             Full blueprint-to-ten-page generation, quality/safety/continuity
-            checking, bounded repair/retry, progress integration, and an approved
-            live text-provider path remain unfinished.
+            checking, bounded repair/retry, progress integration, and an
+            approved live text-provider path remain unfinished.
           </Definition>
           <Definition term="Integrated assisted work">
             Personalization, paragraph-change, continuity, and final-review
