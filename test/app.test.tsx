@@ -149,6 +149,7 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(screen.getByText('Frontend CI')).toBeTruthy();
     expect(screen.getByText('Backend CI')).toBeTruthy();
+    expect(screen.getByText('Repository tools CI')).toBeTruthy();
     expect(screen.getByText('Browser evidence')).toBeTruthy();
     expect(screen.getByText('Public-story CI')).toBeTruthy();
   });
