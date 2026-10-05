@@ -141,11 +141,11 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(screen.getByText('981')).toBeTruthy();
-    expect(screen.getByText('354')).toBeTruthy();
-    expect(screen.getByText('754')).toBeTruthy();
+    expect(screen.getByText('1,262')).toBeTruthy();
+    expect(screen.getByText('497')).toBeTruthy();
+    expect(screen.getByText('1,344')).toBeTruthy();
     expect(
-      screen.getByText(/602 of the 754 recorded workflow runs/i),
+      screen.getByText(/941 of the 1,344 recorded workflow runs/i),
     ).toBeTruthy();
     expect(screen.getByText('Frontend CI')).toBeTruthy();
     expect(screen.getByText('Backend CI')).toBeTruthy();
