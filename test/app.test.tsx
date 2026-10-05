@@ -128,7 +128,10 @@ describe('project story site', () => {
       screen.getByText(/Outcome gate open - explicitly not passed/i),
     ).toBeTruthy();
     expect(
-      screen.getByText(/Substantially implemented - outcome gate open/i),
+      screen.getByText(/Synthetic\/local outcome demonstrated/i),
+    ).toBeTruthy();
+    expect(
+      screen.getByText(/Authoring workspace underway - outcome gate open/i),
     ).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
