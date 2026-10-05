@@ -18,7 +18,7 @@ This refresh follows the repository’s Project Story Sync workflow and preserve
 - Controlled personalization selection/summary, paragraph-change input, continuity-decision, and final-review components also exist with synthetic responsive/accessibility evidence. Their remaining APIs, policy gates, workspace integration, generation behavior, and approval mutations are still described as unfinished.
 - The accepted child-profile direction now requires one protected saved name and completed-years age from 2–12 before Child Map or Story Studio. Additional Child Map enrichment remains optional, with no birth-information requirement or per-story name/age override.
 - Current shipped Story routes have an authorization evidence matrix, but the public story does not use that evidence to claim unfinished Sprint 3 endpoint families are complete.
-- The aggregate GitHub delivery numbers remain the explicitly dated **October 1, 2026** snapshot. They were not extrapolated or silently refreshed.
+- The aggregate GitHub delivery snapshot was recomputed from live repository evidence on **October 5, 2026**: 1,262 commits on `development`, 497 pull requests created / 464 merged, 401 issues tracked, 347 task issues, 305 closed / 96 open issues, 4 workflow definitions, 1,344 workflow runs, and 941 successful runs.
 - The generated dossier remains the October 1 fixed-layout checkpoint in this refresh; its stable URL is preserved rather than publishing an uninspected PDF revision.
 
 ## Historical: what changed in the October 1 refresh
