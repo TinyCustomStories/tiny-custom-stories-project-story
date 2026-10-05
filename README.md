@@ -21,7 +21,7 @@ This refresh follows the repository’s Project Story Sync workflow and preserve
 - The aggregate GitHub delivery numbers remain the explicitly dated **October 1, 2026** snapshot. They were not extrapolated or silently refreshed.
 - The generated dossier remains the October 1 fixed-layout checkpoint in this refresh; its stable URL is preserved rather than publishing an uninspected PDF revision.
 
-## What changed in the October 1 refresh
+## Historical: what changed in the October 1 refresh
 
 The September 24/25 edition already introduced Sprint chapters, Architecture, How we build, and the dated delivery snapshot. This refresh preserves that structure and updates what the repository now proves:
 
