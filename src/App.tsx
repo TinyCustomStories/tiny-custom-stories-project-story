@@ -344,8 +344,8 @@ function Product() {
             </span>
             <h3>Children get the wonder</h3>
             <p>
-              The private-Alpha audience is ages two through twelve, with a
-              calm parent-approved story library as the later child-facing
+              The private-Alpha audience is ages two through twelve, with a calm
+              parent-approved story library as the later child-facing
               destination.
             </p>
           </article>
@@ -1479,7 +1479,8 @@ function SprintThree() {
             </li>
             <li>
               Controlled personalization, assisted-change, continuity, and final
-              review components with synthetic responsive/accessibility evidence.
+              review components with synthetic responsive/accessibility
+              evidence.
             </li>
             <li>
               Current shipped Story routes have a recorded authorization
