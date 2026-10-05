@@ -2,7 +2,7 @@
 
 This directory explains the public Tiny Custom Stories project-story site in a format that can be read without opening the application.
 
-The public site is a multi-route single-page application. A route is a stable browser address that presents one topic at a time while the application remains loaded. The September routes remain valid; the October 1 refresh updates their evidence and status without replacing the established information architecture. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 are presented together beneath Development story instead of giving one sprint a unique header position.
+The public site is a multi-route single-page application. A route is a stable browser address that presents one topic at a time while the application remains loaded. The September routes remain valid; the October 5 refresh updates their evidence and status without replacing the established information architecture. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 are presented together beneath Development story instead of giving one sprint a unique header position.
 
 ## What is documented here
 
@@ -16,7 +16,7 @@ These documents describe the public-information experience only. They do not exp
 
 ## Design continuity
 
-The October 1 refresh is an additive evolution of the September 24/25 site.
+The October 5 refresh is an additive evolution of the September 24/25 site and the October 1 evidence refresh.
 
 The public story remains the **Public editorial** surface from the accepted Tiny Custom Stories design language: warm paper-like surfaces, deep ink, restrained playful accents, large editorial type, visible knowledge status, strong hierarchy, accessibility, and responsive recomposition.
 
@@ -71,7 +71,7 @@ Child Map Discovery      Story capabilities
       Family-scoped documents + private media
 ```
 
-Discovery now has concrete data-driven runtime implementation behind the logical boundary. Story capabilities also have early persistence, read, blueprint, structural-validation, operation-state, architecture-test, and deterministic-rendering artifacts. Story Generation remains deliberately extractable later, but the Alpha default stays physically simple until operational evidence justifies worker/service extraction.
+Sprint 2’s accepted synthetic/local outcome is now demonstrated, while qualified real-family release review remains a separate later gate. Story Lifecycle also has integrated protected authoring slices: Story Studio home/exact-story navigation, direct page-text editing, deterministic cover editing, and Earlier Versions preview/restore. Context Selection and Generation still have incomplete policy, API, provider, and integration work. Story Generation remains deliberately extractable later, but the Alpha default stays physically simple until operational evidence justifies worker/service extraction.
 
 ## Maintenance rule
 
