@@ -639,8 +639,12 @@ function HowWeBuild() {
       'Restore/audit, formatting, warnings-as-errors build, generated OpenAPI drift checks, MongoDB startup, API tests, and migration/startup smoke tests.',
     ],
     [
+      'Repository tools CI',
+      'Repository helper, dependency, and workflow-support checks protect the project automation used to plan and deliver work.',
+    ],
+    [
       'Browser evidence',
-      'Playwright Chromium smoke tests, intentional screenshot evidence, and uploaded failure artifacts when a browser run breaks.',
+      'Scheduled or manually triggered Playwright Chromium smoke tests provide browser and screenshot evidence without charging every pull request for the full suite.',
     ],
     [
       'Public-story CI',
