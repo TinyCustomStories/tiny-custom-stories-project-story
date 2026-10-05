@@ -13,19 +13,19 @@ The September 2 screenshots remain useful evidence of the design foundation that
 | Design    | Mobile, 390 × 844    | Wrapped persistent navigation, editorial hierarchy, typography, and responsive design-language UI                  | [design mobile](assets/design-mobile.png)         |
 | Decisions | Mobile, 390 × 844    | Wrapped navigation, readable page title, knowledge-status legend, and one-column presentation                      | [decisions mobile](assets/decisions-mobile.png)   |
 
-## October 1 visual-review requirements
+## October 5 visual-review requirements
 
 The content update intentionally reuses the established components, palette, typography, cards, status treatments, and responsive rules rather than introducing a redesign.
 
 Before merge or publication, inspect at representative desktop and narrow-mobile widths:
 
-- Home: October 1 checkpoint wording, the Sprint 2/Sprint 3 distinction, and real-family Alpha review boundary.
-- Development story: four-stage evolution, equal Sprint 1/2/3 chapter cards, and implementation-vs-gate wording.
-- Sprint 2: substantially-implemented/open-gate status, Discovery evolution loop, temporal examples, and remaining-work list.
-- Sprint 3: foundation-underway status, landed/underway/later flow, and explicit end-to-end non-completion wording.
-- Architecture: data-driven Discovery implementation, early Story artifacts, and converging-codebase wording.
-- How we build: refreshed large-number cards, 3-main-workflow count, expanded idea → decision → issue → review loop, and agent-assisted/repository-owned methodology panel.
-- Roadmap: long status copy, especially Sprint 1 through Sprint 3, with Sprint 2 implementation progress not mistaken for a passed gate.
+- Home: October 5 checkpoint wording, the demonstrated Sprint 2 local outcome, the separate real-family release boundary, and current Story Studio progress.
+- Development story: four-stage evolution, equal Sprint 1/2/3 chapter cards, and local-outcome-vs-release-readiness wording.
+- Sprint 2: demonstrated synthetic/local outcome, deterministic Discovery evolution, temporal examples, and explicit qualified-release boundary.
+- Sprint 3: integrated authoring slices, landed/underway/later flow, and explicit generation/assisted-change/approval non-completion wording.
+- Architecture: data-driven Discovery, partial Story Lifecycle implementation, and accepted-but-incomplete Context Selection/Generation boundaries.
+- How we build: the explicitly dated October 1 delivery snapshot, 3-main-workflow count, expanded idea → decision → issue → review loop, and agent-assisted/repository-owned methodology panel.
+- Roadmap: long status copy, especially Sprint 1 through Sprint 3, with Sprint 2 synthetic/local closure not mistaken for real-family Alpha readiness.
 - Sprint 1: open-gate wording, evidence list, and public-boundary note.
 - Design: continuity wording while preserving the existing visual recipe.
 - Decisions: larger public-entry set and long source/related text.
