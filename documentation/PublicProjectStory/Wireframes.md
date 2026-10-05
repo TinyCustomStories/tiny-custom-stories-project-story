@@ -39,15 +39,15 @@ Sprint 1
        | temporary sequencing exception
        v
 Sprint 2
-  substantial implementation
+  accepted synthetic/local outcome demonstrated
   temporal Child Map + data-driven Discovery
-  outcome gate still open
+  qualified real-family release review remains later
        |
        v
 Sprint 3
   architecture accepted
-  persistence / contracts / validation / rendering foundations landing
-  end-to-end Story Studio still ahead
+  protected Story Studio authoring workspace underway
+  generation / assisted changes / approval still incomplete
        |
        v
 Sprint 4+
@@ -111,8 +111,8 @@ Logical separation does not mean every box is already a separately deployed serv
 | Decisions: status legend + October decisions + labeled public entries           |
 | Roadmap: seven outcome gates + visible Sprint 1 sequencing exception            |
 | Sprint 1: implemented boundary + open gate + evidence summary                  |
-| Sprint 2: temporal Child Map + data-driven Discovery + open outcome gate       |
-| Sprint 3: landed foundations + underway generation + later Studio/approval     |
+| Sprint 2: demonstrated synthetic/local outcome + later real-family gate       |
+| Sprint 3: integrated authoring slices + unfinished generation/approval          |
 | Design: existing 70/20/10 language + palette + themes + continuity rule       |
 | Questions: narrowed unresolved matters + how-to-read panel                    |
 | Library: curation flow + public-safety definitions + stable PDF link          |
