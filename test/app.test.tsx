@@ -152,6 +152,15 @@ describe('project story site', () => {
     expect(screen.getByText('Repository tools CI')).toBeTruthy();
     expect(screen.getByText('Browser evidence')).toBeTruthy();
     expect(screen.getByText('Public-story CI')).toBeTruthy();
+    expect(screen.getByText('We ran too much browser CI')).toBeTruthy();
+    expect(
+      screen.getByText('Green tests did not prove the assembled product'),
+    ).toBeTruthy();
+    expect(
+      screen.getByText('Our agents were competing for one API budget'),
+    ).toBeTruthy();
+    expect(screen.getByText('New tools have to earn a permanent place')).toBeTruthy();
+    expect(screen.getByText('The experiment we are still running')).toBeTruthy();
   });
 
   it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {
