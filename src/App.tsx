@@ -790,6 +790,44 @@ function HowWeBuild() {
 
         <div className="evidence-panel">
           <div>
+            <p className="eyebrow">Why this project became my AI laboratory</p>
+            <h2>Building the product changed how I learn.</h2>
+          </div>
+          <ul>
+            <li>
+              Tiny Custom Stories existed as an idea long before this version of
+              the product existed. Actually building it turned AI from something
+              the founder followed from a distance into something they read,
+              test, and reason about almost every day.
+            </li>
+            <li>
+              The field changes quickly enough that there is constantly a new
+              model, agent pattern, developer tool, evaluation method, or
+              architectural idea worth understanding. Having a real project
+              gives those ideas somewhere concrete to succeed or fail.
+            </li>
+            <li>
+              Because the product is still pre-launch, this is the cheapest time
+              to experiment. A tool can be piloted, an architecture assumption
+              challenged, or a workflow replaced before real families depend on
+              it.
+            </li>
+            <li>
+              That freedom has a boundary: novelty is not a reason to ship
+              complexity. Experiments must still earn their place through useful
+              evidence, and failed pilots are allowed to disappear.
+            </li>
+            <li>
+              As staging and real users get closer, the balance changes. The
+              project can keep learning quickly, but production paths should
+              become progressively more boring, observable, reversible, and
+              deliberate.
+            </li>
+          </ul>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
             <p className="eyebrow">The next thing that scares me</p>
             <h2>Real users, real AI, and the first staging deployment.</h2>
           </div>
