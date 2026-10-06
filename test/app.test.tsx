@@ -152,6 +152,31 @@ describe('project story site', () => {
     expect(screen.getByText('Repository tools CI')).toBeTruthy();
     expect(screen.getByText('Browser evidence')).toBeTruthy();
     expect(screen.getByText('Public-story CI')).toBeTruthy();
+    expect(screen.getByText('We ran too much browser CI')).toBeTruthy();
+    expect(
+      screen.getByText('Green tests did not prove the assembled product'),
+    ).toBeTruthy();
+    expect(
+      screen.getByText('Our agents were competing for one API budget'),
+    ).toBeTruthy();
+    expect(
+      screen.getByText('New tools have to earn a permanent place'),
+    ).toBeTruthy();
+    expect(
+      screen.getByText('The experiment we are still running'),
+    ).toBeTruthy();
+    expect(
+      screen.getByText('Why this project became my AI laboratory'),
+    ).toBeTruthy();
+    expect(
+      screen.getByText('Building the product changed how I learn.'),
+    ).toBeTruthy();
+    expect(screen.getByText('The next thing that scares me')).toBeTruthy();
+    expect(
+      screen.getByText(
+        /Real users, real AI, and the first staging deployment/i,
+      ),
+    ).toBeTruthy();
   });
 
   it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {

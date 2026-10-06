@@ -629,6 +629,25 @@ function HowWeBuild() {
     [deliverySnapshot.workflowRuns, 'workflow runs', 'GitHub Actions'],
   ] as const;
 
+  const buildLessons = [
+    [
+      'We ran too much browser CI',
+      'The broad Playwright and screenshot suite was useful, but running it on nearly every pull request made browser verification disproportionately expensive. GitHub Actions eventually stopped starting jobs when the budget was exhausted. We kept fast deterministic PR gates and moved broad browser coverage to weekly/manual runs, while still using focused browser evidence when a risky UI change needs it.',
+    ],
+    [
+      'Green tests did not prove the assembled product',
+      'Our browser tests could pass against mocked APIs while API tests separately replaced infrastructure. That was useful evidence, but not end-to-end proof. Sprint 2 forced us to add a synthetic browser → real HTTP API → Mongo journey and separate real private-object-store evidence before calling the outcome demonstrated.',
+    ],
+    [
+      'Our agents were competing for one API budget',
+      'Parallel sessions repeatedly asked GitHub Projects for the same state and shared one GraphQL quota. When that rate limit became a recurring blocker, we changed the workflow: one timestamped project snapshot can be shared across workers, ordinary issue/PR reads prefer cheaper paths, and live project reads are reserved for mutations or meaningful refresh points.',
+    ],
+    [
+      'New tools have to earn a permanent place',
+      'We pilot tools with an explicit possibility of saying no. Graphify produced a useful local code graph, but the pilot recommended holding workflow integration rather than adding machinery without enough value. Archify earned a narrower role because a maintained architecture map proved useful enough to keep and publish in a curated public form.',
+    ],
+  ] as const;
+
   const workflowChecks = [
     [
       'Frontend CI',
@@ -724,6 +743,125 @@ function HowWeBuild() {
               <p>{detail}</p>
             </article>
           ))}
+        </div>
+
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">What broke, what we learned, what changed</p>
+          <h2>We keep the failed experiments in the project story.</h2>
+          <p>
+            A process mistake is useful when it changes the system. Some of the
+            most important engineering work here came from discovering that a
+            practice was too expensive, too isolated, too repetitive, or simply
+            not valuable enough to keep.
+          </p>
+        </div>
+
+        <ol className="boundary-grid">
+          {buildLessons.map(([title, detail], index) => (
+            <li key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="reading-panel">
+          <h2>The experiment we are still running</h2>
+          <Definition term="Specialist-agent delivery">
+            We are testing whether a solo founder can coordinate product
+            decisions, backlog readiness, implementation, repository state, and
+            pull-request review through specialized agents while keeping GitHub
+            and the repository as the source of truth. The goal is less
+            ambiguity and rework, not more autonomous activity.
+          </Definition>
+          <Definition term="What we are not claiming">
+            We do not claim this workflow is novel, universally better, or a
+            proven productivity advantage. It stays an experiment until the
+            evidence shows that it improves delivery without weakening review,
+            privacy, safety, or maintainability.
+          </Definition>
+          <Definition term="Operating rule">
+            A new tool or process is allowed to fail. If it does not earn its
+            complexity, we hold it, remove it, or narrow its role rather than
+            keeping it because time was already invested.
+          </Definition>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Why this project became my AI laboratory</p>
+            <h2>Building the product changed how I learn.</h2>
+          </div>
+          <ul>
+            <li>
+              Tiny Custom Stories existed as an idea long before this version of
+              the product existed. Actually building it turned AI from something
+              the founder followed from a distance into something they read,
+              test, and reason about almost every day.
+            </li>
+            <li>
+              The field changes quickly enough that there is constantly a new
+              model, agent pattern, developer tool, evaluation method, or
+              architectural idea worth understanding. Having a real project
+              gives those ideas somewhere concrete to succeed or fail.
+            </li>
+            <li>
+              Because the product is still pre-launch, this is the cheapest time
+              to experiment. A tool can be piloted, an architecture assumption
+              challenged, or a workflow replaced before real families depend on
+              it.
+            </li>
+            <li>
+              That freedom has a boundary: novelty is not a reason to ship
+              complexity. Experiments must still earn their place through useful
+              evidence, and failed pilots are allowed to disappear.
+            </li>
+            <li>
+              As staging and real users get closer, the balance changes. The
+              project can keep learning quickly, but production paths should
+              become progressively more boring, observable, reversible, and
+              deliberate.
+            </li>
+          </ul>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">The next thing that scares me</p>
+            <h2>Real users, real AI, and the first staging deployment.</h2>
+          </div>
+          <ul>
+            <li>
+              The founder is most excited about — and most nervous about — the
+              first time a real user asks Tiny Custom Stories to generate a
+              story, and the first time the product is deployed into a staging
+              environment.
+            </li>
+            <li>
+              That uncertainty is real. The current synthetic/local evidence
+              does not authorize real-family staging, Alpha use, production
+              deployment, or transfer of family data to an AI provider.
+            </li>
+            <li>
+              Before live generation can become a trustworthy user feature, the
+              project still has to settle the provider boundary, exactly which
+              family context may leave the application, quality and safety
+              evidence, failure and recovery behavior, cost controls, and
+              release-readiness gates.
+            </li>
+            <li>
+              Before staging can feel routine, deployment itself has to become
+              evidence: repeatable configuration, environment isolation, secrets
+              handling, migrations, health checks, observability, recovery, and
+              a rollback path that has actually been exercised.
+            </li>
+            <li>
+              The goal is not to hide that fear with automation. It is to turn
+              each unknown into a bounded experiment whose failure teaches us
+              something before real families depend on it.
+            </li>
+          </ul>
         </div>
 
         <div className="delivery-loop" aria-label="Delivery workflow">
