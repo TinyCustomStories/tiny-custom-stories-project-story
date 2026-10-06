@@ -24,7 +24,7 @@ Before merge or publication, inspect at representative desktop and narrow-mobile
 - Sprint 2: demonstrated synthetic/local outcome, deterministic Discovery evolution, temporal examples, and explicit qualified-release boundary.
 - Sprint 3: integrated authoring slices, landed/underway/later flow, and explicit generation/assisted-change/approval non-completion wording.
 - Architecture: data-driven Discovery, partial Story Lifecycle implementation, and accepted-but-incomplete Context Selection/Generation boundaries.
-- How we build: the explicitly dated October 5 delivery snapshot, 4-main-workflow count, expanded idea → decision → issue → review loop, and agent-assisted/repository-owned methodology panel.
+- How we build: the explicitly dated October 5 delivery snapshot, 4-main-workflow count, candid “what broke / what changed” experiment cards, the ongoing specialist-agent experiment boundary, expanded idea → decision → issue → review loop, and agent-assisted/repository-owned methodology panel.
 - Roadmap: long status copy, especially Sprint 1 through Sprint 3, with Sprint 2 synthetic/local closure not mistaken for real-family Alpha readiness.
 - Sprint 1: open-gate wording, evidence list, and public-boundary note.
 - Design: continuity wording while preserving the existing visual recipe.
