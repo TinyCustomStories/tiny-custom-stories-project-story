@@ -165,6 +165,10 @@ describe('project story site', () => {
     expect(
       screen.getByText('The experiment we are still running'),
     ).toBeTruthy();
+    expect(screen.getByText('The next thing that scares me')).toBeTruthy();
+    expect(
+      screen.getByText(/Real users, real AI, and the first staging deployment/i),
+    ).toBeTruthy();
   });
 
   it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {
