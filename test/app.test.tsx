@@ -168,7 +168,9 @@ describe('project story site', () => {
     expect(
       screen.getByText('Why this project became my AI laboratory'),
     ).toBeTruthy();
-    expect(screen.getByText('Building the product changed how I learn.')).toBeTruthy();
+    expect(
+      screen.getByText('Building the product changed how I learn.'),
+    ).toBeTruthy();
     expect(screen.getByText('The next thing that scares me')).toBeTruthy();
     expect(
       screen.getByText(
