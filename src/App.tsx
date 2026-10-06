@@ -814,9 +814,9 @@ function HowWeBuild() {
             </li>
             <li>
               Before staging can feel routine, deployment itself has to become
-              evidence: repeatable configuration, environment isolation,
-              secrets handling, migrations, health checks, observability,
-              recovery, and a rollback path that has actually been exercised.
+              evidence: repeatable configuration, environment isolation, secrets
+              handling, migrations, health checks, observability, recovery, and
+              a rollback path that has actually been exercised.
             </li>
             <li>
               The goal is not to hide that fear with automation. It is to turn
