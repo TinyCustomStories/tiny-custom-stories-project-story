@@ -162,7 +162,9 @@ describe('project story site', () => {
     expect(
       screen.getByText('New tools have to earn a permanent place'),
     ).toBeTruthy();
-    expect(screen.getByText('The experiment we are still running')).toBeTruthy();
+    expect(
+      screen.getByText('The experiment we are still running'),
+    ).toBeTruthy();
   });
 
   it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {
