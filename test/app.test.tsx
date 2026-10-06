@@ -159,7 +159,9 @@ describe('project story site', () => {
     expect(
       screen.getByText('Our agents were competing for one API budget'),
     ).toBeTruthy();
-    expect(screen.getByText('New tools have to earn a permanent place')).toBeTruthy();
+    expect(
+      screen.getByText('New tools have to earn a permanent place'),
+    ).toBeTruthy();
     expect(screen.getByText('The experiment we are still running')).toBeTruthy();
   });
 
