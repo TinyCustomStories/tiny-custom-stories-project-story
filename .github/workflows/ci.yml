@@ -37,7 +37,4 @@ jobs:
         run: npm run generate:pdf
 
       - name: Verify public site
-        run: |
-          npx prettier src/App.tsx test/app.test.tsx --write
-          git diff -- src/App.tsx test/app.test.tsx
-          exit 1
+        run: npm run verify
