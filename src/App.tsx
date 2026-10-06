@@ -788,6 +788,44 @@ function HowWeBuild() {
           </Definition>
         </div>
 
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">The next thing that scares me</p>
+            <h2>Real users, real AI, and the first staging deployment.</h2>
+          </div>
+          <ul>
+            <li>
+              The founder is most excited about — and most nervous about — the
+              first time a real user asks Tiny Custom Stories to generate a
+              story, and the first time the product is deployed into a staging
+              environment.
+            </li>
+            <li>
+              That uncertainty is real. The current synthetic/local evidence
+              does not authorize real-family staging, Alpha use, production
+              deployment, or transfer of family data to an AI provider.
+            </li>
+            <li>
+              Before live generation can become a trustworthy user feature, the
+              project still has to settle the provider boundary, exactly which
+              family context may leave the application, quality and safety
+              evidence, failure and recovery behavior, cost controls, and
+              release-readiness gates.
+            </li>
+            <li>
+              Before staging can feel routine, deployment itself has to become
+              evidence: repeatable configuration, environment isolation,
+              secrets handling, migrations, health checks, observability,
+              recovery, and a rollback path that has actually been exercised.
+            </li>
+            <li>
+              The goal is not to hide that fear with automation. It is to turn
+              each unknown into a bounded experiment whose failure teaches us
+              something before real families depend on it.
+            </li>
+          </ul>
+        </div>
+
         <div className="delivery-loop" aria-label="Delivery workflow">
           <span>Idea / finding</span>
           <i aria-hidden="true">→</i>
