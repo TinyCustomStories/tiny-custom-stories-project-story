@@ -167,7 +167,9 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(screen.getByText('The next thing that scares me')).toBeTruthy();
     expect(
-      screen.getByText(/Real users, real AI, and the first staging deployment/i),
+      screen.getByText(
+        /Real users, real AI, and the first staging deployment/i,
+      ),
     ).toBeTruthy();
   });
 
