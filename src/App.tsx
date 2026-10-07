@@ -1883,7 +1883,11 @@ function HowWeBuild() {
     [deliverySnapshot.pullRequestsMerged, 'pull requests', 'merged'],
     [deliverySnapshot.issuesTracked, 'issues', 'tracked'],
     [deliverySnapshot.taskIssues, 'task issues', 'implementation / validation'],
-    [deliverySnapshot.workflowDefinitions, 'CI workflows', 'main product definitions'],
+    [
+      deliverySnapshot.workflowDefinitions,
+      'CI workflows',
+      'main product definitions',
+    ],
   ] as const;
 
   const workflowChecks = [
