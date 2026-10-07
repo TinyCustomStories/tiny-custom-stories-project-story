@@ -2,14 +2,60 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import App from '../src/App';
 
+function renderBuilder() {
+  window.localStorage.setItem('tcs-project-story-reading-mode', 'builder');
+  return render(<App />);
+}
+
+function renderStory() {
+  window.localStorage.removeItem('tcs-project-story-reading-mode');
+  return render(<App />);
+}
+
 describe('project story site', () => {
   afterEach(() => {
     cleanup();
     window.history.replaceState({}, '', '/');
+    window.localStorage.clear();
+  });
+
+  it('defaults to Story mode and switches to Builder without changing routes', () => {
+    renderStory();
+
+    expect(
+      screen.getByRole('heading', {
+        name: /stories that know more than your kid’s name/i,
+      }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('button', { name: 'Story' }).getAttribute('aria-pressed'),
+    ).toBe('true');
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
+    expect(
+      screen.getByRole('heading', {
+        name: /three facts can look personalized/i,
+      }),
+    ).toBeTruthy();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
+    expect(
+      screen.getByRole('heading', {
+        name: /a child is not a prompt/i,
+      }),
+    ).toBeTruthy();
+    expect(window.location.hash).toBe('#/product');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Story' }));
+    expect(
+      screen.getByRole('heading', {
+        name: /three facts can look personalized/i,
+      }),
+    ).toBeTruthy();
   });
 
   it('explains the public boundary and preserves knowledge-status distinctions', () => {
-    render(<App />);
+    renderBuilder();
 
     expect(
       screen.getByRole('heading', {
@@ -34,7 +80,7 @@ describe('project story site', () => {
   });
 
   it('keeps the established routes while adding development, architecture, and delivery pages', () => {
-    render(<App />);
+    renderBuilder();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
     expect(
@@ -80,7 +126,7 @@ describe('project story site', () => {
   });
 
   it('keeps working-record pages out of the main header', () => {
-    render(<App />);
+    renderBuilder();
 
     expect(screen.queryByRole('link', { name: 'Decisions' })).toBeNull();
     expect(screen.queryByRole('link', { name: 'Roadmap' })).toBeNull();
@@ -91,7 +137,7 @@ describe('project story site', () => {
   });
 
   it('groups Sprint 1, 2, and 3 together instead of privileging one in the header', () => {
-    render(<App />);
+    renderBuilder();
 
     expect(screen.queryByRole('link', { name: 'Sprint 1' })).toBeNull();
 
@@ -122,7 +168,7 @@ describe('project story site', () => {
   });
 
   it('states the Sprint 1 gate accurately and preserves its legacy route', () => {
-    render(<App />);
+    renderBuilder();
 
     expect(screen.getByText(/Sprint 1 remains evidence-gated/i)).toBeTruthy();
 
@@ -143,7 +189,7 @@ describe('project story site', () => {
   });
 
   it('shows the updated roadmap without treating later planning as completed work', () => {
-    render(<App />);
+    renderBuilder();
 
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
@@ -163,7 +209,7 @@ describe('project story site', () => {
   });
 
   it('shows a dated delivery snapshot and concrete CI quality gates', () => {
-    render(<App />);
+    renderBuilder();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
@@ -211,7 +257,7 @@ describe('project story site', () => {
   });
 
   it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {
-    render(<App />);
+    renderBuilder();
 
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
@@ -240,7 +286,7 @@ describe('project story site', () => {
   });
 
   it('shows integrated Sprint 3 authoring without claiming the complete Studio outcome', () => {
-    render(<App />);
+    renderBuilder();
 
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
@@ -259,7 +305,7 @@ describe('project story site', () => {
   });
 
   it('preserves the accepted visual recipe and stable public PDF path', () => {
-    render(<App />);
+    renderBuilder();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'Design' })[0]);
     expect(
@@ -279,7 +325,7 @@ describe('project story site', () => {
   });
 
   it('offers the public-safe Archify explorer from Home and Architecture', () => {
-    render(<App />);
+    renderBuilder();
 
     expect(
       screen.getByRole('img', {
