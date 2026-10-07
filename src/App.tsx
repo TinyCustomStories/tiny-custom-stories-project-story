@@ -3313,11 +3313,6 @@ function Layout({
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [menuOpen]);
 
-  const changeReadingMode = (mode: ReadingMode) => {
-    onReadingModeChange(mode);
-    setMenuOpen(false);
-  };
-
   return (
     <div className="page-shell">
       <a className="skip-link" href="#main-content">
@@ -3334,22 +3329,47 @@ function Layout({
           </span>
           Tiny Custom Stories
         </Link>
-        <button
-          ref={menuButtonRef}
-          type="button"
-          className="menu-toggle"
-          aria-expanded={menuOpen}
-          aria-controls="project-story-navigation"
-          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="menu-toggle-icon" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
-          <span>{menuOpen ? 'Close' : 'Menu'}</span>
-        </button>
+        <div className="header-controls">
+          <div
+            className="reading-mode-switch"
+            role="group"
+            aria-label="Project story reading mode"
+          >
+            <span>Read as</span>
+            <button
+              type="button"
+              className={readingMode === 'story' ? 'active' : undefined}
+              aria-pressed={readingMode === 'story'}
+              onClick={() => onReadingModeChange('story')}
+            >
+              Story
+            </button>
+            <button
+              type="button"
+              className={readingMode === 'builder' ? 'active' : undefined}
+              aria-pressed={readingMode === 'builder'}
+              onClick={() => onReadingModeChange('builder')}
+            >
+              Builder
+            </button>
+          </div>
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="menu-toggle"
+            aria-expanded={menuOpen}
+            aria-controls="project-story-navigation"
+            aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="menu-toggle-icon" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span>{menuOpen ? 'Close' : 'Menu'}</span>
+          </button>
+        </div>
         <div
           id="project-story-navigation"
           className={`header-navigation${menuOpen ? ' mobile-open' : ''}`}
@@ -3365,29 +3385,6 @@ function Layout({
               </Link>
             ))}
           </nav>
-          <div
-            className="reading-mode-switch"
-            role="group"
-            aria-label="Project story reading mode"
-          >
-            <span>Read as</span>
-            <button
-              type="button"
-              className={readingMode === 'story' ? 'active' : undefined}
-              aria-pressed={readingMode === 'story'}
-              onClick={() => changeReadingMode('story')}
-            >
-              Story
-            </button>
-            <button
-              type="button"
-              className={readingMode === 'builder' ? 'active' : undefined}
-              aria-pressed={readingMode === 'builder'}
-              onClick={() => changeReadingMode('builder')}
-            >
-              Builder
-            </button>
-          </div>
         </div>
       </header>
       <main id="main-content">
