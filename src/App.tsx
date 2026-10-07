@@ -317,10 +317,7 @@ function Home() {
 function Product() {
   return (
     <>
-      <PageIntro
-        eyebrow="01 · The product"
-        title="A child is not a prompt."
-      >
+      <PageIntro eyebrow="01 · The product" title="A child is not a prompt.">
         <p>
           There are two easy versions of an “AI story for your kid.” One is
           basically mail merge: type a name, pick a dinosaur, receive a generic
@@ -386,9 +383,9 @@ function Product() {
             </span>
             <h3>The parent gets the last word</h3>
             <p>
-              Parents choose the purpose, choose which context may be used,
-              edit the draft, and approve the result. AI helps compose; it does
-              not become the family authority.
+              Parents choose the purpose, choose which context may be used, edit
+              the draft, and approve the result. AI helps compose; it does not
+              become the family authority.
             </p>
           </article>
         </div>
@@ -875,8 +872,7 @@ function HowWeBuild() {
           <p>
             This page explains the system we use now. The things that broke it,
             embarrassed us, cost too much, or changed our minds belong in the
-            learning record.{' '}
-            <Link to="/learnings">Read what we learned →</Link>
+            learning record. <Link to="/learnings">Read what we learned →</Link>
           </p>
         </div>
 
