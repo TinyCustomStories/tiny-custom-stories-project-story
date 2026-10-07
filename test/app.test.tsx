@@ -59,6 +59,31 @@ describe('project story site', () => {
     ).toBeTruthy();
   });
 
+  it('provides an accessible small-screen navigation toggle', () => {
+    renderBuilder();
+
+    const toggle = screen.getByRole('button', { name: 'Open navigation' });
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(toggle.getAttribute('aria-controls')).toBe(
+      'project-story-navigation',
+    );
+
+    fireEvent.click(toggle);
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    expect(
+      screen.getByRole('button', { name: 'Close navigation' }),
+    ).toBeTruthy();
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(document.activeElement).toBe(toggle);
+
+    fireEvent.click(toggle);
+    fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+    expect(window.location.hash).toBe('#/product');
+  });
+
   it('explains the public boundary and preserves knowledge-status distinctions', () => {
     renderBuilder();
 
