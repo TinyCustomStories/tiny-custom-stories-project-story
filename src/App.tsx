@@ -8,6 +8,8 @@ import {
   type KnowledgeStatus,
 } from './content';
 
+type ReadingMode = 'story' | 'builder';
+
 type Route =
   | '/'
   | '/product'
@@ -308,6 +310,1181 @@ function Home() {
                 <b>Read this page →</b>
               </Link>
             ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StoryHome() {
+  const storyDescriptions: Partial<Record<Route, string>> = {
+    '/product':
+      'Why a name, age, and favourite animal are not enough to make a story feel personal.',
+    '/journey':
+      'Follow one story from a parent’s idea to the child’s bookshelf.',
+    '/development':
+      'How a small personalized-book idea slowly turned into the system being built today.',
+    '/architecture':
+      'Why the product needed boundaries before it needed more infrastructure.',
+    '/delivery':
+      'What it feels like to build this with small tasks, AI agents, pull requests, and a lot of checking.',
+    '/learnings':
+      'The expensive tests, rate limits, failed experiments, useful surprises, and changed minds.',
+    '/design':
+      'Why the project uses paper, ink, warmth, and different moods for parents, children, and builders.',
+    '/library':
+      'Why the public project story is curated instead of being a raw dump of the private repository.',
+  };
+
+  return (
+    <>
+      <section className="hero section" aria-labelledby="story-hero-title">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            Story mode · a public project story · October 2026
+          </p>
+          <h1 id="story-hero-title">
+            Stories that know more than your kid’s name.
+          </h1>
+          <p className="hero-lede">
+            Most personalized stories know a name, an age, and maybe that a
+            child likes dinosaurs. Tiny Custom Stories started with a question:
+            what if a story could remember the small things that actually make a
+            child feel like themselves — without trying to know everything?
+          </p>
+          <div className="hero-actions">
+            <Link className="button button-dark" to="/product">
+              Start with the idea <span aria-hidden="true">→</span>
+            </Link>
+            <Link className="button button-light" to="/development">
+              See how it got complicated <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </div>
+        <div
+          className="hero-doodle"
+          role="img"
+          aria-label="A hand-drawn parent, child, and storybook representing small family memories becoming a story."
+        >
+          <div className="sun">tiny things matter</div>
+          <div className="doodle-person person-parent">
+            <span>remembers</span>
+          </div>
+          <div className="doodle-book">
+            <i>
+              not just a name
+              <br />
+              in a template
+            </i>
+          </div>
+          <div className="doodle-person person-child">
+            <span>changes</span>
+          </div>
+          <p className="doodle-note">
+            A pet.
+            <br />
+            A fear.
+            <br />
+            A phase.
+            <br />A ridiculous family joke.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="status-strip section"
+        aria-label="Current project status"
+      >
+        <p>
+          <span aria-hidden="true">●</span> The Child Map and Discovery have a
+          demonstrated synthetic/local outcome.
+        </p>
+        <p>
+          Story Studio has real editing and revision slices. Full generation,
+          integrated approval, real-family release review, and deployment are
+          still ahead.
+        </p>
+        <Link to="/development">
+          Where we really are <span aria-hidden="true">→</span>
+        </Link>
+      </section>
+
+      <section className="section story-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">The three-fact problem</p>
+          <h2>
+            Personalized can be technically true and still feel completely
+            generic.
+          </h2>
+          <p>
+            Give an AI a child’s name, age, and favourite animal and it can
+            produce something personalized in seconds. But changing “Maya” to
+            “Sam” often leaves almost the same story underneath. The interesting
+            problem is not inserting facts. It is deciding which small truths
+            matter for this particular story.
+          </p>
+        </div>
+
+        <div className="role-grid">
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ✎
+            </span>
+            <h3>Remember slowly</h3>
+            <p>
+              A parent can keep little notes about people, pets, interests,
+              preferences, moments, and changes. The Child Map grows because
+              life happens, not because onboarding demanded a giant profile.
+            </p>
+          </article>
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ◌
+            </span>
+            <h3>Use very little</h3>
+            <p>
+              A story about bravery might need a current fear and a beloved toy.
+              A pirate story may need nothing personal at all. More context is
+              not automatically better context.
+            </p>
+          </article>
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ☼
+            </span>
+            <h3>Give the parent the last word</h3>
+            <p>
+              AI can help plan and compose. The parent chooses the purpose,
+              context, edits, revisions, and eventually what is actually ready
+              for the child.
+            </p>
+          </article>
+        </div>
+
+        <p className="story-pullquote">
+          The goal is not “AI knows everything about this child.” The goal is
+          “this story feels surprisingly right, and the parent still understands
+          why.”
+        </p>
+      </section>
+
+      <section className="section how-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">Then the simple idea grew teeth</p>
+          <h2>
+            One innocent storybook question turned into a lot of product
+            questions.
+          </h2>
+        </div>
+        <div className="story-beat-grid">
+          <article className="story-beat">
+            <span>01</span>
+            <h3>What does “personal” actually mean?</h3>
+            <p>
+              A name in a template was not enough. That pushed the project
+              toward memories, relationships, interests, preferences, and
+              moments that can actually affect a story.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>02</span>
+            <h3>Children change. What should memory do?</h3>
+            <p>
+              “Loves dinosaurs” can be true in January and outdated in March.
+              The Child Map needed history instead of pretending every field has
+              one eternal correct value.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>03</span>
+            <h3>Who decides what the AI may see?</h3>
+            <p>
+              The generator should not rummage through family context because it
+              can. Permission and context selection became their own
+              responsibility.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>04</span>
+            <h3>What happens when the AI is wrong?</h3>
+            <p>
+              Drafts need editing, history, restoration, approval, and a clear
+              distinction between “the model returned text” and “the family
+              accepted this story.”
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section story-section">
+        <div className="mode-preview">
+          <article>
+            <p className="eyebrow">The product story</p>
+            <h2>Can software remember a child gently?</h2>
+            <p>
+              Child Map, Discovery, Story Studio, and the child library are one
+              attempt to make personalization useful without turning childhood
+              into a database-completion exercise.
+            </p>
+            <Link className="text-link" to="/product">
+              Read the product story →
+            </Link>
+          </article>
+          <article>
+            <p className="eyebrow">The build story</p>
+            <h2>Can one developer keep control while using a lot of AI?</h2>
+            <p>
+              The project also became a laboratory for agents, task
+              decomposition, architecture tools, CI, browser evidence, public
+              documentation, and learning where automation creates more work
+              instead of less.
+            </p>
+            <Link className="text-link" to="/delivery">
+              Read how it is built →
+            </Link>
+          </article>
+        </div>
+      </section>
+
+      <section
+        className="section home-directory"
+        aria-labelledby="story-directory-title"
+      >
+        <div className="section-kicker">Pick the rabbit hole</div>
+        <h2 id="story-directory-title">The story gets deeper from here.</h2>
+        <p className="section-intro">
+          Story mode explains why the project changed. Builder mode keeps the
+          exact implementation status, evidence, architecture boundaries, and
+          working records when you want the receipts.
+        </p>
+        <div className="route-grid">
+          {primaryNavigation
+            .filter(({ path }) => path !== '/')
+            .map(({ path, label }, index) => (
+              <Link to={path} className="route-card" key={path}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{label}</h3>
+                <p>{storyDescriptions[path]}</p>
+                <b>Keep reading →</b>
+              </Link>
+            ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StoryProduct() {
+  return (
+    <>
+      <PageIntro
+        eyebrow="01 · The product · Story mode"
+        title="Three facts can look personalized. That does not make them personal."
+      >
+        <p>
+          Imagine Maya is six and likes space. An AI can instantly write “Maya
+          climbed into her rocket and flew to Mars.” Technically, that is a
+          personalized story. But swap Maya for Sam and space for dinosaurs and
+          almost nothing important has changed.
+        </p>
+      </PageIntro>
+
+      <section className="section story-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">Now give the story a little life</p>
+          <h2>The details that matter are usually small.</h2>
+          <p>
+            Maybe Maya calls her grandfather Dadu. She has a stuffed rabbit
+            named Bunbun. She recently became scared of thunderstorms. She says
+            she will be an astronaut. Last summer she planted tomatoes with Dadu
+            and is still absurdly proud that one survived.
+          </p>
+        </div>
+
+        <p className="story-pullquote">
+          A good personalized story does not dump all of that onto the page. It
+          notices that tonight’s story about bravery might need only:
+          thunderstorm + Bunbun + astronaut phase.
+        </p>
+
+        <div className="story-beat-grid">
+          <article className="story-beat">
+            <span>01</span>
+            <h3>The Child Map remembers</h3>
+            <p>
+              It is a small, evolving collection of things a parent thinks may
+              matter: people, pets, interests, preferences, moments, and
+              changes. It is not meant to be a surveillance file or a profile to
+              finish.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>02</span>
+            <h3>Discovery asks gently</h3>
+            <p>
+              Instead of 73 onboarding questions, the product can surface a
+              useful question or let a parent add a note when something happens.
+              The map grows over time.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>03</span>
+            <h3>Context Selection says “not all of it”</h3>
+            <p>
+              The system needs a deliberate boundary between what the family has
+              remembered and what this one story is allowed to use.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>04</span>
+            <h3>Story Studio turns context into craft</h3>
+            <p>
+              The parent chooses a purpose, reviews context, creates or writes,
+              edits, restores earlier versions, and eventually approves a story.
+            </p>
+          </article>
+        </div>
+
+        <div className="reading-panel">
+          <h2>Children are moving targets</h2>
+          <p>
+            One of the surprisingly important design problems is that children
+            change constantly. “Loves dinosaurs” and later “dinosaurs are for
+            babies” can both be honest observations from different moments.
+          </p>
+          <Definition term="Change">
+            Keep the earlier truth as history when the child genuinely changed.
+          </Definition>
+          <Definition term="Correction">
+            Fix the source when the earlier information was simply wrong.
+          </Definition>
+          <Definition term="Why this matters">
+            A future story should not treat a two-year-old obsession as a
+            permanent personality trait.
+          </Definition>
+        </div>
+
+        <div className="mode-preview">
+          <article>
+            <p className="eyebrow">Behind the grown-up door</p>
+            <h2>Parent mode is the workshop.</h2>
+            <p>
+              Context, drafts, edits, choices, approvals, settings, and private
+              family information can live here. It is allowed to be more
+              complicated because the parent is making decisions.
+            </p>
+          </article>
+          <article>
+            <p className="eyebrow">On the kid side</p>
+            <h2>Child mode is the bookshelf.</h2>
+            <p>
+              Finished stories. Calm navigation. No secret profile controls, no
+              generation settings, no infinite content feed. The machinery
+              should mostly disappear.
+            </p>
+          </article>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Things we do not want to build</p>
+            <h2>Some product boundaries are really refusals.</h2>
+          </div>
+          <ul>
+            <li>
+              A giant child dossier where more data is always treated as better.
+            </li>
+            <li>
+              An AI that quietly decides what family information it deserves.
+            </li>
+            <li>An “AI parent” that replaces family judgment.</li>
+            <li>
+              An infinite children’s engagement feed optimized for time spent.
+            </li>
+            <li>
+              A demo that calls itself finished because one happy path worked.
+            </li>
+          </ul>
+        </div>
+
+        <p className="public-boundary-note">
+          The current Alpha work demonstrates important pieces of this model,
+          but complete live generation, approval, qualified real-family release,
+          and deployment are not being presented as finished.{' '}
+          <Link to="/journey">Follow one story through the system →</Link>
+        </p>
+      </section>
+    </>
+  );
+}
+
+function StoryJourney() {
+  const steps = [
+    [
+      '1. Something happens in real life',
+      'Maya is starting school tomorrow and is nervous. Her parent wants a story that makes the feeling less enormous.',
+    ],
+    [
+      '2. The parent chooses the purpose',
+      'This is not “generate anything.” The parent is making a bravery-and-reassurance story for a specific moment.',
+    ],
+    [
+      '3. The system suggests a little context',
+      'Maybe Bunbun, the astronaut phase, and the current school worry are relevant. The whole Child Map is not.',
+    ],
+    [
+      '4. The parent chooses what may be used',
+      'Suggested context is still a suggestion. The parent can remove it, add something permitted, or make the story completely fictional.',
+    ],
+    [
+      '5. Story Studio creates a candidate',
+      'A plan becomes a cover and pages. Generation is useful here, but the result is still a draft — not family truth and not child-visible merely because a model returned it.',
+    ],
+    [
+      '6. The parent changes the bad bits',
+      'A line can be edited directly. A bounded rewrite can be requested. Earlier versions should remain recoverable if the “improvement” is worse.',
+    ],
+    [
+      '7. Approval makes the story stable',
+      'Only after the parent is satisfied does a version become something the family can intentionally make available to the child.',
+    ],
+    [
+      '8. The child gets the simple part',
+      'Maya opens the library and reads a story. She does not need to know about context bundles, revision history, provider boundaries, or any of the machinery behind it.',
+    ],
+  ];
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="02 · How it works · Story mode"
+        title="Follow one bedtime story all the way through."
+      >
+        <p>
+          The easiest way to understand Tiny Custom Stories is not through an
+          architecture diagram. It is to follow one parent trying to make one
+          useful story for one kid.
+        </p>
+      </PageIntro>
+
+      <section className="section how-section">
+        <ol className="journey-list">
+          {steps.map(([title, detail]) => (
+            <li key={title}>
+              <h2>{title}</h2>
+              <p>{detail}</p>
+            </li>
+          ))}
+        </ol>
+
+        <p className="story-pullquote">
+          The model is somewhere in the middle of the journey. It is not the
+          beginning, the authority, or the final approval.
+        </p>
+
+        <div className="reading-panel">
+          <h2>And sometimes the right amount of personalization is zero.</h2>
+          <p>
+            A parent might want a completely fictional pirate story tonight.
+            That path matters because “we have information” should never become
+            “therefore we must use information.”
+          </p>
+          <Definition term="Personal context">
+            Optional material that may make this story feel more recognizably
+            theirs.
+          </Definition>
+          <Definition term="Completely fictional">
+            A legitimate story path that deliberately uses no Child Map source
+            context.
+          </Definition>
+        </div>
+
+        <div className="architecture-sketch">
+          <div>
+            <b>Remember</b>
+            <small>Child Map keeps small parent-approved truths</small>
+          </div>
+          <i aria-hidden="true">→</i>
+          <div>
+            <b>Choose</b>
+            <small>Only a permitted, useful subset reaches this story</small>
+          </div>
+          <i aria-hidden="true">→</i>
+          <div>
+            <b>Create + approve</b>
+            <small>
+              Story Studio turns candidates into a parent-approved version
+            </small>
+          </div>
+          <p>
+            Builder mode contains the exact capability contracts and current
+            implementation status behind these hand-offs.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StoryDevelopment() {
+  const beats = [
+    [
+      'The first idea was much smaller',
+      'Tiny Custom Stories began as a personalized-story idea. The obvious version was straightforward: collect a few details, ask AI for a story, add pictures, make something delightful.',
+    ],
+    [
+      'Then “personalized” became the real problem',
+      'A name inside a generic adventure did not feel interesting enough. The project started asking what a system would need to remember for stories to become meaningfully different over time.',
+    ],
+    [
+      'Memory created a privacy problem',
+      'The moment the product remembers things about a child, family authority, child-safe defaults, protected parent access, deletion, and information boundaries stop being optional engineering polish.',
+    ],
+    [
+      'The Child Map stopped being a profile',
+      'Children change. Notes need history. Questions should be data-driven and paced. Deletion has to remove the right things. What looked like “a few profile fields” became a real capability.',
+    ],
+    [
+      'Story creation stopped being one prompt',
+      'Once family context exists, generation needs a permission boundary. Once generation can be wrong, stories need drafts, editing, revision history, restore, and approval. Story Studio became a workflow instead of a button.',
+    ],
+    [
+      'The next frontier is less theoretical',
+      'The project is now approaching the things that feel more real: live AI, staging, real users, operational cost, provider boundaries, safety review, and discovering which assumptions survive contact with people.',
+    ],
+  ];
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="03 · Development story · Story mode"
+        title="The project got complicated for mostly reasonable reasons."
+      >
+        <p>
+          There was no grand master plan that began with temporal child context,
+          capability boundaries, agent workflows, and release gates. Each layer
+          appeared because the previous, simpler version exposed a question we
+          could no longer ignore.
+        </p>
+      </PageIntro>
+
+      <section className="section sprint-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">How the idea accumulated responsibilities</p>
+          <h2>Every new layer started as a simpler question.</h2>
+          <p>
+            The interesting part is not that the architecture became larger. It
+            is that each new boundary exists because an earlier shortcut stopped
+            being good enough.
+          </p>
+        </div>
+
+        <div className="story-beat-grid">
+          {beats.map(([title, detail], index) => (
+            <article className="story-beat" key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <p className="story-pullquote">
+          The architecture did not get bigger because “enterprise” sounded
+          impressive. It got bigger because “just generate a story” kept hiding
+          decisions somebody still had to own.
+        </p>
+
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">The engineering chapters underneath</p>
+          <h2>If you want the receipts, the sprint record is still here.</h2>
+          <p>
+            Story mode explains why the product changed. These chapters preserve
+            the more exact implementation and outcome-gate history.
+          </p>
+        </div>
+
+        <div className="sprint-chapter-grid" aria-label="Sprint chapters">
+          <Link to="/sprint-one" className="sprint-chapter-card">
+            <span>01</span>
+            <p className="eyebrow">Family authority</p>
+            <h3>Sprint 1</h3>
+            <p>
+              The point where “this is for children” forced us to get serious
+              about child mode, protected parent work, expiry, recovery, and
+              server-side authority.
+            </p>
+            <b>Read the technical chapter →</b>
+          </Link>
+          <Link to="/sprint-two" className="sprint-chapter-card">
+            <span>02</span>
+            <p className="eyebrow">Memory that changes</p>
+            <h3>Sprint 2</h3>
+            <p>
+              The Child Map became temporal, Discovery became data-driven, and
+              deletion/private-media behavior had to work together rather than
+              in isolation.
+            </p>
+            <b>Read the technical chapter →</b>
+          </Link>
+          <Link to="/sprint-three" className="sprint-chapter-card">
+            <span>03</span>
+            <p className="eyebrow">Creation without magic</p>
+            <h3>Sprint 3</h3>
+            <p>
+              Story Studio is turning generation into a reversible parent
+              workflow with editing, versions, context boundaries, and eventual
+              approval.
+            </p>
+            <b>Read the technical chapter →</b>
+          </Link>
+        </div>
+
+        <div className="reading-panel">
+          <h2>The messy working record did not disappear.</h2>
+          <p>
+            Decisions, roadmap, and open questions still exist one layer deeper.
+            They are intentionally not the first thing a new reader has to
+            understand.
+          </p>
+          <p>
+            <Link to="/roadmap">Outcome roadmap →</Link>
+          </p>
+          <p>
+            <Link to="/decisions">Decision record →</Link>
+          </p>
+          <p>
+            <Link to="/questions">Open questions →</Link>
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StoryArchitecture() {
+  return (
+    <>
+      <PageIntro
+        eyebrow="04 · Architecture · Story mode"
+        title="We tried very hard not to solve this with “more microservices.”"
+      >
+        <p>
+          The architecture question was not “how many services should we have?”
+          It was “which decisions must not quietly collapse into the same
+          function?” Responsibility came first. Machines can come later if the
+          evidence earns them.
+        </p>
+      </PageIntro>
+
+      <section className="section story-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">The useful split</p>
+          <h2>
+            Remembering, permission, and generation are three different jobs.
+          </h2>
+        </div>
+
+        <div className="role-grid">
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ◌
+            </span>
+            <h3>Remember</h3>
+            <p>
+              The Child Map owns family context. It can keep change over time
+              without giving the story generator permission to browse
+              everything.
+            </p>
+          </article>
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ☞
+            </span>
+            <h3>Permit</h3>
+            <p>
+              Context Selection decides what this story is allowed to consider
+              and what a provider may receive. This is policy, not creativity.
+            </p>
+          </article>
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ✦
+            </span>
+            <h3>Create</h3>
+            <p>
+              Story Generation consumes a minimized input and returns
+              candidates. It does not own family authority, Story persistence,
+              or child visibility.
+            </p>
+          </article>
+        </div>
+
+        <p className="story-pullquote">
+          A model being clever is not a substitute for the application knowing
+          who owns the data, who grants permission, and what counts as an
+          approved story.
+        </p>
+
+        <div className="reading-panel">
+          <h2>Logical walls before network walls</h2>
+          <p>
+            These responsibilities can be explicit inside one deployable
+            application. We do not need to pay the operational price of separate
+            services merely to prove that the boundaries are real.
+          </p>
+          <Definition term="Today">
+            Keep the physical deployment simple enough for an Alpha while the
+            contracts and ownership stay explicit.
+          </Definition>
+          <Definition term="Later">
+            Extract a worker or service only when durability, scaling, queues,
+            credentials, backpressure, or operational evidence creates a real
+            reason.
+          </Definition>
+        </div>
+      </section>
+
+      <section className="section architecture-teaser">
+        <div className="architecture-teaser-copy">
+          <p className="eyebrow">For the diagram people</p>
+          <h2>The full architecture map still exists.</h2>
+          <p>
+            Builder mode carries status such as implemented, partial, accepted,
+            and open. The public explorer is intentionally curated so it can
+            explain the system without exposing private operational detail.
+          </p>
+          <a
+            className="button button-dark"
+            href={architectureExplorerPath}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open the architecture explorer <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <a
+          className="architecture-preview-link"
+          href={architectureExplorerPath}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={architecturePreviewPath}
+            alt="Simplified preview of the Tiny Custom Stories public architecture"
+            loading="lazy"
+          />
+          <span>
+            Wander through the technical version{' '}
+            <span aria-hidden="true">↗</span>
+          </span>
+        </a>
+      </section>
+    </>
+  );
+}
+
+function StoryHowWeBuild() {
+  return (
+    <>
+      <PageIntro
+        eyebrow="05 · How we build · Story mode"
+        title="The other experiment is how I am building the experiment."
+      >
+        <p>
+          Tiny Custom Stories is also where I am learning how far one developer
+          can push modern AI-assisted development without turning the repository
+          into a pile of confident-looking chaos.
+        </p>
+      </PageIntro>
+
+      <section className="section delivery-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">The operating experiment</p>
+          <h2>
+            Keep the human decisions visible while automation does more of the
+            typing.
+          </h2>
+          <p>
+            The workflow keeps changing around one question: how do I get real
+            leverage from agents without letting speed erase product intent,
+            review, or repository memory?
+          </p>
+        </div>
+
+        <div className="story-beat-grid">
+          <article className="story-beat">
+            <span>01</span>
+            <h3>I stopped giving agents giant jobs</h3>
+            <p>
+              “Build the Child Map” is a terrible task. The project increasingly
+              uses small issues with explicit acceptance criteria, dependencies,
+              and stop conditions so implementation is easier to review and
+              easier to throw away when the premise is wrong.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>02</span>
+            <h3>Different agents got different jobs</h3>
+            <p>
+              Planning, backlog stewardship, implementation, repository hygiene,
+              and PR review are deliberately separated. The point is not to
+              create an AI company org chart. It is to stop one context window
+              from pretending it should make every kind of decision.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>03</span>
+            <h3>GitHub remains the memory</h3>
+            <p>
+              Agents can disappear. Sessions can hit limits. Models can change.
+              Issues, commits, pull requests, tests, ADRs, and project records
+              are meant to survive all of that.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>04</span>
+            <h3>Review is a loop, not a ceremony</h3>
+            <p>
+              Implement, inspect, comment, fix, verify again, then merge. A
+              generated diff does not get a free pass because an agent sounds
+              certain about it.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>05</span>
+            <h3>Tests are evidence, not religious artifacts</h3>
+            <p>
+              Fast checks belong on pull requests. Expensive browser suites do
+              not automatically belong everywhere. The project keeps changing
+              where evidence is collected as cost and failure modes become
+              clearer.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>06</span>
+            <h3>Documentation became part of the build</h3>
+            <p>
+              Architecture maps, decisions, public explanations, sprint gates,
+              and lessons are not cleanup after coding. They are part of keeping
+              many small AI-assisted changes pointed at the same product.
+            </p>
+          </article>
+        </div>
+
+        <p className="story-pullquote">
+          The goal is not “let the agents build everything.” The goal is to make
+          my intent precise enough that automation can help without quietly
+          becoming the product manager, architect, reviewer, and historian too.
+        </p>
+
+        <div
+          className="delivery-loop"
+          aria-label="Human-directed delivery loop"
+        >
+          <span>Idea</span>
+          <i aria-hidden="true">→</i>
+          <span>Decision</span>
+          <i aria-hidden="true">→</i>
+          <span>Small task</span>
+          <i aria-hidden="true">→</i>
+          <span>Agent implementation</span>
+          <i aria-hidden="true">→</i>
+          <span>PR + evidence</span>
+          <i aria-hidden="true">→</i>
+          <span>Review + fixes</span>
+          <i aria-hidden="true">→</i>
+          <span>Outcome</span>
+        </div>
+
+        <div className="reading-panel">
+          <h2>Builder mode has the numbers.</h2>
+          <p>
+            The exact dated commit, pull-request, issue, workflow, and CI
+            snapshot is preserved in Builder mode. Story mode keeps the reason
+            the machinery exists.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StoryLearnings() {
+  const lessons = [
+    [
+      'We spent too much money proving the same browser thing repeatedly',
+      'The browser suite was valuable, so we ran it constantly. That eventually became expensive enough for GitHub Actions to stop starting jobs. The fix was not “testing is bad”; it was separating fast PR gates from broad scheduled/manual browser evidence.',
+    ],
+    [
+      'A green frontend test and a green API test can still avoid meeting each other',
+      'Mocked browser tests and isolated API tests each told the truth about their own layer. They did not prove the assembled product. That distinction forced us to add a synthetic journey through the real HTTP API and MongoDB before calling the Child Map outcome demonstrated.',
+    ],
+    [
+      'Parallel agents can parallelize the rate limit too',
+      'Several sessions repeatedly asked GitHub Projects for the same state until the shared GraphQL budget became the bottleneck. The workflow changed to reuse project snapshots and reserve expensive live reads for moments that actually need them.',
+    ],
+    [
+      'Not every shiny tool deserves to become infrastructure',
+      'We try tools because this is still the cheap stage for experimentation. Some get a narrow role. Some are held. The important rule is that sunk time is not a reason to keep complexity.',
+    ],
+    [
+      'The more AI I used, the more important boring boundaries became',
+      'Models are very good at producing plausible next steps. That makes authorization, ownership, tests, revisions, explicit policy, and source-of-truth records more important — not less.',
+    ],
+    [
+      'I am still nervous about the part that looks most like a “real startup”',
+      'Live AI for actual users and the first staging deployment are more intimidating than another local feature. They introduce cost, observability, provider behavior, reliability, privacy, and operational mistakes that a local demo cannot teach.',
+    ],
+  ];
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="06 · What we learned · Story mode"
+        title="The failures are more useful when we leave them in the story."
+      >
+        <p>
+          This page is intentionally not a victory lap. The project has produced
+          expensive tests, wrong assumptions, rate-limit problems, tools that
+          did not earn their complexity, and a growing list of things I did not
+          know I needed to learn.
+        </p>
+      </PageIntro>
+
+      <section className="section delivery-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">The useful scars</p>
+          <h2>
+            These are the mistakes and surprises that actually changed how we
+            build.
+          </h2>
+          <p>
+            A lesson earns a place here when it changes a workflow, an evidence
+            standard, a cost decision, or what I am willing to trust next time.
+          </p>
+        </div>
+
+        <div className="story-beat-grid">
+          {lessons.map(([title, detail], index) => (
+            <article className="story-beat" key={title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <p className="story-pullquote">
+          Failure is only interesting if the next version of the system is
+          different because of it.
+        </p>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Why this became my AI laboratory</p>
+            <h2>A real product gives every new AI idea somewhere to fail.</h2>
+          </div>
+          <ul>
+            <li>
+              The idea for Tiny Custom Stories existed long before this version
+              of the product. Building it turned AI from something I followed
+              into something I test against real constraints almost every day.
+            </li>
+            <li>
+              New models, agent patterns, coding tools, architecture helpers,
+              and evaluation ideas keep appearing. A pre-launch product gives me
+              a concrete place to find out which ones are actually useful.
+            </li>
+            <li>
+              This is also the cheapest moment to be wrong. A workflow can be
+              replaced before users depend on it.
+            </li>
+            <li>
+              That freedom shrinks as staging and real families get closer.
+              Production paths should become progressively more boring,
+              observable, reversible, and deliberate.
+            </li>
+          </ul>
+        </div>
+
+        <div className="reading-panel">
+          <h2>The next learning will come from reality.</h2>
+          <p>
+            Synthetic/local evidence can tell us whether the system behaves as
+            designed. It cannot tell us whether parents understand it, whether
+            stories actually feel meaningful, whether AI cost behaves the way we
+            expect, or which assumptions collapse the first week real people use
+            it.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StoryDesign() {
+  return (
+    <>
+      <PageIntro
+        eyebrow="07 · Design · Story mode"
+        title="The product should not look like an AI control panel."
+      >
+        <p>
+          Tiny Custom Stories deals with family memories, children’s stories,
+          private parent work, and a very technical build process. One visual
+          language cannot make every surface identical — but it can make them
+          feel related.
+        </p>
+      </PageIntro>
+
+      <section className="section design-section">
+        <div className="mode-preview">
+          <article>
+            <p className="eyebrow">For the child</p>
+            <h2>Quiet, warm, and story-first.</h2>
+            <p>
+              The child should see finished stories, not the machinery. Fewer
+              controls, calmer choices, and a reading experience that does not
+              advertise how clever the software thinks it is.
+            </p>
+          </article>
+          <article>
+            <p className="eyebrow">For the parent</p>
+            <h2>Warm, but serious enough for real decisions.</h2>
+            <p>
+              Parent mode can be richer because it handles context, drafts,
+              edits, privacy-sensitive information, and approval. Friendly does
+              not have to mean toy-like.
+            </p>
+          </article>
+        </div>
+
+        <div className="recipe-panel">
+          <div>
+            <p className="eyebrow">The public story</p>
+            <h2>Part storybook, part lab notebook.</h2>
+            <p>
+              Fraunces gives the project a printed-story character. Mono labels
+              make evidence and status feel explicit. Flat color, borders,
+              doodle-like shapes, and generous whitespace keep the site human
+              without hiding that this is still a technical build record.
+            </p>
+          </div>
+          <div>
+            <p className="story-pullquote">
+              The visual goal is not “make AI look magical.” It is “make a
+              complicated project feel understandable enough that someone keeps
+              reading.”
+            </p>
+          </div>
+        </div>
+
+        <p className="public-boundary-note">
+          Builder mode preserves the exact design recipe, palette, surface
+          themes, and component examples.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function StoryLibrary() {
+  return (
+    <>
+      <PageIntro
+        eyebrow="08 · Public library · Story mode"
+        title="Building in public does not mean dumping the private repository onto the internet."
+      >
+        <p>
+          This site is meant to show the thinking, progress, uncertainty, and
+          mistakes behind Tiny Custom Stories without turning private project
+          material — or future family information — into public content.
+        </p>
+      </PageIntro>
+
+      <section className="section library-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">Translation, not replication</p>
+          <h2>The public story is edited on purpose.</h2>
+          <p>
+            Internal material is optimized for building. Public material is
+            optimized for understanding. The job is to preserve the truth while
+            changing the level of detail.
+          </p>
+        </div>
+
+        <div className="story-beat-grid">
+          <article className="story-beat">
+            <span>01</span>
+            <h3>The private project is messy on purpose</h3>
+            <p>
+              Issues, implementation notes, tests, architecture records, failed
+              ideas, and operational detail need enough precision to build the
+              product. That is not automatically good public writing.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>02</span>
+            <h3>The public story translates</h3>
+            <p>
+              We keep the status and reasoning, remove private or
+              attack-relevant detail, and rewrite the material so a reader does
+              not need the repository open beside them.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>03</span>
+            <h3>Uncertainty stays visible</h3>
+            <p>
+              Confirmed decisions, verified facts, proposals, assumptions, and
+              open questions are different things. Public writing should not
+              flatten them into one confident voice.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>04</span>
+            <h3>The story is allowed to admit embarrassment</h3>
+            <p>
+              An expensive CI mistake or a tool experiment that went nowhere can
+              be more useful than another polished progress update if it
+              explains why the process changed.
+            </p>
+          </article>
+        </div>
+
+        <p className="story-pullquote">
+          This is closer to a curated lab notebook than a marketing site: enough
+          mess to be honest, enough editing to remain understandable.
+        </p>
+
+        <div className="reading-panel">
+          <h2>What stays out</h2>
+          <p>
+            Credentials, private links, private research, attack-relevant
+            implementation details, and family information do not become public
+            merely because they helped inform a decision.
+          </p>
+        </div>
+
+        <div className="pdf-callout">
+          <div>
+            <p className="eyebrow">Portable checkpoint</p>
+            <h2>The PDF is a snapshot. The website is the living version.</h2>
+            <p>
+              The fixed-layout dossier remains useful as a dated checkpoint.
+              This website changes more often as the product, build system, and
+              lessons evolve.
+            </p>
+          </div>
+          <a
+            className="button button-dark"
+            href={pdfPath}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open the project PDF <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </section>
     </>
@@ -2025,8 +3202,16 @@ function Library() {
   );
 }
 
-function Layout({ route }: { route: Route }) {
-  const pages: Record<Route, React.ComponentType> = {
+function Layout({
+  route,
+  readingMode,
+  onReadingModeChange,
+}: {
+  route: Route;
+  readingMode: ReadingMode;
+  onReadingModeChange: (mode: ReadingMode) => void;
+}) {
+  const builderPages: Record<Route, React.ComponentType> = {
     '/': Home,
     '/product': Product,
     '/journey': Journey,
@@ -2044,7 +3229,26 @@ function Layout({ route }: { route: Route }) {
     '/library': Library,
   };
 
-  const Page = pages[route];
+  const storyPages: Record<Route, React.ComponentType> = {
+    '/': StoryHome,
+    '/product': StoryProduct,
+    '/journey': StoryJourney,
+    '/development': StoryDevelopment,
+    '/architecture': StoryArchitecture,
+    '/delivery': StoryHowWeBuild,
+    '/learnings': StoryLearnings,
+    '/decisions': Decisions,
+    '/roadmap': Roadmap,
+    '/sprint-one': SprintOne,
+    '/sprint-two': SprintTwo,
+    '/sprint-three': SprintThree,
+    '/design': StoryDesign,
+    '/questions': Questions,
+    '/library': StoryLibrary,
+  };
+
+  const Page =
+    readingMode === 'story' ? storyPages[route] : builderPages[route];
 
   return (
     <div className="page-shell">
@@ -2062,17 +3266,42 @@ function Layout({ route }: { route: Route }) {
           </span>
           Tiny Custom Stories
         </Link>
-        <nav aria-label="Project story pages">
-          {primaryNavigation.map(({ path, label }) => (
-            <Link
-              key={path}
-              to={path}
-              className={route === path ? 'active' : undefined}
+        <div className="header-navigation">
+          <nav aria-label="Project story pages">
+            {primaryNavigation.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className={route === path ? 'active' : undefined}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+          <div
+            className="reading-mode-switch"
+            role="group"
+            aria-label="Project story reading mode"
+          >
+            <span>Read as</span>
+            <button
+              type="button"
+              className={readingMode === 'story' ? 'active' : undefined}
+              aria-pressed={readingMode === 'story'}
+              onClick={() => onReadingModeChange('story')}
             >
-              {label}
-            </Link>
-          ))}
-        </nav>
+              Story
+            </button>
+            <button
+              type="button"
+              className={readingMode === 'builder' ? 'active' : undefined}
+              aria-pressed={readingMode === 'builder'}
+              onClick={() => onReadingModeChange('builder')}
+            >
+              Builder
+            </button>
+          </div>
+        </div>
       </header>
       <main id="main-content">
         <Page />
@@ -2097,6 +3326,12 @@ export default function App() {
   const [route, setRoute] = React.useState<Route>(() =>
     internalPath(window.location.hash.slice(1)),
   );
+  const [readingMode, setReadingMode] = React.useState<ReadingMode>(() => {
+    const savedMode = window.localStorage.getItem(
+      'tcs-project-story-reading-mode',
+    );
+    return savedMode === 'builder' ? 'builder' : 'story';
+  });
 
   React.useEffect(() => {
     const update = () => setRoute(internalPath(window.location.hash.slice(1)));
@@ -2104,5 +3339,15 @@ export default function App() {
     return () => window.removeEventListener('hashchange', update);
   }, []);
 
-  return <Layout route={route} />;
+  React.useEffect(() => {
+    window.localStorage.setItem('tcs-project-story-reading-mode', readingMode);
+  }, [readingMode]);
+
+  return (
+    <Layout
+      route={route}
+      readingMode={readingMode}
+      onReadingModeChange={setReadingMode}
+    />
+  );
 }

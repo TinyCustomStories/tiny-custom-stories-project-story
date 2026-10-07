@@ -4,7 +4,7 @@ These text wireframes make the public site structure reviewable in Markdown, inc
 
 ## Site map
 
-The main header stays focused on the explanatory story rather than acting as a full sitemap. Sprint-specific pages are grouped as chapters beneath Development story. Decisions, Roadmap, and Open questions remain stable working-record routes but are reached contextually from Development instead of occupying top-level navigation. The existing Sprint 1 deep link remains valid.
+The main header stays focused on the explanatory story rather than acting as a full sitemap. A persistent **Read as: Story / Builder** control changes the presentation of the current route without changing its URL. Story is the default reading mode; Builder preserves the existing technical presentation. Sprint-specific pages are grouped as chapters beneath Development story. Decisions, Roadmap, and Open questions remain stable working-record routes but are reached contextually from Development instead of occupying top-level navigation. The existing Sprint 1 deep link remains valid.
 
 ```text
 Home (/#/)
@@ -96,7 +96,7 @@ Logical separation does not mean every box is already a separately deployed serv
 
 ```text
 +--------------------------------------------------------------------------------+
-| Tiny Custom Stories                                  Home Product ... Library    |
+| Tiny Custom Stories        Home Product ... Library      [Story | Builder]     |
 +--------------------------------------------------------------------------------+
 | EYEBROW                                                                        |
 | Page title / clear topic statement                                             |
@@ -104,13 +104,14 @@ Logical separation does not mean every box is already a separately deployed serv
 +--------------------------------------------------------------------------------+
 | Page-specific readable content                                                 |
 |                                                                                |
-| Home: illustrated welcome + current gate status + route directory              |
-| Product: conversational why-this-exists explainer + parent/child boundary     |
-| Journey: discovery-to-approval hand-offs + capability sketch                  |
-| Development: Sprint 0 -> Sprint 3 evolution + chapters + working-record links |
-| Architecture: Discovery + Story ownership boundaries + extraction vocabulary  |
-| How we build: refreshed GitHub stats + CI + decision->issue->review loop       |
-| What we learned: failures + experiments + AI-learning + next scary frontier    |
+| Story mode: product idea + cause-and-effect narrative + failures + learning     |
+| Builder mode: exact status + architecture + evidence + technical vocabulary     |
+| Product: three-fact personalization -> Child Map -> Story Studio                |
+| Journey: one story followed from parent purpose to child bookshelf              |
+| Development: why each new boundary appeared + technical sprint chapters         |
+| Architecture: remember / permit / create in Story; exact capabilities in Builder|
+| How we build: human workflow in Story; stats + CI + exact delivery in Builder    |
+| What we learned: candid failures in both modes, with Builder retaining detail   |
 | Decisions: preserved deeper status record                                     |
 | Roadmap: preserved deeper outcome-gate record                                 |
 | Sprint 1: implemented boundary + open gate + evidence summary                  |
@@ -129,6 +130,7 @@ Logical separation does not mean every box is already a separately deployed serv
 ```text
 +--------------------------------------+
 | Tiny Custom Stories | wrapped nav    |
+|                  [Story | Builder]    |
 +--------------------------------------+
 | Skip link appears on keyboard focus  |
 | Eyebrow                              |
@@ -145,7 +147,7 @@ Logical separation does not mean every box is already a separately deployed serv
 +--------------------------------------+
 ```
 
-At narrow widths, navigation stays available and wraps rather than disappearing. Existing cards and grid systems should recompose using the site's established responsive rules rather than introducing a parallel mobile design.
+At narrow widths, navigation and the reading-mode switch stay available and wrap rather than disappearing. Existing cards and grid systems should recompose using the site's established responsive rules rather than introducing a parallel mobile design.
 
 ## Content hierarchy rules
 
@@ -156,3 +158,24 @@ At narrow widths, navigation stays available and wraps rather than disappearing.
 5. Distinguish accepted logical architecture from physically deployed services.
 6. Preserve existing public routes and stable links when information moves.
 7. Keep the public safety boundary explicit: no credentials, family data, child-identifying information, private links, or attack-relevant operational detail.
+
+## Reading-mode behavior
+
+```text
+same fragment route
+       |
+       +-----------------------+
+       |                       |
+       v                       v
+Story mode                 Builder mode
+why / examples             exact status / evidence
+cause-and-effect           capability vocabulary
+founder journey            sprint + CI detail
+       |                       |
+       +-----------+-----------+
+                   |
+                   v
+        same public-safe facts
+```
+
+Primary routes have dedicated Story-mode presentations. Sprint chapters and working-record routes remain the deeper evidence layer and do not need a second rewritten copy merely to satisfy the toggle.
