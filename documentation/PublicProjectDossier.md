@@ -4,7 +4,7 @@ The downloadable [Public Project Dossier PDF](../public/documents/tiny-custom-st
 
 The October 1 edition preserves the September 24/25 design language and stable public URL while refreshing the evidence available at that checkpoint. It covers the open Sprint 1 outcome gate, substantially implemented-but-open Sprint 2 temporal Child Map and data-driven Discovery work as of October 1, the decided privacy boundary, early Sprint 3 Story foundation implementation, capability ownership, the dated aggregate GitHub delivery snapshot, CI/browser-evidence practice, and the then-current narrowed open questions.
 
-As of the October 5 website refresh, this PDF is intentionally retained as a **dated October 1 checkpoint**. The responsive website is newer: it records the October 4 synthetic/local Sprint 2 closeout and subsequent Story Studio authoring progress. The PDF is not silently relabeled as current without regenerating and visually inspecting every page.
+As of the October 7 website refresh, this PDF is intentionally retained as a **dated October 1 checkpoint**. The responsive website is newer: it records the October 4 synthetic/local Sprint 2 closeout, subsequent Story Studio authoring progress, and the accepted Sprint 4 Visual Theme System direction. The PDF is not silently relabeled as current without regenerating and visually inspecting every page.
 
 ## Public scope
 
