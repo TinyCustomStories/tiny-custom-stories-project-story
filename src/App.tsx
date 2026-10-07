@@ -1101,7 +1101,10 @@ function StoryHowWeBuild() {
       <section className="section delivery-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The operating experiment</p>
-          <h2>Keep the human decisions visible while automation does more of the typing.</h2>
+          <h2>
+            Keep the human decisions visible while automation does more of the
+            typing.
+          </h2>
           <p>
             The workflow keeps changing around one question: how do I get real
             leverage from agents without letting speed erase product intent,
@@ -1252,7 +1255,10 @@ function StoryLearnings() {
       <section className="section delivery-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The useful scars</p>
-          <h2>These are the mistakes and surprises that actually changed how we build.</h2>
+          <h2>
+            These are the mistakes and surprises that actually changed how we
+            build.
+          </h2>
           <p>
             A lesson earns a place here when it changes a workflow, an evidence
             standard, a cost decision, or what I am willing to trust next time.
