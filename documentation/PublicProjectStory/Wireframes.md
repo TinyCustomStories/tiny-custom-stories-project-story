@@ -159,7 +159,6 @@ At narrow widths, navigation and the reading-mode switch stay available and wrap
 6. Preserve existing public routes and stable links when information moves.
 7. Keep the public safety boundary explicit: no credentials, family data, child-identifying information, private links, or attack-relevant operational detail.
 
-
 ## Reading-mode behavior
 
 ```text

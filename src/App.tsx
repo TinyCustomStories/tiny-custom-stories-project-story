@@ -316,7 +316,6 @@ function Home() {
   );
 }
 
-
 function StoryHome() {
   const storyDescriptions: Partial<Record<Route, string>> = {
     '/product':
@@ -350,8 +349,8 @@ function StoryHome() {
           <p className="hero-lede">
             Most personalized stories know a name, an age, and maybe that a
             child likes dinosaurs. Tiny Custom Stories started with a question:
-            what if a story could remember the small things that actually make
-            a child feel like themselves — without trying to know everything?
+            what if a story could remember the small things that actually make a
+            child feel like themselves — without trying to know everything?
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/product">
@@ -387,13 +386,15 @@ function StoryHome() {
             A fear.
             <br />
             A phase.
-            <br />
-            A ridiculous family joke.
+            <br />A ridiculous family joke.
           </p>
         </div>
       </section>
 
-      <section className="status-strip section" aria-label="Current project status">
+      <section
+        className="status-strip section"
+        aria-label="Current project status"
+      >
         <p>
           <span aria-hidden="true">●</span> The Child Map and Discovery have a
           demonstrated synthetic/local outcome.
@@ -411,7 +412,10 @@ function StoryHome() {
       <section className="section story-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The three-fact problem</p>
-          <h2>Personalized can be technically true and still feel completely generic.</h2>
+          <h2>
+            Personalized can be technically true and still feel completely
+            generic.
+          </h2>
           <p>
             Give an AI a child’s name, age, and favourite animal and it can
             produce something personalized in seconds. But changing “Maya” to
@@ -423,7 +427,9 @@ function StoryHome() {
 
         <div className="role-grid">
           <article>
-            <span className="role-icon" aria-hidden="true">✎</span>
+            <span className="role-icon" aria-hidden="true">
+              ✎
+            </span>
             <h3>Remember slowly</h3>
             <p>
               A parent can keep little notes about people, pets, interests,
@@ -432,7 +438,9 @@ function StoryHome() {
             </p>
           </article>
           <article>
-            <span className="role-icon" aria-hidden="true">◌</span>
+            <span className="role-icon" aria-hidden="true">
+              ◌
+            </span>
             <h3>Use very little</h3>
             <p>
               A story about bravery might need a current fear and a beloved toy.
@@ -441,7 +449,9 @@ function StoryHome() {
             </p>
           </article>
           <article>
-            <span className="role-icon" aria-hidden="true">☼</span>
+            <span className="role-icon" aria-hidden="true">
+              ☼
+            </span>
             <h3>Give the parent the last word</h3>
             <p>
               AI can help plan and compose. The parent chooses the purpose,
@@ -461,7 +471,10 @@ function StoryHome() {
       <section className="section how-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">Then the simple idea grew teeth</p>
-          <h2>One innocent storybook question turned into a lot of product questions.</h2>
+          <h2>
+            One innocent storybook question turned into a lot of product
+            questions.
+          </h2>
         </div>
         <div className="story-beat-grid">
           <article className="story-beat">
@@ -486,8 +499,8 @@ function StoryHome() {
             <span>03</span>
             <h3>Who decides what the AI may see?</h3>
             <p>
-              The generator should not rummage through family context because
-              it can. Permission and context selection became their own
+              The generator should not rummage through family context because it
+              can. Permission and context selection became their own
               responsibility.
             </p>
           </article>
@@ -533,7 +546,10 @@ function StoryHome() {
         </div>
       </section>
 
-      <section className="section home-directory" aria-labelledby="story-directory-title">
+      <section
+        className="section home-directory"
+        aria-labelledby="story-directory-title"
+      >
         <div className="section-kicker">Pick the rabbit hole</div>
         <h2 id="story-directory-title">The story gets deeper from here.</h2>
         <p className="section-intro">
@@ -597,8 +613,9 @@ function StoryProduct() {
             <h3>The Child Map remembers</h3>
             <p>
               It is a small, evolving collection of things a parent thinks may
-              matter: people, pets, interests, preferences, moments, and changes.
-              It is not meant to be a surveillance file or a profile to finish.
+              matter: people, pets, interests, preferences, moments, and
+              changes. It is not meant to be a surveillance file or a profile to
+              finish.
             </p>
           </article>
           <article className="story-beat">
@@ -674,11 +691,19 @@ function StoryProduct() {
             <h2>Some product boundaries are really refusals.</h2>
           </div>
           <ul>
-            <li>A giant child dossier where more data is always treated as better.</li>
-            <li>An AI that quietly decides what family information it deserves.</li>
+            <li>
+              A giant child dossier where more data is always treated as better.
+            </li>
+            <li>
+              An AI that quietly decides what family information it deserves.
+            </li>
             <li>An “AI parent” that replaces family judgment.</li>
-            <li>An infinite children’s engagement feed optimized for time spent.</li>
-            <li>A demo that calls itself finished because one happy path worked.</li>
+            <li>
+              An infinite children’s engagement feed optimized for time spent.
+            </li>
+            <li>
+              A demo that calls itself finished because one happy path worked.
+            </li>
           </ul>
         </div>
 
@@ -787,7 +812,9 @@ function StoryJourney() {
           <i aria-hidden="true">→</i>
           <div>
             <b>Create + approve</b>
-            <small>Story Studio turns candidates into a parent-approved version</small>
+            <small>
+              Story Studio turns candidates into a parent-approved version
+            </small>
           </div>
           <p>
             Builder mode contains the exact capability contracts and current
@@ -910,9 +937,15 @@ function StoryDevelopment() {
             They are intentionally not the first thing a new reader has to
             understand.
           </p>
-          <p><Link to="/roadmap">Outcome roadmap →</Link></p>
-          <p><Link to="/decisions">Decision record →</Link></p>
-          <p><Link to="/questions">Open questions →</Link></p>
+          <p>
+            <Link to="/roadmap">Outcome roadmap →</Link>
+          </p>
+          <p>
+            <Link to="/decisions">Decision record →</Link>
+          </p>
+          <p>
+            <Link to="/questions">Open questions →</Link>
+          </p>
         </div>
       </section>
     </>
@@ -937,12 +970,16 @@ function StoryArchitecture() {
       <section className="section story-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The useful split</p>
-          <h2>Remembering, permission, and generation are three different jobs.</h2>
+          <h2>
+            Remembering, permission, and generation are three different jobs.
+          </h2>
         </div>
 
         <div className="role-grid">
           <article>
-            <span className="role-icon" aria-hidden="true">◌</span>
+            <span className="role-icon" aria-hidden="true">
+              ◌
+            </span>
             <h3>Remember</h3>
             <p>
               The Child Map owns family context. It can keep change over time
@@ -951,7 +988,9 @@ function StoryArchitecture() {
             </p>
           </article>
           <article>
-            <span className="role-icon" aria-hidden="true">☞</span>
+            <span className="role-icon" aria-hidden="true">
+              ☞
+            </span>
             <h3>Permit</h3>
             <p>
               Context Selection decides what this story is allowed to consider
@@ -959,7 +998,9 @@ function StoryArchitecture() {
             </p>
           </article>
           <article>
-            <span className="role-icon" aria-hidden="true">✦</span>
+            <span className="role-icon" aria-hidden="true">
+              ✦
+            </span>
             <h3>Create</h3>
             <p>
               Story Generation consumes a minimized input and returns
@@ -1003,7 +1044,12 @@ function StoryArchitecture() {
             and open. The public explorer is intentionally curated so it can
             explain the system without exposing private operational detail.
           </p>
-          <a className="button button-dark" href={architectureExplorerPath} target="_blank" rel="noreferrer">
+          <a
+            className="button button-dark"
+            href={architectureExplorerPath}
+            target="_blank"
+            rel="noreferrer"
+          >
             Open the architecture explorer <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -1019,7 +1065,8 @@ function StoryArchitecture() {
             loading="lazy"
           />
           <span>
-            Wander through the technical version <span aria-hidden="true">↗</span>
+            Wander through the technical version{' '}
+            <span aria-hidden="true">↗</span>
           </span>
         </a>
       </section>
@@ -1108,7 +1155,10 @@ function StoryHowWeBuild() {
           becoming the product manager, architect, reviewer, and historian too.
         </p>
 
-        <div className="delivery-loop" aria-label="Human-directed delivery loop">
+        <div
+          className="delivery-loop"
+          aria-label="Human-directed delivery loop"
+        >
           <span>Idea</span>
           <i aria-hidden="true">→</i>
           <span>Decision</span>
@@ -1382,7 +1432,12 @@ function StoryLibrary() {
               lessons evolve.
             </p>
           </div>
-          <a className="button button-dark" href={pdfPath} target="_blank" rel="noreferrer">
+          <a
+            className="button button-dark"
+            href={pdfPath}
+            target="_blank"
+            rel="noreferrer"
+          >
             Open the project PDF <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -3240,10 +3295,7 @@ export default function App() {
   }, []);
 
   React.useEffect(() => {
-    window.localStorage.setItem(
-      'tcs-project-story-reading-mode',
-      readingMode,
-    );
+    window.localStorage.setItem('tcs-project-story-reading-mode', readingMode);
   }, [readingMode]);
 
   return (

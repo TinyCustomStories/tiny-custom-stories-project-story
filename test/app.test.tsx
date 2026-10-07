@@ -28,7 +28,9 @@ describe('project story site', () => {
       }),
     ).toBeTruthy();
     expect(
-      screen.getByRole('button', { name: 'Story' }).getAttribute('aria-pressed'),
+      screen
+        .getByRole('button', { name: 'Story' })
+        .getAttribute('aria-pressed'),
     ).toBe('true');
 
     fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
