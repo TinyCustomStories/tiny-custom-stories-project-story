@@ -212,9 +212,7 @@ describe('project story site', () => {
       screen.getByText(/Authoring workspace underway - outcome gate open/i),
     ).toBeTruthy();
     expect(screen.getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
-    expect(
-      screen.getByText(/Accepted direction - not started/i),
-    ).toBeTruthy();
+    expect(screen.getByText(/Accepted direction - not started/i)).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 
@@ -226,9 +224,7 @@ describe('project story site', () => {
     expect(screen.getByText('1,305')).toBeTruthy();
     expect(screen.getByText('541')).toBeTruthy();
     expect(screen.getByText('4')).toBeTruthy();
-    expect(
-      screen.getByText(/941 of 1,344 recorded runs/i),
-    ).toBeTruthy();
+    expect(screen.getByText(/941 of 1,344 recorded runs/i)).toBeTruthy();
     expect(screen.getByText(/October 5, 2026:/i)).toBeTruthy();
     expect(screen.getByText('Frontend CI')).toBeTruthy();
     expect(screen.getByText('Backend CI')).toBeTruthy();
