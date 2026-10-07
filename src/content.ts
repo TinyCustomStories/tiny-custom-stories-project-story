@@ -341,7 +341,7 @@ export const milestones: Milestone[] = [
     title: 'Sprint 4 - Visual Theme System',
     state: 'Accepted direction - not started',
     status: 'Confirmed decision',
-    note: 'Sprint 4 now centers on a versioned visual theme, recurring cast, structured scene plans, and a controlled recoverable no-photo renderer. Richer AI-image, likeness, and print renderers remain separately gated. The project must still revisit unresolved Sprint 1 evidence before Sprint 4 execution begins.',
+    note: 'Sprint 4 now centers on a versioned visual theme, recurring cast, structured scene plans, controlled recoverable rendering, parent review, page-scoped retry, and a no-photo path. Richer renderer families remain separately gated. The project must still revisit unresolved Sprint 1 evidence before Sprint 4 execution begins.',
   },
   {
     title: 'Sprint 5 - Child library and reader',
