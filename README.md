@@ -1,14 +1,24 @@
 # Tiny Custom Stories — public project story
 
-This public repository contains the independently buildable project-story website for Tiny Custom Stories. It explains the project’s direction, demonstrated Sprint 0 foundation, substantial-but-open Sprint 1 family-access boundary, demonstrated synthetic/local Sprint 2 Child Map and Discovery outcome, active Sprint 3 Story Studio authoring work, roadmap, design language, delivery process, and open questions in plain language.
+This public repository contains the independently buildable project-story website for Tiny Custom Stories. The website now supports two ways to read the same project: **Story mode** leads with the product idea, evolution, experiments, failures, and founder learning in conversational language; **Builder mode** preserves the detailed implementation status, architecture boundaries, sprint evidence, delivery process, roadmap, decisions, and open questions.
 
 It is not the Tiny Custom Stories parent/child application. The private product repository, backend, internal research, operational documentation, private issue links, and family data are intentionally outside this repository.
 
 The published site is expected at [tinycustomstories.github.io/tiny-custom-stories-project-story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/). Public pages use static-host-safe fragment routes. Existing routes remain stable, including [Decisions](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/decisions), [Roadmap](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/roadmap), [Open questions](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/questions), and the legacy [Sprint 1](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/sprint-one) deep link. The main header now stays focused on the explanatory story: [Development story](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/development) groups Sprint 1, Sprint 2, and Sprint 3 and links deeper to the working record; [How we build](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/delivery) explains the delivery system; and [What we learned](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/learnings) separately holds failures, experiments, and founder learning.
 
+Story mode is the default. The Story / Builder toggle stays available in the shared header and preserves the current route, so a reader can move from a narrative explanation to the technical version of the same subject without starting over. Working-record routes such as Decisions, Roadmap, Open questions, and the Sprint chapters remain available beneath the primary narrative rather than being duplicated into a second site.
+
 The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries the newer October 5 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
 
-## What changed in the October 5 refresh
+## What changed in the October 6 reading-mode refresh
+
+- Added a persistent **Story / Builder** reading-mode switch without changing the established fragment routes.
+- Story mode is now the default for the primary narrative routes: Home, The product, How it works, Development story, Architecture, How we build, What we learned, Design, and Public library.
+- Builder mode preserves the pre-existing October 5 technical pages and working-record depth instead of replacing the material already in the site.
+- Story mode expands the human narrative: the limits of three-fact personalization, why the Child Map became temporal, why context permission is separate from generation, how the project evolved, how AI-assisted delivery is being tested, what failed, and why staging/real users remain the next uncomfortable frontier.
+- Sprint chapters, Decisions, Roadmap, and Open questions remain the detailed record underneath both modes.
+
+## What changed in the October 5 evidence refresh
 
 This refresh follows the repository’s Project Story Sync workflow and preserves the existing routes, paper-and-ink editorial design, public-safety boundary, and dated delivery snapshot.
 
