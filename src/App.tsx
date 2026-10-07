@@ -287,7 +287,9 @@ function Home() {
         <div className="section-kicker">
           A readable route through the project
         </div>
-        <h2 id="directory-title">Start with the story. Dig deeper when you want.</h2>
+        <h2 id="directory-title">
+          Start with the story. Dig deeper when you want.
+        </h2>
         <p className="section-intro">
           The main route follows the questions a curious reader is most likely
           to ask: what are we making, how does it work, how did it evolve, how
@@ -410,7 +412,10 @@ function Product() {
           </Definition>
         </div>
 
-        <div className="mode-preview" aria-label="Parent and child experience boundaries">
+        <div
+          className="mode-preview"
+          aria-label="Parent and child experience boundaries"
+        >
           <article>
             <p className="eyebrow">Behind the grown-up door</p>
             <h2>Parent mode</h2>
