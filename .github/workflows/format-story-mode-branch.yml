@@ -1,4 +1,4 @@
-name: Format story-mode branch
+name: Format story mode branch
 
 on:
   push:
@@ -10,16 +10,13 @@ permissions:
 
 jobs:
   format:
-    if: ${{ !contains(github.event.head_commit.message, 'chore: format project story') }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out branch
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ github.ref_name }}
+        uses: actions/checkout@v4
 
       - name: Set up Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
@@ -40,4 +37,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "chore: format project story"
-          git push origin HEAD:${{ github.ref_name }}
+          git push origin HEAD:feat/story-builder-reading-modes
