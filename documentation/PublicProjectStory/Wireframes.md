@@ -4,7 +4,7 @@ These text wireframes make the public site structure reviewable in Markdown, inc
 
 ## Site map
 
-The main header stays focused on project-level subjects. Sprint-specific pages are grouped as chapters beneath Development story so Sprint 1 is not privileged over Sprint 2 and Sprint 3. The existing Sprint 1 deep link remains valid.
+The main header stays focused on the explanatory story rather than acting as a full sitemap. Sprint-specific pages are grouped as chapters beneath Development story. Decisions, Roadmap, and Open questions remain stable working-record routes but are reached contextually from Development instead of occupying top-level navigation. The existing Sprint 1 deep link remains valid.
 
 ```text
 Home (/#/)
@@ -15,15 +15,17 @@ Home (/#/)
 │   ├── Sprint 2 (/#/sprint-two)          NEW
 │   └── Sprint 3 (/#/sprint-three)        NEW
 ├── Architecture (/#/architecture)
-├── How we build (/#/delivery)            NEW
-├── Decisions (/#/decisions)
-├── Roadmap (/#/roadmap)
+├── How we build (/#/delivery)
+├── What we learned (/#/learnings)        NEW
 ├── Design (/#/design)
-├── Open questions (/#/questions)
-└── Public library (/#/library)
+├── Public library (/#/library)
+└── Development working record
+    ├── Decisions (/#/decisions)           PRESERVED
+    ├── Roadmap (/#/roadmap)               PRESERVED
+    └── Open questions (/#/questions)      PRESERVED
 ```
 
-Every route has the same visible header, skip link, and footer. The active project-level page is marked in header navigation. Sprint chapter links are grouped inside Development story. Existing deep links continue to resolve.
+Every route has the same visible header, skip link, and footer. The active top-level page is marked in header navigation. Sprint chapter and working-record links are grouped inside Development story. Existing deep links continue to resolve.
 
 ## Development-story hierarchy
 
@@ -103,18 +105,19 @@ Logical separation does not mean every box is already a separately deployed serv
 | Page-specific readable content                                                 |
 |                                                                                |
 | Home: illustrated welcome + current gate status + route directory              |
-| Product: roles + terms + child/parent mode boundary                            |
+| Product: conversational why-this-exists explainer + parent/child boundary     |
 | Journey: discovery-to-approval hand-offs + capability sketch                  |
-| Development: Sprint 0 -> Sprint 3 evolution + equal Sprint 1/2/3 chapter cards|
+| Development: Sprint 0 -> Sprint 3 evolution + chapters + working-record links |
 | Architecture: Discovery + Story ownership boundaries + extraction vocabulary  |
 | How we build: refreshed GitHub stats + CI + decision->issue->review loop       |
-| Decisions: status legend + October decisions + labeled public entries           |
-| Roadmap: seven outcome gates + visible Sprint 1 sequencing exception            |
+| What we learned: failures + experiments + AI-learning + next scary frontier    |
+| Decisions: preserved deeper status record                                     |
+| Roadmap: preserved deeper outcome-gate record                                 |
 | Sprint 1: implemented boundary + open gate + evidence summary                  |
 | Sprint 2: demonstrated synthetic/local outcome + later real-family gate       |
-| Sprint 3: integrated authoring slices + unfinished generation/approval          |
+| Sprint 3: integrated authoring slices + unfinished generation/approval         |
 | Design: existing 70/20/10 language + palette + themes + continuity rule       |
-| Questions: narrowed unresolved matters + how-to-read panel                    |
+| Questions: preserved deeper unresolved-matters record                         |
 | Library: curation flow + public-safety definitions + stable PDF link          |
 +--------------------------------------------------------------------------------+
 | Tiny Custom Stories                                           Back to beginning |

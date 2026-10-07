@@ -22,7 +22,10 @@ describe('project story site', () => {
       screen.getByText(/translation, not an automatic export/i),
     ).toBeTruthy();
 
-    fireEvent.click(screen.getAllByRole('link', { name: 'Decisions' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    fireEvent.click(screen.getByRole('link', { name: /Decision record/i }));
     expect(screen.getAllByText('Confirmed decision').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Open question').length).toBeGreaterThan(0);
     expect(
@@ -36,7 +39,7 @@ describe('project story site', () => {
     fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /a small, human answer to a modern question/i,
+        name: /a child is not a prompt/i,
       }),
     ).toBeTruthy();
 
@@ -62,9 +65,29 @@ describe('project story site', () => {
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /the amount of work is visible because the process is visible/i,
+        name: /small tasks, hard gates, and a lot of receipts/i,
       }),
     ).toBeTruthy();
+
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'What we learned' })[0],
+    );
+    expect(
+      screen.getByRole('heading', {
+        name: /the expensive mistakes are part of the story/i,
+      }),
+    ).toBeTruthy();
+  });
+
+  it('keeps working-record pages out of the main header', () => {
+    render(<App />);
+
+    expect(screen.queryByRole('link', { name: 'Decisions' })).toBeNull();
+    expect(screen.queryByRole('link', { name: 'Roadmap' })).toBeNull();
+    expect(screen.queryByRole('link', { name: 'Open questions' })).toBeNull();
+    expect(
+      screen.getAllByRole('link', { name: 'What we learned' }).length,
+    ).toBeGreaterThan(0);
   });
 
   it('groups Sprint 1, 2, and 3 together instead of privileging one in the header', () => {
@@ -122,7 +145,10 @@ describe('project story site', () => {
   it('shows the updated roadmap without treating later planning as completed work', () => {
     render(<App />);
 
-    fireEvent.click(screen.getAllByRole('link', { name: 'Roadmap' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    fireEvent.click(screen.getByRole('link', { name: /Outcome roadmap/i }));
 
     expect(
       screen.getByText(/Outcome gate open - explicitly not passed/i),
@@ -152,6 +178,11 @@ describe('project story site', () => {
     expect(screen.getByText('Repository tools CI')).toBeTruthy();
     expect(screen.getByText('Browser evidence')).toBeTruthy();
     expect(screen.getByText('Public-story CI')).toBeTruthy();
+    expect(screen.queryByText('We ran too much browser CI')).toBeNull();
+
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'What we learned' })[0],
+    );
     expect(screen.getByText('We ran too much browser CI')).toBeTruthy();
     expect(
       screen.getByText('Green tests did not prove the assembled product'),

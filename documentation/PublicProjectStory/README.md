@@ -9,7 +9,9 @@ The public site is a multi-route single-page application. A route is a stable br
 - [Wireframes](Wireframes.md) describe the information architecture, conceptual architecture, and intended responsive layouts in accessible text diagrams.
 - [Screenshot evidence](ScreenshotEvidence.md) records reviewed visual states and the conditions under which they were captured.
 - [Architecture explorer](ArchitectureExplorer.md) defines the public-safe Archify derivative, stable asset paths, curation boundary, and refresh contract.
-- The **How we build** route contains a dated, public-safe activity snapshot from the main product repository plus selected engineering retrospectives where a failure or experiment materially changed the development system. It is intentionally static rather than browser-connected to the private repository.
+- The **How we build** route contains the dated, public-safe activity snapshot from the main product repository and the current delivery/verification system. It is intentionally static rather than browser-connected to the private repository.
+- The **What we learned** route separately holds engineering retrospectives, failed experiments, tool-pilot outcomes, founder learning, and the next unresolved delivery frontier so process mechanics and lessons do not compete on one page.
+- **Decisions**, **Roadmap**, and **Open questions** remain stable public routes but are deliberately removed from the main header and linked contextually from Development story.
 - The [Public Project Dossier](../../public/documents/tiny-custom-stories-project-dossier.pdf) is a portable companion at a stable path. It supports the website rather than replacing the website's semantic, responsive version.
 
 These documents describe the public-information experience only. They do not expose the private implementation repository, adopt policy from exploratory material, or publish security-sensitive operating detail.
