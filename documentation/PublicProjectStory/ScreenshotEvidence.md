@@ -30,7 +30,7 @@ Before merge or publication, inspect at representative desktop and narrow-mobile
 - Sprint 1: open-gate wording, evidence list, and public-boundary note.
 - Design: continuity wording while preserving the existing visual recipe.
 - Decisions: larger public-entry set and long source/related text.
-- Navigation: the shorter top-level route set wrapping without horizontal overflow, with Sprint 1/2/3 plus Decisions/Roadmap/Open questions reached through Development rather than crowding the header.
+- Navigation: desktop keeps the full top-level route set; at 950px and below the header collapses to an accessible hamburger button, the opened menu uses large tap targets, Story/Builder remains available inside the menu, Escape closes it, and there is no horizontal overflow. Sprint 1/2/3 plus Decisions/Roadmap/Open questions remain reached through Development rather than crowding the header.
 
 If new screenshots are committed, use synthetic/public-only content and add them to the table below after inspection.
 
