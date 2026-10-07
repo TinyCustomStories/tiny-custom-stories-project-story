@@ -15,7 +15,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint --deny-warnings .",
     "format": "prettier . --write",
-    "format:check": "prettier src/App.tsx",
+    "format:check": "prettier . --check",
     "test": "vitest run",
     "test:watch": "vitest",
     "preview": "vite preview",
