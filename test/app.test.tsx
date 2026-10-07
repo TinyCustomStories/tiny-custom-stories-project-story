@@ -69,7 +69,9 @@ describe('project story site', () => {
       }),
     ).toBeTruthy();
 
-    fireEvent.click(screen.getAllByRole('link', { name: 'What we learned' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'What we learned' })[0],
+    );
     expect(
       screen.getByRole('heading', {
         name: /the expensive mistakes are part of the story/i,
@@ -178,7 +180,9 @@ describe('project story site', () => {
     expect(screen.getByText('Public-story CI')).toBeTruthy();
     expect(screen.queryByText('We ran too much browser CI')).toBeNull();
 
-    fireEvent.click(screen.getAllByRole('link', { name: 'What we learned' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'What we learned' })[0],
+    );
     expect(screen.getByText('We ran too much browser CI')).toBeTruthy();
     expect(
       screen.getByText('Green tests did not prove the assembled product'),
