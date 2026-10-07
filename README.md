@@ -8,7 +8,20 @@ The published site is expected at [tinycustomstories.github.io/tiny-custom-stori
 
 Story mode is the default. The Story / Builder toggle stays available in the shared header and preserves the current route, so a reader can move from a narrative explanation to the technical version of the same subject without starting over. Working-record routes such as Decisions, Roadmap, Open questions, and the Sprint chapters remain available beneath the primary narrative rather than being duplicated into a second site.
 
-The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries the newer October 5 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries the newer October 7 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+
+## What changed in the October 7 Visual Theme and statistics refresh
+
+This refresh follows the repository's Project Story Sync workflow after the private product repository accepted the Sprint 4 **Visual Theme System** direction.
+
+- Sprint 4 is no longer described simply as "Characters and illustrations." The accepted direction now centers on one versioned visual theme, a recurring visual cast, structured scene plans for the cover and pages, and replaceable renderers.
+- The first Sprint 4 renderer is intentionally described as controlled, inexpensive, recoverable, and usable without reference photos or an external image provider. Richer AI-image generation, likeness, and print/premium renderers remain later paths behind their own privacy, safety, provider, and review gates.
+- Sprint 4 is **not started**. Story Studio remains text-first, the unresolved Sprint 1 evidence still must be revisited before Sprint 4 execution, and no external image provider or likeness flow is presented as approved by this direction.
+- The public architecture narrative now names the Visual Theme System as an accepted logical capability while preserving Story Lifecycle as the owner of Story text/revision truth and preserving the rule that logical boundaries do not automatically mean more network services.
+- The October 7 repository snapshot is now 1,305 commits on `development`, 541 pull requests created / 507 merged, 422 issues tracked, 363 task issues, 334 closed / 88 open issues, and 4 main product workflow definitions.
+- Pull-request, issue, and task totals were recomputed in bounded date partitions so GitHub search result caps could not silently truncate the totals. The commit count carries forward the previously verified October 5 baseline plus 43 later development commits.
+- Repository-wide workflow-run totals cannot be fully recomputed from the available repository interface, so the site deliberately keeps **1,344 workflow runs / 941 successful** labeled as the older October 5 checkpoint instead of presenting them as fresh October 7 telemetry.
+- The Story / Builder reading model, stable fragment routes, paper-and-ink editorial design, public-safety boundary, and October 1 dossier URL/checkpoint are preserved.
 
 ## What changed in the October 6 reading-mode refresh
 
