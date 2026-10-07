@@ -118,7 +118,7 @@ export const publicEntries: PublicEntry[] = [
   {
     title: 'Sprint 4 is a Visual Theme System, not ten unrelated image prompts',
     summary:
-      'The accepted Sprint 4 direction uses one versioned visual theme, a recurring visual cast, one structured scene plan per cover or page, and replaceable renderers. The first renderer is intended to be controlled, inexpensive, recoverable, and usable without reference photos or an external image provider; richer AI-image, likeness, and print renderers remain later, separately gated paths. Sprint 4 has not started.',
+      'The accepted Sprint 4 direction uses one versioned visual theme, a recurring visual cast, one structured scene plan per cover or page, and replaceable renderers. The planned outcome includes consistent visuals across the cover and ten pages, page-scoped retry, versioned recovery, and a controlled first renderer. Later richer rendering paths remain separately gated, and Sprint 4 has not started.',
     category: 'Sprint 4',
     date: '2026-10-07',
     status: 'Confirmed decision',
