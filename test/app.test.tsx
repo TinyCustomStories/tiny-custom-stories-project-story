@@ -59,6 +59,19 @@ describe('project story site', () => {
     ).toBeTruthy();
   });
 
+  it('keeps the Tiny Custom Stories brand in the shared header', () => {
+    renderBuilder();
+
+    const header = document.querySelector('.site-header');
+    const brand = screen.getByRole('link', {
+      name: 'Tiny Custom Stories project story home',
+    });
+
+    expect(header).toBeTruthy();
+    expect(header?.contains(brand)).toBe(true);
+    expect(brand.textContent).toContain('Tiny Custom Stories');
+  });
+
   it('keeps reading mode outside the collapsible small-screen navigation', () => {
     renderBuilder();
 
