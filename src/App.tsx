@@ -3329,6 +3329,22 @@ function Layout({
           </span>
           Tiny Custom Stories
         </Link>
+        <div
+          id="project-story-navigation"
+          className={`header-navigation${menuOpen ? ' mobile-open' : ''}`}
+        >
+          <nav aria-label="Project story pages">
+            {primaryNavigation.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className={route === path ? 'active' : undefined}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
         <div className="header-controls">
           <div
             className="reading-mode-switch"
@@ -3369,22 +3385,6 @@ function Layout({
             </span>
             <span>{menuOpen ? 'Close' : 'Menu'}</span>
           </button>
-        </div>
-        <div
-          id="project-story-navigation"
-          className={`header-navigation${menuOpen ? ' mobile-open' : ''}`}
-        >
-          <nav aria-label="Project story pages">
-            {primaryNavigation.map(({ path, label }) => (
-              <Link
-                key={path}
-                to={path}
-                className={route === path ? 'active' : undefined}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
         </div>
       </header>
       <main id="main-content">
