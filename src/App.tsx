@@ -3292,6 +3292,31 @@ function Layout({
 
   const Page =
     readingMode === 'story' ? storyPages[route] : builderPages[route];
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const menuButtonRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    setMenuOpen(false);
+  }, [route]);
+
+  React.useEffect(() => {
+    if (!menuOpen) return undefined;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [menuOpen]);
+
+  const changeReadingMode = (mode: ReadingMode) => {
+    onReadingModeChange(mode);
+    setMenuOpen(false);
+  };
 
   return (
     <div className="page-shell">
@@ -3309,7 +3334,26 @@ function Layout({
           </span>
           Tiny Custom Stories
         </Link>
-        <div className="header-navigation">
+        <button
+          ref={menuButtonRef}
+          type="button"
+          className="menu-toggle"
+          aria-expanded={menuOpen}
+          aria-controls="project-story-navigation"
+          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span className="menu-toggle-icon" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
+          <span>{menuOpen ? 'Close' : 'Menu'}</span>
+        </button>
+        <div
+          id="project-story-navigation"
+          className={`header-navigation${menuOpen ? ' mobile-open' : ''}`}
+        >
           <nav aria-label="Project story pages">
             {primaryNavigation.map(({ path, label }) => (
               <Link
@@ -3331,7 +3375,7 @@ function Layout({
               type="button"
               className={readingMode === 'story' ? 'active' : undefined}
               aria-pressed={readingMode === 'story'}
-              onClick={() => onReadingModeChange('story')}
+              onClick={() => changeReadingMode('story')}
             >
               Story
             </button>
@@ -3339,7 +3383,7 @@ function Layout({
               type="button"
               className={readingMode === 'builder' ? 'active' : undefined}
               aria-pressed={readingMode === 'builder'}
-              onClick={() => onReadingModeChange('builder')}
+              onClick={() => changeReadingMode('builder')}
             >
               Builder
             </button>
