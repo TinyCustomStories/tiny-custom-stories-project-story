@@ -25,7 +25,7 @@ describe('project story site', () => {
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
     );
-    fireEvent.click(screen.getByRole('link', { name: 'Decision record' }));
+    fireEvent.click(screen.getByRole('link', { name: /Decision record/i }));
     expect(screen.getAllByText('Confirmed decision').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Open question').length).toBeGreaterThan(0);
     expect(
@@ -148,7 +148,7 @@ describe('project story site', () => {
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
     );
-    fireEvent.click(screen.getByRole('link', { name: 'Outcome roadmap' }));
+    fireEvent.click(screen.getByRole('link', { name: /Outcome roadmap/i }));
 
     expect(
       screen.getByText(/Outcome gate open - explicitly not passed/i),
