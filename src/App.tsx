@@ -317,7 +317,10 @@ function Home() {
 function Product() {
   return (
     <>
-      <PageIntro eyebrow="01 · The product" title="A child is not a prompt.">
+      <PageIntro
+        eyebrow="01 · The product"
+        title="A child is not a prompt."
+      >
         <p>
           There are two easy versions of an “AI story for your kid.” One is
           basically mail merge: type a name, pick a dinosaur, receive a generic
@@ -332,7 +335,7 @@ function Product() {
         <div
           className="architecture-sketch"
           role="img"
-          aria-label="Parent intent plus a small amount of parent-approved context becomes a story the family can review and shape."
+          aria-label="Parent intent plus approved context becomes a reviewable story."
         >
           <div>
             <b>Parent's intent</b>
@@ -872,7 +875,8 @@ function HowWeBuild() {
           <p>
             This page explains the system we use now. The things that broke it,
             embarrassed us, cost too much, or changed our minds belong in the
-            learning record. <Link to="/learnings">Read what we learned →</Link>
+            learning record.{' '}
+            <Link to="/learnings">Read what we learned →</Link>
           </p>
         </div>
 
