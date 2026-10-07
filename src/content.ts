@@ -118,7 +118,7 @@ export const publicEntries: PublicEntry[] = [
   {
     title: 'Sprint 4 is a Visual Theme System, not ten unrelated image prompts',
     summary:
-      'The accepted Sprint 4 direction uses one versioned visual theme, a recurring visual cast, one structured scene plan per cover or page, and replaceable renderers. The first renderer is intended to be controlled, inexpensive, recoverable, and usable without reference photos or an external image provider; richer AI-image, likeness, and print renderers remain later, separately gated paths. Sprint 4 has not started.',
+      'The accepted Sprint 4 direction uses one versioned visual theme, a recurring visual cast, one structured scene plan per cover or page, and replaceable renderers. The planned outcome includes consistent visuals across the cover and ten pages, page-scoped retry, versioned recovery, and a controlled first renderer. Later richer rendering paths remain separately gated, and Sprint 4 has not started.',
     category: 'Sprint 4',
     date: '2026-10-07',
     status: 'Confirmed decision',
@@ -128,6 +128,18 @@ export const publicEntries: PublicEntry[] = [
       'Controlled no-photo renderer first',
       'Likeness and external image providers remain separately gated',
     ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Sprint 4 has four visual layers',
+    summary:
+      'The accepted plan separates visual responsibility into Visual Theme, Visual Cast, one Visual Scene Plan per cover or page, and a replaceable Renderer. Those versioned application contracts keep continuity stable even if the rendering technique changes later.',
+    category: 'Sprint 4',
+    date: '2026-10-07',
+    status: 'Confirmed decision',
+    source: 'Sprint 4 Visual Theme System specification and ADR-0020',
+    related: ['Theme', 'Cast', 'Scene plans', 'Replaceable renderer'],
     reviewStatus: 'Founder approved for public sharing',
     safeToPublish: true,
   },
@@ -341,7 +353,7 @@ export const milestones: Milestone[] = [
     title: 'Sprint 4 - Visual Theme System',
     state: 'Accepted direction - not started',
     status: 'Confirmed decision',
-    note: 'Sprint 4 now centers on a versioned visual theme, recurring cast, structured scene plans, and a controlled recoverable no-photo renderer. Richer AI-image, likeness, and print renderers remain separately gated. The project must still revisit unresolved Sprint 1 evidence before Sprint 4 execution begins.',
+    note: 'Sprint 4 now centers on a versioned visual theme, recurring cast, structured scene plans, controlled recoverable rendering, parent review, page-scoped retry, and a no-photo path. Richer renderer families remain separately gated. The project must still revisit unresolved Sprint 1 evidence before Sprint 4 execution begins.',
   },
   {
     title: 'Sprint 5 - Child library and reader',
