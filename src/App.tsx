@@ -15,6 +15,7 @@ type Route =
   | '/development'
   | '/architecture'
   | '/delivery'
+  | '/learnings'
   | '/decisions'
   | '/roadmap'
   | '/sprint-one'
@@ -31,6 +32,7 @@ const routes: Record<Route, string> = {
   '/development': 'Development story',
   '/architecture': 'Architecture',
   '/delivery': 'How we build',
+  '/learnings': 'What we learned',
   '/decisions': 'Decisions',
   '/roadmap': 'Roadmap',
   '/sprint-one': 'Sprint 1',
@@ -48,10 +50,8 @@ const primaryNavigation: Array<{ path: Route; label: string }> = [
   { path: '/development', label: 'Development story' },
   { path: '/architecture', label: 'Architecture' },
   { path: '/delivery', label: 'How we build' },
-  { path: '/decisions', label: 'Decisions' },
-  { path: '/roadmap', label: 'Roadmap' },
+  { path: '/learnings', label: 'What we learned' },
   { path: '/design', label: 'Design' },
-  { path: '/questions', label: 'Open questions' },
   { path: '/library', label: 'Public library' },
 ];
 
@@ -70,6 +70,8 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
     'A public-safe interactive map of the implemented, partial, accepted, and still-open capability boundaries.',
   '/delivery':
     'The GitHub activity, review loop, automated quality gates, browser evidence, and outcome-gated workflow behind the product.',
+  '/learnings':
+    'The mistakes, experiments, surprises, and unresolved nerves that changed how the project is being built.',
   '/decisions':
     'A labeled record of confirmed decisions, proposals, verified facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
@@ -285,13 +287,13 @@ function Home() {
         <div className="section-kicker">
           A readable route through the project
         </div>
-        <h2 id="directory-title">One project story, ten places to pause.</h2>
+        <h2 id="directory-title">Start with the story. Dig deeper when you want.</h2>
         <p className="section-intro">
-          This October 5 checkpoint keeps the September site underneath it and
-          updates the evidence around it: the same routes and visual language
-          now show Sprint 2's accepted synthetic/local outcome, the separate
-          real-family release boundary, and how far the protected Story Studio
-          has moved from contracts into an authoring workspace.
+          The main route follows the questions a curious reader is most likely
+          to ask: what are we making, how does it work, how did it evolve, how
+          is it built, and what did we learn? Detailed decisions, unresolved
+          questions, and outcome gates remain public one layer deeper inside the
+          development story instead of crowding the first read.
         </p>
         <div className="route-grid">
           {primaryNavigation
@@ -313,94 +315,128 @@ function Home() {
 function Product() {
   return (
     <>
-      <PageIntro
-        eyebrow="01 · The product"
-        title="A small, human answer to a modern question."
-      >
+      <PageIntro eyebrow="01 · The product" title="A child is not a prompt.">
         <p>
-          How can technology help families make more room for imagination,
-          conversation, and learning without turning childhood into an attention
-          feed or turning AI into an unexplained authority? Tiny Custom Stories
-          keeps the parent responsible for intention, context, review, and
-          approval.
+          There are two easy versions of an “AI story for your kid.” One is
+          basically mail merge: type a name, pick a dinosaur, receive a generic
+          story wearing a tiny personalized hat. The other is much worse:
+          collect everything about the child and hope the model does something
+          magical with it. Tiny Custom Stories is trying to live in the useful
+          middle.
         </p>
       </PageIntro>
 
       <section className="section story-section">
+        <div
+          className="architecture-sketch"
+          role="img"
+          aria-label="Parent intent plus a small amount of parent-approved context becomes a story the family can review and shape."
+        >
+          <div>
+            <b>Parent's intent</b>
+            <small>Why are we making this story?</small>
+          </div>
+          <i aria-hidden="true">+</i>
+          <div>
+            <b>Small approved context</b>
+            <small>Only what is useful for this story.</small>
+          </div>
+          <i aria-hidden="true">→</i>
+          <div>
+            <b>A story that feels like theirs</b>
+            <small>Editable, reviewable, never auto-published.</small>
+          </div>
+          <p>
+            The goal is not “AI knows everything.” The goal is “this story feels
+            surprisingly right, and the parent can see why.”
+          </p>
+        </div>
+
         <div className="role-grid">
           <article>
             <span className="role-icon" aria-hidden="true">
               ✎
             </span>
-            <h3>Parents set the intention</h3>
+            <h3>A kid is not a prompt</h3>
             <p>
-              They choose why a story is being made, decide which information
-              may help, review the draft, and approve the result.
+              A name, age, and favourite animal can make a story look
+              personalized without making it meaningful. We want context that
+              can change the story in a way a parent actually recognizes.
+            </p>
+          </article>
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ◌
+            </span>
+            <h3>Memory should be earned</h3>
+            <p>
+              The Child Map grows slowly through parent-approved notes and
+              questions. The system should know enough to help, not collect
+              enough to feel creepy.
             </p>
           </article>
           <article>
             <span className="role-icon" aria-hidden="true">
               ☼
             </span>
-            <h3>Children get the wonder</h3>
+            <h3>The parent gets the last word</h3>
             <p>
-              The private-Alpha audience is ages two through twelve, with a calm
-              parent-approved story library as the later child-facing
-              destination.
-            </p>
-          </article>
-          <article>
-            <span className="role-icon" aria-hidden="true">
-              ⌁
-            </span>
-            <h3>AI stays bounded</h3>
-            <p>
-              Generation can help plan and write, but it does not decide what
-              private family information it may access or silently publish a
-              result to a child.
+              Parents choose the purpose, choose which context may be used,
+              edit the draft, and approve the result. AI helps compose; it does
+              not become the family authority.
             </p>
           </article>
         </div>
 
         <div className="reading-panel">
-          <h2>Terms on this page</h2>
+          <h2>So what does the product actually do?</h2>
           <Definition term="Child Map">
-            A parent-guided living record of information that may support
-            personalization. It is not a request to collect everything about a
-            child.
+            A small, evolving record of things a parent thinks may matter:
+            people, pets, interests, moments, preferences, and other useful
+            context. It is not a surveillance file.
+          </Definition>
+          <Definition term="Discovery">
+            The gentle question-and-note flow that helps the parent add useful
+            context over time instead of filling out one giant profile form.
           </Definition>
           <Definition term="Story Studio">
-            The guided parent experience that moves from story intention and
-            selected context through planning, text creation, revision, and
-            approval.
+            The grown-up workspace where a parent starts with a purpose, picks
+            context, generates or writes, edits, revises, and eventually
+            approves a story.
           </Definition>
-          <Definition term="Alpha target">
-            The eventual private Alpha remains a website-first experience for
-            one family and one child. Sprint 3 deliberately proves text
-            composition before Sprint 4 adds character and illustration work.
+          <Definition term="Child library">
+            The quiet side of the product: only stories a parent has made
+            child-visible, without drafts, private notes, or adult controls.
           </Definition>
         </div>
 
-        <div className="mode-preview" aria-label="Alpha experience boundaries">
+        <div className="mode-preview" aria-label="Parent and child experience boundaries">
           <article>
-            <p className="eyebrow">Default after sign-in</p>
-            <h2>Child mode</h2>
+            <p className="eyebrow">Behind the grown-up door</p>
+            <h2>Parent mode</h2>
             <p>
-              A calm, read-only library containing only stories a parent has
-              made child-visible. Drafts, Child Map information, account
-              controls, and parent-only work stay out.
+              This is where the messy creative work happens: context, drafts,
+              edits, choices, approvals, settings, and other things a child
+              should not have to think about.
             </p>
           </article>
           <article>
-            <p className="eyebrow">Deliberate adult entry</p>
-            <h2>Parent mode</h2>
+            <p className="eyebrow">On the kid side</p>
+            <h2>Child mode</h2>
             <p>
-              A protected place for Discovery, Story Studio work, approvals,
-              settings, and sensitive account actions. The server—not a hidden
-              button—enforces the authority boundary.
+              Ideally boring in the best way: a calm shelf of finished stories
+              the family chose to make visible. No infinite feed. No secret
+              profile controls. Just the stories.
             </p>
           </article>
         </div>
+
+        <p className="public-boundary-note">
+          The private Alpha is still being built. The current work proves the
+          family boundary, Child Map/Discovery behavior, and parts of Story
+          Studio before claiming the complete AI story experience.{' '}
+          <Link to="/journey">See how the hand-offs work →</Link>
+        </p>
       </section>
     </>
   );
@@ -609,6 +645,23 @@ function Development() {
           </ul>
         </div>
 
+        <div className="reading-panel">
+          <h2>The working record lives one layer deeper.</h2>
+          <p>
+            The first read stays focused on the story. When you want the
+            project-management detail, the underlying records are still public:
+          </p>
+          <p>
+            <Link to="/roadmap">Outcome roadmap →</Link>
+          </p>
+          <p>
+            <Link to="/decisions">Decision record →</Link>
+          </p>
+          <p>
+            <Link to="/questions">Open questions →</Link>
+          </p>
+        </div>
+
         <p className="public-boundary-note">
           The project intentionally prefers more precise implementation tasks
           over fewer ambiguous ones. Task count and merged code are supporting
@@ -627,25 +680,6 @@ function HowWeBuild() {
     [deliverySnapshot.issuesTracked, 'issues', 'tracked'],
     [deliverySnapshot.taskIssues, 'task issues', 'implementation / validation'],
     [deliverySnapshot.workflowRuns, 'workflow runs', 'GitHub Actions'],
-  ] as const;
-
-  const buildLessons = [
-    [
-      'We ran too much browser CI',
-      'The broad Playwright and screenshot suite was useful, but running it on nearly every pull request made browser verification disproportionately expensive. GitHub Actions eventually stopped starting jobs when the budget was exhausted. We kept fast deterministic PR gates and moved broad browser coverage to weekly/manual runs, while still using focused browser evidence when a risky UI change needs it.',
-    ],
-    [
-      'Green tests did not prove the assembled product',
-      'Our browser tests could pass against mocked APIs while API tests separately replaced infrastructure. That was useful evidence, but not end-to-end proof. Sprint 2 forced us to add a synthetic browser → real HTTP API → Mongo journey and separate real private-object-store evidence before calling the outcome demonstrated.',
-    ],
-    [
-      'Our agents were competing for one API budget',
-      'Parallel sessions repeatedly asked GitHub Projects for the same state and shared one GraphQL quota. When that rate limit became a recurring blocker, we changed the workflow: one timestamped project snapshot can be shared across workers, ordinary issue/PR reads prefer cheaper paths, and live project reads are reserved for mutations or meaningful refresh points.',
-    ],
-    [
-      'New tools have to earn a permanent place',
-      'We pilot tools with an explicit possibility of saying no. Graphify produced a useful local code graph, but the pilot recommended holding workflow integration rather than adding machinery without enough value. Archify earned a narrower role because a maintained architecture map proved useful enough to keep and publish in a curated public form.',
-    ],
   ] as const;
 
   const workflowChecks = [
@@ -675,13 +709,13 @@ function HowWeBuild() {
     <>
       <PageIntro
         eyebrow="05 · How we build"
-        title="The amount of work is visible because the process is visible."
+        title="Small tasks, hard gates, and a lot of receipts."
       >
         <p>
-          Tiny Custom Stories is intentionally developed through many small,
-          reviewable pieces rather than a few giant changes. The numbers below
-          are a dated snapshot of the main product repository, and the workflow
-          underneath them matters more than any single count.
+          This page is about the machinery: how an idea becomes a change small
+          enough to review, how independent work stays isolated, and what
+          evidence has to exist before “done” means anything. The mistakes and
+          lessons have their own page now.
         </p>
       </PageIntro>
 
@@ -745,14 +779,150 @@ function HowWeBuild() {
           ))}
         </div>
 
-        <div className="sprint-chapter-intro">
-          <p className="eyebrow">What broke, what we learned, what changed</p>
-          <h2>We keep the failed experiments in the project story.</h2>
+        <div className="delivery-loop" aria-label="Delivery workflow">
+          <span>Idea / finding</span>
+          <i aria-hidden="true">→</i>
+          <span>Product decision</span>
+          <i aria-hidden="true">→</i>
+          <span>Documentation</span>
+          <i aria-hidden="true">→</i>
+          <span>Issue / task</span>
+          <i aria-hidden="true">→</i>
+          <span>Implementation</span>
+          <i aria-hidden="true">→</i>
+          <span>PR + CI evidence</span>
+          <i aria-hidden="true">→</i>
+          <span>Review / fixes / re-review</span>
+          <i aria-hidden="true">→</i>
+          <span>Merge + outcome evidence</span>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Agent-assisted, repository-owned</p>
+            <h2>
+              Structured execution without handing product ownership away.
+            </h2>
+          </div>
+          <ul>
+            <li>
+              Backlog stewardship turns accepted decisions into small,
+              implementation-ready issues with explicit dependency chains.
+            </li>
+            <li>
+              Independent tasks can be executed concurrently in isolated
+              branches or sessions; neighboring tasks do not silently share a
+              working branch.
+            </li>
+            <li>
+              Behavior-changing work defaults toward test-first reasoning where
+              a meaningful failing test can be written.
+            </li>
+            <li>
+              Non-trivial failures are debugged systematically rather than
+              patched speculatively.
+            </li>
+            <li>
+              Review is a loop: inspect, comment, fix, verify again, then merge
+              only when the evidence supports it.
+            </li>
+            <li>
+              Generic agent methodologies and reusable skills sit underneath
+              project-specific product, privacy, architecture, and GitHub rules.
+            </li>
+          </ul>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
+            <p className="eyebrow">Why the checks matter</p>
+            <h2>CI is part of the product-development method.</h2>
+          </div>
+          <ul>
+            <li>Formatting and linting keep implementation drift visible.</li>
+            <li>
+              Type checks and warnings-as-errors catch contract mistakes early.
+            </li>
+            <li>
+              Frontend and API tests protect behavior as tasks land
+              independently.
+            </li>
+            <li>
+              Dependency audits and generated-contract checks catch supply-chain
+              and API drift.
+            </li>
+            <li>
+              Real MongoDB startup/migration checks exercise infrastructure
+              assumptions.
+            </li>
+            <li>
+              Browser smoke tests and captured screenshots prove important flows
+              beyond unit tests.
+            </li>
+          </ul>
+        </div>
+
+        <div className="reading-panel">
+          <h2>Process here. Lessons next door.</h2>
           <p>
-            A process mistake is useful when it changes the system. Some of the
-            most important engineering work here came from discovering that a
-            practice was too expensive, too isolated, too repetitive, or simply
-            not valuable enough to keep.
+            This page explains the system we use now. The things that broke it,
+            embarrassed us, cost too much, or changed our minds belong in the
+            learning record. <Link to="/learnings">Read what we learned →</Link>
+          </p>
+        </div>
+
+        <p className="public-boundary-note">
+          Snapshot counts are intentionally dated rather than presented as live
+          telemetry. The public site does not call the private repository or
+          require a GitHub token in the browser.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function Learnings() {
+  const buildLessons = [
+    [
+      'We ran too much browser CI',
+      'The broad Playwright and screenshot suite was useful, but running it on nearly every pull request made browser verification disproportionately expensive. GitHub Actions eventually stopped starting jobs when the budget was exhausted. We kept fast deterministic PR gates and moved broad browser coverage to weekly/manual runs, while still using focused browser evidence when a risky UI change needs it.',
+    ],
+    [
+      'Green tests did not prove the assembled product',
+      'Our browser tests could pass against mocked APIs while API tests separately replaced infrastructure. That was useful evidence, but not end-to-end proof. Sprint 2 forced us to add a synthetic browser → real HTTP API → Mongo journey and separate real private-object-store evidence before calling the outcome demonstrated.',
+    ],
+    [
+      'Our agents were competing for one API budget',
+      'Parallel sessions repeatedly asked GitHub Projects for the same state and shared one GraphQL quota. When that rate limit became a recurring blocker, we changed the workflow: one timestamped project snapshot can be shared across workers, ordinary issue/PR reads prefer cheaper paths, and live project reads are reserved for mutations or meaningful refresh points.',
+    ],
+    [
+      'New tools have to earn a permanent place',
+      'We pilot tools with an explicit possibility of saying no. Graphify produced a useful local code graph, but the pilot recommended holding workflow integration rather than adding machinery without enough value. Archify earned a narrower role because a maintained architecture map proved useful enough to keep and publish in a curated public form.',
+    ],
+  ] as const;
+
+  return (
+    <>
+      <PageIntro
+        eyebrow="06 · What we learned"
+        title="The expensive mistakes are part of the story."
+      >
+        <p>
+          This is the diary, not the machinery. It is where we keep the things
+          that broke, experiments that changed the workflow, tools that did not
+          earn a permanent place, and the next bits of the project that still
+          make us nervous.
+        </p>
+      </PageIntro>
+
+      <section className="section delivery-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">What broke, what changed</p>
+          <h2>Failure is only useful if the system remembers it.</h2>
+          <p>
+            The point is not to collect war stories. A mistake belongs here when
+            it changed a workflow, a test boundary, a cost decision, or the way
+            we think about what “evidence” means.
           </p>
         </div>
 
@@ -864,93 +1034,9 @@ function HowWeBuild() {
           </ul>
         </div>
 
-        <div className="delivery-loop" aria-label="Delivery workflow">
-          <span>Idea / finding</span>
-          <i aria-hidden="true">→</i>
-          <span>Product decision</span>
-          <i aria-hidden="true">→</i>
-          <span>Documentation</span>
-          <i aria-hidden="true">→</i>
-          <span>Issue / task</span>
-          <i aria-hidden="true">→</i>
-          <span>Implementation</span>
-          <i aria-hidden="true">→</i>
-          <span>PR + CI evidence</span>
-          <i aria-hidden="true">→</i>
-          <span>Review / fixes / re-review</span>
-          <i aria-hidden="true">→</i>
-          <span>Merge + outcome evidence</span>
-        </div>
-
-        <div className="evidence-panel">
-          <div>
-            <p className="eyebrow">Agent-assisted, repository-owned</p>
-            <h2>
-              Structured execution without handing product ownership away.
-            </h2>
-          </div>
-          <ul>
-            <li>
-              Backlog stewardship turns accepted decisions into small,
-              implementation-ready issues with explicit dependency chains.
-            </li>
-            <li>
-              Independent tasks can be executed concurrently in isolated
-              branches or sessions; neighboring tasks do not silently share a
-              working branch.
-            </li>
-            <li>
-              Behavior-changing work defaults toward test-first reasoning where
-              a meaningful failing test can be written.
-            </li>
-            <li>
-              Non-trivial failures are debugged systematically rather than
-              patched speculatively.
-            </li>
-            <li>
-              Review is a loop: inspect, comment, fix, verify again, then merge
-              only when the evidence supports it.
-            </li>
-            <li>
-              Generic agent methodologies and reusable skills sit underneath
-              project-specific product, privacy, architecture, and GitHub rules.
-            </li>
-          </ul>
-        </div>
-
-        <div className="evidence-panel">
-          <div>
-            <p className="eyebrow">Why the checks matter</p>
-            <h2>CI is part of the product-development method.</h2>
-          </div>
-          <ul>
-            <li>Formatting and linting keep implementation drift visible.</li>
-            <li>
-              Type checks and warnings-as-errors catch contract mistakes early.
-            </li>
-            <li>
-              Frontend and API tests protect behavior as tasks land
-              independently.
-            </li>
-            <li>
-              Dependency audits and generated-contract checks catch supply-chain
-              and API drift.
-            </li>
-            <li>
-              Real MongoDB startup/migration checks exercise infrastructure
-              assumptions.
-            </li>
-            <li>
-              Browser smoke tests and captured screenshots prove important flows
-              beyond unit tests.
-            </li>
-          </ul>
-        </div>
-
         <p className="public-boundary-note">
-          Snapshot counts are intentionally dated rather than presented as live
-          telemetry. The public site does not call the private repository or
-          require a GitHub token in the browser.
+          Want the current operating system instead of the retrospective?{' '}
+          <Link to="/delivery">See how we build →</Link>
         </p>
       </section>
     </>
@@ -1135,7 +1221,7 @@ function Decisions() {
   return (
     <>
       <PageIntro
-        eyebrow="06 · Decision record"
+        eyebrow="Working record · Decisions"
         title="Certainty deserves a label."
       >
         <p>
@@ -1210,7 +1296,7 @@ function Roadmap() {
   return (
     <>
       <PageIntro
-        eyebrow="07 · Roadmap"
+        eyebrow="Working record · Roadmap"
         title="Progress is measured by outcomes, with exceptions made visible."
       >
         <p>
@@ -1669,7 +1755,7 @@ function Design() {
   return (
     <>
       <PageIntro
-        eyebrow="08 · Design philosophy and language"
+        eyebrow="07 · Design philosophy and language"
         title="The same design DNA, expressed for different responsibilities."
       >
         <p>
@@ -1805,7 +1891,7 @@ function Questions() {
   return (
     <>
       <PageIntro
-        eyebrow="09 · Open questions"
+        eyebrow="Working record · Open questions"
         title="Useful unknowns stay visible even as the architecture gets clearer."
       >
         <p>
@@ -1850,7 +1936,7 @@ function Library() {
   return (
     <>
       <PageIntro
-        eyebrow="10 · Public library"
+        eyebrow="08 · Public library"
         title="This site is a translation, not an automatic export."
       >
         <p>
@@ -1942,6 +2028,7 @@ function Layout({ route }: { route: Route }) {
     '/development': Development,
     '/architecture': Architecture,
     '/delivery': HowWeBuild,
+    '/learnings': Learnings,
     '/decisions': Decisions,
     '/roadmap': Roadmap,
     '/sprint-one': SprintOne,
