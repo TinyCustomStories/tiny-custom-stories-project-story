@@ -1772,6 +1772,9 @@ footer a {
     flex-wrap: wrap;
     gap: 0.8rem 1rem;
   }
+  .brand {
+    flex: 0 0 auto;
+  }
   .header-controls {
     margin-left: auto;
   }
@@ -1893,9 +1896,11 @@ footer a {
     padding-inline: 1rem;
   }
   .brand {
-    min-width: 0;
-    max-width: calc(100% - 6rem);
-    white-space: normal;
+    order: 1;
+    width: 100%;
+    max-width: none;
+    flex: 0 0 100%;
+    white-space: nowrap;
   }
   .header-controls {
     order: 2;
