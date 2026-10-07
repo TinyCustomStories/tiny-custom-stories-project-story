@@ -132,6 +132,18 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
+    title: 'Sprint 4 has four visual layers',
+    summary:
+      'The accepted plan separates visual responsibility into Visual Theme, Visual Cast, one Visual Scene Plan per cover or page, and a replaceable Renderer. Those versioned application contracts keep continuity stable even if the rendering technique changes later.',
+    category: 'Sprint 4',
+    date: '2026-10-07',
+    status: 'Confirmed decision',
+    source: 'Sprint 4 Visual Theme System specification and ADR-0020',
+    related: ['Theme', 'Cast', 'Scene plans', 'Replaceable renderer'],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
     title: 'Story work has three ownership boundaries',
     summary:
       'Story Lifecycle owns story truth and approval, Story Context Selection decides what permitted context may be used, and Story Generation receives only minimized versioned artifacts and returns candidates or findings.',
