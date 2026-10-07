@@ -59,10 +59,17 @@ describe('project story site', () => {
     ).toBeTruthy();
   });
 
-  it('provides an accessible small-screen navigation toggle', () => {
+  it('keeps reading mode outside the collapsible small-screen navigation', () => {
     renderBuilder();
 
     const toggle = screen.getByRole('button', { name: 'Open navigation' });
+    const navigation = document.getElementById('project-story-navigation');
+    const storyButton = screen.getByRole('button', { name: 'Story' });
+    const builderButton = screen.getByRole('button', { name: 'Builder' });
+
+    expect(navigation).toBeTruthy();
+    expect(navigation?.contains(storyButton)).toBe(false);
+    expect(navigation?.contains(builderButton)).toBe(false);
     expect(toggle.getAttribute('aria-expanded')).toBe('false');
     expect(toggle.getAttribute('aria-controls')).toBe(
       'project-story-navigation',
@@ -73,6 +80,10 @@ describe('project story site', () => {
     expect(
       screen.getByRole('button', { name: 'Close navigation' }),
     ).toBeTruthy();
+
+    fireEvent.click(storyButton);
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    expect(storyButton.getAttribute('aria-pressed')).toBe('true');
 
     fireEvent.keyDown(window, { key: 'Escape' });
     expect(toggle.getAttribute('aria-expanded')).toBe('false');
