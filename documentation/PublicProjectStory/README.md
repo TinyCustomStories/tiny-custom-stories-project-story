@@ -2,7 +2,7 @@
 
 This directory explains the public Tiny Custom Stories project-story site in a format that can be read without opening the application.
 
-The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story instead of giving one sprint a unique header position.
+The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, Sprint 3, and the accepted-but-not-started Sprint 4 planning chapter remain grouped beneath Development story instead of giving one sprint a unique header position.
 
 ## What is documented here
 
