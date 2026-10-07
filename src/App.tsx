@@ -171,7 +171,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 5, 2026
+            A public project story · updated October 7, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -180,9 +180,9 @@ function Home() {
           <p className="hero-lede">
             Tiny Custom Stories has grown from a personalized-story idea into a
             parent-controlled learning product with a demonstrated synthetic and
-            local Child Map outcome, data-driven Discovery, and a protected
-            Story Studio whose authoring workspace now includes real editing and
-            revision flows.
+            local Child Map outcome, data-driven Discovery, a protected Story
+            Studio with real editing and revision flows, and an accepted Visual
+            Theme System direction for the future visual layer.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/development">
@@ -239,9 +239,11 @@ function Home() {
           Sprint 3 continues under the{' '}
           <strong>synthetic-only sequencing exception</strong>. Story Studio
           home, direct page editing, cover editing, and revision history have
-          landed, while full generation and approval remain open. Real-family
-          Alpha use still requires qualified release review and later safety,
-          security, and deployment gates.
+          landed, while full generation and approval remain open. Sprint 4 now
+          has an accepted Visual Theme System direction, but it has not started
+          and no external image provider or likeness flow is approved by that
+          decision. Real-family Alpha use still requires qualified release
+          review and later safety, security, and deployment gates.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -259,8 +261,9 @@ function Home() {
           </h2>
           <p>
             The public architecture view keeps implementation status visible:
-            what exists today, what is only partial, which Story boundaries are
-            accepted, and which provider choices remain deliberately open.
+            what exists today, what is only partial, which Story and Visual
+            Theme boundaries are accepted, and which provider choices remain
+            deliberately open.
           </p>
           <Link className="button button-dark" to="/architecture">
             Explore the architecture <span aria-hidden="true">→</span>
@@ -981,7 +984,8 @@ function StoryArchitecture() {
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The useful split</p>
           <h2>
-            Remembering, permission, and generation are three different jobs.
+            Remembering, permission, generation, and visual continuity are
+            different jobs.
           </h2>
         </div>
 
@@ -1016,6 +1020,18 @@ function StoryArchitecture() {
               Story Generation consumes a minimized input and returns
               candidates. It does not own family authority, Story persistence,
               or child visibility.
+            </p>
+          </article>
+          <article>
+            <span className="role-icon" aria-hidden="true">
+              ◇
+            </span>
+            <h3>Visualize</h3>
+            <p>
+              The accepted Visual Theme System keeps one versioned theme,
+              recurring cast, and structured scene intent coherent across a
+              story. A renderer is replaceable; it does not become the visual
+              domain authority.
             </p>
           </article>
         </div>
@@ -1731,6 +1747,10 @@ function Development() {
       'Sprint 3 · protected authoring workspace underway',
       'Story Studio home and exact-story navigation now lead into real direct page editing, deterministic cover editing, and earlier-version preview/restore. Generation, assisted changes, approval, and the final end-to-end outcome remain unfinished.',
     ],
+    [
+      'Sprint 4 · Visual Theme System direction accepted, not started',
+      'The next visual layer is now defined around a versioned visual theme, recurring cast, structured scene plans, and replaceable renderers. The first renderer is intended to be controlled and no-photo; richer AI-image, likeness, and print paths remain separately gated.',
+    ],
   ];
 
   return (
@@ -1743,8 +1763,9 @@ function Development() {
           The project did not move in a straight line from “idea” to “features.”
           Each sprint exposed a boundary that needed to become clearer: first
           family authority, then evolving child context, then the difference
-          between Story truth, context permission, and generation. The October 5
-          checkpoint also shows where those boundaries have become real code.
+          between Story truth, context permission, generation, and visual
+          continuity. The October 7 checkpoint also records the accepted Visual
+          Theme System direction without presenting Sprint 4 as started.
         </p>
       </PageIntro>
 
@@ -1764,9 +1785,10 @@ function Development() {
           <h2>One development story, three equally visible chapters.</h2>
           <p>
             Sprint 1 keeps its original deep link, but it no longer gets special
-            treatment in the main header. Sprint 1, 2, and 3 live together here,
-            each with its own public-safe chapter and an explicit distinction
-            between implementation progress and outcome-gate status.
+            treatment in the main header. Sprint 1, 2, and 3 live together here
+            as the current implementation chapters. Sprint 4's newly accepted
+            Visual Theme System direction is recorded above and in the roadmap,
+            but it is not presented as an active implementation chapter.
           </p>
         </div>
 
@@ -1861,7 +1883,11 @@ function HowWeBuild() {
     [deliverySnapshot.pullRequestsMerged, 'pull requests', 'merged'],
     [deliverySnapshot.issuesTracked, 'issues', 'tracked'],
     [deliverySnapshot.taskIssues, 'task issues', 'implementation / validation'],
-    [deliverySnapshot.workflowRuns, 'workflow runs', 'GitHub Actions'],
+    [
+      deliverySnapshot.workflowDefinitions,
+      'CI workflows',
+      'main product definitions',
+    ],
   ] as const;
 
   const workflowChecks = [
@@ -1942,11 +1968,13 @@ function HowWeBuild() {
               {deliverySnapshot.workflowDefinitions} main product CI workflows
             </h2>
             <p>
-              {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of the{' '}
-              {deliverySnapshot.workflowRuns.toLocaleString()} recorded workflow
-              runs completed successfully in this snapshot. Runs include PR,
-              push, scheduled, and manually triggered verification, so this is
-              an activity count rather than a pass-rate score.
+              Repository-wide workflow-run history was last fully verified on{' '}
+              {deliverySnapshot.workflowRunsSnapshotDate}:{' '}
+              {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
+              {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
+              completed successfully. Those run totals stay attached to that
+              older checkpoint instead of being silently relabeled as October 7
+              telemetry.
             </p>
           </article>
         </div>
@@ -2054,8 +2082,10 @@ function HowWeBuild() {
         </div>
 
         <p className="public-boundary-note">
-          Snapshot counts are intentionally dated rather than presented as live
-          telemetry. The public site does not call the private repository or
+          Repository counts are intentionally dated rather than presented as
+          live telemetry. The October 7 repository totals and the separately
+          dated October 5 workflow-run history make their evidence windows
+          explicit. The public site does not call the private repository or
           require a GitHub token in the browser.
         </p>
       </section>
@@ -2239,6 +2269,10 @@ function Architecture() {
       'Story Generation',
       'Consumes minimized versioned artifacts and returns candidate plans, pages, rewrites, and findings. It does not own Story persistence or family authorization.',
     ],
+    [
+      'Visual Theme System',
+      'Accepted for Sprint 4: owns versioned visual theme, cast, scene-plan, renderer, continuity, and parent-review contracts. The controlled foundation does not require an external image provider and is not implemented yet.',
+    ],
   ];
 
   return (
@@ -2334,7 +2368,9 @@ function Architecture() {
               navigation, direct page-text editing, cover editing, revision
               history, and lower-level generation foundations now make more of
               that split executable, while Context Selection and Generation
-              remain incomplete.
+              remain incomplete. Sprint 4 now adds an accepted Visual Theme
+              System boundary for coherent visuals, but that capability has not
+              started implementation.
             </p>
           </article>
         </div>
@@ -2369,10 +2405,11 @@ function Architecture() {
             <small>Application-owned persistence boundaries</small>
           </div>
           <p>
-            Discovery and Story Generation are extractable logical boundaries.
-            Worker extraction, durable workflow technology, message broker,
-            deployment platform, and production adapters remain evidence-led
-            decisions rather than assumed infrastructure.
+            Discovery, Story Generation, and the future Visual Theme System are
+            logical capability boundaries. Worker extraction, durable workflow
+            technology, message broker, deployment platform, image-provider
+            adapters, and production adapters remain evidence-led decisions
+            rather than assumed infrastructure.
           </p>
         </div>
 
@@ -2386,6 +2423,12 @@ function Architecture() {
           <Definition term="Logical boundary first">
             A capability gets a clear owner and contract before the project pays
             the operational cost of another network service.
+          </Definition>
+          <Definition term="Visual contract before image provider">
+            Sprint 4 can prove theme, cast, scene-plan, continuity, retry, and
+            parent-review behavior with a controlled no-photo renderer. An
+            external image provider becomes relevant only when a later renderer
+            actually needs one.
           </Definition>
           <Definition term="Converging codebase">
             Transitional architecture is being removed as the boundaries become

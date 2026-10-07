@@ -13,20 +13,20 @@ The September 2 screenshots remain useful evidence of the design foundation that
 | Design    | Mobile, 390 × 844    | Wrapped persistent navigation, editorial hierarchy, typography, and responsive design-language UI                  | [design mobile](assets/design-mobile.png)         |
 | Decisions | Mobile, 390 × 844    | Wrapped navigation, readable page title, knowledge-status legend, and one-column presentation                      | [decisions mobile](assets/decisions-mobile.png)   |
 
-## October 5 visual-review requirements
+## October 7 visual-review requirements
 
 The content update intentionally reuses the established components, palette, typography, cards, status treatments, and responsive rules rather than introducing a redesign.
 
 Before merge or publication, inspect at representative desktop and narrow-mobile widths:
 
-- Home: October 5 checkpoint wording, the demonstrated Sprint 2 local outcome, the separate real-family release boundary, and current Story Studio progress.
-- Development story: four-stage evolution, equal Sprint 1/2/3 chapter cards, and local-outcome-vs-release-readiness wording.
+- Home: October 7 checkpoint wording, the demonstrated Sprint 2 local outcome, current Story Studio progress, and the accepted-but-not-started Visual Theme System direction.
+- Development story: the five-step evolution through the accepted Sprint 4 direction, equal active Sprint 1/2/3 chapter cards, and clear separation between accepted future scope and implementation progress.
 - Sprint 2: demonstrated synthetic/local outcome, deterministic Discovery evolution, temporal examples, and explicit qualified-release boundary.
 - Sprint 3: integrated authoring slices, landed/underway/later flow, and explicit generation/assisted-change/approval non-completion wording.
-- Architecture: data-driven Discovery, partial Story Lifecycle implementation, and accepted-but-incomplete Context Selection/Generation boundaries.
-- How we build: the explicitly dated October 5 delivery snapshot, 4-main-workflow count, expanded idea → decision → issue → review loop, agent-assisted/repository-owned methodology, and clear separation from retrospective content.
+- Architecture: data-driven Discovery, partial Story Lifecycle implementation, accepted-but-incomplete Context Selection/Generation boundaries, and Visual Theme System shown as accepted but not implemented.
+- How we build: the explicitly dated October 7 repository snapshot, 4-main-workflow count, separately dated October 5 workflow-run history, expanded idea → decision → issue → review loop, and agent-assisted/repository-owned methodology.
 - What we learned: candid “what broke / what changed” experiment cards, the ongoing specialist-agent experiment boundary, the founder's “AI laboratory” learning reflection, and the “real users / real AI / first staging deployment” frontier.
-- Roadmap: preserved deeper route with long status copy, especially Sprint 1 through Sprint 3, with Sprint 2 synthetic/local closure not mistaken for real-family Alpha readiness.
+- Roadmap: preserved deeper route with Sprint 1 through Sprint 3 status, Sprint 4 renamed to Visual Theme System with "Accepted direction - not started", and Sprint 2 synthetic/local closure not mistaken for real-family Alpha readiness.
 - Sprint 1: open-gate wording, evidence list, and public-boundary note.
 - Design: continuity wording while preserving the existing visual recipe.
 - Decisions: larger public-entry set and long source/related text.

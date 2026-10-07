@@ -1,15 +1,16 @@
 {
-  "snapshotDate": "October 5, 2026",
+  "snapshotDate": "October 7, 2026",
   "scope": "TinyCustomStories/tiny-custom-stories · development branch and repository activity",
-  "commits": 1262,
-  "pullRequestsCreated": 497,
-  "pullRequestsMerged": 464,
-  "issuesTracked": 401,
-  "taskIssues": 347,
-  "closedIssues": 305,
-  "openIssues": 96,
+  "commits": 1305,
+  "pullRequestsCreated": 541,
+  "pullRequestsMerged": 507,
+  "issuesTracked": 422,
+  "taskIssues": 363,
+  "closedIssues": 334,
+  "openIssues": 88,
   "plannedSprints": 7,
   "workflowDefinitions": 4,
   "workflowRuns": 1344,
-  "successfulWorkflowRuns": 941
+  "successfulWorkflowRuns": 941,
+  "workflowRunsSnapshotDate": "October 5, 2026"
 }

@@ -112,6 +112,7 @@ describe('project story site', () => {
     expect(screen.getByText('Story Lifecycle')).toBeTruthy();
     expect(screen.getByText('Story Context Selection')).toBeTruthy();
     expect(screen.getByText('Story Generation')).toBeTruthy();
+    expect(screen.getByText('Visual Theme System')).toBeTruthy();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
     expect(
@@ -210,6 +211,8 @@ describe('project story site', () => {
     expect(
       screen.getByText(/Authoring workspace underway - outcome gate open/i),
     ).toBeTruthy();
+    expect(screen.getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
+    expect(screen.getByText(/Accepted direction - not started/i)).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 
@@ -218,12 +221,11 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(screen.getByText('1,262')).toBeTruthy();
-    expect(screen.getByText('497')).toBeTruthy();
-    expect(screen.getByText('1,344')).toBeTruthy();
-    expect(
-      screen.getByText(/941 of the 1,344 recorded workflow runs/i),
-    ).toBeTruthy();
+    expect(screen.getByText('1,305')).toBeTruthy();
+    expect(screen.getByText('541')).toBeTruthy();
+    expect(screen.getByText('4')).toBeTruthy();
+    expect(screen.getByText(/941 of 1,344 recorded runs/i)).toBeTruthy();
+    expect(screen.getByText(/October 5, 2026:/i)).toBeTruthy();
     expect(screen.getByText('Frontend CI')).toBeTruthy();
     expect(screen.getByText('Backend CI')).toBeTruthy();
     expect(screen.getByText('Repository tools CI')).toBeTruthy();

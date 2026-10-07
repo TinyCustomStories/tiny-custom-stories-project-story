@@ -9,7 +9,7 @@ The public site is a multi-route single-page application with two reading modes 
 - [Wireframes](Wireframes.md) describe the information architecture, conceptual architecture, and intended responsive layouts in accessible text diagrams.
 - [Screenshot evidence](ScreenshotEvidence.md) records reviewed visual states and the conditions under which they were captured.
 - [Architecture explorer](ArchitectureExplorer.md) defines the public-safe Archify derivative, stable asset paths, curation boundary, and refresh contract.
-- The shared **Story / Builder** toggle is persistent across routes. Story mode supplies narrative versions of the primary public pages; Builder mode retains the detailed October 5 technical material.
+- The shared **Story / Builder** toggle is persistent across routes. Story mode supplies narrative versions of the primary public pages; Builder mode retains the detailed technical material, now refreshed through October 7.
 - In Story mode, **How we build** explains the human workflow behind small tasks, specialist agents, repository-owned memory, review loops, testing, and documentation. In Builder mode it contains the dated, public-safe activity snapshot and the exact current delivery/verification system.
 - The **What we learned** route separately holds engineering retrospectives, failed experiments, tool-pilot outcomes, founder learning, and the next unresolved delivery frontier so process mechanics and lessons do not compete on one page.
 - **Decisions**, **Roadmap**, and **Open questions** remain stable public routes but are deliberately removed from the main header and linked contextually from Development story.
