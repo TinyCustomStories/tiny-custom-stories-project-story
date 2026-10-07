@@ -2,23 +2,34 @@
 
 This directory explains the public Tiny Custom Stories project-story site in a format that can be read without opening the application.
 
-The public site is a multi-route single-page application. A route is a stable browser address that presents one topic at a time while the application remains loaded. The September routes remain valid; the October 5 refresh updates their evidence and status without replacing the established information architecture. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 are presented together beneath Development story instead of giving one sprint a unique header position.
+The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story instead of giving one sprint a unique header position.
 
 ## What is documented here
 
 - [Wireframes](Wireframes.md) describe the information architecture, conceptual architecture, and intended responsive layouts in accessible text diagrams.
 - [Screenshot evidence](ScreenshotEvidence.md) records reviewed visual states and the conditions under which they were captured.
 - [Architecture explorer](ArchitectureExplorer.md) defines the public-safe Archify derivative, stable asset paths, curation boundary, and refresh contract.
-- The **How we build** route contains the dated, public-safe activity snapshot from the main product repository and the current delivery/verification system. It is intentionally static rather than browser-connected to the private repository.
+- The shared **Story / Builder** toggle is persistent across routes. Story mode supplies narrative versions of the primary public pages; Builder mode retains the detailed October 5 technical material.
+- In Story mode, **How we build** explains the human workflow behind small tasks, specialist agents, repository-owned memory, review loops, testing, and documentation. In Builder mode it contains the dated, public-safe activity snapshot and the exact current delivery/verification system.
 - The **What we learned** route separately holds engineering retrospectives, failed experiments, tool-pilot outcomes, founder learning, and the next unresolved delivery frontier so process mechanics and lessons do not compete on one page.
 - **Decisions**, **Roadmap**, and **Open questions** remain stable public routes but are deliberately removed from the main header and linked contextually from Development story.
 - The [Public Project Dossier](../../public/documents/tiny-custom-stories-project-dossier.pdf) is a portable companion at a stable path. It supports the website rather than replacing the website's semantic, responsive version.
 
 These documents describe the public-information experience only. They do not expose the private implementation repository, adopt policy from exploratory material, or publish security-sensitive operating detail.
 
+## Reading-mode rule
+
+The two modes are not separate sites and must not drift into different factual realities. They share routes, project status, public-safety boundaries, and the same underlying evidence.
+
+- **Story mode** may simplify terminology, use examples, explain motives, and spend more words on cause-and-effect.
+- **Builder mode** may use exact capability names, status vocabulary, dated evidence, and working-record links.
+- A Story-mode simplification must never upgrade incomplete work into a completed claim.
+- A Builder-mode detail should not be copied into Story mode merely because it exists; the narrative should include it only when it helps the reader understand why the product or process changed.
+- Working-record routes can remain Builder-like even when reached from Story mode. They are the receipts underneath the narrative.
+
 ## Design continuity
 
-The October 5 refresh is an additive evolution of the September 24/25 site and the October 1 evidence refresh.
+The October 6 reading-mode refresh is an additive evolution of the September 24/25 site and the October 1 evidence refresh.
 
 The public story remains the **Public editorial** surface from the accepted Tiny Custom Stories design language: warm paper-like surfaces, deep ink, restrained playful accents, large editorial type, visible knowledge status, strong hierarchy, accessibility, and responsive recomposition.
 
@@ -77,7 +88,7 @@ Sprint 2’s accepted synthetic/local outcome is now demonstrated, while qualifi
 
 ## Maintenance rule
 
-When a public-site route, hierarchy, responsive behavior, or knowledge-status claim changes:
+When a public-site route, reading mode, hierarchy, responsive behavior, or knowledge-status claim changes:
 
 1. update the relevant wireframe and public documentation;
 2. preserve old fragment routes where practical;
