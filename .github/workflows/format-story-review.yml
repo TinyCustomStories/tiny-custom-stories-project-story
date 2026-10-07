@@ -1,0 +1,41 @@
+name: Format Story Review Fixes
+
+on:
+  push:
+    branches:
+      - feat/story-builder-reading-modes
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24.20.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Format repository
+        run: npm run format
+
+      - name: Commit formatter output
+        run: |
+          if git diff --quiet; then
+            echo "No formatter changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: format review fixes"
+          git push origin HEAD:feat/story-builder-reading-modes
