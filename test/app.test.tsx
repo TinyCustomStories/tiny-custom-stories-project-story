@@ -41,6 +41,9 @@ describe('project story site', () => {
     ).toBeTruthy();
 
     fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
+    expect(window.localStorage.getItem('tcs-project-story-reading-mode')).toBe(
+      'builder',
+    );
     expect(
       screen.getByRole('heading', {
         name: /a child is not a prompt/i,
