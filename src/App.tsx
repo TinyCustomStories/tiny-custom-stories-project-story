@@ -869,6 +869,16 @@ function StoryDevelopment() {
       </PageIntro>
 
       <section className="section sprint-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">How the idea accumulated responsibilities</p>
+          <h2>Every new layer started as a simpler question.</h2>
+          <p>
+            The interesting part is not that the architecture became larger. It
+            is that each new boundary exists because an earlier shortcut stopped
+            being good enough.
+          </p>
+        </div>
+
         <div className="story-beat-grid">
           {beats.map(([title, detail], index) => (
             <article className="story-beat" key={title}>
@@ -1089,6 +1099,16 @@ function StoryHowWeBuild() {
       </PageIntro>
 
       <section className="section delivery-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">The operating experiment</p>
+          <h2>Keep the human decisions visible while automation does more of the typing.</h2>
+          <p>
+            The workflow keeps changing around one question: how do I get real
+            leverage from agents without letting speed erase product intent,
+            review, or repository memory?
+          </p>
+        </div>
+
         <div className="story-beat-grid">
           <article className="story-beat">
             <span>01</span>
@@ -1230,6 +1250,15 @@ function StoryLearnings() {
       </PageIntro>
 
       <section className="section delivery-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">The useful scars</p>
+          <h2>These are the mistakes and surprises that actually changed how we build.</h2>
+          <p>
+            A lesson earns a place here when it changes a workflow, an evidence
+            standard, a cost decision, or what I am willing to trust next time.
+          </p>
+        </div>
+
         <div className="story-beat-grid">
           {lessons.map(([title, detail], index) => (
             <article className="story-beat" key={title}>
@@ -1369,6 +1398,16 @@ function StoryLibrary() {
       </PageIntro>
 
       <section className="section library-section">
+        <div className="sprint-chapter-intro">
+          <p className="eyebrow">Translation, not replication</p>
+          <h2>The public story is edited on purpose.</h2>
+          <p>
+            Internal material is optimized for building. Public material is
+            optimized for understanding. The job is to preserve the truth while
+            changing the level of detail.
+          </p>
+        </div>
+
         <div className="story-beat-grid">
           <article className="story-beat">
             <span>01</span>
