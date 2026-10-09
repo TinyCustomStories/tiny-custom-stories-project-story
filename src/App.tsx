@@ -240,11 +240,11 @@ function Home() {
           <strong>synthetic-only sequencing exception</strong>. Story Studio
           home, direct page and cover editing, earlier revisions, and early
           saved-profile setup have landed. Full generation, integrated approval,
-          and the end-to-end outcome remain open. Sprint 4 now
-          has an accepted Visual Theme System direction, but it has not started
-          and no external image provider or likeness flow is approved by that
-          decision. Real-family Alpha use still requires qualified release
-          review and later safety, security, and deployment gates.
+          and the end-to-end outcome remain open. Sprint 4 now has an accepted
+          Visual Theme System direction, but it has not started and no external
+          image provider or likeness flow is approved by that decision.
+          Real-family Alpha use still requires qualified release review and
+          later safety, security, and deployment gates.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
