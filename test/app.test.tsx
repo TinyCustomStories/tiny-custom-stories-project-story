@@ -318,13 +318,21 @@ describe('project story site', () => {
     expect(screen.getByText(/The new integration rhythm/i)).toBeTruthy();
     expect(screen.getAllByText(/manually/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/Tasks live inside epics/i)).toBeTruthy();
-    fireEvent.click(screen.getAllByRole('link', { name: 'What we learned' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'What we learned' })[0],
+    );
     expect(screen.getByText('Task success was not epic success')).toBeTruthy();
-    expect(screen.getByText('We almost made model selection another feature')).toBeTruthy();
-    fireEvent.click(screen.getAllByRole('link', { name: 'Development story' })[0]);
+    expect(
+      screen.getByText('We almost made model selection another feature'),
+    ).toBeTruthy();
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
     expect(screen.getByText(/founder-configured OpenRouter/i)).toBeTruthy();
-    expect(screen.getByText(/Profile-based entry and canonical saved-child setup/i)).toBeTruthy();
+    expect(
+      screen.getByText(/Profile-based entry and canonical saved-child setup/i),
+    ).toBeTruthy();
   });
 
   it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {

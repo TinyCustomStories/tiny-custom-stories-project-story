@@ -2084,7 +2084,9 @@ function HowWeBuild() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">The new integration rhythm</p>
-            <h2>Tasks live inside epics. The stable branch receives reviewed slices.</h2>
+            <h2>
+              Tasks live inside epics. The stable branch receives reviewed slices.
+            </h2>
           </div>
           <ul>
             <li>
