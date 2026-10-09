@@ -404,10 +404,9 @@ function StoryHome() {
           demonstrated synthetic/local outcome.
         </p>
         <p>
-          Story Studio has real editing, revision, and early profile-based setup
-          slices. Full generation,
-          integrated approval, real-family release review, and deployment are
-          still ahead.
+          Story Studio has editing, revision history, and early profile-based
+          setup. Full generation, integrated approval, real-family release review,
+          and deployment are still ahead.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -2085,7 +2084,8 @@ function HowWeBuild() {
           <div>
             <p className="eyebrow">The new integration rhythm</p>
             <h2>
-              Tasks live inside epics. The stable branch receives reviewed slices.
+              Tasks live inside epics. The stable branch receives reviewed
+              slices.
             </h2>
           </div>
           <ul>
