@@ -274,6 +274,87 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
+    title: 'Protected Story Studio setup is connecting to the real profile',
+    summary:
+      'Merged early setup slices connect protected Story Studio entry to the canonical saved child profile, purpose, and feel/reading choices. This is progress toward a guided authoring flow, not proof that generation, full planning, assisted change, or approval is finished.',
+    category: 'Sprint 3',
+    date: '2026-10-09',
+    status: 'Verified fact',
+    source: 'October 8–9 Story Studio setup and integration checkpoints',
+    related: [
+      'Canonical child profile',
+      'Saved story setup',
+      'Final outcome still open',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Feature tasks now integrate through owned epic checkpoints',
+    summary:
+      'The accepted delivery workflow gives each normal feature task one owning epic and a focused PR into its integration branch. A coherent, reviewed epic checkpoint is integrated into development only after the affected exact-head verification; the hierarchy migration and rollout remain work in progress.',
+    category: 'Delivery practice',
+    date: '2026-10-08',
+    status: 'Confirmed decision',
+    source: 'October 8 epic-scoped integration workflow',
+    related: [
+      'Native epic ownership',
+      'Stable development branch',
+      'Pilot and migration still being reconciled',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Hosted product CI now runs at epic checkpoints, not task PRs',
+    summary:
+      'Under the October 9 policy, task changes use substantive review and proportionate local tests. Hosted product suites are manually dispatched on epic branches; affected non-browser suites must succeed on the final epic head for a checkpoint. Browser runs are optional, and actual repository protection remains binding.',
+    category: 'Delivery practice',
+    date: '2026-10-09',
+    status: 'Confirmed decision',
+    source: 'DEC-2026-075',
+    related: [
+      'Local task verification',
+      'Exact-head epic checkpoint evidence',
+      'Optional browser tests',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'One GitHub snapshot, many focused agent handoffs',
+    summary:
+      'The agent workflow now documents shared Project snapshots and bounded reads, live checks before meaningful writes or merges, serialized mutations, and respectful rate-limit backoff. It does not promise that GitHub limits have already been reduced or use credential rotation to evade quotas.',
+    category: 'Delivery practice',
+    date: '2026-10-09',
+    status: 'Verified fact',
+    source: 'October 9 merged agent request-budget guidance',
+    related: [
+      'Coordinator-owned snapshot',
+      'Verified live gates',
+      'No measured performance claim',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title:
+      'Founder-operated text-model choice stays outside the family product',
+    summary:
+      'The accepted plan is a provider-neutral Story Generation port with OpenRouter as the first intended server-configured adapter. The founder chooses synthetic-test models and judges output and cost manually; no model lab or automatic paid fallback is a Sprint 3 prerequisite. Real-family transfer still requires independent safety, privacy, and route-specific clearance.',
+    category: 'Architecture',
+    date: '2026-10-09',
+    status: 'Confirmed decision',
+    source: 'DEC-2026-076',
+    related: [
+      'Synthetic development only',
+      'No app-hosted model competition',
+      'Release clearance not granted',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
     title: 'Paper-and-ink design language remains the shared visual foundation',
     summary:
       'The accepted philosophy and visual recipe continue to guide child, parent, public, and serious surfaces while allowing each surface to serve a different audience and responsibility.',
@@ -347,7 +428,7 @@ export const milestones: Milestone[] = [
     title: 'Sprint 3 - Story Studio composition',
     state: 'Authoring workspace underway - outcome gate open',
     status: 'Verified fact',
-    note: 'Protected Story Studio navigation, direct page-text editing, deterministic cover editing, and Earlier Versions preview/restore now exist under the synthetic-only exception. Full generation, integrated assisted flows, approval, and final outcome proof remain ahead.',
+    note: 'Protected Studio entry, canonical child-profile setup, purpose/reading setup slices, page/cover editing, and Earlier Versions are present under the synthetic-only exception. Full planning, generation, assisted flows, approval, and final outcome proof remain ahead.',
   },
   {
     title: 'Sprint 4 - Visual Theme System',

@@ -8,7 +8,19 @@ The published site is expected at [tinycustomstories.github.io/tiny-custom-stori
 
 Story mode is the default. The Story / Builder toggle stays available in the shared header and preserves the current route, so a reader can move from a narrative explanation to the technical version of the same subject without starting over. Working-record routes such as Decisions, Roadmap, Open questions, and the Sprint chapters remain available beneath the primary narrative rather than being duplicated into a second site.
 
-The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries the newer October 7 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries newer October 9 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+
+## What changed in the October 9 delivery and Story Studio refresh
+
+This update uses the Project Story Sync workflow and current October 8–9 repository evidence. It adds the next chapter rather than replacing the site's Story/Builder reading modes or editorial design.
+
+- **Story Studio:** The site now describes merged protected profile-based entry, saved setup/purpose, and early feel/reading slices alongside direct page/cover editing and version restore. Complete Story Plan, generation, assisted revisions, approval, and the end-to-end Sprint 3 outcome remain open.
+- **Delivery workflow:** Normal feature issues now have one intended owning epic, task PRs integrate into an epic branch, and coherent reviewed checkpoints integrate into `development`. The native hierarchy migration and broader rollout are not presented as universally finished.
+- **CI cost:** The October 9 accepted product policy supersedes the earlier daily/monthly and task-hosted cadence: tasks receive local verification and substantive review; affected hosted suites are manual, epic-branch-only, and exact-head for checkpoints; hosted browser tests are optional. Actual required GitHub checks still apply. The separate public-story repository retains its own existing PR CI.
+- **Coordination and learning:** The narrative now explains bounded Superset coordination, shared Projects snapshots, narrow request choices, live verification for important writes/merges, rate-limit pacing, and the lessons behind these tradeoffs. No measured API savings or always-on automation are claimed.
+- **Text models:** The October 9 accepted direction is a founder-configured, provider-neutral synthetic text path with OpenRouter as the first intended adapter. This is not a shipped AI Lab, model leaderboard, default paid fallback, real-family transfer approval, or proof that live generation is complete.
+- **Verified repository activity:** As of October 9, `development` has **1,515 reachable commits** (GitHub REST commit-list pagination), and repository issue search reports **614 PRs created / 578 merged**, **454 issues tracked** (**385 labeled task issues**, **371 closed / 83 open**), with **4 main product CI workflow definitions**. These are repository totals, not a productivity score. The previously verified **1,344 workflow runs / 941 successful** remain explicitly dated October 5 rather than being recomputed without evidence.
+- **Compatibility:** Stable fragment routes, mobile brand and reading-mode placement, Sprint 1–3 hierarchy, private/public separation, public architecture explorer and its curated source, and the October 1 PDF dossier path/checkpoint remain unchanged. This refresh does not regenerate the dossier or export private issue content.
 
 ## What changed in the October 7 Visual Theme and statistics refresh
 

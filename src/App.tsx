@@ -171,7 +171,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 7, 2026
+            A public project story · updated October 9, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -238,12 +238,13 @@ function Home() {
         <p>
           Sprint 3 continues under the{' '}
           <strong>synthetic-only sequencing exception</strong>. Story Studio
-          home, direct page editing, cover editing, and revision history have
-          landed, while full generation and approval remain open. Sprint 4 now
-          has an accepted Visual Theme System direction, but it has not started
-          and no external image provider or likeness flow is approved by that
-          decision. Real-family Alpha use still requires qualified release
-          review and later safety, security, and deployment gates.
+          home, direct page and cover editing, earlier revisions, and early
+          saved-profile setup have landed. Full generation, integrated approval,
+          and the end-to-end outcome remain open. Sprint 4 now has an accepted
+          Visual Theme System direction, but it has not started and no external
+          image provider or likeness flow is approved by that decision.
+          Real-family Alpha use still requires qualified release review and
+          later safety, security, and deployment gates.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -403,9 +404,9 @@ function StoryHome() {
           demonstrated synthetic/local outcome.
         </p>
         <p>
-          Story Studio has real editing and revision slices. Full generation,
-          integrated approval, real-family release review, and deployment are
-          still ahead.
+          Story Studio has editing, revision history, and early profile-based
+          setup. Full generation, integrated approval, real-family release
+          review, and deployment are still ahead.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -1171,10 +1172,10 @@ function StoryHowWeBuild() {
             <span>05</span>
             <h3>Tests are evidence, not religious artifacts</h3>
             <p>
-              Fast checks belong on pull requests. Expensive browser suites do
-              not automatically belong everywhere. The project keeps changing
-              where evidence is collected as cost and failure modes become
-              clearer.
+              Task pull requests now use substantive review and proportionate
+              local checks. Affected hosted suites run by manual dispatch on
+              epic branches at integration checkpoints; browser runs are
+              optional, not a tax on every change.
             </p>
           </article>
           <article className="story-beat">
@@ -1184,6 +1185,26 @@ function StoryHowWeBuild() {
               Architecture maps, decisions, public explanations, sprint gates,
               and lessons are not cleanup after coding. They are part of keeping
               many small AI-assisted changes pointed at the same product.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>07</span>
+            <h3>Big features got their own integration lanes</h3>
+            <p>
+              Several small task PRs may be individually sound without adding up
+              to a usable feature. We now assemble them in an epic branch,
+              review the integrated slice, and only then bring a checkpoint to
+              the stable development branch.
+            </p>
+          </article>
+          <article className="story-beat">
+            <span>08</span>
+            <h3>One shared snapshot, not eight conflicting memories</h3>
+            <p>
+              The coordinator shares a dated project view rather than letting
+              every agent re-fetch the board. Important decisions still verify
+              live GitHub state: a cache can save time, but it cannot approve a
+              merge or prove that a dependency landed.
             </p>
           </article>
         </div>
@@ -1206,11 +1227,11 @@ function StoryHowWeBuild() {
           <i aria-hidden="true">→</i>
           <span>Agent implementation</span>
           <i aria-hidden="true">→</i>
-          <span>PR + evidence</span>
+          <span>Task PR + local evidence</span>
           <i aria-hidden="true">→</i>
           <span>Review + fixes</span>
           <i aria-hidden="true">→</i>
-          <span>Outcome</span>
+          <span>Epic checkpoint + outcome</span>
         </div>
 
         <div className="reading-panel">
@@ -1230,7 +1251,7 @@ function StoryLearnings() {
   const lessons = [
     [
       'We spent too much money proving the same browser thing repeatedly',
-      'The browser suite was valuable, so we ran it constantly. That eventually became expensive enough for GitHub Actions to stop starting jobs. The fix was not “testing is bad”; it was separating fast PR gates from broad scheduled/manual browser evidence.',
+      'The browser suite was valuable, so we ran it constantly. That eventually became expensive enough for GitHub Actions to stop starting jobs. The fix was not “testing is bad”; it was moving hosted checks to deliberate epic checkpoints, keeping task-PR checks local, and making browser runs optional.',
     ],
     [
       'A green frontend test and a green API test can still avoid meeting each other',
@@ -1251,6 +1272,18 @@ function StoryLearnings() {
     [
       'I am still nervous about the part that looks most like a “real startup”',
       'Live AI for actual users and the first staging deployment are more intimidating than another local feature. They introduce cost, observability, provider behavior, reliability, privacy, and operational mistakes that a local demo cannot teach.',
+    ],
+    [
+      'A passing task PR is not the same thing as a completed feature',
+      'Task branches can move fast while their combined behavior is still unproven. Epic integration and reviewed checkpoints give us somewhere to test the assembled result before calling the main development branch stable.',
+    ],
+    [
+      'Caching helps; treating a cache as permission is dangerous',
+      'Sharing one Project snapshot reduces repeated GitHub calls. But ownership, branch ancestry, status changes, and merge checks still need fresh evidence at the exact moment they matter.',
+    ],
+    [
+      'Choosing a model is not the same as proving a story is safe',
+      'Instead of building an AI model-comparison product inside the product, the founder can choose synthetic-test models through configuration. Story quality, privacy, and real-family provider clearance remain separate gates.',
     ],
   ];
 
@@ -1745,7 +1778,7 @@ function Development() {
     ],
     [
       'Sprint 3 · protected authoring workspace underway',
-      'Story Studio home and exact-story navigation now lead into real direct page editing, deterministic cover editing, and earlier-version preview/restore. Generation, assisted changes, approval, and the final end-to-end outcome remain unfinished.',
+      'Story Studio now has protected profile-based entry and early saved setup/purpose slices alongside direct page and cover editing and version restore. The full Story Plan, generation, assisted changes, approval, and final outcome are not complete.',
     ],
     [
       'Sprint 4 · Visual Theme System direction accepted, not started',
@@ -1764,8 +1797,9 @@ function Development() {
           Each sprint exposed a boundary that needed to become clearer: first
           family authority, then evolving child context, then the difference
           between Story truth, context permission, generation, and visual
-          continuity. The October 7 checkpoint also records the accepted Visual
-          Theme System direction without presenting Sprint 4 as started.
+          continuity. The October 9 checkpoint also records the next protected
+          Studio setup slices and a new epic-based delivery workflow, without
+          presenting Sprint 4 as started.
         </p>
       </PageIntro>
 
@@ -1818,8 +1852,9 @@ function Development() {
             <p className="eyebrow">Authoring workspace underway · gate open</p>
             <h3>Sprint 3</h3>
             <p>
-              Protected Story Studio navigation, direct text and cover editing,
-              revision history, plus unfinished generation and approval flows.
+              Protected Story Studio entry and saved setup slices, direct text
+              and cover editing, revision history, plus unfinished generation
+              and approval flows.
             </p>
             <b>Read Sprint 3 →</b>
           </Link>
@@ -1893,23 +1928,23 @@ function HowWeBuild() {
   const workflowChecks = [
     [
       'Frontend CI',
-      'Bootstrap tests, high-severity dependency audit, formatting, linting, type checks, production build, and frontend tests.',
+      'Formatting, linting, types, build, dependency audit, and frontend tests. Hosted execution is manually dispatched on an epic branch for an affected integration checkpoint.',
     ],
     [
       'Backend CI',
-      'Restore/audit, formatting, warnings-as-errors build, generated OpenAPI drift checks, MongoDB startup, API tests, and migration/startup smoke tests.',
+      'Restore/audit, formatting, build, API/OpenAPI and MongoDB startup/migration checks. Hosted execution is manual on the exact final epic head when this suite is affected.',
     ],
     [
       'Repository tools CI',
-      'Repository helper, dependency, and workflow-support checks protect the project automation used to plan and deliver work.',
+      'Repository helper, dependency, and workflow-support checks protect planning and delivery. Affected hosted checks run at epic checkpoints, not on every task PR.',
     ],
     [
       'Browser evidence',
-      'Scheduled or manually triggered Playwright Chromium smoke tests provide browser and screenshot evidence without charging every pull request for the full suite.',
+      'Browser tests are optional, manually dispatched epic-level evidence. Task PRs use local and reviewed UI/accessibility evidence instead of requiring expensive hosted browser runs.',
     ],
     [
       'Public-story CI',
-      'The separate public-story repository generates its dossier, then checks formatting, linting, TypeScript, production build, and tests before publication.',
+      'The separate public-story repository has its own PR verification and deployment workflow; it checks its dossier, formatting, linting, TypeScript, build, and component tests independently of product epic CI.',
     ],
   ] as const;
 
@@ -1973,7 +2008,7 @@ function HowWeBuild() {
               {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
               {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
               completed successfully. Those run totals stay attached to that
-              older checkpoint instead of being silently relabeled as October 7
+              older checkpoint instead of being silently relabeled as October 9
               telemetry.
             </p>
           </article>
@@ -2000,11 +2035,13 @@ function HowWeBuild() {
           <i aria-hidden="true">→</i>
           <span>Implementation</span>
           <i aria-hidden="true">→</i>
-          <span>PR + CI evidence</span>
+          <span>Task PR + local evidence</span>
           <i aria-hidden="true">→</i>
           <span>Review / fixes / re-review</span>
           <i aria-hidden="true">→</i>
-          <span>Merge + outcome evidence</span>
+          <span>Epic checkpoint + manual CI</span>
+          <i aria-hidden="true">→</i>
+          <span>Outcome evidence</span>
         </div>
 
         <div className="evidence-panel">
@@ -2020,9 +2057,9 @@ function HowWeBuild() {
               implementation-ready issues with explicit dependency chains.
             </li>
             <li>
-              Independent tasks can be executed concurrently in isolated
-              branches or sessions; neighboring tasks do not silently share a
-              working branch.
+              Independent tasks use isolated branches or sessions. Each normal
+              feature task is integrated into its owning epic branch before an
+              intentionally reviewed checkpoint reaches development.
             </li>
             <li>
               Behavior-changing work defaults toward test-first reasoning where
@@ -2045,8 +2082,47 @@ function HowWeBuild() {
 
         <div className="evidence-panel">
           <div>
+            <p className="eyebrow">The new integration rhythm</p>
+            <h2>
+              Tasks live inside epics. The stable branch receives reviewed
+              slices.
+            </h2>
+          </div>
+          <ul>
+            <li>
+              Each normal feature issue has one owning epic; issue ownership,
+              sprint planning, and the branch where changes integrate are
+              distinct concepts. Legacy work is being reconciled rather than
+              quietly assigned by guesswork.
+            </li>
+            <li>
+              Task PRs target their verified epic branch. Reviewed, coherent
+              epic checkpoints then integrate into development; an individual
+              task merge does not by itself demonstrate a complete feature.
+            </li>
+            <li>
+              A local Superset coordinator can dispatch bounded, isolated
+              workers. Specialist agents handle product decisions, backlog,
+              status truth, implementation, reviews, and public storytelling.
+            </li>
+            <li>
+              Coordinated sessions share a dated GitHub Project snapshot and use
+              focused reads. Status mutations, dependency ancestry, and
+              final-head merge gates still require fresh verification.
+            </li>
+            <li>
+              Product task PRs use local verification and substantive review.
+              Required affected hosted suites are manually run on the exact
+              final epic head before its checkpoint merges into development;
+              browser execution is optional.
+            </li>
+          </ul>
+        </div>
+
+        <div className="evidence-panel">
+          <div>
             <p className="eyebrow">Why the checks matter</p>
-            <h2>CI is part of the product-development method.</h2>
+            <h2>Checks should protect the right integration boundary.</h2>
           </div>
           <ul>
             <li>Formatting and linting keep implementation drift visible.</li>
@@ -2066,8 +2142,8 @@ function HowWeBuild() {
               assumptions.
             </li>
             <li>
-              Browser smoke tests and captured screenshots prove important flows
-              beyond unit tests.
+              Optional browser smoke tests and captured screenshots add evidence
+              for meaningful integrated UI flows when warranted.
             </li>
           </ul>
         </div>
@@ -2083,7 +2159,7 @@ function HowWeBuild() {
 
         <p className="public-boundary-note">
           Repository counts are intentionally dated rather than presented as
-          live telemetry. The October 7 repository totals and the separately
+          live telemetry. The October 9 repository totals and the separately
           dated October 5 workflow-run history make their evidence windows
           explicit. The public site does not call the private repository or
           require a GitHub token in the browser.
@@ -2097,7 +2173,7 @@ function Learnings() {
   const buildLessons = [
     [
       'We ran too much browser CI',
-      'The broad Playwright and screenshot suite was useful, but running it on nearly every pull request made browser verification disproportionately expensive. GitHub Actions eventually stopped starting jobs when the budget was exhausted. We kept fast deterministic PR gates and moved broad browser coverage to weekly/manual runs, while still using focused browser evidence when a risky UI change needs it.',
+      'The Playwright and screenshot suite was useful, but running it on nearly every task PR made verification too expensive. We tried lighter cadences and then adopted a clearer rule: proportionate local checks and review for tasks, manually dispatched affected CI suites on final epic heads, and optional browser evidence at epic checkpoints. Actual GitHub protection still applies.',
     ],
     [
       'Green tests did not prove the assembled product',
@@ -2105,11 +2181,19 @@ function Learnings() {
     ],
     [
       'Our agents were competing for one API budget',
-      'Parallel sessions repeatedly asked GitHub Projects for the same state and shared one GraphQL quota. When that rate limit became a recurring blocker, we changed the workflow: one timestamped project snapshot can be shared across workers, ordinary issue/PR reads prefer cheaper paths, and live project reads are reserved for mutations or meaningful refresh points.',
+      'Parallel sessions repeatedly asked GitHub Projects for the same state and shared one GraphQL quota. When that rate limit became a recurring blocker, we wrote a shared-request policy: one coordinator-owned snapshot, targeted REST for narrow reads, bounded GraphQL where it pays off, serialized writes, and backoff. Live reads still guard consequential writes and merges; we have not measured a resulting rate-limit reduction yet.',
     ],
     [
       'New tools have to earn a permanent place',
       'We pilot tools with an explicit possibility of saying no. Graphify produced a useful local code graph, but the pilot recommended holding workflow integration rather than adding machinery without enough value. Archify earned a narrower role because a maintained architecture map proved useful enough to keep and publish in a curated public form.',
+    ],
+    [
+      'Task success was not epic success',
+      'Independent task PRs can each pass review while the combined feature is still incomplete. The new epic integration lanes give a cohesive feature slice an explicit review, exact-head verification, and checkpoint before it enters the stable development branch.',
+    ],
+    [
+      'We almost made model selection another feature',
+      'A configurable synthetic-only text provider now makes more sense than an in-product AI comparison dashboard. The founder can choose a model manually; age-fit, output safety, family-data boundaries, provider clearance, and real-user release remain separate work.',
     ],
   ] as const;
 
@@ -2845,8 +2929,9 @@ function SprintThree() {
           Sprint 3 is no longer architecture alone. The protected Story Studio
           home and exact-story workspace now include direct page-text editing,
           deterministic cover editing, and earlier-version preview/restore.
-          Generation, assisted changes, approval, and the end-to-end outcome
-          remain unfinished.
+          Protected profile-based start, saved purpose, and early reading setup
+          slices have also landed. Generation, assisted changes, approval, and
+          the end-to-end outcome remain unfinished.
         </p>
       </PageIntro>
 
@@ -2893,7 +2978,9 @@ function SprintThree() {
         >
           <span>Landed · Story Studio home</span>
           <i aria-hidden="true">→</i>
-          <span>Underway · setup / Story Plan</span>
+          <span>Landed · early saved setup</span>
+          <i aria-hidden="true">→</i>
+          <span>Underway · complete Story Plan</span>
           <i aria-hidden="true">→</i>
           <span>Landed · exact-story workspace</span>
           <i aria-hidden="true">→</i>
@@ -2917,6 +3004,8 @@ function SprintThree() {
           </div>
           <ul>
             <li>Protected Story Studio home and exact-story navigation.</li>
+            <li>Profile-based entry and canonical saved-child setup.</li>
+            <li>Protected purpose and early feel/reading setup slices.</li>
             <li>Direct text editing for a selected Draft page.</li>
             <li>Protected deterministic cover editing inside the workspace.</li>
             <li>
@@ -2946,8 +3035,11 @@ function SprintThree() {
           <h2>What is still ahead</h2>
           <Definition term="Generation">
             Full blueprint-to-ten-page generation, quality/safety/continuity
-            checking, bounded repair/retry, progress integration, and an
-            approved live text-provider path remain unfinished.
+            checking, bounded repair/retry, progress integration, and a
+            functioning text-provider path remain unfinished. The accepted
+            synthetic development direction is founder-configured OpenRouter
+            behind a provider-neutral boundary, not an in-app model lab; this is
+            not approval for real-family provider transfer.
           </Definition>
           <Definition term="Integrated assisted work">
             Personalization, paragraph-change, continuity, and final-review
