@@ -4,6 +4,18 @@ This directory explains the public Tiny Custom Stories project-story site in a f
 
 The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story; the accepted-but-not-started Sprint 4 plan is carried in the public Decision and Roadmap records until implementation work begins.
 
+## October 9 evidence checkpoint
+
+The public story now reflects the newest protected Studio start/setup slices, accepted epic-scoped task-to-checkpoint integration, the switch to manual epic-only hosted product CI, bounded coordinator/agent GitHub reads, and founder-operated synthetic text-model configuration. These are presented with separate labels for delivered work, accepted directions, and release gates.
+
+The Builder-mode delivery snapshot is dated **October 9, 2026**: 1,515 commits reachable from the main product `development` branch; 614 PRs created and 578 merged; 454 issues (385 task-labeled; 371 closed and 83 open); four product workflow definitions. Commit totals were validated by GitHub's development-branch commit listing, and issue/PR totals by GitHub issue-search counts. The workflow-run count remains the **October 5** historical checkpoint, not an October 9 measurement.
+
+Product task PRs no longer imply automatic hosted CI. On the accepted workflow, reviewable task changes use local checks; when an epic is ready for a reviewed checkpoint, affected non-browser suites must pass through manual dispatch on its exact final head. Browser testing is optional epic-level evidence. The separate public-story PR CI continues unchanged. These pages are not an audit of actual repository protection settings.
+
+New provider wording describes **intent**, not delivery: OpenRouter is the first planned synthetic text adapter behind a founder-controlled server configuration. Story quality and real-family transfer still have distinct gates.
+
+The site preserves both reading modes, all existing routes, responsive editorial presentation, the public-safe architecture explorer, and the unchanged October 1 fixed-layout PDF companion.
+
 ## What is documented here
 
 - [Wireframes](Wireframes.md) describe the information architecture, conceptual architecture, and intended responsive layouts in accessible text diagrams.

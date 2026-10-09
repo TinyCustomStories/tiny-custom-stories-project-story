@@ -270,8 +270,8 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(screen.getByText('1,305')).toBeTruthy();
-    expect(screen.getByText('541')).toBeTruthy();
+    expect(screen.getByText('1,515')).toBeTruthy();
+    expect(screen.getByText('614')).toBeTruthy();
     expect(screen.getByText('4')).toBeTruthy();
     expect(screen.getByText(/941 of 1,344 recorded runs/i)).toBeTruthy();
     expect(screen.getByText(/October 5, 2026:/i)).toBeTruthy();
@@ -310,6 +310,21 @@ describe('project story site', () => {
         /Real users, real AI, and the first staging deployment/i,
       ),
     ).toBeTruthy();
+  });
+
+  it('describes epic-scoped task integration, the new CI cadence, and model-choice limits', () => {
+    renderBuilder();
+    fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
+    expect(screen.getByText(/The new integration rhythm/i)).toBeTruthy();
+    expect(screen.getAllByText(/manually/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Tasks live inside epics/i)).toBeTruthy();
+    fireEvent.click(screen.getAllByRole('link', { name: 'What we learned' })[0]);
+    expect(screen.getByText('Task success was not epic success')).toBeTruthy();
+    expect(screen.getByText('We almost made model selection another feature')).toBeTruthy();
+    fireEvent.click(screen.getAllByRole('link', { name: 'Development story' })[0]);
+    fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
+    expect(screen.getByText(/founder-configured OpenRouter/i)).toBeTruthy();
+    expect(screen.getByText(/Profile-based entry and canonical saved-child setup/i)).toBeTruthy();
   });
 
   it('shows the demonstrated Sprint 2 local outcome without implying real-family release', () => {
