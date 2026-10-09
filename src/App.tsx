@@ -405,8 +405,8 @@ function StoryHome() {
         </p>
         <p>
           Story Studio has editing, revision history, and early profile-based
-          setup. Full generation, integrated approval, real-family release review,
-          and deployment are still ahead.
+          setup. Full generation, integrated approval, real-family release
+          review, and deployment are still ahead.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -1191,8 +1191,8 @@ function StoryHowWeBuild() {
             <span>07</span>
             <h3>Big features got their own integration lanes</h3>
             <p>
-              Several small task PRs may be individually sound without adding
-              up to a usable feature. We now assemble them in an epic branch,
+              Several small task PRs may be individually sound without adding up
+              to a usable feature. We now assemble them in an epic branch,
               review the integrated slice, and only then bring a checkpoint to
               the stable development branch.
             </p>
