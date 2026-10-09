@@ -338,7 +338,8 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
-    title: 'Founder-operated text-model choice stays outside the family product',
+    title:
+      'Founder-operated text-model choice stays outside the family product',
     summary:
       'The accepted plan is a provider-neutral Story Generation port with OpenRouter as the first intended server-configured adapter. The founder chooses synthetic-test models and judges output and cost manually; no model lab or automatic paid fallback is a Sprint 3 prerequisite. Real-family transfer still requires independent safety, privacy, and route-specific clearance.',
     category: 'Architecture',
