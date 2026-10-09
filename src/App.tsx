@@ -2142,8 +2142,8 @@ function HowWeBuild() {
               assumptions.
             </li>
             <li>
-              Optional browser smoke tests and captured screenshots add
-              evidence for meaningful integrated UI flows when warranted.
+              Optional browser smoke tests and captured screenshots add evidence
+              for meaningful integrated UI flows when warranted.
             </li>
           </ul>
         </div>
@@ -3038,8 +3038,8 @@ function SprintThree() {
             checking, bounded repair/retry, progress integration, and a
             functioning text-provider path remain unfinished. The accepted
             synthetic development direction is founder-configured OpenRouter
-            behind a provider-neutral boundary, not an in-app model lab; this
-            is not approval for real-family provider transfer.
+            behind a provider-neutral boundary, not an in-app model lab; this is
+            not approval for real-family provider transfer.
           </Definition>
           <Definition term="Integrated assisted work">
             Personalization, paragraph-change, continuity, and final-review
