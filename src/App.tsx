@@ -2057,9 +2057,9 @@ function HowWeBuild() {
               implementation-ready issues with explicit dependency chains.
             </li>
             <li>
-              Independent tasks use isolated branches or sessions. Each
-              normal feature task is integrated into its owning epic branch
-              before an intentionally reviewed checkpoint reaches development.
+              Independent tasks use isolated branches or sessions. Each normal
+              feature task is integrated into its owning epic branch before an
+              intentionally reviewed checkpoint reaches development.
             </li>
             <li>
               Behavior-changing work defaults toward test-first reasoning where
@@ -2106,8 +2106,8 @@ function HowWeBuild() {
               status truth, implementation, reviews, and public storytelling.
             </li>
             <li>
-              Coordinated sessions share a dated GitHub Project snapshot and
-              use focused reads. Status mutations, dependency ancestry, and
+              Coordinated sessions share a dated GitHub Project snapshot and use
+              focused reads. Status mutations, dependency ancestry, and
               final-head merge gates still require fresh verification.
             </li>
             <li>
