@@ -53,6 +53,22 @@ describe('public architecture artifact', () => {
     }
   });
 
+  it('uses plain punctuation rather than long dash glyphs in public site copy', () => {
+    const publicPaths = [
+      'src/App.tsx',
+      'src/content.ts',
+      'index.html',
+      'public/architecture/system.html',
+      'public/architecture/system.architecture.json',
+    ];
+
+    for (const path of publicPaths) {
+      expect(readFileSync(path, 'utf8'), `long dash in ${path}`).not.toMatch(
+        /[\u2013\u2014]/,
+      );
+    }
+  });
+
   it('does not publish private repository provenance in the explorer artifacts', () => {
     const combined = [
       readFileSync(htmlPath, 'utf8'),

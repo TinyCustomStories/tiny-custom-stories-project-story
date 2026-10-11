@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "Tiny Custom Stories — Public Architecture",
+    "title": "Tiny Custom Stories: Public Architecture",
     "locale": "en",
     "output": "public/architecture/system.html",
     "quality_profile": "showcase"
