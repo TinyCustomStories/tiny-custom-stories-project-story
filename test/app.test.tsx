@@ -335,7 +335,7 @@ describe('project story site', () => {
       screen.getAllByRole('link', { name: 'Development story' })[0],
     );
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
-    expect(screen.getByText(/founder-configured OpenRouter/i)).toBeTruthy();
+    expect(screen.getByText(/default-off OpenRouter adapter/i)).toBeTruthy();
     expect(
       screen.getByText(/Profile-based entry and canonical saved-child setup/i),
     ).toBeTruthy();

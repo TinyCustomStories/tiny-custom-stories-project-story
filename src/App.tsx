@@ -404,8 +404,8 @@ function StoryHome() {
         <p>
           Story Studio can save a parent's choices, edit pages, and restore
           earlier versions. The first Story Plan review and recovery flow is
-          being integrated on its epic branch. A generated, parent-approved
-          book and real-family release are still ahead.
+          being integrated on its epic branch. A generated, parent-approved book
+          and real-family release are still ahead.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -2313,10 +2313,9 @@ function Learnings() {
           </div>
           <ul>
             <li>
-              The founder is excited and nervous about the
-              first time a real user asks Tiny Custom Stories to generate a
-              story, and the first time the product is deployed into a staging
-              environment.
+              The founder is excited and nervous about the first time a real
+              user asks Tiny Custom Stories to generate a story, and the first
+              time the product is deployed into a staging environment.
             </li>
             <li>
               That uncertainty is real. The current synthetic/local evidence
