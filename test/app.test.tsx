@@ -261,7 +261,9 @@ describe('project story site', () => {
       screen.getByText(/Authoring workspace underway - outcome gate open/i),
     ).toBeTruthy();
     expect(screen.getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
-    expect(screen.getByText(/Visual plan accepted; synthetic groundwork underway/i)).toBeTruthy();
+    expect(
+      screen.getByText(/Visual plan accepted; synthetic groundwork underway/i),
+    ).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 

@@ -239,10 +239,10 @@ function Home() {
           Sprint 3 still uses a{' '}
           <strong>synthetic-only sequencing exception</strong>. Protected setup,
           editing, and revision history are in development. The first Story Plan
-          review and recovery work has reached its epic branch, but a complete
-          generated and approved book has not. Basic code-drawn visuals are being
-          tested on a separate foundation branch. Neither experiment approves
-          real-family AI use or closes the release gates.
+          review and recovery work has reached its epic branch. The generated
+          book and approval are still unfinished. Basic doodles are being tested
+          separately. Neither experiment approves real-family AI use or closes
+          the release gates.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -1864,9 +1864,9 @@ function Development() {
             <p className="eyebrow">Authoring workspace underway · gate open</p>
             <h3>Sprint 3</h3>
             <p>
-              Protected setup, Story Plan review on an epic branch, direct text
-              and cover editing, revision history, and still-unfinished generation
-              and approval flows.
+              Protected setup, Story Plan review on an epic branch, direct
+              editing, cover changes, and revision history. Generation and
+              approval still need integration.
             </p>
             <b>Read Sprint 3 →</b>
           </Link>
@@ -1891,7 +1891,8 @@ function Development() {
               Automated checks plus targeted boundary and visual evidence.
             </li>
             <li>
-              A sprint counts as done when its outcome passes, not when the task list looks busy.
+              A sprint counts as done when its outcome passes, not when the
+              issue list looks busy.
             </li>
           </ul>
         </div>
@@ -2943,9 +2944,9 @@ function SprintThree() {
           home and exact-story workspace now include direct page-text editing,
           deterministic cover editing, and earlier-version preview/restore.
           Protected setup and saved reading choices have also landed. Initial
-          Story Plan review and protected recovery are on the Story Creation epic
-          branch, while the synthetic text adapter is deliberately disabled for
-          family requests. End-to-end generation and approval are not finished.
+          Story Plan review and protected recovery are on their own epic branch.
+          The synthetic text adapter remains disabled for family requests.
+          End-to-end generation and approval are still unfinished.
         </p>
       </PageIntro>
 
