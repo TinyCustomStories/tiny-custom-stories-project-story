@@ -1,4 +1,4 @@
-# Tiny Custom Stories — public project story
+# Tiny Custom Stories: public project story
 
 This public repository contains the independently buildable project-story website for Tiny Custom Stories. The website now supports two ways to read the same project: **Story mode** leads with the product idea, evolution, experiments, failures, and founder learning in conversational language; **Builder mode** preserves the detailed implementation status, architecture boundaries, sprint evidence, delivery process, roadmap, decisions, and open questions.
 
@@ -8,11 +8,21 @@ The published site is expected at [tinycustomstories.github.io/tiny-custom-stori
 
 Story mode is the default. The Story / Builder toggle stays available in the shared header and preserves the current route, so a reader can move from a narrative explanation to the technical version of the same subject without starting over. Working-record routes such as Decisions, Roadmap, Open questions, and the Sprint chapters remain available beneath the primary narrative rather than being duplicated into a second site.
 
-The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries newer October 9 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries newer October 11 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+
+## October 11 update: Story Plan, doodle experiments, and a healthier backlog
+
+The public site now uses an October 11 repository snapshot: **1,611 commits** reachable on `development`, **658 PRs created / 621 merged**, and **501 issues tracked** (**430 task-labeled**, **399 closed / 102 open**). The **four product CI workflow files** were verified on `development`. The historical **1,344 workflow runs / 941 successful** are still labeled as an October 5 measurement and have not been re-counted.
+
+- **Studio progress:** An early protected Story Plan review, explicit acceptance, and current-plan recovery have merged into the Story Creation epic branch. A default-off OpenRouter adapter for fixed fictional tests has landed on `development`. Neither fact means a fully generated, approved book is available.
+- **Visual experiments:** Two fictional ten-page books plus covers were rendered with basic code-built doodles. Local SVG measurement and the limits of unusual scenes/long text are documented as early groundwork, not a completed Sprint 4 visual layer.
+- **Workflow improvement:** Queue preparation now checks completed work and original sprint outcomes before creating more Ready tasks. Smaller PRs are still encouraged when they truly unblock a result. The local coordinator can recover from a rejected Ready preflight without retaining a stranded run.
+- **Editorial cleanup:** Story and Builder copy now reads more naturally, with long em and en dashes removed from the React pages, metadata, public architecture explorer, and public source copy.
+- **Boundaries:** All public statements distinguish `development` from epic branches and demonstrations from release. The PDF remains the October 1 companion checkpoint.
 
 ## What changed in the October 9 delivery and Story Studio refresh
 
-This update uses the Project Story Sync workflow and current October 8–9 repository evidence. It adds the next chapter rather than replacing the site's Story/Builder reading modes or editorial design.
+This update uses the Project Story Sync workflow and current October 8 to 9 repository evidence. It adds the next chapter rather than replacing the site's Story/Builder reading modes or editorial design.
 
 - **Story Studio:** The site now describes merged protected profile-based entry, saved setup/purpose, and early feel/reading slices alongside direct page/cover editing and version restore. Complete Story Plan, generation, assisted revisions, approval, and the end-to-end Sprint 3 outcome remain open.
 - **Delivery workflow:** Normal feature issues now have one intended owning epic, task PRs integrate into an epic branch, and coherent reviewed checkpoints integrate into `development`. The native hierarchy migration and broader rollout are not presented as universally finished.
@@ -20,7 +30,7 @@ This update uses the Project Story Sync workflow and current October 8–9 repos
 - **Coordination and learning:** The narrative now explains bounded Superset coordination, shared Projects snapshots, narrow request choices, live verification for important writes/merges, rate-limit pacing, and the lessons behind these tradeoffs. No measured API savings or always-on automation are claimed.
 - **Text models:** The October 9 accepted direction is a founder-configured, provider-neutral synthetic text path with OpenRouter as the first intended adapter. This is not a shipped AI Lab, model leaderboard, default paid fallback, real-family transfer approval, or proof that live generation is complete.
 - **Verified repository activity:** As of October 9, `development` has **1,515 reachable commits** (GitHub REST commit-list pagination), and repository issue search reports **614 PRs created / 578 merged**, **454 issues tracked** (**385 labeled task issues**, **371 closed / 83 open**), with **4 main product CI workflow definitions**. These are repository totals, not a productivity score. The previously verified **1,344 workflow runs / 941 successful** remain explicitly dated October 5 rather than being recomputed without evidence.
-- **Compatibility:** Stable fragment routes, mobile brand and reading-mode placement, Sprint 1–3 hierarchy, private/public separation, public architecture explorer and its curated source, and the October 1 PDF dossier path/checkpoint remain unchanged. This refresh does not regenerate the dossier or export private issue content.
+- **Compatibility:** Stable fragment routes, mobile brand and reading-mode placement, Sprint 1 to 3 hierarchy, private/public separation, public architecture explorer and its curated source, and the October 1 PDF dossier path/checkpoint remain unchanged. This refresh does not regenerate the dossier or export private issue content.
 
 ## What changed in the October 7 Visual Theme and statistics refresh
 
@@ -56,7 +66,7 @@ This refresh follows the repository’s Project Story Sync workflow and preserve
 - Sprint 2 closure is deliberately narrower than real-family Alpha readiness. Qualified privacy/legal/security/child-safety review remains a later release-readiness gate before any real-family Alpha collection or use.
 - Sprint 3 now has visible integrated authoring work rather than only lower-level foundations: protected Story Studio home and exact-story navigation, direct Draft page-text editing, deterministic cover editing, and Earlier Versions preview/restore are in the product.
 - Controlled personalization selection/summary, paragraph-change input, continuity-decision, and final-review components also exist with synthetic responsive/accessibility evidence. Their remaining APIs, policy gates, workspace integration, generation behavior, and approval mutations are still described as unfinished.
-- The accepted child-profile direction now requires one protected saved name and completed-years age from 2–12 before Child Map or Story Studio. Additional Child Map enrichment remains optional, with no birth-information requirement or per-story name/age override.
+- The accepted child-profile direction now requires one protected saved name and completed-years age from 2 to 12 before Child Map or Story Studio. Additional Child Map enrichment remains optional, with no birth-information requirement or per-story name/age override.
 - Current shipped Story routes have an authorization evidence matrix, but the public story does not use that evidence to claim unfinished Sprint 3 endpoint families are complete.
 - The aggregate GitHub delivery snapshot was recomputed from live repository evidence on **October 5, 2026**: 1,262 commits on `development`, 497 pull requests created / 464 merged, 401 issues tracked, 347 task issues, 305 closed / 96 open issues, 4 workflow definitions, 1,344 workflow runs, and 941 successful runs.
 - **How we build** is now intentionally about the delivery system itself: the dated repository snapshot, small reviewable tasks, CI gates, browser evidence, agent-assisted execution, review/fix/re-review, and outcome evidence.

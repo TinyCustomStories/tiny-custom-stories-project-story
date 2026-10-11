@@ -261,7 +261,7 @@ describe('project story site', () => {
       screen.getByText(/Authoring workspace underway - outcome gate open/i),
     ).toBeTruthy();
     expect(screen.getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
-    expect(screen.getByText(/Accepted direction - not started/i)).toBeTruthy();
+    expect(screen.getByText(/Visual plan accepted; synthetic groundwork underway/i)).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 
@@ -270,8 +270,12 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(screen.getByText('1,515')).toBeTruthy();
-    expect(screen.getByText('614')).toBeTruthy();
+    expect(screen.getByText('1,611')).toBeTruthy();
+    expect(screen.getByText('658')).toBeTruthy();
+    expect(screen.getByText('621')).toBeTruthy();
+    expect(screen.getByText('501')).toBeTruthy();
+    expect(screen.getByText('430')).toBeTruthy();
+    expect(screen.getByText(/October 11, 2026/i)).toBeTruthy();
     expect(screen.getByText('4')).toBeTruthy();
     expect(screen.getByText(/941 of 1,344 recorded runs/i)).toBeTruthy();
     expect(screen.getByText(/October 5, 2026:/i)).toBeTruthy();

@@ -4,6 +4,14 @@ This directory explains the public Tiny Custom Stories project-story site in a f
 
 The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story; the accepted-but-not-started Sprint 4 plan is carried in the public Decision and Roadmap records until implementation work begins.
 
+## October 11 evidence checkpoint
+
+The site is now dated October 11, 2026 and the main repository figures are **1,611 commits** on `development`, **658 PRs created**, **621 merged**, **501 issues** (**430 task-labeled, 399 closed, 102 open**), and **four main product CI workflow files**. The older October 5 workflow-run history is still explicitly dated.
+
+Public updates now separate Story Plan review/recovery on an epic branch from the default-off, fictional-input-only OpenRouter adapter on `development`. Two fictional books test reusable geometry-based doodles as preparatory visual work, without declaring Sprint 4 finished or real-family image/data flows approved. Backlog stewardship now reconciles original outcomes before growing Ready, and rejected local-coordinator preflights can recover without retaining a stranded run.
+
+Story and Builder copy, page metadata, and the separate public architecture explorer no longer use long em or en dashes. The October 1 PDF dossier remains a historical fixed-layout companion.
+
 ## October 9 evidence checkpoint
 
 The public story now reflects the newest protected Studio start/setup slices, accepted epic-scoped task-to-checkpoint integration, the switch to manual epic-only hosted product CI, bounded coordinator/agent GitHub reads, and founder-operated synthetic text-model configuration. These are presented with separate labels for delivered work, accepted directions, and release gates.

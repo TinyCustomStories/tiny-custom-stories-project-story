@@ -171,7 +171,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 9, 2026
+            A public project story · updated October 11, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -236,15 +236,13 @@ function Home() {
           was demonstrated on October 4.
         </p>
         <p>
-          Sprint 3 continues under the{' '}
-          <strong>synthetic-only sequencing exception</strong>. Story Studio
-          home, direct page and cover editing, earlier revisions, and early
-          saved-profile setup have landed. Full generation, integrated approval,
-          and the end-to-end outcome remain open. Sprint 4 now has an accepted
-          Visual Theme System direction, but it has not started and no external
-          image provider or likeness flow is approved by that decision.
-          Real-family Alpha use still requires qualified release review and
-          later safety, security, and deployment gates.
+          Sprint 3 still uses a{' '}
+          <strong>synthetic-only sequencing exception</strong>. Protected setup,
+          editing, and revision history are in development. The first Story Plan
+          review and recovery work has reached its epic branch, but a complete
+          generated and approved book has not. Basic code-drawn visuals are being
+          tested on a separate foundation branch. Neither experiment approves
+          real-family AI use or closes the release gates.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -354,7 +352,7 @@ function StoryHome() {
             Most personalized stories know a name, an age, and maybe that a
             child likes dinosaurs. Tiny Custom Stories started with a question:
             what if a story could remember the small things that actually make a
-            child feel like themselves — without trying to know everything?
+            child feel like themselves, without trying to know everything?
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/product">
@@ -404,9 +402,10 @@ function StoryHome() {
           demonstrated synthetic/local outcome.
         </p>
         <p>
-          Story Studio has editing, revision history, and early profile-based
-          setup. Full generation, integrated approval, real-family release
-          review, and deployment are still ahead.
+          Story Studio can save a parent's choices, edit pages, and restore
+          earlier versions. The first Story Plan review and recovery flow is
+          being integrated on its epic branch. A generated, parent-approved
+          book and real-family release are still ahead.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -742,7 +741,7 @@ function StoryJourney() {
     ],
     [
       '5. Story Studio creates a candidate',
-      'A plan becomes a cover and pages. Generation is useful here, but the result is still a draft — not family truth and not child-visible merely because a model returned it.',
+      'A plan becomes a cover and pages. Generation is useful here, but the result is still a draft. It is not family truth or child-visible just because a model returned it.',
     ],
     [
       '6. The parent changes the bad bits',
@@ -851,6 +850,14 @@ function StoryDevelopment() {
     [
       'Story creation stopped being one prompt',
       'Once family context exists, generation needs a permission boundary. Once generation can be wrong, stories need drafts, editing, revision history, restore, and approval. Story Studio became a workflow instead of a button.',
+    ],
+    [
+      'A story plan is becoming something a parent can review',
+      'The first protected review and recovery steps are now in the Story Creation epic branch. A parent can inspect the saved plan and explicitly accept it. That is a useful step, but it is not a finished, generated story.',
+    ],
+    [
+      'We tried drawing whole stories with simple code',
+      'Two fictional books let us test geometric doodles across a cover and ten pages each. It is cheaper and easier to control than one image prompt per page, but long passages and unusual scenes still need better layouts.',
     ],
     [
       'The next frontier is less theoretical',
@@ -1135,9 +1142,10 @@ function StoryHowWeBuild() {
             <h3>I stopped giving agents giant jobs</h3>
             <p>
               “Build the Child Map” is a terrible task. The project increasingly
-              uses small issues with explicit acceptance criteria, dependencies,
-              and stop conditions so implementation is easier to review and
-              easier to throw away when the premise is wrong.
+              uses small issues with clear acceptance criteria and dependencies.
+              But a short task is only useful if it helps finish an existing
+              sprint outcome. We check what is already done before creating more
+              work.
             </p>
           </article>
           <article className="story-beat">
@@ -1267,7 +1275,7 @@ function StoryLearnings() {
     ],
     [
       'The more AI I used, the more important boring boundaries became',
-      'Models are very good at producing plausible next steps. That makes authorization, ownership, tests, revisions, explicit policy, and source-of-truth records more important — not less.',
+      'Models are very good at producing plausible next steps. That makes authorization, ownership, tests, revisions, and clear source records even more important.',
     ],
     [
       'I am still nervous about the part that looks most like a “real startup”',
@@ -1280,6 +1288,10 @@ function StoryLearnings() {
     [
       'Caching helps; treating a cache as permission is dangerous',
       'Sharing one Project snapshot reduces repeated GitHub calls. But ownership, branch ancestry, status changes, and merge checks still need fresh evidence at the exact moment they matter.',
+    ],
+    [
+      'A growing task board is not the same as a finished sprint',
+      'I kept breaking large tasks into smaller ones, which helped review. But the Ready queue kept growing while some original outcomes stayed unfinished. Now we reconcile completed work and reuse existing issues first. We still split work when a focused PR actually helps.',
     ],
     [
       'Choosing a model is not the same as proving a story is safe',
@@ -1382,7 +1394,7 @@ function StoryDesign() {
         <p>
           Tiny Custom Stories deals with family memories, children’s stories,
           private parent work, and a very technical build process. One visual
-          language cannot make every surface identical — but it can make them
+          language cannot make every surface identical, but it can make them
           feel related.
         </p>
       </PageIntro>
@@ -1448,7 +1460,7 @@ function StoryLibrary() {
         <p>
           This site is meant to show the thinking, progress, uncertainty, and
           mistakes behind Tiny Custom Stories without turning private project
-          material — or future family information — into public content.
+          material or future family information into public content.
         </p>
       </PageIntro>
 
@@ -1777,12 +1789,12 @@ function Development() {
       'The temporal Child Map, deterministic Discovery, private-media and deletion lifecycle, accessibility evidence, and assembled local journey now satisfy the accepted synthetic/local outcome. Qualified real-family release review remains a later gate.',
     ],
     [
-      'Sprint 3 · protected authoring workspace underway',
-      'Story Studio now has protected profile-based entry and early saved setup/purpose slices alongside direct page and cover editing and version restore. The full Story Plan, generation, assisted changes, approval, and final outcome are not complete.',
+      'Sprint 3 · Story Plan review has reached its epic branch',
+      'Story Studio has protected profile-based entry, saved purpose and reading choices, direct editing, and version restore. The first protected Story Plan review and recovery flow has merged into an epic branch, not an end-to-end release. Generation and final approval remain unfinished.',
     ],
     [
-      'Sprint 4 · Visual Theme System direction accepted, not started',
-      'The next visual layer is now defined around a versioned visual theme, recurring cast, structured scene plans, and replaceable renderers. The first renderer is intended to be controlled and no-photo; richer AI-image, likeness, and print paths remain separately gated.',
+      'Sprint 4 · visual direction accepted, early doodle tests underway',
+      'We have tested reusable code-built doodles in two fictional books and measured local SVG output in a visual-foundation epic branch. That groundwork does not complete the planned versioned theme, cast, scene plans, page review, or Sprint 4 outcome. Richer image, likeness, and print paths remain separate decisions.',
     ],
   ];
 
@@ -1797,9 +1809,9 @@ function Development() {
           Each sprint exposed a boundary that needed to become clearer: first
           family authority, then evolving child context, then the difference
           between Story truth, context permission, generation, and visual
-          continuity. The October 9 checkpoint also records the next protected
-          Studio setup slices and a new epic-based delivery workflow, without
-          presenting Sprint 4 as started.
+          continuity. The October 11 checkpoint adds initial Story Plan review,
+          synthetic doodle experiments, and a tighter backlog workflow. These
+          are steps forward, not a claim that the remaining gates have passed.
         </p>
       </PageIntro>
 
@@ -1852,8 +1864,8 @@ function Development() {
             <p className="eyebrow">Authoring workspace underway · gate open</p>
             <h3>Sprint 3</h3>
             <p>
-              Protected Story Studio entry and saved setup slices, direct text
-              and cover editing, revision history, plus unfinished generation
+              Protected setup, Story Plan review on an epic branch, direct text
+              and cover editing, revision history, and still-unfinished generation
               and approval flows.
             </p>
             <b>Read Sprint 3 →</b>
@@ -1879,7 +1891,7 @@ function Development() {
               Automated checks plus targeted boundary and visual evidence.
             </li>
             <li>
-              An outcome gate—not issue count—decides whether a sprint passed.
+              A sprint counts as done when its outcome passes, not when the task list looks busy.
             </li>
           </ul>
         </div>
@@ -2008,7 +2020,7 @@ function HowWeBuild() {
               {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
               {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
               completed successfully. Those run totals stay attached to that
-              older checkpoint instead of being silently relabeled as October 9
+              older checkpoint instead of being silently relabeled as October 11
               telemetry.
             </p>
           </article>
@@ -2090,10 +2102,10 @@ function HowWeBuild() {
           </div>
           <ul>
             <li>
-              Each normal feature issue has one owning epic; issue ownership,
-              sprint planning, and the branch where changes integrate are
-              distinct concepts. Legacy work is being reconciled rather than
-              quietly assigned by guesswork.
+              Each normal feature issue has one owning epic; sprint placement
+              and integration branch are separate choices. We reconcile existing
+              issues and unfinished outcomes before adding to the Ready queue.
+              Large work can still be split into reviewable tasks when needed.
             </li>
             <li>
               Task PRs target their verified epic branch. Reviewed, coherent
@@ -2102,8 +2114,9 @@ function HowWeBuild() {
             </li>
             <li>
               A local Superset coordinator can dispatch bounded, isolated
-              workers. Specialist agents handle product decisions, backlog,
-              status truth, implementation, reviews, and public storytelling.
+              workers. A rejected Ready preflight no longer needs to strand the
+              next run. Specialist agents still own separate planning,
+              implementation, review, and documentation jobs.
             </li>
             <li>
               Coordinated sessions share a dated GitHub Project snapshot and use
@@ -2159,7 +2172,7 @@ function HowWeBuild() {
 
         <p className="public-boundary-note">
           Repository counts are intentionally dated rather than presented as
-          live telemetry. The October 9 repository totals and the separately
+          live telemetry. The October 11 repository totals and the separately
           dated October 5 workflow-run history make their evidence windows
           explicit. The public site does not call the private repository or
           require a GitHub token in the browser.
@@ -2299,7 +2312,7 @@ function Learnings() {
           </div>
           <ul>
             <li>
-              The founder is most excited about — and most nervous about — the
+              The founder is excited and nervous about the
               first time a real user asks Tiny Custom Stories to generate a
               story, and the first time the product is deployed into a staging
               environment.
@@ -2929,9 +2942,10 @@ function SprintThree() {
           Sprint 3 is no longer architecture alone. The protected Story Studio
           home and exact-story workspace now include direct page-text editing,
           deterministic cover editing, and earlier-version preview/restore.
-          Protected profile-based start, saved purpose, and early reading setup
-          slices have also landed. Generation, assisted changes, approval, and
-          the end-to-end outcome remain unfinished.
+          Protected setup and saved reading choices have also landed. Initial
+          Story Plan review and protected recovery are on the Story Creation epic
+          branch, while the synthetic text adapter is deliberately disabled for
+          family requests. End-to-end generation and approval are not finished.
         </p>
       </PageIntro>
 
@@ -2980,7 +2994,7 @@ function SprintThree() {
           <i aria-hidden="true">→</i>
           <span>Landed · early saved setup</span>
           <i aria-hidden="true">→</i>
-          <span>Underway · complete Story Plan</span>
+          <span>Epic branch · Story Plan review and recovery</span>
           <i aria-hidden="true">→</i>
           <span>Landed · exact-story workspace</span>
           <i aria-hidden="true">→</i>
@@ -3005,7 +3019,11 @@ function SprintThree() {
           <ul>
             <li>Protected Story Studio home and exact-story navigation.</li>
             <li>Profile-based entry and canonical saved-child setup.</li>
-            <li>Protected purpose and early feel/reading setup slices.</li>
+            <li>Protected purpose and saved feel/reading choices.</li>
+            <li>
+              First Story Plan review, explicit acceptance, and current-plan
+              recovery in the Story Creation epic branch.
+            </li>
             <li>Direct text editing for a selected Draft page.</li>
             <li>Protected deterministic cover editing inside the workspace.</li>
             <li>
@@ -3034,12 +3052,11 @@ function SprintThree() {
         <div className="reading-panel">
           <h2>What is still ahead</h2>
           <Definition term="Generation">
-            Full blueprint-to-ten-page generation, quality/safety/continuity
-            checking, bounded repair/retry, progress integration, and a
-            functioning text-provider path remain unfinished. The accepted
-            synthetic development direction is founder-configured OpenRouter
-            behind a provider-neutral boundary, not an in-app model lab; this is
-            not approval for real-family provider transfer.
+            A default-off OpenRouter adapter can handle fixed synthetic tests,
+            but it cannot send family content. Full ten-page generation,
+            checking, bounded repairs, progress integration, and final approval
+            still need to work together. Model choice is founder-controlled, not
+            an in-app lab or permission for real-family data transfer.
           </Definition>
           <Definition term="Integrated assisted work">
             Personalization, paragraph-change, continuity, and final-review
@@ -3241,7 +3258,7 @@ function Questions() {
           </Definition>
           <Definition term="Next step">
             Research, prototype evidence, specialist review, operational
-            evidence, or a documented decision—not a quiet guess.
+            evidence, or a documented decision. Not a quiet guess.
           </Definition>
         </div>
       </section>
@@ -3318,9 +3335,8 @@ function Library() {
             <h2>Take the evolving project story with you.</h2>
             <p>
               The PDF remains the October 1 fixed-layout checkpoint at its
-              stable public path. This responsive site carries the newer October
-              5 Sprint 2 closeout and Story Studio evidence and remains the
-              primary current narrative.
+              stable public path. This responsive site carries the October 11
+              project update and is the current narrative.
             </p>
           </div>
           <a
