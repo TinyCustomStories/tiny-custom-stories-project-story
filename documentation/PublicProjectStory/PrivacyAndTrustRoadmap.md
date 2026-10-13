@@ -35,16 +35,16 @@ The existing private working notice remains a draft. Unconfirmed contact details
 
 ## Then, implement small, reviewable pieces
 
-| Planned piece | What the implementation should demonstrate |
-| --- | --- |
-| Public notice page | Parents can read the applicable notice before signing in or completing a child profile. |
-| Contextual explanations | Relevant forms explain required and optional information before the action, not only in a footer. |
-| Separate permission records | Notice acknowledgment, terms, parental verification, and purpose-specific consent are not one interchangeable flag. |
-| Collection checks | Applicable permissions are enforced by the application, not merely by hiding a button. |
-| Privacy choices and withdrawal | Parents can change relevant choices, with clear consequences and safe handling of pending work. |
-| Privacy-request intake | People can reach a real request process, with appropriate identity checks and secure fulfillment. |
-| Cookie and SDK controls | Actual technical behavior matches the reviewed choices; a banner is added only when the inventory and rules call for it. |
-| Retention integration | The approved schedule is applied to genuine gaps, reusing existing data-lifecycle capabilities. |
+| Planned piece                  | What the implementation should demonstrate                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Public notice page             | Parents can read the applicable notice before signing in or completing a child profile.                                  |
+| Contextual explanations        | Relevant forms explain required and optional information before the action, not only in a footer.                        |
+| Separate permission records    | Notice acknowledgment, terms, parental verification, and purpose-specific consent are not one interchangeable flag.      |
+| Collection checks              | Applicable permissions are enforced by the application, not merely by hiding a button.                                   |
+| Privacy choices and withdrawal | Parents can change relevant choices, with clear consequences and safe handling of pending work.                          |
+| Privacy-request intake         | People can reach a real request process, with appropriate identity checks and secure fulfillment.                        |
+| Cookie and SDK controls        | Actual technical behavior matches the reviewed choices; a banner is added only when the inventory and rules call for it. |
+| Retention integration          | The approved schedule is applied to genuine gaps, reusing existing data-lifecycle capabilities.                          |
 
 These are planned outcomes, not descriptions of verified production behavior. The exact implementation depends on the preceding contracts and review. The project does not need another export system, deletion system, consent platform, or support dashboard merely because a new task has been written.
 
