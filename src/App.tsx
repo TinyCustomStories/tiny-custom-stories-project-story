@@ -836,7 +836,7 @@ function PrivacyTrustCheckpoint() {
       <h2>A disclaimer was only the starting point.</h2>
       <p>Children's information deserves more than a reassuring paragraph.</p>
       <p>We are documenting actual data uses before promising safeguards.</p>
-      <p>US, EU/EEA, UK, and India are assessment scopes, not launch markets.</p>
+      <p>US, EU/EEA, UK, and India are research, not launch markets.</p>
       <p>Notices, consent, rights, and retention work is still planned.</p>
       <p>Qualified privacy, security, and child-safety review is required.</p>
       <p>Real-family Alpha use has not been approved.</p>
@@ -2673,7 +2673,7 @@ function Roadmap() {
           <p>Parent Mode is not verified parental consent.</p>
           <p>Saving data does not authorize sharing it with an AI provider.</p>
           <p>These safeguards are planned, not shipped.</p>
-          <p>Qualified privacy, security, and child-safety review is required.</p>
+          <p>Qualified privacy, security and child-safety review is due.</p>
           <p>Real-family Alpha use remains restricted.</p>
           <p>The private working Privacy Notice is not published.</p>
           <p>
