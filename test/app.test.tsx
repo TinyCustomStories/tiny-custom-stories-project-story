@@ -267,6 +267,56 @@ describe('project story site', () => {
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 
+  it('shows the privacy planning work in Development and Roadmap without claiming a launch', () => {
+    renderStory();
+
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    expect(
+      screen.getByRole('heading', {
+        name: 'A disclaimer was only the starting point.',
+      }),
+    ).toBeTruthy();
+    expect(
+      screen.getByText(/assessment scopes, not approved launch markets/i),
+    ).toBeTruthy();
+
+    fireEvent.click(
+      screen.getByRole('link', { name: /See the Privacy & Trust plan/i }),
+    );
+    expect(window.location.hash).toBe('#/roadmap');
+    expect(
+      screen.getByRole('heading', {
+        name: 'Privacy is a release gate, not a footer.',
+      }),
+    ).toBeTruthy();
+    expect(
+      screen.getByText(/These are research scopes, not approved launch markets/i),
+    ).toBeTruthy();
+    expect(
+      screen.getByText(/These safeguards are planned, not shipped/i),
+    ).toBeTruthy();
+    expect(
+      screen
+        .getByRole('link', { name: /Read the full public Privacy & Trust roadmap/i })
+        .getAttribute('href'),
+    ).toBe(
+      'https://github.com/TinyCustomStories/tiny-custom-stories-project-story/blob/main/documentation/PublicProjectStory/PrivacyAndTrustRoadmap.md',
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
+    expect(window.location.hash).toBe('#/roadmap');
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    expect(
+      screen.getByRole('heading', {
+        name: 'A disclaimer was only the starting point.',
+      }),
+    ).toBeTruthy();
+  });
+
   it('shows a dated delivery snapshot and concrete CI quality gates', () => {
     renderBuilder();
 
