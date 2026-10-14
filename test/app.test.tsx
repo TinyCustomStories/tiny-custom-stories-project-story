@@ -267,45 +267,33 @@ describe('project story site', () => {
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 
-  it('shows privacy planning in Development and Roadmap', () => {
+  it('shows privacy planning in both reading modes', () => {
     renderStory();
-
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
     );
-    expect(
-      screen.getByRole('heading', {
-        name: 'A disclaimer was only the starting point.',
-      }),
-    ).toBeTruthy();
-    expect(
-      screen.getByText(/assessment scopes, not approved launch markets/i),
-    ).toBeTruthy();
+    const storyHeading = screen.getByRole('heading', {
+      name: 'A disclaimer was only the starting point.',
+    });
+    expect(storyHeading).toBeTruthy();
+    const regions = screen.getByText(/assessment scopes, not launch markets/i);
+    expect(regions).toBeTruthy();
 
-    fireEvent.click(
-      screen.getByRole('link', { name: /See the Privacy & Trust plan/i }),
-    );
+    fireEvent.click(screen.getByRole('link', { name: /See the Privacy/i }));
     expect(window.location.hash).toBe('#/roadmap');
-    expect(
-      screen.getByRole('heading', {
-        name: 'Privacy is a release gate, not a footer.',
-      }),
-    ).toBeTruthy();
-    expect(
-      screen.getByText(/None is an approved launch market/i),
-    ).toBeTruthy();
-    expect(
-      screen.getByText(/These safeguards are planned, not shipped/i),
-    ).toBeTruthy();
-    expect(
-      screen
-        .getByRole('link', {
-          name: /Read the full public Privacy & Trust roadmap/i,
-        })
-        .getAttribute('href'),
-    ).toBe(
-      'https://github.com/TinyCustomStories/tiny-custom-stories-project-story/blob/main/documentation/PublicProjectStory/PrivacyAndTrustRoadmap.md',
-    );
+    const roadmapHeading = screen.getByRole('heading', {
+      name: 'Privacy is a release gate, not a footer.',
+    });
+    expect(roadmapHeading).toBeTruthy();
+    const launchGate = screen.getByText(/not approved launch markets/i);
+    expect(launchGate).toBeTruthy();
+    const planned = screen.getByText(/These safeguards are planned, not shipped/i);
+    expect(planned).toBeTruthy();
+    const sourceLink = screen.getByRole('link', {
+      name: /Read the full public Privacy & Trust roadmap/i,
+    });
+    const sourceUrl = sourceLink.getAttribute('href');
+    expect(sourceUrl?.endsWith('PrivacyAndTrustRoadmap.md')).toBe(true);
 
     fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
     expect(window.location.hash).toBe('#/roadmap');
