@@ -4,6 +4,12 @@ This directory explains the public Tiny Custom Stories project-story site in a f
 
 The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story; the accepted-but-not-started Sprint 4 plan is carried in the public Decision and Roadmap records until implementation work begins.
 
+## October 14 privacy and trust website update
+
+The existing Development story now shows the privacy and trust planning checkpoint in both Story and Builder modes. The existing Roadmap page explains the planned sequence and links to the [public planning record](PrivacyAndTrustRoadmap.md). This is visible website copy, not a live application Privacy Notice or an implemented privacy feature.
+
+US, EU/EEA, UK and India remain research scopes, not approved release markets. Qualified real-family privacy, security and child-safety review remains required. The website keeps all existing routes, activity statistics, styles, architecture assets and the October 1 PDF companion.
+
 ## October 12 privacy and trust planning checkpoint
 
 The [Privacy and trust roadmap](PrivacyAndTrustRoadmap.md) captures the recorded Sprint Infinity work on US, EU/EEA, UK, and India applicability, privacy notices, parental verification and consent, rights requests, technical collection, and retention. It separates documentation, conditional implementation, and integrated evidence while preserving the existing qualified real-family release review.
