@@ -267,7 +267,7 @@ describe('project story site', () => {
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 
-  it('shows the privacy planning work in Development and Roadmap without claiming a launch', () => {
+  it('shows privacy planning in Development and Roadmap', () => {
     renderStory();
 
     fireEvent.click(
@@ -292,14 +292,16 @@ describe('project story site', () => {
       }),
     ).toBeTruthy();
     expect(
-      screen.getByText(/These are research scopes, not approved launch markets/i),
+      screen.getByText(/None is an approved launch market/i),
     ).toBeTruthy();
     expect(
       screen.getByText(/These safeguards are planned, not shipped/i),
     ).toBeTruthy();
     expect(
       screen
-        .getByRole('link', { name: /Read the full public Privacy & Trust roadmap/i })
+        .getByRole('link', {
+          name: /Read the full public Privacy & Trust roadmap/i,
+        })
         .getAttribute('href'),
     ).toBe(
       'https://github.com/TinyCustomStories/tiny-custom-stories-project-story/blob/main/documentation/PublicProjectStory/PrivacyAndTrustRoadmap.md',
