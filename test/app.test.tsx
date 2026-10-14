@@ -267,6 +267,46 @@ describe('project story site', () => {
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
 
+  it('shows privacy planning in both reading modes', () => {
+    renderStory();
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    const storyHeading = screen.getByRole('heading', {
+      name: 'A disclaimer was only the starting point.',
+    });
+    expect(storyHeading).toBeTruthy();
+    const regions = screen.getByText(/research, not launch markets/i);
+    expect(regions).toBeTruthy();
+
+    fireEvent.click(screen.getByRole('link', { name: /See the Privacy/i }));
+    expect(window.location.hash).toBe('#/roadmap');
+    const roadmapHeading = screen.getByRole('heading', {
+      name: 'Privacy is a release gate, not a footer.',
+    });
+    expect(roadmapHeading).toBeTruthy();
+    const launchGate = screen.getByText(/not approved launch markets/i);
+    expect(launchGate).toBeTruthy();
+    const planned = screen.getByText(/planned, not shipped/i);
+    expect(planned).toBeTruthy();
+    const sourceLink = screen.getByRole('link', {
+      name: /Read the full public Privacy & Trust roadmap/i,
+    });
+    const sourceUrl = sourceLink.getAttribute('href');
+    expect(sourceUrl?.endsWith('PrivacyAndTrustRoadmap.md')).toBe(true);
+
+    fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
+    expect(window.location.hash).toBe('#/roadmap');
+    fireEvent.click(
+      screen.getAllByRole('link', { name: 'Development story' })[0],
+    );
+    expect(
+      screen.getByRole('heading', {
+        name: 'A disclaimer was only the starting point.',
+      }),
+    ).toBeTruthy();
+  });
+
   it('shows a dated delivery snapshot and concrete CI quality gates', () => {
     renderBuilder();
 

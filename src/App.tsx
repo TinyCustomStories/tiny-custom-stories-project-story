@@ -829,6 +829,24 @@ function StoryJourney() {
   );
 }
 
+function PrivacyTrustCheckpoint() {
+  return (
+    <div className="reading-panel">
+      <p className="eyebrow">Sprint Infinity · October 12-13, 2026</p>
+      <h2>A disclaimer was only the starting point.</h2>
+      <p>Children's information deserves more than a reassuring paragraph.</p>
+      <p>We are documenting actual data uses before promising safeguards.</p>
+      <p>US, EU/EEA, UK, and India are research, not launch markets.</p>
+      <p>Notices, consent, rights, and retention work is still planned.</p>
+      <p>Qualified privacy, security, and child-safety review is required.</p>
+      <p>Real-family Alpha use has not been approved.</p>
+      <p>
+        <Link to="/roadmap">See the Privacy &amp; Trust plan →</Link>
+      </p>
+    </div>
+  );
+}
+
 function StoryDevelopment() {
   const beats = [
     [
@@ -905,6 +923,8 @@ function StoryDevelopment() {
           impressive. It got bigger because “just generate a story” kept hiding
           decisions somebody still had to own.
         </p>
+
+        <PrivacyTrustCheckpoint />
 
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The engineering chapters underneath</p>
@@ -1872,6 +1892,8 @@ function Development() {
           </Link>
         </div>
 
+        <PrivacyTrustCheckpoint />
+
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">How work is delivered now</p>
@@ -2631,6 +2653,41 @@ function Roadmap() {
       </PageIntro>
 
       <section className="section roadmap-section">
+        <div className="reading-panel">
+          <p className="eyebrow">Privacy &amp; Trust · Sprint Infinity</p>
+          <h2>Privacy is a release gate, not a footer.</h2>
+          <p>The privacy plan began on October 12, 2026.</p>
+          <p>India was added to the regional research on October 13.</p>
+          <p>US, EU/EEA, UK, and India are assessment scopes only.</p>
+          <p>These regions are not approved launch markets.</p>
+          <Definition term="Document">
+            Map data collected, purposes, providers, and known gaps.
+          </Definition>
+          <Definition term="Plan and implement">
+            Review notice, consent, rights, and retention contracts first.
+          </Definition>
+          <Definition term="Verify">
+            Test refusal, failures, withdrawal, and deletion with fiction.
+          </Definition>
+          <p>A Privacy Notice does not replace consent or safeguards.</p>
+          <p>Parent Mode is not verified parental consent.</p>
+          <p>Saving data does not authorize sharing it with an AI provider.</p>
+          <p>These safeguards are planned, not shipped.</p>
+          <p>Qualified privacy, security and child-safety review is due.</p>
+          <p>Real-family Alpha use remains restricted.</p>
+          <p>The private working Privacy Notice is not published.</p>
+          <p>
+            <a
+              href="https://github.com/TinyCustomStories/tiny-custom-stories-project-story/blob/main/documentation/PublicProjectStory/PrivacyAndTrustRoadmap.md"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read the full public Privacy &amp; Trust roadmap{' '}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        </div>
+
         <ol className="roadmap-list">
           {milestones.map((milestone, index) => (
             <li key={milestone.title}>
