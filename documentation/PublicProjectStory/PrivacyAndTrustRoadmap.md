@@ -1,6 +1,6 @@
 # Privacy and trust: the next layer of the product
 
-Planning checkpoint: October 12, 2026.
+Planning checkpoint: October 12, 2026. Applicability scope updated October 13, 2026.
 
 **Status: planned work, with documentation and implementation tasks recorded in Sprint Infinity.** This is a public development record, not the application's Privacy Notice, legal advice, a compliance certification, or an announcement that these features have shipped.
 
@@ -14,7 +14,7 @@ The intended product remains parent-led. A preferred name and age in completed y
 
 ## What is being assessed
 
-The first legal assessment covers the United States, the EU/EEA, and the United Kingdom separately. These are research scopes, not approved launch markets. Other European jurisdictions require an explicit assessment rather than being silently treated as covered.
+The initial legal assessment covers the United States, the EU/EEA, and the United Kingdom separately; India was added to the assessment on October 13. These are research scopes, not approved launch markets. Other European jurisdictions require an explicit assessment rather than being silently treated as covered.
 
 The review needs to distinguish the adult account, information supplied about a child, the child-facing experience, and technical collection by the application or its service providers. It also needs the actual operator, intended audience, enabled features, and processing arrangements. Missing facts will remain visible rather than being filled with assumptions.
 
