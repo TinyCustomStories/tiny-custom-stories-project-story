@@ -2669,9 +2669,9 @@ function Roadmap() {
           <p className="eyebrow">Privacy &amp; Trust · Sprint Infinity</p>
           <h2>Privacy is a release gate, not a footer.</h2>
           <p>
-            The October 12 planning work, expanded to include India on October
-            13, is assessing the United States, EU/EEA, UK, and India separately.
-            These are research scopes, not approved launch markets.
+            The October 12 plan added India to its research scope on October
+            13. The United States, EU/EEA, UK, and India are being assessed
+            separately. None is an approved launch market.
           </p>
           <ol>
             <li>
@@ -2694,8 +2694,8 @@ function Roadmap() {
           <p>
             A Privacy Notice does not replace consent or technical safeguards.
             Signing in and entering Parent Mode do not establish verified
-            parental consent. Permission to store a detail does not automatically
-            permit sharing it with an AI provider.
+            parental consent. Storing a detail does not authorize sharing it
+            with an AI provider.
           </p>
           <p>
             These safeguards are planned, not shipped. Qualified privacy,
