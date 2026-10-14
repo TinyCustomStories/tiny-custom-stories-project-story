@@ -276,7 +276,7 @@ describe('project story site', () => {
       name: 'A disclaimer was only the starting point.',
     });
     expect(storyHeading).toBeTruthy();
-    const regions = screen.getByText(/assessment scopes, not launch markets/i);
+    const regions = screen.getByText(/research, not launch markets/i);
     expect(regions).toBeTruthy();
 
     fireEvent.click(screen.getByRole('link', { name: /See the Privacy/i }));
@@ -287,7 +287,7 @@ describe('project story site', () => {
     expect(roadmapHeading).toBeTruthy();
     const launchGate = screen.getByText(/not approved launch markets/i);
     expect(launchGate).toBeTruthy();
-    const planned = screen.getByText(/These safeguards are planned, not shipped/i);
+    const planned = screen.getByText(/planned, not shipped/i);
     expect(planned).toBeTruthy();
     const sourceLink = screen.getByRole('link', {
       name: /Read the full public Privacy & Trust roadmap/i,
