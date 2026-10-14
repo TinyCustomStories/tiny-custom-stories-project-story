@@ -6,7 +6,7 @@ The public site is a multi-route single-page application with two reading modes 
 
 ## October 12 privacy and trust planning checkpoint
 
-The [Privacy and trust roadmap](PrivacyAndTrustRoadmap.md) captures the newly recorded Sprint Infinity work on US, EU/EEA, and UK applicability, privacy notices, parental verification and consent, rights requests, technical collection, and retention. It separates documentation, conditional implementation, and integrated evidence while preserving the existing qualified real-family release review.
+The [Privacy and trust roadmap](PrivacyAndTrustRoadmap.md) captures the recorded Sprint Infinity work on US, EU/EEA, UK, and India applicability, privacy notices, parental verification and consent, rights requests, technical collection, and retention. It separates documentation, conditional implementation, and integrated evidence while preserving the existing qualified real-family release review.
 
 This is a repository documentation update, not a live application Privacy Notice or a claim that the planned controls have shipped. The responsive website, its dated activity snapshot, and the October 1 PDF companion are unchanged by this checkpoint.
 
