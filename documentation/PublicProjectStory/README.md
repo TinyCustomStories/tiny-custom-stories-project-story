@@ -4,6 +4,12 @@ This directory explains the public Tiny Custom Stories project-story site in a f
 
 The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story; the accepted-but-not-started Sprint 4 plan is carried in the public Decision and Roadmap records until implementation work begins.
 
+## October 12 privacy and trust planning checkpoint
+
+The [Privacy and trust roadmap](PrivacyAndTrustRoadmap.md) captures the recorded Sprint Infinity work on US, EU/EEA, UK, and India applicability, privacy notices, parental verification and consent, rights requests, technical collection, and retention. It separates documentation, conditional implementation, and integrated evidence while preserving the existing qualified real-family release review.
+
+This is a repository documentation update, not a live application Privacy Notice or a claim that the planned controls have shipped. The responsive website, its dated activity snapshot, and the October 1 PDF companion are unchanged by this checkpoint.
+
 ## October 11 evidence checkpoint
 
 The site is now dated October 11, 2026 and the main repository figures are **1,611 commits** on `development`, **658 PRs created**, **621 merged**, **501 issues** (**430 task-labeled, 399 closed, 102 open**), and **four main product CI workflow files**. The older October 5 workflow-run history is still explicitly dated.
@@ -26,6 +32,7 @@ The site preserves both reading modes, all existing routes, responsive editorial
 
 ## What is documented here
 
+- [Privacy and trust roadmap](PrivacyAndTrustRoadmap.md) explains the planned legal/privacy work, implementation sequence, and remaining release-review boundary without publishing private policy drafts.
 - [Wireframes](Wireframes.md) describe the information architecture, conceptual architecture, and intended responsive layouts in accessible text diagrams.
 - [Screenshot evidence](ScreenshotEvidence.md) records reviewed visual states and the conditions under which they were captured.
 - [Architecture explorer](ArchitectureExplorer.md) defines the public-safe Archify derivative, stable asset paths, curation boundary, and refresh contract.
