@@ -829,6 +829,36 @@ function StoryJourney() {
   );
 }
 
+function PrivacyTrustCheckpoint() {
+  return (
+    <div className="reading-panel">
+      <p className="eyebrow">
+        Sprint Infinity · Privacy planning, October 12-13, 2026
+      </p>
+      <h2>A disclaimer was only the starting point.</h2>
+      <p>
+        When a storybook remembers information about children, explaining what
+        happens to it is only one part of earning family trust. The project has
+        recorded work to understand actual data uses and build safeguards around
+        them.
+      </p>
+      <p>
+        The United States, EU/EEA, UK, and India are assessment scopes, not
+        approved launch markets. Privacy notices, parental verification,
+        purpose-specific consent and withdrawal, rights requests, and retention
+        work are planned, not shipped.
+      </p>
+      <p>
+        Qualified privacy, security, and child-safety review is still required
+        before any real-family Alpha use.
+      </p>
+      <p>
+        <Link to="/roadmap">See the Privacy &amp; Trust plan →</Link>
+      </p>
+    </div>
+  );
+}
+
 function StoryDevelopment() {
   const beats = [
     [
@@ -905,6 +935,8 @@ function StoryDevelopment() {
           impressive. It got bigger because “just generate a story” kept hiding
           decisions somebody still had to own.
         </p>
+
+        <PrivacyTrustCheckpoint />
 
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The engineering chapters underneath</p>
@@ -1872,6 +1904,8 @@ function Development() {
           </Link>
         </div>
 
+        <PrivacyTrustCheckpoint />
+
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">How work is delivered now</p>
@@ -2631,6 +2665,56 @@ function Roadmap() {
       </PageIntro>
 
       <section className="section roadmap-section">
+        <div className="reading-panel">
+          <p className="eyebrow">Privacy &amp; Trust · Sprint Infinity</p>
+          <h2>Privacy is a release gate, not a footer.</h2>
+          <p>
+            The October 12 planning work, expanded to include India on October
+            13, is assessing the United States, EU/EEA, UK, and India separately.
+            These are research scopes, not approved launch markets.
+          </p>
+          <ol>
+            <li>
+              <strong>Understand the actual data.</strong> Document information
+              collected, purposes, providers, technical collection, and current
+              gaps before writing definitive promises.
+            </li>
+            <li>
+              <strong>Define and build safeguards.</strong> Review parental
+              verification, purpose-specific consent and withdrawal, privacy
+              rights, collection-point notices, and retention boundaries before
+              implementing the relevant controls.
+            </li>
+            <li>
+              <strong>Verify the real journey.</strong> Test refusals, failures,
+              interrupted work, withdrawal, requests, and deletion boundaries
+              with fictional family information.
+            </li>
+          </ol>
+          <p>
+            A Privacy Notice does not replace consent or technical safeguards.
+            Signing in and entering Parent Mode do not establish verified
+            parental consent. Permission to store a detail does not automatically
+            permit sharing it with an AI provider.
+          </p>
+          <p>
+            These safeguards are planned, not shipped. Qualified privacy,
+            security, and child-safety review is still required before any
+            real-family Alpha use. The private working Privacy Notice has not
+            been approved or published as an application policy.
+          </p>
+          <p>
+            <a
+              href="https://github.com/TinyCustomStories/tiny-custom-stories-project-story/blob/main/documentation/PublicProjectStory/PrivacyAndTrustRoadmap.md"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read the full public Privacy &amp; Trust roadmap{' '}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        </div>
+
         <ol className="roadmap-list">
           {milestones.map((milestone, index) => (
             <li key={milestone.title}>
