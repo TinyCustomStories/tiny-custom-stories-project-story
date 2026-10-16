@@ -1162,3 +1162,21 @@
 .reading-document .public-boundary-note {
   max-width: 65ch !important;
 }
+
+/* Founder-approved desktop exception to the 80rem page cap. Keep the
+   established phone/tablet composition and constrain prose independently. */
+@media screen and (min-width: 1200px) {
+  .reading-page {
+    --reading-gutter: clamp(1.5rem, 2vw, 3rem);
+  }
+  .reading-layout,
+  .reading-page .page-intro,
+  .reading-home .hero {
+    width: 100%;
+    max-width: none;
+  }
+  .site-header,
+  footer {
+    padding-inline: clamp(1.5rem, 2vw, 3rem);
+  }
+}

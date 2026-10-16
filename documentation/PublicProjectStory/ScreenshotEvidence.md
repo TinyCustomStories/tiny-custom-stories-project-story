@@ -97,3 +97,13 @@ Story and Builder now share the complete existing dated build snapshot and desig
 | Decisions, Builder  | 390 × 844   | [Preserved reference reading on phones](reading-review/implemented/decisions-builder-mobile.jpg)                |
 
 Home Story desktop/mobile, Lessons Story desktop/mobile, and Decisions Builder desktop opening excerpts in the implementation table were refreshed after the density pass. Screenshots are opening excerpts; complete-page captures were used during review. No new animation, disclosure behavior, library, private browser API or live telemetry was introduced.
+
+## Fluid desktop frame correction
+
+The subsequent founder-approved correction removes the screen-only 80rem frame cap from 1200px upward. At 1728px, the measured frame spans the viewport with approximately 35px internal gutters, compared with the earlier 224px outside margin plus 32px padding. The earlier fixed-cap screenshots remain historical evidence; these images show the current laptop frame:
+
+- [Same-route before/after comparison at 1728 CSS pixels](reading-review/implemented/laptop-width-comparison.jpg).
+- [Story delivery in the wider frame](reading-review/implemented/delivery-story-wide.jpg).
+- [Original home doodle in the wider frame](reading-review/implemented/home-story-wide.jpg).
+
+Checked all 15 routes in both modes at measured widths 1365,1440,1728,1024 and 390 CSS pixels (150 combinations), with no horizontal document overflow. Captured full-page screenshots at 1365 and 1728 and inspected contact sheets plus individual before/after evidence. The 1024/390 compositions retain their existing CSS; the new rule begins at 1200px and applies only to screens. Repository verification and the Pages-base build were rerun. No new interaction or factual changes were introduced. These are engineering/designer checks, not user-research results; the previously documented assistive-technology, browser Find and print-pagination limits still apply.
