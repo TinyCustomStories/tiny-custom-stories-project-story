@@ -8,7 +8,17 @@ The published site is expected at [tinycustomstories.github.io/tiny-custom-stori
 
 Story mode is the default. The Story / Builder toggle stays available in the shared header and preserves the current route, so a reader can move from a narrative explanation to the technical version of the same subject without starting over. Working-record routes such as Decisions, Roadmap, Open questions, and the Sprint chapters remain available beneath the primary narrative rather than being duplicated into a second site.
 
-The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries newer October 11 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries newer October 16 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+
+## October 16 update: the difficult Sprint 3 chapter
+
+The site now includes a retrospective drawn from local Codex history and checked against current decisions and delivery evidence: repeated requests for executable work, original outcomes remaining blocked, fragmented parent-journey delivery, scope growth, stalled sessions and open PRs, shared-host verification, and context/model handoffs. The lessons appear in both reading modes. A mandatory extra planning stage is described as a proposal, with no claimed speedup.
+
+The October 14 scope reset now appears across Home, Development, Sprint 3, Roadmap, Architecture, and the public working record. The reduced fictional profile-only Fun & Fantasy checkpoint remains an intermediate integration target, not usable Alpha or a passed sprint. Reviewed epic merges include plan input, offline candidate generation/checking/application, and immutable approved-version reading; their complete assembled journey remains unverified. Optional source and advanced authoring capabilities remain unavailable in the checkpoint.
+
+The **October 16, 2026 UTC** snapshot is **1,653 development commits**, **727 PRs created / 690 merged**, **564 issues** (**493 task-labeled; 441 closed / 123 open**), **4 product workflow files**, and **1,646 workflow runs / 1,106 successful**. Counts come from fetched development history, bounded GitHub search counts, and Actions REST `total_count` responses. They are activity measures, not completion or current-code pass rates. See [Sprint 3 lessons and evidence method](documentation/PublicProjectStory/Sprint3Lessons.md).
+
+The architecture explorer retains its topology and updates the partial epic-implementation labels, offline checkpoint explanation, deferred optional context, and separate configurable synthetic provider path. Existing routes, reading modes, design, and PDF path remain stable. The PDF remains the October 1 checkpoint.
 
 ## October 11 update: Story Plan, doodle experiments, and a healthier backlog
 

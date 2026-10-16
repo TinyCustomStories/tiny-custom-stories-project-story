@@ -10,6 +10,12 @@ The existing Development story now shows the privacy and trust planning checkpoi
 
 US, EU/EEA, UK and India remain research scopes, not approved release markets. Qualified real-family privacy, security and child-safety review remains required. The website keeps all existing routes, activity statistics, styles, architecture assets and the October 1 PDF companion.
 
+## October 16 Sprint 3 retrospective and evidence refresh
+
+[The Sprint 3 field notes](Sprint3Lessons.md) explain the founder pain behind the scope reset: new Ready work without closure of original outcomes, dependency-first delivery that fragmented the parent journey, stopped sessions and unfinished PR handoffs, shared-host verification, and context/model routing. The narrative is paraphrased from local Codex history and checked against accepted decisions, source, merge metadata, and live Project 1 evidence. Private transcripts and unverified historical task-growth counts are omitted.
+
+Home, Development, Sprint 3, Roadmap, Architecture, and both learning modes now distinguish the intermediate profile-only Fun & Fantasy checkpoint from the broader product. Reviewed plan/generation/checking/application/read slices remain epic-branch evidence; the complete assembled journey is not claimed. Current totals and their calculation method are recorded in the field notes. The public diagram retains topology and updates status and provider labels; the October 1 PDF companion remains historical.
+
 ## October 12 privacy and trust planning checkpoint
 
 The [Privacy and trust roadmap](PrivacyAndTrustRoadmap.md) captures the recorded Sprint Infinity work on US, EU/EEA, UK, and India applicability, privacy notices, parental verification and consent, rights requests, technical collection, and retention. It separates documentation, conditional implementation, and integrated evidence while preserving the existing qualified real-family release review.

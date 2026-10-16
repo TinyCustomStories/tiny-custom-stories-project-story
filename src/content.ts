@@ -26,6 +26,20 @@ export type Milestone = {
 
 export const publicEntries: PublicEntry[] = [
   {
+    title: 'A smaller synthetic checkpoint after the Sprint 3 scope reset',
+    summary:
+      'The accepted intermediate target is a fictional profile-only Fun & Fantasy journey: accept a plan, generate a deterministic cover and ten text pages, approve the exact checked revision, and reopen it in protected Parent Mode. Optional sources and advanced authoring stay unavailable. Reviewed epic slices exist, but the assembled demonstration, broader sprint outcome, qualified review, and real-family release are not passed.',
+    category: 'Sprint 3',
+    date: '2026-10-16',
+    status: 'Confirmed decision',
+    source:
+      'October 14 scope decision, dated amendments, and October 16 delivery evidence',
+    related: ['Outcome-first delivery', 'Synthetic checkpoint is not Alpha'],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+
+  {
     title: 'Personalized learning through stories',
     summary:
       'Tiny Custom Stories is being built to help parents make playful, meaningful stories for young children while keeping the parent in control of purpose, context, review, and approval.',
@@ -458,11 +472,12 @@ export const publicEntries: PublicEntry[] = [
     title:
       'Qualified real-family release validation and derived-artifact deletion still need evidence',
     summary:
-      'Sprint 2 is closed at the accepted synthetic/local boundary, but qualified privacy/legal/security/child-safety review is still required before real-family collection or use. Sprint 3 must also settle what source deletion means for generated drafts, approved stories, generation artifacts, and provider-held copies.',
+      'Sprint 2 is closed at the accepted synthetic/local boundary, but qualified privacy/legal/security/child-safety review is still required before real-family collection or use. The source-versus-built-story distinction is accepted; full cleanup and provider-copy evidence remain unfinished. The reduced checkpoint excludes optional sources and must prove that exclusion.',
     category: 'Open question',
-    date: '2026-10-04',
+    date: '2026-10-16',
     status: 'Open question',
-    source: 'OQ-004, OQ-019, DEC-2026-051, and DEC-2026-061',
+    source:
+      'Qualified release gates, accepted source/story distinction, and October 14 scope reset',
     related: ['Qualified release review', 'Derived artifact lifecycle'],
     reviewStatus: 'Founder approved for public sharing',
     safeToPublish: true,
@@ -490,9 +505,9 @@ export const milestones: Milestone[] = [
   },
   {
     title: 'Sprint 3 - Story Studio composition',
-    state: 'Authoring workspace underway - outcome gate open',
+    state: 'Reduced synthetic checkpoint underway - outcome gate open',
     status: 'Verified fact',
-    note: 'Protected setup, saved reading choices, page/cover editing, and version restore are present. Initial Story Plan review and recovery have merged into the owning epic branch; a default-off synthetic text adapter has landed on development. Full generation, assisted flows, approval, and the final outcome remain ahead.',
+    note: 'The October 14 reset narrows the intermediate checkpoint to profile-only Fun & Fantasy, deterministic offline generation, exact-revision approval, and protected reopen. Ready-plan, candidate/checking/application, and approved-version reader slices are epic-merged; the complete integrated demonstration remains unverified. Optional context and advanced authoring are deferred from this checkpoint, not delivered or required to expand it.',
   },
   {
     title: 'Sprint 4 - Visual Theme System',

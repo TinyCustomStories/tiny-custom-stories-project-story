@@ -258,7 +258,9 @@ describe('project story site', () => {
       screen.getByText(/Synthetic\/local outcome demonstrated/i),
     ).toBeTruthy();
     expect(
-      screen.getByText(/Authoring workspace underway - outcome gate open/i),
+      screen.getByText(
+        /Reduced synthetic checkpoint underway - outcome gate open/i,
+      ),
     ).toBeTruthy();
     expect(screen.getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
     expect(
@@ -312,15 +314,17 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(screen.getByText('1,611')).toBeTruthy();
-    expect(screen.getByText('658')).toBeTruthy();
-    expect(screen.getByText('621')).toBeTruthy();
-    expect(screen.getByText('501')).toBeTruthy();
-    expect(screen.getByText('430')).toBeTruthy();
-    expect(screen.getByText(/October 11, 2026/i)).toBeTruthy();
+    expect(screen.getByText('1,653')).toBeTruthy();
+    expect(screen.getByText('727')).toBeTruthy();
+    expect(screen.getByText('690')).toBeTruthy();
+    expect(screen.getByText('564')).toBeTruthy();
+    expect(screen.getByText('493')).toBeTruthy();
+    expect(
+      screen.getByRole('heading', { name: 'October 16, 2026' }),
+    ).toBeTruthy();
     expect(screen.getByText('4')).toBeTruthy();
-    expect(screen.getByText(/941 of 1,344 recorded runs/i)).toBeTruthy();
-    expect(screen.getByText(/October 5, 2026:/i)).toBeTruthy();
+    expect(screen.getByText(/1,106 of 1,646 recorded runs/i)).toBeTruthy();
+    expect(screen.getByText(/October 16, 2026:/i)).toBeTruthy();
     expect(screen.getByText('Frontend CI')).toBeTruthy();
     expect(screen.getByText('Backend CI')).toBeTruthy();
     expect(screen.getByText('Repository tools CI')).toBeTruthy();
@@ -420,7 +424,7 @@ describe('project story site', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /Protected authoring workspace underway\. Outcome gate still open/i,
+        name: /Reduced synthetic checkpoint underway\. Outcome gate still open/i,
       }),
     ).toBeTruthy();
     expect(screen.getByText(/Landed · Story Studio home/i)).toBeTruthy();
