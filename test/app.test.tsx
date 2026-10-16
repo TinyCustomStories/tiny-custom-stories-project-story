@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../src/App';
 
 function renderBuilder() {
@@ -13,10 +13,14 @@ function renderStory() {
 }
 
 describe('project story site', () => {
+  beforeEach(() => {
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+  });
   afterEach(() => {
     cleanup();
     window.history.replaceState({}, '', '/');
     window.localStorage.clear();
+    vi.restoreAllMocks();
   });
 
   it('defaults to Story mode and switches to Builder without changing routes', () => {
@@ -57,6 +61,82 @@ describe('project story site', () => {
         name: /three facts can look personalized/i,
       }),
     ).toBeTruthy();
+  });
+
+  it('opens an internal destination at the top with focus on its content', () => {
+    renderStory();
+    vi.mocked(window.scrollTo).mockClear();
+
+    fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
+
+    expect(window.location.hash).toBe('#/product');
+    expect(window.scrollTo).toHaveBeenCalledWith({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    });
+    expect(document.activeElement).toBe(screen.getByRole('main'));
+  });
+
+  it('returns to the beginning even when the footer links to the current page', () => {
+    renderStory();
+    vi.mocked(window.scrollTo).mockClear();
+
+    fireEvent.click(
+      screen.getByRole('link', { name: /Back to the beginning/i }),
+    );
+
+    expect(window.scrollTo).toHaveBeenCalledWith({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    });
+    expect(document.activeElement).toBe(screen.getByRole('main'));
+  });
+
+  it('opens history destinations at the top after a hash navigation', () => {
+    renderStory();
+    fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
+    vi.mocked(window.scrollTo).mockClear();
+
+    window.history.replaceState({}, '', '#/development');
+    fireEvent(window, new HashChangeEvent('hashchange'));
+
+    expect(
+      screen.getByRole('heading', {
+        name: /A disclaimer was only the starting point/i,
+      }),
+    ).toBeTruthy();
+    expect(window.scrollTo).toHaveBeenCalledWith({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    });
+    expect(document.activeElement).toBe(screen.getByRole('main'));
+  });
+
+  it('keeps the current page when the skip link targets its main content', () => {
+    renderStory();
+    fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
+
+    window.history.replaceState({}, '', '#main-content');
+    fireEvent(window, new HashChangeEvent('hashchange'));
+
+    expect(
+      screen.getByRole('heading', {
+        name: /three facts can look personalized/i,
+      }),
+    ).toBeTruthy();
+  });
+
+  it('owns scroll restoration while mounted and restores the browser setting on unmount', () => {
+    window.history.scrollRestoration = 'auto';
+    const { unmount } = renderStory();
+
+    expect(window.history.scrollRestoration).toBe('manual');
+
+    unmount();
+    expect(window.history.scrollRestoration).toBe('auto');
   });
 
   it('keeps the Tiny Custom Stories brand in the shared header', () => {
