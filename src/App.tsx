@@ -103,9 +103,16 @@ function internalPath(path: string): Route {
   return path in routes ? (path as Route) : '/';
 }
 
+function focusPageStart() {
+  document.getElementById('main-content')?.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+}
+
 function go(path: Route) {
   window.history.pushState({}, '', `#${path}`);
   window.dispatchEvent(new HashChangeEvent('hashchange'));
+  // Same-page links do not trigger a route render.
+  focusPageStart();
 }
 
 function Link({
@@ -3621,6 +3628,11 @@ function Layout({
   const [menuOpen, setMenuOpen] = React.useState(false);
   const menuButtonRef = React.useRef<HTMLButtonElement>(null);
 
+  React.useLayoutEffect(() => {
+    // Reset after the destination renders, including direct and history visits.
+    focusPageStart();
+  }, [route]);
+
   React.useEffect(() => {
     setMenuOpen(false);
   }, [route]);
@@ -3713,7 +3725,7 @@ function Layout({
           </button>
         </div>
       </header>
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <Page />
       </main>
       <footer>
@@ -3744,9 +3756,17 @@ export default function App() {
   });
 
   React.useEffect(() => {
-    const update = () => setRoute(internalPath(window.location.hash.slice(1)));
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    const update = () => {
+      if (window.location.hash === '#main-content') return;
+      setRoute(internalPath(window.location.hash.slice(1)));
+    };
     window.addEventListener('hashchange', update);
-    return () => window.removeEventListener('hashchange', update);
+    return () => {
+      window.removeEventListener('hashchange', update);
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
   }, []);
 
   React.useEffect(() => {
