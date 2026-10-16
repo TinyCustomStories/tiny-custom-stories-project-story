@@ -26,7 +26,7 @@
       "id": "react-web",
       "type": "frontend",
       "label": "React web app",
-      "sublabel": "Public, child-safe, and protected parent surfaces",
+      "sublabel": "Public + child + parent UI",
       "tag": "Implemented shell",
       "pos": [
         255,
@@ -86,8 +86,8 @@
       "id": "story-context-selection",
       "type": "backend",
       "label": "Story Context Selection",
-      "sublabel": "Parent-selected, minimized story context",
-      "tag": "Accepted • not fully wired",
+      "sublabel": "Optional minimized context",
+      "tag": "Deferred for checkpoint",
       "pos": [
         960,
         550
@@ -101,8 +101,8 @@
       "id": "story-lifecycle",
       "type": "backend",
       "label": "Story Lifecycle",
-      "sublabel": "Story records • revisions • approval",
-      "tag": "Partial implementation",
+      "sublabel": "Revisions • checked apply • approval",
+      "tag": "Epic-merged • partial",
       "pos": [
         600,
         550
@@ -116,8 +116,8 @@
       "id": "story-generation",
       "type": "backend",
       "label": "Story Generation",
-      "sublabel": "Candidate story artifacts • provider boundary",
-      "tag": "Accepted boundary",
+      "sublabel": "Offline candidates + finite checks",
+      "tag": "Epic-merged • partial",
       "pos": [
         1250,
         550
@@ -161,8 +161,8 @@
       "id": "text-provider",
       "type": "external",
       "label": "Text AI provider",
-      "sublabel": "Vendor and transfer policy unresolved",
-      "tag": "Open • unselected",
+      "sublabel": "Configurable synthetic adapter",
+      "tag": "Default-off • family unapproved",
       "pos": [
         1250,
         40
@@ -229,7 +229,7 @@
       "id": "child-map-to-context",
       "from": "child-map-discovery",
       "to": "story-context-selection",
-      "label": "candidates",
+      "label": "optional candidates",
       "variant": "dashed",
       "fromSide": "bottom",
       "toSide": "top"
@@ -314,7 +314,8 @@
       "to": "text-provider",
       "variant": "dashed",
       "fromSide": "top",
-      "toSide": "bottom"
+      "toSide": "bottom",
+      "label": "separate synthetic path"
     }
   ],
   "cards": [
@@ -329,20 +330,20 @@
     },
     {
       "dot": "violet",
-      "title": "Accepted story boundaries",
+      "title": "Checkpoint integration underway",
       "items": [
-        "Story Lifecycle owns Story truth, revisions, and approval.",
-        "Context Selection creates a minimized, parent-selected context bundle.",
-        "Generation returns candidate artifacts; it does not own family authority."
+        "Story Lifecycle owns checked application, revisions, and approval.",
+        "Offline generation and finite checking have epic-branch implementations.",
+        "The complete protected parent journey remains unverified."
       ]
     },
     {
       "dot": "amber",
-      "title": "Open provider boundary",
+      "title": "Reduced checkpoint boundary",
       "items": [
-        "The production text provider remains unselected.",
-        "Provider-transfer policy stays separate from generation.",
-        "Future story-flow connections are shown as accepted boundaries, not shipped product claims."
+        "The supported fixture uses a fictional profile and deterministic offline text.",
+        "Optional source context and advanced authoring stay unavailable.",
+        "A separate configurable adapter does not clear real-family provider use."
       ]
     }
   ]

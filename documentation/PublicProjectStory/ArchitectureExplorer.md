@@ -1,6 +1,6 @@
 # Public architecture explorer
 
-Last reviewed: 2026-10-02
+Last reviewed: 2026-10-16
 
 The Project Story Architecture route includes a curated Archify explorer. It is a public translation of the canonical architecture knowledge from the private product repository, not a mirror of that repository's generated artifact.
 
@@ -57,3 +57,9 @@ A diagram generated from private source is evidence, not authority. If the publi
 ## Experience rule
 
 The explorer is one chapter of the Project Story. The surrounding page keeps the existing warm editorial design; the embedded Archify canvas may keep its own diagram language. Home loads only the static preview. The full interactive HTML loads lazily on the Architecture route and always has an explicit full-view link for constrained screens.
+
+## October 16 checkpoint refresh
+
+The existing topology is preserved. Story Generation and Story Lifecycle now carry partial epic-implementation labels for offline candidates, finite checking, and checked application. Optional context is explicitly deferred for the reduced checkpoint; the text-provider boundary describes a configurable synthetic adapter, default-off and unapproved for family use. The cards distinguish reviewed epic slices from an unverified complete parent journey. The preview repeats that distinction.
+
+Archify regeneration is followed by plain-punctuation normalization to preserve this site's existing editorial contract. Run artifact checks and browser/visual checks on the normalized final HTML, since a pre-normalization receipt has a different byte hash. Keep local generator receipts and captures outside the public artifact directory; they contain local paths and are review evidence, not published site assets. Review the candidate-return route and the optional context branch visually rather than treating an automated pass as sufficient.

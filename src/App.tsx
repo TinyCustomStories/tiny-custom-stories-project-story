@@ -171,7 +171,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 11, 2026
+            A public project story · updated October 16, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -238,11 +238,11 @@ function Home() {
         <p>
           Sprint 3 still uses a{' '}
           <strong>synthetic-only sequencing exception</strong>. Protected setup,
-          editing, and revision history are in development. The first Story Plan
-          review and recovery work has reached its epic branch. The generated
-          book and approval are still unfinished. Basic doodles are being tested
-          separately. Neither experiment approves real-family AI use or closes
-          the release gates.
+          editing, and revision history are in development. Ready-plan input,
+          offline candidate/checking/application, and approved-version readers
+          have epic-branch implementations. The reduced parent journey is still
+          unverified. Basic doodles are being tested separately. Neither
+          experiment approves real-family AI use or closes the release gates.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -403,9 +403,10 @@ function StoryHome() {
         </p>
         <p>
           Story Studio can save a parent's choices, edit pages, and restore
-          earlier versions. The first Story Plan review and recovery flow is
-          being integrated on its epic branch. A generated, parent-approved book
-          and real-family release are still ahead.
+          earlier versions. The next demonstration is narrower: one fictional
+          profile, Fun & Fantasy, an offline story, approval, and protected
+          reopen. Reviewed epic slices exist; the complete journey and
+          real-family release remain unverified.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -963,9 +964,9 @@ function StoryDevelopment() {
             <p className="eyebrow">Creation without magic</p>
             <h3>Sprint 3</h3>
             <p>
-              Story Studio is turning generation into a reversible parent
-              workflow with editing, versions, context boundaries, and eventual
-              approval.
+              A growing backlog led to a scope reset: finish one fictional
+              plan-to-approved-story journey before reopening optional context
+              and advanced revision capabilities.
             </p>
             <b>Read the technical chapter →</b>
           </Link>
@@ -1007,6 +1008,34 @@ function StoryArchitecture() {
           evidence earns them.
         </p>
       </PageIntro>
+      <section
+        className="section delivery-section"
+        aria-label="Current synthetic architecture checkpoint"
+      >
+        <div className="reading-panel">
+          <p className="eyebrow">
+            October 16 architecture checkpoint · partial implementation
+          </p>
+          <h2>One narrow path through the existing boundaries.</h2>
+          <p>
+            The current target uses a saved fictional profile and an explicitly
+            accepted plan. A durable operation coordinates generation and
+            checking; Story Lifecycle applies the current valid result and owns
+            revisions and approval. Protected readers reopen the exact immutable
+            approved version. These seams have reviewed epic-branch
+            implementations; the complete UI-to-storage demonstration is still
+            unverified and they are not all integrated into development.
+          </p>
+          <p>
+            Optional Child Map context and source-cleanup capabilities are
+            outside this checkpoint. Their exclusion must be enforced by the
+            server as well as the interface. Deterministic offline doubles
+            supply the fixed test content; the configurable synthetic provider
+            adapter remains a separate, default-off path. Neither authorizes
+            real-family transfer or proves a live model produced a safe story.
+          </p>
+        </div>
+      </section>
 
       <section className="section story-section">
         <div className="sprint-chapter-intro">
@@ -1275,6 +1304,100 @@ function StoryHowWeBuild() {
   );
 }
 
+function SprintThreeRetrospective() {
+  const lessons = [
+    [
+      'More Ready tasks did not bring the finish line closer',
+      'In early October I kept asking for more work to run. By October 8 I was asking why the new work was mostly new tickets while the original blocked outcomes stayed blocked. Small tasks helped review, but task creation had become too easy to confuse with progress.',
+      'Prepare the next accepted outcome, inspect its actual missing prerequisites, and reconcile delivered work before making more slices. Every slice needs a concrete route back to finishing the original outcome.',
+    ],
+    [
+      'The parent journey got lost behind the dependency graph',
+      'On October 7 I asked why we were not developing Story Studio in the order a parent would use it. Later editors and backend pieces could move independently while the opening steps still could not connect. The technical progress was real; the experience remained fragmented.',
+      'Keep one observable parent journey as the integration target. A finished component, merged task, epic branch, development checkpoint, and demonstrated outcome are different milestones.',
+    ],
+    [
+      'An Alpha needs fewer supported capabilities',
+      'By October 14, optional context and source-lifecycle work had drawn the sprint into cleanup, compatibility, and recovery across several owners. I asked whether the sprint could ever finish. The answer was a scope reset, not a promise to finish every newly discovered edge case.',
+      'The accepted intermediate checkpoint is one fictional profile-only Fun & Fantasy journey. Optional sources, custom instructions, alternative protagonists, editing, and rewrites stay unavailable at both UI and API boundaries. Deferred work remains future work; essential safety and isolation still apply.',
+    ],
+    [
+      'Open sessions were another backlog I had to manage',
+      'I repeatedly asked why agents had stopped, why reviewed PRs were still open, and whether I had to resume the leftover sessions myself. Scope changes also left old work in flight. More autonomous workers did not remove the coordination burden from me.',
+      'Give each active branch a clear owner and an explicit handoff. Recheck current scope before continuing old work, take relevant PRs through review and merge gates, and preserve deferred branches and evidence without pretending they are completed.',
+    ],
+    [
+      'Parallel coding still shares one machine',
+      'Several agents could edit separate worktrees while builds, database tests, and verification competed for the same host. Failed and interrupted checks made recovery slower. A busy terminal was not reliable evidence that a worker was making progress.',
+      'Coordinate expensive operations as well as writers and GitHub calls. Keep actual command outcomes and source identity. Reuse valid unchanged-source evidence; rerun when changed code, failures, or a concrete gap warrants it. The net time saving has not been measured.',
+    ],
+    [
+      'A fresh session needs a useful handoff',
+      'Long investigations and repeated context recovery made it harder to know what had already been decided or tested. By October 15 I was explicitly asking for main activities in newer sessions without compaction. Splitting sessions helps only if the next one can recover the exact work.',
+      'Carry a compact record of scope, branch and commit, changed files, real checks, unresolved findings, and ownership. Recheck GitHub and source before acting. Keep implementation and independent review separate; do not replay an entire conversation as a substitute for a contract.',
+    ],
+    [
+      'A stronger model is not a workflow repair',
+      'I proposed stronger-model planning, cheaper implementation, and a separate reviewer because the current loop felt too slow. That direction fits our existing capability-based routing. Making every tiny task pass through another planning session could add more waiting.',
+      'Use the existing issue when it is already explicit. Spend stronger-model judgment on ambiguity, architecture, privacy, safety, and consequential review; use cheaper execution for settled work. A mandatory extra planning stage remains a proposal, not an adopted rule or a measured speedup.',
+    ],
+  ];
+
+  return (
+    <section
+      className="section delivery-section"
+      aria-labelledby="sprint-three-lessons-title"
+    >
+      <div className="sprint-chapter-intro">
+        <p className="eyebrow">Sprint 3 field notes · October 2 to 16, 2026</p>
+        <h2 id="sprint-three-lessons-title">
+          When activity stopped feeling like progress.
+        </h2>
+        <p>
+          This sprint has been exhausting. I wanted to finish a story journey;
+          instead I kept asking for Ready tasks, unblocked outcomes, resumed
+          sessions, and merged PRs. The frustration changed the question from
+          “how many agents can we run?” to “what will actually finish this
+          journey?”
+        </p>
+        <p>
+          These are paraphrased lessons from local Codex history, checked
+          against current repository decisions and delivery evidence. They are a
+          retrospective, not a complete session audit or a measured comparison
+          of models, cost, or productivity. Private transcripts stay private.
+        </p>
+      </div>
+      <div className="story-beat-grid">
+        {lessons.map(([title, pain, change], index) => (
+          <article className="story-beat" key={title}>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{title}</h3>
+            <p>{pain}</p>
+            <p>
+              <strong>What changes:</strong> {change}
+            </p>
+          </article>
+        ))}
+      </div>
+      <div className="reading-panel">
+        <h3>The smaller finish line is still a real integration test.</h3>
+        <p>
+          A saved fictional name and age lead to a reviewed plan, one
+          deterministic cover and ten text pages, exact-revision approval, and
+          the same immutable story reopened in protected Parent Mode. Family
+          isolation, stale-input rejection, safe recovery, and essential output
+          checks remain required. This intermediate checkpoint does not certify
+          general suitability, publish to children, clear qualified review, or
+          pass the wider sprint.
+        </p>
+        <p>
+          <Link to="/sprint-three">Read the current Sprint 3 boundary →</Link>
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function StoryLearnings() {
   const lessons = [
     [
@@ -1332,6 +1455,8 @@ function StoryLearnings() {
           know I needed to learn.
         </p>
       </PageIntro>
+
+      <SprintThreeRetrospective />
 
       <section className="section delivery-section">
         <div className="sprint-chapter-intro">
@@ -1809,8 +1934,8 @@ function Development() {
       'The temporal Child Map, deterministic Discovery, private-media and deletion lifecycle, accessibility evidence, and assembled local journey now satisfy the accepted synthetic/local outcome. Qualified real-family release review remains a later gate.',
     ],
     [
-      'Sprint 3 · Story Plan review has reached its epic branch',
-      'Story Studio has protected profile-based entry, saved purpose and reading choices, direct editing, and version restore. The first protected Story Plan review and recovery flow has merged into an epic branch, not an end-to-end release. Generation and final approval remain unfinished.',
+      'Sprint 3 · a smaller checkpoint after a difficult scope reset',
+      'The next checkpoint is profile-only Fun & Fantasy with deterministic offline text, exact-revision approval, and protected reopen. Ready-plan input, generation/checking, initial application, and approved-version reading now have epic-branch implementations. A complete integrated demonstration is still unverified; broader editing and source-context work is deferred from this checkpoint.',
     ],
     [
       'Sprint 4 · visual direction accepted, early doodle tests underway',
@@ -1829,9 +1954,11 @@ function Development() {
           Each sprint exposed a boundary that needed to become clearer: first
           family authority, then evolving child context, then the difference
           between Story truth, context permission, generation, and visual
-          continuity. The October 11 checkpoint adds initial Story Plan review,
-          synthetic doodle experiments, and a tighter backlog workflow. These
-          are steps forward, not a claim that the remaining gates have passed.
+          continuity. The October 14 scope reset narrowed the next demonstration
+          to one fictional, parent-operated story journey. Subsequent epic
+          merges add accepted-plan input, offline generation/checking, initial
+          story application, and approved-version reading. Their assembled
+          journey and wider outcome gates still need proof.
         </p>
       </PageIntro>
 
@@ -1881,12 +2008,13 @@ function Development() {
           </Link>
           <Link to="/sprint-three" className="sprint-chapter-card">
             <span>03</span>
-            <p className="eyebrow">Authoring workspace underway · gate open</p>
+            <p className="eyebrow">Reduced checkpoint underway · gate open</p>
             <h3>Sprint 3</h3>
             <p>
-              Protected setup, Story Plan review on an epic branch, direct
-              editing, cover changes, and revision history. Generation and
-              approval still need integration.
+              Profile-only plan acceptance, offline
+              generation/checking/application, and approved-version reading have
+              epic implementations. The reduced end-to-end demonstration remains
+              unverified.
             </p>
             <b>Read Sprint 3 →</b>
           </Link>
@@ -2042,9 +2170,9 @@ function HowWeBuild() {
               {deliverySnapshot.workflowRunsSnapshotDate}:{' '}
               {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
               {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
-              completed successfully. Those run totals stay attached to that
-              older checkpoint instead of being silently relabeled as October 11
-              telemetry.
+              completed successfully. These are repository-wide historical
+              outcomes, including superseded runs, not a pass rate for the
+              current code or a measure of product readiness.
             </p>
           </article>
         </div>
@@ -2195,9 +2323,10 @@ function HowWeBuild() {
 
         <p className="public-boundary-note">
           Repository counts are intentionally dated rather than presented as
-          live telemetry. The October 11 repository totals and the separately
-          dated October 5 workflow-run history make their evidence windows
-          explicit. The public site does not call the private repository or
+          live telemetry. Repository totals and workflow history were read on
+          October 16, 2026 (UTC). Commits count only development ancestry;
+          epic-branch work is included in PR totals but may not have reached
+          development. The public site does not call the private repository or
           require a GitHub token in the browser.
         </p>
       </section>
@@ -2246,6 +2375,8 @@ function Learnings() {
           make us nervous.
         </p>
       </PageIntro>
+
+      <SprintThreeRetrospective />
 
       <section className="section delivery-section">
         <div className="sprint-chapter-intro">
@@ -2408,6 +2539,34 @@ function Architecture() {
           rendering artifacts behind them.
         </p>
       </PageIntro>
+      <section
+        className="section delivery-section"
+        aria-label="Current synthetic architecture checkpoint"
+      >
+        <div className="reading-panel">
+          <p className="eyebrow">
+            October 16 architecture checkpoint · partial implementation
+          </p>
+          <h2>One narrow path through the existing boundaries.</h2>
+          <p>
+            The current target uses a saved fictional profile and an explicitly
+            accepted plan. A durable operation coordinates generation and
+            checking; Story Lifecycle applies the current valid result and owns
+            revisions and approval. Protected readers reopen the exact immutable
+            approved version. These seams have reviewed epic-branch
+            implementations; the complete UI-to-storage demonstration is still
+            unverified and they are not all integrated into development.
+          </p>
+          <p>
+            Optional Child Map context and source-cleanup capabilities are
+            outside this checkpoint. Their exclusion must be enforced by the
+            server as well as the interface. Deterministic offline doubles
+            supply the fixed test content; the configurable synthetic provider
+            adapter remains a separate, default-off path. Neither authorizes
+            real-family transfer or proves a live model produced a safe story.
+          </p>
+        </div>
+      </section>
 
       <section
         className="section architecture-explorer-section"
@@ -2996,13 +3155,12 @@ function SprintThree() {
         title="Story creation is becoming a reversible composition workflow."
       >
         <p>
-          Sprint 3 is no longer architecture alone. The protected Story Studio
-          home and exact-story workspace now include direct page-text editing,
-          deterministic cover editing, and earlier-version preview/restore.
-          Protected setup and saved reading choices have also landed. Initial
-          Story Plan review and protected recovery are on their own epic branch.
-          The synthetic text adapter remains disabled for family requests.
-          End-to-end generation and approval are still unfinished.
+          Sprint 3 became a lesson in how much code can accumulate before a
+          complete experience exists. Earlier editing and revision foundations
+          remain, but the October 14 reset authorizes a smaller intermediate
+          checkpoint: one fictional profile, Fun & Fantasy, a freshly accepted
+          plan, an offline cover and ten pages, exact-revision approval, and
+          protected reopen. It is not usable Alpha or proof the sprint is done.
         </p>
       </PageIntro>
 
@@ -3011,15 +3169,17 @@ function SprintThree() {
           <div>
             <p className="eyebrow">Sprint 3 outcome status</p>
             <h2>
-              Protected authoring workspace underway. Outcome gate still open.
+              Reduced synthetic checkpoint underway. Outcome gate still open.
             </h2>
           </div>
           <p>
-            This work continues under the synthetic-only sequencing exception.
-            Real authoring and revision slices have landed, but the full
-            generation pipeline, integrated assisted-change and continuity
-            flows, approval persistence/integration, and final Sprint 3
-            demonstration are not complete.
+            Reviewed epic merges include Ready-plan input, offline candidate
+            generation/checking, initial application through Story Lifecycle,
+            and immutable approved-version reading. They have not proved the
+            entire protected UI/API/storage journey. Optional sources, free-form
+            instructions, alternative protagonists, editing, and rewrites are
+            unavailable in this checkpoint. Safety, family isolation, recovery,
+            currentness, and approval checks remain required.
           </p>
         </div>
 
@@ -3035,11 +3195,12 @@ function SprintThree() {
 
         <div className="sprint-chapter-intro">
           <p className="eyebrow">Foundation → product experience</p>
-          <h2>The visible studio now has real authoring slices.</h2>
+          <h2>Earlier authoring work remains reusable.</h2>
           <p>
-            Status words remain part of the diagram so an integrated editor or
-            standalone presentation component is not mistaken for the complete
-            generation-to-approval outcome.
+            The historical authoring slices below describe the broader product,
+            including capabilities unavailable in the reduced checkpoint. They
+            are not evidence that the current generation-to-approval journey is
+            complete.
           </p>
         </div>
 
@@ -3263,7 +3424,7 @@ function Questions() {
     ],
     [
       'What happens to stories derived from Child Map information that is later deleted?',
-      'The lifecycle of drafts, revisions, approved versions, generation artifacts, and provider-held copies must be decided before the Sprint 3 gate passes.',
+      'The source-versus-built-story distinction is accepted, while complete cleanup and provider-copy evidence remain unfinished. The reduced checkpoint excludes optional sources; it must prove that exclusion rather than treating generalized source cleanup as delivered or a blanket blocker.',
     ],
     [
       'When should Story Generation become a separate worker or service?',
@@ -3392,7 +3553,7 @@ function Library() {
             <h2>Take the evolving project story with you.</h2>
             <p>
               The PDF remains the October 1 fixed-layout checkpoint at its
-              stable public path. This responsive site carries the October 11
+              stable public path. This responsive site carries the October 16
               project update and is the current narrative.
             </p>
           </div>
