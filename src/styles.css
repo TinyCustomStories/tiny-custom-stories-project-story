@@ -1767,7 +1767,7 @@ footer a {
   background: var(--color-expressive-sun);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1250px) {
   .site-header {
     flex-wrap: wrap;
     gap: 0.8rem 1rem;
@@ -1821,6 +1821,8 @@ footer a {
     border-color: var(--color-link);
     background: var(--color-expressive-lavender);
   }
+}
+@media (max-width: 950px) {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;

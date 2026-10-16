@@ -4,6 +4,14 @@ This directory explains the public Tiny Custom Stories project-story site in a f
 
 The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story; the accepted-but-not-started Sprint 4 plan is carried in the public Decision and Roadmap records until implementation work begins.
 
+## October 16 reading and navigation redesign
+
+All 15 routes now use a shared reading structure in both Story and Builder: a restrained opening, comfortable reading column, local section navigation with current location, individual-topic lookup, and mobile recomposition. The warm palette, three type families, original home-screen doodles, status language, public boundaries, and static GitHub Pages hosting remain.
+
+**Lessons** is the shorter navigation label for the unchanged `/#/learnings` route. The former overlapping retrospective sections are grouped into five thematic chapters with nearby optional field notes. Expand all supporting notes exposes the complete mounted record for Find and comparison; printing expands the record and restores the reader's choices afterwards. Consequential limits remain visible.
+
+Read the [audit, direction comparison and content mapping](ReadingExperiencePilot.md), [updated wireframes](Wireframes.md), and [verification evidence](ScreenshotEvidence.md). This is a designer/engineer walkthrough, not a user-research result. No project statistics, sprint completion state, release permissions, PDF content, or private product policy are updated by this reading redesign.
+
 ## October 14 privacy and trust website update
 
 The existing Development story now shows the privacy and trust planning checkpoint in both Story and Builder modes. The existing Roadmap page explains the planned sequence and links to the [public planning record](PrivacyAndTrustRoadmap.md). This is visible website copy, not a live application Privacy Notice or an implemented privacy feature.
@@ -50,7 +58,7 @@ The site preserves both reading modes, all existing routes, responsive editorial
 - [Architecture explorer](ArchitectureExplorer.md) defines the public-safe Archify derivative, stable asset paths, curation boundary, and refresh contract.
 - The shared **Story / Builder** toggle is persistent across routes. Story mode supplies narrative versions of the primary public pages; Builder mode retains the detailed technical material, now refreshed through October 9.
 - In Story mode, **How we build** explains the human workflow behind small tasks, specialist agents, repository-owned memory, review loops, testing, and documentation. In Builder mode it contains the dated, public-safe activity snapshot and the exact current delivery/verification system.
-- The **What we learned** route separately holds engineering retrospectives, failed experiments, tool-pilot outcomes, founder learning, and the next unresolved delivery frontier so process mechanics and lessons do not compete on one page.
+- The **Lessons** route separately holds engineering retrospectives, failed experiments, tool-pilot outcomes, founder learning, and the next unresolved delivery frontier so process mechanics and lessons do not compete on one page.
 - **Decisions**, **Roadmap**, and **Open questions** remain stable public routes but are deliberately removed from the main header and linked contextually from Development story.
 - The [Public Project Dossier](../../public/documents/tiny-custom-stories-project-dossier.pdf) is a portable companion at a stable path. It supports the website rather than replacing the website's semantic, responsive version.
 

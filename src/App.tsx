@@ -1,4 +1,6 @@
 import React from 'react';
+import { ReadingPage, ReadingContext, type ReadingMode } from './ReadingPage';
+import { Lessons } from './Lessons';
 import deliverySnapshot from './delivery-snapshot.json';
 import {
   designPrinciples,
@@ -7,8 +9,6 @@ import {
   surfaceThemes,
   type KnowledgeStatus,
 } from './content';
-
-type ReadingMode = 'story' | 'builder';
 
 type Route =
   | '/'
@@ -34,7 +34,7 @@ const routes: Record<Route, string> = {
   '/development': 'Development story',
   '/architecture': 'Architecture',
   '/delivery': 'How we build',
-  '/learnings': 'What we learned',
+  '/learnings': 'Lessons',
   '/decisions': 'Decisions',
   '/roadmap': 'Roadmap',
   '/sprint-one': 'Sprint 1',
@@ -52,7 +52,7 @@ const primaryNavigation: Array<{ path: Route; label: string }> = [
   { path: '/development', label: 'Development story' },
   { path: '/architecture', label: 'Architecture' },
   { path: '/delivery', label: 'How we build' },
-  { path: '/learnings', label: 'What we learned' },
+  { path: '/learnings', label: 'Lessons' },
   { path: '/design', label: 'Design' },
   { path: '/library', label: 'Public library' },
 ];
@@ -100,7 +100,8 @@ const statusClass: Record<KnowledgeStatus, string> = {
 };
 
 function internalPath(path: string): Route {
-  return path in routes ? (path as Route) : '/';
+  const routePath = path.split('?')[0];
+  return routePath in routes ? (routePath as Route) : '/';
 }
 
 function focusPageStart() {
@@ -129,8 +130,16 @@ function Link({
     <a
       {...props}
       className={className}
-      href={to}
+      href={`#${to}`}
       onClick={(event) => {
+        if (
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        )
+          return;
         event.preventDefault();
         go(to);
       }}
@@ -174,7 +183,7 @@ function Definition({
 
 function Home() {
   return (
-    <>
+    <ReadingPage>
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
@@ -298,9 +307,7 @@ function Home() {
         <div className="section-kicker">
           A readable route through the project
         </div>
-        <h2 id="directory-title">
-          Start with the story. Dig deeper when you want.
-        </h2>
+        <h2 id="directory-title">Choose where to read next.</h2>
         <p className="section-intro">
           The main route follows the questions a curious reader is most likely
           to ask: what are we making, how does it work, how did it evolve, how
@@ -321,7 +328,7 @@ function Home() {
             ))}
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -346,7 +353,7 @@ function StoryHome() {
   };
 
   return (
-    <>
+    <ReadingPage>
       <section className="hero section" aria-labelledby="story-hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
@@ -423,10 +430,7 @@ function StoryHome() {
       <section className="section story-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The three-fact problem</p>
-          <h2>
-            Personalized can be technically true and still feel completely
-            generic.
-          </h2>
+          <h2>Personalized can still feel generic.</h2>
           <p>
             Give an AI a child’s name, age, and favourite animal and it can
             produce something personalized in seconds. But changing “Maya” to
@@ -562,7 +566,7 @@ function StoryHome() {
         aria-labelledby="story-directory-title"
       >
         <div className="section-kicker">Pick the rabbit hole</div>
-        <h2 id="story-directory-title">The story gets deeper from here.</h2>
+        <h2 id="story-directory-title">Choose where to read next.</h2>
         <p className="section-intro">
           Story mode explains why the project changed. Builder mode keeps the
           exact implementation status, evidence, architecture boundaries, and
@@ -581,16 +585,16 @@ function StoryHome() {
             ))}
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function StoryProduct() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="01 · The product · Story mode"
-        title="Three facts can look personalized. That does not make them personal."
+        title="Personalization needs more than a name."
       >
         <p>
           Imagine Maya is six and likes space. An AI can instantly write “Maya
@@ -603,7 +607,9 @@ function StoryProduct() {
       <section className="section story-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">Now give the story a little life</p>
-          <h2>The details that matter are usually small.</h2>
+          <h2 data-reading-key="personal-context">
+            The details that matter are usually small.
+          </h2>
           <p>
             Maybe Maya calls her grandfather Dadu. She has a stuffed rabbit
             named Bunbun. She recently became scared of thunderstorms. She says
@@ -657,7 +663,7 @@ function StoryProduct() {
         </div>
 
         <div className="reading-panel">
-          <h2>Children are moving targets</h2>
+          <h2>Children change. Their context should too.</h2>
           <p>
             One of the surprisingly important design problems is that children
             change constantly. “Loves dinosaurs” and later “dinosaurs are for
@@ -678,7 +684,7 @@ function StoryProduct() {
         <div className="mode-preview">
           <article>
             <p className="eyebrow">Behind the grown-up door</p>
-            <h2>Parent mode is the workshop.</h2>
+            <h2 data-reading-key="parent-mode">Parent mode is the workshop.</h2>
             <p>
               Context, drafts, edits, choices, approvals, settings, and private
               family information can live here. It is allowed to be more
@@ -687,7 +693,7 @@ function StoryProduct() {
           </article>
           <article>
             <p className="eyebrow">On the kid side</p>
-            <h2>Child mode is the bookshelf.</h2>
+            <h2 data-reading-key="child-mode">Child mode is the bookshelf.</h2>
             <p>
               Finished stories. Calm navigation. No secret profile controls, no
               generation settings, no infinite content feed. The machinery
@@ -699,7 +705,7 @@ function StoryProduct() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">Things we do not want to build</p>
-            <h2>Some product boundaries are really refusals.</h2>
+            <h2>The boundaries protect family judgment.</h2>
           </div>
           <ul>
             <li>
@@ -725,7 +731,7 @@ function StoryProduct() {
           <Link to="/journey">Follow one story through the system →</Link>
         </p>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -766,7 +772,7 @@ function StoryJourney() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="02 · How it works · Story mode"
         title="Follow one bedtime story all the way through."
@@ -833,7 +839,7 @@ function StoryJourney() {
           </p>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -892,10 +898,10 @@ function StoryDevelopment() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="03 · Development story · Story mode"
-        title="The project got complicated for mostly reasonable reasons."
+        title="Each new boundary answered a real problem."
       >
         <p>
           There was no grand master plan that began with temporal child context,
@@ -936,7 +942,9 @@ function StoryDevelopment() {
 
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The engineering chapters underneath</p>
-          <h2>If you want the receipts, the sprint record is still here.</h2>
+          <h2 data-reading-key="sprint-record">
+            If you want the receipts, the sprint record is still here.
+          </h2>
           <p>
             Story mode explains why the product changed. These chapters preserve
             the more exact implementation and outcome-gate history.
@@ -980,7 +988,7 @@ function StoryDevelopment() {
         </div>
 
         <div className="reading-panel">
-          <h2>The messy working record did not disappear.</h2>
+          <h2>Inspect the working record.</h2>
           <p>
             Decisions, roadmap, and open questions still exist one layer deeper.
             They are intentionally not the first thing a new reader has to
@@ -997,16 +1005,16 @@ function StoryDevelopment() {
           </p>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function StoryArchitecture() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="04 · Architecture · Story mode"
-        title="We tried very hard not to solve this with “more microservices.”"
+        title="Clear responsibilities come before more services."
       >
         <p>
           The architecture question was not “how many services should we have?”
@@ -1023,7 +1031,7 @@ function StoryArchitecture() {
           <p className="eyebrow">
             October 16 architecture checkpoint · partial implementation
           </p>
-          <h2>One narrow path through the existing boundaries.</h2>
+          <h2>The current checkpoint is narrow and incomplete.</h2>
           <p>
             The current target uses a saved fictional profile and an explicitly
             accepted plan. A durable operation coordinates generation and
@@ -1047,10 +1055,7 @@ function StoryArchitecture() {
       <section className="section story-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The useful split</p>
-          <h2>
-            Remembering, permission, generation, and visual continuity are
-            different jobs.
-          </h2>
+          <h2>Memory, permission, and creation have different owners.</h2>
         </div>
 
         <div className="role-grid">
@@ -1160,16 +1165,16 @@ function StoryArchitecture() {
           </span>
         </a>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function StoryHowWeBuild() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="05 · How we build · Story mode"
-        title="The other experiment is how I am building the experiment."
+        title="Automation still needs a human owner."
       >
         <p>
           Tiny Custom Stories is also where I am learning how far one developer
@@ -1299,7 +1304,9 @@ function StoryHowWeBuild() {
         </div>
 
         <div className="reading-panel">
-          <h2>Builder mode has the numbers.</h2>
+          <h2 data-reading-key="activity-snapshot">
+            Builder mode has the numbers.
+          </h2>
           <p>
             The exact dated commit, pull-request, issue, workflow, and CI
             snapshot is preserved in Builder mode. Story mode keeps the reason
@@ -1307,238 +1314,13 @@ function StoryHowWeBuild() {
           </p>
         </div>
       </section>
-    </>
-  );
-}
-
-function SprintThreeRetrospective() {
-  const lessons = [
-    [
-      'More Ready tasks did not bring the finish line closer',
-      'In early October I kept asking for more work to run. By October 8 I was asking why the new work was mostly new tickets while the original blocked outcomes stayed blocked. Small tasks helped review, but task creation had become too easy to confuse with progress.',
-      'Prepare the next accepted outcome, inspect its actual missing prerequisites, and reconcile delivered work before making more slices. Every slice needs a concrete route back to finishing the original outcome.',
-    ],
-    [
-      'The parent journey got lost behind the dependency graph',
-      'On October 7 I asked why we were not developing Story Studio in the order a parent would use it. Later editors and backend pieces could move independently while the opening steps still could not connect. The technical progress was real; the experience remained fragmented.',
-      'Keep one observable parent journey as the integration target. A finished component, merged task, epic branch, development checkpoint, and demonstrated outcome are different milestones.',
-    ],
-    [
-      'An Alpha needs fewer supported capabilities',
-      'By October 14, optional context and source-lifecycle work had drawn the sprint into cleanup, compatibility, and recovery across several owners. I asked whether the sprint could ever finish. The answer was a scope reset, not a promise to finish every newly discovered edge case.',
-      'The accepted intermediate checkpoint is one fictional profile-only Fun & Fantasy journey. Optional sources, custom instructions, alternative protagonists, editing, and rewrites stay unavailable at both UI and API boundaries. Deferred work remains future work; essential safety and isolation still apply.',
-    ],
-    [
-      'Open sessions were another backlog I had to manage',
-      'I repeatedly asked why agents had stopped, why reviewed PRs were still open, and whether I had to resume the leftover sessions myself. Scope changes also left old work in flight. More autonomous workers did not remove the coordination burden from me.',
-      'Give each active branch a clear owner and an explicit handoff. Recheck current scope before continuing old work, take relevant PRs through review and merge gates, and preserve deferred branches and evidence without pretending they are completed.',
-    ],
-    [
-      'Parallel coding still shares one machine',
-      'Several agents could edit separate worktrees while builds, database tests, and verification competed for the same host. Failed and interrupted checks made recovery slower. A busy terminal was not reliable evidence that a worker was making progress.',
-      'Coordinate expensive operations as well as writers and GitHub calls. Keep actual command outcomes and source identity. Reuse valid unchanged-source evidence; rerun when changed code, failures, or a concrete gap warrants it. The net time saving has not been measured.',
-    ],
-    [
-      'A fresh session needs a useful handoff',
-      'Long investigations and repeated context recovery made it harder to know what had already been decided or tested. By October 15 I was explicitly asking for main activities in newer sessions without compaction. Splitting sessions helps only if the next one can recover the exact work.',
-      'Carry a compact record of scope, branch and commit, changed files, real checks, unresolved findings, and ownership. Recheck GitHub and source before acting. Keep implementation and independent review separate; do not replay an entire conversation as a substitute for a contract.',
-    ],
-    [
-      'A stronger model is not a workflow repair',
-      'I proposed stronger-model planning, cheaper implementation, and a separate reviewer because the current loop felt too slow. That direction fits our existing capability-based routing. Making every tiny task pass through another planning session could add more waiting.',
-      'Use the existing issue when it is already explicit. Spend stronger-model judgment on ambiguity, architecture, privacy, safety, and consequential review; use cheaper execution for settled work. A mandatory extra planning stage remains a proposal, not an adopted rule or a measured speedup.',
-    ],
-  ];
-
-  return (
-    <section
-      className="section delivery-section"
-      aria-labelledby="sprint-three-lessons-title"
-    >
-      <div className="sprint-chapter-intro">
-        <p className="eyebrow">Sprint 3 field notes · October 2 to 16, 2026</p>
-        <h2 id="sprint-three-lessons-title">
-          When activity stopped feeling like progress.
-        </h2>
-        <p>
-          This sprint has been exhausting. I wanted to finish a story journey;
-          instead I kept asking for Ready tasks, unblocked outcomes, resumed
-          sessions, and merged PRs. The frustration changed the question from
-          “how many agents can we run?” to “what will actually finish this
-          journey?”
-        </p>
-        <p>
-          These are paraphrased lessons from local Codex history, checked
-          against current repository decisions and delivery evidence. They are a
-          retrospective, not a complete session audit or a measured comparison
-          of models, cost, or productivity. Private transcripts stay private.
-        </p>
-      </div>
-      <div className="story-beat-grid">
-        {lessons.map(([title, pain, change], index) => (
-          <article className="story-beat" key={title}>
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            <h3>{title}</h3>
-            <p>{pain}</p>
-            <p>
-              <strong>What changes:</strong> {change}
-            </p>
-          </article>
-        ))}
-      </div>
-      <div className="reading-panel">
-        <h3>The smaller finish line is still a real integration test.</h3>
-        <p>
-          A saved fictional name and age lead to a reviewed plan, one
-          deterministic cover and ten text pages, exact-revision approval, and
-          the same immutable story reopened in protected Parent Mode. Family
-          isolation, stale-input rejection, safe recovery, and essential output
-          checks remain required. This intermediate checkpoint does not certify
-          general suitability, publish to children, clear qualified review, or
-          pass the wider sprint.
-        </p>
-        <p>
-          <Link to="/sprint-three">Read the current Sprint 3 boundary →</Link>
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function StoryLearnings() {
-  const lessons = [
-    [
-      'We spent too much money proving the same browser thing repeatedly',
-      'The browser suite was valuable, so we ran it constantly. That eventually became expensive enough for GitHub Actions to stop starting jobs. The fix was not “testing is bad”; it was moving hosted checks to deliberate epic checkpoints, keeping task-PR checks local, and making browser runs optional.',
-    ],
-    [
-      'A green frontend test and a green API test can still avoid meeting each other',
-      'Mocked browser tests and isolated API tests each told the truth about their own layer. They did not prove the assembled product. That distinction forced us to add a synthetic journey through the real HTTP API and MongoDB before calling the Child Map outcome demonstrated.',
-    ],
-    [
-      'Parallel agents can parallelize the rate limit too',
-      'Several sessions repeatedly asked GitHub Projects for the same state until the shared GraphQL budget became the bottleneck. The workflow changed to reuse project snapshots and reserve expensive live reads for moments that actually need them.',
-    ],
-    [
-      'Not every shiny tool deserves to become infrastructure',
-      'We try tools because this is still the cheap stage for experimentation. Some get a narrow role. Some are held. The important rule is that sunk time is not a reason to keep complexity.',
-    ],
-    [
-      'The more AI I used, the more important boring boundaries became',
-      'Models are very good at producing plausible next steps. That makes authorization, ownership, tests, revisions, and clear source records even more important.',
-    ],
-    [
-      'I am still nervous about the part that looks most like a “real startup”',
-      'Live AI for actual users and the first staging deployment are more intimidating than another local feature. They introduce cost, observability, provider behavior, reliability, privacy, and operational mistakes that a local demo cannot teach.',
-    ],
-    [
-      'A passing task PR is not the same thing as a completed feature',
-      'Task branches can move fast while their combined behavior is still unproven. Epic integration and reviewed checkpoints give us somewhere to test the assembled result before calling the main development branch stable.',
-    ],
-    [
-      'Caching helps; treating a cache as permission is dangerous',
-      'Sharing one Project snapshot reduces repeated GitHub calls. But ownership, branch ancestry, status changes, and merge checks still need fresh evidence at the exact moment they matter.',
-    ],
-    [
-      'A growing task board is not the same as a finished sprint',
-      'I kept breaking large tasks into smaller ones, which helped review. But the Ready queue kept growing while some original outcomes stayed unfinished. Now we reconcile completed work and reuse existing issues first. We still split work when a focused PR actually helps.',
-    ],
-    [
-      'Choosing a model is not the same as proving a story is safe',
-      'Instead of building an AI model-comparison product inside the product, the founder can choose synthetic-test models through configuration. Story quality, privacy, and real-family provider clearance remain separate gates.',
-    ],
-  ];
-
-  return (
-    <>
-      <PageIntro
-        eyebrow="06 · What we learned · Story mode"
-        title="The failures are more useful when we leave them in the story."
-      >
-        <p>
-          This page is intentionally not a victory lap. The project has produced
-          expensive tests, wrong assumptions, rate-limit problems, tools that
-          did not earn their complexity, and a growing list of things I did not
-          know I needed to learn.
-        </p>
-      </PageIntro>
-
-      <SprintThreeRetrospective />
-
-      <section className="section delivery-section">
-        <div className="sprint-chapter-intro">
-          <p className="eyebrow">The useful scars</p>
-          <h2>
-            These are the mistakes and surprises that actually changed how we
-            build.
-          </h2>
-          <p>
-            A lesson earns a place here when it changes a workflow, an evidence
-            standard, a cost decision, or what I am willing to trust next time.
-          </p>
-        </div>
-
-        <div className="story-beat-grid">
-          {lessons.map(([title, detail], index) => (
-            <article className="story-beat" key={title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{title}</h3>
-              <p>{detail}</p>
-            </article>
-          ))}
-        </div>
-
-        <p className="story-pullquote">
-          Failure is only interesting if the next version of the system is
-          different because of it.
-        </p>
-
-        <div className="evidence-panel">
-          <div>
-            <p className="eyebrow">Why this became my AI laboratory</p>
-            <h2>A real product gives every new AI idea somewhere to fail.</h2>
-          </div>
-          <ul>
-            <li>
-              The idea for Tiny Custom Stories existed long before this version
-              of the product. Building it turned AI from something I followed
-              into something I test against real constraints almost every day.
-            </li>
-            <li>
-              New models, agent patterns, coding tools, architecture helpers,
-              and evaluation ideas keep appearing. A pre-launch product gives me
-              a concrete place to find out which ones are actually useful.
-            </li>
-            <li>
-              This is also the cheapest moment to be wrong. A workflow can be
-              replaced before users depend on it.
-            </li>
-            <li>
-              That freedom shrinks as staging and real families get closer.
-              Production paths should become progressively more boring,
-              observable, reversible, and deliberate.
-            </li>
-          </ul>
-        </div>
-
-        <div className="reading-panel">
-          <h2>The next learning will come from reality.</h2>
-          <p>
-            Synthetic/local evidence can tell us whether the system behaves as
-            designed. It cannot tell us whether parents understand it, whether
-            stories actually feel meaningful, whether AI cost behaves the way we
-            expect, or which assumptions collapse the first week real people use
-            it.
-          </p>
-        </div>
-      </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function StoryDesign() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="07 · Design · Story mode"
         title="The product should not look like an AI control panel."
@@ -1555,7 +1337,9 @@ function StoryDesign() {
         <div className="mode-preview">
           <article>
             <p className="eyebrow">For the child</p>
-            <h2>Quiet, warm, and story-first.</h2>
+            <h2 data-reading-key="child-theme">
+              Quiet, warm, and story-first.
+            </h2>
             <p>
               The child should see finished stories, not the machinery. Fewer
               controls, calmer choices, and a reading experience that does not
@@ -1564,7 +1348,9 @@ function StoryDesign() {
           </article>
           <article>
             <p className="eyebrow">For the parent</p>
-            <h2>Warm, but serious enough for real decisions.</h2>
+            <h2 data-reading-key="parent-theme">
+              Warm, but serious enough for real decisions.
+            </h2>
             <p>
               Parent mode can be richer because it handles context, drafts,
               edits, privacy-sensitive information, and approval. Friendly does
@@ -1576,7 +1362,9 @@ function StoryDesign() {
         <div className="recipe-panel">
           <div>
             <p className="eyebrow">The public story</p>
-            <h2>Part storybook, part lab notebook.</h2>
+            <h2 data-reading-key="visual-language">
+              Part storybook, part lab notebook.
+            </h2>
             <p>
               Fraunces gives the project a printed-story character. Mono labels
               make evidence and status feel explicit. Flat color, borders,
@@ -1598,16 +1386,16 @@ function StoryDesign() {
           themes, and component examples.
         </p>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function StoryLibrary() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="08 · Public library · Story mode"
-        title="Building in public does not mean dumping the private repository onto the internet."
+        title="Share the story. Protect the private work."
       >
         <p>
           This site is meant to show the thinking, progress, uncertainty, and
@@ -1619,7 +1407,9 @@ function StoryLibrary() {
       <section className="section library-section">
         <div className="sprint-chapter-intro">
           <p className="eyebrow">Translation, not replication</p>
-          <h2>The public story is edited on purpose.</h2>
+          <h2 data-reading-key="public-curation">
+            The public story is edited on purpose.
+          </h2>
           <p>
             Internal material is optimized for building. Public material is
             optimized for understanding. The job is to preserve the truth while
@@ -1683,7 +1473,9 @@ function StoryLibrary() {
         <div className="pdf-callout">
           <div>
             <p className="eyebrow">Portable checkpoint</p>
-            <h2>The PDF is a snapshot. The website is the living version.</h2>
+            <h2 data-reading-key="pdf-companion">
+              The PDF is a snapshot. The website is the living version.
+            </h2>
             <p>
               The fixed-layout dossier remains useful as a dated checkpoint.
               This website changes more often as the product, build system, and
@@ -1700,13 +1492,13 @@ function StoryLibrary() {
           </a>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function Product() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro eyebrow="01 · The product" title="A child is not a prompt.">
         <p>
           There are two easy versions of an “AI story for your kid.” One is
@@ -1781,7 +1573,9 @@ function Product() {
         </div>
 
         <div className="reading-panel">
-          <h2>So what does the product actually do?</h2>
+          <h2 data-reading-key="personal-context">
+            So what does the product actually do?
+          </h2>
           <Definition term="Child Map">
             A small, evolving record of things a parent thinks may matter:
             people, pets, interests, moments, preferences, and other useful
@@ -1808,7 +1602,7 @@ function Product() {
         >
           <article>
             <p className="eyebrow">Behind the grown-up door</p>
-            <h2>Parent mode</h2>
+            <h2 data-reading-key="parent-mode">Parent mode</h2>
             <p>
               This is where the messy creative work happens: context, drafts,
               edits, choices, approvals, settings, and other things a child
@@ -1817,7 +1611,7 @@ function Product() {
           </article>
           <article>
             <p className="eyebrow">On the kid side</p>
-            <h2>Child mode</h2>
+            <h2 data-reading-key="child-mode">Child mode</h2>
             <p>
               Ideally boring in the best way: a calm shelf of finished stories
               the family chose to make visible. No infinite feed. No secret
@@ -1833,7 +1627,7 @@ function Product() {
           <Link to="/journey">See how the hand-offs work →</Link>
         </p>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -1862,10 +1656,10 @@ function Journey() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="02 · How it works"
-        title="Personalization is a chain of explicit hand-offs."
+        title="Every hand-off needs an owner."
       >
         <p>
           The important change since the first public story is architectural:
@@ -1922,7 +1716,7 @@ function Journey() {
           </Definition>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -1951,10 +1745,10 @@ function Development() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="03 · Development story"
-        title="The architecture changed because the questions got better."
+        title="Better questions shaped the architecture."
       >
         <p>
           The project did not move in a straight line from “idea” to “features.”
@@ -1982,7 +1776,9 @@ function Development() {
 
         <div className="sprint-chapter-intro">
           <p className="eyebrow">Sprint chapters</p>
-          <h2>One development story, three equally visible chapters.</h2>
+          <h2 data-reading-key="sprint-record">
+            Three sprints, three different evidence boundaries.
+          </h2>
           <p>
             Sprint 1 keeps its original deep link, but it no longer gets special
             treatment in the main header. Sprint 1, 2, and 3 live together here
@@ -2032,7 +1828,7 @@ function Development() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">How work is delivered now</p>
-            <h2>Detailed input makes implementation more reviewable.</h2>
+            <h2>Clear contracts make work reviewable.</h2>
           </div>
           <ul>
             <li>Human-directed product and architecture decisions.</li>
@@ -2055,7 +1851,7 @@ function Development() {
         </div>
 
         <div className="reading-panel">
-          <h2>The working record lives one layer deeper.</h2>
+          <h2>Inspect the working record.</h2>
           <p>
             The first read stays focused on the story. When you want the
             project-management detail, the underlying records are still public:
@@ -2077,7 +1873,7 @@ function Development() {
           evidence, not substitutes for a demonstrated sprint outcome.
         </p>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -2119,10 +1915,10 @@ function HowWeBuild() {
   ] as const;
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="05 · How we build"
-        title="Small tasks, hard gates, and a lot of receipts."
+        title="Small tasks need evidence at the joins."
       >
         <p>
           This page is about the machinery: how an idea becomes a change small
@@ -2217,7 +2013,7 @@ function HowWeBuild() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">Agent-assisted, repository-owned</p>
-            <h2>
+            <h2 data-reading-key="human-directed-workflow">
               Structured execution without handing product ownership away.
             </h2>
           </div>
@@ -2293,7 +2089,7 @@ function HowWeBuild() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">Why the checks matter</p>
-            <h2>Checks should protect the right integration boundary.</h2>
+            <h2>Test where the pieces meet.</h2>
           </div>
           <ul>
             <li>Formatting and linting keep implementation drift visible.</li>
@@ -2320,7 +2116,7 @@ function HowWeBuild() {
         </div>
 
         <div className="reading-panel">
-          <h2>Process here. Lessons next door.</h2>
+          <h2>Process here. Lessons next.</h2>
           <p>
             This page explains the system we use now. The things that broke it,
             embarrassed us, cost too much, or changed our minds belong in the
@@ -2337,178 +2133,7 @@ function HowWeBuild() {
           require a GitHub token in the browser.
         </p>
       </section>
-    </>
-  );
-}
-
-function Learnings() {
-  const buildLessons = [
-    [
-      'We ran too much browser CI',
-      'The Playwright and screenshot suite was useful, but running it on nearly every task PR made verification too expensive. We tried lighter cadences and then adopted a clearer rule: proportionate local checks and review for tasks, manually dispatched affected CI suites on final epic heads, and optional browser evidence at epic checkpoints. Actual GitHub protection still applies.',
-    ],
-    [
-      'Green tests did not prove the assembled product',
-      'Our browser tests could pass against mocked APIs while API tests separately replaced infrastructure. That was useful evidence, but not end-to-end proof. Sprint 2 forced us to add a synthetic browser → real HTTP API → Mongo journey and separate real private-object-store evidence before calling the outcome demonstrated.',
-    ],
-    [
-      'Our agents were competing for one API budget',
-      'Parallel sessions repeatedly asked GitHub Projects for the same state and shared one GraphQL quota. When that rate limit became a recurring blocker, we wrote a shared-request policy: one coordinator-owned snapshot, targeted REST for narrow reads, bounded GraphQL where it pays off, serialized writes, and backoff. Live reads still guard consequential writes and merges; we have not measured a resulting rate-limit reduction yet.',
-    ],
-    [
-      'New tools have to earn a permanent place',
-      'We pilot tools with an explicit possibility of saying no. Graphify produced a useful local code graph, but the pilot recommended holding workflow integration rather than adding machinery without enough value. Archify earned a narrower role because a maintained architecture map proved useful enough to keep and publish in a curated public form.',
-    ],
-    [
-      'Task success was not epic success',
-      'Independent task PRs can each pass review while the combined feature is still incomplete. The new epic integration lanes give a cohesive feature slice an explicit review, exact-head verification, and checkpoint before it enters the stable development branch.',
-    ],
-    [
-      'We almost made model selection another feature',
-      'A configurable synthetic-only text provider now makes more sense than an in-product AI comparison dashboard. The founder can choose a model manually; age-fit, output safety, family-data boundaries, provider clearance, and real-user release remain separate work.',
-    ],
-  ] as const;
-
-  return (
-    <>
-      <PageIntro
-        eyebrow="06 · What we learned"
-        title="The expensive mistakes are part of the story."
-      >
-        <p>
-          This is the diary, not the machinery. It is where we keep the things
-          that broke, experiments that changed the workflow, tools that did not
-          earn a permanent place, and the next bits of the project that still
-          make us nervous.
-        </p>
-      </PageIntro>
-
-      <SprintThreeRetrospective />
-
-      <section className="section delivery-section">
-        <div className="sprint-chapter-intro">
-          <p className="eyebrow">What broke, what changed</p>
-          <h2>Failure is only useful if the system remembers it.</h2>
-          <p>
-            The point is not to collect war stories. A mistake belongs here when
-            it changed a workflow, a test boundary, a cost decision, or the way
-            we think about what “evidence” means.
-          </p>
-        </div>
-
-        <ol className="boundary-grid">
-          {buildLessons.map(([title, detail], index) => (
-            <li key={title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{title}</h3>
-              <p>{detail}</p>
-            </li>
-          ))}
-        </ol>
-
-        <div className="reading-panel">
-          <h2>The experiment we are still running</h2>
-          <Definition term="Specialist-agent delivery">
-            We are testing whether a solo founder can coordinate product
-            decisions, backlog readiness, implementation, repository state, and
-            pull-request review through specialized agents while keeping GitHub
-            and the repository as the source of truth. The goal is less
-            ambiguity and rework, not more autonomous activity.
-          </Definition>
-          <Definition term="What we are not claiming">
-            We do not claim this workflow is novel, universally better, or a
-            proven productivity advantage. It stays an experiment until the
-            evidence shows that it improves delivery without weakening review,
-            privacy, safety, or maintainability.
-          </Definition>
-          <Definition term="Operating rule">
-            A new tool or process is allowed to fail. If it does not earn its
-            complexity, we hold it, remove it, or narrow its role rather than
-            keeping it because time was already invested.
-          </Definition>
-        </div>
-
-        <div className="evidence-panel">
-          <div>
-            <p className="eyebrow">Why this project became my AI laboratory</p>
-            <h2>Building the product changed how I learn.</h2>
-          </div>
-          <ul>
-            <li>
-              Tiny Custom Stories existed as an idea long before this version of
-              the product existed. Actually building it turned AI from something
-              the founder followed from a distance into something they read,
-              test, and reason about almost every day.
-            </li>
-            <li>
-              The field changes quickly enough that there is constantly a new
-              model, agent pattern, developer tool, evaluation method, or
-              architectural idea worth understanding. Having a real project
-              gives those ideas somewhere concrete to succeed or fail.
-            </li>
-            <li>
-              Because the product is still pre-launch, this is the cheapest time
-              to experiment. A tool can be piloted, an architecture assumption
-              challenged, or a workflow replaced before real families depend on
-              it.
-            </li>
-            <li>
-              That freedom has a boundary: novelty is not a reason to ship
-              complexity. Experiments must still earn their place through useful
-              evidence, and failed pilots are allowed to disappear.
-            </li>
-            <li>
-              As staging and real users get closer, the balance changes. The
-              project can keep learning quickly, but production paths should
-              become progressively more boring, observable, reversible, and
-              deliberate.
-            </li>
-          </ul>
-        </div>
-
-        <div className="evidence-panel">
-          <div>
-            <p className="eyebrow">The next thing that scares me</p>
-            <h2>Real users, real AI, and the first staging deployment.</h2>
-          </div>
-          <ul>
-            <li>
-              The founder is excited and nervous about the first time a real
-              user asks Tiny Custom Stories to generate a story, and the first
-              time the product is deployed into a staging environment.
-            </li>
-            <li>
-              That uncertainty is real. The current synthetic/local evidence
-              does not authorize real-family staging, Alpha use, production
-              deployment, or transfer of family data to an AI provider.
-            </li>
-            <li>
-              Before live generation can become a trustworthy user feature, the
-              project still has to settle the provider boundary, exactly which
-              family context may leave the application, quality and safety
-              evidence, failure and recovery behavior, cost controls, and
-              release-readiness gates.
-            </li>
-            <li>
-              Before staging can feel routine, deployment itself has to become
-              evidence: repeatable configuration, environment isolation, secrets
-              handling, migrations, health checks, observability, recovery, and
-              a rollback path that has actually been exercised.
-            </li>
-            <li>
-              The goal is not to hide that fear with automation. It is to turn
-              each unknown into a bounded experiment whose failure teaches us
-              something before real families depend on it.
-            </li>
-          </ul>
-        </div>
-
-        <p className="public-boundary-note">
-          Want the current operating system instead of the retrospective?{' '}
-          <Link to="/delivery">See how we build →</Link>
-        </p>
-      </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -2533,7 +2158,7 @@ function Architecture() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="04 · Architecture"
         title="Separate responsibility before separating machines."
@@ -2554,7 +2179,7 @@ function Architecture() {
           <p className="eyebrow">
             October 16 architecture checkpoint · partial implementation
           </p>
-          <h2>One narrow path through the existing boundaries.</h2>
+          <h2>The current checkpoint is narrow and incomplete.</h2>
           <p>
             The current target uses a saved fictional profile and an explicitly
             accepted plan. A durable operation coordinates generation and
@@ -2583,7 +2208,7 @@ function Architecture() {
           <div>
             <p className="eyebrow">Interactive public architecture</p>
             <h2 id="architecture-explorer-title">
-              One diagram, with uncertainty left visible.
+              The map distinguishes progress from plans.
             </h2>
             <p>
               This is a curated public-safe view derived from the project’s
@@ -2723,13 +2348,13 @@ function Architecture() {
           </Definition>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function Decisions() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="Working record · Decisions"
         title="Certainty deserves a label."
@@ -2753,6 +2378,7 @@ function Decisions() {
           ))}
         </div>
 
+        <h2>What the labels mean</h2>
         <div className="status-definitions">
           <Definition term="Confirmed decision">
             A choice the project has deliberately adopted.
@@ -2773,6 +2399,7 @@ function Decisions() {
           </Definition>
         </div>
 
+        <h2>Decisions and supporting records</h2>
         <div className="entry-grid">
           {publicEntries.map((entry) => (
             <article className="entry-card" key={entry.title}>
@@ -2798,16 +2425,16 @@ function Decisions() {
           ))}
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function Roadmap() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="Working record · Roadmap"
-        title="Progress is measured by outcomes, with exceptions made visible."
+        title="Measure progress by demonstrated outcomes."
       >
         <p>
           The roadmap remains outcome-gated. Sprint 2 has demonstrated its
@@ -2854,6 +2481,7 @@ function Roadmap() {
           </p>
         </div>
 
+        <h2>Outcome gates by sprint</h2>
         <ol className="roadmap-list">
           {milestones.map((milestone, index) => (
             <li key={milestone.title}>
@@ -2895,7 +2523,7 @@ function Roadmap() {
           </Definition>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -2920,10 +2548,10 @@ function SprintOne() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="Sprint chapter · 01"
-        title="A strong implementation can still have an open outcome gate."
+        title="Implementation is not a passed outcome gate."
       >
         <p>
           Sprint 1 has moved far beyond planning. The family-access boundary has
@@ -2991,7 +2619,7 @@ function SprintOne() {
           credentials, private project links, or live identity data.
         </p>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -3026,10 +2654,10 @@ function SprintTwo() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="Sprint chapter · 02"
-        title="A living Child Map needs a capability, not a questionnaire."
+        title="The Child Map records change over time."
       >
         <p>
           “Not a profile to complete. Just small, true things worth
@@ -3131,7 +2759,7 @@ function SprintTwo() {
           </Definition>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -3156,10 +2784,10 @@ function SprintThree() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="Sprint chapter · 03"
-        title="Story creation is becoming a reversible composition workflow."
+        title="Story Studio is growing around reversible work."
       >
         <p>
           Sprint 3 became a lesson in how much code can accumulate before a
@@ -3296,7 +2924,7 @@ function SprintThree() {
           </Definition>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -3312,10 +2940,10 @@ function Design() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="07 · Design philosophy and language"
-        title="The same design DNA, expressed for different responsibilities."
+        title="One design language, different responsibilities."
       >
         <p>
           The project has not replaced its visual identity. The accepted
@@ -3354,7 +2982,9 @@ function Design() {
         <div className="recipe-panel">
           <div>
             <p className="eyebrow">The reusable visual recipe</p>
-            <h2>Paper, ink, and a few purposeful sparks.</h2>
+            <h2 data-reading-key="visual-language">
+              Paper, ink, and a few purposeful sparks.
+            </h2>
             <p>
               Fraunces carries expressive titles. Nunito Sans keeps bodies and
               controls plain. DM Mono labels metadata and status. Crisp borders,
@@ -3392,7 +3022,7 @@ function Design() {
         <div className="component-sample">
           <div>
             <p className="eyebrow">Continuity over redesign</p>
-            <h2>The public story grew without changing who it is.</h2>
+            <h2>New material, the same visual language.</h2>
             <p>
               Existing typography, palette, cards, status treatments,
               navigation, fragment routes, responsive behavior, and public
@@ -3415,7 +3045,7 @@ function Design() {
           application, and the parent experience should not look like a toy.
         </p>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -3448,10 +3078,10 @@ function Questions() {
   ];
 
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="Working record · Open questions"
-        title="Useful unknowns stay visible even as the architecture gets clearer."
+        title="Open questions need explicit answers."
       >
         <p>
           Better boundaries have narrowed some questions instead of eliminating
@@ -3465,7 +3095,7 @@ function Questions() {
         <ul className="question-list">
           {questions.map(([question, answer]) => (
             <li key={question}>
-              <b>{question}</b>
+              <h2>{question}</h2>
               <span>{answer}</span>
             </li>
           ))}
@@ -3487,16 +3117,16 @@ function Questions() {
           </Definition>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
 function Library() {
   return (
-    <>
+    <ReadingPage>
       <PageIntro
         eyebrow="08 · Public library"
-        title="This site is a translation, not an automatic export."
+        title="Public information is curated."
       >
         <p>
           Public information should be understandable without exposing private
@@ -3557,7 +3187,9 @@ function Library() {
         <div className="pdf-callout">
           <div>
             <p className="eyebrow">A portable companion</p>
-            <h2>Take the evolving project story with you.</h2>
+            <h2 data-reading-key="pdf-companion">
+              Take the evolving project story with you.
+            </h2>
             <p>
               The PDF remains the October 1 fixed-layout checkpoint at its
               stable public path. This responsive site carries the October 16
@@ -3574,7 +3206,7 @@ function Library() {
           </a>
         </div>
       </section>
-    </>
+    </ReadingPage>
   );
 }
 
@@ -3594,7 +3226,7 @@ function Layout({
     '/development': Development,
     '/architecture': Architecture,
     '/delivery': HowWeBuild,
-    '/learnings': Learnings,
+    '/learnings': Lessons,
     '/decisions': Decisions,
     '/roadmap': Roadmap,
     '/sprint-one': SprintOne,
@@ -3612,7 +3244,7 @@ function Layout({
     '/development': StoryDevelopment,
     '/architecture': StoryArchitecture,
     '/delivery': StoryHowWeBuild,
-    '/learnings': StoryLearnings,
+    '/learnings': Lessons,
     '/decisions': Decisions,
     '/roadmap': Roadmap,
     '/sprint-one': SprintOne,
@@ -3630,7 +3262,8 @@ function Layout({
 
   React.useLayoutEffect(() => {
     // Reset after the destination renders, including direct and history visits.
-    focusPageStart();
+    if (!new URLSearchParams(window.location.hash.split('?')[1]).has('section'))
+      focusPageStart();
   }, [route]);
 
   React.useEffect(() => {
@@ -3677,6 +3310,7 @@ function Layout({
                 key={path}
                 to={path}
                 className={route === path ? 'active' : undefined}
+                aria-current={route === path ? 'page' : undefined}
               >
                 {label}
               </Link>
@@ -3694,7 +3328,14 @@ function Layout({
               type="button"
               className={readingMode === 'story' ? 'active' : undefined}
               aria-pressed={readingMode === 'story'}
-              onClick={() => onReadingModeChange('story')}
+              onClick={() => {
+                if (readingMode !== 'story') {
+                  window.dispatchEvent(
+                    new CustomEvent('reading-mode-change', { detail: 'story' }),
+                  );
+                  onReadingModeChange('story');
+                }
+              }}
             >
               Story
             </button>
@@ -3702,7 +3343,16 @@ function Layout({
               type="button"
               className={readingMode === 'builder' ? 'active' : undefined}
               aria-pressed={readingMode === 'builder'}
-              onClick={() => onReadingModeChange('builder')}
+              onClick={() => {
+                if (readingMode !== 'builder') {
+                  window.dispatchEvent(
+                    new CustomEvent('reading-mode-change', {
+                      detail: 'builder',
+                    }),
+                  );
+                  onReadingModeChange('builder');
+                }
+              }}
             >
               Builder
             </button>
@@ -3726,7 +3376,9 @@ function Layout({
         </div>
       </header>
       <main id="main-content" tabIndex={-1}>
-        <Page />
+        <ReadingContext.Provider value={{ route, mode: readingMode }}>
+          <Page />
+        </ReadingContext.Provider>
       </main>
       <footer>
         <p>
@@ -3749,9 +3401,13 @@ export default function App() {
     internalPath(window.location.hash.slice(1)),
   );
   const [readingMode, setReadingMode] = React.useState<ReadingMode>(() => {
-    const savedMode = window.localStorage.getItem(
-      'tcs-project-story-reading-mode',
-    );
+    const addressedMode = new URLSearchParams(
+      window.location.hash.split('?')[1],
+    ).get('mode');
+    const savedMode =
+      addressedMode === 'story' || addressedMode === 'builder'
+        ? addressedMode
+        : window.localStorage.getItem('tcs-project-story-reading-mode');
     return savedMode === 'builder' ? 'builder' : 'story';
   });
 
@@ -3761,6 +3417,11 @@ export default function App() {
     const update = () => {
       if (window.location.hash === '#main-content') return;
       setRoute(internalPath(window.location.hash.slice(1)));
+      const addressedMode = new URLSearchParams(
+        window.location.hash.split('?')[1],
+      ).get('mode');
+      if (addressedMode === 'story' || addressedMode === 'builder')
+        setReadingMode(addressedMode);
     };
     window.addEventListener('hashchange', update);
     return () => {
