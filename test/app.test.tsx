@@ -1,6 +1,14 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  within,
+} from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../src/App';
+
+const content = () => within(document.querySelector('.reading-document')!);
 
 function renderBuilder() {
   window.localStorage.setItem('tcs-project-story-reading-mode', 'builder');
@@ -15,6 +23,7 @@ function renderStory() {
 describe('project story site', () => {
   beforeEach(() => {
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+    Element.prototype.scrollIntoView = vi.fn();
   });
   afterEach(() => {
     cleanup();
@@ -40,7 +49,7 @@ describe('project story site', () => {
     fireEvent.click(screen.getAllByRole('link', { name: 'The product' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /three facts can look personalized/i,
+        name: /personalization needs more than a name/i,
       }),
     ).toBeTruthy();
 
@@ -58,7 +67,7 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Story' }));
     expect(
       screen.getByRole('heading', {
-        name: /three facts can look personalized/i,
+        name: /personalization needs more than a name/i,
       }),
     ).toBeTruthy();
   });
@@ -124,7 +133,7 @@ describe('project story site', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /three facts can look personalized/i,
+        name: /personalization needs more than a name/i,
       }),
     ).toBeTruthy();
   });
@@ -199,7 +208,7 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'Public library' })[0]);
     expect(
-      screen.getByText(/translation, not an automatic export/i),
+      screen.getByRole('heading', { name: 'Public information is curated.' }),
     ).toBeTruthy();
 
     fireEvent.click(
@@ -209,7 +218,7 @@ describe('project story site', () => {
     expect(screen.getAllByText('Confirmed decision').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Open question').length).toBeGreaterThan(0);
     expect(
-      screen.getByText(/Story work has three ownership boundaries/i),
+      content().getByText(/Story work has three ownership boundaries/i),
     ).toBeTruthy();
   });
 
@@ -228,7 +237,7 @@ describe('project story site', () => {
     );
     expect(
       screen.getByRole('heading', {
-        name: /the architecture changed because the questions got better/i,
+        name: /better questions shaped the architecture/i,
       }),
     ).toBeTruthy();
 
@@ -238,24 +247,22 @@ describe('project story site', () => {
         name: /separate responsibility before separating machines/i,
       }),
     ).toBeTruthy();
-    expect(screen.getByText('Story Lifecycle')).toBeTruthy();
-    expect(screen.getByText('Story Context Selection')).toBeTruthy();
-    expect(screen.getByText('Story Generation')).toBeTruthy();
-    expect(screen.getByText('Visual Theme System')).toBeTruthy();
+    expect(content().getByText('Story Lifecycle')).toBeTruthy();
+    expect(content().getByText('Story Context Selection')).toBeTruthy();
+    expect(content().getByText('Story Generation')).toBeTruthy();
+    expect(content().getByText('Visual Theme System')).toBeTruthy();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /small tasks, hard gates, and a lot of receipts/i,
+        name: /small tasks need evidence at the joins/i,
       }),
     ).toBeTruthy();
 
-    fireEvent.click(
-      screen.getAllByRole('link', { name: 'What we learned' })[0],
-    );
+    fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /the expensive mistakes are part of the story/i,
+        name: /lessons, changes, and their evidence/i,
       }),
     ).toBeTruthy();
   });
@@ -267,7 +274,7 @@ describe('project story site', () => {
     expect(screen.queryByRole('link', { name: 'Roadmap' })).toBeNull();
     expect(screen.queryByRole('link', { name: 'Open questions' })).toBeNull();
     expect(
-      screen.getAllByRole('link', { name: 'What we learned' }).length,
+      screen.getAllByRole('link', { name: 'Lessons' }).length,
     ).toBeGreaterThan(0);
   });
 
@@ -287,7 +294,7 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 2/i }));
     expect(
       screen.getByRole('heading', {
-        name: /a living child map needs a capability, not a questionnaire/i,
+        name: /the child map records change over time/i,
       }),
     ).toBeTruthy();
 
@@ -297,7 +304,7 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
     expect(
       screen.getByRole('heading', {
-        name: /story creation is becoming a reversible composition workflow/i,
+        name: /story studio is growing around reversible work/i,
       }),
     ).toBeTruthy();
   });
@@ -305,7 +312,9 @@ describe('project story site', () => {
   it('states the Sprint 1 gate accurately and preserves its legacy route', () => {
     renderBuilder();
 
-    expect(screen.getByText(/Sprint 1 remains evidence-gated/i)).toBeTruthy();
+    expect(
+      content().getByText(/Sprint 1 remains evidence-gated/i),
+    ).toBeTruthy();
 
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
@@ -314,12 +323,12 @@ describe('project story site', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: /a strong implementation can still have an open outcome gate/i,
+        name: /implementation is not a passed outcome gate/i,
       }),
     ).toBeTruthy();
-    expect(screen.getByText(/Sprint 1 outcome status/i)).toBeTruthy();
+    expect(content().getByText(/Sprint 1 outcome status/i)).toBeTruthy();
     expect(
-      screen.getByText(/temporary founder-approved sequencing exception/i),
+      content().getByText(/temporary founder-approved sequencing exception/i),
     ).toBeTruthy();
   });
 
@@ -332,19 +341,21 @@ describe('project story site', () => {
     fireEvent.click(screen.getByRole('link', { name: /Outcome roadmap/i }));
 
     expect(
-      screen.getByText(/Outcome gate open - explicitly not passed/i),
+      content().getByText(/Outcome gate open - explicitly not passed/i),
     ).toBeTruthy();
     expect(
-      screen.getByText(/Synthetic\/local outcome demonstrated/i),
+      content().getByText(/Synthetic\/local outcome demonstrated/i),
     ).toBeTruthy();
     expect(
-      screen.getByText(
+      content().getByText(
         /Reduced synthetic checkpoint underway - outcome gate open/i,
       ),
     ).toBeTruthy();
-    expect(screen.getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
+    expect(content().getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
     expect(
-      screen.getByText(/Visual plan accepted; synthetic groundwork underway/i),
+      content().getByText(
+        /Visual plan accepted; synthetic groundwork underway/i,
+      ),
     ).toBeTruthy();
     expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
   });
@@ -358,7 +369,7 @@ describe('project story site', () => {
       name: 'A disclaimer was only the starting point.',
     });
     expect(storyHeading).toBeTruthy();
-    const regions = screen.getByText(/research, not launch markets/i);
+    const regions = content().getByText(/research, not launch markets/i);
     expect(regions).toBeTruthy();
 
     fireEvent.click(screen.getByRole('link', { name: /See the Privacy/i }));
@@ -367,9 +378,9 @@ describe('project story site', () => {
       name: 'Privacy is a release gate, not a footer.',
     });
     expect(roadmapHeading).toBeTruthy();
-    const launchGate = screen.getByText(/not approved launch markets/i);
+    const launchGate = content().getByText(/not approved launch markets/i);
     expect(launchGate).toBeTruthy();
-    const planned = screen.getByText(/planned, not shipped/i);
+    const planned = content().getByText(/planned, not shipped/i);
     expect(planned).toBeTruthy();
     const sourceLink = screen.getByRole('link', {
       name: /Read the full public Privacy & Trust roadmap/i,
@@ -394,49 +405,51 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(screen.getByText('1,653')).toBeTruthy();
-    expect(screen.getByText('727')).toBeTruthy();
-    expect(screen.getByText('690')).toBeTruthy();
-    expect(screen.getByText('564')).toBeTruthy();
-    expect(screen.getByText('493')).toBeTruthy();
+    expect(content().getByText('1,653')).toBeTruthy();
+    expect(content().getByText('727')).toBeTruthy();
+    expect(content().getByText('690')).toBeTruthy();
+    expect(content().getByText('564')).toBeTruthy();
+    expect(content().getByText('493')).toBeTruthy();
     expect(
-      screen.getByRole('heading', { name: 'October 16, 2026' }),
+      screen.getByRole('heading', {
+        name: 'Build activity · October 16, 2026',
+      }),
     ).toBeTruthy();
-    expect(screen.getByText('4')).toBeTruthy();
-    expect(screen.getByText(/1,106 of 1,646 recorded runs/i)).toBeTruthy();
-    expect(screen.getByText(/October 16, 2026:/i)).toBeTruthy();
-    expect(screen.getByText('Frontend CI')).toBeTruthy();
-    expect(screen.getByText('Backend CI')).toBeTruthy();
-    expect(screen.getByText('Repository tools CI')).toBeTruthy();
-    expect(screen.getByText('Browser evidence')).toBeTruthy();
-    expect(screen.getByText('Public-story CI')).toBeTruthy();
+    expect(content().getByText('4')).toBeTruthy();
+    expect(content().getByText(/1,106 of 1,646 recorded runs/i)).toBeTruthy();
+    expect(content().getByText(/October 16, 2026:/i)).toBeTruthy();
+    expect(content().getByText('Frontend CI')).toBeTruthy();
+    expect(content().getByText('Backend CI')).toBeTruthy();
+    expect(content().getByText('Repository tools CI')).toBeTruthy();
+    expect(content().getByText('Browser evidence')).toBeTruthy();
+    expect(content().getByText('Public-story CI')).toBeTruthy();
     expect(screen.queryByText('We ran too much browser CI')).toBeNull();
 
-    fireEvent.click(
-      screen.getAllByRole('link', { name: 'What we learned' })[0],
-    );
-    expect(screen.getByText('We ran too much browser CI')).toBeTruthy();
+    fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
+    expect(content().getByText('We ran too much browser CI')).toBeTruthy();
     expect(
-      screen.getByText('Green tests did not prove the assembled product'),
+      content().getByText('Green tests did not prove the assembled product'),
     ).toBeTruthy();
     expect(
-      screen.getByText('Our agents were competing for one API budget'),
+      content().getByText('Our agents were competing for one API budget'),
     ).toBeTruthy();
     expect(
-      screen.getByText('New tools have to earn a permanent place'),
+      content().getByText('New tools have to earn a permanent place'),
     ).toBeTruthy();
     expect(
-      screen.getByText('The experiment we are still running'),
+      content().getByText('The experiment we are still running'),
     ).toBeTruthy();
     expect(
-      screen.getByText('Why this project became my AI laboratory'),
+      content().getByText('Why this project became my AI laboratory'),
     ).toBeTruthy();
     expect(
-      screen.getByText('Building the product changed how I learn.'),
+      content().getByText(
+        /Building it changed AI from something the founder followed/i,
+      ),
     ).toBeTruthy();
-    expect(screen.getByText('The next thing that scares me')).toBeTruthy();
+    expect(content().getByText('The next thing that scares me')).toBeTruthy();
     expect(
-      screen.getByText(
+      content().getByText(
         /Real users, real AI, and the first staging deployment/i,
       ),
     ).toBeTruthy();
@@ -445,23 +458,25 @@ describe('project story site', () => {
   it('describes epic-scoped task integration, the new CI cadence, and model-choice limits', () => {
     renderBuilder();
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
-    expect(screen.getByText(/The new integration rhythm/i)).toBeTruthy();
+    expect(content().getByText(/The new integration rhythm/i)).toBeTruthy();
     expect(screen.getAllByText(/manually/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/Tasks live inside epics/i)).toBeTruthy();
-    fireEvent.click(
-      screen.getAllByRole('link', { name: 'What we learned' })[0],
-    );
-    expect(screen.getByText('Task success was not epic success')).toBeTruthy();
+    expect(content().getByText(/Tasks live inside epics/i)).toBeTruthy();
+    fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
     expect(
-      screen.getByText('We almost made model selection another feature'),
+      content().getByText('Task success was not epic success'),
+    ).toBeTruthy();
+    expect(
+      content().getByText('We almost made model selection another feature'),
     ).toBeTruthy();
     fireEvent.click(
       screen.getAllByRole('link', { name: 'Development story' })[0],
     );
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 3/i }));
-    expect(screen.getByText(/default-off OpenRouter adapter/i)).toBeTruthy();
+    expect(content().getByText(/default-off OpenRouter adapter/i)).toBeTruthy();
     expect(
-      screen.getByText(/Profile-based entry and canonical saved-child setup/i),
+      content().getByText(
+        /Profile-based entry and canonical saved-child setup/i,
+      ),
     ).toBeTruthy();
   });
 
@@ -483,12 +498,12 @@ describe('project story site', () => {
         name: /from “a list of questions” to a real capability/i,
       }),
     ).toBeTruthy();
-    expect(screen.getByText(/Versioned content packs/i)).toBeTruthy();
+    expect(content().getByText(/Versioned content packs/i)).toBeTruthy();
     expect(
       screen.getAllByText(/qualified privacy, legal, security/i).length,
     ).toBeGreaterThan(0);
     expect(
-      screen.getByText(
+      content().getByText(
         /does not authorize real-family Alpha collection or use/i,
       ),
     ).toBeTruthy();
@@ -507,10 +522,10 @@ describe('project story site', () => {
         name: /Reduced synthetic checkpoint underway\. Outcome gate still open/i,
       }),
     ).toBeTruthy();
-    expect(screen.getByText(/Landed · Story Studio home/i)).toBeTruthy();
-    expect(screen.getByText(/Landed · direct page editing/i)).toBeTruthy();
-    expect(screen.getByText(/Landed · earlier versions/i)).toBeTruthy();
-    expect(screen.getByText(/Later · integrated approval/i)).toBeTruthy();
+    expect(content().getByText(/Landed · Story Studio home/i)).toBeTruthy();
+    expect(content().getByText(/Landed · direct page editing/i)).toBeTruthy();
+    expect(content().getByText(/Landed · earlier versions/i)).toBeTruthy();
+    expect(content().getByText(/Later · integrated approval/i)).toBeTruthy();
   });
 
   it('preserves the accepted visual recipe and stable public PDF path', () => {
@@ -519,12 +534,12 @@ describe('project story site', () => {
     fireEvent.click(screen.getAllByRole('link', { name: 'Design' })[0]);
     expect(
       screen.getByRole('heading', {
-        name: /the same design dna, expressed for different responsibilities/i,
+        name: /one design language, different responsibilities/i,
       }),
     ).toBeTruthy();
-    expect(screen.getByText('70%')).toBeTruthy();
-    expect(screen.getByText('#27213B')).toBeTruthy();
-    expect(screen.getByText('Storybook light')).toBeTruthy();
+    expect(content().getByText('70%')).toBeTruthy();
+    expect(content().getByText('#27213B')).toBeTruthy();
+    expect(content().getByText('Storybook light')).toBeTruthy();
 
     const pdfLinks = screen.getAllByRole('link', { name: /Project PDF/i });
     expect(pdfLinks.length).toBeGreaterThan(0);
@@ -559,6 +574,6 @@ describe('project story site', () => {
       name: /open the full explorer/i,
     });
     expect(fullView.getAttribute('href')).toBe('/architecture/system.html');
-    expect(screen.getByText(/internal repository provenance/i)).toBeTruthy();
+    expect(content().getByText(/internal repository provenance/i)).toBeTruthy();
   });
 });

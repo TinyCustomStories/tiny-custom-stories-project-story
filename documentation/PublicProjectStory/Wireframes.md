@@ -16,7 +16,7 @@ Home (/#/)
 │   └── Sprint 3 (/#/sprint-three)        NEW
 ├── Architecture (/#/architecture)
 ├── How we build (/#/delivery)
-├── What we learned (/#/learnings)        NEW
+├── Lessons (/#/learnings)        NEW
 ├── Design (/#/design)
 ├── Public library (/#/library)
 └── Development working record
@@ -111,7 +111,7 @@ Logical separation does not mean every box is already a separately deployed serv
 | Development: why each new boundary appeared + technical sprint chapters         |
 | Architecture: remember / permit / create in Story; exact capabilities in Builder|
 | How we build: human workflow in Story; stats + CI + exact delivery in Builder    |
-| What we learned: candid failures in both modes, with Builder retaining detail   |
+| Lessons: candid failures in both modes, with Builder retaining detail   |
 | Decisions: preserved deeper status record                                     |
 | Roadmap: preserved deeper outcome-gate record                                 |
 | Sprint 1: implemented boundary + open gate + evidence summary                  |
@@ -179,3 +179,33 @@ founder journey            sprint + CI detail
 ```
 
 Primary routes have dedicated Story-mode presentations. Sprint chapters and working-record routes remain the deeper evidence layer and do not need a second rewritten copy merely to satisfy the toggle.
+
+## October 16 reading and navigation redesign
+
+The founder selected Direction A through delegated design judgment and expanded its application to all routes. The [audit and design record](ReadingExperiencePilot.md) preserves the alternatives, route-by-route findings and content-conservation map.
+
+```text
+DESKTOP
+Shared site navigation + persistent Story / Builder
+Page takeaway + short introduction + consequential qualification
+--------------------------------------------------------------
+Chapter/reference rail     Reading column
+  Overview                  Takeaway heading
+  Section links             Short explanation
+  Current location          Diagram / comparison / example
+  Topic selector + Go       Status and limitations beside claim
+                            Optional supporting note
+                            Return to chapter / overview
+
+PHONE / TABLET
+Brand
+Story / Builder + global Menu
+Page takeaway and essential qualifications
+[On this page | current section +]   stays available while reading
+One reading column; diagrams and comparisons stack in reading order
+Supporting note expands inline; multiple notes can stay open
+```
+
+The local menu opens over the reading surface, then closes on navigation or Escape. The global menu remains separate. A topic is selected first and activated with Go; changing the selector alone does not navigate. Story favors chapters and cause/effect. Builder favors explicit status, reference topics, evidence and decision boundaries. Deeper records preserve their factual presentation while gaining the same orientation aids.
+
+Lessons keeps `/#/learnings` and has five chapters: finish one journey, test the assembled product, coordinate shared resources, make tools earn their place, and prepare for real families. Its status boundary, experiment limits, decisions and open questions remain accessible. New section links include a mode and topic. The home-screen parent/child/book doodles are preserved in both modes.
