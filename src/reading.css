@@ -1039,3 +1039,126 @@
     gap: 1rem;
   }
 }
+
+/* Laptop and desktop composition: spend width on relationships, keeping prose
+   measures intact. Mobile retains the established single-column sequence. */
+@media (min-width: 951px) {
+  .reading-page {
+    --reading-gutter: 2rem;
+  }
+  .reading-layout {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 2rem;
+    padding-top: 1.5rem;
+  }
+  .reading-page .page-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    column-gap: 3rem;
+    align-items: start;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  .reading-page .page-intro > .eyebrow {
+    grid-column: 1 / -1;
+  }
+  .reading-page .page-intro h1 {
+    font-size: clamp(2.5rem, 3.4vw, 3.5rem);
+    margin: 0.5rem 0;
+  }
+  .reading-page .page-intro .page-lede {
+    padding-top: 0.5rem;
+    font-size: 1.0625rem;
+  }
+  .reading-document
+    :is(.entry-grid, .sprint-chapter-grid, .route-grid, .delivery-detail-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .reading-document
+    :is(
+      .evidence-panel,
+      .outcome-banner,
+      .snapshot-heading,
+      .recipe-panel,
+      .component-sample,
+      .pdf-callout
+    ) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 2rem;
+  }
+  .reading-document .section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .reading-document .story-beat {
+    grid-template-columns: 2rem minmax(0, 0.9fr) minmax(0, 1.2fr);
+    gap: 0 1.25rem;
+  }
+  .reading-document .story-beat > span {
+    grid-row: 1;
+  }
+  .reading-document .story-beat h3 {
+    grid-column: 2;
+  }
+  .reading-document .story-beat p {
+    grid-column: 3;
+    margin-top: 0;
+  }
+}
+.build-activity,
+.design-foundations {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+@media (min-width: 1200px) {
+  .reading-document .two-column {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 2rem;
+  }
+  .lesson-chapter {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+    align-items: start;
+  }
+  .lesson-chapter > :is(.eyebrow, .lesson-figure, .reading-qualification, a) {
+    grid-column: 1 / -1;
+  }
+  .lesson-chapter > h2 {
+    grid-column: 1;
+  }
+  .lesson-chapter > .lesson-lede {
+    grid-column: 2;
+    margin-top: 0;
+  }
+}
+@media (min-width: 951px) {
+  .reading-document .recipe-panel .palette {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 951px) and (max-width: 1199px) {
+  .reading-document .recipe-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.reading-document .section > .build-activity:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.reading-document .build-activity + .sprint-chapter-intro {
+  margin-top: 2rem;
+}
+@media (min-width: 951px) {
+  .reading-document .stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.reading-document .section > p {
+  max-width: 65ch;
+}
+.reading-document .public-boundary-note {
+  max-width: 65ch !important;
+}

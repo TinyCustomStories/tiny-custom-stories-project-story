@@ -411,7 +411,9 @@ describe('project story site', () => {
     expect(content().getByText('564')).toBeTruthy();
     expect(content().getByText('493')).toBeTruthy();
     expect(
-      screen.getByRole('heading', { name: 'October 16, 2026' }),
+      screen.getByRole('heading', {
+        name: 'Build activity · October 16, 2026',
+      }),
     ).toBeTruthy();
     expect(content().getByText('4')).toBeTruthy();
     expect(content().getByText(/1,106 of 1,646 recorded runs/i)).toBeTruthy();

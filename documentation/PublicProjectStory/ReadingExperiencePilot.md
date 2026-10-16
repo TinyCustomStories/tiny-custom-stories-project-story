@@ -141,3 +141,13 @@ The documented walkthrough is performed by the designer/engineer. It is not user
 Current responsive evidence and exact checks are recorded in ScreenshotEvidence.md. The static dossier and its generator were not changed. No private project data, statistics refresh, policy adoption, deployment, or release claim is part of this change.
 
 The remaining improvement work is evaluation after review: observe whether real readers identify the takeaway and find a named topic, especially in Decisions and the longer reference pages. Promote additional abstractions or search only if that evidence identifies a concrete unmet need. There are no unconverted website routes in this delivery.
+
+## Approved desktop density and Story evidence follow-up
+
+The founder authorized a further sitewide laptop composition pass and asked Story to include the build statistics and design values already available in Builder. This is a presentation change using the existing dated public snapshot, not a project-state refresh.
+
+Above 950px, the shared shell uses a narrower section rail and gutters, a takeaway beside its introduction, paired independent directory/decision/sprint records, and supporting evidence beside its conclusion. Workflow rows pair their title and explanation. Above 1200px, lesson takeaways sit beside summaries, figures span the document, and supporting notes can be compared in two columns. Text retains its reading measure; the page retains the accepted maximum width. Below 951px, the established phone composition remains.
+
+`BuildActivity` shares all snapshot counts, dates, scope and historical/epic-integration limitations across Story and Builder. Story presents it before the human-directed workflow. `DesignFoundations` shares the eight principles, approximate 70/20/10 restraint guide, three type families, seven named palette values, surface themes and component examples. These are accepted design values; the proportions are not measured research results. No dependency or visual-language exception was added. Home retains its original doodle.
+
+New content parity and shared-topic continuity regressions accompany screenshot review. An independent review caught palette cell overlap and a missing workflow heading after the moved snapshot; both were corrected. The exact final checks and visual coverage are recorded in ScreenshotEvidence and the PR.

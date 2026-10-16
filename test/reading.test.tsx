@@ -38,6 +38,76 @@ const paths = [
 ];
 
 describe('reading and orientation', () => {
+  it('keeps a shared build snapshot selected across modes', () => {
+    window.history.replaceState({}, '', '#/delivery?mode=story');
+    render(<App />);
+    fireEvent.click(
+      within(
+        screen.getByRole('navigation', { name: 'On this page' }),
+      ).getByRole('link', { name: 'Build activity' }),
+    );
+    fireEvent.click(screen.getByRole('button', { name: /^Builder$/ }));
+    expect(window.location.hash).toBe(
+      '#/delivery?section=activity-snapshot&mode=builder',
+    );
+    expect(document.activeElement?.id).toBe('activity-snapshot');
+  });
+
+  it.each(['story', 'builder'])(
+    'keeps dated build evidence readable in %s',
+    (mode) => {
+      window.history.replaceState({}, '', `#/delivery?mode=${mode}`);
+      render(<App />);
+      const snapshot = screen.getByRole('region', {
+        name: 'Dated build activity',
+      });
+      for (const value of ['1,653', '727', '690', '564', '493']) {
+        expect(within(snapshot).getByText(value)).toBeTruthy();
+      }
+      expect(
+        within(snapshot).getByText('7 outcome-gated sprints'),
+      ).toBeTruthy();
+      expect(snapshot.textContent).toContain('1,106 of 1,646');
+      expect(snapshot.textContent).toContain('October 16, 2026');
+      expect(snapshot.textContent).toContain('not a pass rate');
+      expect(snapshot.textContent).toContain(
+        'may not have reached development',
+      );
+    },
+  );
+
+  it.each(['story', 'builder'])(
+    'shows the accepted design specifications in %s',
+    (mode) => {
+      window.history.replaceState({}, '', `#/design?mode=${mode}`);
+      render(<App />);
+      const reference = screen.getByRole('region', {
+        name: 'Shared design foundations',
+      });
+      for (const value of [
+        '70%',
+        '20%',
+        '10%',
+        '#27213B',
+        '#FBF8EF',
+        '#6F549F',
+        '#E76042',
+        '#F7B84B',
+        '#9DD3C6',
+        '#E7D8F5',
+      ]) {
+        expect(within(reference).getByText(value)).toBeTruthy();
+      }
+      for (const font of ['Fraunces', 'Nunito Sans', 'DM Mono']) {
+        expect(reference.textContent).toContain(font);
+      }
+      expect(reference.textContent).toContain('restraint guide');
+      expect(
+        within(reference).getByLabelText('Non-interactive button examples'),
+      ).toBeTruthy();
+    },
+  );
+
   // Catches a route being left out of the shared reading experience, or an index pointing nowhere.
   it.each(['story', 'builder'])(
     'provides usable section links on every route in %s mode',

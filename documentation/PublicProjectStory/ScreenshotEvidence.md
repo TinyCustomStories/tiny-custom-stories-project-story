@@ -81,3 +81,19 @@ Independent code review found and verified fixes for route-only Back, mode-depen
 Repository verification uses pinned Node 24.20.0/npm 11.19.0. `npm ci`, repository `verify`, and a production build with the GitHub Pages base path were run. Exact final check totals and PR state are recorded in the PR. Existing dependency advisories reported by npm were not changed by this dependency-free reading redesign.
 
 No user participants were recruited. No task-success rate, time saving, safety certification, accessibility certification, or comparative productivity result is claimed.
+
+## Laptop density and Story evidence follow-up
+
+The founder-approved density pass was checked across all 15 routes in both modes at 1440, 1024 and 390 CSS pixels (90 route/size/mode combinations). No horizontal document overflow was found. Lazy illustrations below the fold are not classified as broken before they load. The screenshot contact sheets were inspected for column balance and responsive composition; representative images were inspected individually. The home doodle remains. This is designer review and a walkthrough, not user research.
+
+Story and Builder now share the complete existing dated build snapshot and design specification components. A native browser control check confirmed that selecting Build activity, switching mode, and returning to Overview preserves the expected section address and focus. The shared-topic regression also covers that sequence. Native Find UI, print pagination, assistive technology and other browsers retain the limits stated above.
+
+| View                | Size        | Reviewed evidence                                                                                               |
+| ------------------- | ----------- | --------------------------------------------------------------------------------------------------------------- |
+| How we build, Story | 1440 × 1000 | [Dated statistics, qualifications and wider composition](reading-review/implemented/delivery-story-desktop.jpg) |
+| How we build, Story | 390 × 844   | [Same evidence in the phone sequence](reading-review/implemented/delivery-story-mobile.jpg)                     |
+| Design, Story       | 1440 × 1000 | [Shared design values and paired editorial composition](reading-review/implemented/design-story-desktop.jpg)    |
+| Design, Story       | 390 × 844   | [Design proportions in the phone sequence](reading-review/implemented/design-story-mobile.jpg)                  |
+| Decisions, Builder  | 390 × 844   | [Preserved reference reading on phones](reading-review/implemented/decisions-builder-mobile.jpg)                |
+
+Home Story desktop/mobile, Lessons Story desktop/mobile, and Decisions Builder desktop opening excerpts in the implementation table were refreshed after the density pass. Screenshots are opening excerpts; complete-page captures were used during review. No new animation, disclosure behavior, library, private browser API or live telemetry was introduced.

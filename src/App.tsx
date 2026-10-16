@@ -1184,9 +1184,14 @@ function StoryHowWeBuild() {
       </PageIntro>
 
       <section className="section delivery-section">
+        <BuildActivity />
+
         <div className="sprint-chapter-intro">
           <p className="eyebrow">The operating experiment</p>
-          <h2>
+          <h2
+            data-reading-key="human-directed-workflow"
+            data-nav-label="Human-directed workflow"
+          >
             Keep the human decisions visible while automation does more of the
             typing.
           </h2>
@@ -1302,17 +1307,6 @@ function StoryHowWeBuild() {
           <i aria-hidden="true">→</i>
           <span>Epic checkpoint + outcome</span>
         </div>
-
-        <div className="reading-panel">
-          <h2 data-reading-key="activity-snapshot">
-            Builder mode has the numbers.
-          </h2>
-          <p>
-            The exact dated commit, pull-request, issue, workflow, and CI
-            snapshot is preserved in Builder mode. Story mode keeps the reason
-            the machinery exists.
-          </p>
-        </div>
       </section>
     </ReadingPage>
   );
@@ -1359,32 +1353,7 @@ function StoryDesign() {
           </article>
         </div>
 
-        <div className="recipe-panel">
-          <div>
-            <p className="eyebrow">The public story</p>
-            <h2 data-reading-key="visual-language">
-              Part storybook, part lab notebook.
-            </h2>
-            <p>
-              Fraunces gives the project a printed-story character. Mono labels
-              make evidence and status feel explicit. Flat color, borders,
-              doodle-like shapes, and generous whitespace keep the site human
-              without hiding that this is still a technical build record.
-            </p>
-          </div>
-          <div>
-            <p className="story-pullquote">
-              The visual goal is not “make AI look magical.” It is “make a
-              complicated project feel understandable enough that someone keeps
-              reading.”
-            </p>
-          </div>
-        </div>
-
-        <p className="public-boundary-note">
-          Builder mode preserves the exact design recipe, palette, surface
-          themes, and component examples.
-        </p>
+        <DesignFoundations />
       </section>
     </ReadingPage>
   );
@@ -1877,7 +1846,7 @@ function Development() {
   );
 }
 
-function HowWeBuild() {
+function BuildActivity() {
   const stats = [
     [deliverySnapshot.commits, 'commits', 'on the development branch'],
     [deliverySnapshot.pullRequestsCreated, 'pull requests', 'created'],
@@ -1891,6 +1860,77 @@ function HowWeBuild() {
     ],
   ] as const;
 
+  return (
+    <section className="build-activity" aria-label="Dated build activity">
+      <div className="snapshot-heading">
+        <div>
+          <p className="eyebrow">GitHub delivery snapshot</p>
+          <h2
+            data-reading-key="activity-snapshot"
+            data-nav-label="Build activity"
+          >
+            Build activity · {deliverySnapshot.snapshotDate}
+          </h2>
+        </div>
+        <p>
+          Scope: the main <code>tiny-custom-stories</code> product repository.
+          The separate public-story repository is excluded so these numbers do
+          not inflate themselves.
+        </p>
+      </div>
+
+      <div className="stat-grid" aria-label="Repository activity snapshot">
+        {stats.map(([value, label, detail]) => (
+          <article className="stat-card" key={label + detail}>
+            <strong>{value.toLocaleString()}</strong>
+            <h3>{label === 'pull requests' ? `${label} ${detail}` : label}</h3>
+            <p>{detail}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="delivery-detail-grid">
+        <article>
+          <p className="eyebrow">Work decomposition</p>
+          <h2>{deliverySnapshot.plannedSprints} outcome-gated sprints</h2>
+          <p>
+            {deliverySnapshot.closedIssues.toLocaleString()} issues are closed
+            and {deliverySnapshot.openIssues.toLocaleString()} remain open. The
+            backlog is intentionally detailed: task count makes dependencies,
+            acceptance criteria, evidence, and ownership explicit rather than
+            acting as a productivity score.
+          </p>
+        </article>
+        <article>
+          <p className="eyebrow">Automation footprint</p>
+          <h2>
+            {deliverySnapshot.workflowDefinitions} main product CI workflows
+          </h2>
+          <p>
+            Repository-wide workflow-run history was last fully verified on{' '}
+            {deliverySnapshot.workflowRunsSnapshotDate}:{' '}
+            {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
+            {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
+            completed successfully. These are repository-wide historical
+            outcomes, including superseded runs, not a pass rate for the current
+            code or a measure of product readiness.
+          </p>
+        </article>
+      </div>
+
+      <p className="public-boundary-note">
+        Repository counts are intentionally dated rather than presented as live
+        telemetry. Repository totals and workflow history were read on October
+        16, 2026 (UTC). Commits count only development ancestry; epic-branch
+        work is included in PR totals but may not have reached development. The
+        public site does not call the private repository or require a GitHub
+        token in the browser.
+      </p>
+    </section>
+  );
+}
+
+function HowWeBuild() {
   const workflowChecks = [
     [
       'Frontend CI',
@@ -1929,56 +1969,7 @@ function HowWeBuild() {
       </PageIntro>
 
       <section className="section delivery-section">
-        <div className="snapshot-heading">
-          <div>
-            <p className="eyebrow">GitHub delivery snapshot</p>
-            <h2>{deliverySnapshot.snapshotDate}</h2>
-          </div>
-          <p>
-            Scope: the main <code>tiny-custom-stories</code> product repository.
-            The separate public-story repository is excluded so these numbers do
-            not inflate themselves.
-          </p>
-        </div>
-
-        <div className="stat-grid" aria-label="Repository activity snapshot">
-          {stats.map(([value, label, detail]) => (
-            <article className="stat-card" key={label + detail}>
-              <strong>{value.toLocaleString()}</strong>
-              <h3>{label}</h3>
-              <p>{detail}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="delivery-detail-grid">
-          <article>
-            <p className="eyebrow">Work decomposition</p>
-            <h2>{deliverySnapshot.plannedSprints} outcome-gated sprints</h2>
-            <p>
-              {deliverySnapshot.closedIssues.toLocaleString()} issues are closed
-              and {deliverySnapshot.openIssues.toLocaleString()} remain open.
-              The backlog is intentionally detailed: task count makes
-              dependencies, acceptance criteria, evidence, and ownership
-              explicit rather than acting as a productivity score.
-            </p>
-          </article>
-          <article>
-            <p className="eyebrow">Automation footprint</p>
-            <h2>
-              {deliverySnapshot.workflowDefinitions} main product CI workflows
-            </h2>
-            <p>
-              Repository-wide workflow-run history was last fully verified on{' '}
-              {deliverySnapshot.workflowRunsSnapshotDate}:{' '}
-              {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
-              {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
-              completed successfully. These are repository-wide historical
-              outcomes, including superseded runs, not a pass rate for the
-              current code or a measure of product readiness.
-            </p>
-          </article>
-        </div>
+        <BuildActivity />
 
         <div className="workflow-grid">
           {workflowChecks.map(([title, detail], index) => (
@@ -2013,7 +2004,10 @@ function HowWeBuild() {
         <div className="evidence-panel">
           <div>
             <p className="eyebrow">Agent-assisted, repository-owned</p>
-            <h2 data-reading-key="human-directed-workflow">
+            <h2
+              data-reading-key="human-directed-workflow"
+              data-nav-label="Human-directed workflow"
+            >
               Structured execution without handing product ownership away.
             </h2>
           </div>
@@ -2123,15 +2117,6 @@ function HowWeBuild() {
             learning record. <Link to="/learnings">Read what we learned →</Link>
           </p>
         </div>
-
-        <p className="public-boundary-note">
-          Repository counts are intentionally dated rather than presented as
-          live telemetry. Repository totals and workflow history were read on
-          October 16, 2026 (UTC). Commits count only development ancestry;
-          epic-branch work is included in PR totals but may not have reached
-          development. The public site does not call the private repository or
-          require a GitHub token in the browser.
-        </p>
       </section>
     </ReadingPage>
   );
@@ -2928,7 +2913,7 @@ function SprintThree() {
   );
 }
 
-function Design() {
+function DesignFoundations() {
   const palette = [
     ['Ink', '#27213B', 'ink'],
     ['Paper', '#FBF8EF', 'paper'],
@@ -2939,6 +2924,110 @@ function Design() {
     ['Lavender', '#E7D8F5', 'lavender'],
   ];
 
+  return (
+    <section
+      className="design-foundations"
+      aria-label="Shared design foundations"
+    >
+      <h2 data-reading-key="design-balance">
+        Calm first, character in measured doses.
+      </h2>
+      <p className="reading-qualification">
+        The 70 / 20 / 10 balance is an approximate restraint guide for
+        composition, not a measured usability result.
+      </p>
+      <div className="design-formula">
+        <p>
+          <strong>70%</strong>
+          <span>calm editorial foundation</span>
+        </p>
+        <p>
+          <strong>20%</strong>
+          <span>handcrafted character</span>
+        </p>
+        <p>
+          <strong>10%</strong>
+          <span>emphasis and delight</span>
+        </p>
+      </div>
+
+      <div className="principle-grid">
+        {designPrinciples.map(([title, detail], index) => (
+          <article key={title}>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{title}</h3>
+            <p>{detail}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="recipe-panel">
+        <div>
+          <p className="eyebrow">The reusable visual recipe</p>
+          <h2 data-reading-key="visual-language">
+            Paper, ink, and a few purposeful sparks.
+          </h2>
+          <p>
+            Fraunces carries expressive titles. Nunito Sans keeps bodies and
+            controls plain. DM Mono labels metadata and status. Crisp borders,
+            small offset shadows, flat color, and generous spacing keep the
+            family resemblance without forcing every surface into one layout.
+          </p>
+        </div>
+        <div className="palette" aria-label="Accepted interface color palette">
+          {palette.map(([name, value, className]) => (
+            <div key={name}>
+              <span
+                className={`swatch swatch-${className}`}
+                aria-hidden="true"
+              />
+              <b>{name}</b>
+              <code>{value}</code>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="theme-grid">
+        {surfaceThemes.map((theme) => (
+          <article key={theme.name}>
+            <p className="eyebrow">{theme.audience}</p>
+            <h3>{theme.name}</h3>
+            <p>{theme.detail}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="component-sample">
+        <div>
+          <p className="eyebrow">Continuity over redesign</p>
+          <h2>New material, the same visual language.</h2>
+          <p>
+            Existing typography, palette, cards, status treatments, navigation,
+            fragment routes, responsive behavior, and public editorial character
+            remain the foundation for these new pages.
+          </p>
+        </div>
+        <div
+          className="sample-actions"
+          aria-label="Non-interactive button examples"
+        >
+          <span className="button button-dark">Create story plan</span>
+          <span className="button button-light">Review the draft</span>
+          <span className="sample-link">Return to child mode</span>
+        </div>
+      </div>
+
+      <p className="influence-note">
+        Coherence comes from shared values and foundations, not identical page
+        composition. The public story should not look like the private family
+        application, and the parent experience should not look like a toy.
+      </p>
+    </section>
+  );
+}
+
+function Design() {
   return (
     <ReadingPage>
       <PageIntro
@@ -2954,96 +3043,7 @@ function Design() {
       </PageIntro>
 
       <section className="section design-section">
-        <div className="design-formula">
-          <p>
-            <strong>70%</strong>
-            <span>calm editorial foundation</span>
-          </p>
-          <p>
-            <strong>20%</strong>
-            <span>handcrafted character</span>
-          </p>
-          <p>
-            <strong>10%</strong>
-            <span>emphasis and delight</span>
-          </p>
-        </div>
-
-        <div className="principle-grid">
-          {designPrinciples.map(([title, detail], index) => (
-            <article key={title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{title}</h3>
-              <p>{detail}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="recipe-panel">
-          <div>
-            <p className="eyebrow">The reusable visual recipe</p>
-            <h2 data-reading-key="visual-language">
-              Paper, ink, and a few purposeful sparks.
-            </h2>
-            <p>
-              Fraunces carries expressive titles. Nunito Sans keeps bodies and
-              controls plain. DM Mono labels metadata and status. Crisp borders,
-              small offset shadows, flat color, and generous spacing keep the
-              family resemblance without forcing every surface into one layout.
-            </p>
-          </div>
-          <div
-            className="palette"
-            aria-label="Accepted interface color palette"
-          >
-            {palette.map(([name, value, className]) => (
-              <div key={name}>
-                <span
-                  className={`swatch swatch-${className}`}
-                  aria-hidden="true"
-                />
-                <b>{name}</b>
-                <code>{value}</code>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="theme-grid">
-          {surfaceThemes.map((theme) => (
-            <article key={theme.name}>
-              <p className="eyebrow">{theme.audience}</p>
-              <h3>{theme.name}</h3>
-              <p>{theme.detail}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="component-sample">
-          <div>
-            <p className="eyebrow">Continuity over redesign</p>
-            <h2>New material, the same visual language.</h2>
-            <p>
-              Existing typography, palette, cards, status treatments,
-              navigation, fragment routes, responsive behavior, and public
-              editorial character remain the foundation for these new pages.
-            </p>
-          </div>
-          <div
-            className="sample-actions"
-            aria-label="Non-interactive button examples"
-          >
-            <span className="button button-dark">Create story plan</span>
-            <span className="button button-light">Review the draft</span>
-            <span className="sample-link">Return to child mode</span>
-          </div>
-        </div>
-
-        <p className="influence-note">
-          Coherence comes from shared values and foundations, not identical page
-          composition. The public story should not look like the private family
-          application, and the parent experience should not look like a toy.
-        </p>
+        <DesignFoundations />
       </section>
     </ReadingPage>
   );
