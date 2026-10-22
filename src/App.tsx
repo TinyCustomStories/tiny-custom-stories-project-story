@@ -1031,18 +1031,16 @@ function StoryArchitecture() {
         aria-label="Current synthetic architecture checkpoint"
       >
         <div className="reading-panel">
-          <p className="eyebrow">
-            October 21 status · partial implementation
-          </p>
+          <p className="eyebrow">October 21 status · partial implementation</p>
           <h2>The current checkpoint is narrow and incomplete.</h2>
           <p>
-            The accepted target uses a saved fictional profile and an
-            explicitly accepted plan. Generation and checking supply a
-            candidate; Story Lifecycle owns application, revisions, and
-            approval. Protected readers reopen an immutable approved version.
-            Reviewed epic slices and a bounded fixed-story local persistence
-            exercise exist, but the normal complete parent journey remains
-            unverified and not every epic slice is in development.
+            The accepted target uses a saved fictional profile and an explicitly
+            accepted plan. Generation and checking supply a candidate; Story
+            Lifecycle owns application, revisions, and approval. Protected
+            readers reopen an immutable approved version. Reviewed epic slices
+            and a bounded fixed-story local persistence exercise exist, but the
+            normal complete parent journey remains unverified and not every epic
+            slice is in development.
           </p>
           <p>
             Optional Child Map context and source cleanup stay outside this
@@ -1734,9 +1732,9 @@ function Development() {
           to one fictional, parent-operated story journey. Subsequent epic
           merges add accepted-plan input, offline generation/checking, initial
           story application, and approved-version reading. A separate
-          Development-only fictional preview with idea/feel choices and a
-          narrow fixed-story local approval/reopen exercise now add evidence,
-          but the full accepted outcome still needs proof.
+          Development-only fictional preview with idea/feel choices and a narrow
+          fixed-story local approval/reopen exercise now add evidence, but the
+          full accepted outcome still needs proof.
         </p>
       </PageIntro>
 
@@ -2169,18 +2167,16 @@ function Architecture() {
         aria-label="Current synthetic architecture checkpoint"
       >
         <div className="reading-panel">
-          <p className="eyebrow">
-            October 21 status · partial implementation
-          </p>
+          <p className="eyebrow">October 21 status · partial implementation</p>
           <h2>The current checkpoint is narrow and incomplete.</h2>
           <p>
-            The accepted target uses a saved fictional profile and an
-            explicitly accepted plan. Generation and checking supply a
-            candidate; Story Lifecycle owns application, revisions, and
-            approval. Protected readers reopen an immutable approved version.
-            Reviewed epic slices and a bounded fixed-story local persistence
-            exercise exist, but the normal complete parent journey remains
-            unverified and not every epic slice is in development.
+            The accepted target uses a saved fictional profile and an explicitly
+            accepted plan. Generation and checking supply a candidate; Story
+            Lifecycle owns application, revisions, and approval. Protected
+            readers reopen an immutable approved version. Reviewed epic slices
+            and a bounded fixed-story local persistence exercise exist, but the
+            normal complete parent journey remains unverified and not every epic
+            slice is in development.
           </p>
           <p>
             Optional Child Map context and source cleanup stay outside this
