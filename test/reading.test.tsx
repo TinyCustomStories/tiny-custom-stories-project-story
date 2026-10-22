@@ -329,13 +329,13 @@ describe('reading and orientation', () => {
     ).toBeTruthy();
 
     fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
-    expect(document.getElementById('design-as-a-development-tool')).toBeTruthy();
+    expect(
+      document.getElementById('design-as-a-development-tool'),
+    ).toBeTruthy();
     expect(window.location.hash).toContain(
       'section=design-as-a-development-tool',
     );
-    expect(document.body.textContent).toContain(
-      'no controlled',
-    );
+    expect(document.body.textContent).toContain('no controlled');
   });
 
   it('opens detail addressed by a copied link', () => {
