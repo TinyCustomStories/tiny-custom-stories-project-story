@@ -694,19 +694,24 @@ def next_page(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "What comes next", INK, dark=True)
     y = page_title(
         canvas,
-        "Finish the evidence, then keep composing deliberately.",
-        "The near-term project is still a chain of explicit decisions, small implementation slices, synthetic evidence, review, and outcome gates—not one giant autonomous build.",
+        "Prove the parent journey, not just the next PR.",
+        "The next milestones must connect product, safety, and operational evidence. The October 21 checkpoint is not a launched or real-family-ready service.",
         dark=True,
     )
     data = [
-        ("Close Sprint 2 honestly", "Finish the remaining People/Places/media/deletion slices, cross-cutting evidence, qualified review, and integrated outcome demonstration.", SUN),
-        ("Keep Discovery deterministic", "Use the versioned data-driven catalog and controlled context boundary without introducing runtime family-data AI interpretation.", MINT),
-        ("Complete generation foundations", "Finish the bounded ten-page generation, checking, recovery, progress, and approved provider path before calling Story generation complete.", MINT),
-        ("Build the visible Studio", "Layer editing, revision history, continuity choices, cover changes, and approval on top of the landed Story foundations.", SUN),
+        ("Finish the smaller Story Studio outcome", "Prove the profile-only plan to approved offline story through a normal protected parent journey. One fixed local demonstration is not enough.", SUN),
+        ("Qualify real-family trust", "Settle provider transfer, privacy, child-safety, security, deletion, and independent release review before real family information is used.", MINT),
+        ("Strengthen story quality", "Test age-fit, narrative causality, tone, consistency, review and bounded repair with fictional materials; do not overclaim certification.", MINT),
+        ("Advance the visual direction", "Build versioned themes, a stable cast, planned scenes and a controlled renderer before richer image or resemblance options.", SUN),
     ]
     for i, (title, body, accent) in enumerate(data):
-        card(canvas, MARGIN + (i % 2) * 264, y - 30 - (i // 2) * 174, 244, 150, title, body, fill=INK, accent=accent, dark=True, label="Focused next work")
-    paragraph(canvas, "Source trail: current Sprint 0/1 gate records; October 1 Sprint 2 outcome and privacy records; Child Map Discovery architecture; Sprint 3 canonical specification and Story capability architecture; current repository implementation evidence; design language; and public-story curation guidance.", MARGIN, 166, WIDTH - MARGIN * 2, SMALL_DARK)
+        card(canvas, MARGIN + (i % 2) * 264, y - 30 - (i // 2) * 174,
+             244, 150, title, body, fill=INK, accent=accent, dark=True, label="Focused next work")
+    paragraph(
+        canvas,
+        "Source trail: accepted sprint and design documents; reviewed October 20-21 development checkpoints; the founder's design reflection; and the dated October 21 public delivery snapshot. Public-safe summary only.",
+        MARGIN, 166, WIDTH - MARGIN * 2, SMALL_DARK,
+    )
 
 
 PAGES = [
