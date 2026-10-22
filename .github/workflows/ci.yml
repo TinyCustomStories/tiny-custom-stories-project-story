@@ -36,5 +36,16 @@ jobs:
       - name: Generate current project dossier
         run: npm run generate:pdf
 
+      - name: Upload inspected dossier contact sheet
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dossier-pages
+          path: |
+            build/dossier-contact-sheet.png
+            public/documents/tiny-custom-stories-project-dossier.pdf
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Verify public site
         run: npm run verify

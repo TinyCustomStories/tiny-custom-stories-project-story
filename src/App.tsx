@@ -1450,9 +1450,10 @@ function StoryLibrary() {
               The PDF is a snapshot. The website is the living version.
             </h2>
             <p>
-              The fixed-layout dossier remains useful as a dated checkpoint.
-              This website changes more often as the product, build system, and
-              lessons evolve.
+              The portable 17-page dossier now reflects the October 21 public
+              checkpoint. The responsive site remains the best place for the
+              evolving story and accessible navigation. This website changes
+              more often as the product, build system, and lessons evolve.
             </p>
           </div>
           <a
@@ -3207,9 +3208,9 @@ function Library() {
               Take the evolving project story with you.
             </h2>
             <p>
-              The PDF remains the October 1 fixed-layout checkpoint at its
-              stable public path. This responsive site carries the October 21
-              project update and is the current narrative.
+              The refreshed 17-page PDF includes the October 21 checkpoint,
+              updated Sprint 2 and 3 status, and our design-as-development
+              lesson. The website remains the living, responsive narrative.
             </p>
           </div>
           <a
