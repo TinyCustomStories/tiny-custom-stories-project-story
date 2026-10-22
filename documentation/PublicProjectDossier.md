@@ -1,6 +1,6 @@
 # Public Project Dossier
 
-The [Public Project Dossier PDF](../public/documents/tiny-custom-stories-project-dossier.pdf) is a **generated 17-page edition dated October 21, 2026**. It is the portable, fixed-layout companion to the responsive Tiny Custom Stories project website at the existing stable URL.
+The [Public Project Dossier PDF](https://tinycustomstories.github.io/tiny-custom-stories-project-story/documents/tiny-custom-stories-project-dossier.pdf) is a **generated 17-page edition dated October 21, 2026**. It is the portable, fixed-layout companion to the responsive Tiny Custom Stories project website at the existing stable URL.
 
 ## What this edition covers
 
