@@ -449,17 +449,17 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "How the work is delivered", MINT)
     y = page_title(
         canvas,
-        "The work is visible because the process is visible.",
-        "A dated GitHub snapshot shows the scale of the main product repository without pretending the numbers are live. The separate public-story repository is excluded from the activity totals.",
+        "Work becomes evidence when its boundaries are clear.",
+        "The October 21 GitHub snapshot covers historical activity in the main product repository, not a live metric, a productivity score, or evidence that an outcome gate passed.",
     )
     snapshot = DELIVERY_SNAPSHOT
     stats = [
-        (f"{snapshot['commits']:,}", "commits", "development branch"),
+        (f"{snapshot['commits']:,}", "commits", "development ancestry"),
         (f"{snapshot['pullRequestsCreated']:,}", "pull requests", "created"),
         (f"{snapshot['pullRequestsMerged']:,}", "PRs merged", "reviewed + landed"),
         (f"{snapshot['issuesTracked']:,}", "issues", "tracked"),
         (f"{snapshot['taskIssues']:,}", "task issues", "implementation / validation"),
-        (f"{snapshot['workflowRuns']:,}", "workflow runs", "GitHub Actions"),
+        (f"{snapshot['workflowRuns']:,}", "workflow runs", "historical Actions"),
     ]
     usable = WIDTH - MARGIN * 2
     gap = 10
@@ -485,8 +485,9 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
         canvas,
         f"{snapshot['plannedSprints']} outcome-gated sprints are mapped. "
         f"{snapshot['closedIssues']:,} issues are closed and {snapshot['openIssues']:,} remain open. "
-        f"The main product repository currently has {snapshot['workflowDefinitions']} CI workflow definitions; "
-        f"{snapshot['successfulWorkflowRuns']:,} of {snapshot['workflowRuns']:,} recorded workflow runs completed successfully in this snapshot.",
+        f"The product repository has {snapshot['workflowDefinitions']} CI workflow files; "
+        f"{snapshot['successfulWorkflowRuns']:,} of {snapshot['workflowRuns']:,} historical workflow runs completed successfully. "
+        "These include superseded builds and are not the current-code pass rate.",
         MARGIN,
         y - 268,
         usable,
@@ -495,7 +496,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
 
     paragraph(
         canvas,
-        "IDEA / FINDING  ->  DECISION  ->  DOCUMENTATION  ->  ISSUE  ->  IMPLEMENTATION  ->  PR + CI  ->  REVIEW / FIX / RE-REVIEW  ->  MERGE + OUTCOME EVIDENCE",
+        "IDEA / EVIDENCE  ->  ACCEPTED DECISION  ->  OWNED ISSUE  ->  FOCUSED PR  ->  INDEPENDENT REVIEW  ->  EPIC CHECKPOINT  ->  ASSEMBLED OUTCOME",
         MARGIN,
         y - 350,
         usable,
@@ -509,7 +510,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
         (usable - gap) / 2,
         132,
         "Small, explicit work",
-        "Backlog stewardship turns accepted decisions into bounded issues with dependencies, acceptance criteria, tests, evidence, and stop conditions. Independent work may run concurrently only in isolated branches or sessions.",
+        "Reconcile the original parent journey before generating more Ready tasks. Give each issue an owner, evidence target, and route into a reviewed epic checkpoint.",
         fill=SURFACE,
         accent=SUN,
         label="Execution",
@@ -521,14 +522,14 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
         (usable - gap) / 2,
         132,
         "Verification before completion",
-        "Non-trivial failures are debugged systematically. Review is iterative: inspect, comment, fix, verify again, then merge only when the evidence supports it.",
+        "Focused local checks, independent review, and exact-head epic verification matter more than raw activity. Hosted browser checks are selective.",
         fill=SURFACE,
         accent=CORAL,
         label="Review",
     )
     paragraph(
         canvas,
-        f"Snapshot: {snapshot['snapshotDate']}. Counts describe repository activity, not productivity scores or a live pass-rate dashboard.",
+        f"Snapshot: {snapshot['snapshotDate']}. Reachable commits include older merged history, so totals do not measure recent development velocity.",
         MARGIN,
         72,
         usable,
@@ -540,8 +541,8 @@ def philosophy(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Design philosophy")
     y = page_title(
         canvas,
-        "The why behind every screen, service, and hand-off.",
-        "The same philosophy now spans child, parent, public, documentation, and technical work without forcing every surface into one visual template.",
+        "The why behind every screen and hand-off.",
+        "The shared philosophy guides child reading, protected parent workflows, public storytelling, and agent implementation without forcing those surfaces to look alike.",
     )
     items = [
         ("Human intention leads", "AI assists inside parent-led purpose and review."),
@@ -551,7 +552,7 @@ def philosophy(canvas: Canvas, n: int, total: int) -> None:
         ("Trust is visible", "Privacy, uncertainty, drafts, progress, and limits appear where they matter."),
         ("Every state is designed", "Loading, interruption, error, expiry, recovery, and return count."),
         ("Accessibility is structural", "Semantics, focus, contrast, reflow, alternatives, and reduced motion begin early."),
-        ("Evidence outranks taste", "Synthetic inspected evidence decides whether confidence is deserved."),
+        ("Evidence outranks taste", "Inspect actual use; screenshots and confident agents are not proof alone."),
     ]
     for i, (title, body) in enumerate(items):
         card(canvas, MARGIN + (i % 2) * 264, y - 28 - (i // 2) * 116, 244, 98, title, body, fill=SURFACE, accent=[SUN, MINT, LAVENDER, CORAL][i // 2])
@@ -561,8 +562,8 @@ def visual_recipe(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Visual recipe")
     y = page_title(
         canvas,
-        "Same design DNA, more mature story.",
-        "The public site keeps its paper-and-ink editorial identity. New architecture and development content extends existing components and rhythms rather than introducing a generic dashboard or documentation-site aesthetic.",
+        "One reproducible visual language, not copied pages.",
+        "The philosophy defines why. The paper-and-ink visual language specifies typography, semantic colors, spacing, responsive layout, controls, and interaction states for reusable agent work.",
     )
     segments = [
         ("70%", "calm foundation", 0.70, PAPER),
@@ -603,11 +604,28 @@ def visual_recipe(canvas: Canvas, n: int, total: int) -> None:
     paragraph(canvas, "Display: Fraunces. Body and controls: Nunito Sans. Metadata: DM Mono. The generated dossier keeps accepted fallback fonts when those web fonts are unavailable.", MARGIN, 265, WIDTH - MARGIN * 2, SMALL)
     paragraph(
         canvas,
-        "Continuity rule: existing foundation -> additive evolution -> targeted refinement. New content should feel like the September site grew, not like somebody replaced it.",
+        "A coherent design system gives agents direction without erasing personality: shared values, reusable components, and approved differences for each surface.",
         MARGIN,
         186,
         WIDTH - MARGIN * 2,
         style("recipe-quote", font=DISPLAY_BOLD, size=16, leading=21, color=PLUM),
+    )
+
+
+
+def design_lesson(canvas: Canvas, n: int, total: int) -> None:
+    rows_page(
+        canvas, total, n, "Design lesson",
+        "A design philosophy became a development tool.",
+        "Two living references helped different AI coding agents make coherent choices. The founder found them useful, but this is not measured usability research.",
+        [
+            ("01", "Philosophy: why", "Start with parent intent, child safety, clarity, trust, and accessibility before debating decoration."),
+            ("02", "Visual language: how", "Define colors, type, spacing, components, states, and responsive layouts so new pages belong to the product."),
+            ("03", "Different surfaces", "Child, parent, serious, and public experiences express shared product values differently."),
+            ("04", "Agent handoffs", "Agents read both documents, reuse patterns, and explain exceptions rather than inventing a fresh style."),
+            ("05", "Keep checking", "The founder experienced better consistency, but there is no measured speedup or independent family study."),
+        ],
+        LAVENDER,
     )
 
 
@@ -616,16 +634,16 @@ def questions(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "Useful unknowns stay visible.",
-        "Some product boundaries are clearer now. Qualified review, story-context/provider policy, derived-artifact deletion, physical extraction, provider/deployment choices, and Alpha evidence still require deliberate work.",
+        "Qualified review, story context and provider policy, deletion, story quality, staging, and real-family value still need independent evidence.",
         dark=True,
     )
     items = [
-        "What must qualified Sprint 2 privacy, legal, security, and child-safety review validate or tighten before real-family Alpha use?",
+        "What must qualified privacy, legal, security, and child-safety review validate before real-family Alpha use?",
         "Which policy-permitted Child Map observations may be used for a specific story or external provider?",
         "What happens to drafts and approved stories when their Child Map sources are later deleted?",
         "When should Story Generation move from the API process to a worker or service?",
         "Which providers, workflow products, and deployment choices meet the evidence bar?",
-        "What proves the private Alpha is valuable and safe enough to continue?",
+        "Will parents and children find meaningful value beyond a local fictional demonstration?",
     ]
     for i, question in enumerate(items):
         x = MARGIN + (i % 2) * 264
@@ -705,6 +723,7 @@ PAGES = [
     ("delivery", delivery),
     ("philosophy", philosophy),
     ("visual-recipe", visual_recipe),
+    ("design-lesson", design_lesson),
     ("open-questions", questions),
     ("public-library", library),
     ("next", next_page),
@@ -714,11 +733,11 @@ PAGES = [
 def build() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     canvas = Canvas(str(OUTPUT), pagesize=letter, pageCompression=1, invariant=1)
-    canvas.setTitle("Tiny Custom Stories - Public Project Story")
+    canvas.setTitle("Tiny Custom Stories - Public Project Story - October 21, 2026")
     canvas.setAuthor("Tiny Custom Stories")
     canvas.setSubject(
         "Public guide to the product, delivery evidence, Child Map and data-driven Discovery, "
-        "Story foundation implementation, capability architecture, design language, roadmap, and open questions."
+        "Story Studio synthetic evidence, capability architecture, design lessons, roadmap, and open questions."
     )
     canvas.setCreator("Tiny Custom Stories public project story generator")
     total = len(PAGES)
