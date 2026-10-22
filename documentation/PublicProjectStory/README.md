@@ -72,7 +72,7 @@ The site preserves both reading modes, all existing routes, responsive editorial
 - Both modes of **How we build** include the same dated, public-safe activity snapshot and its scope and limitations. Story explains the human workflow behind small tasks, specialist agents, repository-owned memory, review loops, testing, and documentation; Builder adds the exact delivery/verification system. Both Design views include the shared principles, approximate design proportions, font families, palette values and surface themes.
 - The **Lessons** route separately holds engineering retrospectives, failed experiments, tool-pilot outcomes, founder learning, and the next unresolved delivery frontier so process mechanics and lessons do not compete on one page.
 - **Decisions**, **Roadmap**, and **Open questions** remain stable public routes but are deliberately removed from the main header and linked contextually from Development story.
-- The [Public Project Dossier](../../public/documents/tiny-custom-stories-project-dossier.pdf) is a portable companion at a stable path. It supports the website rather than replacing the website's semantic, responsive version.
+- The [Public Project Dossier](https://tinycustomstories.github.io/tiny-custom-stories-project-story/documents/tiny-custom-stories-project-dossier.pdf) is a portable companion at a stable path. It supports the website rather than replacing the website's semantic, responsive version.
 
 These documents describe the public-information experience only. They do not expose the private implementation repository, adopt policy from exploratory material, or publish security-sensitive operating detail.
 
