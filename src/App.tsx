@@ -187,7 +187,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 16, 2026
+            A public project story · updated October 21, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -197,8 +197,9 @@ function Home() {
             Tiny Custom Stories has grown from a personalized-story idea into a
             parent-controlled learning product with a demonstrated synthetic and
             local Child Map outcome, data-driven Discovery, a protected Story
-            Studio with real editing and revision flows, and an accepted Visual
-            Theme System direction for the future visual layer.
+            Studio with editing and revision flows, a gated fictional-story
+            preview experiment, and an accepted Visual Theme System direction
+            for the future visual layer.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/development">
@@ -253,12 +254,13 @@ function Home() {
         </p>
         <p>
           Sprint 3 still uses a{' '}
-          <strong>synthetic-only sequencing exception</strong>. Protected setup,
-          editing, and revision history are in development. Ready-plan input,
-          offline candidate/checking/application, and approved-version readers
-          have epic-branch implementations. The reduced parent journey is still
-          unverified. Basic doodles are being tested separately. Neither
-          experiment approves real-family AI use or closes the release gates.
+          <strong>synthetic-only sequencing exception</strong>. An opt-in,
+          fictional-only candidate preview with independently selected story
+          idea and feel reached development on October 20. A separate narrow
+          local exercise approved and reopened a fixed synthetic story through
+          real application storage. Neither proves the complete accepted parent
+          journey or a safe live-model story. Epic integration, family release
+          gates, and the separate Visual Theme System outcome remain open.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -417,10 +419,11 @@ function StoryHome() {
         </p>
         <p>
           Story Studio can save a parent's choices, edit pages, and restore
-          earlier versions. The next demonstration is narrower: one fictional
-          profile, Fun & Fantasy, an offline story, approval, and protected
-          reopen. Reviewed epic slices exist; the complete journey and
-          real-family release remain unverified.
+          earlier versions. A protected fictional preview with curated
+          story-idea and reading-feel choices is now in development. A fixed
+          synthetic local approval/reopen exercise has also been observed, but
+          the accepted profile-only offline journey and real-family release
+          remain unverified.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -1029,25 +1032,25 @@ function StoryArchitecture() {
       >
         <div className="reading-panel">
           <p className="eyebrow">
-            October 16 architecture checkpoint · partial implementation
+            October 21 status · partial implementation
           </p>
           <h2>The current checkpoint is narrow and incomplete.</h2>
           <p>
-            The current target uses a saved fictional profile and an explicitly
-            accepted plan. A durable operation coordinates generation and
-            checking; Story Lifecycle applies the current valid result and owns
-            revisions and approval. Protected readers reopen the exact immutable
-            approved version. These seams have reviewed epic-branch
-            implementations; the complete UI-to-storage demonstration is still
-            unverified and they are not all integrated into development.
+            The accepted target uses a saved fictional profile and an
+            explicitly accepted plan. Generation and checking supply a
+            candidate; Story Lifecycle owns application, revisions, and
+            approval. Protected readers reopen an immutable approved version.
+            Reviewed epic slices and a bounded fixed-story local persistence
+            exercise exist, but the normal complete parent journey remains
+            unverified and not every epic slice is in development.
           </p>
           <p>
-            Optional Child Map context and source-cleanup capabilities are
-            outside this checkpoint. Their exclusion must be enforced by the
-            server as well as the interface. Deterministic offline doubles
-            supply the fixed test content; the configurable synthetic provider
-            adapter remains a separate, default-off path. Neither authorizes
-            real-family transfer or proves a live model produced a safe story.
+            Optional Child Map context and source cleanup stay outside this
+            checkpoint. Their exclusion must be enforced by both the server and
+            interface. The deterministic offline path is separate from the
+            default-off, Development-only fictional provider preview now on
+            development. That preview returns an unassessed, unsaved candidate
+            and cannot approve, publish, or authorize real-family transfer.
           </p>
         </div>
       </section>
@@ -1354,6 +1357,9 @@ function StoryDesign() {
         </div>
 
         <DesignFoundations />
+        <p className="reading-qualification">
+          <Link to="/learnings">Read the design-as-development lesson →</Link>
+        </p>
       </section>
     </ReadingPage>
   );
@@ -1705,7 +1711,7 @@ function Development() {
     ],
     [
       'Sprint 3 · a smaller checkpoint after a difficult scope reset',
-      'The next checkpoint is profile-only Fun & Fantasy with deterministic offline text, exact-revision approval, and protected reopen. Ready-plan input, generation/checking, initial application, and approved-version reading now have epic-branch implementations. A complete integrated demonstration is still unverified; broader editing and source-context work is deferred from this checkpoint.',
+      'The accepted intermediate target remains profile-only Fun & Fantasy with deterministic offline text, exact-revision approval, and protected reopen. Epic-branch slices exist. October 20 development checkpoints added a separate default-off fictional preview with idea/feel choices; an October 21 local fixed-story exercise reached persisted approval/reopen. Neither is full accepted end-to-end proof. Optional context and advanced editing remain deferred from that intermediate checkpoint.',
     ],
     [
       'Sprint 4 · visual direction accepted, early doodle tests underway',
@@ -1727,8 +1733,10 @@ function Development() {
           continuity. The October 14 scope reset narrowed the next demonstration
           to one fictional, parent-operated story journey. Subsequent epic
           merges add accepted-plan input, offline generation/checking, initial
-          story application, and approved-version reading. Their assembled
-          journey and wider outcome gates still need proof.
+          story application, and approved-version reading. A separate
+          Development-only fictional preview with idea/feel choices and a
+          narrow fixed-story local approval/reopen exercise now add evidence,
+          but the full accepted outcome still needs proof.
         </p>
       </PageIntro>
 
@@ -2162,25 +2170,25 @@ function Architecture() {
       >
         <div className="reading-panel">
           <p className="eyebrow">
-            October 16 architecture checkpoint · partial implementation
+            October 21 status · partial implementation
           </p>
           <h2>The current checkpoint is narrow and incomplete.</h2>
           <p>
-            The current target uses a saved fictional profile and an explicitly
-            accepted plan. A durable operation coordinates generation and
-            checking; Story Lifecycle applies the current valid result and owns
-            revisions and approval. Protected readers reopen the exact immutable
-            approved version. These seams have reviewed epic-branch
-            implementations; the complete UI-to-storage demonstration is still
-            unverified and they are not all integrated into development.
+            The accepted target uses a saved fictional profile and an
+            explicitly accepted plan. Generation and checking supply a
+            candidate; Story Lifecycle owns application, revisions, and
+            approval. Protected readers reopen an immutable approved version.
+            Reviewed epic slices and a bounded fixed-story local persistence
+            exercise exist, but the normal complete parent journey remains
+            unverified and not every epic slice is in development.
           </p>
           <p>
-            Optional Child Map context and source-cleanup capabilities are
-            outside this checkpoint. Their exclusion must be enforced by the
-            server as well as the interface. Deterministic offline doubles
-            supply the fixed test content; the configurable synthetic provider
-            adapter remains a separate, default-off path. Neither authorizes
-            real-family transfer or proves a live model produced a safe story.
+            Optional Child Map context and source cleanup stay outside this
+            checkpoint. Their exclusion must be enforced by both the server and
+            interface. The deterministic offline path is separate from the
+            default-off, Development-only fictional provider preview now on
+            development. That preview returns an unassessed, unsaved candidate
+            and cannot approve, publish, or authorize real-family transfer.
           </p>
         </div>
       </section>
@@ -2795,10 +2803,13 @@ function SprintThree() {
           <p>
             Reviewed epic merges include Ready-plan input, offline candidate
             generation/checking, initial application through Story Lifecycle,
-            and immutable approved-version reading. They have not proved the
-            entire protected UI/API/storage journey. Optional sources, free-form
+            and immutable approved-version reading. October 20 development
+            checkpoints introduced a separate fictional preview with curated
+            idea/feel choices. An October 21 local fixed-story exercise reached
+            persisted approval and reopen, but the accepted normal parent
+            journey is still not proved. Optional sources, free-form
             instructions, alternative protagonists, editing, and rewrites are
-            unavailable in this checkpoint. Safety, family isolation, recovery,
+            outside the reduced checkpoint. Safety, isolation, recovery,
             currentness, and approval checks remain required.
           </p>
         </div>
@@ -3038,12 +3049,19 @@ function Design() {
           The project has not replaced its visual identity. The accepted
           paper-and-ink language still provides the shared foundations, while
           child, parent, serious, and public-editorial surfaces remain
-          intentionally different in density, authority, and tone.
+          intentionally different in density, authority, and tone. The design
+          philosophy explains why; the visual language makes the choices
+          repeatable across new features and different AI coding agents. The
+          founder reports that both have been useful in everyday development,
+          without claiming a formal user-study result.
         </p>
       </PageIntro>
 
       <section className="section design-section">
         <DesignFoundations />
+        <p className="reading-qualification">
+          <Link to="/learnings">Read the design-as-development lesson →</Link>
+        </p>
       </section>
     </ReadingPage>
   );
@@ -3192,7 +3210,7 @@ function Library() {
             </h2>
             <p>
               The PDF remains the October 1 fixed-layout checkpoint at its
-              stable public path. This responsive site carries the October 16
+              stable public path. This responsive site carries the October 21
               project update and is the current narrative.
             </p>
           </div>
