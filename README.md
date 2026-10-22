@@ -8,7 +8,15 @@ The published site is expected at [tinycustomstories.github.io/tiny-custom-stori
 
 Story mode is the default. The Story / Builder toggle stays available in the shared header and preserves the current route, so a reader can move from a narrative explanation to the technical version of the same subject without starting over. Working-record routes such as Decisions, Roadmap, Open questions, and the Sprint chapters remain available beneath the primary narrative rather than being duplicated into a second site.
 
-The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries newer October 16 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+The [Public Project Dossier](public/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The current PDF is the **October 1 checkpoint**; the responsive website carries newer October 21 evidence and remains the primary source for the current public narrative, semantic navigation, and text reflow.
+
+## October 21 update: design as a development tool and narrower synthetic proofs
+
+The [Lessons route](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/learnings) now has a sixth chapter, **A design philosophy became a development tool**. The founder found that two living documents, a decision-making philosophy and a reproducible visual language, made new pages and agent handoffs more coherent. The narrative explains why the four TCS surfaces may differ while sharing foundations. It labels this as founder experience, not independent usability research or a measured speedup.
+
+The October 20 reviewed development checkpoints added an opt-in, **Development-only fictional candidate preview** with independently selectable story idea and feel. The candidate is an unassessed, transient cover and ten text pages, not a saved, approved, or child-visible story. A separate October 21 bounded local exercise reached approval and reopen of a fixed fictional story through actual application/API/persisted-data boundaries. This proves one narrow local path, not the complete accepted parent journey or safe live-model generation. The Sprint 3 outcome and real-family release gates remain open; later epic-only mapping work is not claimed as development-shipped functionality.
+
+The Home, Development, Sprint 3, Architecture, Design, Lessons, and public entry/roadmap records now distinguish those results. **The October 16 activity counts remain a dated snapshot**, not fresh October 21 telemetry; no counts were extrapolated. The stable routes, editorial visual character, public/private separation, and October 1 PDF companion are preserved.
 
 ## October 16 update: the difficult Sprint 3 chapter
 
