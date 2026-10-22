@@ -36,9 +36,5 @@ jobs:
       - name: Generate current project dossier
         run: npm run generate:pdf
 
-      - name: Diagnose formatting for current patch
-        run: |
-          npx prettier src/App.tsx src/content.ts test/reading.test.tsx --write
-          git diff -- src/App.tsx src/content.ts test/reading.test.tsx
       - name: Verify public site
         run: npm run verify
