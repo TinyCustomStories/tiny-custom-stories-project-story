@@ -1927,10 +1927,12 @@ function BuildActivity() {
       <p className="public-boundary-note">
         Repository counts are intentionally dated rather than presented as live
         telemetry. Repository totals and workflow history were read on October
-        16, 2026 (UTC). Commits count only development ancestry; epic-branch
-        work is included in PR totals but may not have reached development. The
-        public site does not call the private repository or require a GitHub
-        token in the browser.
+        21, 2026 (Eastern time; October 22 UTC). Commits are all reachable
+        development history, including historical ancestry introduced by
+        merges. Changes in that history are not comparable to recent delivery
+        velocity. Epic-branch work is included in PR totals but may not have
+        reached development. The public site does not call the private
+        repository or require a GitHub token in the browser.
       </p>
     </section>
   );
