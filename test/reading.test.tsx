@@ -70,9 +70,7 @@ describe('reading and orientation', () => {
       expect(snapshot.textContent).toContain('1,121 of 1,668');
       expect(snapshot.textContent).toContain('October 21, 2026');
       expect(snapshot.textContent).toContain('not a pass rate');
-      expect(snapshot.textContent).toContain(
-        'may not have',
-      );
+      expect(snapshot.textContent).toContain('may not have');
     },
   );
 
