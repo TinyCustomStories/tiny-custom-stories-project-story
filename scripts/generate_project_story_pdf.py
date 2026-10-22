@@ -624,6 +624,8 @@ def design_lesson(canvas: Canvas, n: int, total: int) -> None:
             ("03", "Different surfaces", "Child, parent, serious, and public experiences express shared product values differently."),
             ("04", "Agent handoffs", "Agents read both documents, reuse patterns, and explain exceptions rather than inventing a fresh style."),
             ("05", "Keep checking", "The founder experienced better consistency, but there is no measured speedup or independent family study."),
+            ("06", "Intentional exceptions", "The same principles allow child, parent, public, and serious screens to differ when audience and task demand it."),
+            ("07", "Transfer the method", "For another app, study its users and purpose first. Reuse the two-document process, not the TCS palette."),
         ],
         LAVENDER,
     )
