@@ -35,6 +35,11 @@ export const fieldNotes = [
     'I proposed stronger-model planning, cheaper implementation, and a separate reviewer because the current loop felt too slow. That direction fits our existing capability-based routing. Making every tiny task pass through another planning session could add more waiting.',
     'Use the existing issue when it is already explicit. Spend stronger-model judgment on ambiguity, architecture, privacy, safety, and consequential review; use cheaper execution for settled work. A mandatory extra planning stage remains a proposal, not an adopted rule or a measured speedup.',
   ],
+  [
+    'A shared design language made new work feel more coherent',
+    'As we added Story Studio pages and revised the parent review screens, I kept spotting spacing, navigation, button, and layout choices that did not quite feel like the same product. The design philosophy gave us a reason to prefer clarity and continuity; the visual design language gave the agents concrete recipes to follow. By October 21 I found both documents especially helpful when building new features. That is founder experience, not a measured usability study.',
+    'Keep two complementary references: a philosophy for the experience and tradeoffs, and a visual language for tokens, responsive layouts, components, and states. Review the actual interface against both; a document cannot substitute for seeing whether a screen works.',
+  ],
 ] as const;
 export const buildNotes = [
   [
@@ -60,5 +65,9 @@ export const buildNotes = [
   [
     'We almost made model selection another feature',
     'A configurable synthetic-only text provider now makes more sense than an in-product AI comparison dashboard. The founder can choose a model manually; age-fit, output safety, family-data boundaries, provider clearance, and real-user release remain separate work.',
+  ],
+  [
+    'Design rules became an agent handoff, not a style mood board',
+    'The accepted design documents tell every agent which principles apply before work starts and how to reproduce the paper-and-ink interface using shared type, color, spacing, component, and state recipes. They intentionally allow different child, parent, serious, and public surfaces. The October parent review adjustments show why this matters: stable page navigation, useful two-column composition, and consistent actions need a coherent rule, not an isolated pixel fix. This is a repeatable working method, not proof that users prefer the result.',
   ],
 ] as const;

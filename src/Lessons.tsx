@@ -40,6 +40,15 @@ const chapters = [
     builds: [3, 5],
   },
   {
+    id: 'design-as-a-development-tool',
+    nav: 'Design as a development tool',
+    title: 'A design philosophy became a development tool.',
+    summary:
+      'A shared set of reasons and recipes helped different agents build features that felt like one product, while leaving room for child, parent, and public experiences to be different.',
+    fields: [7],
+    builds: [6],
+  },
+  {
     id: 'prepare-for-real-families',
     nav: 'Prepare for real families',
     title: 'Local evidence cannot answer every real-world question.',
@@ -167,6 +176,31 @@ function LessonFigure({ chapter }: { chapter: number }) {
         </figcaption>
       </figure>
     );
+  if (chapter === 4)
+    return (
+      <figure className="lesson-figure">
+        <div className="lesson-compare">
+          <div>
+            <strong>Design philosophy</strong>
+            <p>
+              The why: calm, clarity, trust, accessible journeys, and what
+              matters when design choices compete.
+            </p>
+          </div>
+          <div>
+            <strong>Visual design language</strong>
+            <p>
+              The how: shared tokens, typography, spacing, components,
+              responsive layouts, and meaningful interaction states.
+            </p>
+          </div>
+        </div>
+        <figcaption>
+          Same product values, different surface needs. Written guidance
+          supports review but does not replace it.
+        </figcaption>
+      </figure>
+    );
   return (
     <figure className="lesson-figure">
       <ol className="lesson-path">
@@ -239,19 +273,19 @@ export function Lessons() {
         <h1>
           {builder
             ? 'Lessons, changes, and their evidence.'
-            : 'More activity did not finish the journey.'}
+            : 'What we learned while building.'}
         </h1>
         <p className="page-lede">
           {builder
-            ? 'A record of delivery lessons: what changed, what supports it, and what remains unproven.'
-            : 'Smaller tasks helped us review the work. The harder lesson was keeping every piece connected to a story a parent could actually finish.'}
+            ? 'A record of delivery and design lessons: what changed, what supports it, and what remains unproven.'
+            : 'Smaller tasks helped us review the work, but they did not finish the parent journey. Shared design foundations also made it easier to build new pages without starting from scratch.'}
         </p>
         <p className="reading-qualification">
-          <strong>Retrospective · October 2–16, 2026.</strong> Paraphrased
-          founder field notes checked against repository decisions and delivery
-          evidence. This is not a complete session audit, user research, or a
-          measured comparison of models, cost, or productivity. Private
-          transcripts stay private.
+          <strong>Retrospective · October 2–21, 2026.</strong> Paraphrased
+          founder field notes, including an October 21 design reflection,
+          checked against accepted documents and delivery evidence. This is not
+          a complete session audit, usability study, or measured comparison of
+          models, cost, or productivity. Private transcripts stay private.
         </p>
       </section>
       <div
@@ -320,7 +354,7 @@ export function Lessons() {
           </section>
         )}
         <p className="reading-evidence-label">
-          Evidence &amp; lessons · five chapters
+          Evidence &amp; lessons · six chapters
         </p>
         {chapters.map((chapter, index) => (
           <section className="lesson-chapter" key={chapter.id}>
@@ -366,6 +400,17 @@ export function Lessons() {
               </p>
             )}
             {index === 4 && (
+              <p className="reading-qualification">
+                The accepted design philosophy and paper-and-ink visual language
+                predate this reflection. The founder reports that using them has
+                been helpful when building new features; no controlled
+                comparison or family usability study is claimed. Reuse the
+                approach in other applications, not the TCS color palette or
+                decorative recipe.{' '}
+                <a href="#/design">Explore the design foundations →</a>
+              </p>
+            )}
+            {index === 5 && (
               <>
                 <h3>The next thing that scares me</h3>
                 <p>

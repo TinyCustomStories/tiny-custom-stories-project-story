@@ -405,19 +405,19 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(content().getByText('1,653')).toBeTruthy();
-    expect(content().getByText('727')).toBeTruthy();
-    expect(content().getByText('690')).toBeTruthy();
-    expect(content().getByText('564')).toBeTruthy();
-    expect(content().getByText('493')).toBeTruthy();
+    expect(content().getByText('3,803')).toBeTruthy();
+    expect(content().getByText('813')).toBeTruthy();
+    expect(content().getByText('775')).toBeTruthy();
+    expect(content().getByText('585')).toBeTruthy();
+    expect(content().getByText('506')).toBeTruthy();
     expect(
       screen.getByRole('heading', {
-        name: 'Build activity · October 16, 2026',
+        name: 'Build activity · October 21, 2026',
       }),
     ).toBeTruthy();
     expect(content().getByText('4')).toBeTruthy();
-    expect(content().getByText(/1,106 of 1,646 recorded runs/i)).toBeTruthy();
-    expect(content().getByText(/October 16, 2026:/i)).toBeTruthy();
+    expect(content().getByText(/1,121 of 1,668 recorded runs/i)).toBeTruthy();
+    expect(content().getByText(/October 21, 2026:/i)).toBeTruthy();
     expect(content().getByText('Frontend CI')).toBeTruthy();
     expect(content().getByText('Backend CI')).toBeTruthy();
     expect(content().getByText('Repository tools CI')).toBeTruthy();

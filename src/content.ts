@@ -26,6 +26,55 @@ export type Milestone = {
 
 export const publicEntries: PublicEntry[] = [
   {
+    title: 'Design philosophy became a reusable development foundation',
+    summary:
+      'The accepted design philosophy explains the user experience and tradeoffs; the complementary visual language specifies the paper-and-ink tokens, components, responsive rules, and interaction states. Agents use both as working standards across different product surfaces. The founder reports that this has been especially useful for making new features feel coherent; that reflection is not a measured usability result.',
+    category: 'Design',
+    date: '2026-10-21',
+    status: 'Confirmed decision',
+    source: 'Accepted design documents and October 21 founder reflection',
+    related: [
+      'Decision principles for every surface',
+      'Reproducible visual language for agents',
+      'Founder-observed value, not controlled research',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title:
+      'A bounded local fictional journey reached persistent approval and reopen',
+    summary:
+      'A development-only local exercise connected the real application and API to persisted fictional data: a fixed accepted plan, ten text pages, approval, and reopening the same approved version after restart. This narrow evidence does not prove that normal parent listing or editing is complete, that a live model generated a safe story, or that Sprint 3 or Alpha passed.',
+    category: 'Sprint 3',
+    date: '2026-10-21',
+    status: 'Verified fact',
+    source: 'October 21 reviewed local synthetic-journey verification',
+    related: [
+      'Real local integration evidence',
+      'Fixed fictional data only',
+      'Full parent journey still open',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Fictional story choices and transient preview reached development',
+    summary:
+      'October 20 reviewed development checkpoints added a default-off, Development-only fictional candidate preview in protected Story Studio. A parent can choose from fixed fictional story ideas and independently select Cozy or Adventurous, then read an unassessed cover and ten text pages. The preview is transient, not a saved or approved book; it does not use family context or establish provider-quality or release clearance.',
+    category: 'Sprint 3',
+    date: '2026-10-20',
+    status: 'Verified fact',
+    source: 'October 20 Story Generation and Story Creation epic checkpoints',
+    related: [
+      'Curated fictional ideas and mood choices',
+      'Unassessed transient preview',
+      'Outcome gate remains open',
+    ],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
     title: 'A smaller synthetic checkpoint after the Sprint 3 scope reset',
     summary:
       'The accepted intermediate target is a fictional profile-only Fun & Fantasy journey: accept a plan, generate a deterministic cover and ten text pages, approve the exact checked revision, and reopen it in protected Parent Mode. Optional sources and advanced authoring stay unavailable. Reviewed epic slices exist, but the assembled demonstration, broader sprint outcome, qualified review, and real-family release are not passed.',
@@ -507,7 +556,7 @@ export const milestones: Milestone[] = [
     title: 'Sprint 3 - Story Studio composition',
     state: 'Reduced synthetic checkpoint underway - outcome gate open',
     status: 'Verified fact',
-    note: 'The October 14 reset narrows the intermediate checkpoint to profile-only Fun & Fantasy, deterministic offline generation, exact-revision approval, and protected reopen. Ready-plan, candidate/checking/application, and approved-version reader slices are epic-merged; the complete integrated demonstration remains unverified. Optional context and advanced authoring are deferred from this checkpoint, not delivered or required to expand it.',
+    note: 'The October 14 reset targets one profile-only Fun & Fantasy offline plan-to-approval-and-reopen outcome. Reviewed epic slices exist. October 20 development checkpoints added a gated fictional candidate preview and independent idea/feel choices, and an October 21 bounded local exercise proved a fixed synthetic approval/reopen path through persisted data. These are narrower than the full accepted parent journey; Sprint 3 remains open. Optional context and advanced authoring stay deferred.',
   },
   {
     title: 'Sprint 4 - Visual Theme System',
