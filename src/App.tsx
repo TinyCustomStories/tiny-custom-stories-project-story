@@ -1450,11 +1450,10 @@ function StoryLibrary() {
               The PDF is a snapshot. The website is the living version.
             </h2>
             <p>
-              The portable 17-page dossier now reflects the October 21
-              public checkpoint. The responsive site remains the best place
-              for the evolving story and accessible navigation.
-              This website changes more often as the product, build system, and
-              lessons evolve.
+              The portable 17-page dossier now reflects the October 21 public
+              checkpoint. The responsive site remains the best place for the
+              evolving story and accessible navigation. This website changes
+              more often as the product, build system, and lessons evolve.
             </p>
           </div>
           <a
