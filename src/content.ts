@@ -42,7 +42,8 @@ export const publicEntries: PublicEntry[] = [
     safeToPublish: true,
   },
   {
-    title: 'A bounded local fictional journey reached persistent approval and reopen',
+    title:
+      'A bounded local fictional journey reached persistent approval and reopen',
     summary:
       'A development-only local exercise connected the real application and API to persisted fictional data: a fixed accepted plan, ten text pages, approval, and reopening the same approved version after restart. This narrow evidence does not prove that normal parent listing or editing is complete, that a live model generated a safe story, or that Sprint 3 or Alpha passed.',
     category: 'Sprint 3',
