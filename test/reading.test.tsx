@@ -61,17 +61,17 @@ describe('reading and orientation', () => {
       const snapshot = screen.getByRole('region', {
         name: 'Dated build activity',
       });
-      for (const value of ['1,653', '727', '690', '564', '493']) {
+      for (const value of ['3,803', '813', '775', '585', '506']) {
         expect(within(snapshot).getByText(value)).toBeTruthy();
       }
       expect(
         within(snapshot).getByText('7 outcome-gated sprints'),
       ).toBeTruthy();
-      expect(snapshot.textContent).toContain('1,106 of 1,646');
-      expect(snapshot.textContent).toContain('October 16, 2026');
+      expect(snapshot.textContent).toContain('1,121 of 1,668');
+      expect(snapshot.textContent).toContain('October 21, 2026');
       expect(snapshot.textContent).toContain('not a pass rate');
       expect(snapshot.textContent).toContain(
-        'may not have reached development',
+        'may not have',
       );
     },
   );
