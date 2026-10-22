@@ -45,5 +45,9 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+      - name: Diagnose frontend formatting
+        run: |
+          npx prettier src/App.tsx --write
+          git diff -- src/App.tsx
       - name: Verify public site
         run: npm run verify
