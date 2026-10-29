@@ -78,7 +78,7 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/learnings':
     'The mistakes, experiments, surprises, and unresolved nerves that changed how the project is being built.',
   '/articles/moving-map':
-    'An introduction to Moving Map Development, changing product decisions, and portable steps for adopting it in another repository.',
+    'An honest experiment with Moving Map Development, compared with TDD, BDD, spec-driven work, OpenAI and Anthropic agent practices, plus a portable starter guide.',
   '/decisions':
     'A labeled record of confirmed decisions, proposals, verified facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
@@ -1295,13 +1295,14 @@ function StoryHowWeBuild() {
             The plan can change without losing the destination.
           </h2>
           <p>
-            We have begun piloting Moving Map Development (MMD), an approach for
-            human or AI development teams that updates affected work when new
-            evidence changes a shared assumption. Reversible technical changes
-            require impact checks and independent review. Product, privacy,
-            security, child-safety, and irreversible decisions still require
-            appropriate human authority. This is an adopted pilot, not a proven
-            delivery improvement.
+            We've begun experimenting with Moving Map Development (MMD)
+            after finding that agents could keep building from assumptions
+            other agents had already revised. We are comparing the idea
+            with existing techniques, not proposing it as a replacement
+            for TDD, BDD, specs, or good agent harnesses. Reversible
+            architectural changes need impact checks and independent
+            review; consequential product and safety choices remain
+            human-led. Faster delivery is a question, not a claim.
           </p>
           <p>
             <Link to="/articles/moving-map">
@@ -2149,7 +2150,7 @@ function HowWeBuild() {
         <div className="reading-panel">
           <p className="eyebrow">October 28 · Accepted working pilot</p>
           <h2 data-reading-key="moving-map-pilot">
-            Moving Map Development keeps shared assumptions current.
+            Can Moving Map keep shared assumptions current?
           </h2>
           <p>
             The accepted product outcome remains human-led. Affected agents
@@ -2160,9 +2161,9 @@ function HowWeBuild() {
             child-safety, or irreversible decisions are escalated.
           </p>
           <p>
-            The repository instructions adopted this pilot on October 28.
-            Benefits and reliable cross-agent behavior have not yet been
-            demonstrated.{' '}
+            We adopted the pilot instructions on October 28, but are
+            still testing the waters. We haven't shown fewer conflicts,
+            lower token costs, or better outcomes yet.{' '}
             <Link to="/articles/moving-map">
               Read the Moving Map article and portable starter guide →
             </Link>
