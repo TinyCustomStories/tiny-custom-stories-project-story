@@ -8,7 +8,7 @@ export function MovingMapArticle() {
     <ReadingPage>
       <header className="page-intro section moving-map-intro">
         <p className="eyebrow">
-          A new development technique · October 28, 2026
+          A new development technique · updated October 29, 2026
         </p>
         <h1>Everyone Followed the Plan. The Plan Was Wrong.</h1>
         <div className="page-lede">
@@ -427,30 +427,68 @@ export function MovingMapArticle() {
         </section>
 
         <section className="moving-map-section">
-          <h2>Try it on your next feature</h2>
+          <h2>Take Moving Map to your own repository</h2>
           <p>
-            You do not need to announce a company-wide transformation. Pick one
-            feature that touches two or three parts of your system. Before work
-            begins, write the user outcome and the important assumptions
-            everyone is relying on.
+            This should work outside the project that inspired it. You do not
+            need our agents, our Kanban board, or our architecture. Start
+            with any existing repository and four small shared files.
           </p>
           <p>
-            Then agree on one rule: if anyone finds evidence that changes those
-            assumptions, they will tell the affected owners before the old
-            understanding spreads. Write accepted changes in the existing source
-            of truth. Keep the message short. Review the joins. Demonstrate the
-            finished user journey.
+            <strong>First, install the instructions.</strong> If you already
+            have agent guidance or architecture decisions, merge with them;
+            never erase stronger security, review, or deployment rules.
+          </p>
+          <pre className="moving-map-code">
+            <code>{'my-project/\n  AGENTS.md\n  docs/moving-map/\n    INTENT.md\n    DECISIONS.md\n    PROTOCOL.md'}</code>
+          </pre>
+          <p>
+            In <code>INTENT.md</code>, describe who your product serves,
+            the next demonstrable user outcome, and constraints that must
+            remain true. Do not start by creating fifty classified tickets.
           </p>
           <p>
-            Afterward, ask whether the approach actually helped. Did the team
-            catch stale assumptions earlier? Was there less integration rework,
-            or just more chatter? Were consequential decisions properly
-            reviewed? Did regressions escape? Did the feature work for a user?
+            <strong>Then start with a simple agent prompt:</strong>
+          </p>
+          <div className="moving-map-mini-dialogue">
+            <p>
+              Read this repository's Moving Map instructions, accepted
+              decisions, relevant contracts, and active work. Deliver the
+              smallest demonstrable user outcome. When a discovery changes
+              a shared assumption, propose it, identify affected agents,
+              obtain the right decision, and revalidate dependent work
+              before integration. Choose risk-appropriate checks, preserve
+              independent review, and report what actually works.
+            </p>
+          </div>
+          <p>
+            <strong>Finally, try one real feature.</strong> One agent is enough
+            to begin. With multiple agents, use separate branches or
+            worktrees, a real shared discussion channel, and fresh accepted
+            decisions. A Markdown file cannot notify another agent by
+            itself. If workers cannot communicate, sequence dependent work.
           </p>
           <p>
-            If MMD adds process without improving those outcomes, simplify it. A
-            development method that generates more administration than working
-            software has misunderstood its own destination.
+            The portable starter kit includes editable instructions,
+            decision and intent templates, a discovery protocol, two
+            copy-paste prompts, and a worked example. It is designed to
+            be adapted, not installed as a new bureaucracy.
+          </p>
+          <p className="moving-map-starter-link">
+            <a
+              className="button button-dark"
+              href="https://github.com/TinyCustomStories/tiny-custom-stories-project-story/tree/main/documentation/moving-map-starter"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Get the portable Moving Map starter kit ↗
+            </a>
+          </p>
+          <p>
+            Afterward ask: did the team catch stale assumptions earlier?
+            Did integration require less rework? Were important decisions
+            reviewed? Did regressions escape? Can a user actually complete
+            the journey? If the method adds work without improving
+            outcomes, simplify it.
           </p>
         </section>
 
@@ -508,10 +546,11 @@ export function MovingMapArticle() {
 
         <aside className="moving-map-endnote">
           <p>
-            Moving Map Development (MMD) is a proposed engineering practice, not
-            a certified standard or a measured productivity claim. The pizza
-            example is fictional. The experiment above is real, early, and still
-            being evaluated.
+            Moving Map Development (MMD) is a proposed engineering practice,
+            not a certified standard or a measured productivity claim. The
+            booking example is fictional. The starter files do not themselves
+            provide cross-agent messaging. The early pilot is still being
+            evaluated.
           </p>
           <p>
             <a href={'#/learnings?section=moving-map&mode=' + mode}>
