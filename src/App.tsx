@@ -1295,14 +1295,14 @@ function StoryHowWeBuild() {
             The plan can change without losing the destination.
           </h2>
           <p>
-            We've begun experimenting with Moving Map Development (MMD)
-            after finding that agents could keep building from assumptions
-            other agents had already revised. We are comparing the idea
-            with existing techniques, not proposing it as a replacement
-            for TDD, BDD, specs, or good agent harnesses. Reversible
-            architectural changes need impact checks and independent
-            review; consequential product and safety choices remain
-            human-led. Faster delivery is a question, not a claim.
+            We've begun experimenting with Moving Map Development (MMD) after
+            finding that agents could keep building from assumptions other
+            agents had already revised. We are comparing the idea with existing
+            techniques, not proposing it as a replacement for TDD, BDD, specs,
+            or good agent harnesses. Reversible architectural changes need
+            impact checks and independent review; consequential product and
+            safety choices remain human-led. Faster delivery is a question, not
+            a claim.
           </p>
           <p>
             <Link to="/articles/moving-map">
@@ -2161,9 +2161,9 @@ function HowWeBuild() {
             child-safety, or irreversible decisions are escalated.
           </p>
           <p>
-            We adopted the pilot instructions on October 28, but are
-            still testing the waters. We haven't shown fewer conflicts,
-            lower token costs, or better outcomes yet.{' '}
+            We adopted the pilot instructions on October 28, but are still
+            testing the waters. We haven't shown fewer conflicts, lower token
+            costs, or better outcomes yet.{' '}
             <Link to="/articles/moving-map">
               Read the Moving Map article and portable starter guide →
             </Link>
