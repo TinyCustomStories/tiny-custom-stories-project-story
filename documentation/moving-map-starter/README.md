@@ -17,7 +17,7 @@ Optional: copy [CLAUDE.md](CLAUDE.md) as the Claude Code entry point, but merge 
 
 ### Suggested repository layout
 
-~~~text
+```text
 your-project/
   AGENTS.md
   CLAUDE.md                 # optional
@@ -25,7 +25,7 @@ your-project/
     INTENT.md
     DECISIONS.md
     PROTOCOL.md
-~~~
+```
 
 ## Copy-paste prompt A: bootstrap Moving Map
 
@@ -62,16 +62,16 @@ Without the shared decision, all three agents could pass isolated tests while im
 
 ## One agent vs multiple agents
 
-| Requirement | One agent | Multiple agents |
-| --- | --- | --- |
-| Accepted product intent | Yes | Yes |
-| Current decision records | Yes | Yes; refresh before integration |
-| Isolated branches/worktrees | Optional | Prefer separate ones |
-| Shared discussion channel | Not required | **Required** for consequential discoveries |
-| Independent review | As required by risk | Required for reviewed shared changes |
-| Risk-appropriate security and regression checks | Yes | Yes |
-| Kanban board | Optional | Optional |
-| Mandatory TDD | No | No |
+| Requirement                                     | One agent           | Multiple agents                            |
+| ----------------------------------------------- | ------------------- | ------------------------------------------ |
+| Accepted product intent                         | Yes                 | Yes                                        |
+| Current decision records                        | Yes                 | Yes; refresh before integration            |
+| Isolated branches/worktrees                     | Optional            | Prefer separate ones                       |
+| Shared discussion channel                       | Not required        | **Required** for consequential discoveries |
+| Independent review                              | As required by risk | Required for reviewed shared changes       |
+| Risk-appropriate security and regression checks | Yes                 | Yes                                        |
+| Kanban board                                    | Optional            | Optional                                   |
+| Mandatory TDD                                   | No                  | No                                         |
 
 **Important limitation:** Repository documents do not message agents on their own. Use an existing coordinator, shared PR discussion or reliable team channel. If you cannot deliver accepted decisions to affected workers, run dependent tasks sequentially.
 
