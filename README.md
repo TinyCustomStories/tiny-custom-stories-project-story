@@ -10,6 +10,12 @@ Story mode is the default. The Story / Builder toggle stays available in the sha
 
 The [Public Project Dossier](https://tinycustomstories.github.io/tiny-custom-stories-project-story/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The dossier has been refreshed as a **17-page October 21 checkpoint**, with updated sprint evidence, a design-learning chapter, and the verified October 21 activity snapshot. The responsive website remains the primary version for current project narrative, semantic navigation, and text reflow.
 
+## October 29: Moving Map — story, adoption, and list-numbering fix
+
+The public [Moving Map Development article](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/articles/moving-map) now begins with an illustrative event-booking team whose accepted product decision does not reach all its coding agents, rather than a pizza/order integration bug. It explains both the technique and how to bring it to another application, including [portable starter files and prompts](documentation/moving-map-starter/README.md). The starter kit is not an agent messaging service; teams still need a real shared channel or sequential integration for dependent work.
+
+The article's ordered list previously embedded numbers in the step headings while the browser also generated list markers, causing doubled numbers. The headings now rely solely on semantic list numbering. The Lessons and development/delivery pages link to the practical setup. This is a proposed technique and a pilot, not evidence of measured productivity improvements. The fixed-layout October 21 PDF remains a separate dated checkpoint and has not been rewritten for this editorial update.
+
 ## October 21 PDF refresh
 
 The fixed-layout PDF has been regenerated from the maintained ReportLab source as a **17-page October 21 edition** rather than continuing to relabel the October 1 historical document. It now reflects the October 4 demonstrated synthetic/local Sprint 2 outcome, the accepted smaller Sprint 3 target and its bounded October 20-21 fictional experiments, the accepted Visual Theme System direction, refreshed activity numbers, and the lesson about design philosophy and visual language improving agent handoffs. It preserves the release boundary: no real-family use or full Sprint 3 outcome is claimed. The stable public PDF URL is unchanged. Automated PDF content and render checks accompany the website's existing quality gates.
