@@ -50,10 +50,10 @@ const chapters = [
   },
   {
     id: 'moving-map',
-    nav: 'Moving Map',
-    title: 'When an agent learns the map has changed, the others need to know.',
+    nav: 'Moving Map Development',
+    title: 'The plan can be wrong even when every ticket is right.',
     summary:
-      'Moving Map is our new pilot: keep the parent outcome fixed, share discoveries that change contracts, and recheck the affected work before integration.',
+      'Moving Map Development (MMD) is a technique for human and AI teams: keep the user outcome clear, share discoveries that change shared assumptions, and recheck the work those discoveries affect.',
     fields: [],
     builds: [],
   },
@@ -216,7 +216,7 @@ function LessonFigure({ chapter }: { chapter: number }) {
         <ol className="lesson-path">
           <li>
             <strong>Keep the destination</strong>
-            <span>The human-approved product outcome and safeguards.</span>
+            <span>The user outcome and safeguards we have agreed to.</span>
           </li>
           <li>
             <strong>Share the discovery</strong>
@@ -228,8 +228,8 @@ function LessonFigure({ chapter }: { chapter: number }) {
           </li>
         </ol>
         <figcaption>
-          Moving Map is an adopted working pilot, not a measured improvement in
-          speed or coordination.
+          MMD is an adoptable development technique. Its first pilot does not
+          yet establish measurable results.
         </figcaption>
       </figure>
     );
@@ -315,7 +315,7 @@ export function Lessons() {
         <p className="reading-qualification">
           <strong>Retrospective · October 2–28, 2026.</strong> Earlier founder
           field notes and an October 21 design reflection are joined by the
-          October 28 adoption of Moving Map as a working pilot. The methodology
+          October 28 adoption of Moving Map Development as a working pilot. The methodology
           is documented; its effects have not yet been measured. This is not a
           complete session audit, usability study, or productivity comparison.
           Private transcripts stay private.
@@ -445,33 +445,36 @@ export function Lessons() {
             )}
             {index === 5 && (
               <>
-                <h3>The problem the old plan could not see</h3>
+                <h3>The awkward part nobody put on the task board</h3>
                 <p>
-                  A coding agent can finish its own ticket and still build
-                  against an assumption another agent has already challenged.
-                  More issues, more ceremonies, or more board updates do not
-                  automatically move that discovery across the team.
+                  One developer discovers an important assumption is wrong.
+                  Three other developers are still building against it. Every
+                  ticket looks healthy, but the finished pieces no longer
+                  agree. AI agents make the problem more visible because they
+                  rarely overhear the discovery.
                 </p>
                 <p>
-                  The new Moving Map pilot gives affected agents a lightweight
-                  way to share evidence, compare reversible options, record
-                  accepted changes, and recheck the joins. TDD is available when
-                  useful, but not required as a default ritual. Product,
-                  privacy, security, child-safety, and irreversible decisions
-                  remain under human authority.
+                  <strong>Moving Map Development (MMD)</strong> is our name for
+                  a technique anyone can try: keep the user outcome as the
+                  destination, let the technical route improve when evidence
+                  changes, and update only the work that depends on a changed
+                  assumption. Significant product, security, privacy, safety,
+                  and irreversible choices still require proper human
+                  authority. TDD remains useful, not mandatory.
                 </p>
                 <p>
                   <a href="#/articles/moving-map">
-                    Read the full Moving Map article →
+                    Read the Moving Map Development article →
                   </a>{' '}
-                  A longer founder essay about why we changed the method, how it
-                  works, and what the pilot still needs to prove.
+                  It starts with an imaginary pizza disaster and explains how
+                  a development team can use the method. Our own adoption
+                  appears only at the end.
                 </p>
                 <p className="reading-qualification">
-                  <strong>Adopted, not yet validated:</strong> Repository agent
-                  guidance now describes Moving Map, but better coordination,
-                  fewer integration failures, or faster delivery have not yet
-                  been demonstrated.
+                  <strong>Early pilot:</strong> We adopted the first MMD
+                  instructions on October 28, 2026. Better coordination,
+                  fewer integration failures, and faster delivery are not
+                  yet proven outcomes.
                 </p>
               </>
             )}
