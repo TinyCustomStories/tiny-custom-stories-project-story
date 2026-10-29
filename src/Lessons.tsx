@@ -468,8 +468,8 @@ export function Lessons() {
                   </a>{' '}
                   It starts with a fictional event-booking team whose agents
                   follow incompatible versions of the product plan, then
-                  explains how to adopt the technique in another repository.
-                  Our own pilot appears at the end.
+                  explains how to adopt the technique in another repository. Our
+                  own pilot appears at the end.
                 </p>
                 <p>
                   <a
@@ -478,9 +478,9 @@ export function Lessons() {
                     rel="noreferrer"
                   >
                     Get the Moving Map starter files and copy-paste prompts ↗
-                  </a>
-                  {' '}They can be adapted to a new application without
-                  importing this project's issue board or agent setup.
+                  </a>{' '}
+                  They can be adapted to a new application without importing
+                  this project's issue board or agent setup.
                 </p>
                 <p className="reading-qualification">
                   <strong>Early pilot:</strong> We adopted the first MMD
