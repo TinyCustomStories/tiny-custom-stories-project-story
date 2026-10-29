@@ -596,7 +596,7 @@ describe('project story site', () => {
     expect(articleLink.getAttribute('href')).toBe('#/articles/moving-map');
 
     window.location.hash = articleLink.getAttribute('href')!;
-    fireEvent.hashChange(window);
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
     expect(
       screen.getByRole('heading', {
         name: 'Moving Map: When the plan changes halfway through the build',
