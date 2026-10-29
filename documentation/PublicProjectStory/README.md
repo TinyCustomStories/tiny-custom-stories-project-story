@@ -1,5 +1,11 @@
 # Public Project Story documentation
 
+## October 28 Moving Map Development: general-audience revision
+
+The seventh lesson names the technique **Moving Map Development (MMD)** and links to a rewritten, shareable introduction at the stable [Moving Map article route](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/articles/moving-map). The article addresses any human or AI-assisted software team, opens with a fictional pizza-ordering example, explains why shared assumptions become stale, teaches a concrete discovery/review/revalidation workflow, and relates MMD to Agile and TDD without claiming it replaces either. The Tiny Custom Stories adoption appears only in a short bottom-of-article origin note dated October 28, 2026.
+
+The new editorial framing invites teams to try and evaluate an early technique, rather than promising demonstrated productivity, novelty over all existing practices, automatic agent notifications, or real-family release readiness. The existing hash route, navigation, Story and Builder modes, dated October 21 activity snapshot, and October 21 PDF companion stay unchanged.
+
 ## October 28 Moving Map lesson and long-form article
 
 The Lessons route adds **Moving Map** as a seventh chapter. Its linked [long-form editorial article](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/articles/moving-map) explains why agent coordination must propagate material discoveries across Child Map, Story Generation, and Story Studio, and documents human-set product intent, reviewed architectural autonomy, affected-work revalidation, optional TDD and risk-based verification. The standalone article uses the shared public editorial visual language, local section navigation, responsive long-form typography and the Story/Builder reading-mode control. It is a founder essay and explicitly identifies hypothetical examples.
