@@ -458,20 +458,20 @@ export function Lessons() {
                   we're trying for the philosophy that emerged from this
                   frustration. We keep the user outcome as the destination,
                   share discoveries that change assumptions, and recheck
-                  affected work. We aren't claiming a replacement for TDD,
-                  BDD, or specifications; we're experimenting with how agents
-                  can keep shared decisions current. Important product,
-                  privacy, security, safety, and irreversible decisions
-                  still require human authority.
+                  affected work. We aren't claiming a replacement for TDD, BDD,
+                  or specifications; we're experimenting with how agents can
+                  keep shared decisions current. Important product, privacy,
+                  security, safety, and irreversible decisions still require
+                  human authority.
                 </p>
                 <p>
                   <a href="#/articles/moving-map">
                     Read the Moving Map Development article →
                   </a>{' '}
-                  It starts with a fictional event-booking team, compares
-                  TDD, BDD, spec-driven development, and OpenAI and Anthropic's
-                  agent engineering approaches, then invites readers to
-                  try a small experiment in their own repository.
+                  It starts with a fictional event-booking team, compares TDD,
+                  BDD, spec-driven development, and OpenAI and Anthropic's agent
+                  engineering approaches, then invites readers to try a small
+                  experiment in their own repository.
                 </p>
                 <p>
                   <a
@@ -485,11 +485,11 @@ export function Lessons() {
                   this project's issue board or agent setup.
                 </p>
                 <p className="reading-qualification">
-                  <strong>We're testing the waters:</strong> We started
-                  adopting Moving Map instructions on October 28, 2026.
-                  We don't yet know whether it will reduce stale work,
-                  improve real delivery, or simply create another layer
-                  of coordination. That's what the pilot should tell us.
+                  <strong>We're testing the waters:</strong> We started adopting
+                  Moving Map instructions on October 28, 2026. We don't yet know
+                  whether it will reduce stale work, improve real delivery, or
+                  simply create another layer of coordination. That's what the
+                  pilot should tell us.
                 </p>
               </>
             )}
