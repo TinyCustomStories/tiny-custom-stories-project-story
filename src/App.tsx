@@ -78,7 +78,7 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/learnings':
     'The mistakes, experiments, surprises, and unresolved nerves that changed how the project is being built.',
   '/articles/moving-map':
-    'A general-audience introduction to Moving Map Development: a practical technique for sharing discoveries and revising the right work.',
+    'An introduction to Moving Map Development, changing product decisions, and portable steps for adopting it in another repository.',
   '/decisions':
     'A labeled record of confirmed decisions, proposals, verified facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
@@ -1305,7 +1305,7 @@ function StoryHowWeBuild() {
           </p>
           <p>
             <Link to="/articles/moving-map">
-              Read about Moving Map Development →
+              Read Moving Map and its adoption guide →
             </Link>
           </p>
         </div>
@@ -2048,8 +2048,9 @@ function HowWeBuild() {
           </div>
           <ul>
             <li>
-              Backlog stewardship turns accepted decisions into small,
-              implementation-ready issues with explicit dependency chains.
+              Backlog stewardship keeps outcome-level issues executable without
+              turning every shared discovery into a new ticket or status
+              category.
             </li>
             <li>
               Independent tasks use isolated branches or sessions. Each normal
@@ -2070,8 +2071,8 @@ function HowWeBuild() {
               only when the evidence supports it.
             </li>
             <li>
-              Generic agent methodologies and reusable skills sit underneath
-              project-specific product, privacy, architecture, and GitHub rules.
+              Moving Map coordinates shared decisions; optional agent skills sit
+              underneath product, privacy, architecture, and GitHub safeguards.
             </li>
           </ul>
         </div>
@@ -2163,7 +2164,7 @@ function HowWeBuild() {
             Benefits and reliable cross-agent behavior have not yet been
             demonstrated.{' '}
             <Link to="/articles/moving-map">
-              Read the general Moving Map Development article →
+              Read the Moving Map article and portable starter guide →
             </Link>
           </p>
         </div>
