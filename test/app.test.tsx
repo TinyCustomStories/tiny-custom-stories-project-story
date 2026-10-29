@@ -622,8 +622,11 @@ describe('project story site', () => {
     ).toContain('working hypothesis');
     const externalLinks = [
       ['GitHub Spec Kit ↗', 'https://github.github.com/spec-kit/'],
-      ['Symphony ↗', 'https://openai.com/index/open-source-codex-orchestration-symphony/'],
-      ['Cucumber\'s BDD explanation ↗', 'https://cucumber.io/docs/bdd/'],
+      [
+        'Symphony ↗',
+        'https://openai.com/index/open-source-codex-orchestration-symphony/',
+      ],
+      ["Cucumber's BDD explanation ↗", 'https://cucumber.io/docs/bdd/'],
     ];
     externalLinks.forEach(([name, href]) => {
       expect(content().getByRole('link', { name }).getAttribute('href')).toBe(
