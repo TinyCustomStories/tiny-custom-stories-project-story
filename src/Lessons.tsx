@@ -49,6 +49,15 @@ const chapters = [
     builds: [6],
   },
   {
+    id: 'moving-map',
+    nav: 'Moving Map',
+    title: 'When an agent learns the map has changed, the others need to know.',
+    summary:
+      'Moving Map is our new pilot: keep the parent outcome fixed, share discoveries that change contracts, and recheck the affected work before integration.',
+    fields: [],
+    builds: [],
+  },
+  {
     id: 'prepare-for-real-families',
     nav: 'Prepare for real families',
     title: 'Local evidence cannot answer every real-world question.',
@@ -201,6 +210,29 @@ function LessonFigure({ chapter }: { chapter: number }) {
         </figcaption>
       </figure>
     );
+  if (chapter === 5)
+    return (
+      <figure className="lesson-figure">
+        <ol className="lesson-path">
+          <li>
+            <strong>Keep the destination</strong>
+            <span>The human-approved product outcome and safeguards.</span>
+          </li>
+          <li>
+            <strong>Share the discovery</strong>
+            <span>Evidence, affected owners, and an accepted revision.</span>
+          </li>
+          <li>
+            <strong>Recheck the join</strong>
+            <span>Review impacted work and demonstrate real behavior.</span>
+          </li>
+        </ol>
+        <figcaption>
+          Moving Map is an adopted working pilot, not a measured improvement in
+          speed or coordination.
+        </figcaption>
+      </figure>
+    );
   return (
     <figure className="lesson-figure">
       <ol className="lesson-path">
@@ -278,14 +310,15 @@ export function Lessons() {
         <p className="page-lede">
           {builder
             ? 'A record of delivery and design lessons: what changed, what supports it, and what remains unproven.'
-            : 'Smaller tasks helped us review the work, but they did not finish the parent journey. Shared design foundations also made it easier to build new pages without starting from scratch.'}
+            : 'Smaller tasks helped us review, but they did not finish the parent journey. Shared design foundations helped new features feel coherent. Now we are piloting a way for agents to keep shared assumptions current.'}
         </p>
         <p className="reading-qualification">
-          <strong>Retrospective · October 2–21, 2026.</strong> Paraphrased
-          founder field notes, including an October 21 design reflection,
-          checked against accepted documents and delivery evidence. This is not
-          a complete session audit, usability study, or measured comparison of
-          models, cost, or productivity. Private transcripts stay private.
+          <strong>Retrospective · October 2–28, 2026.</strong> Earlier
+          founder field notes and an October 21 design reflection are joined by
+          the October 28 adoption of Moving Map as a working pilot. The
+          methodology is documented; its effects have not yet been measured.
+          This is not a complete session audit, usability study, or
+          productivity comparison. Private transcripts stay private.
         </p>
       </section>
       <div
@@ -354,7 +387,7 @@ export function Lessons() {
           </section>
         )}
         <p className="reading-evidence-label">
-          Evidence &amp; lessons · six chapters
+          Evidence &amp; lessons · seven chapters
         </p>
         {chapters.map((chapter, index) => (
           <section className="lesson-chapter" key={chapter.id}>
@@ -411,6 +444,38 @@ export function Lessons() {
               </p>
             )}
             {index === 5 && (
+              <>
+                <h3>The problem the old plan could not see</h3>
+                <p>
+                  A coding agent can finish its own ticket and still build
+                  against an assumption another agent has already challenged.
+                  More issues, more ceremonies, or more board updates do not
+                  automatically move that discovery across the team.
+                </p>
+                <p>
+                  The new Moving Map pilot gives affected agents a lightweight
+                  way to share evidence, compare reversible options, record
+                  accepted changes, and recheck the joins. TDD is available
+                  when useful, but not required as a default ritual. Product,
+                  privacy, security, child-safety, and irreversible decisions
+                  remain under human authority.
+                </p>
+                <p>
+                  <a href="#/articles/moving-map">
+                    Read the full Moving Map article →
+                  </a>{' '}
+                  A longer founder essay about why we changed the method,
+                  how it works, and what the pilot still needs to prove.
+                </p>
+                <p className="reading-qualification">
+                  <strong>Adopted, not yet validated:</strong> Repository agent
+                  guidance now describes Moving Map, but better coordination,
+                  fewer integration failures, or faster delivery have not yet
+                  been demonstrated.
+                </p>
+              </>
+            )}
+            {index === 6 && (
               <>
                 <h3>The next thing that scares me</h3>
                 <p>
