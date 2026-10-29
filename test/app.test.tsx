@@ -604,18 +604,22 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(
       document.querySelector('.moving-map-article')?.textContent,
-    ).toContain('The kitchen is making pizzas for orders that have not actually');
+    ).toContain(
+      'The kitchen is making pizzas for orders that have not actually',
+    );
     expect(
       document.querySelector('.moving-map-article')?.textContent,
     ).toContain('Moving Map Development (MMD)');
-    expect(
-      document.querySelector('.moving-map-origin')?.textContent,
-    ).toContain('October 28, 2026');
+    expect(document.querySelector('.moving-map-origin')?.textContent).toContain(
+      'October 28, 2026',
+    );
     expect(
       document.querySelector('.moving-map-opening')?.textContent,
     ).not.toContain('Tiny Custom Stories');
     expect(
-      content().getByRole('link', { name: 'Back to the Moving Map Development lesson ↑' }),
+      content().getByRole('link', {
+        name: 'Back to the Moving Map Development lesson ↑',
+      }),
     ).toBeTruthy();
 
     fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
@@ -626,7 +630,9 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(
       content()
-        .getByRole('link', { name: 'Back to the Moving Map Development lesson ↑' })
+        .getByRole('link', {
+          name: 'Back to the Moving Map Development lesson ↑',
+        })
         .getAttribute('href'),
     ).toContain('mode=builder');
   });

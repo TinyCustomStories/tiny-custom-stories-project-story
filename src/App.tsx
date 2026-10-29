@@ -1295,13 +1295,13 @@ function StoryHowWeBuild() {
             The plan can change without losing the destination.
           </h2>
           <p>
-            We have begun piloting Moving Map Development (MMD), an approach
-            for human or AI development teams that updates affected work when
-            new evidence changes a shared assumption. Reversible technical
-            changes require impact checks and independent review. Product,
-            privacy, security, child-safety, and irreversible decisions still
-            require appropriate human authority. This is an adopted pilot,
-            not a proven delivery improvement.
+            We have begun piloting Moving Map Development (MMD), an approach for
+            human or AI development teams that updates affected work when new
+            evidence changes a shared assumption. Reversible technical changes
+            require impact checks and independent review. Product, privacy,
+            security, child-safety, and irreversible decisions still require
+            appropriate human authority. This is an adopted pilot, not a proven
+            delivery improvement.
           </p>
           <p>
             <Link to="/articles/moving-map">

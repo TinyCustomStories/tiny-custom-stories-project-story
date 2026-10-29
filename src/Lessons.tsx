@@ -315,10 +315,10 @@ export function Lessons() {
         <p className="reading-qualification">
           <strong>Retrospective · October 2–28, 2026.</strong> Earlier founder
           field notes and an October 21 design reflection are joined by the
-          October 28 adoption of Moving Map Development as a working pilot. The methodology
-          is documented; its effects have not yet been measured. This is not a
-          complete session audit, usability study, or productivity comparison.
-          Private transcripts stay private.
+          October 28 adoption of Moving Map Development as a working pilot. The
+          methodology is documented; its effects have not yet been measured.
+          This is not a complete session audit, usability study, or productivity
+          comparison. Private transcripts stay private.
         </p>
       </section>
       <div
@@ -449,9 +449,9 @@ export function Lessons() {
                 <p>
                   One developer discovers an important assumption is wrong.
                   Three other developers are still building against it. Every
-                  ticket looks healthy, but the finished pieces no longer
-                  agree. AI agents make the problem more visible because they
-                  rarely overhear the discovery.
+                  ticket looks healthy, but the finished pieces no longer agree.
+                  AI agents make the problem more visible because they rarely
+                  overhear the discovery.
                 </p>
                 <p>
                   <strong>Moving Map Development (MMD)</strong> is our name for
@@ -459,22 +459,22 @@ export function Lessons() {
                   destination, let the technical route improve when evidence
                   changes, and update only the work that depends on a changed
                   assumption. Significant product, security, privacy, safety,
-                  and irreversible choices still require proper human
-                  authority. TDD remains useful, not mandatory.
+                  and irreversible choices still require proper human authority.
+                  TDD remains useful, not mandatory.
                 </p>
                 <p>
                   <a href="#/articles/moving-map">
                     Read the Moving Map Development article →
                   </a>{' '}
-                  It starts with an imaginary pizza disaster and explains how
-                  a development team can use the method. Our own adoption
-                  appears only at the end.
+                  It starts with an imaginary pizza disaster and explains how a
+                  development team can use the method. Our own adoption appears
+                  only at the end.
                 </p>
                 <p className="reading-qualification">
                   <strong>Early pilot:</strong> We adopted the first MMD
-                  instructions on October 28, 2026. Better coordination,
-                  fewer integration failures, and faster delivery are not
-                  yet proven outcomes.
+                  instructions on October 28, 2026. Better coordination, fewer
+                  integration failures, and faster delivery are not yet proven
+                  outcomes.
                 </p>
               </>
             )}
