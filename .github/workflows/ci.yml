@@ -47,5 +47,10 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+      # Temporary PR-local diagnostic: print Prettier's exact changes to logs.
+      - name: Show formatter changes (temporary)
+        run: |
+          npx prettier --write documentation/moving-map-starter/README.md src/Lessons.tsx src/MovingMapArticle.tsx src/reading.css test/app.test.tsx
+          git diff -- documentation/moving-map-starter/README.md src/Lessons.tsx src/MovingMapArticle.tsx src/reading.css test/app.test.tsx
       - name: Verify public site
         run: npm run verify
