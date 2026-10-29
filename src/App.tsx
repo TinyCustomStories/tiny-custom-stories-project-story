@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReadingPage, ReadingContext, type ReadingMode } from './ReadingPage';
 import { Lessons } from './Lessons';
+import { MovingMapArticle } from './MovingMapArticle';
 import deliverySnapshot from './delivery-snapshot.json';
 import {
   designPrinciples,
@@ -18,6 +19,7 @@ type Route =
   | '/architecture'
   | '/delivery'
   | '/learnings'
+  | '/articles/moving-map'
   | '/decisions'
   | '/roadmap'
   | '/sprint-one'
@@ -35,6 +37,7 @@ const routes: Record<Route, string> = {
   '/architecture': 'Architecture',
   '/delivery': 'How we build',
   '/learnings': 'Lessons',
+  '/articles/moving-map': 'Moving Map article',
   '/decisions': 'Decisions',
   '/roadmap': 'Roadmap',
   '/sprint-one': 'Sprint 1',
@@ -74,6 +77,8 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
     'The GitHub activity, review loop, automated quality gates, browser evidence, and outcome-gated workflow behind the product.',
   '/learnings':
     'The mistakes, experiments, surprises, and unresolved nerves that changed how the project is being built.',
+  '/articles/moving-map':
+    'A long-form founder essay about intent-led agents, shared discoveries, reviewed architectural autonomy and risk-based verification.',
   '/decisions':
     'A labeled record of confirmed decisions, proposals, verified facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
@@ -187,7 +192,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 21, 2026
+            A public project story · updated October 28, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -1284,6 +1289,26 @@ function StoryHowWeBuild() {
           </article>
         </div>
 
+        <div className="reading-panel">
+          <p className="eyebrow">October 28 · Working pilot</p>
+          <h2 data-reading-key="moving-map-pilot">
+            The plan can change without losing the destination.
+          </h2>
+          <p>
+            Moving Map is our new approach to agent-assisted delivery. Agents
+            share discoveries that invalidate a shared assumption, recheck only
+            affected work, and use reviewed autonomy for reversible technical
+            decisions. Significant product, privacy, security, child-safety, or
+            irreversible choices still come back to the founder. The method is
+            adopted in guidance, not yet proven to reduce rework.
+          </p>
+          <p>
+            <Link to="/articles/moving-map">
+              Read the full Moving Map essay →
+            </Link>
+          </p>
+        </div>
+
         <p className="story-pullquote">
           The goal is not “let the agents build everything.” The goal is to make
           my intent precise enough that automation can help without quietly
@@ -2031,8 +2056,9 @@ function HowWeBuild() {
               intentionally reviewed checkpoint reaches development.
             </li>
             <li>
-              Behavior-changing work defaults toward test-first reasoning where
-              a meaningful failing test can be written.
+              Moving Map treats TDD as a selective technique, not a mandatory
+              starting ritual. Checks are chosen for regression, contract,
+              security, accessibility, and integration risk.
             </li>
             <li>
               Non-trivial failures are debugged systematically rather than
@@ -2116,6 +2142,29 @@ function HowWeBuild() {
               for meaningful integrated UI flows when warranted.
             </li>
           </ul>
+        </div>
+
+        <div className="reading-panel">
+          <p className="eyebrow">October 28 · Accepted working pilot</p>
+          <h2 data-reading-key="moving-map-pilot">
+            Moving Map keeps agents oriented when discoveries change the plan.
+          </h2>
+          <p>
+            The accepted product outcome remains human-led. Affected agents
+            compare new evidence, record a revised shared contract, and
+            revalidate only impacted work before integration. Reversible
+            cross-component architecture needs impact checks and independent
+            final-diff review; consequential product, privacy, security,
+            child-safety, or irreversible decisions are escalated.
+          </p>
+          <p>
+            The repository instructions adopted this pilot on October 28.
+            Benefits and reliable cross-agent behavior have not yet been
+            demonstrated.{' '}
+            <Link to="/articles/moving-map">
+              Read the full Moving Map article →
+            </Link>
+          </p>
         </div>
 
         <div className="reading-panel">
@@ -3244,6 +3293,7 @@ function Layout({
     '/architecture': Architecture,
     '/delivery': HowWeBuild,
     '/learnings': Lessons,
+    '/articles/moving-map': MovingMapArticle,
     '/decisions': Decisions,
     '/roadmap': Roadmap,
     '/sprint-one': SprintOne,
@@ -3262,6 +3312,7 @@ function Layout({
     '/architecture': StoryArchitecture,
     '/delivery': StoryHowWeBuild,
     '/learnings': Lessons,
+    '/articles/moving-map': MovingMapArticle,
     '/decisions': Decisions,
     '/roadmap': Roadmap,
     '/sprint-one': SprintOne,

@@ -576,4 +576,49 @@ describe('project story site', () => {
     expect(fullView.getAttribute('href')).toBe('/architecture/system.html');
     expect(content().getByText(/internal repository provenance/i)).toBeTruthy();
   });
+
+  it('connects the seventh Moving Map lesson to a full editorial article in both reading modes', () => {
+    renderStory();
+    fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
+
+    expect(
+      content().getByText('Evidence & lessons · seven chapters'),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {
+        name: /when an agent learns the map has changed/i,
+      }),
+    ).toBeTruthy();
+
+    const articleLink = content().getByRole('link', {
+      name: 'Read the full Moving Map article →',
+    });
+    expect(articleLink.getAttribute('href')).toBe('#/articles/moving-map');
+
+    window.location.hash = articleLink.getAttribute('href')!;
+    fireEvent(window, new HashChangeEvent('hashchange'));
+    expect(
+      screen.getByRole('heading', {
+        name: 'Moving Map: When the plan changes halfway through the build',
+      }),
+    ).toBeTruthy();
+    expect(
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('not evidence that agents reliably notify each other');
+    expect(
+      content().getByRole('link', { name: 'Back to the Moving Map lesson ↑' }),
+    ).toBeTruthy();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
+    expect(
+      screen.getByRole('heading', {
+        name: 'Moving Map: When the plan changes halfway through the build',
+      }),
+    ).toBeTruthy();
+    expect(
+      content()
+        .getByRole('link', { name: 'Back to the Moving Map lesson ↑' })
+        .getAttribute('href'),
+    ).toContain('mode=builder');
+  });
 });

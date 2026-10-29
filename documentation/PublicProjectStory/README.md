@@ -1,5 +1,11 @@
 # Public Project Story documentation
 
+## October 28 Moving Map lesson and long-form article
+
+The Lessons route adds **Moving Map** as a seventh chapter. Its linked [long-form editorial article](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/articles/moving-map) explains why agent coordination must propagate material discoveries across Child Map, Story Generation, and Story Studio, and documents human-set product intent, reviewed architectural autonomy, affected-work revalidation, optional TDD and risk-based verification. The standalone article uses the shared public editorial visual language, local section navigation, responsive long-form typography and the Story/Builder reading-mode control. It is a founder essay and explicitly identifies hypothetical examples.
+
+The October 28 product-repository decision and merged agent guidance establish a **pilot**, not measured productivity, reduced defects, reliable automatic notifications, or a completed family-facing outcome. The new article is a sixteenth site route, linked contextually from Lessons and How we build, not added to the main header. All prior delivery statistics remain dated October 21 and the 17-page PDF remains an October 21 fixed-layout checkpoint; neither is silently represented as current October 28 telemetry or refreshed PDF content.
+
 This directory explains the public Tiny Custom Stories project-story site in a format that can be read without opening the application.
 
 The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story; the accepted-but-not-started Sprint 4 plan is carried in the public Decision and Roadmap records until implementation work begins.
