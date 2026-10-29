@@ -623,7 +623,7 @@ describe('project story site', () => {
     expect(steps).toHaveLength(6);
     steps.forEach((step) => {
       // The browser supplies the ordered-list marker; copy must not repeat it.
-      expect(step.querySelector('strong')?.textContent).not.toMatch(/^\\d+\\./);
+      expect(step.querySelector('strong')?.textContent).not.toMatch(/^\d+\./);
     });
     const starter = content().getByRole('link', {
       name: /get the portable moving map starter kit/i,
