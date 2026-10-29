@@ -604,9 +604,10 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(
       document.querySelector('.moving-map-article')?.textContent,
-    ).toContain(
-      'The kitchen is making pizzas for orders that have not actually',
-    );
+    ).toContain('guest booking should work');
+    expect(
+      document.querySelector('.moving-map-article')?.textContent,
+    ).not.toContain('pizza');
     expect(
       document.querySelector('.moving-map-article')?.textContent,
     ).toContain('Moving Map Development (MMD)');
@@ -616,6 +617,23 @@ describe('project story site', () => {
     expect(
       document.querySelector('.moving-map-opening')?.textContent,
     ).not.toContain('Tiny Custom Stories');
+    const steps = Array.from(
+      document.querySelectorAll<HTMLLIElement>('.moving-map-steps > li'),
+    );
+    expect(steps).toHaveLength(6);
+    steps.forEach((step) => {
+      // The browser supplies the ordered-list marker; copy must not repeat it.
+      expect(step.querySelector('strong')?.textContent).not.toMatch(/^\d+\./);
+    });
+    const starter = content().getByRole('link', {
+      name: /get the portable moving map starter kit/i,
+    });
+    expect(starter.getAttribute('href')).toBe(
+      'https://github.com/TinyCustomStories/tiny-custom-stories-project-story/tree/main/documentation/moving-map-starter',
+    );
+    expect(
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('A Markdown file cannot notify another agent');
     expect(
       content().getByRole('link', {
         name: 'Back to the Moving Map Development lesson ↑',

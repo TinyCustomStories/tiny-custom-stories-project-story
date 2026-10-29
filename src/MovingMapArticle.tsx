@@ -8,7 +8,7 @@ export function MovingMapArticle() {
     <ReadingPage>
       <header className="page-intro section moving-map-intro">
         <p className="eyebrow">
-          A new development technique · October 28, 2026
+          A new development technique · updated October 29, 2026
         </p>
         <h1>Everyone Followed the Plan. The Plan Was Wrong.</h1>
         <div className="page-lede">
@@ -27,41 +27,38 @@ export function MovingMapArticle() {
       <article className="moving-map-article">
         <div className="moving-map-opening">
           <p className="moving-map-dropcap">
-            Imagine three developers building a pizza-ordering app.
+            We gave three AI agents three perfectly reasonable tasks.
           </p>
           <p>
-            Sam builds checkout. It is lovely. Big friendly buttons. A
-            satisfying little checkmark. When you place an order, the app labels
-            it <strong>confirmed</strong>.
+            One is building registration for an event-booking app. Another is
+            building reservations. The third is building confirmation emails.
+            Each agent has a clear assignment and its own tests.
           </p>
           <p>
-            Priya builds the payment integration. She learns that the payment
-            provider sometimes says <em>pending</em> before it says
-            <em> paid</em>. Interesting. She handles that in her service. Her
-            tests pass.
+            Then we discover something important: visitors abandon bookings
+            because they have to create an account. The product owner makes a
+            consequential decision:{' '}
+            <strong>guest booking should work without an account.</strong>
           </p>
           <p>
-            Leo builds the kitchen screen. His instructions say that
-            <em> confirmed</em> orders go to the oven, so that is exactly what
-            he builds. His tests also pass.
+            The registration agent hears the decision and adjusts its work. The
+            reservation agent is still building an API that requires an account
+            ID. The confirmation agent still assumes that every recipient has a
+            registered profile.
           </p>
           <p>
-            Friday arrives. The pull requests are merged. The task board looks
-            like a small, beautifully organized garden of green checkmarks.
-          </p>
-          <p>There is one tiny problem.</p>
-          <p>
-            The kitchen is making pizzas for orders that have not actually been
-            paid for.
+            By Friday, all three agents have finished. Three clean pull
+            requests. Three passing test suites. One booking experience that
+            cannot complete the newly accepted guest journey.
           </p>
           <p>
-            Nobody was lazy. Nobody ignored their ticket. In fact, everybody did
-            precisely what they were supposed to do. They just did it using{' '}
-            <strong>three slightly different versions of reality</strong>.
+            Nobody misunderstood their assignment. The assignments simply
+            <strong> stopped describing the same product.</strong>
           </p>
           <p className="moving-map-aside">
-            This pizza disaster is fictional. The coordination failure is
-            painfully plausible.
+            The booking story is fictional. The coordination failure is real:
+            one agent can be working from an accepted new decision while
+            dependent agents still trust the old one.
           </p>
         </div>
 
@@ -130,11 +127,9 @@ export function MovingMapArticle() {
           </p>
           <p>
             The destination is the outcome someone actually cares about. In our
-            pizza app, it is not “implement the payment service” or “close
-            twelve tickets.” It is{' '}
-            <em>
-              a customer can pay for a pizza and the kitchen makes the right one
-            </em>
+            booking app, it is not “implement registration” or “close twelve
+            tickets.” It is{' '}
+            <em>a visitor can reserve an event without unnecessary friction</em>
             .
           </p>
           <p>
@@ -182,52 +177,55 @@ export function MovingMapArticle() {
         </section>
 
         <section className="moving-map-section">
-          <h2>Let's rewind the pizza incident</h2>
+          <h2>Let's rewind the booking incident</h2>
           <p>
-            Back to Wednesday. Priya discovers that a payment can be
-            <em> pending</em>. This time, instead of fixing only her service and
-            continuing, she raises a short shared discovery:
+            The registration agent discovers the friction, but cannot simply
+            redefine the product. It proposes guest booking, shares the
+            evidence, and gets a decision from the product owner.
+          </p>
+          <p>
+            Now comes the part most task boards do not solve: the accepted
+            decision must reach everyone building on the old assumption.
           </p>
           <div className="moving-map-mini-dialogue">
             <p className="eyebrow">One discovery, not seventeen new tickets</p>
             <p>
-              <strong>We assumed:</strong> “Order confirmed” means “payment
-              completed.”
+              <strong>We assumed:</strong> Every reservation belongs to a
+              registered account.
             </p>
             <p>
-              <strong>We found:</strong> The provider may take time to confirm
-              payment.
+              <strong>We learned:</strong> Required sign-up causes potential
+              customers to abandon booking.
             </p>
             <p>
-              <strong>Who is affected:</strong> Checkout, order status, kitchen
-              queue, and receipts.
+              <strong>Product decision:</strong> The product owner approves
+              guest reservations. The agent does not approve this alone.
             </p>
             <p>
-              <strong>Proposed change:</strong> Distinguish payment pending from
-              paid; send an order to the kitchen only after verified payment.
+              <strong>Who is affected:</strong> Registration, reservation API,
+              confirmation emails, and authorization checks.
+            </p>
+            <p>
+              <strong>Proposed technical route:</strong> Introduce a compatible
+              customer reference that supports guests and account holders.
             </p>
           </div>
           <p>
-            Now the interesting part happens. Sam, Priya, and Leo examine the
-            actual change together. They check where the old meaning of
-            “confirmed” is used. They agree on a revised contract, record it,
-            and update the affected work. Because payments and user promises are
-            involved, the appropriate product and security owners must approve
-            the consequential parts.
+            The agents check consumers of the old account-ID contract. They
+            compare a reversible design, record the accepted contract, and get
+            independent review. They revalidate affected work while unrelated
+            features continue.
           </p>
           <p>
-            Nobody has to restart the whole project. Nobody needs to turn a
-            three-sentence discovery into a brand-new management system. The
-            rest of the team can keep working.
+            Before integration, they check that registered and guest
+            reservations work, including access control and confirmation
+            delivery. A green isolated test suite is not enough to declare the
+            product outcome complete.
           </p>
           <p>
-            When the new code is integrated, they test the actual checkout to
-            kitchen journey, including the pending-payment case. They do not
-            celebrate merely because three separate unit-test suites are green.
-          </p>
-          <p>
-            The kitchen now waits for the money. A happy ending for everyone
-            except the hypothetical pepperoni that almost escaped for free.
+            The important improvement is not that agents wrote more tests. They
+            stopped building incompatible versions of the product, without
+            asking a Kanban board to mediate every discussion.
           </p>
         </section>
 
@@ -240,31 +238,31 @@ export function MovingMapArticle() {
           </p>
           <ol className="moving-map-steps">
             <li>
-              <strong>1. Name the destination.</strong> Write a sentence a user
-              would recognize: “A customer can complete a paid order without it
-              reaching the kitchen too early.” Record important boundaries too.
-              A feature is not finished when its subtasks are finished.
+              <strong>Name the destination.</strong> Write a sentence a user
+              would recognize: “A visitor can complete a guest reservation.”
+              Record important boundaries too. A feature is not finished when
+              its subtasks are finished.
             </li>
             <li>
-              <strong>2. Make the current map visible.</strong> Record the
+              <strong>Make the current map visible.</strong> Record the
               assumptions and interfaces that several pieces of work share. Use
               the docs, issue, ADR, or repository record you already maintain.
               You do not need an elaborate new diagram.
             </li>
             <li>
-              <strong>3. Notice when reality disagrees.</strong> If a discovery
+              <strong>Notice when reality disagrees.</strong> If a discovery
               changes a shared assumption, write down what was believed, what
               was observed, and the proposed change. An observation is evidence;
               a proposal is not yet a decision.
             </li>
             <li>
-              <strong>4. Find the people on that road.</strong> Identify
-              affected code, active branches, consumers, tests, and owners. Tell
-              only the people who depend on the assumption. Verify the impact;
-              an AI-generated dependency guess is not a fact.
+              <strong>Find the people on that road.</strong> Identify affected
+              code, active branches, consumers, tests, and owners. Tell only the
+              people who depend on the assumption. Verify the impact; an
+              AI-generated dependency guess is not a fact.
             </li>
             <li>
-              <strong>5. Decide, update, and recheck.</strong> Give a reversible
+              <strong>Decide, update, and recheck.</strong> Give a reversible
               technical decision to the affected engineers with recorded
               agreement, compatibility checks, and independent review. Escalate
               consequential product, privacy, security, safety, cost,
@@ -273,7 +271,7 @@ export function MovingMapArticle() {
               work before integration.
             </li>
             <li>
-              <strong>6. Prove that you arrived.</strong> Run the appropriate
+              <strong>Prove that you arrived.</strong> Run the appropriate
               checks, inspect the integrated result, and demonstrate the
               original outcome. Report what works and what does not. An
               impressive number of merged changes is not the destination.
@@ -430,30 +428,71 @@ export function MovingMapArticle() {
         </section>
 
         <section className="moving-map-section">
-          <h2>Try it on your next feature</h2>
+          <h2>Take Moving Map to your own repository</h2>
           <p>
-            You do not need to announce a company-wide transformation. Pick one
-            feature that touches two or three parts of your system. Before work
-            begins, write the user outcome and the important assumptions
-            everyone is relying on.
+            This should work outside the project that inspired it. You do not
+            need our agents, our Kanban board, or our architecture. Start with
+            any existing repository and four small shared files.
           </p>
           <p>
-            Then agree on one rule: if anyone finds evidence that changes those
-            assumptions, they will tell the affected owners before the old
-            understanding spreads. Write accepted changes in the existing source
-            of truth. Keep the message short. Review the joins. Demonstrate the
-            finished user journey.
+            <strong>First, install the instructions.</strong> If you already
+            have agent guidance or architecture decisions, merge with them;
+            never erase stronger security, review, or deployment rules.
+          </p>
+          <pre className="moving-map-code">
+            <code>
+              {
+                'my-project/\n  AGENTS.md\n  docs/moving-map/\n    INTENT.md\n    DECISIONS.md\n    PROTOCOL.md'
+              }
+            </code>
+          </pre>
+          <p>
+            In <code>INTENT.md</code>, describe who your product serves, the
+            next demonstrable user outcome, and constraints that must remain
+            true. Do not start by creating fifty classified tickets.
           </p>
           <p>
-            Afterward, ask whether the approach actually helped. Did the team
-            catch stale assumptions earlier? Was there less integration rework,
-            or just more chatter? Were consequential decisions properly
-            reviewed? Did regressions escape? Did the feature work for a user?
+            <strong>Then start with a simple agent prompt:</strong>
+          </p>
+          <div className="moving-map-mini-dialogue">
+            <p>
+              Read this repository's Moving Map instructions, accepted
+              decisions, relevant contracts, and active work. Deliver the
+              smallest demonstrable user outcome. When a discovery changes a
+              shared assumption, propose it, identify affected agents, obtain
+              the right decision, and revalidate dependent work before
+              integration. Choose risk-appropriate checks, preserve independent
+              review, and report what actually works.
+            </p>
+          </div>
+          <p>
+            <strong>Finally, try one real feature.</strong> One agent is enough
+            to begin. With multiple agents, use separate branches or worktrees,
+            a real shared discussion channel, and fresh accepted decisions. A
+            Markdown file cannot notify another agent by itself. If workers
+            cannot communicate, sequence dependent work.
           </p>
           <p>
-            If MMD adds process without improving those outcomes, simplify it. A
-            development method that generates more administration than working
-            software has misunderstood its own destination.
+            The portable starter kit includes editable instructions, decision
+            and intent templates, a discovery protocol, two copy-paste prompts,
+            and a worked example. It is designed to be adapted, not installed as
+            a new bureaucracy.
+          </p>
+          <p className="moving-map-starter-link">
+            <a
+              className="button button-dark"
+              href="https://github.com/TinyCustomStories/tiny-custom-stories-project-story/tree/main/documentation/moving-map-starter"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Get the portable Moving Map starter kit ↗
+            </a>
+          </p>
+          <p>
+            Afterward ask: did the team catch stale assumptions earlier? Did
+            integration require less rework? Were important decisions reviewed?
+            Did regressions escape? Can a user actually complete the journey? If
+            the method adds work without improving outcomes, simplify it.
           </p>
         </section>
 
@@ -512,9 +551,9 @@ export function MovingMapArticle() {
         <aside className="moving-map-endnote">
           <p>
             Moving Map Development (MMD) is a proposed engineering practice, not
-            a certified standard or a measured productivity claim. The pizza
-            example is fictional. The experiment above is real, early, and still
-            being evaluated.
+            a certified standard or a measured productivity claim. The booking
+            example is fictional. The starter files do not themselves provide
+            cross-agent messaging. The early pilot is still being evaluated.
           </p>
           <p>
             <a href={'#/learnings?section=moving-map&mode=' + mode}>
