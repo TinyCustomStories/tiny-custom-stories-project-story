@@ -53,7 +53,7 @@ const chapters = [
     nav: 'Moving Map Development',
     title: 'The plan can be wrong even when every ticket is right.',
     summary:
-      'Moving Map Development (MMD) is a technique for human and AI teams: keep the user outcome clear, share discoveries that change shared assumptions, and recheck the work those discoveries affect.',
+      'Moving Map Development is the working philosophy we are testing: keep the outcome clear, share discoveries that change shared assumptions, and recheck only the work those discoveries affect. Its benefits are not yet established.',
     fields: [],
     builds: [],
   },
@@ -454,22 +454,24 @@ export function Lessons() {
                   overhear the discovery.
                 </p>
                 <p>
-                  <strong>Moving Map Development (MMD)</strong> is our name for
-                  a technique anyone can try: keep the user outcome as the
-                  destination, let the technical route improve when evidence
-                  changes, and update only the work that depends on a changed
-                  assumption. Significant product, security, privacy, safety,
-                  and irreversible choices still require proper human authority.
-                  TDD remains useful, not mandatory.
+                  <strong>Moving Map Development (MMD)</strong> is the name
+                  we're trying for the philosophy that emerged from this
+                  frustration. We keep the user outcome as the destination,
+                  share discoveries that change assumptions, and recheck
+                  affected work. We aren't claiming a replacement for TDD,
+                  BDD, or specifications; we're experimenting with how agents
+                  can keep shared decisions current. Important product,
+                  privacy, security, safety, and irreversible decisions
+                  still require human authority.
                 </p>
                 <p>
                   <a href="#/articles/moving-map">
                     Read the Moving Map Development article →
                   </a>{' '}
-                  It starts with a fictional event-booking team whose agents
-                  follow incompatible versions of the product plan, then
-                  explains how to adopt the technique in another repository. Our
-                  own pilot appears at the end.
+                  It starts with a fictional event-booking team, compares
+                  TDD, BDD, spec-driven development, and OpenAI and Anthropic's
+                  agent engineering approaches, then invites readers to
+                  try a small experiment in their own repository.
                 </p>
                 <p>
                   <a
@@ -483,10 +485,11 @@ export function Lessons() {
                   this project's issue board or agent setup.
                 </p>
                 <p className="reading-qualification">
-                  <strong>Early pilot:</strong> We adopted the first MMD
-                  instructions on October 28, 2026. Better coordination, fewer
-                  integration failures, and faster delivery are not yet proven
-                  outcomes.
+                  <strong>We're testing the waters:</strong> We started
+                  adopting Moving Map instructions on October 28, 2026.
+                  We don't yet know whether it will reduce stale work,
+                  improve real delivery, or simply create another layer
+                  of coordination. That's what the pilot should tell us.
                 </p>
               </>
             )}
