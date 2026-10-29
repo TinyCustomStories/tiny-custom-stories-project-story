@@ -47,10 +47,5 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-      # Temporary diagnostic for this PR; removed before merge.
-      - name: Show exact Prettier patch (temporary)
-        run: |
-          npx prettier --write documentation/moving-map-starter/README.md src/App.tsx src/Lessons.tsx src/MovingMapArticle.tsx test/app.test.tsx
-          git diff -- documentation/moving-map-starter/README.md src/App.tsx src/Lessons.tsx src/MovingMapArticle.tsx test/app.test.tsx
       - name: Verify public site
         run: npm run verify
