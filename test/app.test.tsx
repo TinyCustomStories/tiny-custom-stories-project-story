@@ -631,9 +631,9 @@ describe('project story site', () => {
     expect(starter.getAttribute('href')).toBe(
       'https://github.com/TinyCustomStories/tiny-custom-stories-project-story/tree/main/documentation/moving-map-starter',
     );
-    expect(document.querySelector('.moving-map-article')?.textContent).toContain(
-      'A Markdown file cannot notify another agent',
-    );
+    expect(
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('A Markdown file cannot notify another agent');
     expect(
       content().getByRole('link', {
         name: 'Back to the Moving Map Development lesson ↑',
