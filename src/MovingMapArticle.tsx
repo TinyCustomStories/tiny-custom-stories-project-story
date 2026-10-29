@@ -36,20 +36,20 @@ export function MovingMapArticle() {
           </p>
           <p>
             Then we discover something important: visitors abandon bookings
-            because they have to create an account. The product owner makes
-            a consequential decision: <strong>guest booking should work
-            without an account.</strong>
+            because they have to create an account. The product owner makes a
+            consequential decision:{' '}
+            <strong>guest booking should work without an account.</strong>
           </p>
           <p>
-            The registration agent hears the decision and adjusts its work.
-            The reservation agent is still building an API that requires
-            an account ID. The confirmation agent still assumes that every
-            recipient has a registered profile.
+            The registration agent hears the decision and adjusts its work. The
+            reservation agent is still building an API that requires an account
+            ID. The confirmation agent still assumes that every recipient has a
+            registered profile.
           </p>
           <p>
             By Friday, all three agents have finished. Three clean pull
-            requests. Three passing test suites. One booking experience
-            that cannot complete the newly accepted guest journey.
+            requests. Three passing test suites. One booking experience that
+            cannot complete the newly accepted guest journey.
           </p>
           <p>
             Nobody misunderstood their assignment. The assignments simply
@@ -126,8 +126,8 @@ export function MovingMapArticle() {
             <strong> route</strong>.
           </p>
           <p>
-            The destination is the outcome someone actually cares about. In
-            our booking app, it is not “implement registration” or “close twelve
+            The destination is the outcome someone actually cares about. In our
+            booking app, it is not “implement registration” or “close twelve
             tickets.” It is{' '}
             <em>a visitor can reserve an event without unnecessary friction</em>
             .
@@ -211,21 +211,21 @@ export function MovingMapArticle() {
             </p>
           </div>
           <p>
-            The agents check consumers of the old account-ID contract.
-            They compare a reversible design, record the accepted contract,
-            and get independent review. They revalidate affected work while
-            unrelated features continue.
+            The agents check consumers of the old account-ID contract. They
+            compare a reversible design, record the accepted contract, and get
+            independent review. They revalidate affected work while unrelated
+            features continue.
           </p>
           <p>
             Before integration, they check that registered and guest
             reservations work, including access control and confirmation
-            delivery. A green isolated test suite is not enough to declare
-            the product outcome complete.
+            delivery. A green isolated test suite is not enough to declare the
+            product outcome complete.
           </p>
           <p>
-            The important improvement is not that agents wrote more tests.
-            They stopped building incompatible versions of the product,
-            without asking a Kanban board to mediate every discussion.
+            The important improvement is not that agents wrote more tests. They
+            stopped building incompatible versions of the product, without
+            asking a Kanban board to mediate every discussion.
           </p>
         </section>
 
@@ -239,8 +239,9 @@ export function MovingMapArticle() {
           <ol className="moving-map-steps">
             <li>
               <strong>Name the destination.</strong> Write a sentence a user
-              would recognize: “A visitor can complete a guest reservation.” Record important boundaries too.
-              A feature is not finished when its subtasks are finished.
+              would recognize: “A visitor can complete a guest reservation.”
+              Record important boundaries too. A feature is not finished when
+              its subtasks are finished.
             </li>
             <li>
               <strong>Make the current map visible.</strong> Record the
@@ -255,10 +256,10 @@ export function MovingMapArticle() {
               a proposal is not yet a decision.
             </li>
             <li>
-              <strong>Find the people on that road.</strong> Identify
-              affected code, active branches, consumers, tests, and owners. Tell
-              only the people who depend on the assumption. Verify the impact;
-              an AI-generated dependency guess is not a fact.
+              <strong>Find the people on that road.</strong> Identify affected
+              code, active branches, consumers, tests, and owners. Tell only the
+              people who depend on the assumption. Verify the impact; an
+              AI-generated dependency guess is not a fact.
             </li>
             <li>
               <strong>Decide, update, and recheck.</strong> Give a reversible
@@ -430,8 +431,8 @@ export function MovingMapArticle() {
           <h2>Take Moving Map to your own repository</h2>
           <p>
             This should work outside the project that inspired it. You do not
-            need our agents, our Kanban board, or our architecture. Start
-            with any existing repository and four small shared files.
+            need our agents, our Kanban board, or our architecture. Start with
+            any existing repository and four small shared files.
           </p>
           <p>
             <strong>First, install the instructions.</strong> If you already
@@ -439,12 +440,16 @@ export function MovingMapArticle() {
             never erase stronger security, review, or deployment rules.
           </p>
           <pre className="moving-map-code">
-            <code>{'my-project/\n  AGENTS.md\n  docs/moving-map/\n    INTENT.md\n    DECISIONS.md\n    PROTOCOL.md'}</code>
+            <code>
+              {
+                'my-project/\n  AGENTS.md\n  docs/moving-map/\n    INTENT.md\n    DECISIONS.md\n    PROTOCOL.md'
+              }
+            </code>
           </pre>
           <p>
-            In <code>INTENT.md</code>, describe who your product serves,
-            the next demonstrable user outcome, and constraints that must
-            remain true. Do not start by creating fifty classified tickets.
+            In <code>INTENT.md</code>, describe who your product serves, the
+            next demonstrable user outcome, and constraints that must remain
+            true. Do not start by creating fifty classified tickets.
           </p>
           <p>
             <strong>Then start with a simple agent prompt:</strong>
@@ -453,25 +458,25 @@ export function MovingMapArticle() {
             <p>
               Read this repository's Moving Map instructions, accepted
               decisions, relevant contracts, and active work. Deliver the
-              smallest demonstrable user outcome. When a discovery changes
-              a shared assumption, propose it, identify affected agents,
-              obtain the right decision, and revalidate dependent work
-              before integration. Choose risk-appropriate checks, preserve
-              independent review, and report what actually works.
+              smallest demonstrable user outcome. When a discovery changes a
+              shared assumption, propose it, identify affected agents, obtain
+              the right decision, and revalidate dependent work before
+              integration. Choose risk-appropriate checks, preserve independent
+              review, and report what actually works.
             </p>
           </div>
           <p>
             <strong>Finally, try one real feature.</strong> One agent is enough
-            to begin. With multiple agents, use separate branches or
-            worktrees, a real shared discussion channel, and fresh accepted
-            decisions. A Markdown file cannot notify another agent by
-            itself. If workers cannot communicate, sequence dependent work.
+            to begin. With multiple agents, use separate branches or worktrees,
+            a real shared discussion channel, and fresh accepted decisions. A
+            Markdown file cannot notify another agent by itself. If workers
+            cannot communicate, sequence dependent work.
           </p>
           <p>
-            The portable starter kit includes editable instructions,
-            decision and intent templates, a discovery protocol, two
-            copy-paste prompts, and a worked example. It is designed to
-            be adapted, not installed as a new bureaucracy.
+            The portable starter kit includes editable instructions, decision
+            and intent templates, a discovery protocol, two copy-paste prompts,
+            and a worked example. It is designed to be adapted, not installed as
+            a new bureaucracy.
           </p>
           <p className="moving-map-starter-link">
             <a
@@ -484,11 +489,10 @@ export function MovingMapArticle() {
             </a>
           </p>
           <p>
-            Afterward ask: did the team catch stale assumptions earlier?
-            Did integration require less rework? Were important decisions
-            reviewed? Did regressions escape? Can a user actually complete
-            the journey? If the method adds work without improving
-            outcomes, simplify it.
+            Afterward ask: did the team catch stale assumptions earlier? Did
+            integration require less rework? Were important decisions reviewed?
+            Did regressions escape? Can a user actually complete the journey? If
+            the method adds work without improving outcomes, simplify it.
           </p>
         </section>
 
@@ -546,11 +550,10 @@ export function MovingMapArticle() {
 
         <aside className="moving-map-endnote">
           <p>
-            Moving Map Development (MMD) is a proposed engineering practice,
-            not a certified standard or a measured productivity claim. The
-            booking example is fictional. The starter files do not themselves
-            provide cross-agent messaging. The early pilot is still being
-            evaluated.
+            Moving Map Development (MMD) is a proposed engineering practice, not
+            a certified standard or a measured productivity claim. The booking
+            example is fictional. The starter files do not themselves provide
+            cross-agent messaging. The early pilot is still being evaluated.
           </p>
           <p>
             <a href={'#/learnings?section=moving-map&mode=' + mode}>
