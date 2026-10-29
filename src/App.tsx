@@ -37,7 +37,7 @@ const routes: Record<Route, string> = {
   '/architecture': 'Architecture',
   '/delivery': 'How we build',
   '/learnings': 'Lessons',
-  '/articles/moving-map': 'Moving Map article',
+  '/articles/moving-map': 'Moving Map Development article',
   '/decisions': 'Decisions',
   '/roadmap': 'Roadmap',
   '/sprint-one': 'Sprint 1',
@@ -78,7 +78,7 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
   '/learnings':
     'The mistakes, experiments, surprises, and unresolved nerves that changed how the project is being built.',
   '/articles/moving-map':
-    'A long-form founder essay about intent-led agents, shared discoveries, reviewed architectural autonomy and risk-based verification.',
+    'A general-audience introduction to Moving Map Development: a practical technique for sharing discoveries and revising the right work.',
   '/decisions':
     'A labeled record of confirmed decisions, proposals, verified facts, and unknowns.',
   '/roadmap': 'Outcome gates that describe progress without promising dates.',
@@ -1295,16 +1295,17 @@ function StoryHowWeBuild() {
             The plan can change without losing the destination.
           </h2>
           <p>
-            Moving Map is our new approach to agent-assisted delivery. Agents
-            share discoveries that invalidate a shared assumption, recheck only
-            affected work, and use reviewed autonomy for reversible technical
-            decisions. Significant product, privacy, security, child-safety, or
-            irreversible choices still come back to the founder. The method is
-            adopted in guidance, not yet proven to reduce rework.
+            We have begun piloting Moving Map Development (MMD), an approach for
+            human or AI development teams that updates affected work when new
+            evidence changes a shared assumption. Reversible technical changes
+            require impact checks and independent review. Product, privacy,
+            security, child-safety, and irreversible decisions still require
+            appropriate human authority. This is an adopted pilot, not a proven
+            delivery improvement.
           </p>
           <p>
             <Link to="/articles/moving-map">
-              Read the full Moving Map essay →
+              Read about Moving Map Development →
             </Link>
           </p>
         </div>
@@ -2056,9 +2057,9 @@ function HowWeBuild() {
               intentionally reviewed checkpoint reaches development.
             </li>
             <li>
-              Moving Map treats TDD as a selective technique, not a mandatory
-              starting ritual. Checks are chosen for regression, contract,
-              security, accessibility, and integration risk.
+              Moving Map Development (MMD) treats TDD as a selective technique,
+              not a mandatory starting ritual. Checks are chosen for regression,
+              contract, security, accessibility, and integration risk.
             </li>
             <li>
               Non-trivial failures are debugged systematically rather than
@@ -2147,7 +2148,7 @@ function HowWeBuild() {
         <div className="reading-panel">
           <p className="eyebrow">October 28 · Accepted working pilot</p>
           <h2 data-reading-key="moving-map-pilot">
-            Moving Map keeps agents oriented when discoveries change the plan.
+            Moving Map Development keeps shared assumptions current.
           </h2>
           <p>
             The accepted product outcome remains human-led. Affected agents
@@ -2162,7 +2163,7 @@ function HowWeBuild() {
             Benefits and reliable cross-agent behavior have not yet been
             demonstrated.{' '}
             <Link to="/articles/moving-map">
-              Read the full Moving Map article →
+              Read the general Moving Map Development article →
             </Link>
           </p>
         </div>

@@ -577,7 +577,7 @@ describe('project story site', () => {
     expect(content().getByText(/internal repository provenance/i)).toBeTruthy();
   });
 
-  it('connects the seventh Moving Map lesson to a full editorial article in both reading modes', () => {
+  it('links the universal Moving Map Development essay from the seventh lesson in both reading modes', () => {
     renderStory();
     fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
 
@@ -586,12 +586,12 @@ describe('project story site', () => {
     ).toBeTruthy();
     expect(
       screen.getByRole('heading', {
-        name: /when an agent learns the map has changed/i,
+        name: /the plan can be wrong even when every ticket is right/i,
       }),
     ).toBeTruthy();
 
     const articleLink = content().getByRole('link', {
-      name: 'Read the full Moving Map article →',
+      name: 'Read the Moving Map Development article →',
     });
     expect(articleLink.getAttribute('href')).toBe('#/articles/moving-map');
 
@@ -599,25 +599,40 @@ describe('project story site', () => {
     fireEvent(window, new HashChangeEvent('hashchange'));
     expect(
       screen.getByRole('heading', {
-        name: 'Moving Map: When the plan changes halfway through the build',
+        name: 'Everyone Followed the Plan. The Plan Was Wrong.',
       }),
     ).toBeTruthy();
     expect(
       document.querySelector('.moving-map-article')?.textContent,
-    ).toContain('not evidence that agents reliably notify each other');
+    ).toContain(
+      'The kitchen is making pizzas for orders that have not actually',
+    );
     expect(
-      content().getByRole('link', { name: 'Back to the Moving Map lesson ↑' }),
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('Moving Map Development (MMD)');
+    expect(document.querySelector('.moving-map-origin')?.textContent).toContain(
+      'October 28, 2026',
+    );
+    expect(
+      document.querySelector('.moving-map-opening')?.textContent,
+    ).not.toContain('Tiny Custom Stories');
+    expect(
+      content().getByRole('link', {
+        name: 'Back to the Moving Map Development lesson ↑',
+      }),
     ).toBeTruthy();
 
     fireEvent.click(screen.getByRole('button', { name: 'Builder' }));
     expect(
       screen.getByRole('heading', {
-        name: 'Moving Map: When the plan changes halfway through the build',
+        name: 'Everyone Followed the Plan. The Plan Was Wrong.',
       }),
     ).toBeTruthy();
     expect(
       content()
-        .getByRole('link', { name: 'Back to the Moving Map lesson ↑' })
+        .getByRole('link', {
+          name: 'Back to the Moving Map Development lesson ↑',
+        })
         .getAttribute('href'),
     ).toContain('mode=builder');
   });

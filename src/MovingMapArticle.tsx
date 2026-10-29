@@ -8,18 +8,18 @@ export function MovingMapArticle() {
     <ReadingPage>
       <header className="page-intro section moving-map-intro">
         <p className="eyebrow">
-          Field notes · Building with agents · October 28, 2026
+          A new development technique · October 28, 2026
         </p>
-        <h1>Moving Map: When the plan changes halfway through the build</h1>
+        <h1>Everyone Followed the Plan. The Plan Was Wrong.</h1>
         <div className="page-lede">
           <p>
-            We gave AI agents clearer tasks, better tools, and their own
-            branches. Then we discovered the harder problem: what happens when
-            one agent learns something that makes another agent's plan obsolete?
+            Introducing <strong>Moving Map Development (MMD)</strong>: a way to
+            build software when discoveries refuse to wait for the next planning
+            meeting.
           </p>
           <p className="moving-map-meta">
-            A Tiny Custom Stories founder essay · Approximately 9 minutes · An
-            adopted pilot, not a measured success story
+            Software development · About 10 minutes · A proposed method you can
+            try, not a proven productivity breakthrough
           </p>
         </div>
       </header>
@@ -27,323 +27,501 @@ export function MovingMapArticle() {
       <article className="moving-map-article">
         <div className="moving-map-opening">
           <p className="moving-map-dropcap">
-            Two pull requests can be perfectly reasonable on their own and
-            completely wrong together.
+            Imagine three developers building a pizza-ordering app.
           </p>
           <p>
-            Imagine one agent working on a child's changing interests, another
-            building the story generator, and a third wiring up the editor. Each
-            knows its ticket. Each passes its own checks. Halfway through, the
-            first agent discovers that an assumption about which information is
-            current, permitted, or safe to reuse needs to change.
+            Sam builds checkout. It is lovely. Big friendly buttons. A
+            satisfying little checkmark. When you place an order, the app labels
+            it <strong>confirmed</strong>.
           </p>
           <p>
-            The other two agents do not overhear that discovery. They keep
-            coding against yesterday's answer. By the time everything meets, the
-            repository contains three respectable implementations of two
-            different ideas.
+            Priya builds the payment integration. She learns that the payment
+            provider sometimes says <em>pending</em> before it says
+            <em> paid</em>. Interesting. She handles that in her service. Her
+            tests pass.
           </p>
           <p>
-            That is an illustrative scenario, not a claim that those exact
-            changes failed in our repository. But it captures the coordination
-            problem I kept running into while building Tiny Custom Stories with
-            several coding agents:{' '}
-            <strong>
-              the code could move faster than our shared understanding.
-            </strong>
+            Leo builds the kitchen screen. His instructions say that
+            <em> confirmed</em> orders go to the oven, so that is exactly what
+            he builds. His tests also pass.
+          </p>
+          <p>
+            Friday arrives. The pull requests are merged. The task board looks
+            like a small, beautifully organized garden of green checkmarks.
+          </p>
+          <p>There is one tiny problem.</p>
+          <p>
+            The kitchen is making pizzas for orders that have not actually been
+            paid for.
+          </p>
+          <p>
+            Nobody was lazy. Nobody ignored their ticket. In fact, everybody did
+            precisely what they were supposed to do. They just did it using{' '}
+            <strong>three slightly different versions of reality</strong>.
+          </p>
+          <p className="moving-map-aside">
+            This pizza disaster is fictional. The coordination failure is
+            painfully plausible.
           </p>
         </div>
 
         <section className="moving-map-section">
-          <h2>We made the tickets smaller. The problem got bigger.</h2>
+          <h2>The strange problem with good plans</h2>
           <p>
-            Our first answer to agent chaos was structure. We separated product
-            decisions from implementation, created focused issues, assigned
-            owners, used epic branches, and asked an independent reviewer to
-            inspect changes before they merged. Those choices still matter.
+            We like plans. Plans make complicated things feel manageable. First
+            we draw some boxes. Then we draw arrows between the boxes. Then we
+            turn the boxes into tickets. Then, because we are software
+            developers, we create a dashboard that shows how many boxes have
+            been completed.
           </p>
           <p>
-            Yet a finished issue is not a finished experience. I could see pull
-            requests accumulating while the basic parent journey was still
-            unfinished. Asking for another issue, another status change, or
-            another elaborate test plan did not necessarily close that gap.
+            The plan was built using the best information we had on Monday.
+            Unfortunately, by Wednesday, Monday's best information may be wrong.
           </p>
           <p>
-            A Kanban board is good at showing who owns a piece of work. It is
-            less good at carrying a new insight from one person's head into
-            everyone else's assumptions. With agents, that missing conversation
-            becomes particularly expensive. Sessions are isolated. Context is
-            finite. A confident answer can remain confident long after its
-            premise has expired.
+            A developer discovers that an API behaves differently than the docs
+            suggest. A designer notices that users are taking a route no one
+            expected. A tester finds that two perfectly sensible features become
+            nonsense when you put them together. An AI coding agent uncovers a
+            shared contract that needs to change.
           </p>
           <p>
-            I wanted a way to keep the advantages of explicit contracts and
-            review without treating the initial plan as sacred.
+            The discovery is not the problem.{' '}
+            <strong>
+              The problem is that the discovery stays local while the work stays
+              parallel.
+            </strong>
+          </p>
+          <p>
+            It is like five people navigating through a forest with copies of
+            the same map. One finds out that the bridge has collapsed. She
+            carefully draws a red X on <em>her</em> copy.
+          </p>
+          <p>
+            The other four continue toward the bridge, because their maps still
+            show a perfectly respectable bridge.
+          </p>
+          <p>
+            Our usual instinct is to improve the map-drawing process. More
+            detailed tickets. More carefully written requirements. More meetings
+            before development starts. Sometimes that helps. But no amount of
+            Monday planning can guarantee we will not learn something important
+            on Wednesday.
           </p>
         </section>
 
         <blockquote className="moving-map-quote">
-          The destination is set by product intent. Agents can discover a better
-          route, but everyone affected needs the updated map before they travel
-          farther.
+          A good development plan should not be a contract with the past. It
+          should be a map that can change when we learn something new.
         </blockquote>
 
         <section className="moving-map-section">
-          <h2>That is the idea behind Moving Map.</h2>
+          <h2>Meet Moving Map Development</h2>
           <p>
-            Moving Map is the name we gave an engineering approach we are now
-            piloting. The human sets the product destination: what should work,
-            for whom, and which boundaries cannot be crossed. Agents can
-            investigate and propose better routes. When a discovery changes a
-            shared assumption, they bring it to the affected people and
-            components before the old assumption spreads.
+            <strong>Moving Map Development (MMD)</strong> is a proposed,
+            intent-led development technique for teams whose understanding
+            changes while they build. It works with human developers, coding
+            agents, or a mix of both.
           </p>
           <p>
-            It sounds obvious. The difference is making the discovery itself
-            part of the workflow, instead of making each agent responsible only
-            for completing the words in its original ticket.
+            The metaphor has two parts. There is the
+            <strong> destination</strong>, and there is the
+            <strong> route</strong>.
           </p>
-          <div className="moving-map-line" aria-label="Moving Map concept">
+          <p>
+            The destination is the outcome someone actually cares about. In our
+            pizza app, it is not “implement the payment service” or “close
+            twelve tickets.” It is{' '}
+            <em>
+              a customer can pay for a pizza and the kitchen makes the right one
+            </em>
+            .
+          </p>
+          <p>
+            The route is our current best idea of how to get there: interfaces,
+            data shapes, components, tickets, architecture, and assumptions. We
+            need a route to coordinate. But when a discovery makes part of it
+            wrong, we should update the affected part, tell the travelers who
+            depend on it, and check that the route still reaches the
+            destination.
+          </p>
+          <div
+            className="moving-map-line"
+            aria-label="Moving Map Development in three ideas"
+          >
             <div>
-              <span>01 · Stay oriented</span>
-              <strong>Product intent</strong>
-              <p>The outcome and non-negotiable boundaries stay visible.</p>
+              <span>THE COMPASS</span>
+              <strong>Keep the outcome</strong>
+              <p>Agree on what working software must accomplish and protect.</p>
             </div>
             <div>
-              <span>02 · Change carefully</span>
-              <strong>Shared discovery</strong>
-              <p>Evidence, impact, decision, and a current contract.</p>
+              <span>THE MOVING MAP</span>
+              <strong>Share discoveries</strong>
+              <p>Change accepted assumptions deliberately, not silently.</p>
             </div>
             <div>
-              <span>03 · Prove the journey</span>
-              <strong>Working behavior</strong>
-              <p>Recheck what changed, review the join, and demonstrate it.</p>
+              <span>THE ARRIVAL</span>
+              <strong>Prove the journey</strong>
+              <p>Integrate, review, and demonstrate that the outcome works.</p>
             </div>
           </div>
           <p>
-            A map can move without becoming a free-for-all. The important
-            distinction is between an <em>agent proposal</em>, an
-            <em> accepted decision</em>, and <em>implemented evidence</em>. They
-            are different things. A suggestion in a chat does not silently
-            become the new architecture.
+            The central rule is almost embarrassingly simple:
+            <strong>
+              {' '}
+              when you discover something that changes a shared assumption,
+              update the people and work that depend on it before they build
+              further on the old assumption.
+            </strong>
+          </p>
+          <p>
+            Not every discovery needs a meeting. Not every refactor is a
+            philosophical event. The rule is for discoveries that affect someone
+            else's contract, decision, or work in progress.
           </p>
         </section>
 
         <section className="moving-map-section">
-          <h2>A practical example: one small change, three affected agents</h2>
+          <h2>Let's rewind the pizza incident</h2>
           <p>
-            Consider a hypothetical Child Map → Story Generation → Story Studio
-            integration. A parent records that a child once loved dinosaurs,
-            then later records that the interest has passed. We want a story to
-            use relevant, parent-approved context, not blindly repeat every fact
-            the application has ever stored.
+            Back to Wednesday. Priya discovers that a payment can be
+            <em> pending</em>. This time, instead of fixing only her service and
+            continuing, she raises a short shared discovery:
+          </p>
+          <div className="moving-map-mini-dialogue">
+            <p className="eyebrow">One discovery, not seventeen new tickets</p>
+            <p>
+              <strong>We assumed:</strong> “Order confirmed” means “payment
+              completed.”
+            </p>
+            <p>
+              <strong>We found:</strong> The provider may take time to confirm
+              payment.
+            </p>
+            <p>
+              <strong>Who is affected:</strong> Checkout, order status, kitchen
+              queue, and receipts.
+            </p>
+            <p>
+              <strong>Proposed change:</strong> Distinguish payment pending from
+              paid; send an order to the kitchen only after verified payment.
+            </p>
+          </div>
+          <p>
+            Now the interesting part happens. Sam, Priya, and Leo examine the
+            actual change together. They check where the old meaning of
+            “confirmed” is used. They agree on a revised contract, record it,
+            and update the affected work. Because payments and user promises are
+            involved, the appropriate product and security owners must approve
+            the consequential parts.
           </p>
           <p>
-            During implementation, an agent notices that an existing story-input
-            contract would make it too easy to pass historical context along as
-            if it were current. The agent could quietly patch its own mapper. Or
-            it could open five new tickets. Neither necessarily tells the editor
-            or generation worker which contract they should trust.
+            Nobody has to restart the whole project. Nobody needs to turn a
+            three-sentence discovery into a brand-new management system. The
+            rest of the team can keep working.
           </p>
-          <p>In Moving Map, the handoff is deliberately narrower:</p>
+          <p>
+            When the new code is integrated, they test the actual checkout to
+            kitchen journey, including the pending-payment case. They do not
+            celebrate merely because three separate unit-test suites are green.
+          </p>
+          <p>
+            The kitchen now waits for the money. A happy ending for everyone
+            except the hypothetical pepperoni that almost escaped for free.
+          </p>
+        </section>
+
+        <section className="moving-map-section">
+          <h2>So how do you actually develop this way?</h2>
+          <p>
+            Think of MMD as six habits that fit around the way you already write
+            code. You do not need to replace your source control, sprint board,
+            or entire engineering organization.
+          </p>
           <ol className="moving-map-steps">
             <li>
-              <strong>Observe.</strong> Record the assumption, the evidence that
-              challenges it, and a proposed alternative. Do not claim the
-              proposal is already approved.
+              <strong>1. Name the destination.</strong> Write a sentence a user
+              would recognize: “A customer can complete a paid order without it
+              reaching the kitchen too early.” Record important boundaries too.
+              A feature is not finished when its subtasks are finished.
             </li>
             <li>
-              <strong>Trace impact.</strong> Find the interfaces, branches,
-              active work, and parent-facing behavior that rely on it. Check
-              those references instead of trusting a guessed dependency map.
+              <strong>2. Make the current map visible.</strong> Record the
+              assumptions and interfaces that several pieces of work share. Use
+              the docs, issue, ADR, or repository record you already maintain.
+              You do not need an elaborate new diagram.
             </li>
             <li>
-              <strong>Discuss and decide.</strong> Ask only affected agents to
-              compare compatibility and tradeoffs. Escalate a material product,
-              privacy, security, child-safety, or irreversible decision to the
-              founder.
+              <strong>3. Notice when reality disagrees.</strong> If a discovery
+              changes a shared assumption, write down what was believed, what
+              was observed, and the proposed change. An observation is evidence;
+              a proposal is not yet a decision.
             </li>
             <li>
-              <strong>Publish the accepted change.</strong> Update the
-              authoritative contract and record what assumption it supersedes. A
-              reversible technical change still needs recorded agreement and
-              independent review.
+              <strong>4. Find the people on that road.</strong> Identify
+              affected code, active branches, consumers, tests, and owners. Tell
+              only the people who depend on the assumption. Verify the impact;
+              an AI-generated dependency guess is not a fact.
             </li>
             <li>
-              <strong>Revalidate, then deliver.</strong> The affected workers
-              recheck their integrations against that version. Unaffected
-              workers continue. The team demonstrates the parent journey, not
-              just that the new mapper compiles.
+              <strong>5. Decide, update, and recheck.</strong> Give a reversible
+              technical decision to the affected engineers with recorded
+              agreement, compatibility checks, and independent review. Escalate
+              consequential product, privacy, security, safety, cost,
+              destructive, or irreversible decisions to the right human
+              authority. Update the accepted contract and revalidate affected
+              work before integration.
+            </li>
+            <li>
+              <strong>6. Prove that you arrived.</strong> Run the appropriate
+              checks, inspect the integrated result, and demonstrate the
+              original outcome. Report what works and what does not. An
+              impressive number of merged changes is not the destination.
             </li>
           </ol>
           <p>
-            None of this requires a new issue for every question. The existing
-            owner, PR, and decision record are usually enough. If an accepted
-            task really needs refinement, we refine it deliberately without
-            pretending a proposal has changed the product promise.
+            Notice what is missing: “create a new ticket for every thought,”
+            “hold a meeting for every line of code,” and “make everyone stop
+            when one assumption changes.” Those are not features of the
+            technique.
           </p>
         </section>
 
         <section className="moving-map-section">
-          <h2>Agents need autonomy. They also need borders.</h2>
+          <h2>But who is allowed to move the map?</h2>
           <p>
-            It would be exhausting if every internal design choice had to come
-            back to me. It would be reckless if agents could vote their way
-            around a privacy rule. So Moving Map uses
-            <strong> reviewed architectural autonomy</strong>, with three
-            different levels of authority.
+            If everyone can silently redraw everything, we have not created a
+            development method. We have created a very energetic argument.
+          </p>
+          <p>
+            MMD works only when decision authority is explicit. A useful
+            starting model has three lanes:
           </p>
           <div className="moving-map-decisions">
             <div>
-              <p className="eyebrow">Within the contract</p>
-              <h3>Routine implementation</h3>
+              <p className="eyebrow">Lane one</p>
+              <h3>Local decisions</h3>
               <p>
-                An agent can choose a method, refactor locally, and proceed,
-                provided the accepted behavior and protections remain intact.
+                An engineer chooses implementation details within accepted
+                contracts. No special ceremony needed.
               </p>
             </div>
             <div>
-              <p className="eyebrow">Across components</p>
-              <h3>Reversible architecture</h3>
+              <p className="eyebrow">Lane two</p>
+              <h3>Reviewed changes</h3>
               <p>
-                Affected agents can agree on a change after checking consumers,
-                compatibility, reversibility, and the current decisions. Record
-                the agreement. Independently review the final diff.
+                Affected engineers may agree on genuinely reversible,
+                cross-component technical changes after impact checks, durable
+                documentation, and independent review.
               </p>
             </div>
             <div>
-              <p className="eyebrow">Back to the founder</p>
-              <h3>Consequential decisions</h3>
+              <p className="eyebrow">Lane three</p>
+              <h3>Human authority</h3>
               <p>
-                Product promises, privacy, security, child safety, significant
-                spending, destructive operations, and hard-to-reverse or
-                disputed changes need a human decision and the right specialist
-                review.
+                Important changes to user promises, privacy, security, safety,
+                spending, or irreversible data need the authorized product owner
+                and appropriate specialist review.
               </p>
             </div>
           </div>
           <p>
-            A change that merely <em>sounds</em> reversible is not enough.
-            Security and privacy constraints cannot be relaxed by calling
-            something a technical refactor. And independent review means another
-            reviewer actually examines the integration, not the author
-            congratulating its own code.
+            A proposal is not automatically an accepted decision just because
+            three coding agents agreed it sounded elegant. And calling a
+            security change “just a refactor” does not magically make it safe.
+            Existing review, CI, and release gates still apply.
           </p>
         </section>
 
         <section className="moving-map-section">
-          <h2>We also stopped making test-first a ritual.</h2>
+          <h2>Isn't this just Agile wearing a different hat?</h2>
           <p>
-            Moving Map is not an argument against tests. It is an argument
-            against requiring the same development ceremony for every kind of
-            work. Test-driven development can be excellent when behavior is
-            stable, a regression is understood, or the contract is clear enough
-            to write a useful failing test. Exploratory interface work or an
-            unsettled cross-component assumption may need investigation first.
+            It is a fair question. Agile already values responding to change.
+            Trunk-based development helps integrate early. ADRs preserve
+            important decisions. Contract tests catch interface breakage. Good
+            teams have always talked to one another.
           </p>
           <p>
-            What matters is matching evidence to risk. Stable rules need focused
-            regression tests. Shared contracts need compatibility checks.
-            Authentication, private family information, and provider boundaries
-            need security-sensitive verification and qualified review. Visual
-            changes need an inspected working interface and accessibility
-            checks. AI-generated stories need format and safety checks{' '}
-            <em>plus</em> representative quality evaluation.
+            MMD does not claim to have invented adaptation, communication, or
+            maps. Its proposed contribution is a{' '}
+            <em>small, explicit operating rule</em> for the moment a discovery
+            invalidates assumptions used by concurrent work: identify affected
+            owners, distinguish proposals from accepted decisions, revise the
+            shared contract, revalidate the impacted work, and return to the
+            user-visible outcome.
           </p>
           <p>
-            A green test can prove the function did what we asked. It cannot, by
-            itself, prove that we asked for the right thing, that the pages form
-            a usable journey, or that a family should trust the result. The
-            required review, CI, merge, and release gates remain.
+            It should sit alongside useful existing practices, not replace them.
+            If your team already does this reliably, excellent. You might have
+            been following much of the idea without giving it a name.
           </p>
         </section>
 
         <section className="moving-map-section">
-          <h2>GitHub stays the record. It is not the conversation.</h2>
+          <h2>And what about Test-Driven Development?</h2>
           <p>
-            I do not want to replace our board with a new agent messaging
-            platform. GitHub Issues still hold owned tasks and dependencies. Our
-            project board still holds operational status. Versioned decisions
-            and architecture documents hold accepted shared contracts. Code and
-            demonstrations show what is actually there.
+            TDD asks a valuable question:{' '}
+            <em>
+              can we describe this behavior with a failing test before
+              implementing it?
+            </em>
           </p>
           <p>
-            The agents' job is to move discoveries across those boundaries
-            without creating a second, competing source of truth. A coordinator
-            routes material findings. Product stewardship protects the human
-            intent. Backlog stewardship refines existing work when needed.
-            Developers implement and raise surprises. Reviewers inspect the
-            latest accepted contracts and final diff. Repository Doctor
-            reconciles verified GitHub state. The public story records the
-            lesson without inventing the result.
+            Moving Map Development asks a different question:
+            <em>
+              are we still building against the right shared understanding of
+              the behavior?
+            </em>
           </p>
           <p>
-            That is a lot of roles, but it is not a request for eight agents to
-            attend every conversation. Only the affected workers need the
-            update. And nothing in the new method authorizes an agent to
-            manufacture extra tickets, ignore ownership, or bypass a gate.
+            Those questions are friends, not rivals. When the behavior is
+            settled, TDD can be a fantastic way to implement it. When a
+            cross-component contract is still being discovered, insisting on a
+            test-first ceremony can turn one wrong assumption into seventeen
+            beautifully tested wrong assumptions.
+          </p>
+          <p>
+            MMD therefore treats TDD as a technique you can choose, not a
+            universal starting rule. But{' '}
+            <strong>
+              verification is never optional merely because tests were not
+              written first.
+            </strong>
+            Regressions need tests. Shared interfaces need compatibility checks.
+            Security-sensitive behavior needs rigorous controls and independent
+            review. User journeys need integrated evidence. Exploratory
+            interfaces need usability and accessibility checks.
+          </p>
+          <p>
+            A passing test says the code met a particular expectation. Moving
+            Map asks whether that expectation is still the one the product
+            needs.
           </p>
         </section>
 
         <section className="moving-map-section">
-          <h2>The experiment is only beginning.</h2>
+          <h2>Why this matters even more with AI agents</h2>
           <p>
-            On October 28, 2026, we adopted Moving Map in the repository's agent
-            guidance. That is evidence of a decision and written instructions.
-            It is <strong>not</strong> evidence that agents reliably notify each
-            other, that integration defects have fallen, or that development has
-            become faster.
+            Humans are fairly good at accidentally learning things from one
+            another. A developer overhears a conversation. Someone says “wait,
+            what?” in a meeting. A colleague notices that your assumption was
+            wrong while reaching for coffee.
           </p>
           <p>
-            The first trial is bounded to an existing Child Map, generation, and
-            Story Studio outcome. I want to look for stale assumptions
-            discovered before integration, the amount of rework introduced or
-            avoided, the number of interruptions, the quality of independent
-            review, and, most importantly, whether a parent-facing journey
-            actually works. Escaped regressions and weakened safeguards would
-            make the experiment a failure even if the board moved faster.
+            Agents do not reliably have that ambient awareness. They can work in
+            separate sessions, each with its own context and a slightly
+            different picture of the project. They are very good at completing a
+            well-specified piece of work. That becomes awkward when the
+            specification is no longer right.
           </p>
           <p>
-            There is no new daemon, notification service, or management database
-            in the plan. We are trying to change how people and agents reason
-            together before inventing more infrastructure to manage them.
+            A lightweight shared-discovery rule gives both humans and agents a
+            way to change direction without depending on lucky overheard
+            conversations or expecting every worker to reread the entire
+            repository after each commit.
+          </p>
+          <p>
+            It does <em>not</em> require an agent swarm, an always-on
+            coordinator, a new database, or a complicated workflow service.
+            Start with an owner, a shared decision record, and a habit of
+            checking affected contracts. Add automation only when repeated
+            evidence proves it will help.
+          </p>
+        </section>
+
+        <section className="moving-map-section">
+          <h2>Try it on your next feature</h2>
+          <p>
+            You do not need to announce a company-wide transformation. Pick one
+            feature that touches two or three parts of your system. Before work
+            begins, write the user outcome and the important assumptions
+            everyone is relying on.
+          </p>
+          <p>
+            Then agree on one rule: if anyone finds evidence that changes those
+            assumptions, they will tell the affected owners before the old
+            understanding spreads. Write accepted changes in the existing source
+            of truth. Keep the message short. Review the joins. Demonstrate the
+            finished user journey.
+          </p>
+          <p>
+            Afterward, ask whether the approach actually helped. Did the team
+            catch stale assumptions earlier? Was there less integration rework,
+            or just more chatter? Were consequential decisions properly
+            reviewed? Did regressions escape? Did the feature work for a user?
+          </p>
+          <p>
+            If MMD adds process without improving those outcomes, simplify it. A
+            development method that generates more administration than working
+            software has misunderstood its own destination.
           </p>
         </section>
 
         <section className="moving-map-section moving-map-closing">
-          <h2>A plan should be something you can learn from.</h2>
+          <h2>The point was never to follow the map perfectly</h2>
           <p>
-            The uncomfortable lesson of this project is that more visible
-            activity does not guarantee more finished product. A beautiful board
-            can coexist with an unfinished journey. A disciplined test suite can
-            coexist with the wrong contract. A sensible agent can keep working
-            faithfully on information that is no longer true.
+            Software development is a strange job. We spend much of our time
+            drawing a map of a place we have not visited, and then we act
+            surprised when we discover a hill that was not on the map.
           </p>
           <p>
-            I still want small tasks, good tests, clear owners, and independent
-            reviews. I just do not want them to prevent the team from noticing
-            when the map has changed.
+            Better estimates are useful. Better requirements are useful. Better
+            tests are useful. But sometimes the most important thing a developer
+            does all week is notice that something everyone believes is no
+            longer true.
+          </p>
+          <p>
+            That discovery should not become a footnote in one person's pull
+            request while the rest of the team keeps driving toward a missing
+            bridge.
           </p>
           <p className="moving-map-last-line">
-            The destination is the experience we're trying to give a family. The
-            map exists to help us get there.
+            Keep the destination clear. Let the route change. Make sure everyone
+            affected gets the new map.
           </p>
         </section>
 
-        <aside className="moving-map-endnote">
-          <p className="eyebrow">About this field note</p>
+        <aside className="moving-map-origin">
+          <p className="eyebrow">A real project trying it · October 28, 2026</p>
+          <h2>Where this idea is starting: Tiny Custom Stories</h2>
           <p>
-            This is a public explanation of a founder-approved working pilot,
-            not a standard, productivity benchmark, or completed evaluation.
-            Examples are illustrative. Product, family-data, and release
-            safeguards remain governed by the project's accepted decisions.
+            I am building Tiny Custom Stories, a parent-guided personalized
+            storytelling product, with the help of several specialized coding
+            agents. Work on its Child Map, story generation, and editing
+            experience often crosses component boundaries. I wanted those agents
+            to share discoveries without turning every surprise into more
+            tickets or asking me to approve every reversible technical choice.
+          </p>
+          <p>
+            On <strong>October 28, 2026</strong>, we adopted the first Moving
+            Map Development pilot in our repository's agent guidance, with
+            reviewed architectural autonomy, explicit human decision boundaries,
+            and risk-based verification. We are starting with one existing
+            cross-component outcome. The instructions have changed; faster
+            delivery, fewer defects, and reliable agent coordination have{' '}
+            <strong>not yet been demonstrated</strong>. That is what the pilot
+            needs to find out.
+          </p>
+          <p>
+            <a href="#/development">
+              Explore the Tiny Custom Stories project →
+            </a>
+          </p>
+        </aside>
+
+        <aside className="moving-map-endnote">
+          <p>
+            Moving Map Development (MMD) is a proposed engineering practice, not
+            a certified standard or a measured productivity claim. The pizza
+            example is fictional. The experiment above is real, early, and still
+            being evaluated.
           </p>
           <p>
             <a href={'#/learnings?section=moving-map&mode=' + mode}>
-              Back to the Moving Map lesson ↑
+              Back to the Moving Map Development lesson ↑
             </a>
             {' · '}
-            <a href="#/delivery">How the project is built →</a>
+            <a href="#/delivery">See how the project is built →</a>
           </p>
         </aside>
       </article>
