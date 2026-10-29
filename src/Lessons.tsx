@@ -466,9 +466,21 @@ export function Lessons() {
                   <a href="#/articles/moving-map">
                     Read the Moving Map Development article →
                   </a>{' '}
-                  It starts with an imaginary pizza disaster and explains how a
-                  development team can use the method. Our own adoption appears
-                  only at the end.
+                  It starts with a fictional event-booking team whose agents
+                  follow incompatible versions of the product plan, then
+                  explains how to adopt the technique in another repository.
+                  Our own pilot appears at the end.
+                </p>
+                <p>
+                  <a
+                    href="https://github.com/TinyCustomStories/tiny-custom-stories-project-story/tree/main/documentation/moving-map-starter"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Get the Moving Map starter files and copy-paste prompts ↗
+                  </a>
+                  {' '}They can be adapted to a new application without
+                  importing this project's issue board or agent setup.
                 </p>
                 <p className="reading-qualification">
                   <strong>Early pilot:</strong> We adopted the first MMD
