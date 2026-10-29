@@ -7,19 +7,19 @@ export function MovingMapArticle() {
   return (
     <ReadingPage>
       <header className="page-intro section moving-map-intro">
-        <p className="eyebrow">
-          A new development technique · updated October 29, 2026
-        </p>
+        <p className="eyebrow">An evolving experiment · October 29, 2026</p>
         <h1>Everyone Followed the Plan. The Plan Was Wrong.</h1>
         <div className="page-lede">
           <p>
-            Introducing <strong>Moving Map Development (MMD)</strong>: a way to
-            build software when discoveries refuse to wait for the next planning
-            meeting.
+            We've been experimenting with a way of building software where the
+            plan changes while AI agents are already working. We call our
+            working philosophy <strong>Moving Map Development (MMD)</strong>.
+            This is an invitation to try it, not an announcement that we have
+            solved agentic development.
           </p>
           <p className="moving-map-meta">
-            Software development · About 10 minutes · A proposed method you can
-            try, not a proven productivity breakthrough
+            Software development · A working hypothesis · Try it, question it,
+            and keep what helps
           </p>
         </div>
       </header>
@@ -115,10 +115,10 @@ export function MovingMapArticle() {
         <section className="moving-map-section">
           <h2>Meet Moving Map Development</h2>
           <p>
-            <strong>Moving Map Development (MMD)</strong> is a proposed,
-            intent-led development technique for teams whose understanding
-            changes while they build. It works with human developers, coding
-            agents, or a mix of both.
+            <strong>Moving Map Development (MMD)</strong> is our name for an
+            intent-led collaboration philosophy we're testing while building a
+            small product with AI agents. We think it may be useful to human
+            teams too, but we have not proven that yet.
           </p>
           <p>
             The metaphor has two parts. There is the
@@ -232,9 +232,10 @@ export function MovingMapArticle() {
         <section className="moving-map-section">
           <h2>So how do you actually develop this way?</h2>
           <p>
-            Think of MMD as six habits that fit around the way you already write
-            code. You do not need to replace your source control, sprint board,
-            or entire engineering organization.
+            We are experimenting with six habits alongside the tools we already
+            use. Treat these as a starting point, not compulsory gates. You do
+            not need to replace your source control, sprint board, or entire
+            engineering organization.
           </p>
           <ol className="moving-map-steps">
             <li>
@@ -332,68 +333,137 @@ export function MovingMapArticle() {
         </section>
 
         <section className="moving-map-section">
-          <h2>Isn't this just Agile wearing a different hat?</h2>
+          <h2>What about TDD, BDD, specs, and the agent labs?</h2>
           <p>
-            It is a fair question. Agile already values responding to change.
-            Trunk-based development helps integrate early. ADRs preserve
-            important decisions. Contract tests catch interface breakage. Good
-            teams have always talked to one another.
+            We did not invent responding to change. We looked at what other
+            approaches already do well, and several address pieces of the same
+            problem. We are not trying to replace them.
           </p>
+          <div className="moving-map-mini-dialogue">
+            <p>
+              <strong>Test-Driven Development (TDD)</strong> can be excellent
+              when the expected behavior is stable and testable. Anthropic even
+              recommends test-first iteration for suitable agent-coding work. We
+              still want targeted tests for stable rules and regressions. We are
+              asking what happens when agents have passing tests for two
+              incompatible versions of the requirement.{' '}
+              <a
+                href="https://www.anthropic.com/research/claude-code-best-practices"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Anthropic's Claude Code guidance ↗
+              </a>
+            </p>
+            <p>
+              <strong>Behavior-Driven Development (BDD)</strong> is closer to
+              our philosophy than we first realized. It uses collaborative
+              examples and ongoing discovery to build shared understanding. The
+              specific gap we are exploring is how a discovery reaches
+              independent agents already working asynchronously. BDD's
+              conversations might be enough for some teams.{' '}
+              <a
+                href="https://cucumber.io/docs/bdd/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cucumber's BDD explanation ↗
+              </a>
+            </p>
+            <p>
+              <strong>Spec-Driven Development (SDD)</strong> makes intent and
+              requirements explicit. GitHub Spec Kit offers structured
+              specification, planning, implementation, and convergence, with
+              customizable workflows. We like that clarity. We are experimenting
+              with lighter early planning for evolving features and deliberate
+              revision when shared contracts change.{' '}
+              <a
+                href="https://github.github.com/spec-kit/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub Spec Kit ↗
+              </a>
+            </p>
+            <p>
+              <strong>OpenAI's harness engineering and Symphony</strong> focus
+              on reliable agent environments, guardrails, feedback, and
+              execution coordination. Symphony uses an issue tracker as an agent
+              control plane. That can be valuable for organizing work at scale.
+              Our smaller experiment asks whether the board can stay a progress
+              view without hosting every architectural conversation.{' '}
+              <a
+                href="https://openai.com/index/harness-engineering/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Harness engineering ↗
+              </a>
+              {' · '}
+              <a
+                href="https://openai.com/index/open-source-codex-orchestration-symphony/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Symphony ↗
+              </a>
+            </p>
+            <p>
+              <strong>
+                Anthropic's context engineering and long-running agent patterns
+              </strong>{' '}
+              help agents carry the right knowledge between sessions. We want to
+              build on that and ask one more question: when a shared decision
+              changes, which *other active workers* must learn about it before
+              integration?{' '}
+              <a
+                href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Context engineering ↗
+              </a>
+              {' · '}
+              <a
+                href="https://www.anthropic.com/research/effective-harnesses-for-long-running-agents"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Long-running agents ↗
+              </a>
+            </p>
+          </div>
           <p>
-            MMD does not claim to have invented adaptation, communication, or
-            maps. Its proposed contribution is a{' '}
-            <em>small, explicit operating rule</em> for the moment a discovery
-            invalidates assumptions used by concurrent work: identify affected
-            owners, distinguish proposals from accepted decisions, revise the
-            shared contract, revalidate the impacted work, and return to the
-            user-visible outcome.
-          </p>
-          <p>
-            It should sit alongside useful existing practices, not replace them.
-            If your team already does this reliably, excellent. You might have
-            been following much of the idea without giving it a name.
+            These are overlapping ideas, not competing brands. TDD helps test
+            behavior. BDD helps discover it together. Specifications preserve
+            agreement. Agent harnesses support reliable execution. The extra
+            habit we're trying is to propagate accepted changes to the people
+            and agents still building on old assumptions, without manufacturing
+            more process.
           </p>
         </section>
 
         <section className="moving-map-section">
-          <h2>And what about Test-Driven Development?</h2>
+          <h2>How would we know whether this actually helps?</h2>
           <p>
-            TDD asks a valuable question:{' '}
-            <em>
-              can we describe this behavior with a failing test before
-              implementing it?
-            </em>
+            We have adopted a Moving Map pilot in Tiny Custom Stories agent
+            guidance. That is not proof of faster delivery, better coordination,
+            or fewer bugs. We have not run a controlled comparison, and a
+            written protocol is not a working agent-to-agent notification
+            system.
           </p>
           <p>
-            Moving Map Development asks a different question:
-            <em>
-              are we still building against the right shared understanding of
-              the behavior?
-            </em>
+            We want to try it on a real cross-component feature and compare it
+            with our previous workflow. Do we detect stale assumptions earlier?
+            Spend less time revising tickets? Deliver an integrated user journey
+            with less rework? What does coordination cost in time and tokens? Do
+            regressions or security problems escape?
           </p>
           <p>
-            Those questions are friends, not rivals. When the behavior is
-            settled, TDD can be a fantastic way to implement it. When a
-            cross-component contract is still being discovered, insisting on a
-            test-first ceremony can turn one wrong assumption into seventeen
-            beautifully tested wrong assumptions.
-          </p>
-          <p>
-            MMD therefore treats TDD as a technique you can choose, not a
-            universal starting rule. But{' '}
-            <strong>
-              verification is never optional merely because tests were not
-              written first.
-            </strong>
-            Regressions need tests. Shared interfaces need compatibility checks.
-            Security-sensitive behavior needs rigorous controls and independent
-            review. User journeys need integrated evidence. Exploratory
-            interfaces need usability and accessibility checks.
-          </p>
-          <p>
-            A passing test says the code met a particular expectation. Moving
-            Map asks whether that expectation is still the one the product
-            needs.
+            If BDD conversations, a good spec, or a simple handoff solve the
+            problem just as well, we should use those. If Moving Map creates
+            more administration than working software, we should simplify it. A
+            useful experiment must be allowed to prove its own hypothesis wrong.
           </p>
         </section>
 
@@ -473,10 +543,10 @@ export function MovingMapArticle() {
             cannot communicate, sequence dependent work.
           </p>
           <p>
-            The portable starter kit includes editable instructions, decision
-            and intent templates, a discovery protocol, two copy-paste prompts,
-            and a worked example. It is designed to be adapted, not installed as
-            a new bureaucracy.
+            We published the portable starter kit so others can run their own
+            experiment. It includes editable agent instructions, decision and
+            intent templates, a discovery protocol, two prompts, and a worked
+            example. Adapt it, challenge it, or drop parts that do not help.
           </p>
           <p className="moving-map-starter-link">
             <a
@@ -550,10 +620,11 @@ export function MovingMapArticle() {
 
         <aside className="moving-map-endnote">
           <p>
-            Moving Map Development (MMD) is a proposed engineering practice, not
-            a certified standard or a measured productivity claim. The booking
-            example is fictional. The starter files do not themselves provide
-            cross-agent messaging. The early pilot is still being evaluated.
+            Moving Map Development (MMD) is a working hypothesis, not a
+            standard, a replacement for TDD/BDD, or a measured productivity
+            claim. The booking story is fictional. Our Tiny Custom Stories pilot
+            is real but still unproven, and starter files do not themselves
+            message other agents.
           </p>
           <p>
             <a href={'#/learnings?section=moving-map&mode=' + mode}>

@@ -10,6 +10,10 @@ Story mode is the default. The Story / Builder toggle stays available in the sha
 
 The [Public Project Dossier](https://tinycustomstories.github.io/tiny-custom-stories-project-story/documents/tiny-custom-stories-project-dossier.pdf) remains the fixed-layout companion at the same stable path. The dossier has been refreshed as a **17-page October 21 checkpoint**, with updated sprint evidence, a design-learning chapter, and the verified October 21 activity snapshot. The responsive website remains the primary version for current project narrative, semantic navigation, and text reflow.
 
+## October 29: Moving Map as a comparative experiment
+
+The [Moving Map article](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/articles/moving-map) now compares TDD, BDD, GitHub's spec-driven approach, OpenAI's harness engineering and Symphony, and Anthropic's context/long-running agent practices. It treats these as complementary tools, not inferior alternatives. The public story is explicit that **Moving Map is our early working hypothesis**: shared architectural discoveries might be propagated to affected concurrent agents with less issue-board churn, but better delivery, fewer regressions and lower coordination cost have **not** been demonstrated. The [portable guide](documentation/moving-map-starter/README.md) uses the same experimental framing and links primary sources.
+
 ## October 29: Moving Map — story, adoption, and list-numbering fix
 
 The public [Moving Map Development article](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/articles/moving-map) now begins with an illustrative event-booking team whose accepted product decision does not reach all its coding agents, rather than a pizza/order integration bug. It explains both the technique and how to bring it to another application, including [portable starter files and prompts](documentation/moving-map-starter/README.md). The starter kit is not an agent messaging service; teams still need a real shared channel or sequential integration for dependent work.

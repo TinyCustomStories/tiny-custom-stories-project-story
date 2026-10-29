@@ -611,6 +611,28 @@ describe('project story site', () => {
     expect(
       document.querySelector('.moving-map-article')?.textContent,
     ).toContain('Moving Map Development (MMD)');
+    expect(
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('What about TDD, BDD, specs, and the agent labs?');
+    expect(
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('How would we know whether this actually helps?');
+    expect(
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('working hypothesis');
+    const externalLinks = [
+      ['GitHub Spec Kit ↗', 'https://github.github.com/spec-kit/'],
+      [
+        'Symphony ↗',
+        'https://openai.com/index/open-source-codex-orchestration-symphony/',
+      ],
+      ["Cucumber's BDD explanation ↗", 'https://cucumber.io/docs/bdd/'],
+    ];
+    externalLinks.forEach(([name, href]) => {
+      expect(content().getByRole('link', { name }).getAttribute('href')).toBe(
+        href,
+      );
+    });
     expect(document.querySelector('.moving-map-origin')?.textContent).toContain(
       'October 28, 2026',
     );
