@@ -39,16 +39,18 @@ export function MovingMapArticle() {
           </p>
           <p>
             The other two agents do not overhear that discovery. They keep
-            coding against yesterday's answer. By the time everything meets,
-            the repository contains three respectable implementations of two
+            coding against yesterday's answer. By the time everything meets, the
+            repository contains three respectable implementations of two
             different ideas.
           </p>
           <p>
             That is an illustrative scenario, not a claim that those exact
             changes failed in our repository. But it captures the coordination
             problem I kept running into while building Tiny Custom Stories with
-            several coding agents: <strong>the code could move faster than our
-            shared understanding.</strong>
+            several coding agents:{' '}
+            <strong>
+              the code could move faster than our shared understanding.
+            </strong>
           </p>
         </div>
 
@@ -61,8 +63,8 @@ export function MovingMapArticle() {
             inspect changes before they merged. Those choices still matter.
           </p>
           <p>
-            Yet a finished issue is not a finished experience. I could see
-            pull requests accumulating while the basic parent journey was still
+            Yet a finished issue is not a finished experience. I could see pull
+            requests accumulating while the basic parent journey was still
             unfinished. Asking for another issue, another status change, or
             another elaborate test plan did not necessarily close that gap.
           </p>
@@ -121,8 +123,8 @@ export function MovingMapArticle() {
           <p>
             A map can move without becoming a free-for-all. The important
             distinction is between an <em>agent proposal</em>, an
-            <em> accepted decision</em>, and <em>implemented evidence</em>.
-            They are different things. A suggestion in a chat does not silently
+            <em> accepted decision</em>, and <em>implemented evidence</em>. They
+            are different things. A suggestion in a chat does not silently
             become the new architecture.
           </p>
         </section>
@@ -133,22 +135,21 @@ export function MovingMapArticle() {
             Consider a hypothetical Child Map → Story Generation → Story Studio
             integration. A parent records that a child once loved dinosaurs,
             then later records that the interest has passed. We want a story to
-            use relevant, parent-approved context, not blindly repeat every
-            fact the application has ever stored.
+            use relevant, parent-approved context, not blindly repeat every fact
+            the application has ever stored.
           </p>
           <p>
-            During implementation, an agent notices that an existing
-            story-input contract would make it too easy to pass historical
-            context along as if it were current. The agent could quietly patch
-            its own mapper. Or it could open five new tickets. Neither
-            necessarily tells the editor or generation worker which contract
-            they should trust.
+            During implementation, an agent notices that an existing story-input
+            contract would make it too easy to pass historical context along as
+            if it were current. The agent could quietly patch its own mapper. Or
+            it could open five new tickets. Neither necessarily tells the editor
+            or generation worker which contract they should trust.
           </p>
           <p>In Moving Map, the handoff is deliberately narrower:</p>
           <ol className="moving-map-steps">
             <li>
-              <strong>Observe.</strong> Record the assumption, the evidence
-              that challenges it, and a proposed alternative. Do not claim the
+              <strong>Observe.</strong> Record the assumption, the evidence that
+              challenges it, and a proposed alternative. Do not claim the
               proposal is already approved.
             </li>
             <li>
@@ -164,8 +165,8 @@ export function MovingMapArticle() {
             </li>
             <li>
               <strong>Publish the accepted change.</strong> Update the
-              authoritative contract and record what assumption it supersedes.
-              A reversible technical change still needs recorded agreement and
+              authoritative contract and record what assumption it supersedes. A
+              reversible technical change still needs recorded agreement and
               independent review.
             </li>
             <li>
@@ -224,8 +225,8 @@ export function MovingMapArticle() {
           <p>
             A change that merely <em>sounds</em> reversible is not enough.
             Security and privacy constraints cannot be relaxed by calling
-            something a technical refactor. And independent review means
-            another reviewer actually examines the integration, not the author
+            something a technical refactor. And independent review means another
+            reviewer actually examines the integration, not the author
             congratulating its own code.
           </p>
         </section>
@@ -241,19 +242,19 @@ export function MovingMapArticle() {
             unsettled cross-component assumption may need investigation first.
           </p>
           <p>
-            What matters is matching evidence to risk. Stable rules need
-            focused regression tests. Shared contracts need compatibility
-            checks. Authentication, private family information, and provider
-            boundaries need security-sensitive verification and qualified
-            review. Visual changes need an inspected working interface and
-            accessibility checks. AI-generated stories need format and safety
-            checks <em>plus</em> representative quality evaluation.
+            What matters is matching evidence to risk. Stable rules need focused
+            regression tests. Shared contracts need compatibility checks.
+            Authentication, private family information, and provider boundaries
+            need security-sensitive verification and qualified review. Visual
+            changes need an inspected working interface and accessibility
+            checks. AI-generated stories need format and safety checks{' '}
+            <em>plus</em> representative quality evaluation.
           </p>
           <p>
-            A green test can prove the function did what we asked. It cannot,
-            by itself, prove that we asked for the right thing, that the pages
-            form a usable journey, or that a family should trust the result.
-            The required review, CI, merge, and release gates remain.
+            A green test can prove the function did what we asked. It cannot, by
+            itself, prove that we asked for the right thing, that the pages form
+            a usable journey, or that a family should trust the result. The
+            required review, CI, merge, and release gates remain.
           </p>
         </section>
 
@@ -261,24 +262,24 @@ export function MovingMapArticle() {
           <h2>GitHub stays the record. It is not the conversation.</h2>
           <p>
             I do not want to replace our board with a new agent messaging
-            platform. GitHub Issues still hold owned tasks and dependencies.
-            Our project board still holds operational status. Versioned
-            decisions and architecture documents hold accepted shared
-            contracts. Code and demonstrations show what is actually there.
+            platform. GitHub Issues still hold owned tasks and dependencies. Our
+            project board still holds operational status. Versioned decisions
+            and architecture documents hold accepted shared contracts. Code and
+            demonstrations show what is actually there.
           </p>
           <p>
             The agents' job is to move discoveries across those boundaries
-            without creating a second, competing source of truth. A
-            coordinator routes material findings. Product stewardship protects
-            the human intent. Backlog stewardship refines existing work when
-            needed. Developers implement and raise surprises. Reviewers inspect
-            the latest accepted contracts and final diff. Repository Doctor
+            without creating a second, competing source of truth. A coordinator
+            routes material findings. Product stewardship protects the human
+            intent. Backlog stewardship refines existing work when needed.
+            Developers implement and raise surprises. Reviewers inspect the
+            latest accepted contracts and final diff. Repository Doctor
             reconciles verified GitHub state. The public story records the
             lesson without inventing the result.
           </p>
           <p>
-            That is a lot of roles, but it is not a request for eight agents
-            to attend every conversation. Only the affected workers need the
+            That is a lot of roles, but it is not a request for eight agents to
+            attend every conversation. Only the affected workers need the
             update. And nothing in the new method authorizes an agent to
             manufacture extra tickets, ignore ownership, or bypass a gate.
           </p>
@@ -287,15 +288,15 @@ export function MovingMapArticle() {
         <section className="moving-map-section">
           <h2>The experiment is only beginning.</h2>
           <p>
-            On October 28, 2026, we adopted Moving Map in the repository's
-            agent guidance. That is evidence of a decision and written
-            instructions. It is <strong>not</strong> evidence that agents
-            reliably notify each other, that integration defects have fallen,
-            or that development has become faster.
+            On October 28, 2026, we adopted Moving Map in the repository's agent
+            guidance. That is evidence of a decision and written instructions.
+            It is <strong>not</strong> evidence that agents reliably notify each
+            other, that integration defects have fallen, or that development has
+            become faster.
           </p>
           <p>
-            The first trial is bounded to an existing Child Map, generation,
-            and Story Studio outcome. I want to look for stale assumptions
+            The first trial is bounded to an existing Child Map, generation, and
+            Story Studio outcome. I want to look for stale assumptions
             discovered before integration, the amount of rework introduced or
             avoided, the number of interruptions, the quality of independent
             review, and, most importantly, whether a parent-facing journey
@@ -303,10 +304,9 @@ export function MovingMapArticle() {
             make the experiment a failure even if the board moved faster.
           </p>
           <p>
-            There is no new daemon, notification service, or management
-            database in the plan. We are trying to change how people and agents
-            reason together before inventing more infrastructure to manage
-            them.
+            There is no new daemon, notification service, or management database
+            in the plan. We are trying to change how people and agents reason
+            together before inventing more infrastructure to manage them.
           </p>
         </section>
 
@@ -314,10 +314,10 @@ export function MovingMapArticle() {
           <h2>A plan should be something you can learn from.</h2>
           <p>
             The uncomfortable lesson of this project is that more visible
-            activity does not guarantee more finished product. A beautiful
-            board can coexist with an unfinished journey. A disciplined test
-            suite can coexist with the wrong contract. A sensible agent can
-            keep working faithfully on information that is no longer true.
+            activity does not guarantee more finished product. A beautiful board
+            can coexist with an unfinished journey. A disciplined test suite can
+            coexist with the wrong contract. A sensible agent can keep working
+            faithfully on information that is no longer true.
           </p>
           <p>
             I still want small tasks, good tests, clear owners, and independent
@@ -325,8 +325,8 @@ export function MovingMapArticle() {
             when the map has changed.
           </p>
           <p className="moving-map-last-line">
-            The destination is the experience we're trying to give a family.
-            The map exists to help us get there.
+            The destination is the experience we're trying to give a family. The
+            map exists to help us get there.
           </p>
         </section>
 

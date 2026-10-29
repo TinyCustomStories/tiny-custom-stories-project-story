@@ -1181,7 +1181,6 @@
   }
 }
 
-
 /* Long-form Moving Map essay, within the existing public editorial language. */
 .moving-map-intro .page-lede {
   max-width: 68ch;
@@ -1192,7 +1191,9 @@
 }
 .moving-map-meta {
   margin-top: 1.25rem;
-  font: 500 0.8rem/1.7 'DM Mono', monospace;
+  font:
+    500 0.8rem/1.7 'DM Mono',
+    monospace;
   color: var(--color-text-muted);
 }
 .moving-map-article {
@@ -1211,7 +1212,10 @@
 }
 .moving-map-dropcap::first-letter {
   float: left;
-  font: 700 4.7rem/0.8 Fraunces, Georgia, serif;
+  font:
+    700 4.7rem/0.8 Fraunces,
+    Georgia,
+    serif;
   color: var(--color-link);
   padding: 0.25rem 0.4rem 0 0;
 }
@@ -1227,7 +1231,10 @@
   padding: 0.25rem 0 0.25rem 1.5rem;
   border-left: 4px solid var(--color-expressive-coral);
   color: var(--color-text);
-  font: 500 clamp(1.5rem, 3vw, 2rem)/1.45 Fraunces, Georgia, serif;
+  font:
+    500 clamp(1.5rem, 3vw, 2rem)/1.45 Fraunces,
+    Georgia,
+    serif;
 }
 .moving-map-line {
   display: grid;
@@ -1242,13 +1249,18 @@
   min-width: 0;
 }
 .moving-map-line span {
-  font: 500 0.7rem/1.5 'DM Mono', monospace;
+  font:
+    500 0.7rem/1.5 'DM Mono',
+    monospace;
   color: var(--color-link);
 }
 .moving-map-line strong {
   display: block;
   margin-top: 0.5rem;
-  font: 700 1.3rem/1.2 Fraunces, Georgia, serif;
+  font:
+    700 1.3rem/1.2 Fraunces,
+    Georgia,
+    serif;
 }
 .moving-map-line p {
   font-size: 0.875rem;

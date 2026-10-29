@@ -581,7 +581,9 @@ describe('project story site', () => {
     renderStory();
     fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
 
-    expect(content().getByText('Evidence & lessons · seven chapters')).toBeTruthy();
+    expect(
+      content().getByText('Evidence & lessons · seven chapters'),
+    ).toBeTruthy();
     expect(
       screen.getByRole('heading', {
         name: /when an agent learns the map has changed/i,
@@ -601,8 +603,8 @@ describe('project story site', () => {
       }),
     ).toBeTruthy();
     expect(
-      content().getByText(/not evidence that agents reliably notify each other/i),
-    ).toBeTruthy();
+      document.querySelector('.moving-map-article')?.textContent,
+    ).toContain('not evidence that agents reliably notify each other');
     expect(
       content().getByRole('link', { name: 'Back to the Moving Map lesson ↑' }),
     ).toBeTruthy();
@@ -619,5 +621,4 @@ describe('project story site', () => {
         .getAttribute('href'),
     ).toContain('mode=builder');
   });
-
 });

@@ -1296,14 +1296,16 @@ function StoryHowWeBuild() {
           </h2>
           <p>
             Moving Map is our new approach to agent-assisted delivery. Agents
-            share discoveries that invalidate a shared assumption, recheck
-            only affected work, and use reviewed autonomy for reversible
-            technical decisions. Significant product, privacy, security,
-            child-safety, or irreversible choices still come back to the founder.
-            The method is adopted in guidance, not yet proven to reduce rework.
+            share discoveries that invalidate a shared assumption, recheck only
+            affected work, and use reviewed autonomy for reversible technical
+            decisions. Significant product, privacy, security, child-safety, or
+            irreversible choices still come back to the founder. The method is
+            adopted in guidance, not yet proven to reduce rework.
           </p>
           <p>
-            <Link to="/articles/moving-map">Read the full Moving Map essay →</Link>
+            <Link to="/articles/moving-map">
+              Read the full Moving Map essay →
+            </Link>
           </p>
         </div>
 
@@ -2158,8 +2160,10 @@ function HowWeBuild() {
           <p>
             The repository instructions adopted this pilot on October 28.
             Benefits and reliable cross-agent behavior have not yet been
-            demonstrated. <Link to="/articles/moving-map">Read the full
-            Moving Map article →</Link>
+            demonstrated.{' '}
+            <Link to="/articles/moving-map">
+              Read the full Moving Map article →
+            </Link>
           </p>
         </div>
 

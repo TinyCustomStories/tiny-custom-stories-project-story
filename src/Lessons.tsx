@@ -313,12 +313,12 @@ export function Lessons() {
             : 'Smaller tasks helped us review, but they did not finish the parent journey. Shared design foundations helped new features feel coherent. Now we are piloting a way for agents to keep shared assumptions current.'}
         </p>
         <p className="reading-qualification">
-          <strong>Retrospective · October 2–28, 2026.</strong> Earlier
-          founder field notes and an October 21 design reflection are joined by
-          the October 28 adoption of Moving Map as a working pilot. The
-          methodology is documented; its effects have not yet been measured.
-          This is not a complete session audit, usability study, or
-          productivity comparison. Private transcripts stay private.
+          <strong>Retrospective · October 2–28, 2026.</strong> Earlier founder
+          field notes and an October 21 design reflection are joined by the
+          October 28 adoption of Moving Map as a working pilot. The methodology
+          is documented; its effects have not yet been measured. This is not a
+          complete session audit, usability study, or productivity comparison.
+          Private transcripts stay private.
         </p>
       </section>
       <div
@@ -455,8 +455,8 @@ export function Lessons() {
                 <p>
                   The new Moving Map pilot gives affected agents a lightweight
                   way to share evidence, compare reversible options, record
-                  accepted changes, and recheck the joins. TDD is available
-                  when useful, but not required as a default ritual. Product,
+                  accepted changes, and recheck the joins. TDD is available when
+                  useful, but not required as a default ritual. Product,
                   privacy, security, child-safety, and irreversible decisions
                   remain under human authority.
                 </p>
@@ -464,8 +464,8 @@ export function Lessons() {
                   <a href="#/articles/moving-map">
                     Read the full Moving Map article →
                   </a>{' '}
-                  A longer founder essay about why we changed the method,
-                  how it works, and what the pilot still needs to prove.
+                  A longer founder essay about why we changed the method, how it
+                  works, and what the pilot still needs to prove.
                 </p>
                 <p className="reading-qualification">
                   <strong>Adopted, not yet validated:</strong> Repository agent
