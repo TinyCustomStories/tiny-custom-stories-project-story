@@ -467,7 +467,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "Work becomes evidence when its boundaries are clear.",
-        "The October 21 GitHub snapshot covers historical activity in the main product repository, not a live metric, a productivity score, or evidence that an outcome gate passed.",
+        "This November 4 snapshot uses GitHub repository, PR/issue search, commit pagination and Actions totals. Cumulative activity is not a productivity score, a current-code pass rate, or evidence of release approval.",
     )
     snapshot = DELIVERY_SNAPSHOT
     stats = [
@@ -500,10 +500,11 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
 
     paragraph(
         canvas,
-        f"{snapshot['plannedSprints']} outcome-gated sprints are mapped. "
+        f"{snapshot['plannedSprints']} named sprint checkpoints are mapped. "
         f"{snapshot['closedIssues']:,} issues are closed and {snapshot['openIssues']:,} remain open. "
         f"The product repository has {snapshot['workflowDefinitions']} CI workflow files; "
         f"{snapshot['successfulWorkflowRuns']:,} of {snapshot['workflowRuns']:,} historical workflow runs completed successfully. "
+        f"Of those runs, {snapshot['failedWorkflowRuns']:,} failed and {snapshot['cancelledWorkflowRuns']:,} were cancelled. "
         "These include superseded builds and are not the current-code pass rate.",
         MARGIN,
         y - 268,
@@ -539,7 +540,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
         (usable - gap) / 2,
         132,
         "Verification before completion",
-        "Focused local checks, independent review, and exact-head epic verification matter more than raw activity. Hosted browser checks are selective.",
+        "Affected code PRs now run automatic quick hosted checks; ready epic checkpoints run full suites. Browser evidence stays manual. Local tests and independent review still matter.",
         fill=SURFACE,
         accent=CORAL,
         label="Review",
@@ -714,21 +715,21 @@ def next_page(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "Prove the parent journey, not just the next PR.",
-        "The next milestones must connect product, safety, and operational evidence. The October 21 checkpoint is not a launched or real-family-ready service.",
+        "Next steps still require integrated product, safety, and operational evidence. The November 4 checkpoint is not a deployed or real-family-ready service.",
         dark=True,
     )
     data = [
         ("Finish the smaller Story Studio outcome", "Prove the profile-only plan to approved offline story through a normal protected parent journey. One fixed local demonstration is not enough.", SUN),
         ("Qualify real-family trust", "Settle provider transfer, privacy, child-safety, security, deletion, and independent release review before real family information is used.", MINT),
         ("Strengthen story quality", "Test age-fit, narrative causality, tone, consistency, review and bounded repair with fictional materials; do not overclaim certification.", MINT),
-        ("Advance the visual direction", "Build versioned themes, a stable cast, planned scenes and a controlled renderer before richer image or resemblance options.", SUN),
+        ("Finish visual and demo evidence", "Complete Sprint 4 relevance and recovery proof and Sprint 5.5 gated, colorful fictional AI demonstration. Neither is child publication.", SUN),
     ]
     for i, (title, body, accent) in enumerate(data):
         card(canvas, MARGIN + (i % 2) * 264, y - 30 - (i // 2) * 174,
              244, 150, title, body, fill=INK, accent=accent, dark=True, label="Focused next work")
     paragraph(
         canvas,
-        "Source trail: accepted sprint and design documents; reviewed October 20-21 development checkpoints; the founder's design reflection; and the dated October 21 public delivery snapshot. Public-safe summary only.",
+        "Source trail: accepted sprint and design decisions; November 3-4 fictional visual/demo and CI evidence; founder design reflections; and November 4 GitHub REST totals. Public-safe summary only.",
         MARGIN, 166, WIDTH - MARGIN * 2, SMALL_DARK,
     )
 
@@ -742,6 +743,7 @@ PAGES = [
     ("sprint-1-evidence", sprint1_evidence),
     ("sprint-2-discovery", sprint2),
     ("sprint-3-story-studio", sprint3),
+    ("sprints-4-5-5-5", later_sprints),
     ("architecture", architecture),
     ("roadmap", roadmap),
     ("delivery", delivery),
@@ -757,11 +759,11 @@ PAGES = [
 def build() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     canvas = Canvas(str(OUTPUT), pagesize=letter, pageCompression=1, invariant=1)
-    canvas.setTitle("Tiny Custom Stories - Public Project Story - October 21, 2026")
+    canvas.setTitle("Tiny Custom Stories - Public Project Story - November 4, 2026")
     canvas.setAuthor("Tiny Custom Stories")
     canvas.setSubject(
         "Public guide to the product, delivery evidence, Child Map and data-driven Discovery, "
-        "Story Studio synthetic evidence, capability architecture, design lessons, roadmap, and open questions."
+        "Story Studio and visual-story synthetic evidence, public demo roadmap, refreshed CI delivery, design lessons, and open questions."
     )
     canvas.setCreator("Tiny Custom Stories public project story generator")
     total = len(PAGES)
