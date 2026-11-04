@@ -1324,8 +1324,8 @@ function StoryHowWeBuild() {
             <p>
               We first cut costly hosted checks to recover the Actions budget.
               On November 3 we brought automatic CI back for affected code PRs:
-              lightweight checks run on normal tasks, fuller suites run on
-              ready epic checkpoints, and browser runs remain manual. A
+              lightweight checks run on normal tasks, fuller suites run on ready
+              epic checkpoints, and browser runs remain manual. A
               documentation-only PR may correctly have no product workflow.
             </p>
           </article>
@@ -1549,9 +1549,9 @@ function StoryLibrary() {
             </h2>
             <p>
               The portable 18-page dossier now reflects the November 4 public
-              checkpoint, including sprint and delivery evidence. The
-              responsive site remains the best place for the evolving story,
-              accessible navigation, and later updates.
+              checkpoint, including sprint and delivery evidence. The responsive
+              site remains the best place for the evolving story, accessible
+              navigation, and later updates.
             </p>
           </div>
           <a
@@ -2058,11 +2058,12 @@ function BuildActivity() {
             {deliverySnapshot.workflowRunsSnapshotDate}:{' '}
             {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
             {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
-            completed successfully; {deliverySnapshot.failedWorkflowRuns.toLocaleString()}{' '}
-            failed and {deliverySnapshot.cancelledWorkflowRuns.toLocaleString()}{' '}
-            were cancelled. These are repository-wide historical outcomes,
-            including superseded runs, not a pass rate for current code,
-            evidence of merged quality, or a measure of product readiness.
+            completed successfully;{' '}
+            {deliverySnapshot.failedWorkflowRuns.toLocaleString()} failed and{' '}
+            {deliverySnapshot.cancelledWorkflowRuns.toLocaleString()} were
+            cancelled. These are repository-wide historical outcomes, including
+            superseded runs, not a pass rate for current code, evidence of
+            merged quality, or a measure of product readiness.
           </p>
         </article>
       </div>
@@ -2073,10 +2074,10 @@ function BuildActivity() {
         and Actions history were checked on November 4, 2026 (UTC). Commits
         include all reachable development history, including older merged
         ancestry, not just newly written code. Epic-branch PRs may not have
-        reached development. Cancelled workflow runs often represent
-        superseded work, not a failed code revision. No CI totals are a
-        product-release pass rate. This public site never queries the
-        private repository or exposes a GitHub token in a visitor's browser.
+        reached development. Cancelled workflow runs often represent superseded
+        work, not a failed code revision. No CI totals are a product-release
+        pass rate. This public site never queries the private repository or
+        exposes a GitHub token in a visitor's browser.
       </p>
     </section>
   );
@@ -2229,9 +2230,9 @@ function HowWeBuild() {
               Affected code PRs now run lightweight hosted checks automatically
               on the exact PR revision, alongside local verification and
               independent review. Ready epic-to-development checkpoints run
-              fuller affected suites instead. Missing, stale, skipped, or
-              failed required checks must not be treated as passing. Browser
-              evidence remains manual and proportionate to risk.
+              fuller affected suites instead. Missing, stale, skipped, or failed
+              required checks must not be treated as passing. Browser evidence
+              remains manual and proportionate to risk.
             </li>
           </ul>
         </div>

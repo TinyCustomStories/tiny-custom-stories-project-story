@@ -460,9 +460,15 @@ describe('project story site', () => {
     expect(content().getByText('Public-story CI')).toBeTruthy();
     expect(content().getByText(/257/)).toBeTruthy();
     expect(content().getByText(/333/)).toBeTruthy();
-    expect(content().getByText(/automatic for PRs touching frontend paths/i)).toBeTruthy();
+    expect(
+      content().getByText(/automatic for PRs touching frontend paths/i),
+    ).toBeTruthy();
     expect(content().getByText(/quick pinned \.NET unit tests/i)).toBeTruthy();
-    expect(content().getByText(/chromium and historical visual evidence stay manual/i)).toBeTruthy();
+    expect(
+      content().getByText(
+        /chromium and historical visual evidence stay manual/i,
+      ),
+    ).toBeTruthy();
     expect(screen.queryByText('We ran too much browser CI')).toBeNull();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
