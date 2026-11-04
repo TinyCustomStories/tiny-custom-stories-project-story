@@ -19,12 +19,49 @@ export type PublicEntry = {
 
 export type Milestone = {
   title: string;
+  number?: string;
   state: string;
   status: KnowledgeStatus;
   note: string;
 };
 
 export const publicEntries: PublicEntry[] = [
+  {
+    title: 'Sprint 5.5 starts with fictional Ari, not a visitor account',
+    summary:
+      'The public pre-login demonstration is intended to reveal the value of a living Child Map through fixed fictional Ari memories, two bounded story choices, and a fresh cover plus ten AI-written pages when centrally admitted. Its early example-only shell exposed gaps in homepage discoverability, Child Map presentation, storybook color, and real generation. Strict anonymous rate, concurrency, and hard global spend limits, honest example fallback, no free-text, no family-data access, and no saving are acceptance requirements, not a completed public AI launch.',
+    category: 'Sprint 5.5',
+    date: '2026-11-04',
+    status: 'Confirmed decision',
+    source: 'November 3–4 public-demo product requirements and observed founder review',
+    related: ['Fictional Ari living Child Map', 'Two bounded choices', 'Fresh AI not yet accepted', 'Visual storybook and abuse gates open'],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Sprint 4 reached a narrow illustrated approval and reopen proof',
+    summary:
+      'A November 3 development-only synthetic parent integration on an epic branch produced a cover and ten reusable code-built drawings, recovered review state, and approved and reopened an immutable text-and-visual bundle. This does not pass the final visual relevance, partial-failure, family/deletion, limits, development checkpoint, or child-publication gates.',
+    category: 'Sprint 4',
+    date: '2026-11-03',
+    status: 'Verified fact',
+    source: 'November 3 visual integration and acceptance-gate evidence',
+    related: ['Eleven code-built drawings', 'Recovered protected approval', 'Outcome and publication remain open'],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
+  {
+    title: 'Sprint 5 separates parent approval from child publication',
+    summary:
+      'The accepted later child-facing outcome requires explicit publication of an approved immutable bundle, a cover-led read-only library, and a calm responsive ten-page reader. The protected story projection, changed-visibility handling, and integrated child-reader evidence remain open. They are not prerequisites for separately qualified first text-only Alpha testing.',
+    category: 'Sprint 5',
+    date: '2026-11-03',
+    status: 'Confirmed decision',
+    source: 'Accepted child library/reader scope and November 3 capability-gated Alpha sequencing',
+    related: ['Separate publication authority', 'Read-only approved stories', 'Child-facing outcome remains open'],
+    reviewStatus: 'Founder approved for public sharing',
+    safeToPublish: true,
+  },
   {
     title: 'Design philosophy became a reusable development foundation',
     summary:
@@ -560,21 +597,29 @@ export const milestones: Milestone[] = [
   },
   {
     title: 'Sprint 4 - Visual Theme System',
-    state: 'Visual plan accepted; synthetic groundwork underway',
-    status: 'Confirmed decision',
-    note: 'Versioned theme, cast, structured scenes, controlled rendering, and parent review are the accepted direction. Two fictional books and local SVG measurements are early epic-branch groundwork, not the full visual experience or a passed Sprint 4 outcome. Richer renderers and unresolved release evidence remain separately gated.',
+    state: 'Protected synthetic visual approval demonstrated; outcome gate open',
+    status: 'Verified fact',
+    note: 'The accepted versioned theme, recurring cast, structured scene plans, controlled rendering, and parent review now have narrow proof: one fictional cover plus ten code-built drawings were saved, recovered, approved, and reopened on an integration epic branch by November 3. Scene relevance, failure/restore, family/deletion evidence, measurements, and the reviewed development checkpoint are not complete. No child publication.',
   },
   {
     title: 'Sprint 5 - Child library and reader',
-    state: 'Later outcome gate',
-    status: 'Proposal',
-    note: 'Approved stories can be made child-visible and read page by page on a responsive website.',
+    state: 'Accepted later outcome; child-reader gate open',
+    status: 'Confirmed decision',
+    note: 'Explicit parent publication, a child-safe approved-story projection, a recognizable cover-led library, and a calm responsive ten-page reader remain separately gated after Sprint 4 approval. First text-only invite-only Alpha testing can be considered separately after applicable release clearance.',
+  },
+  {
+    title: 'Sprint 5.5 - Pre-login AI story demo',
+    number: '05.5',
+    state: 'Example-only UI exists; fresh-AI and visual acceptance open',
+    status: 'Verified fact',
+    note: 'A visitor should meet a believable fictional Ari Child Map, choose from fixed ideas and moods, and see a genuinely new AI story only when anonymous rate/concurrency and hard global cost gates allow it. The early shell lacks accepted end-to-end AI proof, homepage discovery, rich Child Map presentation, and colorful shared storybook pages. A clearly labeled cached example must work with no model call. No visitor saving or family-data access.',
   },
   {
     title: 'Sprint 6 - Alpha safety and release readiness',
-    state: 'Later outcome gate',
-    status: 'Proposal',
-    note: 'Privacy, content safety, security, reliability, deployment, acceptance evidence, and real-world learning support a small private Alpha.',
+    number: '06',
+    state: 'Restricted staging and invite-only Alpha increments separately gated',
+    status: 'Confirmed decision',
+    note: 'Restricted fictional-data engineering staging can progress independently of unfinished later sprints; real-family text-only invitations require their own verified access, privacy, child-safety, provider, deletion, and deployment evidence. Neither staging nor a public demo equals an approved private Alpha or completed full parent-to-child outcome.',
   },
 ];
 
