@@ -505,7 +505,7 @@ describe('project story site', () => {
     renderBuilder();
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
     expect(content().getByText(/The new integration rhythm/i)).toBeTruthy();
-    expect(screen.getAllByText(/manually/i).length).toBeGreaterThan(0);
+    expect(content().getByText(/affected code PRs now run lightweight hosted checks automatically/i)).toBeTruthy();
     expect(content().getByText(/Tasks live inside epics/i)).toBeTruthy();
     fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
     expect(
