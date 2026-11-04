@@ -2598,6 +2598,10 @@ function Roadmap() {
           review remains a later gate. Sprint 3 authoring work may proceed with
           synthetic inputs while Sprint 1’s gate remains open; that exception
           does not make Sprint 1, Sprint 3, or any release gate complete.
+          Sprint 4's local visual proof, Sprint 5's later reader, and Sprint
+          5.5's in-progress anonymous demo have separate outcome gates.
+          Restricted fictional-data staging and invite-only family Alpha
+          are separately capability-gated, not automatically released.
         </p>
       </PageIntro>
 
@@ -2638,10 +2642,15 @@ function Roadmap() {
         </div>
 
         <h2>Outcome gates by sprint</h2>
+        <p>
+          Sprint 5.5 is a deliberate insert between the child library and
+          release work, not a renumbering of Sprint 6. The October 21
+          GitHub activity snapshot remains a dated historical measurement.
+        </p>
         <ol className="roadmap-list">
           {milestones.map((milestone, index) => (
             <li key={milestone.title}>
-              <span>{String(index).padStart(2, '0')}</span>
+              <span>{milestone.number ?? String(index).padStart(2, '0')}</span>
               <div>
                 <h3>{milestone.title}</h3>
                 <p>{milestone.note}</p>
