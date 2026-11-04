@@ -278,7 +278,7 @@ describe('project story site', () => {
     ).toBeGreaterThan(0);
   });
 
-  it('groups Sprint 1, 2, and 3 together instead of privileging one in the header', () => {
+  it('groups all six sprint chapters together instead of privileging one in the header', () => {
     renderBuilder();
 
     expect(screen.queryByRole('link', { name: 'Sprint 1' })).toBeNull();
@@ -290,6 +290,9 @@ describe('project story site', () => {
     expect(screen.getByRole('link', { name: /Read Sprint 1/i })).toBeTruthy();
     expect(screen.getByRole('link', { name: /Read Sprint 2/i })).toBeTruthy();
     expect(screen.getByRole('link', { name: /Read Sprint 3/i })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Read Sprint 4/i })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Read Sprint 5 →/i })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /Read Sprint 5.5/i })).toBeTruthy();
 
     fireEvent.click(screen.getByRole('link', { name: /Read Sprint 2/i }));
     expect(
@@ -307,6 +310,17 @@ describe('project story site', () => {
         name: /story studio is growing around reversible work/i,
       }),
     ).toBeTruthy();
+  });
+
+  it.each([
+    ['/sprint-four', /ten drawings are not yet a visual story/i, /outcome gate is still open/i],
+    ['/sprint-five', /an approved story still needs a bookshelf/i, /not yet demonstrated/i],
+    ['/sprint-five-point-five', /show the magic before asking anyone to sign in/i, /fresh-ai and visual acceptance gates remain open/i],
+  ])('explains %s with honest outcome status', (path, title, gate) => {
+    window.history.replaceState({}, '', `#${path}`);
+    renderBuilder();
+    expect(screen.getByRole('heading', { name: title })).toBeTruthy();
+    expect(content().getByRole('heading', { name: gate })).toBeTruthy();
   });
 
   it('states the Sprint 1 gate accurately and preserves its legacy route', () => {
@@ -354,10 +368,13 @@ describe('project story site', () => {
     expect(content().getByText('Sprint 4 - Visual Theme System')).toBeTruthy();
     expect(
       content().getByText(
-        /Visual plan accepted; synthetic groundwork underway/i,
+        /Protected synthetic visual approval demonstrated; outcome gate open/i,
       ),
     ).toBeTruthy();
-    expect(screen.getAllByText('Proposal').length).toBeGreaterThan(0);
+    expect(content().getByText('Sprint 5 - Child library and reader')).toBeTruthy();
+    expect(content().getByText('Sprint 5.5 - Pre-login AI story demo')).toBeTruthy();
+    expect(content().getByText('Sprint 6 - Alpha safety and release readiness')).toBeTruthy();
+    expect(content().getByText('05.5')).toBeTruthy();
   });
 
   it('shows privacy planning in both reading modes', () => {
