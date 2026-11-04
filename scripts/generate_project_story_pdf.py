@@ -206,7 +206,7 @@ def rows_page(canvas: Canvas, total: int, n: int, section: str, title: str,
 
 
 def cover(canvas: Canvas, n: int, total: int) -> None:
-    page_base(canvas, n, total, "October 21, 2026 edition", INK, dark=True)
+    page_base(canvas, n, total, "November 4, 2026 edition", INK, dark=True)
     canvas.setFillColor(CORAL)
     canvas.circle(WIDTH - 112, HEIGHT - 138, 58, fill=1, stroke=0)
     canvas.setFillColor(SUN)
@@ -222,7 +222,7 @@ def cover(canvas: Canvas, n: int, total: int) -> None:
     )
     paragraph(
         canvas,
-        "An October 21 checkpoint: demonstrated synthetic Child Map and Discovery, a bounded fictional Story Studio trial, new design lessons, transparent delivery evidence, and the gates still open before real-family Alpha.",
+        "A November 4 checkpoint: demonstrated synthetic Child Map and Discovery, protected fictional Story Studio and visual-story proofs, a still-open public AI demo, and newly verified CI and delivery evidence. No real-family release is claimed.",
         MARGIN, 414, 410,
         style("cover-copy", size=12.5, leading=18.5, color=SURFACE),
     )
@@ -240,7 +240,7 @@ def status(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "More integrated evidence. The Alpha gate is still open.",
-        "Sprint 0 is demonstrated. Sprint 1 remains evidence-gated. Sprint 2 passed its accepted synthetic/local outcome on October 4. Sprint 3 is advancing toward a smaller fictional checkpoint.",
+        "Sprint 2 passed its synthetic/local outcome. Sprint 3 has narrow fictional integration evidence; Sprint 4 has local visual approval/reopen proof. Sprint 5 and the Ari public AI demo remain open.",
     )
     card(
         canvas, MARGIN, y - 34, 242, 210,
@@ -256,7 +256,7 @@ def status(canvas: Canvas, n: int, total: int) -> None:
     )
     paragraph(
         canvas,
-        "A transient AI candidate is not an approved story. A fixed local demonstration is not permission to transfer family data or a passed private Alpha.",
+        "A local fictional visual-story proof is not child publication. Neither a demo shell nor restored hosted CI means the private Alpha or real-family release gate has passed.",
         MARGIN, 220, WIDTH - MARGIN * 2,
         style("status-quote", font=DISPLAY_BOLD, size=15.5, leading=20.5, color=PLUM),
     )
@@ -371,6 +371,22 @@ def sprint3(canvas: Canvas, n: int, total: int) -> None:
     )
 
 
+def later_sprints(canvas: Canvas, n: int, total: int) -> None:
+    rows_page(
+        canvas, total, n, "Sprints 4, 5 and 5.5",
+        "Pictures, a bookshelf, and a first glimpse of AI.",
+        "Three distinct outcomes follow Story Studio. Their status differs: one narrow visual proof, one child reader still ahead, and one early visitor demo that has not passed live-AI acceptance.",
+        [
+            ("01", "Sprint 4: visual language", "One versioned theme, recurring visual cast, planned scenes, and reusable code-built SVG rendering aim for a coherent cover and ten pages."),
+            ("02", "A protected visual proof", "By November 3, one fictional story had eleven drawings, saved review, recovered approval, and protected reopen on an integration epic branch."),
+            ("03", "Sprint 4 still open", "Story relevance, continuity, failures, family/deletion checks, performance bounds, and the final development checkpoint remain outstanding."),
+            ("04", "Sprint 5: child bookshelf", "Only parent-published approved bundles should appear in the child library and calm ten-page reader. Approval alone is not publication."),
+            ("05", "Sprint 5.5: meet Ari", "The planned pre-login demo uses a living fictional Child Map and two bounded story choices. Its example-only early interface is not fresh-AI proof."),
+            ("06", "Safe public AI is still gated", "Anonymous rate/concurrency/spend caps, honest cached fallback, no free text or saving, and colorful shared storybook pages need acceptance evidence."),
+        ],
+    )
+
+
 def architecture(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Capability architecture")
     y = page_title(
@@ -416,19 +432,20 @@ def roadmap(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Outcome-gated roadmap")
     y = page_title(
         canvas,
-        "Seven outcomes. Different levels of evidence.",
-        "Sprint 2's synthetic/local milestone is demonstrated. Sprint 3 has bounded fictional experiments and an open end-to-end outcome. Sprint 4 has an accepted Visual Theme System direction, not a finished visual layer.",
+        "Eight checkpoints. Different levels of evidence.",
+        "The inserted Sprint 5.5 public demo sits between the child reader and private Alpha. Local sprint proofs, automatic PR CI and staged testing do not close the relevant acceptance or release gates.",
     )
     items = [
         ("00", "Foundation", "Proven", MINT),
         ("01", "Accounts + parent mode", "Gate open", CORAL),
         ("02", "Child Map + Discovery", "Synthetic", MINT),
         ("03", "Story Studio", "Partial", SUN),
-        ("04", "Visual Theme System", "Planned", LAVENDER),
-        ("05", "Child library + reader", "Later", LAVENDER),
-        ("06", "Alpha safety + release", "Later", LAVENDER),
+        ("04", "Visual Theme System", "Local proof", SUN),
+        ("05", "Child library + reader", "Open", LAVENDER),
+        ("5.5", "Pre-login AI demo", "Open", CORAL),
+        ("06", "Alpha safety + release", "Gated", LAVENDER),
     ]
-    cursor = y - 26
+    cursor = y - 23
     for number, title, state, fill in items:
         canvas.setStrokeColor(LINE)
         canvas.line(MARGIN, cursor, WIDTH - MARGIN, cursor)
@@ -437,11 +454,11 @@ def roadmap(canvas: Canvas, n: int, total: int) -> None:
         canvas.drawString(MARGIN, cursor - 24, number)
         paragraph(canvas, title, MARGIN + 50, cursor - 12, 290, CARD_TITLE)
         pill(canvas, state, WIDTH - MARGIN - 100, cursor - 30, fill, INK)
-        cursor -= 62
+        cursor -= 54
     paragraph(
         canvas,
-        "One reviewed epic slice is not a finished sprint. Controlled visuals, staging, provider policy, and qualified release reviews remain bounded, separately evidenced decisions.",
-        MARGIN, 118, WIDTH - MARGIN * 2, SMALL,
+        "One reviewed slice is not a finished sprint. Fiction-only staging and any later invitation-only real-family testing carry distinct capability-specific clearance requirements.",
+        MARGIN, 75, WIDTH - MARGIN * 2, SMALL,
     )
 
 
