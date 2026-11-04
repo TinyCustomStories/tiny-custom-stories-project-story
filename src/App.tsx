@@ -205,7 +205,7 @@ function Home() {
       <section className="hero section" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            A public project story · updated October 28, 2026
+            A public project story · updated November 4, 2026
           </p>
           <h1 id="hero-title">
             Stories built <span className="scribble">with care,</span> not just
@@ -216,8 +216,9 @@ function Home() {
             parent-controlled learning product with a demonstrated synthetic and
             local Child Map outcome, data-driven Discovery, a protected Story
             Studio with editing and revision flows, a gated fictional-story
-            preview experiment, and an accepted Visual Theme System direction
-            for the future visual layer.
+            preview experiment, a synthetic illustrated-story approval
+            checkpoint, and work on a bounded pre-login AI demo. Child-library
+            publication and complete Alpha approval remain unfinished.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" to="/development">
@@ -279,6 +280,13 @@ function Home() {
           real application storage. Neither proves the complete accepted parent
           journey or a safe live-model story. Epic integration, family release
           gates, and the separate Visual Theme System outcome remain open.
+        </p>
+        <p>
+          November 4 update: Sprint 4 has a local protected visual-version
+          approval/reopen proof, but its integrated outcome remains open.
+          Sprint 5's child library and reader are later work. Sprint 5.5's
+          pre-login Ari demo has an early shell; fresh AI, storybook color,
+          abuse limits, and complete journey acceptance are not yet proved.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -377,7 +385,7 @@ function StoryHome() {
       <section className="hero section" aria-labelledby="story-hero-title">
         <div className="hero-copy">
           <p className="eyebrow">
-            Story mode · a public project story · October 2026
+            Story mode · a public project story · November 2026
           </p>
           <h1 id="story-hero-title">
             Stories that know more than your kid’s name.
@@ -442,6 +450,12 @@ function StoryHome() {
           synthetic local approval/reopen exercise has also been observed, but
           the accepted profile-only offline journey and real-family release
           remain unverified.
+        </p>
+        <p>
+          The next chapters are visible too: a Sprint 4 illustrated-story
+          milestone, a still-open Sprint 5 child reader, and a Sprint 5.5
+          public demo being built around fictional Ari, bounded AI use, and
+          a more colorful reading experience.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -913,8 +927,20 @@ function StoryDevelopment() {
       'Two fictional books let us test geometric doodles across a cover and ten pages each. It is cheaper and easier to control than one image prompt per page, but long passages and unusual scenes still need better layouts.',
     ],
     [
+      'One illustrated-story journey became recoverable',
+      'Sprint 4 now has a local fictional cover-and-ten-page proof: review, recovery, immutable approval, and protected reopen. It still needs visual relevance and integration evidence before the full outcome is passed.',
+    ],
+    [
+      'The child bookshelf remained a different job',
+      'Sprint 5 protects the difference between a parent approving a story and a child being allowed to read it. Publication, the calm library, and the page reader stay behind their own evidence gates.',
+    ],
+    [
+      'A demo should explain the product without an account',
+      'Sprint 5.5 is testing a fictional Ari Child Map with a couple of story choices and gated fresh AI. The early demo exposed an important gap: color on controls is not the same as a colorful storybook.',
+    ],
+    [
       'The next frontier is less theoretical',
-      'The project is now approaching the things that feel more real: live AI, staging, real users, operational cost, provider boundaries, safety review, and discovering which assumptions survive contact with people.',
+      'Staging and invite-only testing can be pursued as separately gated increments; neither an attractive demo nor synthetic evidence permits real-family use without release checks.',
     ],
   ];
 
@@ -1003,6 +1029,37 @@ function StoryDevelopment() {
               A growing backlog led to a scope reset: finish one fictional
               plan-to-approved-story journey before reopening optional context
               and advanced revision capabilities.
+            </p>
+            <b>Read the technical chapter →</b>
+          </Link>
+          <Link to="/sprint-four" className="sprint-chapter-card">
+            <span>04</span>
+            <p className="eyebrow">Coherent visual stories</p>
+            <h3>Sprint 4</h3>
+            <p>
+              Reusable doodles became versioned themes, scenes, and parent
+              review. One fictional illustrated book was approved and reopened;
+              the full evidence gate is still open.
+            </p>
+            <b>Read the technical chapter →</b>
+          </Link>
+          <Link to="/sprint-five" className="sprint-chapter-card">
+            <span>05</span>
+            <p className="eyebrow">A calm child bookshelf</p>
+            <h3>Sprint 5</h3>
+            <p>
+              Approved stories still need explicit publication, a protected
+              library, and a clear ten-page reader. This is later work.
+            </p>
+            <b>Read the technical chapter →</b>
+          </Link>
+          <Link to="/sprint-five-point-five" className="sprint-chapter-card">
+            <span>05.5</span>
+            <p className="eyebrow">Try before signup</p>
+            <h3>Sprint 5.5</h3>
+            <p>
+              Meet fictional Ari, choose an idea and mood, and discover why
+              a living Child Map matters. The fresh-AI demo is not yet accepted.
             </p>
             <b>Read the technical chapter →</b>
           </Link>
@@ -1753,8 +1810,16 @@ function Development() {
       'The accepted intermediate target remains profile-only Fun & Fantasy with deterministic offline text, exact-revision approval, and protected reopen. Epic-branch slices exist. October 20 development checkpoints added a separate default-off fictional preview with idea/feel choices; an October 21 local fixed-story exercise reached persisted approval/reopen. Neither is full accepted end-to-end proof. Optional context and advanced editing remain deferred from that intermediate checkpoint.',
     ],
     [
-      'Sprint 4 · visual direction accepted, early doodle tests underway',
-      'We have tested reusable code-built doodles in two fictional books and measured local SVG output in a visual-foundation epic branch. That groundwork does not complete the planned versioned theme, cast, scene plans, page review, or Sprint 4 outcome. Richer image, likeness, and print paths remain separate decisions.',
+      'Sprint 4 · protected illustrated-story checkpoint proved; gate open',
+      'Following early SVG/doodle trials, a November 3 local synthetic exercise produced one cover and ten drawings, recovered review state, pinned immutable approval, and reopened the approved version. Story relevance, partial-failure and isolation evidence, measurements, and development integration remain open.',
+    ],
+    [
+      'Sprint 5 · child library and reader are later work',
+      'Explicit publication, a read-only cover-led library, and a ten-page reader must consume a pinned approved text-and-visual bundle. These are not proved by Sprint 4 approval and remain open.',
+    ],
+    [
+      'Sprint 5.5 · public Ari AI demo is in progress',
+      'An early logged-out example shell exists. The accepted visitor journey adds a living fictional Child Map, two bounded choices, gated fresh AI, truthful fallback, visually colorful shared storybook pages, and signup handoff. The full demo, abuse limits, and design acceptance remain open.',
     ],
   ];
 
@@ -1775,7 +1840,10 @@ function Development() {
           story application, and approved-version reading. A separate
           Development-only fictional preview with idea/feel choices and a narrow
           fixed-story local approval/reopen exercise now add evidence, but the
-          full accepted outcome still needs proof.
+          full accepted outcome still needs proof. Beyond that chapter,
+          Sprint 4 now has a narrow synthetic illustrated-story approval/reopen
+          proof, Sprint 5 remains a later child reader, and Sprint 5.5 is the
+          unfinished logged-out Ari AI demonstration.
         </p>
       </PageIntro>
 
@@ -1793,14 +1861,13 @@ function Development() {
         <div className="sprint-chapter-intro">
           <p className="eyebrow">Sprint chapters</p>
           <h2 data-reading-key="sprint-record">
-            Three sprints, three different evidence boundaries.
+            Six chapters, different kinds of evidence.
           </h2>
           <p>
-            Sprint 1 keeps its original deep link, but it no longer gets special
-            treatment in the main header. Sprint 1, 2, and 3 live together here
-            as the current implementation chapters. Sprint 4's newly accepted
-            Visual Theme System direction is recorded above and in the roadmap,
-            but it is not presented as an active implementation chapter.
+            Sprint 1 keeps its original deep link. All chapters now live here,
+            including the visual-story work in Sprint 4, the planned Sprint 5
+            bookshelf, and the deliberately inserted Sprint 5.5 public demo.
+            The labels distinguish a local proof from a finished capability.
           </p>
         </div>
 
@@ -1836,6 +1903,38 @@ function Development() {
               unverified.
             </p>
             <b>Read Sprint 3 →</b>
+          </Link>
+          <Link to="/sprint-four" className="sprint-chapter-card">
+            <span>04</span>
+            <p className="eyebrow">Protected visual proof · gate open</p>
+            <h3>Sprint 4</h3>
+            <p>
+              One fictional illustrated story has a saved visual version and
+              immutable approval/reopen evidence. Relevance and integration
+              gates remain open.
+            </p>
+            <b>Read Sprint 4 →</b>
+          </Link>
+          <Link to="/sprint-five" className="sprint-chapter-card">
+            <span>05</span>
+            <p className="eyebrow">Child-facing outcome still open</p>
+            <h3>Sprint 5</h3>
+            <p>
+              Explicit publication, the safe responsive story library, and
+              the shared ten-page reader are later Alpha capabilities.
+            </p>
+            <b>Read Sprint 5 →</b>
+          </Link>
+          <Link to="/sprint-five-point-five" className="sprint-chapter-card">
+            <span>05.5</span>
+            <p className="eyebrow">Public discovery checkpoint underway</p>
+            <h3>Sprint 5.5</h3>
+            <p>
+              Fictional Ari, controlled choices, anonymous AI safeguards,
+              truthful fallback, and colorful storybook reading. Early shell
+              only; full outcome remains open.
+            </p>
+            <b>Read Sprint 5.5 →</b>
           </Link>
         </div>
 
