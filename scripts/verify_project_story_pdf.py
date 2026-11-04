@@ -12,17 +12,18 @@ from PIL import Image, ImageDraw
 ROOT = Path(__file__).resolve().parents[1]
 PDF = ROOT / "public" / "documents" / "tiny-custom-stories-project-dossier.pdf"
 PREVIEW = ROOT / "build" / "dossier-contact-sheet.png"
-EXPECTED_PAGES = 17
+EXPECTED_PAGES = 18
 
 REQUIRED = {
-    0: ("october 21, 2026 edition", "17 pages"),
-    1: ("sprint 2", "synthetic/local"),
+    0: ("november 4, 2026 edition", "18 pages"),
+    1: ("sprint 4", "local"),
     6: ("the child map outcome was demonstrated locally",),
     7: ("a working slice is progress", "outcome still open"),
-    9: ("visual theme system",),
-    10: ("3,803", "813", "775", "1,668"),
-    13: ("a design philosophy became a development tool",),
-    16: ("prove the parent journey",),
+    8: ("sprint 4", "sprint 5.5", "fresh-ai"),
+    10: ("pre-login ai demo",),
+    11: ("3,977", "968", "928", "1,971"),
+    14: ("a design philosophy became a development tool",),
+    17: ("prove the parent journey",),
 }
 
 
