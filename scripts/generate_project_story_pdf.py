@@ -206,7 +206,7 @@ def rows_page(canvas: Canvas, total: int, n: int, section: str, title: str,
 
 
 def cover(canvas: Canvas, n: int, total: int) -> None:
-    page_base(canvas, n, total, "October 21, 2026 edition", INK, dark=True)
+    page_base(canvas, n, total, "November 4, 2026 edition", INK, dark=True)
     canvas.setFillColor(CORAL)
     canvas.circle(WIDTH - 112, HEIGHT - 138, 58, fill=1, stroke=0)
     canvas.setFillColor(SUN)
@@ -222,7 +222,7 @@ def cover(canvas: Canvas, n: int, total: int) -> None:
     )
     paragraph(
         canvas,
-        "An October 21 checkpoint: demonstrated synthetic Child Map and Discovery, a bounded fictional Story Studio trial, new design lessons, transparent delivery evidence, and the gates still open before real-family Alpha.",
+        "A November 4 checkpoint: demonstrated synthetic Child Map and Discovery, protected fictional Story Studio and visual-story proofs, a still-open public AI demo, and newly verified CI and delivery evidence. No real-family release is claimed.",
         MARGIN, 414, 410,
         style("cover-copy", size=12.5, leading=18.5, color=SURFACE),
     )
@@ -240,7 +240,7 @@ def status(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "More integrated evidence. The Alpha gate is still open.",
-        "Sprint 0 is demonstrated. Sprint 1 remains evidence-gated. Sprint 2 passed its accepted synthetic/local outcome on October 4. Sprint 3 is advancing toward a smaller fictional checkpoint.",
+        "Sprint 2 passed its synthetic/local outcome. Sprint 3 has narrow fictional integration evidence; Sprint 4 has local visual approval/reopen proof. Sprint 5 and the Ari public AI demo remain open.",
     )
     card(
         canvas, MARGIN, y - 34, 242, 210,
@@ -256,7 +256,7 @@ def status(canvas: Canvas, n: int, total: int) -> None:
     )
     paragraph(
         canvas,
-        "A transient AI candidate is not an approved story. A fixed local demonstration is not permission to transfer family data or a passed private Alpha.",
+        "A local fictional visual-story proof is not child publication. Neither a demo shell nor restored hosted CI means the private Alpha or real-family release gate has passed.",
         MARGIN, 220, WIDTH - MARGIN * 2,
         style("status-quote", font=DISPLAY_BOLD, size=15.5, leading=20.5, color=PLUM),
     )
@@ -371,6 +371,22 @@ def sprint3(canvas: Canvas, n: int, total: int) -> None:
     )
 
 
+def later_sprints(canvas: Canvas, n: int, total: int) -> None:
+    rows_page(
+        canvas, total, n, "Sprints 4, 5 and 5.5",
+        "Pictures, a bookshelf, and a first glimpse of AI.",
+        "Three distinct outcomes follow Story Studio. Their status differs: one narrow visual proof, one child reader still ahead, and one early visitor demo that has not passed live-AI acceptance.",
+        [
+            ("01", "Sprint 4: visual language", "One versioned theme, recurring visual cast, planned scenes, and reusable code-built SVG rendering aim for a coherent cover and ten pages."),
+            ("02", "A protected visual proof", "By November 3, one fictional story had eleven drawings, saved review, recovered approval, and protected reopen on an integration epic branch."),
+            ("03", "Sprint 4 still open", "Story relevance, continuity, failures, family/deletion checks, performance bounds, and the final development checkpoint remain outstanding."),
+            ("04", "Sprint 5: child bookshelf", "Only parent-published approved bundles should appear in the child library and calm ten-page reader. Approval alone is not publication."),
+            ("05", "Sprint 5.5: meet Ari", "The planned pre-login demo uses a living fictional Child Map and two bounded story choices. Its example-only early interface is not fresh-AI proof."),
+            ("06", "Safe public AI is still gated", "Anonymous rate/concurrency/spend caps, honest cached fallback, no free text or saving, and colorful shared storybook pages need acceptance evidence."),
+        ],
+    )
+
+
 def architecture(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Capability architecture")
     y = page_title(
@@ -416,19 +432,20 @@ def roadmap(canvas: Canvas, n: int, total: int) -> None:
     page_base(canvas, n, total, "Outcome-gated roadmap")
     y = page_title(
         canvas,
-        "Seven outcomes. Different levels of evidence.",
-        "Sprint 2's synthetic/local milestone is demonstrated. Sprint 3 has bounded fictional experiments and an open end-to-end outcome. Sprint 4 has an accepted Visual Theme System direction, not a finished visual layer.",
+        "Eight checkpoints. Different levels of evidence.",
+        "The inserted Sprint 5.5 public demo sits between the child reader and private Alpha. Local sprint proofs, automatic PR CI and staged testing do not close the relevant acceptance or release gates.",
     )
     items = [
         ("00", "Foundation", "Proven", MINT),
         ("01", "Accounts + parent mode", "Gate open", CORAL),
         ("02", "Child Map + Discovery", "Synthetic", MINT),
         ("03", "Story Studio", "Partial", SUN),
-        ("04", "Visual Theme System", "Planned", LAVENDER),
-        ("05", "Child library + reader", "Later", LAVENDER),
-        ("06", "Alpha safety + release", "Later", LAVENDER),
+        ("04", "Visual Theme System", "Local proof", SUN),
+        ("05", "Child library + reader", "Open", LAVENDER),
+        ("5.5", "Pre-login AI demo", "Open", CORAL),
+        ("06", "Alpha safety + release", "Gated", LAVENDER),
     ]
-    cursor = y - 26
+    cursor = y - 23
     for number, title, state, fill in items:
         canvas.setStrokeColor(LINE)
         canvas.line(MARGIN, cursor, WIDTH - MARGIN, cursor)
@@ -437,11 +454,11 @@ def roadmap(canvas: Canvas, n: int, total: int) -> None:
         canvas.drawString(MARGIN, cursor - 24, number)
         paragraph(canvas, title, MARGIN + 50, cursor - 12, 290, CARD_TITLE)
         pill(canvas, state, WIDTH - MARGIN - 100, cursor - 30, fill, INK)
-        cursor -= 62
+        cursor -= 54
     paragraph(
         canvas,
-        "One reviewed epic slice is not a finished sprint. Controlled visuals, staging, provider policy, and qualified release reviews remain bounded, separately evidenced decisions.",
-        MARGIN, 118, WIDTH - MARGIN * 2, SMALL,
+        "One reviewed slice is not a finished sprint. Fiction-only staging and any later invitation-only real-family testing carry distinct capability-specific clearance requirements.",
+        MARGIN, 75, WIDTH - MARGIN * 2, SMALL,
     )
 
 
@@ -450,7 +467,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "Work becomes evidence when its boundaries are clear.",
-        "The October 21 GitHub snapshot covers historical activity in the main product repository, not a live metric, a productivity score, or evidence that an outcome gate passed.",
+        "This November 4 snapshot uses GitHub repository, PR/issue search, commit pagination and Actions totals. Cumulative activity is not a productivity score, a current-code pass rate, or evidence of release approval.",
     )
     snapshot = DELIVERY_SNAPSHOT
     stats = [
@@ -483,10 +500,11 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
 
     paragraph(
         canvas,
-        f"{snapshot['plannedSprints']} outcome-gated sprints are mapped. "
+        f"{snapshot['plannedSprints']} named sprint checkpoints are mapped. "
         f"{snapshot['closedIssues']:,} issues are closed and {snapshot['openIssues']:,} remain open. "
         f"The product repository has {snapshot['workflowDefinitions']} CI workflow files; "
         f"{snapshot['successfulWorkflowRuns']:,} of {snapshot['workflowRuns']:,} historical workflow runs completed successfully. "
+        f"Of those runs, {snapshot['failedWorkflowRuns']:,} failed and {snapshot['cancelledWorkflowRuns']:,} were cancelled. "
         "These include superseded builds and are not the current-code pass rate.",
         MARGIN,
         y - 268,
@@ -522,7 +540,7 @@ def delivery(canvas: Canvas, n: int, total: int) -> None:
         (usable - gap) / 2,
         132,
         "Verification before completion",
-        "Focused local checks, independent review, and exact-head epic verification matter more than raw activity. Hosted browser checks are selective.",
+        "Affected code PRs now run automatic quick hosted checks; ready epic checkpoints run full suites. Browser evidence stays manual. Local tests and independent review still matter.",
         fill=SURFACE,
         accent=CORAL,
         label="Review",
@@ -697,21 +715,21 @@ def next_page(canvas: Canvas, n: int, total: int) -> None:
     y = page_title(
         canvas,
         "Prove the parent journey, not just the next PR.",
-        "The next milestones must connect product, safety, and operational evidence. The October 21 checkpoint is not a launched or real-family-ready service.",
+        "Next steps still require integrated product, safety, and operational evidence. The November 4 checkpoint is not a deployed or real-family-ready service.",
         dark=True,
     )
     data = [
         ("Finish the smaller Story Studio outcome", "Prove the profile-only plan to approved offline story through a normal protected parent journey. One fixed local demonstration is not enough.", SUN),
         ("Qualify real-family trust", "Settle provider transfer, privacy, child-safety, security, deletion, and independent release review before real family information is used.", MINT),
         ("Strengthen story quality", "Test age-fit, narrative causality, tone, consistency, review and bounded repair with fictional materials; do not overclaim certification.", MINT),
-        ("Advance the visual direction", "Build versioned themes, a stable cast, planned scenes and a controlled renderer before richer image or resemblance options.", SUN),
+        ("Finish visual and demo evidence", "Complete Sprint 4 relevance and recovery proof and Sprint 5.5 gated, colorful fictional AI demonstration. Neither is child publication.", SUN),
     ]
     for i, (title, body, accent) in enumerate(data):
         card(canvas, MARGIN + (i % 2) * 264, y - 30 - (i // 2) * 174,
              244, 150, title, body, fill=INK, accent=accent, dark=True, label="Focused next work")
     paragraph(
         canvas,
-        "Source trail: accepted sprint and design documents; reviewed October 20-21 development checkpoints; the founder's design reflection; and the dated October 21 public delivery snapshot. Public-safe summary only.",
+        "Source trail: accepted sprint and design decisions; November 3-4 fictional visual/demo and CI evidence; founder design reflections; and November 4 GitHub REST totals. Public-safe summary only.",
         MARGIN, 166, WIDTH - MARGIN * 2, SMALL_DARK,
     )
 
@@ -725,6 +743,7 @@ PAGES = [
     ("sprint-1-evidence", sprint1_evidence),
     ("sprint-2-discovery", sprint2),
     ("sprint-3-story-studio", sprint3),
+    ("sprints-4-5-5-5", later_sprints),
     ("architecture", architecture),
     ("roadmap", roadmap),
     ("delivery", delivery),
@@ -740,11 +759,11 @@ PAGES = [
 def build() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     canvas = Canvas(str(OUTPUT), pagesize=letter, pageCompression=1, invariant=1)
-    canvas.setTitle("Tiny Custom Stories - Public Project Story - October 21, 2026")
+    canvas.setTitle("Tiny Custom Stories - Public Project Story - November 4, 2026")
     canvas.setAuthor("Tiny Custom Stories")
     canvas.setSubject(
         "Public guide to the product, delivery evidence, Child Map and data-driven Discovery, "
-        "Story Studio synthetic evidence, capability architecture, design lessons, roadmap, and open questions."
+        "Story Studio and visual-story synthetic evidence, public demo roadmap, refreshed CI delivery, design lessons, and open questions."
     )
     canvas.setCreator("Tiny Custom Stories public project story generator")
     total = len(PAGES)

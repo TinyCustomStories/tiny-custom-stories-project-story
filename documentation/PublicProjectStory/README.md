@@ -1,5 +1,19 @@
 # Public Project Story documentation
 
+## November 4 delivery, CI and PDF reconciliation
+
+The static public website and its PDF have a new public-safe, dated evidence snapshot. The source is the private product repository's GitHub API; the published site does not query it or expose secrets.
+
+- **Development history:** 3,977 commits reachable on `development`, bounded by the first empty `per_page=1` commit page at 3,978. Includes older history newly reachable from merges.
+- **PRs:** 968 created, 928 merged. PR totals include epic-branch work not necessarily merged into `development`.
+- **Issues:** 597 total (486 closed / 111 open), including 516 `type:task` issues.
+- **Actions:** four workflow definitions on development; 1,971 repository-wide runs of which 1,372 succeeded, 257 failed and 333 were cancelled. These are historical run outcomes; cancelled superseded runs do not indicate a current-code failure.
+- **CI/CD:** as of November 3, affected **code** PRs automatically run lightweight frontend, backend or repository-tools checks; ready epic-to-development PRs run fuller suites on affected paths. Documentation-only PRs may have no product checks. A separate manual dispatch covers epic-level Playwright/browser evidence. Product CI has no automatic `push` trigger and does **not** deploy the application.
+- **Public site:** its own PR checks and main-branch Pages deployment are independent of product CI.
+- **PDF:** updated to an **18-page November 4** edition, with an added Sprints 4/5/5.5 page and current delivery/CI snapshot. The PDF generation test checks page count, named sections and bounded rasterized output.
+
+These values come from independently retrieved GitHub REST counts, `development` workflow YAML, and the accepted November 3 CI policy. They are not a productivity score, mergeability guarantee, product-release pass rate or a staging deployment. Historical October checkpoints below are intentionally retained as dated history.
+
 ## October 28 Moving Map Development: general-audience revision
 
 The seventh lesson names the technique **Moving Map Development (MMD)** and links to a rewritten, shareable introduction at the stable [Moving Map article route](https://tinycustomstories.github.io/tiny-custom-stories-project-story/#/articles/moving-map). The article addresses any human or AI-assisted software team, opens with a fictional pizza-ordering example, explains why shared assumptions become stale, teaches a concrete discovery/review/revalidation workflow, and relates MMD to Agile and TDD without claiming it replaces either. The Tiny Custom Stories adoption appears only in a short bottom-of-article origin note dated October 28, 2026.
@@ -14,7 +28,7 @@ The October 28 product-repository decision and merged agent guidance establish a
 
 This directory explains the public Tiny Custom Stories project-story site in a format that can be read without opening the application.
 
-The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprint 1, Sprint 2, and Sprint 3 remain grouped beneath Development story; the accepted-but-not-started Sprint 4 plan is carried in the public Decision and Roadmap records until implementation work begins.
+The public site is a multi-route single-page application with two reading modes over the same stable routes. **Story mode** is the default and explains the product, evolution, build experiment, failures, and lessons as a narrative for a general reader. **Builder mode** preserves the existing technical pages with implementation status, capability boundaries, delivery evidence, and working-record detail. Switching mode does not change the current route. Sprint 1 keeps its stable deep link, while Sprints 1, 2, 3, 4, 5, and 5.5 are grouped beneath Development story, with separate evidence and release-readiness statuses rather than inferred completion.
 
 ## October 21 fixed-layout dossier refresh
 
@@ -68,7 +82,7 @@ The public story now reflects the newest protected Studio start/setup slices, ac
 
 The Builder-mode delivery snapshot is dated **October 9, 2026**: 1,515 commits reachable from the main product `development` branch; 614 PRs created and 578 merged; 454 issues (385 task-labeled; 371 closed and 83 open); four product workflow definitions. Commit totals were validated by GitHub's development-branch commit listing, and issue/PR totals by GitHub issue-search counts. The workflow-run count remains the **October 5** historical checkpoint, not an October 9 measurement.
 
-Product task PRs no longer imply automatic hosted CI. On the accepted workflow, reviewable task changes use local checks; when an epic is ready for a reviewed checkpoint, affected non-browser suites must pass through manual dispatch on its exact final head. Browser testing is optional epic-level evidence. The separate public-story PR CI continues unchanged. These pages are not an audit of actual repository protection settings.
+At the time of the October 9 policy, product task PRs did not imply automatic hosted CI. Reviewable task changes used local checks and affected epic suites were manually dispatched. **This historical October 9 policy was superseded on November 3 by automatic, path-filtered quick checks on affected code PRs**, with fuller affected suites on ready epic checkpoints. Browser testing is optional epic-level evidence. The separate public-story PR CI continues unchanged. These pages are not an audit of actual repository protection settings.
 
 New provider wording describes **intent**, not delivery: OpenRouter is the first planned synthetic text adapter behind a founder-controlled server configuration. Story quality and real-family transfer still have distinct gates.
 

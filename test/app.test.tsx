@@ -440,24 +440,35 @@ describe('project story site', () => {
 
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
 
-    expect(content().getByText('3,803')).toBeTruthy();
-    expect(content().getByText('813')).toBeTruthy();
-    expect(content().getByText('775')).toBeTruthy();
-    expect(content().getByText('585')).toBeTruthy();
-    expect(content().getByText('506')).toBeTruthy();
+    expect(content().getByText('3,977')).toBeTruthy();
+    expect(content().getByText('968')).toBeTruthy();
+    expect(content().getByText('928')).toBeTruthy();
+    expect(content().getByText('597')).toBeTruthy();
+    expect(content().getByText('516')).toBeTruthy();
     expect(
       screen.getByRole('heading', {
-        name: 'Build activity · October 21, 2026',
+        name: 'Build activity · November 4, 2026',
       }),
     ).toBeTruthy();
     expect(content().getByText('4')).toBeTruthy();
-    expect(content().getByText(/1,121 of 1,668 recorded runs/i)).toBeTruthy();
-    expect(content().getByText(/October 21, 2026:/i)).toBeTruthy();
+    expect(content().getByText(/1,372 of 1,971 recorded runs/i)).toBeTruthy();
+    expect(content().getByText(/November 4, 2026:/i)).toBeTruthy();
     expect(content().getByText('Frontend CI')).toBeTruthy();
     expect(content().getByText('Backend CI')).toBeTruthy();
     expect(content().getByText('Repository tools CI')).toBeTruthy();
     expect(content().getByText('Browser evidence')).toBeTruthy();
     expect(content().getByText('Public-story CI')).toBeTruthy();
+    expect(content().getByText(/257/)).toBeTruthy();
+    expect(content().getByText(/333/)).toBeTruthy();
+    expect(
+      content().getByText(/automatic for PRs touching frontend paths/i),
+    ).toBeTruthy();
+    expect(content().getByText(/quick pinned \.NET unit tests/i)).toBeTruthy();
+    expect(
+      content().getByText(
+        /chromium and historical visual evidence stay manual/i,
+      ),
+    ).toBeTruthy();
     expect(screen.queryByText('We ran too much browser CI')).toBeNull();
 
     fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
@@ -494,7 +505,11 @@ describe('project story site', () => {
     renderBuilder();
     fireEvent.click(screen.getAllByRole('link', { name: 'How we build' })[0]);
     expect(content().getByText(/The new integration rhythm/i)).toBeTruthy();
-    expect(screen.getAllByText(/manually/i).length).toBeGreaterThan(0);
+    expect(
+      content().getByText(
+        /affected code PRs now run lightweight hosted checks automatically/i,
+      ),
+    ).toBeTruthy();
     expect(content().getByText(/Tasks live inside epics/i)).toBeTruthy();
     fireEvent.click(screen.getAllByRole('link', { name: 'Lessons' })[0]);
     expect(

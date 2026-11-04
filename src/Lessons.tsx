@@ -416,11 +416,13 @@ export function Lessons() {
             ))}
             {index === 1 && (
               <p className="reading-qualification">
-                Repeated hosted browser checks became expensive enough that
-                GitHub Actions stopped starting jobs. The adopted response keeps
-                task checks local, manually dispatches affected suites at final
-                epic checkpoints, and makes browser evidence optional. Actual
-                GitHub protection still applies.
+                Repeated hosted browser checks exhausted the earlier budget, and
+                GitHub Actions stopped starting jobs. We initially used local
+                task checks and manual epic CI. On November 3, we resumed
+                automatic, lightweight hosted checks on affected code PRs,
+                retaining full affected suites for ready epic checkpoints and
+                manual browser evidence. Documentation-only PRs can have no
+                runner because of path filters; an absent check is never a pass.
               </p>
             )}
             {index === 2 && (
