@@ -313,9 +313,21 @@ describe('project story site', () => {
   });
 
   it.each([
-    ['/sprint-four', /ten drawings are not yet a visual story/i, /outcome gate is still open/i],
-    ['/sprint-five', /an approved story still needs a bookshelf/i, /not yet demonstrated/i],
-    ['/sprint-five-point-five', /show the magic before asking anyone to sign in/i, /fresh-ai and visual acceptance gates remain open/i],
+    [
+      '/sprint-four',
+      /ten drawings are not yet a visual story/i,
+      /outcome gate is still open/i,
+    ],
+    [
+      '/sprint-five',
+      /an approved story still needs a bookshelf/i,
+      /not yet demonstrated/i,
+    ],
+    [
+      '/sprint-five-point-five',
+      /show the magic before asking anyone to sign in/i,
+      /fresh-ai and visual acceptance gates remain open/i,
+    ],
   ])('explains %s with honest outcome status', (path, title, gate) => {
     window.history.replaceState({}, '', `#${path}`);
     renderBuilder();
@@ -371,9 +383,15 @@ describe('project story site', () => {
         /Protected synthetic visual approval demonstrated; outcome gate open/i,
       ),
     ).toBeTruthy();
-    expect(content().getByText('Sprint 5 - Child library and reader')).toBeTruthy();
-    expect(content().getByText('Sprint 5.5 - Pre-login AI story demo')).toBeTruthy();
-    expect(content().getByText('Sprint 6 - Alpha safety and release readiness')).toBeTruthy();
+    expect(
+      content().getByText('Sprint 5 - Child library and reader'),
+    ).toBeTruthy();
+    expect(
+      content().getByText('Sprint 5.5 - Pre-login AI story demo'),
+    ).toBeTruthy();
+    expect(
+      content().getByText('Sprint 6 - Alpha safety and release readiness'),
+    ).toBeTruthy();
     expect(content().getByText('05.5')).toBeTruthy();
   });
 

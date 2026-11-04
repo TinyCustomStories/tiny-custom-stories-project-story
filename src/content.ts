@@ -33,8 +33,14 @@ export const publicEntries: PublicEntry[] = [
     category: 'Sprint 5.5',
     date: '2026-11-04',
     status: 'Confirmed decision',
-    source: 'November 3–4 public-demo product requirements and observed founder review',
-    related: ['Fictional Ari living Child Map', 'Two bounded choices', 'Fresh AI not yet accepted', 'Visual storybook and abuse gates open'],
+    source:
+      'November 3–4 public-demo product requirements and observed founder review',
+    related: [
+      'Fictional Ari living Child Map',
+      'Two bounded choices',
+      'Fresh AI not yet accepted',
+      'Visual storybook and abuse gates open',
+    ],
     reviewStatus: 'Founder approved for public sharing',
     safeToPublish: true,
   },
@@ -46,7 +52,11 @@ export const publicEntries: PublicEntry[] = [
     date: '2026-11-03',
     status: 'Verified fact',
     source: 'November 3 visual integration and acceptance-gate evidence',
-    related: ['Eleven code-built drawings', 'Recovered protected approval', 'Outcome and publication remain open'],
+    related: [
+      'Eleven code-built drawings',
+      'Recovered protected approval',
+      'Outcome and publication remain open',
+    ],
     reviewStatus: 'Founder approved for public sharing',
     safeToPublish: true,
   },
@@ -57,8 +67,13 @@ export const publicEntries: PublicEntry[] = [
     category: 'Sprint 5',
     date: '2026-11-03',
     status: 'Confirmed decision',
-    source: 'Accepted child library/reader scope and November 3 capability-gated Alpha sequencing',
-    related: ['Separate publication authority', 'Read-only approved stories', 'Child-facing outcome remains open'],
+    source:
+      'Accepted child library/reader scope and November 3 capability-gated Alpha sequencing',
+    related: [
+      'Separate publication authority',
+      'Read-only approved stories',
+      'Child-facing outcome remains open',
+    ],
     reviewStatus: 'Founder approved for public sharing',
     safeToPublish: true,
   },
@@ -597,7 +612,8 @@ export const milestones: Milestone[] = [
   },
   {
     title: 'Sprint 4 - Visual Theme System',
-    state: 'Protected synthetic visual approval demonstrated; outcome gate open',
+    state:
+      'Protected synthetic visual approval demonstrated; outcome gate open',
     status: 'Verified fact',
     note: 'The accepted versioned theme, recurring cast, structured scene plans, controlled rendering, and parent review now have narrow proof: one fictional cover plus ten code-built drawings were saved, recovered, approved, and reopened on an integration epic branch by November 3. Scene relevance, failure/restore, family/deletion evidence, measurements, and the reviewed development checkpoint are not complete. No child publication.',
   },
@@ -617,7 +633,8 @@ export const milestones: Milestone[] = [
   {
     title: 'Sprint 6 - Alpha safety and release readiness',
     number: '06',
-    state: 'Restricted staging and invite-only Alpha increments separately gated',
+    state:
+      'Restricted staging and invite-only Alpha increments separately gated',
     status: 'Confirmed decision',
     note: 'Restricted fictional-data engineering staging can progress independently of unfinished later sprints; real-family text-only invitations require their own verified access, privacy, child-safety, provider, deletion, and deployment evidence. Neither staging nor a public demo equals an approved private Alpha or completed full parent-to-child outcome.',
   },

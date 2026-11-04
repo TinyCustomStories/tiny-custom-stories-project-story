@@ -283,10 +283,10 @@ function Home() {
         </p>
         <p>
           November 4 update: Sprint 4 has a local protected visual-version
-          approval/reopen proof, but its integrated outcome remains open.
-          Sprint 5's child library and reader are later work. Sprint 5.5's
-          pre-login Ari demo has an early shell; fresh AI, storybook color,
-          abuse limits, and complete journey acceptance are not yet proved.
+          approval/reopen proof, but its integrated outcome remains open. Sprint
+          5's child library and reader are later work. Sprint 5.5's pre-login
+          Ari demo has an early shell; fresh AI, storybook color, abuse limits,
+          and complete journey acceptance are not yet proved.
         </p>
         <Link to="/development">
           Read the current development story <span aria-hidden="true">→</span>
@@ -453,9 +453,9 @@ function StoryHome() {
         </p>
         <p>
           The next chapters are visible too: a Sprint 4 illustrated-story
-          milestone, a still-open Sprint 5 child reader, and a Sprint 5.5
-          public demo being built around fictional Ari, bounded AI use, and
-          a more colorful reading experience.
+          milestone, a still-open Sprint 5 child reader, and a Sprint 5.5 public
+          demo being built around fictional Ari, bounded AI use, and a more
+          colorful reading experience.
         </p>
         <Link to="/development">
           Where we really are <span aria-hidden="true">→</span>
@@ -1058,8 +1058,8 @@ function StoryDevelopment() {
             <p className="eyebrow">Try before signup</p>
             <h3>Sprint 5.5</h3>
             <p>
-              Meet fictional Ari, choose an idea and mood, and discover why
-              a living Child Map matters. The fresh-AI demo is not yet accepted.
+              Meet fictional Ari, choose an idea and mood, and discover why a
+              living Child Map matters. The fresh-AI demo is not yet accepted.
             </p>
             <b>Read the technical chapter →</b>
           </Link>
@@ -1840,9 +1840,9 @@ function Development() {
           story application, and approved-version reading. A separate
           Development-only fictional preview with idea/feel choices and a narrow
           fixed-story local approval/reopen exercise now add evidence, but the
-          full accepted outcome still needs proof. Beyond that chapter,
-          Sprint 4 now has a narrow synthetic illustrated-story approval/reopen
-          proof, Sprint 5 remains a later child reader, and Sprint 5.5 is the
+          full accepted outcome still needs proof. Beyond that chapter, Sprint 4
+          now has a narrow synthetic illustrated-story approval/reopen proof,
+          Sprint 5 remains a later child reader, and Sprint 5.5 is the
           unfinished logged-out Ari AI demonstration.
         </p>
       </PageIntro>
@@ -1866,8 +1866,8 @@ function Development() {
           <p>
             Sprint 1 keeps its original deep link. All chapters now live here,
             including the visual-story work in Sprint 4, the planned Sprint 5
-            bookshelf, and the deliberately inserted Sprint 5.5 public demo.
-            The labels distinguish a local proof from a finished capability.
+            bookshelf, and the deliberately inserted Sprint 5.5 public demo. The
+            labels distinguish a local proof from a finished capability.
           </p>
         </div>
 
@@ -1920,8 +1920,8 @@ function Development() {
             <p className="eyebrow">Child-facing outcome still open</p>
             <h3>Sprint 5</h3>
             <p>
-              Explicit publication, the safe responsive story library, and
-              the shared ten-page reader are later Alpha capabilities.
+              Explicit publication, the safe responsive story library, and the
+              shared ten-page reader are later Alpha capabilities.
             </p>
             <b>Read Sprint 5 →</b>
           </Link>
@@ -2597,11 +2597,11 @@ function Roadmap() {
           accepted synthetic/local outcome, while qualified real-family release
           review remains a later gate. Sprint 3 authoring work may proceed with
           synthetic inputs while Sprint 1’s gate remains open; that exception
-          does not make Sprint 1, Sprint 3, or any release gate complete.
-          Sprint 4's local visual proof, Sprint 5's later reader, and Sprint
-          5.5's in-progress anonymous demo have separate outcome gates.
-          Restricted fictional-data staging and invite-only family Alpha
-          are separately capability-gated, not automatically released.
+          does not make Sprint 1, Sprint 3, or any release gate complete. Sprint
+          4's local visual proof, Sprint 5's later reader, and Sprint 5.5's
+          in-progress anonymous demo have separate outcome gates. Restricted
+          fictional-data staging and invite-only family Alpha are separately
+          capability-gated, not automatically released.
         </p>
       </PageIntro>
 
@@ -2644,8 +2644,8 @@ function Roadmap() {
         <h2>Outcome gates by sprint</h2>
         <p>
           Sprint 5.5 is a deliberate insert between the child library and
-          release work, not a renumbering of Sprint 6. The October 21
-          GitHub activity snapshot remains a dated historical measurement.
+          release work, not a renumbering of Sprint 6. The October 21 GitHub
+          activity snapshot remains a dated historical measurement.
         </p>
         <ol className="roadmap-list">
           {milestones.map((milestone, index) => (
