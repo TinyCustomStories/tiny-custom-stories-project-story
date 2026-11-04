@@ -34,7 +34,7 @@ export const publicEntries: PublicEntry[] = [
     date: '2026-11-04',
     status: 'Confirmed decision',
     source:
-      'November 3–4 public-demo product requirements and observed founder review',
+      'November 3-4 public-demo product requirements and observed founder review',
     related: [
       'Fictional Ari living Child Map',
       'Two bounded choices',
