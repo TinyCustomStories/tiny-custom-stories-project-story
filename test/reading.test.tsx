@@ -64,14 +64,14 @@ describe('reading and orientation', () => {
       const snapshot = screen.getByRole('region', {
         name: 'Dated build activity',
       });
-      for (const value of ['3,803', '813', '775', '585', '506']) {
+      for (const value of ['3,977', '968', '928', '597', '516']) {
         expect(within(snapshot).getByText(value)).toBeTruthy();
       }
       expect(
-        within(snapshot).getByText('7 outcome-gated sprints'),
+        within(snapshot).getByText('8 named sprint checkpoints'),
       ).toBeTruthy();
-      expect(snapshot.textContent).toContain('1,121 of 1,668');
-      expect(snapshot.textContent).toContain('October 21, 2026');
+      expect(snapshot.textContent).toContain('1,372 of 1,971');
+      expect(snapshot.textContent).toContain('November 4, 2026');
       expect(snapshot.textContent).toContain('not a pass rate');
       expect(snapshot.textContent).toContain('may not have');
     },
