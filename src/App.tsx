@@ -2,6 +2,7 @@ import React from 'react';
 import { ReadingPage, ReadingContext, type ReadingMode } from './ReadingPage';
 import { Lessons } from './Lessons';
 import { MovingMapArticle } from './MovingMapArticle';
+import { SprintFour, SprintFive, SprintFivePointFive } from './LaterSprints';
 import deliverySnapshot from './delivery-snapshot.json';
 import {
   designPrinciples,
@@ -25,6 +26,9 @@ type Route =
   | '/sprint-one'
   | '/sprint-two'
   | '/sprint-three'
+  | '/sprint-four'
+  | '/sprint-five'
+  | '/sprint-five-point-five'
   | '/design'
   | '/questions'
   | '/library';
@@ -43,6 +47,9 @@ const routes: Record<Route, string> = {
   '/sprint-one': 'Sprint 1',
   '/sprint-two': 'Sprint 2',
   '/sprint-three': 'Sprint 3',
+  '/sprint-four': 'Sprint 4',
+  '/sprint-five': 'Sprint 5',
+  '/sprint-five-point-five': 'Sprint 5.5',
   '/design': 'Design',
   '/questions': 'Open questions',
   '/library': 'Public library',
@@ -88,6 +95,12 @@ const routeDescriptions: Record<Exclude<Route, '/'>, string> = {
     'How the accepted synthetic/local temporal Child Map and deterministic Discovery outcome was demonstrated while real-family release remains separately gated.',
   '/sprint-three':
     'How accepted Story capability boundaries are becoming a protected authoring workspace while generation and approval remain unfinished.',
+  '/sprint-four':
+    'The versioned visual theme, code-built illustrations, synthetic parent approval evidence, and remaining story-relevance gates.',
+  '/sprint-five':
+    'Why publishing and reading approved stories safely belongs in a separate child-facing library and reader sprint.',
+  '/sprint-five-point-five':
+    'The fictional Ari pre-login AI demo, bounded choices, safety budgets, visual design corrections, and unfinished acceptance.',
   '/design':
     'The shared philosophy and paper-and-ink language that keep different surfaces recognizably related.',
   '/questions':
@@ -3302,6 +3315,9 @@ function Layout({
     '/sprint-one': SprintOne,
     '/sprint-two': SprintTwo,
     '/sprint-three': SprintThree,
+    '/sprint-four': SprintFour,
+    '/sprint-five': SprintFive,
+    '/sprint-five-point-five': SprintFivePointFive,
     '/design': Design,
     '/questions': Questions,
     '/library': Library,
@@ -3321,6 +3337,9 @@ function Layout({
     '/sprint-one': SprintOne,
     '/sprint-two': SprintTwo,
     '/sprint-three': SprintThree,
+    '/sprint-four': SprintFour,
+    '/sprint-five': SprintFive,
+    '/sprint-five-point-five': SprintFivePointFive,
     '/design': StoryDesign,
     '/questions': Questions,
     '/library': StoryLibrary,
