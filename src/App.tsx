@@ -1322,10 +1322,11 @@ function StoryHowWeBuild() {
             <span>05</span>
             <h3>Tests are evidence, not religious artifacts</h3>
             <p>
-              Task pull requests now use substantive review and proportionate
-              local checks. Affected hosted suites run by manual dispatch on
-              epic branches at integration checkpoints; browser runs are
-              optional, not a tax on every change.
+              We first cut costly hosted checks to recover the Actions budget.
+              On November 3 we brought automatic CI back for affected code PRs:
+              lightweight checks run on normal tasks, fuller suites run on
+              ready epic checkpoints, and browser runs remain manual. A
+              documentation-only PR may correctly have no product workflow.
             </p>
           </article>
           <article className="story-beat">
@@ -1547,10 +1548,10 @@ function StoryLibrary() {
               The PDF is a snapshot. The website is the living version.
             </h2>
             <p>
-              The portable 17-page dossier now reflects the October 21 public
-              checkpoint. The responsive site remains the best place for the
-              evolving story and accessible navigation. This website changes
-              more often as the product, build system, and lessons evolve.
+              The portable 18-page dossier now reflects the November 4 public
+              checkpoint, including sprint and delivery evidence. The
+              responsive site remains the best place for the evolving story,
+              accessible navigation, and later updates.
             </p>
           </div>
           <a
@@ -2038,7 +2039,7 @@ function BuildActivity() {
       <div className="delivery-detail-grid">
         <article>
           <p className="eyebrow">Work decomposition</p>
-          <h2>{deliverySnapshot.plannedSprints} outcome-gated sprints</h2>
+          <h2>{deliverySnapshot.plannedSprints} named sprint checkpoints</h2>
           <p>
             {deliverySnapshot.closedIssues.toLocaleString()} issues are closed
             and {deliverySnapshot.openIssues.toLocaleString()} remain open. The
@@ -2057,22 +2058,25 @@ function BuildActivity() {
             {deliverySnapshot.workflowRunsSnapshotDate}:{' '}
             {deliverySnapshot.successfulWorkflowRuns.toLocaleString()} of{' '}
             {deliverySnapshot.workflowRuns.toLocaleString()} recorded runs
-            completed successfully. These are repository-wide historical
-            outcomes, including superseded runs, not a pass rate for the current
-            code or a measure of product readiness.
+            completed successfully; {deliverySnapshot.failedWorkflowRuns.toLocaleString()}{' '}
+            failed and {deliverySnapshot.cancelledWorkflowRuns.toLocaleString()}{' '}
+            were cancelled. These are repository-wide historical outcomes,
+            including superseded runs, not a pass rate for current code,
+            evidence of merged quality, or a measure of product readiness.
           </p>
         </article>
       </div>
 
       <p className="public-boundary-note">
-        Repository counts are intentionally dated rather than presented as live
-        telemetry. Repository totals and workflow history were read on October
-        21, 2026 (Eastern time; October 22 UTC). Commits are all reachable
-        development history, including historical ancestry introduced by merges.
-        Changes in that history are not comparable to recent delivery velocity.
-        Epic-branch work is included in PR totals but may not have reached
-        development. The public site does not call the private repository or
-        require a GitHub token in the browser.
+        Repository counts are intentionally dated rather than live telemetry.
+        GitHub REST repository, issue/PR search, development-commit pagination,
+        and Actions history were checked on November 4, 2026 (UTC). Commits
+        include all reachable development history, including older merged
+        ancestry, not just newly written code. Epic-branch PRs may not have
+        reached development. Cancelled workflow runs often represent
+        superseded work, not a failed code revision. No CI totals are a
+        product-release pass rate. This public site never queries the
+        private repository or exposes a GitHub token in a visitor's browser.
       </p>
     </section>
   );
@@ -2082,23 +2086,23 @@ function HowWeBuild() {
   const workflowChecks = [
     [
       'Frontend CI',
-      'Formatting, linting, types, build, dependency audit, and frontend tests. Hosted execution is manually dispatched on an epic branch for an affected integration checkpoint.',
+      'Automatic for PRs touching frontend paths: quick formatting, lint, TypeScript and unit/component checks on task or draft PRs. A ready epic-to-development checkpoint runs the fuller audited production build and test suite instead.',
     ],
     [
       'Backend CI',
-      'Restore/audit, formatting, build, API/OpenAPI and MongoDB startup/migration checks. Hosted execution is manual on the exact final epic head when this suite is affected.',
+      'Automatic for PRs touching backend or shared renderer paths: quick pinned .NET unit tests for task/draft PRs. Ready epic-to-development checkpoints instead run the full restore/audit, formatting, build, API/integration and MongoDB checks.',
     ],
     [
       'Repository tools CI',
-      'Repository helper, dependency, and workflow-support checks protect planning and delivery. Affected hosted checks run at epic checkpoints, not on every task PR.',
+      'Automatic when scripts, root npm manifests or workflow support files change. Task/draft PRs run quick helper checks; ready epic checkpoints run the full repository-helper suite.',
     ],
     [
       'Browser evidence',
-      'Browser tests are optional, manually dispatched epic-level evidence. Task PRs use local and reviewed UI/accessibility evidence instead of requiring expensive hosted browser runs.',
+      'Chromium and historical visual evidence stay manual and epic-only, not automatic on PRs. This avoids the cost of running full browser coverage on each task while preserving targeted visual review.',
     ],
     [
       'Public-story CI',
-      'The separate public-story repository has its own PR verification and deployment workflow; it checks its dossier, formatting, linting, TypeScript, build, and component tests independently of product epic CI.',
+      'This separate public-story repository automatically verifies its ReportLab PDF, formatting, lint, TypeScript, build and tests on PRs; a successful main-branch build deploys the static site to GitHub Pages. The product repository has no deployed product release implied by these CI checks.',
     ],
   ] as const;
 
@@ -2144,7 +2148,7 @@ function HowWeBuild() {
           <i aria-hidden="true">→</i>
           <span>Review / fixes / re-review</span>
           <i aria-hidden="true">→</i>
-          <span>Epic checkpoint + manual CI</span>
+          <span>Full CI at epic checkpoint</span>
           <i aria-hidden="true">→</i>
           <span>Outcome evidence</span>
         </div>
@@ -2222,10 +2226,12 @@ function HowWeBuild() {
               final-head merge gates still require fresh verification.
             </li>
             <li>
-              Product task PRs use local verification and substantive review.
-              Required affected hosted suites are manually run on the exact
-              final epic head before its checkpoint merges into development;
-              browser execution is optional.
+              Affected code PRs now run lightweight hosted checks automatically
+              on the exact PR revision, alongside local verification and
+              independent review. Ready epic-to-development checkpoints run
+              fuller affected suites instead. Missing, stale, skipped, or
+              failed required checks must not be treated as passing. Browser
+              evidence remains manual and proportionate to risk.
             </li>
           </ul>
         </div>
@@ -2644,8 +2650,8 @@ function Roadmap() {
         <h2>Outcome gates by sprint</h2>
         <p>
           Sprint 5.5 is a deliberate insert between the child library and
-          release work, not a renumbering of Sprint 6. The October 21 GitHub
-          activity snapshot remains a dated historical measurement.
+          release work, not a renumbering of Sprint 6. The GitHub delivery
+          snapshot was independently refreshed on November 4, 2026.
         </p>
         <ol className="roadmap-list">
           {milestones.map((milestone, index) => (
@@ -3381,9 +3387,10 @@ function Library() {
               Take the evolving project story with you.
             </h2>
             <p>
-              The refreshed 17-page PDF includes the October 21 checkpoint,
-              updated Sprint 2 and 3 status, and our design-as-development
-              lesson. The website remains the living, responsive narrative.
+              The refreshed 18-page PDF includes the November 4 sprint
+              checkpoint, verified GitHub counts and revised CI policy, while
+              retaining the design-as-development lesson. The website remains
+              the living, responsive narrative.
             </p>
           </div>
           <a
